@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Digimon Tamers: Tamers</title>
+<link rel="stylesheet" href="../../digivolution.css" />
+<style>
+  /* index/selection layout (self-contained; reuses the shared tokens from digivolution.css) */
+  .wrap { padding: 40px 22px 56px; max-width: 1280px; margin: 0 auto; overflow: visible; }
+
+  .hero { text-align: center; margin: 18px auto 44px; max-width: 820px; }
+  .hero .kicker {
+    display: inline-block; margin-bottom: 14px; padding: 6px 16px; border-radius: 999px;
+    font-size: 12.5px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;
+    color: #cfe6ff; background: rgba(88,166,255,.14); border: 1px solid rgba(88,166,255,.34);
+  }
+  .hero h1 {
+    font-size: 54px; line-height: 1.03; letter-spacing: -1.5px; margin: 0 0 14px;
+    background: linear-gradient(180deg, #ffffff, #a9c7ee);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero p { color: var(--muted); font-size: 17px; line-height: 1.5; margin: 0; }
+
+  .grid {
+    display: grid; gap: 22px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (max-width: 1100px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 820px)  { .grid { grid-template-columns: repeat(2, 1fr); } .hero h1 { font-size: 40px; } }
+  @media (max-width: 520px)  { .grid { grid-template-columns: 1fr; } }
+
+  .card {
+    position: relative; display: flex; flex-direction: column; overflow: hidden;
+    padding: 20px 18px 18px; border-radius: 22px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: linear-gradient(180deg, rgba(16,43,76,.96), rgba(7,19,36,.98));
+    box-shadow: 0 16px 40px rgba(0,0,0,.36);
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  /* accent glow strip at the top, tinted by the partner's signature color (--accent) */
+  .card::before {
+    content: ""; position: absolute; inset: 0 0 auto 0; height: 4px;
+    background: var(--accent); box-shadow: 0 0 18px var(--accent);
+  }
+  .card::after {
+    content: ""; position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
+    width: 200px; height: 200px; border-radius: 50%;
+    background: radial-gradient(circle, var(--accent), transparent 65%);
+    opacity: .16; pointer-events: none; transition: opacity .18s ease;
+  }
+  a.card:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--accent) 60%, rgba(255,255,255,.2));
+    box-shadow: 0 26px 60px rgba(0,0,0,.5), 0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent);
+  }
+  a.card:hover::after { opacity: .32; }
+
+  .thumb {
+    position: relative; z-index: 1; height: 150px; border-radius: 16px; background: #fff;
+    padding: 12px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center;
+  }
+  .thumb img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+  .partner { position: relative; z-index: 1; font-size: 11.5px; font-weight: 900; letter-spacing: 1.2px;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+  .mon { position: relative; z-index: 1; font-size: 24px; font-weight: 950; letter-spacing: -.5px; margin-bottom: 14px; }
+
+  /* signature-form block: one caption + one pinnacle-form pill */
+  .peak { position: relative; z-index: 1; }
+  .peak-label { display: block; font-size: 10px; font-weight: 900; letter-spacing: 1.4px;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 7px; }
+  .form {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 11px 5px 9px; border-radius: 999px; font-size: 11.5px; font-weight: 900;
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 16%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 42%, transparent);
+  }
+  .form .glyph { font-size: 13px; line-height: 1; }
+
+  .cta {
+    position: relative; z-index: 1; margin-top: 16px; padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.09);
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 13px; font-weight: 900; color: #dce9fb;
+  }
+  .cta .arrow { transition: transform .18s ease; color: var(--accent); }
+  a.card:hover .cta .arrow { transform: translateX(5px); }
+
+  /* partners without an evolution page yet */
+  .card.soon { opacity: .62; }
+  .card.soon .cta { color: var(--muted); }
+  .badge-soon {
+    position: absolute; top: 16px; right: 14px; z-index: 2;
+    padding: 3px 9px; border-radius: 999px; font-size: 10px; font-weight: 900;
+    letter-spacing: .6px; text-transform: uppercase;
+    color: #d6e3f4; background: rgba(3,14,27,.8); border: 1px solid rgba(255,255,255,.16);
+  }
+
+  .foot { text-align: center; color: rgba(225,238,255,.6); font-size: 12.5px; line-height: 1.5; margin-top: 40px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="backnav" href="../../index.html"><span class="arrow">&#8592;</span> All generations</a>
+
+  <header class="hero">
+    <span class="kicker">Digimon Tamers</span>
+    <h1>The Tamers</h1>
+    <p>Pick one of the Tamers' partners to explore its full digivolution tree: from the Fresh form up to Mega and beyond, including the Biomerge (Matrix) pinnacle, plus the X, DNA/Jogress and Virus branches.</p>
+  </header>
+
+  <div class="grid">
+
+    <a class="card" href="guilmon.html" style="--accent:#e5484d">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Guilmon_b.jpg" alt="Guilmon"></div>
+      <div class="partner">Takato Matsuki</div>
+      <div class="mon">Guilmon</div>
+      <div class="peak">
+        <span class="peak-label">Biomerge</span>
+        <span class="form"><span class="glyph">&#128081;</span> Gallantmon</span>
+      </div>
+      <div class="cta"><span>View evolution line</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <div class="card soon" style="--accent:#f0b429">
+      <span class="badge-soon">Coming soon</span>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Renamon_b.jpg" alt="Renamon"></div>
+      <div class="partner">Rika Nonaka</div>
+      <div class="mon">Renamon</div>
+      <div class="peak">
+        <span class="peak-label">Biomerge</span>
+        <span class="form"><span class="glyph">&#128081;</span> Sakuyamon</span>
+      </div>
+      <div class="cta"><span>Evolution line coming soon</span><span class="arrow">&#8226;</span></div>
+    </div>
+
+    <div class="card soon" style="--accent:#3fb950">
+      <span class="badge-soon">Coming soon</span>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Terriermon_b.jpg" alt="Terriermon"></div>
+      <div class="partner">Henry Wong</div>
+      <div class="mon">Terriermon</div>
+      <div class="peak">
+        <span class="peak-label">Biomerge</span>
+        <span class="form"><span class="glyph">&#128081;</span> MegaGargomon</span>
+      </div>
+      <div class="cta"><span>Evolution line coming soon</span><span class="arrow">&#8226;</span></div>
+    </div>
+
+    <div class="card soon" style="--accent:#6c8cff">
+      <span class="badge-soon">Coming soon</span>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Cyberdramon_b.jpg" alt="Cyberdramon"></div>
+      <div class="partner">Ryo Akiyama</div>
+      <div class="mon">Cyberdramon</div>
+      <div class="peak">
+        <span class="peak-label">Biomerge</span>
+        <span class="form"><span class="glyph">&#128081;</span> Justimon</span>
+      </div>
+      <div class="cta"><span>Evolution line coming soon</span><span class="arrow">&#8226;</span></div>
+    </div>
+
+    <div class="card soon" style="--accent:#b8794a">
+      <span class="badge-soon">Coming soon</span>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Lopmon_b.jpg" alt="Lopmon"></div>
+      <div class="partner">Suzie Wong</div>
+      <div class="mon">Lopmon</div>
+      <div class="peak">
+        <span class="peak-label">Peak form</span>
+        <span class="form"><span class="glyph">&#128081;</span> Cherubimon</span>
+      </div>
+      <div class="cta"><span>Evolution line coming soon</span><span class="arrow">&#8226;</span></div>
+    </div>
+
+    <div class="card soon" style="--accent:#8fa6c0">
+      <span class="badge-soon">Coming soon</span>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Guardromon_b.jpg" alt="Guardromon"></div>
+      <div class="partner">Kazu Shioda</div>
+      <div class="mon">Guardromon</div>
+      <div class="peak">
+        <span class="peak-label">Peak form</span>
+        <span class="form"><span class="glyph">&#128081;</span> HiAndromon</span>
+      </div>
+      <div class="cta"><span>Evolution line coming soon</span><span class="arrow">&#8226;</span></div>
+    </div>
+
+    <div class="card soon" style="--accent:#ff9ecb">
+      <span class="badge-soon">Coming soon</span>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/MarineAngemon_b.jpg" alt="MarineAngemon"></div>
+      <div class="partner">Kenta Kitagawa</div>
+      <div class="mon">MarineAngemon</div>
+      <div class="peak">
+        <span class="peak-label">Mega partner</span>
+        <span class="form"><span class="glyph">&#128081;</span> MarineAngemon</span>
+      </div>
+      <div class="cta"><span>Evolution line coming soon</span><span class="arrow">&#8226;</span></div>
+    </div>
+
+    <div class="card soon" style="--accent:#f0883e">
+      <span class="badge-soon">Coming soon</span>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Leomon_b.jpg" alt="Leomon"></div>
+      <div class="partner">Jeri Katou</div>
+      <div class="mon">Leomon</div>
+      <div class="peak">
+        <span class="peak-label">Peak form</span>
+        <span class="form"><span class="glyph">&#128081;</span> SaberLeomon</span>
+      </div>
+      <div class="cta"><span>Evolution line coming soon</span><span class="arrow">&#8226;</span></div>
+    </div>
+
+  </div>
+
+  <p class="foot">Images and names link to DigimonWiki/Fandom (CC BY-SA unless noted otherwise).</p>
+
+</div>
+</body>
+</html>

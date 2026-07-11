@@ -1,0 +1,103 @@
+---
+name: digimon-evolution-tree
+description: Create or edit a Digimon evolution-tree infographic (like veemon.html and agumon.html). Use whenever asked to build, extend, or restyle one of these evolution-tree HTML pages. The pages are config-only and share digivolution.css + digivolution.js; conventions live in README.md.
+---
+
+# Digimon evolution-tree infographic
+
+This folder renders a Digimon's evolution tree as a large, self-consistent HTML
+infographic (cards on a grid, colored SVG arrows, a trigger legend, appendix panels).
+Every page must look and behave like the existing ones.
+
+## Golden rule: pages are data, not markup
+
+Styling and the rendering engine are shared. A page only supplies configuration.
+
+- `digivolution.css` - ALL styling + the design-system grid. Never inline styles that
+  belong here; only per-page dimensions go in the page's small `<style>` block.
+- `digivolution.js` - the engine `DigiTree.mount({ legend, columns, nodes, edges })`.
+  It builds the arrow markers, legend, column headers, node cards, and edges. Never copy
+  this logic into a page.
+- `README.md` - the source of truth for the term taxonomy, edge-label rule, trigger
+  legend, and layout tokens. Read it before adding nodes or labels.
+
+Read `README.md` and skim `agumon.html` (data-driven, has Bond/Burst + a badge) or
+`veemon.html` (has an Armor appendix panel + Royal Knight badges) as your template.
+
+Pages live under `src/evolution-lines/gen-*/`, split by the anime generation the partner
+Digimon debuted in (`gen-1-adventure`, `gen-2-adventure-02`, `gen-3-tamers`, ...). The shared
+`digivolution.css` / `digivolution.js` sit at the `src/` root, so every page is two levels
+down and references them with a `../../` prefix. Put a new page in the folder for its
+generation (create the folder if that generation has no page yet).
+
+## Layout grid (must match across all pages)
+
+- Card: `204px` wide, `min-height:198px`.
+- Column pitch (x): `262px` between evolution-level columns.
+- Row pitch (y): `240px` -> a uniform `42px` vertical gap. A node's `top = firstRow + rowIndex * 240`.
+- Keep every row on the pitch so card bottoms line up. A card taller than 198px is only OK
+  if it sits alone in its band (no row-mates to misalign).
+
+## Steps for a new page
+
+1. Research the line on DigimonWiki/Fandom. Collect stages, X-Antibody / Virus variants,
+   DNA/Jogress fusions, mode changes, bond/burst forms, and external fusion partners.
+   For images use `Special:Redirect/file/<File>` (the engine builds this from `img`); if a
+   `<Name>_b.jpg` does not exist, query `https://digimon.fandom.com/api.php?action=query&prop=images&titles=<Name>&format=json` for the real file.
+2. Place nodes on the grid: pick a column x per level, a row index per node (`y = firstRow + i*240`).
+   Keep the main spine on one horizontal row; branch variants to adjacent rows.
+3. Copy `veemon.html`/`agumon.html` into the target `src/evolution-lines/gen-*/` folder as
+   the skeleton (same `<head>` link with the `../../` asset prefix, empty `.legend-grid`,
+   `.columns`, `#nodes`, empty `#edges` svg, `#labels`, appendix panels, footer).
+4. Set the page `<style>` block: `.infographic{width;height}`, `.columns{top}`,
+   `.legend{width}`, `.legend-grid{grid-template-columns}`, and each panel's `{top;width}`.
+   Do NOT set a panel `height`: panels auto-size to content, so the gap below the last card
+   is always the panel's 22px bottom padding (a fixed height leaves an uneven bottom band).
+   Set each panel's `top` 22px below the element above it (lowest node for the first panel,
+   previous panel's bottom for a stacked one) so the whole footer block keeps one uniform 22px
+   rhythm: diagram -> panel -> panel -> footer.
+   Size the canvas `height` so the footer clears the lowest element (last row or appendix panel) by
+   only ~22px, not a large empty band: `height = lowestBottom + 22 + footerHeight + 16`
+   (footerHeight ~32px for two lines). Keep the `<svg viewBox>` height == canvas height.
+   See README.md "Canvas height and the footer".
+5. Fill `DigiTree.mount({...})`: `legend` (only the triggers this page uses), `columns`,
+   `nodes`, `edges`.
+6. Verify (see below).
+
+## Config reference
+
+- Node: `{ id, x, y, cls, name, lvl, note, wiki, img, badge?, nav? }`
+  - `cls` (pill color): `normal | x | dna | mode | dark | lateral | bond | burst`.
+  - `lvl` (card tag): `Level` optionally `+ / Virus + / X` only. See README section 1.
+  - `badge`: `{ cls:'rk', text:'Royal Knight' }` or `{ cls:'lw', text:'Legendary Warrior' }`.
+  - `nav`: `{ href, title }` - renders a round arrow button to the right of the card that
+    jumps to another infographic page (relative href); the card itself keeps linking to
+    the wiki. See README "Cross-page navigation".
+  - `wiki`/`img`: the Fandom page slug and the redirect file name.
+- Edge (inside `edges: function(edge){ ... }`):
+  `edge(from, to, type, fromSide='right', toSide='left', opts)`
+  - `type`: the trigger (`normal|x|dna|mode|dark|lateral|armor|bond|burst`).
+  - sides: `left|right|top|bottom`.
+  - `opts`: `shape:'vertical'|'leftbus'`, `busX`, `points:[[x,y],...]`, `label`, `lx`, `ly`,
+    `width`, `opacity`, and `fromX/fromY/toX/toY` to override any anchor coordinate.
+- Panels stay as HTML sections (partner/jogress = purple, armor = amber); position them via
+  the page `<style>`. An amber connector to a panel targets it by id, e.g.
+  `edge('veemon','armor-panel','armor','bottom','top',{shape:'vertical', toX:668, ...})`.
+
+## Conventions (enforce; details in README.md)
+
+- Card tag: `Level [/ Virus] [/ X]`. Do not put "how it evolved" (Jogress, Mode, Bond, Burst)
+  or loose descriptors (Composite, Ancient, Cyborg, Machine, Lateral, ...) in the tag; those
+  go in the note or are shown by the edge color.
+- Edge labels: NEVER restate the trigger color (no "X-Antibody" on a green arrow, no
+  "DNA / Jogress" on a purple one). Label only for a specific event/continuity, a narrative
+  cause, a lore/non-evolution link, or a specific partner.
+- English on-image text. No em dash (U+2014). Identifiers in English.
+
+## Verify before finishing
+
+Open the page in a browser and check:
+- No console errors; `.node` count matches the data.
+- Uniform 42px gaps and no column overlaps (compare `getBoundingClientRect` tops/bottoms).
+- Images load (broken ones show a white box -> fix the `img` file name).
+- Labels, badges, panels, and the legend render as intended.

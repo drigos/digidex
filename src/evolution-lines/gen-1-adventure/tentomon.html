@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tentomon: evolution tree</title>
+<link rel="stylesheet" href="../../digivolution.css" />
+<style>
+  /* page-specific layout */
+  .infographic { width:1860px; height:1353px; }
+  .columns { top:200px; }
+  .partner-panel { top:950px; width:1348px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="backnav" href="index.html"><span class="arrow">&#8592;</span> DigiDestined</a>
+  <div class="infographic" id="canvas">
+    <div class="title">
+      <h1>Tentomon: evolution tree</h1>
+      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega hierarchy, with the Red and Blue MegaKabuterimon branches, the HerculesKabuterimon X-Antibody form, the AncientBeetlemon ancestral link and the collective composition that forms Omnimon Merciful Mode.</div>
+    </div>
+
+    <div class="legend">
+      <div class="legend-title">Digivolution triggers</div>
+      <div class="legend-grid"></div>
+    </div>
+
+    <div class="columns"></div>
+
+    <svg id="edges" viewBox="0 0 1860 1353" preserveAspectRatio="none"></svg>
+    <div id="labels"></div>
+    <div id="nodes"></div>
+
+    <section class="partner-panel" id="composition-panel">
+      <div class="partner-panel-title">
+        <h2>Collective composition (Adventure tri.)</h2>
+        <span>HerculesKabuterimon joins Omnimon and the other partners' Mega forms to compose Omnimon Merciful Mode</span>
+      </div>
+      <div class="partner-grid">
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Omnimon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Omnimon_b.jpg" alt="Omnimon">
+          <div class="partner-name">Omnimon</div>
+          <div class="partner-level">Ultra</div>
+          <div class="partner-fuse">Royal Knight core</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Seraphimon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Seraphimon_b.jpg" alt="Seraphimon">
+          <div class="partner-name">Seraphimon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Angel (holy) member</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Magnadramon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Magnadramon_b.jpg" alt="Magnadramon">
+          <div class="partner-name">Magnadramon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Holy dragon member</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Rosemon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Rosemon_b.jpg" alt="Rosemon">
+          <div class="partner-name">Rosemon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Fairy / plant member</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Phoenixmon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Phoenixmon_b.jpg" alt="Phoenixmon">
+          <div class="partner-name">Phoenixmon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Holy bird member</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Vikemon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Vikemon_b.jpg" alt="Vikemon">
+          <div class="partner-name">Vikemon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Beast warrior member</div>
+        </a>
+      </div>
+    </section>
+
+    <div class="footer">Images and names link to DigimonWiki/Fandom. Credit and license: Fandom community, CC BY-SA unless noted otherwise. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. Kabuterimon branches into the Red (Adventure) and Blue MegaKabuterimon, both of which reach HerculesKabuterimon. AncientBeetlemon is a Legendary Warrior of Thunder ancestral (lore) relation, not a direct path. Omnimon Merciful Mode is a collective composition (Adventure tri.): HerculesKabuterimon plus Omnimon, Rosemon, Phoenixmon, Vikemon, Seraphimon and Magnadramon.</div>
+  </div>
+</div>
+<script src="../../digivolution.js"></script>
+<script>
+DigiTree.mount({
+  legend: [
+    ['normal','Normal evolution'],
+    ['x','X-Digivolution'],
+    ['dna','DNA / Jogress'],
+    ['lore','Ancestral (lore) link']
+  ],
+  columns: [
+    [42,'Fresh'],[304,'In-Training'],[566,'Rookie'],[828,'Champion'],
+    [1090,'Ultimate'],[1352,'Mega'],[1614,'Ultra / Variant']
+  ],
+  nodes: [
+    // X-Antibody form (top row)
+    {id:'herculesx', x:1352, y:250, cls:'x', name:'HerculesKabuterimon X', lvl:'Mega / X', note:'X-Antibody form.', wiki:'HerculesKabuterimon_X', img:'HerculesKabuterimon_X_b.jpg'},
+
+    // main spine
+    {id:'pabumon', x:42, y:490, cls:'normal', name:'Pabumon', lvl:'Fresh', note:'Initial form of the line.', wiki:'Pabumon', img:'Pabumon_b.jpg'},
+    {id:'motimon', x:304, y:490, cls:'normal', name:'Motimon', lvl:'In-Training', note:'Baby form of the line.', wiki:'Motimon', img:'Motimon_b.jpg'},
+    {id:'tentomon', x:566, y:490, cls:'normal', name:'Tentomon', lvl:'Rookie', note:'Insect partner; start of the line.', wiki:'Tentomon', img:'Tentomon_b.jpg'},
+    {id:'kabuterimon', x:828, y:490, cls:'normal', name:'Kabuterimon', lvl:'Champion', note:'Beetle warrior; branches into the Red and Blue Mega forms.', wiki:'Kabuterimon', img:'Kabuterimon_b.jpg'},
+    {id:'megared', x:1090, y:490, cls:'normal', name:'MegaKabuterimon (Red)', lvl:'Ultimate', note:'Adventure branch; horned beetle warrior.', wiki:'MegaKabuterimon_(Red)', img:'MegaKabuterimon_(Red)_b.jpg'},
+    {id:'hercules', x:1352, y:490, cls:'normal', name:'HerculesKabuterimon', lvl:'Mega', note:'Insect titan; peak of the classic line and a fusion member.', wiki:'HerculesKabuterimon', img:'HerculesKabuterimon_b.jpg'},
+    {id:'omnimonmerciful', x:1614, y:490, cls:'dna', name:'Omnimon Merciful Mode', lvl:'Ultra', note:'Collective composition.', wiki:'Omnimon_Merciful_Mode', img:'Omnimon_Merciful_Mode_b.jpg'},
+
+    // Blue branch (bottom row)
+    {id:'megablue', x:1090, y:730, cls:'normal', name:'MegaKabuterimon (Blue)', lvl:'Ultimate', note:'Blue variation; pincer-type beetle warrior.', wiki:'MegaKabuterimon_(Blue)', img:'MegaKabuterimon_(Blue)_b.jpg'},
+
+    // AncientBeetlemon: ancestral origin of the line (lore, not an evolution)
+    {id:'ancientbeetlemon', x:42, y:250, cls:'lore', badge:{cls:'lw', text:'Legendary Warrior'}, name:'AncientBeetlemon', lvl:'Mega', note:'Warrior of Thunder; ancestor of the Kabuterimon species.', wiki:'AncientBeetlemon', img:'AncientBeetlemon_b.jpg'}
+  ],
+  edges: function (edge) {
+    // main spine
+    edge('pabumon','motimon','normal');
+    edge('motimon','tentomon','normal');
+    edge('tentomon','kabuterimon','normal');
+    edge('kabuterimon','megared','normal');
+    edge('megared','hercules','normal');
+    edge('hercules','omnimonmerciful','dna','right','left');
+
+    // X-Antibody form
+    edge('hercules','herculesx','x','top','bottom',{shape:'vertical'});
+
+    // Blue branch (drops to the variants row, then rejoins HerculesKabuterimon)
+    edge('kabuterimon','megablue','normal','bottom','left',{points:[[930,829]], label:'Blue form', lx:1010, ly:815});
+    edge('megablue','hercules','normal','right','left',{points:[[1323,829],[1323,589]]});
+
+    // AncientBeetlemon ancestral (lore) link: origin -> root of the line, no arrowhead
+    edge('ancientbeetlemon','pabumon','lore','bottom','top',{shape:'vertical', noArrow:true});
+  }
+});
+</script>
+</body>
+</html>

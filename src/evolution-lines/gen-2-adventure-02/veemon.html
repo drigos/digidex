@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Veemon: evolution tree</title>
+<link rel="stylesheet" href="../../digivolution.css" />
+<style>
+  /* page-specific layout */
+  .infographic { width:2122px; height:1889px; }
+  .columns { top:200px; }
+  .jogress-panel { top:1190px; width:248px; }
+  .armor-panel { top:1557px; width:2074px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="backnav" href="index.html"><span class="arrow">&#8592;</span> DigiDestined 02</a>
+  <div class="infographic" id="canvas">
+    <div class="title">
+      <h1>Veemon: evolution tree</h1>
+      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega -> Ultra hierarchy, with Armor, DNA/Jogress, Mode Change, Dark/Virus and X-Digivolution branches.</div>
+    </div>
+
+    <div class="legend">
+      <div class="legend-title">Digivolution triggers</div>
+      <div class="legend-grid"></div>
+    </div>
+
+    <div class="columns"></div>
+
+    <svg id="edges" viewBox="0 0 2122 1889" preserveAspectRatio="none"></svg>
+    <div id="labels"></div>
+    <div id="nodes"></div>
+
+    <section class="jogress-panel">
+      <div class="jogress-panel-title">
+        <h2>Jogress partner</h2>
+        <span>fuses with ExVeemon to form Paildramon / Dinobeemon</span>
+      </div>
+      <div class="jogress-body">
+        <a class="jogress-card" href="https://digimon.fandom.com/wiki/Stingmon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Stingmon_b.jpg" alt="Stingmon">
+          <div class="jogress-name">Stingmon</div>
+          <div class="jogress-level">Champion</div>
+          <div class="jogress-fuse">+ ExVeemon = Paildramon / Dinobeemon</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="armor-panel" id="armor-panel">
+      <div class="armor-panel-title">
+        <h2>Veemon's Armor Digivolutions</h2>
+        <span>a single branch from Veemon, organized by Digi-Egg</span>
+      </div>
+      <div class="armor-grid">
+        <a class="armor-card" id="armor-flamedramon" href="https://digimon.fandom.com/wiki/Flamedramon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Flamedramon_b.jpg" alt="Flamedramon">
+          <div class="armor-name">Flamedramon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Courage</div>
+        </a>
+        <a class="armor-card" id="armor-raidramon" href="https://digimon.fandom.com/wiki/Raidramon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Raidramon_b.jpg" alt="Raidramon">
+          <div class="armor-name">Raidramon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Friendship</div>
+        </a>
+        <a class="armor-card" id="armor-sethmon" href="https://digimon.fandom.com/wiki/Sethmon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Sethmon_b.jpg" alt="Sethmon">
+          <div class="armor-name">Sethmon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Love</div>
+        </a>
+        <a class="armor-card" id="armor-yasyamon" href="https://digimon.fandom.com/wiki/Yasyamon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Yasyamon_b.jpg" alt="Yasyamon">
+          <div class="armor-name">Yasyamon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Sincerity</div>
+        </a>
+        <a class="armor-card" id="armor-honeybeemon" href="https://digimon.fandom.com/wiki/Honeybeemon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Honeybeemon_b.jpg" alt="Honeybeemon">
+          <div class="armor-name">Honeybeemon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Knowledge</div>
+        </a>
+        <a class="armor-card" id="armor-depthmon" href="https://digimon.fandom.com/wiki/Depthmon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Depthmon_b.jpg" alt="Depthmon">
+          <div class="armor-name">Depthmon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Reliability</div>
+        </a>
+        <a class="armor-card" id="armor-sagittarimon" href="https://digimon.fandom.com/wiki/Sagittarimon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Sagittarimon_b.jpg" alt="Sagittarimon">
+          <div class="armor-name">Sagittarimon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Hope</div>
+        </a>
+        <a class="armor-card" id="armor-gargoylemon" href="https://digimon.fandom.com/wiki/Gargoylemon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Gargoylemon_b.jpg" alt="Gargoylemon">
+          <div class="armor-name">Gargoylemon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Light</div>
+        </a>
+        <a class="armor-card" id="armor-kangarumon" href="https://digimon.fandom.com/wiki/Kangarumon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Kangarumon_b.jpg" alt="Kangarumon">
+          <div class="armor-name">Kangarumon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Kindness</div>
+        </a>
+        <a class="armor-card" id="armor-goldveedramon" href="https://digimon.fandom.com/wiki/GoldVeedramon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/GoldVeedramon_b.jpg" alt="GoldVeedramon">
+          <div class="armor-name">GoldVeedramon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Destiny</div>
+        </a>
+        <a class="armor-card" id="armor-magnamon" href="https://digimon.fandom.com/wiki/Magnamon" target="_blank">
+          <span class="rk">Royal Knight</span>
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Magnamon_b.jpg" alt="Magnamon">
+          <div class="armor-name">Magnamon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Miracles</div>
+        </a>
+        <a class="armor-card x-card" id="armor-magnamonx" href="https://digimon.fandom.com/wiki/Magnamon_X" target="_blank">
+          <span class="rk">Royal Knight</span>
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Magnamon_X_b.jpg" alt="Magnamon X">
+          <div class="armor-name">Magnamon X</div>
+          <div class="armor-level">Mega / X</div>
+          <div class="armor-egg">X-Antibody from Magnamon</div>
+        </a>
+      </div>
+    </section>
+
+    <div class="footer">Images and names link to DigimonWiki/Fandom. Credit and license: Fandom community, CC BY-SA unless noted otherwise. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger.</div>
+  </div>
+</div>
+<script src="../../digivolution.js"></script>
+<script>
+DigiTree.mount({
+  legend: [
+    ['normal','Normal evolution'],
+    ['armor','Armor Digivolution'],
+    ['mode','Mode Change'],
+    ['dark','Dark / Virus'],
+    ['dna','DNA / Jogress'],
+    ['x','X-Digivolution']
+  ],
+  columns: [
+    [42,'Fresh'],[304,'In-Training'],[566,'Rookie'],[828,'Champion'],
+    [1090,'Ultimate'],[1352,'Mega'],[1614,'Ultra / Variant']
+  ],
+  nodes: [
+    {id:'chibomon', x:42, y:730, cls:'normal', name:'Chibomon', lvl:'Fresh', note:'Initial form of the line.', wiki:'Chibomon', img:'Chibomon_b.jpg'},
+    {id:'demiveemon', x:304, y:730, cls:'normal', name:'DemiVeemon', lvl:'In-Training', note:'Baby Dragon.', wiki:'DemiVeemon', img:'DemiVeemon_b.jpg'},
+    {id:'veemon', x:566, y:730, cls:'normal', name:'Veemon', lvl:'Rookie', note:'Main branching point.', wiki:'Veemon', img:'Veemon_b.jpg'},
+
+    {id:'veedramon', x:828, y:250, cls:'normal', name:'Veedramon', lvl:'Champion', note:'V-dramon branch.', wiki:'Veedramon', img:'Veedramon_b.jpg'},
+    {id:'aeroveedramon', x:1090, y:250, cls:'normal', name:'AeroVeedramon', lvl:'Ultimate', note:'Veteran Veedramon.', wiki:'AeroVeedramon', img:'AeroVeedramon_b.jpg'},
+    {id:'ulforce', x:1352, y:250, cls:'normal', badge:{cls:'rk', text:'Royal Knight'}, name:'UlforceVeedramon', lvl:'Mega', note:'The fastest of the Royal Knights.', wiki:'UlforceVeedramon', img:'UlforceVeedramon_b.jpg'},
+    {id:'future', x:1614, y:250, cls:'mode', name:'UlforceVeedramon Future Mode', lvl:'Mega', note:'Mode Change (Digimental Code-F).', wiki:'UlforceVeedramon_Future_Mode', img:'UlforceVeedramon_Future_Mode_dm.png'},
+
+    {id:'redvee', x:828, y:490, cls:'dark', name:'RedVeedramon', lvl:'Champion', note:'Rage peak of the dark line.', wiki:'RedVeedramon', img:'RedV-dramon_vg.jpg'},
+    {id:'ulforcex', x:1614, y:490, cls:'x', badge:{cls:'rk', text:'Royal Knight'}, name:'UlforceVeedramon X', lvl:'Mega / X', note:'X-Antibody form.', wiki:'UlforceVeedramon_X', img:'UlforceVeedramon_X_b.jpg'},
+
+    {id:'exveemon', x:828, y:730, cls:'normal', name:'ExVeemon', lvl:'Champion', note:'Veedramon purebred.', wiki:'ExVeemon', img:'ExVeemon_b.jpg'},
+    {id:'paildramon', x:1090, y:730, cls:'dna', name:'Paildramon', lvl:'Ultimate', note:'ExVeemon + Stingmon.', wiki:'Paildramon', img:'Paildramon_b.jpg'},
+    {id:'imperialdm', x:1352, y:730, cls:'normal', name:'Imperialdramon Dragon Mode', lvl:'Mega', note:'Dragon form.', wiki:'Imperialdramon_Dragon_Mode', img:'Imperialdramon_Dragon_Mode_b.jpg'},
+    {id:'imperialfm', x:1614, y:730, cls:'mode', name:'Imperialdramon Fighter Mode', lvl:'Mega', note:'Mode Change: Dragon to Fighter.', wiki:'Imperialdramon_Fighter_Mode', img:'Imperialdramon_Fighter_Mode_b.jpg'},
+    {id:'paladin', x:1876, y:730, cls:'mode', badge:{cls:'rk', text:'Royal Knight'}, name:'Imperialdramon Paladin Mode', lvl:'Ultra', note:'Omnimon data / Omni Sword.', wiki:'Imperialdramon_Paladin_Mode', img:'Imperialdramon_Paladin_Mode_b.jpg'},
+
+    {id:'dinobeemon', x:1090, y:970, cls:'dna', name:'Dinobeemon', lvl:'Ultimate', note:'Stingmon + ExVeemon; insect side dominates.', wiki:'Dinobeemon', img:'Dinobeemon_b.jpg'},
+    {id:'imperialblackdm', x:1352, y:970, cls:'dark', name:'Imperialdramon Dragon Mode (Black)', lvl:'Mega / Virus', note:'Uncontrolled excess of power.', wiki:'Imperialdramon_Dragon_Mode_(Black)', img:'Imperialdramon_Dragon_Mode_%28Black%29_b.jpg'},
+    {id:'imperialblackfm', x:1614, y:970, cls:'dark', name:'Imperialdramon Fighter Mode (Black)', lvl:'Mega / Virus', note:'Shadows / heart of darkness.', wiki:'Imperialdramon_Fighter_Mode_(Black)', img:'Imperialdramon_Fighter_Mode_%28Black%29_b.jpg'}
+  ],
+  edges: function (edge) {
+    edge('chibomon','demiveemon','normal');
+    edge('demiveemon','veemon','normal');
+    edge('veemon','veedramon','normal');
+    edge('veedramon','aeroveedramon','normal');
+    edge('aeroveedramon','ulforce','normal');
+    edge('ulforce','future','mode');
+    edge('ulforce','ulforcex','x');
+    edge('veemon','redvee','dark','right','left', {label:'Loss of control', lx:799, ly:705});
+    edge('veemon','exveemon','normal');
+
+    edge('exveemon','paildramon','dna');
+    edge('exveemon','dinobeemon','dna');
+
+    edge('paildramon','imperialdm','normal');
+    edge('imperialdm','imperialfm','mode');
+    edge('imperialfm','paladin','normal');
+    edge('imperialdm','imperialblackdm','dark','bottom','top', {shape:'vertical', label:'Loss of control', lx:1454, ly:949});
+    edge('imperialblackdm','imperialblackfm','dark');
+
+    // connector to the Armor panel (kept: the panel is an appendix, not a normal edge)
+    edge('veemon','armor-panel','armor','bottom','top', {shape:'vertical', toX:668, label:'Digi-Eggs', lx:668, ly:1310, width:3});
+    edge('armor-magnamon','armor-magnamonx','x','right','left', {width:3});
+  }
+});
+</script>
+</body>
+</html>

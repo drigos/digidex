@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Agunimon: Spirit Evolution tree</title>
+<link rel="stylesheet" href="../../digivolution.css" />
+<style>
+  /* page-specific layout */
+  .infographic { width:1598px; height:1506px; }
+  .columns { top:200px; }
+  /* both reference panels are right-aligned and stacked (narrow DNA on top, wide Unified below) */
+  .jogress-panel { top:711px; width:248px; left:auto; right:24px; }
+  .partner-panel { top:1104px; width:1128px; left:auto; right:24px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="backnav" href="index.html"><span class="arrow">&#8592;</span> Legendary Warriors</a>
+  <div class="infographic" id="canvas">
+    <div class="title">
+      <h1>Agunimon: Spirit Evolution tree</h1>
+      <div class="subtitle">Takuya Kanbara's Warrior of Flame line: from the ancestral AncientGreymon and the Child form Flamemon up through the Human and Beast Spirits, the Fusion, the Unified EmperorGreymon and the collective Susanoomon.</div>
+    </div>
+
+    <div class="legend">
+      <div class="legend-title">Spirit triggers</div>
+      <div class="legend-grid"></div>
+    </div>
+
+    <div class="columns"></div>
+
+    <svg id="edges" viewBox="0 0 1598 1506" preserveAspectRatio="none"></svg>
+    <div id="labels"></div>
+    <div id="nodes"></div>
+
+    <section class="jogress-panel" id="dna-panel">
+      <div class="jogress-panel-title">
+        <h2>Susanoomon: DNA Digivolve</h2>
+        <span>Koji's MagnaGarurumon completes the union</span>
+      </div>
+      <div class="jogress-body">
+        <a class="jogress-card" href="https://digimon.fandom.com/wiki/MagnaGarurumon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/MagnaGarurumon_b.jpg" alt="MagnaGarurumon">
+          <div class="jogress-name">MagnaGarurumon</div>
+          <div class="jogress-level">Unified (Koji)</div>
+          <div class="jogress-fuse">+ EmperorGreymon = Susanoomon</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="partner-panel" id="unified-panel">
+      <div class="partner-panel-title">
+        <h2>EmperorGreymon: Unified Spirit</h2>
+        <span>Takuya unifies the Spirits (Human + Beast) of five Legendary Warriors</span>
+      </div>
+      <div class="partner-grid">
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/AncientGreymon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/AncientGreymon_b.jpg" alt="AncientGreymon">
+          <div class="partner-name">AncientGreymon</div>
+          <div class="partner-level">Flame</div>
+          <div class="partner-fuse">Human + Beast Spirit (Takuya's own)</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/AncientVolcanomon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/AncientVolcanomon_b.jpg" alt="AncientVolcanomon">
+          <div class="partner-name">AncientVolcanomon</div>
+          <div class="partner-level">Earth</div>
+          <div class="partner-fuse">Human + Beast Spirit</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/AncientTroiamon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/AncientTroiamon_b.jpg" alt="AncientTroiamon">
+          <div class="partner-name">AncientTroiamon</div>
+          <div class="partner-level">Wood</div>
+          <div class="partner-fuse">Human + Beast Spirit</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/AncientMegatheriummon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/AncientMegatheriummon_b.jpg" alt="AncientMegatheriummon">
+          <div class="partner-name">AncientMegatheriummon</div>
+          <div class="partner-level">Ice</div>
+          <div class="partner-fuse">Human + Beast Spirit</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/AncientKazemon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/AncientKazemon_b.jpg" alt="AncientKazemon">
+          <div class="partner-name">AncientKazemon</div>
+          <div class="partner-level">Wind</div>
+          <div class="partner-fuse">Human + Beast Spirit</div>
+        </a>
+      </div>
+    </section>
+
+    <div class="footer">Images and names link to DigimonWiki/Fandom. Credit and license: Fandom community, CC BY-SA unless noted otherwise. Frontier has no partner Digimon: Takuya's Child form Flamemon Spirit-Evolves into these forms; AncientGreymon is the ancestral Warrior of Flame (lore links, not steps) and the origin of both the Human line (via Flamemon) and the Beast Spirit. Aldamon fuses the two Flame Spirits; EmperorGreymon unifies five Warriors' Spirits (see panel); Susanoomon is EmperorGreymon DNA-Digivolved with Koji's MagnaGarurumon (see panel), uniting all ten Legendary Warriors.</div>
+  </div>
+</div>
+<script src="../../digivolution.js"></script>
+<script>
+DigiTree.mount({
+  legend: [
+    ['normal','Spirit Evolution'],
+    ['mode','Slide Evolution'],
+    ['dna','Fusion / DNA Digivolve'],
+    ['burst','Unified Spirit'],
+    ['lore','Ancestral link']
+  ],
+  columns: [
+    [42,'Ancestor'],[304,'Child'],[566,'Human / Beast Spirit'],[828,'Fusion'],[1090,'Unified Spirit'],[1352,'Susanoomon']
+  ],
+  nodes: [
+    // ancestral origin (far left): ancient Warrior of Flame, source of both branches
+    {id:'ancientgreymon', x:42, y:370, cls:'lore', badge:{cls:'lw', text:'Legendary Warrior'}, name:'AncientGreymon', lvl:'Ancient', note:'Ancient Warrior of Flame; ancestor of the entire Flame line.', wiki:'AncientGreymon', img:'AncientGreymon_b.jpg'},
+
+    // child form (Takuya's Rookie-level Digimon), level with the Human Spirit
+    {id:'flamemon', x:304, y:250, cls:'normal', name:'Flamemon', lvl:'Child', note:'Takuya’s Child form; Spirit-Evolves into Agunimon.', wiki:'Flamemon', img:'Flamemon_b.jpg'},
+
+    // spirit column (Human + Beast, slide-linked)
+    {id:'agunimon', x:566, y:250, cls:'normal', name:'Agunimon', lvl:'Human Spirit', note:'Takuya’s Human Spirit of Flame.', wiki:'Agunimon', img:'Agunimon_b.jpg'},
+    {id:'burninggreymon', x:566, y:490, cls:'mode', name:'BurningGreymon', lvl:'Beast Spirit', note:'Beast Spirit of Flame, via Slide Evolution.', wiki:'BurningGreymon', img:'BurningGreymon_b.jpg'},
+
+    // fusion
+    {id:'aldamon', x:828, y:370, cls:'dna', name:'Aldamon', lvl:'Fusion', note:'Takuya’s Double Spirit form.', wiki:'Aldamon', img:'Aldamon_b.jpg'},
+
+    // unified
+    {id:'emperorgreymon', x:1090, y:370, cls:'burst', name:'EmperorGreymon', lvl:'Unified', note:'Takuya’s Unified Spirit form (see panel).', wiki:'EmperorGreymon', img:'EmperorGreymon_b.jpg'},
+
+    // collective pinnacle
+    {id:'susanoomon', x:1352, y:370, cls:'dna', name:'Susanoomon', lvl:'Susanoomon', note:'The Ten Legendary Warriors united (see panel).', wiki:'Susanoomon', img:'Susanoomon_b.jpg'}
+  ],
+  edges: function (edge) {
+    // ancestral (lore) fan: the ancient origin ties to the Child root and the Beast Spirit, no arrowheads
+    edge('ancientgreymon','flamemon','lore','right','left',{noArrow:true});
+    edge('ancientgreymon','burninggreymon','lore','right','left',{noArrow:true});
+
+    // child Spirit-Evolves into the Human Spirit
+    edge('flamemon','agunimon','normal','right','left');
+
+    // slide between Human and Beast
+    edge('agunimon','burninggreymon','mode','bottom','top',{shape:'vertical', startArrow:true, label:'Slide', lx:668, ly:469});
+
+    // fusion of both spirits
+    edge('agunimon','aldamon','dna','right','left');
+    edge('burninggreymon','aldamon','dna','right','left');
+
+    // unified, then DNA Digivolve with MagnaGarurumon
+    edge('aldamon','emperorgreymon','burst');
+    edge('emperorgreymon','susanoomon','dna','right','left');
+
+    // connectors from the top nodes down to their reference panels
+    edge('emperorgreymon','unified-panel','burst','bottom','top',{shape:'vertical', toX:1192});
+    edge('susanoomon','dna-panel','dna','bottom','top',{shape:'vertical', toX:1454});
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Digidex</title>
+<link rel="stylesheet" href="digivolution.css" />
+<style>
+  /* top-level generation selection layout (self-contained; reuses the shared tokens from digivolution.css) */
+  .wrap { padding: 48px 22px 56px; max-width: 1400px; margin: 0 auto; overflow: visible; }
+
+  .hero { text-align: center; margin: 18px auto 48px; max-width: 860px; }
+  .hero .kicker {
+    display: inline-block; margin-bottom: 14px; padding: 6px 16px; border-radius: 999px;
+    font-size: 12.5px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;
+    color: #cfe6ff; background: rgba(88,166,255,.14); border: 1px solid rgba(88,166,255,.34);
+  }
+  .hero h1 {
+    font-size: 60px; line-height: 1.03; letter-spacing: -1.8px; margin: 0 0 14px;
+    background: linear-gradient(180deg, #ffffff, #a9c7ee);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero p { color: var(--muted); font-size: 17px; line-height: 1.5; margin: 0; }
+
+  /* 5 generations -> flex so the incomplete last row centers (3 + 2) */
+  .grid { display: flex; flex-wrap: wrap; gap: 22px; justify-content: center; }
+  .card { flex: 1 1 240px; max-width: 288px; }
+  @media (max-width: 820px) { .hero h1 { font-size: 42px; } }
+
+  .card {
+    position: relative; display: flex; flex-direction: column; overflow: hidden;
+    padding: 20px 18px 18px; border-radius: 22px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: linear-gradient(180deg, rgba(16,43,76,.96), rgba(7,19,36,.98));
+    box-shadow: 0 16px 40px rgba(0,0,0,.36);
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  /* accent glow strip at the top, tinted by the generation's signature color (--accent) */
+  .card::before {
+    content: ""; position: absolute; inset: 0 0 auto 0; height: 4px;
+    background: var(--accent); box-shadow: 0 0 18px var(--accent);
+  }
+  .card::after {
+    content: ""; position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
+    width: 200px; height: 200px; border-radius: 50%;
+    background: radial-gradient(circle, var(--accent), transparent 65%);
+    opacity: .16; pointer-events: none; transition: opacity .18s ease;
+  }
+  a.card:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--accent) 60%, rgba(255,255,255,.2));
+    box-shadow: 0 26px 60px rgba(0,0,0,.5), 0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent);
+  }
+  a.card:hover::after { opacity: .32; }
+
+  .thumb {
+    position: relative; z-index: 1; height: 150px; border-radius: 16px; background: #fff;
+    padding: 12px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center;
+  }
+  .thumb img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+  .season { position: relative; z-index: 1; font-size: 11.5px; font-weight: 900; letter-spacing: 1.2px;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+  .series { position: relative; z-index: 1; font-size: 21px; font-weight: 950; letter-spacing: -.5px; margin-bottom: 14px; }
+
+  /* meta row: partner-group pill (accent) + available-lines pill (neutral) */
+  .meta { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 16px; }
+  .group {
+    display: inline-flex; align-items: center;
+    padding: 5px 11px; border-radius: 999px; font-size: 11.5px; font-weight: 900;
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 16%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 42%, transparent);
+  }
+  .count {
+    display: inline-flex; align-items: center;
+    padding: 5px 11px; border-radius: 999px; font-size: 11.5px; font-weight: 900;
+    color: #d6e3f4; background: rgba(3,14,27,.6); border: 1px solid rgba(255,255,255,.16);
+  }
+
+  .cta {
+    /* pinned to the card bottom so the row of CTAs stays aligned when pills wrap */
+    position: relative; z-index: 1; margin-top: auto; padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.09);
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 13px; font-weight: 900; color: #dce9fb;
+  }
+  .cta .arrow { transition: transform .18s ease; color: var(--accent); }
+  a.card:hover .cta .arrow { transform: translateX(5px); }
+
+  .foot { text-align: center; color: rgba(225,238,255,.6); font-size: 12.5px; line-height: 1.5; margin-top: 44px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <span class="kicker">Evolution-tree infographics</span>
+    <h1>Digidex</h1>
+    <p>Evolution trees for the partner Digimon of the classic anime generations: every stage from Fresh to Mega and beyond, with the X, DNA/Jogress, Mode Change, Virus, Armor, Bond and Burst branches. Pick a generation to open its selection screen.</p>
+  </header>
+
+  <div class="grid">
+
+    <a class="card" href="evolution-lines/gen-1-adventure/index.html" style="--accent:#ff7a1a">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Agumon_b.jpg" alt="Agumon"></div>
+      <div class="season">Season 1 &middot; 1999</div>
+      <div class="series">Digimon Adventure</div>
+      <div class="meta">
+        <span class="group">DigiDestined</span>
+        <span class="count">6 / 8 lines</span>
+      </div>
+      <div class="cta"><span>Open selection screen</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="evolution-lines/gen-2-adventure-02/index.html" style="--accent:#3aa0ff">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Veemon_b.jpg" alt="Veemon"></div>
+      <div class="season">Season 2 &middot; 2000</div>
+      <div class="series">Digimon Adventure 02</div>
+      <div class="meta">
+        <span class="group">DigiDestined 02</span>
+        <span class="count">1 / 6 lines</span>
+      </div>
+      <div class="cta"><span>Open selection screen</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="evolution-lines/gen-3-tamers/index.html" style="--accent:#e5484d">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Guilmon_b.jpg" alt="Guilmon"></div>
+      <div class="season">Season 3 &middot; 2001</div>
+      <div class="series">Digimon Tamers</div>
+      <div class="meta">
+        <span class="group">The Tamers</span>
+        <span class="count">1 / 8 lines</span>
+      </div>
+      <div class="cta"><span>Open selection screen</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="evolution-lines/gen-4-frontier/index.html" style="--accent:#b084f5">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Agunimon_b.jpg" alt="Agunimon"></div>
+      <div class="season">Season 4 &middot; 2002</div>
+      <div class="series">Digimon Frontier</div>
+      <div class="meta">
+        <span class="group">Legendary Warriors</span>
+        <span class="count">2 / 10 lines</span>
+      </div>
+      <div class="cta"><span>Open selection screen</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="evolution-lines/gen-5-data-squad/index.html" style="--accent:#f0b429">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Agumon_(2006_anime)_b.jpg" alt="Agumon (2006 anime)"></div>
+      <div class="season">Season 5 &middot; 2006</div>
+      <div class="series">Digimon Data Squad</div>
+      <div class="meta">
+        <span class="group">The DATS Squad</span>
+        <span class="count">1 / 7 lines</span>
+      </div>
+      <div class="cta"><span>Open selection screen</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+  </div>
+
+  <p class="foot">Images and names link to DigimonWiki/Fandom (CC BY-SA unless noted otherwise).</p>
+
+</div>
+</body>
+</html>

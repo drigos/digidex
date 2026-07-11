@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gomamon: evolution tree</title>
+<link rel="stylesheet" href="../../digivolution.css" />
+<style>
+  /* page-specific layout */
+  .infographic { width:1860px; height:1112px; }
+  .columns { top:200px; }
+  .partner-panel { top:710px; width:1348px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="backnav" href="index.html"><span class="arrow">&#8592;</span> DigiDestined</a>
+  <div class="infographic" id="canvas">
+    <div class="title">
+      <h1>Gomamon: evolution tree</h1>
+      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega hierarchy, with the X-Antibody branch (Gomamon X) and the collective composition that forms Omnimon Merciful Mode in Adventure tri.</div>
+    </div>
+
+    <div class="legend">
+      <div class="legend-title">Digivolution triggers</div>
+      <div class="legend-grid"></div>
+    </div>
+
+    <div class="columns"></div>
+
+    <svg id="edges" viewBox="0 0 1860 1112" preserveAspectRatio="none"></svg>
+    <div id="labels"></div>
+    <div id="nodes"></div>
+
+    <section class="partner-panel" id="composition-panel">
+      <div class="partner-panel-title">
+        <h2>Collective composition (Adventure tri.)</h2>
+        <span>Vikemon joins Omnimon and the other partners' Mega forms to compose Omnimon Merciful Mode</span>
+      </div>
+      <div class="partner-grid">
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Omnimon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Omnimon_b.jpg" alt="Omnimon">
+          <div class="partner-name">Omnimon</div>
+          <div class="partner-level">Ultra</div>
+          <div class="partner-fuse">Royal Knight core</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Seraphimon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Seraphimon_b.jpg" alt="Seraphimon">
+          <div class="partner-name">Seraphimon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Angel (holy) member</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Magnadramon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Magnadramon_b.jpg" alt="Magnadramon">
+          <div class="partner-name">Magnadramon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Holy dragon member</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Rosemon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Rosemon_b.jpg" alt="Rosemon">
+          <div class="partner-name">Rosemon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Fairy / plant member</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/HerculesKabuterimon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/HerculesKabuterimon_b.jpg" alt="HerculesKabuterimon">
+          <div class="partner-name">HerculesKabuterimon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Insect titan member</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Phoenixmon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Phoenixmon_b.jpg" alt="Phoenixmon">
+          <div class="partner-name">Phoenixmon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Holy beast member</div>
+        </a>
+      </div>
+    </section>
+
+    <div class="footer">Images and names link to DigimonWiki/Fandom. Credit and license: Fandom community, CC BY-SA unless noted otherwise. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. Omnimon Merciful Mode is a collective composition (Adventure tri.): Vikemon plus Omnimon, Rosemon, HerculesKabuterimon, Phoenixmon, Seraphimon and Magnadramon.</div>
+  </div>
+</div>
+<script src="../../digivolution.js"></script>
+<script>
+DigiTree.mount({
+  legend: [
+    ['normal','Normal evolution'],
+    ['x','X-Digivolution'],
+    ['dna','DNA / Jogress']
+  ],
+  columns: [
+    [42,'Fresh'],[304,'In-Training'],[566,'Rookie'],[828,'Champion'],
+    [1090,'Ultimate'],[1352,'Mega'],[1614,'Ultra / Variant']
+  ],
+  nodes: [
+    // X-Antibody branch (top row)
+    {id:'gomamonx', x:566, y:250, cls:'x', name:'Gomamon X', lvl:'Rookie / X', note:'X-Antibody form.', wiki:'Gomamon_X', img:'Gomamon_X_b.jpg'},
+
+    // main spine
+    {id:'pichimon', x:42, y:490, cls:'normal', name:'Pichimon', lvl:'Fresh', note:'Initial form of the line.', wiki:'Pichimon', img:'Pichimon_b.jpg'},
+    {id:'bukamon', x:304, y:490, cls:'normal', name:'Bukamon', lvl:'In-Training', note:'Seadramon-baby form.', wiki:'Bukamon', img:'Bukamon_b.jpg'},
+    {id:'gomamon', x:566, y:490, cls:'normal', name:'Gomamon', lvl:'Rookie', note:'Main branching point.', wiki:'Gomamon', img:'Gomamon_b.jpg'},
+    {id:'ikkakumon', x:828, y:490, cls:'normal', name:'Ikkakumon', lvl:'Champion', note:'Horned sea beast.', wiki:'Ikkakumon', img:'Ikkakumon_b.jpg'},
+    {id:'zudomon', x:1090, y:490, cls:'normal', name:'Zudomon', lvl:'Ultimate', note:'Hammer-wielding shell warrior.', wiki:'Zudomon', img:'Zudomon_b.jpg'},
+    {id:'vikemon', x:1352, y:490, cls:'normal', name:'Vikemon', lvl:'Mega', note:'Beast-warrior peak of the classic line.', wiki:'Vikemon', img:'Vikemon_b.jpg'},
+    {id:'omnimonmerciful', x:1614, y:490, cls:'dna', name:'Omnimon Merciful Mode', lvl:'Ultra', note:'Collective composition.', wiki:'Omnimon_Merciful_Mode', img:'Omnimon_Merciful_Mode_b.jpg'}
+  ],
+  edges: function (edge) {
+    // main spine
+    edge('pichimon','bukamon','normal');
+    edge('bukamon','gomamon','normal');
+    edge('gomamon','ikkakumon','normal');
+    edge('ikkakumon','zudomon','normal');
+    edge('zudomon','vikemon','normal','right','left');
+    edge('vikemon','omnimonmerciful','dna','right','left');
+
+    // X-Antibody branch
+    edge('gomamon','gomamonx','x','top','bottom',{shape:'vertical'});
+  }
+});
+</script>
+</body>
+</html>

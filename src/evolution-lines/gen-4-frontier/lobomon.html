@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lobomon: Spirit Evolution tree</title>
+<link rel="stylesheet" href="../../digivolution.css" />
+<style>
+  /* page-specific layout */
+  .infographic { width:1598px; height:1506px; }
+  .columns { top:200px; }
+  /* both reference panels are right-aligned and stacked (narrow DNA on top, wide Unified below) */
+  .jogress-panel { top:711px; width:248px; left:auto; right:24px; }
+  .partner-panel { top:1104px; width:1128px; left:auto; right:24px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="backnav" href="index.html"><span class="arrow">&#8592;</span> Legendary Warriors</a>
+  <div class="infographic" id="canvas">
+    <div class="title">
+      <h1>Lobomon: Spirit Evolution tree</h1>
+      <div class="subtitle">Koji Minamoto's Warrior of Light line: from the ancestral AncientGarurumon and the Child form Strabimon up through the Human and Beast Spirits, the Fusion, the Unified MagnaGarurumon and the collective Susanoomon.</div>
+    </div>
+
+    <div class="legend">
+      <div class="legend-title">Spirit triggers</div>
+      <div class="legend-grid"></div>
+    </div>
+
+    <div class="columns"></div>
+
+    <svg id="edges" viewBox="0 0 1598 1506" preserveAspectRatio="none"></svg>
+    <div id="labels"></div>
+    <div id="nodes"></div>
+
+    <section class="jogress-panel" id="dna-panel">
+      <div class="jogress-panel-title">
+        <h2>Susanoomon: DNA Digivolve</h2>
+        <span>Takuya's EmperorGreymon completes the union</span>
+      </div>
+      <div class="jogress-body">
+        <a class="jogress-card" href="https://digimon.fandom.com/wiki/EmperorGreymon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/EmperorGreymon_b.jpg" alt="EmperorGreymon">
+          <div class="jogress-name">EmperorGreymon</div>
+          <div class="jogress-level">Unified (Takuya)</div>
+          <div class="jogress-fuse">+ MagnaGarurumon = Susanoomon</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="partner-panel" id="unified-panel">
+      <div class="partner-panel-title">
+        <h2>MagnaGarurumon: Unified Spirit</h2>
+        <span>Koji unifies the Spirits (Human + Beast) of five Legendary Warriors</span>
+      </div>
+      <div class="partner-grid">
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/AncientGarurumon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/AncientGarurumon_b.jpg" alt="AncientGarurumon">
+          <div class="partner-name">AncientGarurumon</div>
+          <div class="partner-level">Light</div>
+          <div class="partner-fuse">Human + Beast Spirit (Koji's own)</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/AncientBeetlemon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/AncientBeetlemon_b.jpg" alt="AncientBeetlemon">
+          <div class="partner-name">AncientBeetlemon</div>
+          <div class="partner-level">Thunder</div>
+          <div class="partner-fuse">Human + Beast Spirit</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/AncientSphinxmon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/AncientSphinxmon_b.jpg" alt="AncientSphinxmon">
+          <div class="partner-name">AncientSphinxmon</div>
+          <div class="partner-level">Darkness</div>
+          <div class="partner-fuse">Human + Beast Spirit</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/AncientMermaidmon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/AncientMermaidmon_b.jpg" alt="AncientMermaidmon">
+          <div class="partner-name">AncientMermaidmon</div>
+          <div class="partner-level">Water</div>
+          <div class="partner-fuse">Human + Beast Spirit</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/AncientWisemon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/AncientWisemon_b.jpg" alt="AncientWisemon">
+          <div class="partner-name">AncientWisemon</div>
+          <div class="partner-level">Steel</div>
+          <div class="partner-fuse">Human + Beast Spirit</div>
+        </a>
+      </div>
+    </section>
+
+    <div class="footer">Images and names link to DigimonWiki/Fandom. Credit and license: Fandom community, CC BY-SA unless noted otherwise. Frontier has no partner Digimon: Koji's Child form Strabimon Spirit-Evolves into these forms; AncientGarurumon is the ancestral Warrior of Light (lore links, not steps) and the origin of both the Human line (via Strabimon) and the Beast Spirit. BeoWolfmon fuses the two Light Spirits; MagnaGarurumon unifies five Warriors' Spirits (see panel); Susanoomon is MagnaGarurumon DNA-Digivolved with Takuya's EmperorGreymon (see panel), uniting all ten Legendary Warriors.</div>
+  </div>
+</div>
+<script src="../../digivolution.js"></script>
+<script>
+DigiTree.mount({
+  legend: [
+    ['normal','Spirit Evolution'],
+    ['mode','Slide Evolution'],
+    ['dna','Fusion / DNA Digivolve'],
+    ['burst','Unified Spirit'],
+    ['lore','Ancestral link']
+  ],
+  columns: [
+    [42,'Ancestor'],[304,'Child'],[566,'Human / Beast Spirit'],[828,'Fusion'],[1090,'Unified Spirit'],[1352,'Susanoomon']
+  ],
+  nodes: [
+    // ancestral origin (far left): ancient Warrior of Light, source of both branches
+    {id:'ancientgarurumon', x:42, y:370, cls:'lore', badge:{cls:'lw', text:'Legendary Warrior'}, name:'AncientGarurumon', lvl:'Ancient', note:'Ancient Warrior of Light; ancestor of the entire Light line.', wiki:'AncientGarurumon', img:'AncientGarurumon_b.jpg'},
+
+    // child form (Koji's Rookie-level Digimon), level with the Human Spirit
+    {id:'strabimon', x:304, y:250, cls:'normal', name:'Strabimon', lvl:'Child', note:'Koji&rsquo;s Child form; Spirit-Evolves into Lobomon.', wiki:'Strabimon', img:'Strabimon_b.jpg'},
+
+    // spirit column (Human + Beast, slide-linked)
+    {id:'lobomon', x:566, y:250, cls:'normal', name:'Lobomon', lvl:'Human Spirit', note:'Koji&rsquo;s Human Spirit of Light.', wiki:'Lobomon', img:'Lobomon_b.jpg'},
+    {id:'kendogarurumon', x:566, y:490, cls:'mode', name:'KendoGarurumon', lvl:'Beast Spirit', note:'Beast Spirit of Light, via Slide Evolution.', wiki:'KendoGarurumon', img:'KendoGarurumon_b.jpg'},
+
+    // fusion
+    {id:'beowolfmon', x:828, y:370, cls:'dna', name:'BeoWolfmon', lvl:'Fusion', note:'Koji&rsquo;s Double Spirit form.', wiki:'BeoWolfmon', img:'BeoWolfmon_b.jpg'},
+
+    // unified
+    {id:'magnagarurumon', x:1090, y:370, cls:'burst', name:'MagnaGarurumon', lvl:'Unified', note:'Koji&rsquo;s Unified Spirit form (see panel).', wiki:'MagnaGarurumon', img:'MagnaGarurumon_b.jpg'},
+
+    // collective pinnacle
+    {id:'susanoomon', x:1352, y:370, cls:'dna', name:'Susanoomon', lvl:'Susanoomon', note:'The Ten Legendary Warriors united (see panel).', wiki:'Susanoomon', img:'Susanoomon_b.jpg'}
+  ],
+  edges: function (edge) {
+    // ancestral (lore) fan: the ancient origin ties to the Child root and the Beast Spirit, no arrowheads
+    edge('ancientgarurumon','strabimon','lore','right','left',{noArrow:true});
+    edge('ancientgarurumon','kendogarurumon','lore','right','left',{noArrow:true});
+
+    // child Spirit-Evolves into the Human Spirit
+    edge('strabimon','lobomon','normal','right','left');
+
+    // slide between Human and Beast
+    edge('lobomon','kendogarurumon','mode','bottom','top',{shape:'vertical', startArrow:true, label:'Slide', lx:668, ly:469});
+
+    // fusion of both spirits
+    edge('lobomon','beowolfmon','dna','right','left');
+    edge('kendogarurumon','beowolfmon','dna','right','left');
+
+    // unified, then DNA Digivolve with EmperorGreymon
+    edge('beowolfmon','magnagarurumon','burst');
+    edge('magnagarurumon','susanoomon','dna','right','left');
+
+    // connectors from the top nodes down to their reference panels
+    edge('magnagarurumon','unified-panel','burst','bottom','top',{shape:'vertical', toX:1192});
+    edge('susanoomon','dna-panel','dna','bottom','top',{shape:'vertical', toX:1454});
+  }
+});
+</script>
+</body>
+</html>
