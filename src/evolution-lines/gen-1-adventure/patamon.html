@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Patamon: evolution tree</title>
+<link rel="stylesheet" href="../../digivolution.css" />
+<style>
+  /* page-specific layout */
+  .infographic { width:1860px; height:2630px; }
+  .columns { top:200px; }
+  .jogress-panel { top:1910px; width:248px; }
+  .partner-panel { top:1910px; width:1348px; left:auto; right:24px; }
+  .armor-panel { top:2263px; width:1812px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="backnav" href="index.html"><span class="arrow">&#8592;</span> DigiDestined</a>
+  <div class="infographic" id="canvas">
+    <div class="title">
+      <h1>Patamon: evolution tree</h1>
+      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega -> Ultra hierarchy, with the MagnaAngemon Priest Mode change, the Goldramon holy-dragon branch (2020 reboot), the fallen angel dark branch up to the Demon Lord Daemon, the Shakkoumon Jogress, Patamon's Armor Digivolutions and the collective composition that forms Omnimon Merciful Mode.</div>
+    </div>
+
+    <div class="legend">
+      <div class="legend-title">Digivolution triggers</div>
+      <div class="legend-grid"></div>
+    </div>
+
+    <div class="columns"></div>
+
+    <svg id="edges" viewBox="0 0 1860 2630" preserveAspectRatio="none"></svg>
+    <div id="labels"></div>
+    <div id="nodes"></div>
+
+    <section class="jogress-panel">
+      <div class="jogress-panel-title">
+        <h2>Jogress partner</h2>
+        <span>external Armadillomon line</span>
+      </div>
+      <div class="jogress-body">
+        <a class="jogress-card" href="https://digimon.fandom.com/wiki/Ankylomon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Ankylomon_b.jpg" alt="Ankylomon">
+          <div class="jogress-name">Ankylomon</div>
+          <div class="jogress-level">Champion</div>
+          <div class="jogress-fuse">+ Angemon = Shakkoumon</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="armor-panel" id="armor-panel">
+      <div class="armor-panel-title">
+        <h2>Patamon's Armor Digivolutions</h2>
+        <span>a single branch from Patamon, organized by Digi-Egg</span>
+      </div>
+      <div class="armor-grid">
+        <a class="armor-card" id="armor-baromon" href="https://digimon.fandom.com/wiki/Baromon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Baromon_b.jpg" alt="Baromon">
+          <div class="armor-name">Baromon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Courage</div>
+        </a>
+        <a class="armor-card" id="armor-stegomon" href="https://digimon.fandom.com/wiki/Stegomon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Stegomon_b.jpg" alt="Stegomon">
+          <div class="armor-name">Stegomon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Friendship</div>
+        </a>
+        <a class="armor-card" id="armor-pipismon" href="https://digimon.fandom.com/wiki/Pipismon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Pipismon_b.jpg" alt="Pipismon">
+          <div class="armor-name">Pipismon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Love</div>
+        </a>
+        <a class="armor-card" id="armor-ponchomon" href="https://digimon.fandom.com/wiki/Ponchomon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Ponchomon_b.jpg" alt="Ponchomon">
+          <div class="armor-name">Ponchomon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Sincerity</div>
+        </a>
+        <a class="armor-card" id="armor-mothmon" href="https://digimon.fandom.com/wiki/Mothmon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Mothmon_b.jpg" alt="Mothmon">
+          <div class="armor-name">Mothmon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Knowledge</div>
+        </a>
+        <a class="armor-card" id="armor-mantaraymon" href="https://digimon.fandom.com/wiki/Mantaraymon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Mantaraymon_b.jpg" alt="Mantaraymon">
+          <div class="armor-name">Mantaraymon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Reliability</div>
+        </a>
+        <a class="armor-card" id="armor-pegasusmon" href="https://digimon.fandom.com/wiki/Pegasusmon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Pegasusmon_b.jpg" alt="Pegasusmon">
+          <div class="armor-name">Pegasusmon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Hope</div>
+        </a>
+        <a class="armor-card x-card" id="armor-pegasusmonx" href="https://digimon.fandom.com/wiki/Pegasusmon_X" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Pegasusmon_X_b.jpg" alt="Pegasusmon X">
+          <div class="armor-name">Pegasusmon X</div>
+          <div class="armor-level">Armor / X</div>
+          <div class="armor-egg">X-Antibody from Pegasusmon</div>
+        </a>
+        <a class="armor-card" id="armor-manbomon" href="https://digimon.fandom.com/wiki/Manbomon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Manbomon_b.jpg" alt="Manbomon">
+          <div class="armor-name">Manbomon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Light</div>
+        </a>
+        <a class="armor-card" id="armor-prairiemon" href="https://digimon.fandom.com/wiki/Prairiemon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Prairiemon_b.jpg" alt="Prairiemon">
+          <div class="armor-name">Prairiemon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Kindness</div>
+        </a>
+        <a class="armor-card" id="armor-rhinomon" href="https://digimon.fandom.com/wiki/Rhinomon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Rhinomon_b.jpg" alt="Rhinomon">
+          <div class="armor-name">Rhinomon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Miracles / Destiny</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="partner-panel" id="composition-panel">
+      <div class="partner-panel-title">
+        <h2>Collective composition (Adventure tri.)</h2>
+        <span>Seraphimon joins Omnimon and the other partners' Mega forms to compose Omnimon Merciful Mode</span>
+      </div>
+      <div class="partner-grid">
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Omnimon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Omnimon_b.jpg" alt="Omnimon">
+          <div class="partner-name">Omnimon</div>
+          <div class="partner-level">Ultra</div>
+          <div class="partner-fuse">Royal Knight core</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Phoenixmon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Phoenixmon_b.jpg" alt="Phoenixmon">
+          <div class="partner-name">Phoenixmon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Holy bird member</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Magnadramon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Magnadramon_b.jpg" alt="Magnadramon">
+          <div class="partner-name">Magnadramon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Holy dragon member</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Rosemon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Rosemon_b.jpg" alt="Rosemon">
+          <div class="partner-name">Rosemon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Fairy / plant member</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/HerculesKabuterimon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/HerculesKabuterimon_b.jpg" alt="HerculesKabuterimon">
+          <div class="partner-name">HerculesKabuterimon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Insect titan member</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Vikemon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Vikemon_b.jpg" alt="Vikemon">
+          <div class="partner-name">Vikemon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Beast warrior member</div>
+        </a>
+      </div>
+    </section>
+
+    <div class="footer">Images and names link to DigimonWiki/Fandom. Credit and license: Fandom community, CC BY-SA unless noted otherwise. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. Tsukaimon is a subspecies of Patamon (Normal branch) that opens the fallen angel line as Devimon's familiar; the Angemon to Devimon link is the corruption arc of the 2020 reboot. Seraphimon's official profile states that Daemon is said to have originally been a Seraphimon that fell to the Dark Area (the red Seraphimon to Daemon arrow); Daemon (Mantled) is its cloaked Adventure 02 look, a design variant rather than an evolution, and Daemon (Ultra) is the V-Tamer Super Ultimate form reached by absorbing Arkadimon's data. Omnimon Merciful Mode is a collective composition (Adventure tri.): Seraphimon plus Omnimon, Phoenixmon, Magnadramon, Rosemon, HerculesKabuterimon and Vikemon. Rhinomon answers to both the Digi-Egg of Miracles and the Digi-Egg of Destiny.</div>
+  </div>
+</div>
+<script src="../../digivolution.js"></script>
+<script>
+DigiTree.mount({
+  legend: [
+    ['normal','Normal evolution'],
+    ['x','X-Digivolution'],
+    ['dna','DNA / Jogress'],
+    ['mode','Mode Change'],
+    ['dark','Dark / Virus'],
+    ['armor','Armor Digivolution']
+  ],
+  columns: [
+    [42,'Fresh'],[304,'In-Training'],[566,'Rookie'],[828,'Champion'],
+    [1090,'Ultimate'],[1352,'Mega'],[1614,'Ultra / Variant']
+  ],
+  nodes: [
+    // X forms sit directly above their base forms
+    {id:'goldramonx', x:1352, y:250, cls:'x', name:'Goldramon X', lvl:'Mega / X', note:'X-Antibody form.', wiki:'Goldramon_X', img:'Goldramon_X_b.jpg'},
+    {id:'tokomonx', x:304, y:490, cls:'x', name:'Tokomon X', lvl:'In-Training / X', note:'X-Antibody form.', wiki:'Tokomon_X', img:'Tokomon_X_b.jpg'},
+    {id:'goldramon', x:1352, y:490, cls:'normal', name:'Goldramon', lvl:'Mega', note:'Holy dragon; one of the Four Great Dragons.', wiki:'Goldramon', img:'Goldramon_b.jpg'},
+
+    // main spine
+    {id:'poyomon', x:42, y:730, cls:'normal', name:'Poyomon', lvl:'Fresh', note:'Initial form of the line.', wiki:'Poyomon', img:'Poyomon_b.jpg'},
+    {id:'tokomon', x:304, y:730, cls:'normal', name:'Tokomon', lvl:'In-Training', note:'Evolves into the classic Patamon.', wiki:'Tokomon', img:'Tokomon_b.jpg'},
+    {id:'patamon', x:566, y:730, cls:'normal', name:'Patamon', lvl:'Rookie', note:'Main branching point.', wiki:'Patamon', img:'Patamon_b.jpg'},
+    {id:'angemon', x:828, y:730, cls:'normal', name:'Angemon', lvl:'Champion', note:'Holy angel; Angelic Army member.', wiki:'Angemon', img:'Angemon_b.jpg'},
+    {id:'magnaangemon', x:1090, y:730, cls:'normal', name:'MagnaAngemon', lvl:'Ultimate', note:'Archangel; branches to Priest Mode and Goldramon.', wiki:'MagnaAngemon', img:'MagnaAngemon_b.jpg'},
+    {id:'seraphimon', x:1352, y:730, cls:'normal', name:'Seraphimon', lvl:'Mega', note:'One of the Three Great Angels (Celestial Digimon).', wiki:'Seraphimon', img:'Seraphimon_b.jpg'},
+    {id:'omnimonmerciful', x:1614, y:730, cls:'dna', name:'Omnimon Merciful Mode', lvl:'Ultra', note:'Collective composition.', wiki:'Omnimon_Merciful_Mode', img:'Omnimon_Merciful_Mode_b.jpg'},
+
+    // side form, mode change and Seraphimon variants
+    {id:'tsukaimon', x:566, y:970, cls:'normal', name:'Tsukaimon', lvl:'Rookie', note:'Subspecies of Patamon; dark counterpart.', wiki:'Tsukaimon', img:'Tsukaimon_b.jpg'},
+    {id:'priest', x:1090, y:970, cls:'mode', name:'MagnaAngemon Priest Mode', lvl:'Ultimate', note:'Priest garb mode (2020 reboot).', wiki:'MagnaAngemon_(Priest_Mode)', img:'MagnaAngemon_%28Priest_Mode%29_b.jpg'},
+    {id:'shadowseraphimon', x:1614, y:970, cls:'dark', name:'ShadowSeraphimon', lvl:'Mega / Virus', note:'Born of Seraphimon\'s concealed inner resentment.', wiki:'ShadowSeraphimon', img:'ShadowSeraphimon_b.jpg'},
+
+    // Jogress row
+    {id:'shakkoumon', x:1090, y:1210, cls:'dna', name:'Shakkoumon', lvl:'Ultimate', note:'Angemon + Ankylomon.', wiki:'Shakkoumon', img:'Shakkoumon_b.jpg'},
+    {id:'blackseraphimon', x:1614, y:1210, cls:'dark', name:'BlackSeraphimon', lvl:'Mega / Virus', note:'Black variant (Digimon World 3).', wiki:'BlackSeraphimon', img:'BlackSeraphimon_dw3.png'},
+
+    // Demon Lord row: Seraphimon's official fallen form and its Adventure 02 mantled look
+    {id:'daemon', x:1352, y:1450, cls:'dark', name:'Daemon', lvl:'Mega / Virus', note:'Demon Lord of Wrath; said to be a fallen Seraphimon.', wiki:'Daemon', img:'Daemon_b.jpg'},
+    {id:'daemonmantled', x:1614, y:1450, cls:'mode', name:'Daemon (Mantled)', lvl:'Mega / Virus', note:'Cloaked design variant (Adventure 02).', wiki:'Daemon_(Mantled)', img:'Daemon_%28Mantled%29_b.jpg'},
+
+    // fallen angel dark line
+    {id:'devimon', x:828, y:1690, cls:'dark', name:'Devimon', lvl:'Champion / Virus', note:'Fallen angel; corrupted Angemon data.', wiki:'Devimon', img:'Devimon_b.jpg'},
+    {id:'neodevimon', x:1090, y:1690, cls:'dark', name:'NeoDevimon', lvl:'Ultimate / Virus', note:'Strengthened Devimon.', wiki:'NeoDevimon', img:'NeoDevimon_b.jpg'},
+    {id:'dandevimon', x:1352, y:1690, cls:'dark', name:'DanDevimon', lvl:'Mega / Virus', note:'Peak of the fallen angel branch (2020 reboot).', wiki:'DanDevimon', img:'DanDevimon_b.jpg'},
+    {id:'daemonultra', x:1614, y:1690, cls:'dark', name:'Daemon (Ultra)', lvl:'Ultra / Virus', note:'Super Ultimate form after absorbing Arkadimon (V-Tamer).', wiki:'Daemon_(Ultra)', img:'Demon_%28Super_Ultimate%29_98-001_%28DJ%29.png'}
+  ],
+  edges: function (edge) {
+    // main line
+    edge('poyomon','tokomon','normal');
+    edge('tokomon','patamon','normal');
+    edge('patamon','angemon','normal');
+    edge('angemon','magnaangemon','normal');
+    edge('magnaangemon','seraphimon','normal');
+
+    // X-Antibody forms
+    edge('tokomon','tokomonx','x','top','bottom',{shape:'vertical'});
+    edge('goldramon','goldramonx','x','top','bottom',{shape:'vertical'});
+
+    // Ultimate branches: Priest Mode and the 2020 holy-dragon alternative
+    edge('magnaangemon','priest','mode','bottom','top',{shape:'vertical'});
+    edge('priest','seraphimon','normal','right','bottom',{toX:1440, points:[[1440,1069]]});
+    edge('magnaangemon','goldramon','normal','right','left',{fromY:785, points:[[1318,785],[1318,589]], label:'Adventure 2020', lx:1318, ly:700});
+
+    // Seraphimon: collective composition and corrupted variants
+    edge('seraphimon','omnimonmerciful','dna');
+    edge('seraphimon','shadowseraphimon','dark','right','left',{fromY:870, points:[[1585,870],[1585,1069]], label:'Inner resentment', lx:1560, ly:988});
+    edge('seraphimon','blackseraphimon','dark','bottom','left',{fromX:1490, points:[[1490,1309]], label:'Digimon World 3', lx:1540, ly:1282});
+
+    // DNA / Jogress with Ankylomon (see panel)
+    edge('angemon','shakkoumon','dna','bottom','left',{fromX:960, points:[[960,1309]]});
+
+    // side form and the fallen angel line
+    edge('patamon','tsukaimon','normal','bottom','top',{shape:'vertical', label:'Subspecies', lx:722, ly:949});
+    edge('tsukaimon','devimon','dark','right','left',{points:[[799,1069],[799,1789]], label:"Devimon's familiar", lx:799, ly:1350});
+    edge('angemon','devimon','dark','bottom','top',{shape:'vertical', fromX:900, toX:900, label:'Corrupted (2020)', lx:900, ly:1600});
+    edge('devimon','neodevimon','dark');
+    edge('neodevimon','dandevimon','dark');
+
+    // Demon Lord branch: the official fall from Seraphimon (its profile names Daemon as its
+    // fallen form), the Adventure 02 mantled look and the V-Tamer Ultra form
+    edge('seraphimon','daemon','dark','bottom','top',{shape:'vertical', fromX:1420, toX:1420, label:'Fell to the Dark Area', lx:1420, ly:1180});
+    edge('daemon','daemonmantled','mode','right','left',{label:'Adventure 02', lx:1585, ly:1530});
+    edge('daemon','daemonultra','dark','right','left',{fromY:1600, points:[[1585,1600],[1585,1789]], label:'V-Tamer', lx:1585, ly:1700});
+
+    // connector to the Armor panel (appendix, not a normal edge)
+    edge('patamon','armor-panel','armor','bottom','top',{toX:380, points:[[668,952],[380,952]], label:'Digi-Eggs', lx:380, ly:1300, width:3});
+    edge('armor-pegasusmon','armor-pegasusmonx','x','right','left',{width:3});
+  }
+});
+</script>
+</body>
+</html>
