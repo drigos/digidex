@@ -16,6 +16,7 @@ evolution-tree pages (and back to the root via its "All generations" pill):
   - [tentomon.html](src/evolution-lines/gen-1-adventure/tentomon.html) - Tentomon line (Red/Blue MegaKabuterimon branches, HerculesKabuterimon X, AncientBeetlemon ancestral link, collective composition).
   - [palmon.html](src/evolution-lines/gen-1-adventure/palmon.html) - Palmon line (X line, Rookie side forms, Rosemon/Lillymon variants, Rafflesimon Jogress, collective composition).
   - [gomamon.html](src/evolution-lines/gen-1-adventure/gomamon.html) - Gomamon line (Gomamon X branch, collective composition).
+  - [patamon.html](src/evolution-lines/gen-1-adventure/patamon.html) - Patamon line (Priest Mode and Goldramon 2020 branches, fallen angel dark branch, Shakkoumon Jogress, Armor Digivolutions, collective composition).
 - `src/evolution-lines/gen-2-adventure-02/` - Digimon Adventure 02:
   - [index.html](src/evolution-lines/gen-2-adventure-02/index.html) - DigiDestined selection screen (by Digi-Egg).
   - [veemon.html](src/evolution-lines/gen-2-adventure-02/veemon.html) - Veemon line (includes the Armor branch).
