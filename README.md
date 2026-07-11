@@ -56,7 +56,9 @@ cannot drift apart:
 
 To scaffold a new page consistently, use the `digimon-evolution-tree` skill
 (`.claude/skills/digimon-evolution-tree/`), which walks through the steps and points
-back to this file.
+back to this file. To add a "Lore notes" curiosities panel to an existing page, use the
+`digimon-lore-notes` skill (`.claude/skills/digimon-lore-notes/`), which enforces source
+verification and a plan-and-approve step.
 
 All on-image text is in English so the graphics are universal. This README is the
 source of truth for the vocabulary. Keep both files consistent with the tables below;
