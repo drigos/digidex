@@ -3,11 +3,12 @@
 Self-contained HTML infographics that render a Digimon's evolution tree, published as the
 **Digidex** site. All site files live under `src/` (the folder deployed to GitHub Pages);
 tree pages sit in `src/evolution-lines/`, split by the anime generation. The root
-[src/index.html](src/index.html) is the site landing page: a generation selection screen
-linking to each generation's own `index.html`, which in turn links to the individual
-evolution-tree pages (and back to the root via its "All generations" pill):
+[src/index.html](src/index.html) is the site landing page: a selection screen with a
+Generations section and a Special groups section, linking to each generation's own
+`index.html` (which in turn links to the individual evolution-tree pages and back to the
+root via its "Home" pill) and to each group roster:
 
-- `src/index.html` - top-level generation selection screen (the 5 generations).
+- `src/index.html` - top-level selection screen (Generations + Special groups).
 - `src/evolution-lines/gen-1-adventure/` - Digimon Adventure:
   - [index.html](src/evolution-lines/gen-1-adventure/index.html) - DigiDestined selection screen (by Crest).
   - [agumon.html](src/evolution-lines/gen-1-adventure/agumon.html) - Agumon line (Data Squad, Bond and Burst branches; AncientGreymon ancestral link).
@@ -29,6 +30,13 @@ evolution-tree pages (and back to the root via its "All generations" pill):
   - [lobomon.html](src/evolution-lines/gen-4-frontier/lobomon.html) - Warrior of Light line (Child Strabimon, Human/Beast Spirit, Fusion, Unified, Susanoomon).
 - `src/evolution-lines/gen-5-data-squad/` - Digimon Data Squad / Savers:
   - [index.html](src/evolution-lines/gen-5-data-squad/index.html) - DATS selection screen (by Burst Mode; the Agumon card links into the gen-1 Agumon tree).
+- `src/groups/` - roster pages for special Digimon groups (no evolution arrows):
+  - [angelic.html](src/groups/angelic.html) - Angelic Digimon roster (Celestial Digimon, Angelic Army, fallen counterparts), each card carrying its official angelic-rank Type.
+  - [royal-knights.html](src/groups/royal-knights.html) - the thirteen Royal Knights plus Imperialdramon Paladin Mode as the order's origin.
+  - [four-great-dragons.html](src/groups/four-great-dragons.html) - the Four Great Dragons, named after the Dragon Kings of the four seas.
+  - [vortex-warriors.html](src/groups/vortex-warriors.html) - Witchelny's Vortex Warriors, led by the Whirlwind General MedievalGallantmon.
+  - [demon-lords.html](src/groups/demon-lords.html) - the Seven Great Demon Lords, each card carrying its deadly sin as the rank pill.
+  - [bancho.html](src/groups/bancho.html) - the five bearers of the Bancho title.
 
 Each file is a fixed-size canvas with cards positioned by column (evolution level),
 SVG arrows drawn between them, a trigger legend, and an optional bottom panel. Images
@@ -51,8 +59,18 @@ cannot drift apart:
   partner cards linking to that generation's tree pages. They only `<link>` `digivolution.css`
   to inherit the shared color tokens, the font and the `.backnav` pill style.
 - the root `index.html` - the same selection-screen pattern one level up: a self-contained
-  grid of generation cards linking to each `evolution-lines/gen-*/index.html` (assets are
-  linked without a path prefix, since it sits at the `src/` root).
+  page split into sections (Generations, Special groups) whose cards link to each
+  `evolution-lines/gen-*/index.html` and `groups/*.html` page (assets are linked without
+  a path prefix, since it sits at the `src/` root).
+- the `groups/<group>.html` roster pages - selection-screen-style pages (self-contained
+  CSS, no `digivolution.js`, one `../` asset prefix) for special Digimon groups. There are
+  no evolution arrows: cards are grouped into power tiers by `.tier` section headings
+  (e.g. Celestial Digimon on top, then the Angelic Army, then fallen counterparts), and
+  each card shows the Digimon's level, an official-Type rank pill (`.rank`, accent-tinted
+  by angelic sphere) and a short role line sourced from the official profile. Cards link
+  to DigimonWiki/Fandom. Verify every rank and role in the official encyclopedia
+  (`digimon.net/reference_en`) before adding a member, in both directions when the claim
+  is a relationship (see the `digimon-lore-notes` skill rules).
 
 To scaffold a new page consistently, use the `digimon-evolution-tree` skill
 (`.claude/skills/digimon-evolution-tree/`), which walks through the steps and points
@@ -119,16 +137,19 @@ the footer top.
   `.infographic { height }` you must set the `<svg viewBox>` height to the same value, or
   every arrow shifts vertically.
 
-Appendix panels (`.partner-panel` / `.jogress-panel` / `.armor-panel`) take only `top` and
-`width` per page, never a `height`: they auto-size to their content, so the gap below the
-last card is always the panel's `22px` bottom padding. A fixed panel height leaves an uneven
-band under the cards, so do not set one.
+Appendix panels (`.partner-panel` / `.jogress-panel` / `.armor-panel` / `.lore-panel`) take
+only `top` and `width` per page, never a `height`: they auto-size to their content, so the
+gap below the last card is always the panel's `22px` bottom padding. A fixed panel height
+leaves an uneven band under the cards, so do not set one.
 
 Panel cards match the node card width so the whole page reads as one grid: `.partner-card` and
 `.jogress-card` are `204px`, laid out in a `16px`-gap flex row, so a panel with `n` cards is
 `220n + 28` wide (`248px` for one card, `908px` for four, `1348px` for six). The `.armor-panel`
 is the exception: it holds many Digimon, so it keeps the fractional `repeat(12, 1fr)` grid of
-smaller cards and spans the full `width - 48` (a `24px` gutter each side).
+smaller cards and spans the full `width - 48` (a `24px` gutter each side). The `.lore-panel`
+(grey, matching the `lore` trigger color) also spans the full width with a fractional
+`repeat(4, 1fr)` grid of text-only cards; its entries are source-verified explanations of the
+page's unusual arrows and nodes, added via the `digimon-lore-notes` skill.
 
 Set each panel's `top` so it sits `22px` below the element above it: the lowest node for the
 first panel, or the previous panel's bottom for a stacked one. Together with the `22px`
@@ -243,7 +264,7 @@ product. A page states more or less detail depending on its size, but never repu
 |---|---|---|
 | Title (`h1`) | Identity: whose tree, and what kind of artifact. | `<Partner>: evolution tree`. Frontier is Spirit Evolution, not Digivolution, so `agunimon` reads `Agunimon: Spirit Evolution tree`. |
 | Subtitle (`.subtitle`) | Scope: the stage span plus the branches and appendices that make this line distinctive. | `<Stage1> -> ... -> <StageN> hierarchy, with <distinctive branches / appendices>.` Large trees summarize by trigger kind (`with X, DNA/Jogress, Mode Change ... branches`); small trees name the actual forms (`with the X-Antibody branch (Gomamon X) and the collective composition ...`). Frontier states its Spirit tiers instead of the Fresh->Mega ranks. |
-| Panel title + subtitle | Local relationship: the off-grid relationship the appendix panel captures. | Title names the relationship **kind**; subtitle states the concrete **mechanic** (who + who = what). Kinds: `Jogress partner(s)` (external forms that fuse with this line - singular for one card, plural for many); `Collective composition` (this line's peak is one member of a larger fusion); `<Name>'s Armor Digivolutions` (Veemon's compact Digi-Egg branch). Frontier keeps its own result-led titles (`Susanoomon: DNA Digivolve`, `EmperorGreymon: Unified Spirit`) since its vocabulary differs, but the subtitle still states the mechanic. |
+| Panel title + subtitle | Local relationship: the off-grid relationship the appendix panel captures. | Title names the relationship **kind**; subtitle states the concrete **mechanic** (who + who = what). Kinds: `Jogress partner(s)` (external forms that fuse with this line - singular for one card, plural for many); `Collective composition` (this line's peak is one member of a larger fusion); `<Name>'s Armor Digivolutions` (Veemon's compact Digi-Egg branch); `Lore notes` (source-verified stories behind the page's unusual arrows; subtitle `the stories behind the unusual arrows`). Frontier keeps its own result-led titles (`Susanoomon: DNA Digivolve`, `EmperorGreymon: Unified Spirit`) since its vocabulary differs, but the subtitle still states the mechanic. |
 | Footer (`.footer`) | Provenance + reading key + caveats. | Fixed lead: attribution to DigimonWiki/Fandom, then `Card labels show Level (+ Virus / X); edge colors show the digivolution trigger.` Then any page-specific caveats about non-obvious nodes/links (a synthesis with no incoming arrow, a lore link, a collective composition). Close with `See README.md for the full term conventions.` |
 
 ## Notes on specific cases
@@ -281,7 +302,7 @@ only outputs to `Millenniummon`.
 Every page links one level up with a `.backnav` pill (styled in `digivolution.css`),
 placed as the first element inside `.wrap`: tree pages link to their generation's
 `index.html` labeled with the partner group (`DigiDestined`, `The Tamers`, ...), and the
-generation index pages link to the root `index.html` labeled `All generations`.
+generation index and group roster pages link to the root `index.html` labeled `Home`.
 
 A node may also carry `nav: { href, title }`: the engine then renders a round arrow button
 (`.node-nav`, an inline SVG arrow) to the right of the card that jumps to another
@@ -292,6 +313,11 @@ a dedicated tree on another page - currently `AncientGreymon` in `agumon.html` (
 the Beetlemon Frontier page exists.
 The `href` is relative to the page, and the button is placed at the card's right edge,
 vertically centered on the 198px card, so keep that slot free of neighboring nodes.
+
+A node's category `badge` may also carry an `href` (plus optional `title`): the engine
+then renders it as a clickable link instead of a plain label, e.g. the `Celestial Digimon`
+and `Angelic Army` badges in `patamon.html` linking to the `groups/angelic.html` roster.
+The card itself keeps linking to the wiki.
 
 ### Frontier: Spirit Evolution
 
@@ -318,7 +344,7 @@ The site is served from the `src/` folder by the
 uploads `src/` as the Pages artifact on every push to `main` (branch-based deployment
 does not support a `/src` folder, only root or `/docs`):
 
-- `src/index.html` is the landing page (the generation selection screen).
+- `src/index.html` is the landing page (the top-level selection screen).
 - Every internal link and asset reference is relative (`digivolution.css`,
   `../../digivolution.js`, `evolution-lines/gen-*/...`), so the site works both at a
   user/organization domain root and under a project subpath

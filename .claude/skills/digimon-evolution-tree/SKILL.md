@@ -69,7 +69,10 @@ generation (create the folder if that generation has no page yet).
 - Node: `{ id, x, y, cls, name, lvl, note, wiki, img, badge?, nav? }`
   - `cls` (pill color): `normal | x | dna | mode | dark | lateral | bond | burst`.
   - `lvl` (card tag): `Level` optionally `+ / Virus + / X` only. See README section 1.
-  - `badge`: `{ cls:'rk', text:'Royal Knight' }` or `{ cls:'lw', text:'Legendary Warrior' }`.
+  - `badge`: `{ cls, text, href?, title? }` with `cls` one of `rk` (Royal Knight),
+    `lw` (Legendary Warrior), `fgd` (Four Great Dragons), `vw` (Vortex Warrior),
+    `cd` (Celestial Digimon), `aa` (Angelic Army). With `href` (relative, e.g. a
+    `groups/*.html` roster) the badge renders as a clickable link; without it, a plain label.
   - `nav`: `{ href, title }` - renders a round arrow button to the right of the card that
     jumps to another infographic page (relative href); the card itself keeps linking to
     the wiki. See README "Cross-page navigation".
@@ -80,7 +83,8 @@ generation (create the folder if that generation has no page yet).
   - sides: `left|right|top|bottom`.
   - `opts`: `shape:'vertical'|'leftbus'`, `busX`, `points:[[x,y],...]`, `label`, `lx`, `ly`,
     `width`, `opacity`, and `fromX/fromY/toX/toY` to override any anchor coordinate.
-- Panels stay as HTML sections (partner/jogress = purple, armor = amber); position them via
+- Panels stay as HTML sections (partner/jogress = purple, armor = amber, lore notes = grey;
+  the latter is added via the `digimon-lore-notes` skill); position them via
   the page `<style>`. An amber connector to a panel targets it by id, e.g.
   `edge('veemon','armor-panel','armor','bottom','top',{shape:'vertical', toX:668, ...})`.
 
