@@ -71,8 +71,14 @@ generation (create the folder if that generation has no page yet).
   - `lvl` (card tag): `Level` optionally `+ / Virus + / X` only. See README section 1.
   - `badge`: `{ cls, text, href?, title? }` with `cls` one of `rk` (Royal Knight),
     `lw` (Legendary Warrior), `fgd` (Four Great Dragons), `vw` (Vortex Warrior),
-    `cd` (Celestial Digimon), `aa` (Angelic Army). With `href` (relative, e.g. a
+    `cd` (Celestial Digimon), `aa` (Angelic Army), `fa` (Fallen Angel). With `href` (relative, e.g. a
     `groups/*.html` roster) the badge renders as a clickable link; without it, a plain label.
+    Point the href at the member's card fragment (`groups/angelic.html#angemon`; ids are
+    the lowercased hyphenated name) so the roster scrolls to and highlights that card.
+    For a badge on a panel card (itself an `<a>`, so no nesting), add an
+    `<a class="rk badge-link panel-badge">` sibling stacked into the same grid cell,
+    setting the same explicit `grid-column`/`grid-row` on both the card and the badge
+    (see Magnamon in veemon.html; README "Cross-page navigation").
   - `nav`: `{ href, title }` - renders a round arrow button to the right of the card that
     jumps to another infographic page (relative href); the card itself keeps linking to
     the wiki. See README "Cross-page navigation".
@@ -97,6 +103,10 @@ generation (create the folder if that generation has no page yet).
   "DNA / Jogress" on a purple one). Label only for a specific event/continuity, a narrative
   cause, a lore/non-evolution link, or a specific partner.
 - English on-image text. No em dash (U+2014). Identifiers in English.
+- Print-friendly: pages are prepared to be printable. Never add modals, popups or
+  hover-only content. Interaction is OK only when print loses nothing (badges print as
+  category pills); purely navigational widgets (like `.node-nav`) must be hidden by the
+  `@media print` rule in `digivolution.css` and avoided in new features when possible.
 
 ## Verify before finishing
 

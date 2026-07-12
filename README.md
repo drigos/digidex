@@ -37,10 +37,19 @@ root via its "Home" pill) and to each group roster:
   - [vortex-warriors.html](src/groups/vortex-warriors.html) - Witchelny's Vortex Warriors, led by the Whirlwind General MedievalGallantmon.
   - [demon-lords.html](src/groups/demon-lords.html) - the Seven Great Demon Lords, each card carrying its deadly sin as the rank pill.
   - [bancho.html](src/groups/bancho.html) - the five bearers of the Bancho title.
+  - [four-sovereigns.html](src/groups/four-sovereigns.html) - the Four Holy Beasts guarding the compass points, with Fanglongmon as the emperor of the Center.
+  - [deva.html](src/groups/deva.html) - the twelve Deva serving the Four Sovereigns, three per master, each card carrying its zodiac animal as the rank pill.
 
 Each file is a fixed-size canvas with cards positioned by column (evolution level),
 SVG arrows drawn between them, a trigger legend, and an optional bottom panel. Images
 and links point to [DigimonWiki/Fandom](https://digimon.fandom.com).
+
+**Print-friendly by design.** Every page is prepared to be printable, so no content may
+depend on interaction: no modals, popups or hover-only information. Interaction that does
+not hurt print is fine - the group badges are the good example (on paper they still read
+as a category pill). Purely navigational widgets are the bad example (the `.node-nav`
+round arrow adds no value on paper): they are hidden via the `@media print` rule in
+`digivolution.css`, and new features should avoid needing such elements at all.
 
 ## Files (shared design system)
 
@@ -71,6 +80,10 @@ cannot drift apart:
   to DigimonWiki/Fandom. Verify every rank and role in the official encyclopedia
   (`digimon.net/reference_en`) before adding a member, in both directions when the claim
   is a relationship (see the `digimon-lore-notes` skill rules).
+  A roster may end with a lore notes section before the footer (`.lore-section`, see
+  `angelic.html`): a static, responsive wrapper around the shared `.lore-grid` /
+  `.lore-card` styles (the tree pages' `.lore-panel` is absolute-positioned and does not
+  fit these pages), with the grid collapsing to 2 and 1 columns at 1100px and 640px.
 
 To scaffold a new page consistently, use the `digimon-evolution-tree` skill
 (`.claude/skills/digimon-evolution-tree/`), which walks through the steps and points
@@ -318,6 +331,16 @@ A node's category `badge` may also carry an `href` (plus optional `title`): the 
 then renders it as a clickable link instead of a plain label, e.g. the `Celestial Digimon`
 and `Angelic Army` badges in `patamon.html` linking to the `groups/angelic.html` roster.
 The card itself keeps linking to the wiki.
+Every roster card has an `id` (the Digimon name lowercased, parentheses dropped,
+separators hyphenated: `#angemon`, `#cherubimon-good`, `#ophanimon-falldown-mode`), so a
+badge `href` should point at the member's own card (`groups/angelic.html#angemon`): the
+browser scrolls to it and the roster's `:target` CSS keeps it highlighted in its accent
+color.
+A panel card (e.g. Magnamon in Veemon's Armor panel) cannot nest a badge link, since the
+card is itself an `<a>`. Instead, place an `<a class="rk badge-link panel-badge">` as a
+grid sibling stacked into the same cell, giving the card **and** the badge the same
+explicit inline `grid-column`/`grid-row` (without the explicit placement on the card,
+auto-placement skips the badge's occupied cell and pushes the card to the next row).
 
 ### Frontier: Spirit Evolution
 
