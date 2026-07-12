@@ -129,6 +129,9 @@ h1 { margin:0 0 8px; font-size:42px; line-height:1.02; letter-spacing:-1px; }
 }
 .node-nav svg { display:block; }
 .node-nav:hover { transform:translateX(3px); border-color:var(--normal); background:rgba(88,166,255,.20); }
+/* Pages must stay print-friendly: purely navigational widgets add no value on paper.
+   Badges stay visible in print because they carry category information. */
+@media print { .node-nav, .backnav { display:none; } }
 
 /* Category badges (top-right of a card): .rk = Royal Knight, .lw = Legendary Warrior,
    .fgd = Four Great Dragons, .vw = Witchelny Vortex Warrior,
