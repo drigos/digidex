@@ -131,8 +131,9 @@ h1 { margin:0 0 8px; font-size:42px; line-height:1.02; letter-spacing:-1px; }
 .node-nav:hover { transform:translateX(3px); border-color:var(--normal); background:rgba(88,166,255,.20); }
 
 /* Category badges (top-right of a card): .rk = Royal Knight, .lw = Legendary Warrior,
-   .fgd = Four Great Dragons, .vw = Witchelny Vortex Warrior */
-.rk, .lw, .fgd, .vw {
+   .fgd = Four Great Dragons, .vw = Witchelny Vortex Warrior,
+   .cd = Celestial Digimon, .aa = Angelic Army */
+.rk, .lw, .fgd, .vw, .cd, .aa {
   position:absolute; top:9px; right:9px; z-index:5;
   padding:2px 8px 2px 6px; border-radius:999px;
   font-size:9px; font-weight:900; letter-spacing:.2px;
@@ -147,6 +148,16 @@ h1 { margin:0 0 8px; font-size:42px; line-height:1.02; letter-spacing:-1px; }
 .fgd::before { content:"\1F409"; margin-right:3px; font-size:10px; }
 .vw { background:linear-gradient(180deg, #cdb8ff, #5b3aa8); color:#160a33; border:1px solid rgba(226,216,255,.95); }
 .vw::before { content:"\2748"; margin-right:3px; font-size:10px; }
+.cd { background:linear-gradient(180deg, #fff8e0, #ecc94b); color:#3a2c05; border:1px solid rgba(255,248,224,.95); }
+.cd::before { content:"\2726"; margin-right:3px; font-size:10px; }
+.aa { background:linear-gradient(180deg, #cfe4ff, #4c7fd0); color:#0c2246; border:1px solid rgba(223,238,255,.95); }
+.aa::before { content:"\2694"; margin-right:3px; font-size:10px; }
+
+/* A badge with an href renders as a canvas-level <a> sibling of its card (a nested <a>
+   inside the node link would be invalid HTML). The engine sets left to the card's right
+   edge inset; translateX(-100%) right-aligns it whatever the badge width. */
+a.badge-link { right:auto; transform:translateX(-100%); transition: filter .15s ease, box-shadow .15s ease; }
+a.badge-link:hover { filter:brightness(1.08); box-shadow:0 3px 14px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.35); }
 
 /* Edge labels */
 .edge-label {

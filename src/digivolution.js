@@ -8,13 +8,16 @@
  *   DigiTree.mount({
  *     legend:  [ ['normal','Normal evolution'], ['x','X-Digivolution'], ... ],
  *     columns: [ [42,'Fresh'], [304,'In-Training'], ... ],   // [xPx, label]
- *     nodes:   [ {id,x,y,cls,name,lvl,note,wiki,img, badge:{cls:'lw',text:'...'},
+ *     nodes:   [ {id,x,y,cls,name,lvl,note,wiki,img,
+ *                 badge:{cls:'lw',text:'...', href:'...', title:'...'},
  *                 nav:{href:'...', title:'...'}}, ... ],
  *     edges:   function (edge) { edge('a','b','normal'); ... }
  *   });
  *
  * nav renders a round arrow button to the right of the card that jumps to another
  * infographic page (relative href), while the card itself keeps linking to the wiki.
+ * A badge with an href becomes a clickable link (e.g. to a group roster page); without
+ * one it stays a plain label on the card.
  *
  * edge(from, to, type, fromSide='right', toSide='left', opts)
  *   type    : one of the trigger keys (normal|x|dna|mode|dark|lateral|armor|bond|burst|lore)
@@ -84,12 +87,24 @@
         a.style.left = n.x + 'px';
         a.style.top = n.y + 'px';
         a.innerHTML =
-          (n.badge ? '<span class="' + n.badge.cls + '">' + n.badge.text + '</span>' : '') +
+          (n.badge && !n.badge.href ? '<span class="' + n.badge.cls + '">' + n.badge.text + '</span>' : '') +
           '<img referrerpolicy="no-referrer" src="' + FILE + n.img + '" alt="' + n.name + '">' +
           '<div class="name">' + n.name + '</div>' +
           '<div class="level">' + n.lvl + '</div>' +
           '<div class="note">' + n.note + '</div>';
         nodesEl.appendChild(a);
+        if (n.badge && n.badge.href) {
+          // a nested <a> inside the node link is invalid HTML, so a linked badge is a
+          // canvas-level sibling right-aligned to the card via .badge-link
+          var badge = document.createElement('a');
+          badge.className = n.badge.cls + ' badge-link';
+          badge.href = n.badge.href;
+          if (n.badge.title) badge.title = n.badge.title;
+          badge.textContent = n.badge.text;
+          badge.style.left = (n.x + 195) + 'px';
+          badge.style.top = (n.y + 9) + 'px';
+          nodesEl.appendChild(badge);
+        }
         if (n.nav) {
           var navBtn = document.createElement('a');
           navBtn.className = 'node-nav';
