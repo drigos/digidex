@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Royal Knights: group roster</title>
+<link rel="stylesheet" href="../digivolution.css" />
+<style>
+  /* group-roster layout (self-contained; reuses the shared tokens from digivolution.css) */
+  .wrap { padding: 40px 22px 56px; max-width: 1280px; margin: 0 auto; overflow: visible; }
+
+  .hero { text-align: center; margin: 18px auto 10px; max-width: 860px; }
+  .hero .kicker {
+    display: inline-block; margin-bottom: 14px; padding: 6px 16px; border-radius: 999px;
+    font-size: 12.5px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;
+    color: #cfe6ff; background: rgba(88,166,255,.14); border: 1px solid rgba(88,166,255,.34);
+  }
+  .hero h1 {
+    font-size: 54px; line-height: 1.03; letter-spacing: -1.5px; margin: 0 0 14px;
+    background: linear-gradient(180deg, #ffffff, #a9c7ee);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero p { color: var(--muted); font-size: 17px; line-height: 1.5; margin: 0; }
+
+  /* power-tier section headings */
+  .tier { margin: 40px 0 18px; }
+  .tier h2 { margin: 0; font-size: 28px; letter-spacing: -.5px; }
+  .tier p { margin: 5px 0 0; color: var(--muted); font-size: 13.5px; font-weight: 700; }
+
+  .grid {
+    display: grid; gap: 22px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (max-width: 1100px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 820px)  { .grid { grid-template-columns: repeat(2, 1fr); } .hero h1 { font-size: 40px; } }
+  @media (max-width: 520px)  { .grid { grid-template-columns: 1fr; } }
+
+  .card {
+    position: relative; display: flex; flex-direction: column; overflow: hidden;
+    padding: 20px 18px 18px; border-radius: 22px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: linear-gradient(180deg, rgba(16,43,76,.96), rgba(7,19,36,.98));
+    box-shadow: 0 16px 40px rgba(0,0,0,.36);
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  /* accent glow strip at the top, tinted by the angel's sphere color (--accent) */
+  .card::before {
+    content: ""; position: absolute; inset: 0 0 auto 0; height: 4px;
+    background: var(--accent); box-shadow: 0 0 18px var(--accent);
+  }
+  .card::after {
+    content: ""; position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
+    width: 200px; height: 200px; border-radius: 50%;
+    background: radial-gradient(circle, var(--accent), transparent 65%);
+    opacity: .16; pointer-events: none; transition: opacity .18s ease;
+  }
+  a.card:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--accent) 60%, rgba(255,255,255,.2));
+    box-shadow: 0 26px 60px rgba(0,0,0,.5), 0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent);
+  }
+  a.card:hover::after { opacity: .32; }
+
+  .thumb {
+    position: relative; z-index: 1; height: 150px; border-radius: 16px; background: #fff;
+    padding: 12px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center;
+  }
+  .thumb img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+  .level { position: relative; z-index: 1; font-size: 11.5px; font-weight: 900; letter-spacing: 1.2px;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+  .mon { position: relative; z-index: 1; font-size: 22px; font-weight: 950; letter-spacing: -.5px; margin-bottom: 12px; }
+
+  /* angelic-rank pill, tinted by the sphere accent */
+  .rank {
+    position: relative; z-index: 1; align-self: flex-start; display: inline-flex; align-items: center; gap: 7px;
+    padding: 5px 11px 5px 9px; border-radius: 999px; font-size: 11.5px; font-weight: 900;
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 16%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 42%, transparent);
+  }
+  .rank .glyph { font-size: 14px; line-height: 1; }
+
+  .role { position: relative; z-index: 1; margin: 10px 0 14px; color: var(--muted);
+    font-size: 12px; line-height: 1.4; font-weight: 700; }
+
+  .cta {
+    /* pinned to the card bottom so the row of CTAs stays aligned when roles wrap */
+    position: relative; z-index: 1; margin-top: auto; padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.09);
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 13px; font-weight: 900; color: #dce9fb;
+  }
+  .cta .arrow { transition: transform .18s ease; color: var(--accent); }
+  a.card:hover .cta .arrow { transform: translateX(5px); }
+
+  .foot { text-align: center; color: rgba(225,238,255,.6); font-size: 12.5px; line-height: 1.5; margin-top: 40px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="backnav" href="../index.html"><span class="arrow">&#8592;</span> Home</a>
+
+  <header class="hero">
+    <span class="kicker">Special group</span>
+    <h1>Royal Knights</h1>
+    <p>The thirteen Holy Knight Digimon gathered as the Digital World's highest form of network security. Each knight serves with its own duty and its own reading of justice, which does not always align with the others.</p>
+  </header>
+
+  <section class="tier">
+    <h2>The Thirteen Knights</h2>
+    <p>Holy Knight Digimon sworn to defend the order of the Digital World</p>
+  </section>
+  <div class="grid">
+
+    <a class="card" href="https://digimon.fandom.com/wiki/Omnimon" target="_blank" style="--accent:#cbd7ea">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Omnimon_b.jpg" alt="Omnimon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">Omnimon</div>
+      <span class="rank"><span class="glyph">&#9822;</span> Holy Knight</span>
+      <div class="role">Protector of Yggdrasill's justice, fused from WarGreymon and MetalGarurumon.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/Alphamon" target="_blank" style="--accent:#cbd7ea">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Alphamon_b.jpg" alt="Alphamon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">Alphamon</div>
+      <span class="rank"><span class="glyph">&#9822;</span> Holy Knight</span>
+      <div class="role">The Lord of the Empty Seat; a deterrent that stays hidden from normal sight.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/Gallantmon" target="_blank" style="--accent:#cbd7ea">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Gallantmon_b.jpg" alt="Gallantmon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">Gallantmon</div>
+      <span class="rank"><span class="glyph">&#9822;</span> Holy Knight</span>
+      <div class="role">A Virus-attribute guardian deity; a living contradiction.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/Magnamon" target="_blank" style="--accent:#cbd7ea">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Magnamon_b.jpg" alt="Magnamon"></div>
+      <div class="level">Armor</div>
+      <div class="mon">Magnamon</div>
+      <span class="rank"><span class="glyph">&#9822;</span> Holy Knight</span>
+      <div class="role">Cornerstone of the Knights' defense; the only Armor-level member.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/UlforceVeedramon" target="_blank" style="--accent:#cbd7ea">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/UlforceVeedramon_b.jpg" alt="UlforceVeedramon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">UlforceVeedramon</div>
+      <span class="rank"><span class="glyph">&#9822;</span> Holy Knight</span>
+      <div class="role">The swiftest of the Knights, wielding the Ulforce.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/Dynasmon" target="_blank" style="--accent:#cbd7ea">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Dynasmon_b.jpg" alt="Dynasmon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">Dynasmon</div>
+      <span class="rank"><span class="glyph">&#9822;</span> Holy Knight</span>
+      <div class="role">Serves a lord who embodies its justice with unquestioning loyalty.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/Crusadermon" target="_blank" style="--accent:#cbd7ea">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Crusadermon_b.jpg" alt="Crusadermon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">Crusadermon</div>
+      <span class="rank"><span class="glyph">&#9822;</span> Holy Knight</span>
+      <div class="role">Presides over all knight Digimon; ruthless in the name of its own justice.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/Craniamon" target="_blank" style="--accent:#cbd7ea">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Craniamon_b.jpg" alt="Craniamon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">Craniamon</div>
+      <span class="rank"><span class="glyph">&#9822;</span> Holy Knight</span>
+      <div class="role">Perfectionist with the strictest decorum among the Knights.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/Kentaurosmon" target="_blank" style="--accent:#cbd7ea">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Kentaurosmon_b.jpg" alt="Kentaurosmon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">Kentaurosmon</div>
+      <span class="rank"><span class="glyph">&#9822;</span> Holy Knight</span>
+      <div class="role">Guards the super-ancient ruins beneath the ice of the north pole.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/Leopardmon" target="_blank" style="--accent:#cbd7ea">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Leopardmon_b.jpg" alt="Leopardmon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">Leopardmon</div>
+      <span class="rank"><span class="glyph">&#9822;</span> Holy Knight</span>
+      <div class="role">The foremost strategist, able to command the other Knights.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/Examon" target="_blank" style="--accent:#cbd7ea">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Examon_b.jpg" alt="Examon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">Examon</div>
+      <span class="rank"><span class="glyph">&#9822;</span> Holy Knight</span>
+      <div class="role">The Dragon Emperor at the pinnacle of all Dragon Digimon.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/Gankoomon" target="_blank" style="--accent:#cbd7ea">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Gankoomon_b.jpg" alt="Gankoomon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">Gankoomon</div>
+      <span class="rank"><span class="glyph">&#9822;</span> Holy Knight</span>
+      <div class="role">Roams the world quelling chaos; raised its own successor.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/Jesmon" target="_blank" style="--accent:#cbd7ea">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Jesmon_b.jpg" alt="Jesmon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">Jesmon</div>
+      <span class="rank"><span class="glyph">&#9822;</span> Holy Knight</span>
+      <div class="role">Huckmon's Mega form; filled the long-vacant thirteenth seat.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+  </div>
+
+  <section class="tier">
+    <h2>Origin</h2>
+    <p>the legend behind the order</p>
+  </section>
+  <div class="grid">
+
+    <a class="card" href="https://digimon.fandom.com/wiki/Imperialdramon_Paladin_Mode" target="_blank" style="--accent:#f0b429">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Imperialdramon_Paladin_Mode_b.jpg" alt="Imperialdramon Paladin Mode"></div>
+      <div class="level">Mega</div>
+      <div class="mon">Imperialdramon Paladin Mode</div>
+      <span class="rank"><span class="glyph">&#9822;</span> Ancient Holy Knight</span>
+      <div class="role">Considered the founder of the Royal Knights, but not one of its members.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+  </div>
+
+  <p class="foot">Images and names link to DigimonWiki/Fandom (CC BY-SA unless noted otherwise). Crusadermon, Kentaurosmon and Leopardmon are DigimonWiki's names for LordKnightmon, Sleipmon and Duftmon.</p>
+
+</div>
+</body>
+</html>

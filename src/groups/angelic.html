@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Angelic Digimon: group roster</title>
+<link rel="stylesheet" href="../digivolution.css" />
+<style>
+  /* group-roster layout (self-contained; reuses the shared tokens from digivolution.css) */
+  .wrap { padding: 40px 22px 56px; max-width: 1280px; margin: 0 auto; overflow: visible; }
+
+  .hero { text-align: center; margin: 18px auto 10px; max-width: 860px; }
+  .hero .kicker {
+    display: inline-block; margin-bottom: 14px; padding: 6px 16px; border-radius: 999px;
+    font-size: 12.5px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;
+    color: #cfe6ff; background: rgba(88,166,255,.14); border: 1px solid rgba(88,166,255,.34);
+  }
+  .hero h1 {
+    font-size: 54px; line-height: 1.03; letter-spacing: -1.5px; margin: 0 0 14px;
+    background: linear-gradient(180deg, #ffffff, #a9c7ee);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero p { color: var(--muted); font-size: 17px; line-height: 1.5; margin: 0; }
+
+  /* power-tier section headings */
+  .tier { margin: 40px 0 18px; }
+  .tier h2 { margin: 0; font-size: 28px; letter-spacing: -.5px; }
+  .tier p { margin: 5px 0 0; color: var(--muted); font-size: 13.5px; font-weight: 700; }
+
+  .grid {
+    display: grid; gap: 22px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (max-width: 1100px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 820px)  { .grid { grid-template-columns: repeat(2, 1fr); } .hero h1 { font-size: 40px; } }
+  @media (max-width: 520px)  { .grid { grid-template-columns: 1fr; } }
+
+  .card {
+    position: relative; display: flex; flex-direction: column; overflow: hidden;
+    padding: 20px 18px 18px; border-radius: 22px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: linear-gradient(180deg, rgba(16,43,76,.96), rgba(7,19,36,.98));
+    box-shadow: 0 16px 40px rgba(0,0,0,.36);
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  /* accent glow strip at the top, tinted by the angel's sphere color (--accent) */
+  .card::before {
+    content: ""; position: absolute; inset: 0 0 auto 0; height: 4px;
+    background: var(--accent); box-shadow: 0 0 18px var(--accent);
+  }
+  .card::after {
+    content: ""; position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
+    width: 200px; height: 200px; border-radius: 50%;
+    background: radial-gradient(circle, var(--accent), transparent 65%);
+    opacity: .16; pointer-events: none; transition: opacity .18s ease;
+  }
+  a.card:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--accent) 60%, rgba(255,255,255,.2));
+    box-shadow: 0 26px 60px rgba(0,0,0,.5), 0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent);
+  }
+  a.card:hover::after { opacity: .32; }
+
+  .thumb {
+    position: relative; z-index: 1; height: 150px; border-radius: 16px; background: #fff;
+    padding: 12px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center;
+  }
+  .thumb img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+  .level { position: relative; z-index: 1; font-size: 11.5px; font-weight: 900; letter-spacing: 1.2px;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+  .mon { position: relative; z-index: 1; font-size: 22px; font-weight: 950; letter-spacing: -.5px; margin-bottom: 12px; }
+
+  /* angelic-rank pill, tinted by the sphere accent */
+  .rank {
+    position: relative; z-index: 1; align-self: flex-start; display: inline-flex; align-items: center; gap: 7px;
+    padding: 5px 11px 5px 9px; border-radius: 999px; font-size: 11.5px; font-weight: 900;
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 16%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 42%, transparent);
+  }
+  .rank .glyph { font-size: 14px; line-height: 1; }
+
+  .role { position: relative; z-index: 1; margin: 10px 0 14px; color: var(--muted);
+    font-size: 12px; line-height: 1.4; font-weight: 700; }
+
+  .cta {
+    /* pinned to the card bottom so the row of CTAs stays aligned when roles wrap */
+    position: relative; z-index: 1; margin-top: auto; padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.09);
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 13px; font-weight: 900; color: #dce9fb;
+  }
+  .cta .arrow { transition: transform .18s ease; color: var(--accent); }
+  a.card:hover .cta .arrow { transform: translateX(5px); }
+
+  .foot { text-align: center; color: rgba(225,238,255,.6); font-size: 12.5px; line-height: 1.5; margin-top: 40px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <a class="backnav" href="../index.html"><span class="arrow">&#8592;</span> Home</a>
+
+  <header class="hero">
+    <span class="kicker">Special group</span>
+    <h1>Angelic Digimon</h1>
+    <p>The official encyclopedia classifies its holy Digimon with the nine ranks of classical angelology, from Angel up to Seraph. This roster groups them by power: The Three Celestials guarding the Kernel, the Angelic Army that preserves the order of the Digital World, and the fallen forms the angels can become.</p>
+  </header>
+
+  <section class="tier">
+    <h2>Celestial Digimon</h2>
+    <p>The Three Celestials (Three Great Angels), guardians of the Kernel, God's Domain</p>
+  </section>
+  <div class="grid">
+
+    <a class="card" href="https://digimon.fandom.com/wiki/Seraphimon" target="_blank" style="--accent:#f0b429">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Seraphimon_b.jpg" alt="Seraphimon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">Seraphimon</div>
+      <span class="rank"><span class="glyph">&#10022;</span> Seraph</span>
+      <div class="role">The unforgiving Marshall of God; the highest of all Angel Digimon.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/Cherubimon_(Good)" target="_blank" style="--accent:#f0b429">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Cherubimon_%28Good%29_b.jpg" alt="Cherubimon (Good)"></div>
+      <div class="level">Mega</div>
+      <div class="mon">Cherubimon (Good)</div>
+      <span class="rank"><span class="glyph">&#10022;</span> Cherub</span>
+      <div class="role">Steadfast defender of God and keeper of wisdom.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/Ophanimon" target="_blank" style="--accent:#f0b429">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Ophanimon_b.jpg" alt="Ophanimon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">Ophanimon</div>
+      <span class="rank"><span class="glyph">&#10022;</span> Ophan</span>
+      <div class="role">Represents love; the ultimate form of all female angel Digimon.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+  </div>
+
+  <section class="tier">
+    <h2>Angelic Army</h2>
+    <p>The military force preserving the order of the Digital World, known as the Powers in the dub</p>
+  </section>
+  <div class="grid">
+
+    <a class="card" href="https://digimon.fandom.com/wiki/SlashAngemon" target="_blank" style="--accent:#7fb5ff">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/SlashAngemon_b.jpg" alt="SlashAngemon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">SlashAngemon</div>
+      <span class="rank"><span class="glyph">&#10023;</span> Power</span>
+      <div class="role">Commands the army, cutting through the front line of battles.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/Rasielmon" target="_blank" style="--accent:#f0b429">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Rasielmon_b.jpg" alt="Rasielmon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">Rasielmon</div>
+      <span class="rank"><span class="glyph">&#10022;</span> Ophan</span>
+      <div class="role">Once held the same rank as Ophanimon.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/Dominimon" target="_blank" style="--accent:#7fb5ff">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Dominimon_b.jpg" alt="Dominimon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">Dominimon</div>
+      <span class="rank"><span class="glyph">&#10023;</span> Dominion</span>
+      <div class="role">Known as a phantom; answers to no one in the angelic chain of command.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/ClavisAngemon" target="_blank" style="--accent:#7fb5ff">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/ClavisAngemon_b.jpg" alt="ClavisAngemon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">ClavisAngemon</div>
+      <span class="rank"><span class="glyph">&#10023;</span> Virtue</span>
+      <div class="role">Holds The Key to the 360 doors sealing the Zenith Gate.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/ArkhaiAngemon" target="_blank" style="--accent:#aab8cf">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/ArkhaiAngemon_b.jpg" alt="ArkhaiAngemon"></div>
+      <div class="level">Ultimate</div>
+      <div class="mon">ArkhaiAngemon</div>
+      <span class="rank"><span class="glyph">&#10025;</span> Principality</span>
+      <div class="role">Counselor and commanding officer of its assigned squad.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/MagnaAngemon" target="_blank" style="--accent:#aab8cf">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/MagnaAngemon_b.jpg" alt="MagnaAngemon"></div>
+      <div class="level">Ultimate</div>
+      <div class="mon">MagnaAngemon</div>
+      <span class="rank"><span class="glyph">&#10025;</span> Archangel</span>
+      <div class="role">Law enforcer supervising the many Angel Digimon.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/Angewomon" target="_blank" style="--accent:#aab8cf">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Angewomon_b.jpg" alt="Angewomon"></div>
+      <div class="level">Ultimate</div>
+      <div class="mon">Angewomon</div>
+      <span class="rank"><span class="glyph">&#10025;</span> Archangel</span>
+      <div class="role">Reclassified from Angel for the great power of its abilities.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/Angemon" target="_blank" style="--accent:#aab8cf">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Angemon_b.jpg" alt="Angemon"></div>
+      <div class="level">Champion</div>
+      <div class="mon">Angemon</div>
+      <span class="rank"><span class="glyph">&#10025;</span> Angel</span>
+      <div class="role">Being of absolute goodness; descends when the Digital World is in crisis.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/Piddomon" target="_blank" style="--accent:#aab8cf">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Piddomon_b.jpg" alt="Piddomon"></div>
+      <div class="level">Champion</div>
+      <div class="mon">Piddomon</div>
+      <span class="rank"><span class="glyph">&#10025;</span> Angel</span>
+      <div class="role">A rank below Angemon, but with power on par with it.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/Darcmon" target="_blank" style="--accent:#aab8cf">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Darcmon_b.jpg" alt="Darcmon"></div>
+      <div class="level">Champion</div>
+      <div class="mon">Darcmon</div>
+      <span class="rank"><span class="glyph">&#10025;</span> Angel</span>
+      <div class="role">Vanguard of the Angel Digimon; the Goddess of the Battlefield.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/Luxmon" target="_blank" style="--accent:#aab8cf">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Luxmon_b.jpg" alt="Luxmon"></div>
+      <div class="level">Rookie</div>
+      <div class="mon">Luxmon</div>
+      <span class="rank"><span class="glyph">&#10025;</span> Angel</span>
+      <div class="role">Lowest rank of angels; displays great strength fighting as a team.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+  </div>
+
+  <section class="tier">
+    <h2>Fallen counterparts</h2>
+    <p>What the angels become when they fall from grace</p>
+  </section>
+  <div class="grid">
+
+    <a class="card" href="https://digimon.fandom.com/wiki/ShadowSeraphimon" target="_blank" style="--accent:#e5484d">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/ShadowSeraphimon_b.jpg" alt="ShadowSeraphimon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">ShadowSeraphimon</div>
+      <span class="rank"><span class="glyph">&#9760;</span> Seraph</span>
+      <div class="role">Seraphimon engulfed by its concealed inner resentment.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/Daemon" target="_blank" style="--accent:#e5484d">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Daemon_b.jpg" alt="Daemon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">Daemon</div>
+      <span class="rank"><span class="glyph">&#9760;</span> Evil King</span>
+      <div class="role">Said to have originally been a Seraphimon that fell to the Dark Area.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/Ophanimon_Falldown_Mode" target="_blank" style="--accent:#e5484d">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Ophanimon_Falldown_Mode_b.jpg" alt="Ophanimon Falldown Mode"></div>
+      <div class="level">Mega</div>
+      <div class="mon">Ophanimon Falldown Mode</div>
+      <span class="rank"><span class="glyph">&#9760;</span> Fallen Angel</span>
+      <div class="role">Ophanimon after falling from grace.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/Lilithmon" target="_blank" style="--accent:#e5484d">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Lilithmon_b.jpg" alt="Lilithmon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">Lilithmon</div>
+      <span class="rank"><span class="glyph">&#9760;</span> Evil King</span>
+      <div class="role">Thought to have once been an Ophanimon; the Goddess of Darkness.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="https://digimon.fandom.com/wiki/Cherubimon_(Evil)" target="_blank" style="--accent:#e5484d">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Cherubimon_%28Evil%29_b.jpg" alt="Cherubimon (Evil)"></div>
+      <div class="level">Mega</div>
+      <div class="mon">Cherubimon (Evil)</div>
+      <span class="rank"><span class="glyph">&#9760;</span> Cherub</span>
+      <div class="role">Cherubimon consumed by darkness (Frontier).</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+  </div>
+
+  <p class="foot">Images and names link to DigimonWiki/Fandom (CC BY-SA unless noted otherwise). Ranks follow the official encyclopedia Types; the English localization renames some of them: Archangel appears as High Angel, Power as Great Angel, and Ophan as Super Angel.</p>
+
+</div>
+</body>
+</html>
