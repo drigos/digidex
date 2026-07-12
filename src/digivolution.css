@@ -132,8 +132,8 @@ h1 { margin:0 0 8px; font-size:42px; line-height:1.02; letter-spacing:-1px; }
 
 /* Category badges (top-right of a card): .rk = Royal Knight, .lw = Legendary Warrior,
    .fgd = Four Great Dragons, .vw = Witchelny Vortex Warrior,
-   .cd = Celestial Digimon, .aa = Angelic Army */
-.rk, .lw, .fgd, .vw, .cd, .aa {
+   .cd = Celestial Digimon, .aa = Angelic Army, .fa = Fallen Angel */
+.rk, .lw, .fgd, .vw, .cd, .aa, .fa {
   position:absolute; top:9px; right:9px; z-index:5;
   padding:2px 8px 2px 6px; border-radius:999px;
   font-size:9px; font-weight:900; letter-spacing:.2px;
@@ -152,12 +152,18 @@ h1 { margin:0 0 8px; font-size:42px; line-height:1.02; letter-spacing:-1px; }
 .cd::before { content:"\2726"; margin-right:3px; font-size:10px; }
 .aa { background:linear-gradient(180deg, #cfe4ff, #4c7fd0); color:#0c2246; border:1px solid rgba(223,238,255,.95); }
 .aa::before { content:"\2694"; margin-right:3px; font-size:10px; }
+.fa { background:linear-gradient(180deg, #ffd9d9, #d64545); color:#3a0808; border:1px solid rgba(255,224,224,.95); }
+.fa::before { content:"\2620"; margin-right:3px; font-size:10px; }
 
 /* A badge with an href renders as a canvas-level <a> sibling of its card (a nested <a>
    inside the node link would be invalid HTML). The engine sets left to the card's right
    edge inset; translateX(-100%) right-aligns it whatever the badge width. */
 a.badge-link { right:auto; transform:translateX(-100%); transition: filter .15s ease, box-shadow .15s ease; }
 a.badge-link:hover { filter:brightness(1.08); box-shadow:0 3px 14px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.35); }
+/* Linked badge for a panel card (e.g. Magnamon in an Armor panel): placed as the next
+   grid item stacked into the same cell via an inline grid-column/grid-row, since panel
+   cards are <a> elements and cannot nest another <a> */
+a.panel-badge { position:static; justify-self:end; align-self:start; margin:9px 9px 0 0; right:auto; transform:none; }
 
 /* Edge labels */
 .edge-label {
