@@ -61,6 +61,17 @@
   }
   a.card:hover::after { opacity: .32; }
 
+  /* card addressed by the URL fragment (e.g. a badge link on a tree page): the browser
+     scrolls to it and :target keeps it highlighted in its own accent color */
+  .card { scroll-margin: 110px; }
+  a.card:target {
+    border-color: color-mix(in srgb, var(--accent) 80%, rgba(255,255,255,.2));
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 65%, transparent), 0 26px 60px rgba(0,0,0,.5);
+    animation: target-pulse 1.1s ease-out 2;
+  }
+  a.card:target::after { opacity: .45; }
+  @keyframes target-pulse { 50% { transform: translateY(-6px); } }
+
   .thumb {
     position: relative; z-index: 1; height: 150px; border-radius: 16px; background: #fff;
     padding: 12px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center;
@@ -114,7 +125,7 @@
   </section>
   <div class="grid">
 
-    <a class="card" href="https://digimon.fandom.com/wiki/Omnimon" target="_blank" style="--accent:#cbd7ea">
+    <a class="card" id="omnimon" href="https://digimon.fandom.com/wiki/Omnimon" target="_blank" style="--accent:#cbd7ea">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Omnimon_b.jpg" alt="Omnimon"></div>
       <div class="level">Mega</div>
       <div class="mon">Omnimon</div>
@@ -123,7 +134,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/Alphamon" target="_blank" style="--accent:#cbd7ea">
+    <a class="card" id="alphamon" href="https://digimon.fandom.com/wiki/Alphamon" target="_blank" style="--accent:#cbd7ea">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Alphamon_b.jpg" alt="Alphamon"></div>
       <div class="level">Mega</div>
       <div class="mon">Alphamon</div>
@@ -132,7 +143,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/Gallantmon" target="_blank" style="--accent:#cbd7ea">
+    <a class="card" id="gallantmon" href="https://digimon.fandom.com/wiki/Gallantmon" target="_blank" style="--accent:#cbd7ea">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Gallantmon_b.jpg" alt="Gallantmon"></div>
       <div class="level">Mega</div>
       <div class="mon">Gallantmon</div>
@@ -141,7 +152,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/Magnamon" target="_blank" style="--accent:#cbd7ea">
+    <a class="card" id="magnamon" href="https://digimon.fandom.com/wiki/Magnamon" target="_blank" style="--accent:#cbd7ea">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Magnamon_b.jpg" alt="Magnamon"></div>
       <div class="level">Armor</div>
       <div class="mon">Magnamon</div>
@@ -150,7 +161,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/UlforceVeedramon" target="_blank" style="--accent:#cbd7ea">
+    <a class="card" id="ulforceveedramon" href="https://digimon.fandom.com/wiki/UlforceVeedramon" target="_blank" style="--accent:#cbd7ea">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/UlforceVeedramon_b.jpg" alt="UlforceVeedramon"></div>
       <div class="level">Mega</div>
       <div class="mon">UlforceVeedramon</div>
@@ -159,7 +170,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/Dynasmon" target="_blank" style="--accent:#cbd7ea">
+    <a class="card" id="dynasmon" href="https://digimon.fandom.com/wiki/Dynasmon" target="_blank" style="--accent:#cbd7ea">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Dynasmon_b.jpg" alt="Dynasmon"></div>
       <div class="level">Mega</div>
       <div class="mon">Dynasmon</div>
@@ -168,7 +179,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/Crusadermon" target="_blank" style="--accent:#cbd7ea">
+    <a class="card" id="crusadermon" href="https://digimon.fandom.com/wiki/Crusadermon" target="_blank" style="--accent:#cbd7ea">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Crusadermon_b.jpg" alt="Crusadermon"></div>
       <div class="level">Mega</div>
       <div class="mon">Crusadermon</div>
@@ -177,7 +188,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/Craniamon" target="_blank" style="--accent:#cbd7ea">
+    <a class="card" id="craniamon" href="https://digimon.fandom.com/wiki/Craniamon" target="_blank" style="--accent:#cbd7ea">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Craniamon_b.jpg" alt="Craniamon"></div>
       <div class="level">Mega</div>
       <div class="mon">Craniamon</div>
@@ -186,7 +197,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/Kentaurosmon" target="_blank" style="--accent:#cbd7ea">
+    <a class="card" id="kentaurosmon" href="https://digimon.fandom.com/wiki/Kentaurosmon" target="_blank" style="--accent:#cbd7ea">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Kentaurosmon_b.jpg" alt="Kentaurosmon"></div>
       <div class="level">Mega</div>
       <div class="mon">Kentaurosmon</div>
@@ -195,7 +206,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/Leopardmon" target="_blank" style="--accent:#cbd7ea">
+    <a class="card" id="leopardmon" href="https://digimon.fandom.com/wiki/Leopardmon" target="_blank" style="--accent:#cbd7ea">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Leopardmon_b.jpg" alt="Leopardmon"></div>
       <div class="level">Mega</div>
       <div class="mon">Leopardmon</div>
@@ -204,7 +215,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/Examon" target="_blank" style="--accent:#cbd7ea">
+    <a class="card" id="examon" href="https://digimon.fandom.com/wiki/Examon" target="_blank" style="--accent:#cbd7ea">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Examon_b.jpg" alt="Examon"></div>
       <div class="level">Mega</div>
       <div class="mon">Examon</div>
@@ -213,7 +224,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/Gankoomon" target="_blank" style="--accent:#cbd7ea">
+    <a class="card" id="gankoomon" href="https://digimon.fandom.com/wiki/Gankoomon" target="_blank" style="--accent:#cbd7ea">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Gankoomon_b.jpg" alt="Gankoomon"></div>
       <div class="level">Mega</div>
       <div class="mon">Gankoomon</div>
@@ -222,7 +233,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/Jesmon" target="_blank" style="--accent:#cbd7ea">
+    <a class="card" id="jesmon" href="https://digimon.fandom.com/wiki/Jesmon" target="_blank" style="--accent:#cbd7ea">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Jesmon_b.jpg" alt="Jesmon"></div>
       <div class="level">Mega</div>
       <div class="mon">Jesmon</div>
@@ -239,7 +250,7 @@
   </section>
   <div class="grid">
 
-    <a class="card" href="https://digimon.fandom.com/wiki/Imperialdramon_Paladin_Mode" target="_blank" style="--accent:#f0b429">
+    <a class="card" id="imperialdramon-paladin-mode" href="https://digimon.fandom.com/wiki/Imperialdramon_Paladin_Mode" target="_blank" style="--accent:#f0b429">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Imperialdramon_Paladin_Mode_b.jpg" alt="Imperialdramon Paladin Mode"></div>
       <div class="level">Mega</div>
       <div class="mon">Imperialdramon Paladin Mode</div>

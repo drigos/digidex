@@ -61,6 +61,17 @@
   }
   a.card:hover::after { opacity: .32; }
 
+  /* card addressed by the URL fragment (e.g. a badge link on a tree page): the browser
+     scrolls to it and :target keeps it highlighted in its own accent color */
+  .card { scroll-margin: 110px; }
+  a.card:target {
+    border-color: color-mix(in srgb, var(--accent) 80%, rgba(255,255,255,.2));
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 65%, transparent), 0 26px 60px rgba(0,0,0,.5);
+    animation: target-pulse 1.1s ease-out 2;
+  }
+  a.card:target::after { opacity: .45; }
+  @keyframes target-pulse { 50% { transform: translateY(-6px); } }
+
   .thumb {
     position: relative; z-index: 1; height: 150px; border-radius: 16px; background: #fff;
     padding: 12px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center;
@@ -114,7 +125,7 @@
   </section>
   <div class="grid">
 
-    <a class="card" href="https://digimon.fandom.com/wiki/Seraphimon" target="_blank" style="--accent:#f0b429">
+    <a class="card" id="seraphimon" href="https://digimon.fandom.com/wiki/Seraphimon" target="_blank" style="--accent:#f0b429">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Seraphimon_b.jpg" alt="Seraphimon"></div>
       <div class="level">Mega</div>
       <div class="mon">Seraphimon</div>
@@ -123,7 +134,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/Cherubimon_(Good)" target="_blank" style="--accent:#f0b429">
+    <a class="card" id="cherubimon-good" href="https://digimon.fandom.com/wiki/Cherubimon_(Good)" target="_blank" style="--accent:#f0b429">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Cherubimon_%28Good%29_b.jpg" alt="Cherubimon (Good)"></div>
       <div class="level">Mega</div>
       <div class="mon">Cherubimon (Good)</div>
@@ -132,7 +143,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/Ophanimon" target="_blank" style="--accent:#f0b429">
+    <a class="card" id="ophanimon" href="https://digimon.fandom.com/wiki/Ophanimon" target="_blank" style="--accent:#f0b429">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Ophanimon_b.jpg" alt="Ophanimon"></div>
       <div class="level">Mega</div>
       <div class="mon">Ophanimon</div>
@@ -149,7 +160,7 @@
   </section>
   <div class="grid">
 
-    <a class="card" href="https://digimon.fandom.com/wiki/SlashAngemon" target="_blank" style="--accent:#7fb5ff">
+    <a class="card" id="slashangemon" href="https://digimon.fandom.com/wiki/SlashAngemon" target="_blank" style="--accent:#7fb5ff">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/SlashAngemon_b.jpg" alt="SlashAngemon"></div>
       <div class="level">Mega</div>
       <div class="mon">SlashAngemon</div>
@@ -158,7 +169,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/Rasielmon" target="_blank" style="--accent:#f0b429">
+    <a class="card" id="rasielmon" href="https://digimon.fandom.com/wiki/Rasielmon" target="_blank" style="--accent:#f0b429">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Rasielmon_b.jpg" alt="Rasielmon"></div>
       <div class="level">Mega</div>
       <div class="mon">Rasielmon</div>
@@ -167,7 +178,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/Dominimon" target="_blank" style="--accent:#7fb5ff">
+    <a class="card" id="dominimon" href="https://digimon.fandom.com/wiki/Dominimon" target="_blank" style="--accent:#7fb5ff">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Dominimon_b.jpg" alt="Dominimon"></div>
       <div class="level">Mega</div>
       <div class="mon">Dominimon</div>
@@ -176,7 +187,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/ClavisAngemon" target="_blank" style="--accent:#7fb5ff">
+    <a class="card" id="clavisangemon" href="https://digimon.fandom.com/wiki/ClavisAngemon" target="_blank" style="--accent:#7fb5ff">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/ClavisAngemon_b.jpg" alt="ClavisAngemon"></div>
       <div class="level">Mega</div>
       <div class="mon">ClavisAngemon</div>
@@ -185,7 +196,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/ArkhaiAngemon" target="_blank" style="--accent:#aab8cf">
+    <a class="card" id="arkhaiangemon" href="https://digimon.fandom.com/wiki/ArkhaiAngemon" target="_blank" style="--accent:#aab8cf">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/ArkhaiAngemon_b.jpg" alt="ArkhaiAngemon"></div>
       <div class="level">Ultimate</div>
       <div class="mon">ArkhaiAngemon</div>
@@ -194,7 +205,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/MagnaAngemon" target="_blank" style="--accent:#aab8cf">
+    <a class="card" id="magnaangemon" href="https://digimon.fandom.com/wiki/MagnaAngemon" target="_blank" style="--accent:#aab8cf">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/MagnaAngemon_b.jpg" alt="MagnaAngemon"></div>
       <div class="level">Ultimate</div>
       <div class="mon">MagnaAngemon</div>
@@ -203,7 +214,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/Angewomon" target="_blank" style="--accent:#aab8cf">
+    <a class="card" id="angewomon" href="https://digimon.fandom.com/wiki/Angewomon" target="_blank" style="--accent:#aab8cf">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Angewomon_b.jpg" alt="Angewomon"></div>
       <div class="level">Ultimate</div>
       <div class="mon">Angewomon</div>
@@ -212,7 +223,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/Angemon" target="_blank" style="--accent:#aab8cf">
+    <a class="card" id="angemon" href="https://digimon.fandom.com/wiki/Angemon" target="_blank" style="--accent:#aab8cf">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Angemon_b.jpg" alt="Angemon"></div>
       <div class="level">Champion</div>
       <div class="mon">Angemon</div>
@@ -221,7 +232,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/Piddomon" target="_blank" style="--accent:#aab8cf">
+    <a class="card" id="piddomon" href="https://digimon.fandom.com/wiki/Piddomon" target="_blank" style="--accent:#aab8cf">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Piddomon_b.jpg" alt="Piddomon"></div>
       <div class="level">Champion</div>
       <div class="mon">Piddomon</div>
@@ -230,7 +241,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/Darcmon" target="_blank" style="--accent:#aab8cf">
+    <a class="card" id="darcmon" href="https://digimon.fandom.com/wiki/Darcmon" target="_blank" style="--accent:#aab8cf">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Darcmon_b.jpg" alt="Darcmon"></div>
       <div class="level">Champion</div>
       <div class="mon">Darcmon</div>
@@ -239,7 +250,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/Luxmon" target="_blank" style="--accent:#aab8cf">
+    <a class="card" id="luxmon" href="https://digimon.fandom.com/wiki/Luxmon" target="_blank" style="--accent:#aab8cf">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Luxmon_b.jpg" alt="Luxmon"></div>
       <div class="level">Rookie</div>
       <div class="mon">Luxmon</div>
@@ -256,7 +267,7 @@
   </section>
   <div class="grid">
 
-    <a class="card" href="https://digimon.fandom.com/wiki/ShadowSeraphimon" target="_blank" style="--accent:#e5484d">
+    <a class="card" id="shadowseraphimon" href="https://digimon.fandom.com/wiki/ShadowSeraphimon" target="_blank" style="--accent:#e5484d">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/ShadowSeraphimon_b.jpg" alt="ShadowSeraphimon"></div>
       <div class="level">Mega</div>
       <div class="mon">ShadowSeraphimon</div>
@@ -265,7 +276,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/Daemon" target="_blank" style="--accent:#e5484d">
+    <a class="card" id="daemon" href="https://digimon.fandom.com/wiki/Daemon" target="_blank" style="--accent:#e5484d">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Daemon_b.jpg" alt="Daemon"></div>
       <div class="level">Mega</div>
       <div class="mon">Daemon</div>
@@ -274,7 +285,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/Ophanimon_Falldown_Mode" target="_blank" style="--accent:#e5484d">
+    <a class="card" id="ophanimon-falldown-mode" href="https://digimon.fandom.com/wiki/Ophanimon_Falldown_Mode" target="_blank" style="--accent:#e5484d">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Ophanimon_Falldown_Mode_b.jpg" alt="Ophanimon Falldown Mode"></div>
       <div class="level">Mega</div>
       <div class="mon">Ophanimon Falldown Mode</div>
@@ -283,7 +294,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/Lilithmon" target="_blank" style="--accent:#e5484d">
+    <a class="card" id="lilithmon" href="https://digimon.fandom.com/wiki/Lilithmon" target="_blank" style="--accent:#e5484d">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Lilithmon_b.jpg" alt="Lilithmon"></div>
       <div class="level">Mega</div>
       <div class="mon">Lilithmon</div>
@@ -292,7 +303,7 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" href="https://digimon.fandom.com/wiki/Cherubimon_(Evil)" target="_blank" style="--accent:#e5484d">
+    <a class="card" id="cherubimon-evil" href="https://digimon.fandom.com/wiki/Cherubimon_(Evil)" target="_blank" style="--accent:#e5484d">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Cherubimon_%28Evil%29_b.jpg" alt="Cherubimon (Evil)"></div>
       <div class="level">Mega</div>
       <div class="mon">Cherubimon (Evil)</div>
@@ -302,6 +313,47 @@
     </a>
 
   </div>
+
+  <section class="lore-section">
+    <div class="lore-panel-title">
+      <h2>Lore notes</h2>
+      <span>the stories behind the ranks and the falls</span>
+    </div>
+    <div class="lore-grid">
+      <div class="lore-card">
+        <div class="lore-card-title">The Three Celestials' Roles</div>
+        <div class="lore-card-text">Ophanimon's official profile defines the division of the trio guarding the Kernel: Seraphimon is the unforgiving Marshall of God (the law), Cherubimon the steadfast defender of God and wisdom, and Ophanimon the merciful and compassionate side, the holy mother of the Digital World.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Ophanimon, the Fallen Goddess</div>
+        <div class="lore-card-text">Lilithmon's official profile says it is thought to have once been an Ophanimon that fell from grace, becoming the Goddess of Darkness. A perfect mirror of Seraphimon and Daemon: two of the Three Celestials have a Demon Lord as their fallen counterpart.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Rasielmon, the Ophan Among Soldiers</div>
+        <div class="lore-card-text">Rasielmon once held the same rank as Ophanimon. It keeps the Ophan rank and the ability to look out on the entire world from the Kernel, having built up the knowledge of a god, but it no longer holds a Celestial seat and serves alongside the army instead.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Dominimon, the Phantom</div>
+        <div class="lore-card-text">Dominimon does not answer in any way to the angelic chain of command: it manifests via mutation when the balance of light and darkness breaks, is almost never sighted, and only joins ClavisAngemon and SlashAngemon against extreme threats, sacrificing its own lifeforce (Devotion Field).</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">ClavisAngemon and the Zenith Gate</div>
+        <div class="lore-card-text">ClavisAngemon guards the Zenith Gate, sealed by 360 doors between the Digital World and the outside, holding The Key, a master key only it can wield. Some suspect the Digimon itself is part of the key, whose power could collapse the Digital World.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">A Power Leads the Army</div>
+        <div class="lore-card-text">SlashAngemon's official profile confirms it commands the Angelic Army (Powers). In classical angelology the Powers are precisely the warrior angels, so an army led by a middle rank rather than a Seraph is faithful to the original hierarchy.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">The War Against Millenniumon</div>
+        <div class="lore-card-text">In Digimon Adventure: (the 2020 reboot), Seraphimon, Ophanimon, Cherubimon, ClavisAngemon, SlashAngemon, Rasielmon and Valdurmon fought Millenniumon together in the distant past: the only time most of this roster takes the field as an actual army.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Two Falls, Two Stories</div>
+        <div class="lore-card-text">Cherubimon (Evil) is born in Frontier: feeling betrayed by Seraphimon and Ophanimon, it was corrupted by Lucemon. Ophanimon Falldown Mode is officially a form of Ophanimon so angry it suppressed its own emotions and fell into madness; in Adventure tri. it is born from Hikari's despair and fuses with Raguelmon into Ordinemon.</div>
+      </div>
+    </div>
+  </section>
 
   <p class="foot">Images and names link to DigimonWiki/Fandom (CC BY-SA unless noted otherwise). Ranks follow the official encyclopedia Types; the English localization renames some of them: Archangel appears as High Angel, Power as Great Angel, and Ophan as Super Angel.</p>
 
