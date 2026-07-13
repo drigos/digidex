@@ -248,3 +248,41 @@ a.panel-badge { position:static; justify-self:end; align-self:start; margin:9px 
 .lore-card-text { color:#c2ccd9; font-size:11.5px; line-height:1.45; font-weight:600; }
 
 .footer { position:absolute; left:32px; right:32px; bottom:16px; color:rgba(225,238,255,.72); font-size:12px; line-height:1.35; z-index:6; }
+
+/* Support / donation block. Shared by every page: the selection screens and rosters
+   (in normal flow above the .foot line) and the tree pages (below the canvas, inside
+   .wrap, so it never touches the canvas geometry). On screen it renders as two pill
+   buttons; the written URL of each is hidden. In print the pill styling is dropped and
+   the URL is revealed, so a printed page still shows where to donate (see @media print). */
+.support {
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:center;
+  gap:12px; margin:40px auto 0; padding:20px 22px; max-width:560px;
+  border-radius:18px; border:1px solid rgba(255,255,255,.14);
+  background:linear-gradient(180deg, rgba(16,43,76,.7), rgba(7,19,36,.75));
+}
+.support-label {
+  width:100%; text-align:center; margin-bottom:2px;
+  font-size:12px; font-weight:900; letter-spacing:1.4px; text-transform:uppercase; color:var(--muted);
+}
+.support-btn {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:10px 18px; border-radius:999px; border:1px solid transparent;
+  font-size:14px; font-weight:900; letter-spacing:.2px;
+  transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;
+}
+.support-btn:hover { transform:translateY(-2px); filter:brightness(1.06); box-shadow:0 10px 26px rgba(0,0,0,.4); }
+.support-btn .support-icon { font-size:16px; line-height:1; }
+.support-btn.kofi { color:#23303e; background:#ffdd57; border-color:#f4c518; }
+.support-btn.sponsors { color:#ffe3f1; background:rgba(219,97,162,.18); border-color:rgba(219,97,162,.6); }
+.support-btn.sponsors .support-icon { color:#ff8ac4; }
+/* the written URL: hidden on screen (the button label is enough), revealed in print */
+.support-url { display:none; }
+
+@media print {
+  .support { background:none; border:none; box-shadow:none; padding:8px 0; gap:6px 22px; margin-top:24px; }
+  .support-label { color:#000; }
+  .support-btn { padding:0; border:none; background:none !important; color:#000 !important; font-weight:700; gap:5px; }
+  .support-btn .support-icon { display:none; }
+  .support-url { display:inline; font-weight:400; }
+  .support-url::before { content:": "; }
+}
