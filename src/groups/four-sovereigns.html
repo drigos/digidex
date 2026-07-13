@@ -106,6 +106,18 @@
   a.card:hover .cta .arrow { transform: translateX(5px); }
 
   .foot { text-align: center; color: rgba(225,238,255,.6); font-size: 12.5px; line-height: 1.5; margin-top: 40px; }
+
+  /* Lore notes: static, responsive variant of the shared .lore-panel (which is
+     absolute-positioned for the tree canvas); the cards reuse .lore-card styles
+     and .lore-panel-title from digivolution.css */
+  .lore-section {
+    margin-top: 34px; padding: 20px 22px 22px; border-radius: 24px;
+    border: 1px solid rgba(148,163,184,.42);
+    background: linear-gradient(180deg, rgba(44,52,64,.68), rgba(16,24,36,.94));
+    box-shadow: 0 20px 56px rgba(0,0,0,.36), inset 0 0 0 1px rgba(255,255,255,.05);
+  }
+  @media (max-width: 1100px) { .lore-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px)  { .lore-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -179,6 +191,35 @@
     </a>
 
   </div>
+
+  <section class="lore-section">
+    <div class="lore-panel-title">
+      <h2>Lore notes</h2>
+      <span>the stories behind the compass</span>
+    </div>
+    <div class="lore-grid">
+      <div class="lore-card">
+        <div class="lore-card-title">The Emperor Sealed by an Angel</div>
+        <div class="lore-card-text">Fanglongmon's official profile says it was sealed in the deepest, darkest part of the land by an Angel Digimon that descended in ancient times; the lore points to Lucemon. Without their ruler, the four struggled for hegemony until settling into today's equilibrium.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Twelve DigiCores Each</div>
+        <div class="lore-card-text">Every Sovereign has four shining eyes and twelve DigiCores floating around its body. An ordinary Digimon holds a single DigiCore inside its body, exposed only in Undead types or the greatest of the Mega class.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Sealed by the Dark Masters</div>
+        <div class="lore-card-text">In Adventure 02, the Dark Masters had sealed the Four Holy Beasts. Freeing Azulongmon took the Holy Stones, the D-3s, and the older Chosen giving up the power of their Crests to break the seal.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Kyoto's Guardians</div>
+        <div class="lore-card-text">Adventure 02 mirrors the myth in the human world: a Kyoto professor explains that the Four Holy Beasts guard the city's cardinal points against evil spirits, in the place where the barrier between the two worlds is at its weakest.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">More Than a Mega</div>
+        <div class="lore-card-text">All four have reigned since the era of myth, with strength said to rival the gods. Zhuqiaomon's profile warns that the power of a mere Mega will not suffice to defeat it.</div>
+      </div>
+    </div>
+  </section>
 
   <p class="foot">Images and names link to DigimonWiki/Fandom (CC BY-SA unless noted otherwise). DigimonWiki hosts Fanglongmon under its Japanese name, Huanglongmon; in Japanese materials the four are Qinglongmon, Zhuqiaomon, Baihumon and Xuanwumon. The dub also calls the group the Digimon Sovereigns.</p>
 

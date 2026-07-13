@@ -106,6 +106,18 @@
   a.card:hover .cta .arrow { transform: translateX(5px); }
 
   .foot { text-align: center; color: rgba(225,238,255,.6); font-size: 12.5px; line-height: 1.5; margin-top: 40px; }
+
+  /* Lore notes: static, responsive variant of the shared .lore-panel (which is
+     absolute-positioned for the tree canvas); the cards reuse .lore-card styles
+     and .lore-panel-title from digivolution.css */
+  .lore-section {
+    margin-top: 34px; padding: 20px 22px 22px; border-radius: 24px;
+    border: 1px solid rgba(148,163,184,.42);
+    background: linear-gradient(180deg, rgba(44,52,64,.68), rgba(16,24,36,.94));
+    box-shadow: 0 20px 56px rgba(0,0,0,.36), inset 0 0 0 1px rgba(255,255,255,.05);
+  }
+  @media (max-width: 1100px) { .lore-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px)  { .lore-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -260,6 +272,43 @@
     </a>
 
   </div>
+
+  <section class="lore-section">
+    <div class="lore-panel-title">
+      <h2>Lore notes</h2>
+      <span>the stories behind the order</span>
+    </div>
+    <div class="lore-grid">
+      <div class="lore-card">
+        <div class="lore-card-title">Knights of the Round Table</div>
+        <div class="lore-card-text">The name is sometimes extended to Royal Knights of the Round Table. Yggdrasill, the host computer that rules the Digital World, assembled the thirteen knights as the highest rank of Network Security and personally grants the title.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">The Thirteenth Seat</div>
+        <div class="lore-card-text">For years the order counted only twelve members for lack of a worthy candidate. Gankoomon put Huckmon through its harsh training regimen; when it finally evolved into Jesmon, the long-vacant thirteenth seat was filled and the order completed.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Two Knights Served Lucemon</div>
+        <div class="lore-card-text">In Frontier, Dynasmon and Crusadermon saw Lucemon as the only one able to bring order to a chaotic Digital World, and harvested the DigiCode of whole Areas to release it from the Dark Area. Every knight is righteous; each follows its own justice.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Rivals Across Worlds</div>
+        <div class="lore-card-text">The order keeps a natural rivalry with the Seven Great Demon Lords, and its power is said to be rivaled only by the Olympos XII, who watch over Digital World: Iliad, a Digital World on another server of the network.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">The Founder's Crisis</div>
+        <div class="lore-card-text">Imperialdramon Paladin Mode founded the order as the one who saved the ancient Digital World from total collapse in a time of unprecedented crisis. As Gankoomon puts it in Cyber Sleuth, the title is not just handed out: a knight must first have protected the world.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">The Empty Thirteenth Screen</div>
+        <div class="lore-card-text">In the movie X-Evolution the twelve knights confer through a circle of twelve viewscreens with an empty space for a thirteenth, and Alphamon is acknowledged but said to not actually exist. Not even the knights can physically meet Yggdrasill.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Justice Divided in Savers</div>
+        <div class="lore-card-text">In Savers, Yggdrasill deems humanity unworthy and orders the knights to destroy the Real World before it drags the Digital World down with it. Their battles with DATS and the influence of Sleipmon make the order waver, knight by knight.</div>
+      </div>
+    </div>
+  </section>
 
   <p class="foot">Images and names link to DigimonWiki/Fandom (CC BY-SA unless noted otherwise). Crusadermon, Kentaurosmon and Leopardmon are DigimonWiki's names for LordKnightmon, Sleipmon and Duftmon.</p>
 

@@ -106,6 +106,18 @@
   a.card:hover .cta .arrow { transform: translateX(5px); }
 
   .foot { text-align: center; color: rgba(225,238,255,.6); font-size: 12.5px; line-height: 1.5; margin-top: 40px; }
+
+  /* Lore notes: static, responsive variant of the shared .lore-panel (which is
+     absolute-positioned for the tree canvas); the cards reuse .lore-card styles
+     and .lore-panel-title from digivolution.css */
+  .lore-section {
+    margin-top: 34px; padding: 20px 22px 22px; border-radius: 24px;
+    border: 1px solid rgba(148,163,184,.42);
+    background: linear-gradient(180deg, rgba(44,52,64,.68), rgba(16,24,36,.94));
+    box-shadow: 0 20px 56px rgba(0,0,0,.36), inset 0 0 0 1px rgba(255,255,255,.05);
+  }
+  @media (max-width: 1100px) { .lore-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px)  { .lore-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -258,6 +270,35 @@
     </a>
 
   </div>
+
+  <section class="lore-section">
+    <div class="lore-panel-title">
+      <h2>Lore notes</h2>
+      <span>the stories behind the twelve</span>
+    </div>
+    <div class="lore-grid">
+      <div class="lore-card">
+        <div class="lore-card-title">Buddhist Generals, Zodiac Faces</div>
+        <div class="lore-card-text">Based on the Twelve Heavenly Generals who protect the Buddha of Medicine, drawn as zodiac animals as Japanese Buddhism has depicted them since the Heian period. The designs draw on the Butsuzozui, a 1690 compendium whose artwork appears in a Tamers episode explaining the myth.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Whose Orders? It Depends</div>
+        <div class="lore-card-text">The Reference Book assigns three Deva to each Sovereign, but in Tamers all twelve serve Zhuqiaomon alone. When a profile and a continuity disagree, both stories stand side by side.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Born from Dust</div>
+        <div class="lore-card-text">In Tamers, Zhuqiaomon created the Deva by reconfiguring fragments of Digimon that had turned to dust, and sent them into the Real World to retrieve Culumon and remove threats to the Sovereigns.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">The Deva Who Defected</div>
+        <div class="lore-card-text">In Tamers, Andiramon guarded the South Gate of the Sovereigns' domain instead of hunting Culumon; it defected to become Lopmon, Shaochung's partner, the only Deva to join a human.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Twelve Treasures</div>
+        <div class="lore-card-text">Every Deva wields a treasure whose name begins with Bao: staffs, axes, arrows, lances, conch shells, bows, orbs, pestles, blades, hammers and wheels, several transformed from the wielder's own body, like Mihiramon's tail staff or Caturamon turning itself into the hammer.</div>
+      </div>
+    </div>
+  </section>
 
   <p class="foot">Images and names link to DigimonWiki/Fandom (CC BY-SA unless noted otherwise). Antylamon (Deva) is the official English name; DigimonWiki hosts this Data variant as Antylamon (Good). Each Deva shares its Attribute with the Sovereign it serves.</p>
 

@@ -106,6 +106,18 @@
   a.card:hover .cta .arrow { transform: translateX(5px); }
 
   .foot { text-align: center; color: rgba(225,238,255,.6); font-size: 12.5px; line-height: 1.5; margin-top: 40px; }
+
+  /* Lore notes: static, responsive variant of the shared .lore-panel (which is
+     absolute-positioned for the tree canvas); the cards reuse .lore-card styles
+     and .lore-panel-title from digivolution.css */
+  .lore-section {
+    margin-top: 34px; padding: 20px 22px 22px; border-radius: 24px;
+    border: 1px solid rgba(148,163,184,.42);
+    background: linear-gradient(180deg, rgba(44,52,64,.68), rgba(16,24,36,.94));
+    box-shadow: 0 20px 56px rgba(0,0,0,.36), inset 0 0 0 1px rgba(255,255,255,.05);
+  }
+  @media (max-width: 1100px) { .lore-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px)  { .lore-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -162,6 +174,39 @@
     </a>
 
   </div>
+
+  <section class="lore-section">
+    <div class="lore-panel-title">
+      <h2>Lore notes</h2>
+      <span>the stories behind Witchelny</span>
+    </div>
+    <div class="lore-grid">
+      <div class="lore-card">
+        <div class="lore-card-title">Named After Another V-Pet</div>
+        <div class="lore-card-text">Witchelny takes its name from the setting of Magical Witches, a 1998 Bandai line of grimoire-shaped virtual pets that Digimon designer Watanabe Kenji worked on.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Sorcery Is Programming</div>
+        <div class="lore-card-text">In Witchelny, sorcery is a high-level programming language. Four clans each master an element (Earthlin of earth, Aquary of water, Eneruge of flame, Baluluna of wind) and together they founded the Brocken Magical Academy.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Another Dimension, Not Another Server</div>
+        <div class="lore-card-text">Unlike Iliad, which sits on a different server of the network, Witchelny is officially the Digital World of another dimension, one of many Layers. Crossing over is dimensional travel, as Wizardmon, Witchelny's famous native, did to train in fire and earth magic.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">The General Is a Royal Knight</div>
+        <div class="lore-card-text">MedievalGallantmon is the form Gallantmon takes in Witchelny. There it leads the Vortex Warriors as the Whirlwind General, yet in its Gallantmon form it is counted as a Royal Knight and not as a Vortex Warrior, despite being the same individual.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">The Forest Leaf</div>
+        <div class="lore-card-text">In the manga Digimon Chronicle, Gallantmon takes its Medieval form outside Witchelny thanks to a Forest Leaf, and rather than eliminating the traveling duo Yuuji and Ryudamon, it sets them a trial to test the power of the X-Antibody.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Assembled by the Card Game</div>
+        <div class="lore-card-text">The Vortex Warriors only recently came together as a group, via the card game's Vortex Warriors trait (ST-18 Guardian Vortex) and the Digimon Liberator web story, where Kazama Shoto's partner Pteromon takes the forms of Zephagamon, GrandGalemon and Vortexdramon.</div>
+      </div>
+    </div>
+  </section>
 
   <p class="foot">Images and names link to DigimonWiki/Fandom (CC BY-SA unless noted otherwise).</p>
 

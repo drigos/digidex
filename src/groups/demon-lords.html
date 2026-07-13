@@ -106,6 +106,18 @@
   a.card:hover .cta .arrow { transform: translateX(5px); }
 
   .foot { text-align: center; color: rgba(225,238,255,.6); font-size: 12.5px; line-height: 1.5; margin-top: 40px; }
+
+  /* Lore notes: static, responsive variant of the shared .lore-panel (which is
+     absolute-positioned for the tree canvas); the cards reuse .lore-card styles
+     and .lore-panel-title from digivolution.css */
+  .lore-section {
+    margin-top: 34px; padding: 20px 22px 22px; border-radius: 24px;
+    border: 1px solid rgba(148,163,184,.42);
+    background: linear-gradient(180deg, rgba(44,52,64,.68), rgba(16,24,36,.94));
+    box-shadow: 0 20px 56px rgba(0,0,0,.36), inset 0 0 0 1px rgba(255,255,255,.05);
+  }
+  @media (max-width: 1100px) { .lore-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px)  { .lore-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -189,6 +201,43 @@
     </a>
 
   </div>
+
+  <section class="lore-section">
+    <div class="lore-panel-title">
+      <h2>Lore notes</h2>
+      <span>the stories behind the crowns</span>
+    </div>
+    <div class="lore-grid">
+      <div class="lore-card">
+        <div class="lore-card-title">Assembled Card by Card</div>
+        <div class="lore-card-text">The group was built between 2002 and 2004 in guides and card boosters: Lilithmon was the first named member, and the card Advent of the Seven Great Demon Lords showed six members with a Baphomet silhouette holding the seventh place until Belphemon was revealed.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Lucemon's Rebellion</div>
+        <div class="lore-card-text">They were once high-ranking Angel Digimon. When Lucemon instigated a rebellion against God, they fell and were deleted to the Dark Area as punishment, where each continues to exist as the deadly sin it pursues.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Seven Who Never Gather</div>
+        <div class="lore-card-text">The Demon Lords neither cooperate nor turn on each other, whatever their interests or disagreements; each one is a calamity on its own. As a group, their natural rivals are the Royal Knights.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Ogudomon, the Sum of Sins</div>
+        <div class="lore-card-text">A Super Demon Lord with seven legs, seven eyes and an eighth eye unlike the others: it contains all the sins of the Digital World along with the power to atone for them, nullifying the power of any Digimon with even a hint of wickedness.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Crowns Born in Frontier</div>
+        <div class="lore-card-text">The Crowns of the seven deadly sins appeared first in Lucemon: Satan Mode's official artwork used to promote Frontier; only in 2004 did the Gate of Deadly Sins tie each Crown to one member.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Why Belphemon Sleeps</div>
+        <div class="lore-card-text">Belphemon was sealed in the deepest part of the Dark Area, and because its power was too immense, the very system that deleted the fallen angels forced its data into a sleep state.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Nobility of the Dark Area</div>
+        <div class="lore-card-text">Today the seven are the chief nobility of the Dark Area, residing in the den of demons at its heart, and each member holds the right to command legions of the Nightmare Soldiers.</div>
+      </div>
+    </div>
+  </section>
 
   <p class="foot">Images and names link to DigimonWiki/Fandom (CC BY-SA unless noted otherwise). Lucemon Chaos Mode is DigimonWiki's name for Lucemon: Falldown Mode, the only non-Mega member.</p>
 
