@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gatomon: evolution tree</title>
+<link rel="stylesheet" href="../../digivolution.css" />
+<style>
+  /* page-specific layout */
+  .infographic { width:1860px; height:2614px; }
+  .columns { top:200px; }
+  .jogress-panel { top:1910px; width:248px; }
+  .partner-panel { top:1910px; width:1348px; left:auto; right:24px; }
+  .armor-panel { top:2264px; width:1812px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="backnav" href="index.html"><span class="arrow">&#8592;</span> DigiDestined</a>
+  <div class="infographic" id="canvas">
+    <div class="title">
+      <h1>Gatomon: evolution tree</h1>
+      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega -> Ultra hierarchy, with the X-Antibody line up to Magnadramon X, the Ophanimon branch with its Falldown Mode and ChronoCore variants, the Silphymon Jogress, the BlackGatomon dark branch, the Mastemon holy-dark fusion, the LovelyAngemon and Junomon alternate Megas, the SkullKnightmon corruption, Gatomon's Armor Digivolutions and the collective composition that forms Omnimon Merciful Mode.</div>
+    </div>
+
+    <div class="legend">
+      <div class="legend-title">Digivolution triggers</div>
+      <div class="legend-grid"></div>
+    </div>
+
+    <div class="columns"></div>
+
+    <svg id="edges" viewBox="0 0 1860 2614" preserveAspectRatio="none"></svg>
+    <div id="labels"></div>
+    <div id="nodes"></div>
+
+    <section class="jogress-panel">
+      <div class="jogress-panel-title">
+        <h2>Jogress partner</h2>
+        <span>external Hawkmon line</span>
+      </div>
+      <div class="jogress-body">
+        <a class="jogress-card" href="https://digimon.fandom.com/wiki/Aquilamon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Aquilamon_b.jpg" alt="Aquilamon">
+          <div class="jogress-name">Aquilamon</div>
+          <div class="jogress-level">Champion</div>
+          <div class="jogress-fuse">+ Gatomon = Silphymon</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="partner-panel" id="composition-panel">
+      <div class="partner-panel-title">
+        <h2>Collective composition (Adventure tri.)</h2>
+        <span>Magnadramon joins Omnimon and the other partners' Mega forms to compose Omnimon Merciful Mode</span>
+      </div>
+      <div class="partner-grid">
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Omnimon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Omnimon_b.jpg" alt="Omnimon">
+          <div class="partner-name">Omnimon</div>
+          <div class="partner-level">Ultra</div>
+          <div class="partner-fuse">Royal Knight core</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Seraphimon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Seraphimon_b.jpg" alt="Seraphimon">
+          <div class="partner-name">Seraphimon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Holy angel member</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Phoenixmon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Phoenixmon_b.jpg" alt="Phoenixmon">
+          <div class="partner-name">Phoenixmon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Holy bird member</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Rosemon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Rosemon_b.jpg" alt="Rosemon">
+          <div class="partner-name">Rosemon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Fairy / plant member</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/HerculesKabuterimon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/HerculesKabuterimon_b.jpg" alt="HerculesKabuterimon">
+          <div class="partner-name">HerculesKabuterimon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Insect titan member</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Vikemon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Vikemon_b.jpg" alt="Vikemon">
+          <div class="partner-name">Vikemon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Beast warrior member</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="armor-panel" id="armor-panel">
+      <div class="armor-panel-title">
+        <h2>Gatomon's Armor Digivolutions</h2>
+        <span>a single branch from Gatomon, organized by Digi-Egg</span>
+      </div>
+      <div class="armor-grid">
+        <a class="armor-card" id="armor-lynxmon" href="https://digimon.fandom.com/wiki/Lynxmon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Lynxmon_b.jpg" alt="Lynxmon">
+          <div class="armor-name">Lynxmon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Courage</div>
+        </a>
+        <a class="armor-card" id="armor-rabbitmon" href="https://digimon.fandom.com/wiki/Rabbitmon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Rabbitmon_b.jpg" alt="Rabbitmon">
+          <div class="armor-name">Rabbitmon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Friendship</div>
+        </a>
+        <a class="armor-card" id="armor-swanmon" href="https://digimon.fandom.com/wiki/Swanmon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Swanmon_b.jpg" alt="Swanmon">
+          <div class="armor-name">Swanmon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Love</div>
+        </a>
+        <a class="armor-card" id="armor-kabukimon" href="https://digimon.fandom.com/wiki/Kabukimon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Kabukimon_b.jpg" alt="Kabukimon">
+          <div class="armor-name">Kabukimon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Sincerity</div>
+        </a>
+        <a class="armor-card" id="armor-butterflymon" href="https://digimon.fandom.com/wiki/Butterflymon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Butterflymon_b.jpg" alt="Butterflymon">
+          <div class="armor-name">Butterflymon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Knowledge</div>
+        </a>
+        <a class="armor-card" id="armor-tylomon" href="https://digimon.fandom.com/wiki/Tylomon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Tylomon_b.jpg" alt="Tylomon">
+          <div class="armor-name">Tylomon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Reliability</div>
+        </a>
+        <a class="armor-card" id="armor-oryxmon" href="https://digimon.fandom.com/wiki/Oryxmon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Oryxmon_b.jpg" alt="Oryxmon">
+          <div class="armor-name">Oryxmon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Hope</div>
+        </a>
+        <a class="armor-card" id="armor-nefertimon" href="https://digimon.fandom.com/wiki/Nefertimon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Nefertimon_b.jpg" alt="Nefertimon">
+          <div class="armor-name">Nefertimon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Light</div>
+        </a>
+        <a class="armor-card x-card" id="armor-nefertimonx" href="https://digimon.fandom.com/wiki/Nefertimon_X" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Nefertimon_X_b.jpg" alt="Nefertimon X">
+          <div class="armor-name">Nefertimon X</div>
+          <div class="armor-level">Armor / X</div>
+          <div class="armor-egg">X-Antibody from Nefertimon</div>
+        </a>
+        <a class="armor-card" id="armor-opossummon" href="https://digimon.fandom.com/wiki/Opossummon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Opossummon_b.jpg" alt="Opossummon">
+          <div class="armor-name">Opossummon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Kindness</div>
+        </a>
+        <a class="armor-card" id="armor-maildramon" href="https://digimon.fandom.com/wiki/Maildramon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Maildramon_b.jpg" alt="Maildramon">
+          <div class="armor-name">Maildramon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Miracles</div>
+        </a>
+      </div>
+    </section>
+
+    <div class="footer">Images and names link to DigimonWiki/Fandom. Credit and license: Fandom community, CC BY-SA unless noted otherwise. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. Ophanimon C is a game-specific form using the ChronoCore (Digimon World Dawn/Dusk); Mastemon fuses the holy and dark branches (Angewomon + LadyDevimon). Gatomon has no recorded form for the Digi-Egg of Destiny.</div>
+  </div>
+</div>
+<script src="../../digivolution.js"></script>
+<script>
+DigiTree.mount({
+  legend: [
+    ['normal','Normal evolution'],
+    ['x','X-Digivolution'],
+    ['dna','DNA / Jogress'],
+    ['mode','Mode Change'],
+    ['dark','Dark / Virus'],
+    ['armor','Armor Digivolution']
+  ],
+  columns: [
+    [42,'Fresh'],[304,'In-Training'],[566,'Rookie'],[828,'Champion'],
+    [1090,'Ultimate'],[1352,'Mega'],[1614,'Ultra / Variant']
+  ],
+  nodes: [
+    // X forms sit directly above their base forms
+    {id:'gatomonx', x:828, y:250, cls:'x', name:'Gatomon X', lvl:'Champion / X', note:'X-Antibody form.', wiki:'Gatomon_X', img:'Gatomon_X_b.jpg'},
+    {id:'angewomonx', x:1090, y:250, cls:'x', name:'Angewomon X', lvl:'Ultimate / X', note:'X-Antibody form.', wiki:'Angewomon_X', img:'Angewomon_X_b.jpg'},
+    {id:'magnadramonx', x:1352, y:250, cls:'x', name:'Magnadramon X', lvl:'Mega / X', note:'X-Antibody form.', wiki:'Magnadramon_X', img:'Magnadramon_X_b.jpg', badge:{cls:'fgd', text:'Four Great Dragons', href:'../../groups/four-great-dragons.html#magnadramon', title:'Four Great Dragons roster'}},
+
+    // main spine
+    {id:'yukimibotamon', x:42, y:490, cls:'normal', name:'YukimiBotamon', lvl:'Fresh', note:'Snow-white initial form of the line.', wiki:'YukimiBotamon', img:'YukimiBotamon_b.jpg'},
+    {id:'nyaromon', x:304, y:490, cls:'normal', name:'Nyaromon', lvl:'In-Training', note:'Cat-like In-Training form.', wiki:'Nyaromon', img:'Nyaromon_b.jpg'},
+    {id:'salamon', x:566, y:490, cls:'normal', name:'Salamon', lvl:'Rookie', note:'Holy puppy; evolves into the classic Gatomon.', wiki:'Salamon', img:'Salamon_b.jpg'},
+    {id:'gatomon', x:828, y:490, cls:'normal', name:'Gatomon', lvl:'Champion', note:'Holy cat; main branching point.', wiki:'Gatomon', img:'Gatomon_b.jpg'},
+    {id:'angewomon', x:1090, y:490, cls:'normal', name:'Angewomon', lvl:'Ultimate', note:'Holy angel; Angelic Army member.', wiki:'Angewomon', img:'Angewomon_b.jpg', badge:{cls:'aa', text:'Angelic Army', href:'../../groups/angelic.html#angewomon', title:'Angelic Digimon roster'}},
+    {id:'magnadramon', x:1352, y:490, cls:'normal', name:'Magnadramon', lvl:'Mega', note:'Holy dragon; one of the Four Great Dragons.', wiki:'Magnadramon', img:'Magnadramon_b.jpg', badge:{cls:'fgd', text:'Four Great Dragons', href:'../../groups/four-great-dragons.html#magnadramon', title:'Four Great Dragons roster'}},
+    {id:'omnimonmerciful', x:1614, y:490, cls:'dna', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#omnimon', title:'Royal Knights roster'}, name:'Omnimon Merciful Mode', lvl:'Ultra', note:'Collective composition.', wiki:'Omnimon_Merciful_Mode', img:'Omnimon_Merciful_Mode_b.jpg'},
+
+    // alternate Mega below Angewomon and the Ophanimon branch
+    {id:'lovelyangemon', x:1090, y:730, cls:'normal', name:'LovelyAngemon', lvl:'Mega', note:'Alternate holy Mega of Angewomon.', wiki:'LovelyAngemon', img:'LovelyAngemon_b.jpg'},
+    {id:'ophanimon', x:1352, y:730, cls:'normal', name:'Ophanimon', lvl:'Mega', note:'One of the Three Great Angels (Celestial Digimon).', wiki:'Ophanimon', img:'Ophanimon_b.jpg', badge:{cls:'cd', text:'Celestial Digimon', href:'../../groups/angelic.html#ophanimon', title:'Angelic Digimon roster'}},
+    {id:'ophanimonfalldown', x:1614, y:730, cls:'dark', name:'Ophanimon Falldown Mode', lvl:'Mega / Virus', note:'Ophanimon fallen into madness.', wiki:'Ophanimon_Falldown_Mode', img:'Ophanimon_Falldown_Mode_b.jpg', badge:{cls:'fa', text:'Fallen Angel', href:'../../groups/angelic.html#ophanimon-falldown-mode', title:'Angelic Digimon roster'}},
+
+    // dark branch and the holy-dark fusion on one row
+    {id:'blackgatomon', x:828, y:970, cls:'dark', name:'BlackGatomon', lvl:'Champion / Virus', note:'Virus-attribute counterpart of Gatomon.', wiki:'BlackGatomon', img:'BlackGatomon_b.jpg'},
+    {id:'ladydevimon', x:1090, y:970, cls:'dark', name:'LadyDevimon', lvl:'Ultimate / Virus', note:'Fallen angel of the dark branch.', wiki:'LadyDevimon', img:'LadyDevimon_b.jpg'},
+    {id:'mastemon', x:1352, y:970, cls:'dna', name:'Mastemon', lvl:'Mega', note:'Angewomon + LadyDevimon.', wiki:'Mastemon', img:'Mastemon_b.jpg'},
+    {id:'ophanimonc', x:1614, y:970, cls:'mode', name:'Ophanimon C', lvl:'Mega', note:'Game-specific form using the ChronoCore.', wiki:'Ophanimon_C', img:'Ophanimon_C_vg.gif'},
+
+    {id:'blackgatomonuver', x:828, y:1210, cls:'mode', name:'BlackGatomon Uver.', lvl:'Champion / Virus', note:'BlackGatomon variant appearing in Ghost Game.', wiki:'BlackGatomon_Uver.', img:'BlackGatomon_Uver._b.jpg'},
+    {id:'junomon', x:1352, y:1210, cls:'normal', name:'Junomon', lvl:'Mega', note:'Member of the Olympos XII.', wiki:'Junomon', img:'Junomon_b.jpg'},
+    {id:'junomonhysteric', x:1614, y:1210, cls:'mode', name:'Junomon Hysteric Mode', lvl:'Mega', note:'Enraged mode of Junomon.', wiki:'Junomon_Hysteric_Mode', img:'Junomon_Hysteric_Mode_b.jpg'},
+
+    // Adventure: corruption
+    {id:'skullknightmon', x:828, y:1450, cls:'dark', name:'SkullKnightmon', lvl:'Champion / Virus', note:'Corrupted form of Gatomon (Adventure: reboot).', wiki:'SkullKnightmon', img:'SkullKnightmon_b.jpg'},
+    {id:'darkknightmon', x:1090, y:1450, cls:'dark', name:'DarkKnightmon', lvl:'Ultimate / Virus', note:'Dark knight; peak of the corrupted branch.', wiki:'DarkKnightmon', img:'DarkKnightmon_b.jpg'},
+
+    // Jogress row
+    {id:'silphymon', x:1090, y:1690, cls:'dna', name:'Silphymon', lvl:'Ultimate', note:'Gatomon + Aquilamon.', wiki:'Silphymon', img:'Silphymon_b.jpg'},
+    {id:'valkyrimon', x:1352, y:1690, cls:'normal', name:'Valkyrimon', lvl:'Mega', note:'Peak of the Silphymon Jogress line.', wiki:'Valkyrimon', img:'Valkyrimon_b.jpg'}
+  ],
+  edges: function (edge) {
+    // main line
+    edge('yukimibotamon','nyaromon','normal');
+    edge('nyaromon','salamon','normal');
+    edge('salamon','gatomon','normal');
+    edge('gatomon','angewomon','normal');
+    edge('angewomon','magnadramon','normal');
+
+    // collective composition (see panel)
+    edge('magnadramon','omnimonmerciful','dna');
+
+    // X-Antibody forms
+    edge('gatomon','gatomonx','x','top','bottom',{shape:'vertical'});
+    edge('gatomonx','angewomonx','x');
+    edge('angewomon','angewomonx','x','top','bottom',{shape:'vertical'});
+    edge('angewomonx','magnadramonx','x');
+    edge('magnadramon','magnadramonx','x','top','bottom',{shape:'vertical'});
+
+    // Angewomon Mega branches: LovelyAngemon below, the rest via nested corridor verticals
+    edge('angewomon','lovelyangemon','normal','bottom','top',{shape:'vertical'});
+    edge('angewomon','ophanimon','normal','right','left',{fromY:610, points:[[1332,610],[1332,829]], toY:829});
+    edge('angewomon','mastemon','dna','right','top',{fromY:635, points:[[1320,635],[1320,949],[1420,949]], toX:1420});
+    edge('angewomon','junomon','normal','right','left',{fromY:660, points:[[1308,660],[1308,1309]]});
+
+    // Ophanimon variants
+    edge('ophanimon','ophanimonfalldown','dark');
+    edge('ophanimon','ophanimonc','mode','right','left',{fromY:880, points:[[1584,880],[1584,1069]], label:'ChronoCore', lx:1584, ly:950});
+
+    // Olympos XII mode
+    edge('junomon','junomonhysteric','mode');
+
+    // dark branch up to the holy-dark fusion
+    edge('gatomon','blackgatomon','dark','bottom','top',{shape:'vertical', fromX:960, toX:960, label:'Subspecies', lx:1008, ly:810});
+    edge('blackgatomon','blackgatomonuver','mode','bottom','top',{shape:'vertical', label:'Ghost Game', lx:995, ly:1187});
+    edge('blackgatomon','ladydevimon','dark');
+    edge('ladydevimon','mastemon','dna');
+
+    // Adventure: corruption
+    edge('gatomon','skullknightmon','dark','bottom','left',{fromX:900, points:[[900,910],[812,910],[812,1549]], label:'Corrupted (2020)', lx:812, ly:1188});
+    edge('skullknightmon','darkknightmon','dark');
+
+    // DNA / Jogress with Aquilamon (see panel)
+    edge('gatomon','silphymon','dna','bottom','left',{fromX:880, points:[[880,890],[790,890],[790,1789]]});
+    edge('silphymon','valkyrimon','normal');
+
+    // connector to the Armor panel (appendix, not a normal edge)
+    edge('gatomon','armor-panel','armor','bottom','top',{fromX:850, toX:380, points:[[850,730],[380,730]], label:'Digi-Eggs', lx:380, ly:1500, width:3});
+    edge('armor-nefertimon','armor-nefertimonx','x','right','left',{width:3});
+  }
+});
+</script>
+</body>
+</html>

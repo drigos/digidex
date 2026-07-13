@@ -18,6 +18,7 @@ root via its "Home" pill) and to each group roster:
   - [palmon.html](src/evolution-lines/gen-1-adventure/palmon.html) - Palmon line (X line, Rookie side forms, Rosemon/Lillymon variants, Rafflesimon Jogress, collective composition).
   - [gomamon.html](src/evolution-lines/gen-1-adventure/gomamon.html) - Gomamon line (Gomamon X branch, collective composition).
   - [patamon.html](src/evolution-lines/gen-1-adventure/patamon.html) - Patamon line (Priest Mode and Goldramon 2020 branches, fallen angel dark branch, Shakkoumon Jogress, Armor Digivolutions, collective composition).
+  - [gatomon.html](src/evolution-lines/gen-1-adventure/gatomon.html) - Gatomon line (X line up to Magnadramon X, Ophanimon Falldown Mode and ChronoCore variants, Silphymon Jogress, BlackGatomon dark branch, Mastemon holy-dark fusion, SkullKnightmon corruption, Armor Digivolutions, collective composition).
 - `src/evolution-lines/gen-2-adventure-02/` - Digimon Adventure 02:
   - [index.html](src/evolution-lines/gen-2-adventure-02/index.html) - DigiDestined selection screen (by Digi-Egg).
   - [veemon.html](src/evolution-lines/gen-2-adventure-02/veemon.html) - Veemon line (includes the Armor branch).
@@ -186,7 +187,7 @@ Format: `Level` optionally followed by ` / Virus` and/or ` / X`, in that order.
 | `Ultimate` | Perfect / Ultimate stage. |
 | `Mega` | Ultimate (JP) / Mega stage. |
 | `Ultra` | Fusion pinnacle above Mega: Omnimon / Omegamon-class Jogress results and their variants. |
-| `Armor` | Result of an Armor Digivolution (Digi-Egg). Veemon only. |
+| `Armor` | Result of an Armor Digivolution (Digi-Egg). Veemon, Patamon and Gatomon lines. |
 
 Frontier (`gen-4-frontier`) does not use these ranks; it has its own Spirit-rank levels.
 See "Frontier: Spirit Evolution" under Notes on specific cases.
@@ -226,7 +227,7 @@ Every arrow is colored by the digivolution trigger. This is the single vocabular
 | DNA / Jogress | purple | Fusion of two digimon into one. | both |
 | Mode Change | teal | Same digimon switching mode / form. | both |
 | Dark / Virus | red | Dark or Virus-attribute branch (including rage / loss of control). | both |
-| Armor Digivolution | amber | Armor evolution via a Digi-Egg. | veemon |
+| Armor Digivolution | amber | Armor evolution via a Digi-Egg. | veemon, patamon, gatomon |
 | Bond Evolution | pink | Bond-driven evolution. | agumon |
 | Burst Mode | gold | Burst Digivolution. | agumon |
 | Ancestral link | grey (dotted, no arrowhead) | Lore ancestry, not an evolution: a Legendary Warrior linked to the root of the line it spawned. | agumon, gabumon, tentomon |
@@ -261,7 +262,7 @@ The on-image legend lists only the triggers that the file actually uses.
 
 - Shared by both: Normal evolution, X-Digivolution, DNA / Jogress, Mode Change,
   Dark / Virus.
-- Veemon adds: Armor Digivolution.
+- Veemon, Patamon and Gatomon add: Armor Digivolution.
 - Agumon adds: Bond Evolution, Burst Mode.
 - Agumon, Gabumon and Tentomon add: Ancestral link.
 - Frontier (agunimon) relabels the shared colors: Spirit Evolution, Slide Evolution,
