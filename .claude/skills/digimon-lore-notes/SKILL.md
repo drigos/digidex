@@ -69,11 +69,16 @@ will change, so the canvas height must be recomputed (see layout).
   diagram -> panels -> lore notes -> footer. No fixed `height`; panels auto-size.
 - **Structure**: panel title `Lore notes`; subtitle states the job (e.g. `the stories
   behind the unusual arrows`). Entries are small cards: a short bold title plus 2-3 lines
-  of text. 3 or 4 columns; keep the grid rectangle-ish (avoid a lone card on the last row
-  when a column-count tweak fixes it).
+  of text. Keep the shared 4-column grid even when the last row does not fill completely;
+  do not tweak the column count per page.
 - **Entry content**: each entry ties to a node or arrow on the page. Name the continuity
   when the fact is continuity-specific (`Adventure 02`, `V-Tamer`, `Digimon World 3`).
   On-page text in English, title case titles, no em dash (U+2014).
+- **Naming**: Digimon, characters and series go by their DigimonWiki/Fandom names, the
+  wiki every card links to (`Kentaurosmon`, not `Sleipmon`; `Kari`, not `Hikari`;
+  `Data Squad`, not `Savers`). When the official Bandai name differs, the page footer may
+  state the mapping, as the royal-knights and demon-lords footers do.
+  Exception: `Yggdrasill` keeps its official name (DigimonWiki calls it `King Drasil`).
 - **Consistency**: if an entry corrects or refines something a card note or edge label
   says, fix that node/edge in the same change so the page never contradicts itself.
 

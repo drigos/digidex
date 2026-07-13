@@ -92,7 +92,11 @@ back to this file. To add a "Lore notes" curiosities panel to an existing page, 
 `digimon-lore-notes` skill (`.claude/skills/digimon-lore-notes/`), which enforces source
 verification and a plan-and-approve step.
 
-All on-image text is in English so the graphics are universal. This README is the
+All on-image text is in English so the graphics are universal, and Digimon, characters
+and series go by their DigimonWiki/Fandom names, the wiki every card links to
+(`Kentaurosmon`, not `Sleipmon`); when the official Bandai name differs, the page footer
+may state the mapping. Exception: `Yggdrasill` keeps its official name (DigimonWiki
+calls it `King Drasil`). This README is the
 source of truth for the vocabulary. Keep both files consistent with the tables below;
 when adding a node or edge, reuse an existing term instead of inventing a new one.
 
