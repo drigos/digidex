@@ -36,7 +36,7 @@ root via its "Home" pill) and to each group roster:
   - [royal-knights.html](src/groups/royal-knights.html) - the thirteen Royal Knights plus Imperialdramon Paladin Mode as the order's origin.
   - [four-great-dragons.html](src/groups/four-great-dragons.html) - the Four Great Dragons, named after the Dragon Kings of the four seas.
   - [vortex-warriors.html](src/groups/vortex-warriors.html) - Witchelny's Vortex Warriors, led by the Whirlwind General MedievalGallantmon.
-  - [demon-lords.html](src/groups/demon-lords.html) - the Seven Great Demon Lords, each card carrying its deadly sin as the rank pill.
+  - [demon-lords.html](src/groups/demon-lords.html) - the Seven Great Demon Lords, each card carrying its deadly sin as the rank pill, plus Ogudomon as the culmination of the seven sins.
   - [bancho.html](src/groups/bancho.html) - the five bearers of the Bancho title.
   - [four-sovereigns.html](src/groups/four-sovereigns.html) - the Four Holy Beasts guarding the compass points, with Fanglongmon as the emperor of the Center.
   - [deva.html](src/groups/deva.html) - the twelve Deva serving the Four Sovereigns, three per master, each card carrying its zodiac animal as the rank pill.
@@ -342,6 +342,11 @@ card is itself an `<a>`. Instead, place an `<a class="rk badge-link panel-badge"
 grid sibling stacked into the same cell, giving the card **and** the badge the same
 explicit inline `grid-column`/`grid-row` (without the explicit placement on the card,
 auto-placement skips the badge's occupied cell and pushes the card to the next row).
+A roster card has the same constraint; there the card and the badge are wrapped in a
+`.card-cell` (a positioned flex wrapper that takes the card's grid cell) with the badge
+absolutely positioned in its top-right corner, e.g. the `Demon Lord` badges on the
+Daemon and Lilithmon cards of `groups/angelic.html` linking into
+`groups/demon-lords.html`.
 
 ### Frontier: Spirit Evolution
 

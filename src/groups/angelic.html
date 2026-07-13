@@ -92,6 +92,12 @@
   }
   .rank .glyph { font-size: 14px; line-height: 1; }
 
+  /* linked group badge over a roster card: the card is itself an <a>, so the badge is an
+     <a> sibling inside a positioned wrapper occupying the card's grid cell */
+  .card-cell { position: relative; display: flex; }
+  .card-cell .card { flex: 1 1 auto; width: 100%; }
+  .card-cell a.badge-link { position: absolute; top: 12px; right: 12px; left: auto; transform: none; }
+
   .role { position: relative; z-index: 1; margin: 10px 0 14px; color: var(--muted);
     font-size: 12px; line-height: 1.4; font-weight: 700; }
 
@@ -288,14 +294,17 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" id="daemon" href="https://digimon.fandom.com/wiki/Daemon" target="_blank" style="--accent:#e5484d">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Daemon_b.jpg" alt="Daemon"></div>
-      <div class="level">Mega</div>
-      <div class="mon">Daemon</div>
-      <span class="rank"><span class="glyph">&#9760;</span> Evil King</span>
-      <div class="role">Said to have originally been a Seraphimon that fell to the Dark Area.</div>
-      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
-    </a>
+    <div class="card-cell">
+      <a class="card" id="daemon" href="https://digimon.fandom.com/wiki/Daemon" target="_blank" style="--accent:#e5484d">
+        <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Daemon_b.jpg" alt="Daemon"></div>
+        <div class="level">Mega</div>
+        <div class="mon">Daemon</div>
+        <span class="rank"><span class="glyph">&#9760;</span> Evil King</span>
+        <div class="role">Said to have originally been a Seraphimon that fell to the Dark Area.</div>
+        <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+      </a>
+      <a class="dl badge-link" href="demon-lords.html#daemon" title="Seven Great Demon Lords roster">Demon Lord</a>
+    </div>
 
     <a class="card" id="ophanimon-falldown-mode" href="https://digimon.fandom.com/wiki/Ophanimon_Falldown_Mode" target="_blank" style="--accent:#e5484d">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Ophanimon_Falldown_Mode_b.jpg" alt="Ophanimon Falldown Mode"></div>
@@ -306,14 +315,17 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" id="lilithmon" href="https://digimon.fandom.com/wiki/Lilithmon" target="_blank" style="--accent:#e5484d">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Lilithmon_b.jpg" alt="Lilithmon"></div>
-      <div class="level">Mega</div>
-      <div class="mon">Lilithmon</div>
-      <span class="rank"><span class="glyph">&#9760;</span> Evil King</span>
-      <div class="role">Thought to have once been an Ophanimon; the Goddess of Darkness.</div>
-      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
-    </a>
+    <div class="card-cell">
+      <a class="card" id="lilithmon" href="https://digimon.fandom.com/wiki/Lilithmon" target="_blank" style="--accent:#e5484d">
+        <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Lilithmon_b.jpg" alt="Lilithmon"></div>
+        <div class="level">Mega</div>
+        <div class="mon">Lilithmon</div>
+        <span class="rank"><span class="glyph">&#9760;</span> Evil King</span>
+        <div class="role">Thought to have once been an Ophanimon; the Goddess of Darkness.</div>
+        <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+      </a>
+      <a class="dl badge-link" href="demon-lords.html#lilithmon" title="Seven Great Demon Lords roster">Demon Lord</a>
+    </div>
 
     <a class="card" id="cherubimon-evil" href="https://digimon.fandom.com/wiki/Cherubimon_(Evil)" target="_blank" style="--accent:#e5484d">
       <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Cherubimon_%28Evil%29_b.jpg" alt="Cherubimon (Evil)"></div>
@@ -361,8 +373,8 @@
         <div class="lore-card-text">In Digimon Adventure: (the 2020 reboot), Seraphimon, Ophanimon, Cherubimon, ClavisAngemon, SlashAngemon, Rasielmon and Valdurmon fought Millenniumon together in the distant past: the only time most of this roster takes the field as an actual army.</div>
       </div>
       <div class="lore-card">
-        <div class="lore-card-title">Two Falls, Two Stories</div>
-        <div class="lore-card-text">Cherubimon (Evil) is born in Frontier: feeling betrayed by Seraphimon and Ophanimon, it was corrupted by Lucemon. Ophanimon Falldown Mode is officially a form of Ophanimon so angry it suppressed its own emotions and fell into madness; in Adventure tri. it is born from Hikari's despair and fuses with Raguelmon into Ordinemon.</div>
+        <div class="lore-card-title">Three Falls, Three Stories</div>
+        <div class="lore-card-text">ShadowSeraphimon is officially Seraphimon swallowed by darkness as its concealed resentment swelled, and is said to fall into an Evil King Digimon if it keeps this form too long. Cherubimon (Evil) is born in Frontier: feeling betrayed by Seraphimon and Ophanimon, it was corrupted by Lucemon. Ophanimon Falldown Mode is an Ophanimon so angry it suppressed its own emotions and fell into madness; in Adventure tri. it is born from Kari's despair and fuses with Raguelmon into Ordinemon.</div>
       </div>
     </div>
   </section>

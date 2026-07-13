@@ -135,8 +135,9 @@ h1 { margin:0 0 8px; font-size:42px; line-height:1.02; letter-spacing:-1px; }
 
 /* Category badges (top-right of a card): .rk = Royal Knight, .lw = Legendary Warrior,
    .fgd = Four Great Dragons, .vw = Witchelny Vortex Warrior,
-   .cd = Celestial Digimon, .aa = Angelic Army, .fa = Fallen Angel */
-.rk, .lw, .fgd, .vw, .cd, .aa, .fa {
+   .cd = Celestial Digimon, .aa = Angelic Army, .fa = Fallen Angel,
+   .dl = Demon Lord (Seven Great Demon Lords) */
+.rk, .lw, .fgd, .vw, .cd, .aa, .fa, .dl {
   position:absolute; top:9px; right:9px; z-index:5;
   padding:2px 8px 2px 6px; border-radius:999px;
   font-size:9px; font-weight:900; letter-spacing:.2px;
@@ -157,6 +158,8 @@ h1 { margin:0 0 8px; font-size:42px; line-height:1.02; letter-spacing:-1px; }
 .aa::before { content:"\2694"; margin-right:3px; font-size:10px; }
 .fa { background:linear-gradient(180deg, #ffd9d9, #d64545); color:#3a0808; border:1px solid rgba(255,224,224,.95); }
 .fa::before { content:"\2620"; margin-right:3px; font-size:10px; }
+.dl { background:linear-gradient(180deg, #f2c4e0, #8e2a6b); color:#33051f; border:1px solid rgba(255,220,240,.95); }
+.dl::before { content:"\1F451"; margin-right:3px; font-size:10px; }
 
 /* A badge with an href renders as a canvas-level <a> sibling of its card (a nested <a>
    inside the node link would be invalid HTML). The engine sets left to the card's right

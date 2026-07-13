@@ -71,7 +71,8 @@ generation (create the folder if that generation has no page yet).
   - `lvl` (card tag): `Level` optionally `+ / Virus + / X` only. See README section 1.
   - `badge`: `{ cls, text, href?, title? }` with `cls` one of `rk` (Royal Knight),
     `lw` (Legendary Warrior), `fgd` (Four Great Dragons), `vw` (Vortex Warrior),
-    `cd` (Celestial Digimon), `aa` (Angelic Army), `fa` (Fallen Angel). With `href` (relative, e.g. a
+    `cd` (Celestial Digimon), `aa` (Angelic Army), `fa` (Fallen Angel),
+    `dl` (Demon Lord). With `href` (relative, e.g. a
     `groups/*.html` roster) the badge renders as a clickable link; without it, a plain label.
     Point the href at the member's card fragment (`groups/angelic.html#angemon`; ids are
     the lowercased hyphenated name) so the roster scrolls to and highlights that card.
