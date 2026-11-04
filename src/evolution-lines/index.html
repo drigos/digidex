@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Generations: Digidex</title>
+<link rel="stylesheet" href="../digivolution.css" />
+<style>
+  /* generation selection layout (self-contained; reuses the shared tokens from digivolution.css) */
+  .wrap { padding: 40px 22px 56px; max-width: 1280px; margin: 0 auto; overflow: visible; }
+
+  .hero { text-align: center; margin: 18px auto 44px; max-width: 820px; }
+  .hero .kicker {
+    display: inline-block; margin-bottom: 14px; padding: 6px 16px; border-radius: 999px;
+    font-size: 12.5px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;
+    color: #cfe6ff; background: rgba(88,166,255,.14); border: 1px solid rgba(88,166,255,.34);
+  }
+  .hero h1 {
+    font-size: 54px; line-height: 1.03; letter-spacing: -1.5px; margin: 0 0 14px;
+    background: linear-gradient(180deg, #ffffff, #a9c7ee);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero p { color: var(--muted); font-size: 17px; line-height: 1.5; margin: 0; }
+
+  /* generations -> flex so an incomplete last row centers; capped at four per row */
+  .grid { display: flex; flex-wrap: wrap; gap: 22px; justify-content: center; max-width: 1220px; margin: 0 auto; }
+  .card { flex: 1 1 240px; max-width: 288px; }
+  @media (max-width: 820px) { .hero h1 { font-size: 40px; } }
+
+  .card {
+    position: relative; display: flex; flex-direction: column; overflow: hidden;
+    padding: 20px 18px 18px; border-radius: 22px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: linear-gradient(180deg, rgba(16,43,76,.96), rgba(7,19,36,.98));
+    box-shadow: 0 16px 40px rgba(0,0,0,.36);
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  /* accent glow strip at the top, tinted by the generation's signature color (--accent) */
+  .card::before {
+    content: ""; position: absolute; inset: 0 0 auto 0; height: 4px;
+    background: var(--accent); box-shadow: 0 0 18px var(--accent);
+  }
+  .card::after {
+    content: ""; position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
+    width: 200px; height: 200px; border-radius: 50%;
+    background: radial-gradient(circle, var(--accent), transparent 65%);
+    opacity: .16; pointer-events: none; transition: opacity .18s ease;
+  }
+  a.card:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--accent) 60%, rgba(255,255,255,.2));
+    box-shadow: 0 26px 60px rgba(0,0,0,.5), 0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent);
+  }
+  a.card:hover::after { opacity: .32; }
+
+  .thumb {
+    position: relative; z-index: 1; height: 150px; border-radius: 16px; background: #fff;
+    padding: 12px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center;
+  }
+  .thumb img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+  .season { position: relative; z-index: 1; font-size: 11.5px; font-weight: 900; letter-spacing: 1.2px;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+  .series { position: relative; z-index: 1; font-size: 21px; font-weight: 950; letter-spacing: -.5px; margin-bottom: 14px; }
+
+  /* meta row: partner-group pill (accent) + available-lines pill (neutral) */
+  .meta { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 16px; }
+  .group {
+    display: inline-flex; align-items: center;
+    padding: 5px 11px; border-radius: 999px; font-size: 11.5px; font-weight: 900;
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 16%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 42%, transparent);
+  }
+  .count {
+    display: inline-flex; align-items: center;
+    padding: 5px 11px; border-radius: 999px; font-size: 11.5px; font-weight: 900;
+    color: #d6e3f4; background: rgba(3,14,27,.6); border: 1px solid rgba(255,255,255,.16);
+  }
+
+  .cta {
+    /* pinned to the card bottom so the row of CTAs stays aligned when pills wrap */
+    position: relative; z-index: 1; margin-top: auto; padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.09);
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 13px; font-weight: 900; color: #dce9fb;
+  }
+  .cta .arrow { transition: transform .18s ease; color: var(--accent); }
+  a.card:hover .cta .arrow { transform: translateX(5px); }
+
+  /* generations without a selection screen yet */
+  .card.soon { opacity: .62; }
+  .card.soon .cta { color: var(--muted); }
+  .badge-soon {
+    position: absolute; top: 16px; right: 14px; z-index: 2;
+    padding: 3px 9px; border-radius: 999px; font-size: 10px; font-weight: 900;
+    letter-spacing: .6px; text-transform: uppercase;
+    color: #d6e3f4; background: rgba(3,14,27,.8); border: 1px solid rgba(255,255,255,.16);
+  }
+
+  .note { max-width: 760px; margin: 34px auto 0; text-align: center; color: var(--muted); font-size: 13.5px; line-height: 1.55; font-weight: 600; }
+  .note a { color: #cfe6ff; text-decoration: underline; text-decoration-color: rgba(255,255,255,.4); text-underline-offset: 3px; }
+
+  .foot { text-align: center; color: rgba(225,238,255,.6); font-size: 12.5px; line-height: 1.5; margin-top: 40px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="crumbs" aria-label="Breadcrumb"><ol>
+    <li><a href="../index.html">Home</a></li>
+    <li aria-current="page">Generations</li>
+  </ol></nav>
+
+  <header class="hero">
+    <span class="kicker">Evolution trees</span>
+    <h1>Generations</h1>
+    <p>Each anime generation has its own selection screen with the partner Digimon of its protagonists. Pick a generation to explore their evolution trees, from the Fresh form up to Mega and beyond.</p>
+  </header>
+
+  <div class="grid">
+
+    <a class="card" href="gen-1-adventure/index.html" style="--accent:#ff7a1a">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/agumon.jpg" alt="Agumon"></div>
+      <div class="season">Season 1 &middot; 1999</div>
+      <div class="series">Digimon Adventure</div>
+      <div class="meta">
+        <span class="group">DigiDestined</span>
+      </div>
+      <div class="cta"><span>Open selection screen</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="gen-2-adventure-02/index.html" style="--accent:#3aa0ff">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/v-mon.jpg" alt="Veemon"></div>
+      <div class="season">Season 2 &middot; 2000</div>
+      <div class="series">Digimon Adventure 02</div>
+      <div class="meta">
+        <span class="group">DigiDestined 02</span>
+        <span class="count">1 / 6 lines</span>
+      </div>
+      <div class="cta"><span>Open selection screen</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="gen-3-tamers/index.html" style="--accent:#e5484d">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/guilmon.jpg" alt="Guilmon"></div>
+      <div class="season">Season 3 &middot; 2001</div>
+      <div class="series">Digimon Tamers</div>
+      <div class="meta">
+        <span class="group">The Tamers</span>
+        <span class="count">1 / 8 lines</span>
+      </div>
+      <div class="cta"><span>Open selection screen</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="gen-4-frontier/index.html" style="--accent:#b084f5">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/agnimon.jpg" alt="Agunimon"></div>
+      <div class="season">Season 4 &middot; 2002</div>
+      <div class="series">Digimon Frontier</div>
+      <div class="meta">
+        <span class="group">Legendary Warriors</span>
+        <span class="count">2 / 10 lines</span>
+      </div>
+      <div class="cta"><span>Open selection screen</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="film-x-evolution/index.html" style="--accent:#d9a441">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/dorumon.jpg" alt="Dorumon"></div>
+      <div class="season">TV film &middot; 2005</div>
+      <div class="series">Digital Monster X&#8209;Evolution</div>
+      <div class="meta">
+        <span class="group">X-Antibody Digimon</span>
+        <span class="count">0 / 3 lines</span>
+      </div>
+      <div class="cta"><span>Open selection screen</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="gen-5-data-squad/index.html" style="--accent:#f0b429">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/agumon-2006.jpg" alt="Agumon (2006 anime)"></div>
+      <div class="season">Season 5 &middot; 2006</div>
+      <div class="series">Digimon Data Squad</div>
+      <div class="meta">
+        <span class="group">The DATS Squad</span>
+        <span class="count">1 / 7 lines</span>
+      </div>
+      <div class="cta"><span>Open selection screen</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="gen-6-fusion/index.html" style="--accent:#ff4d4d">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/shoutmon.jpg" alt="Shoutmon"></div>
+      <div class="season">Season 6 &middot; 2010</div>
+      <div class="series">Digimon Fusion</div>
+      <div class="meta">
+        <span class="group">Fusion Fighters</span>
+        <span class="count">0 / 4 lines</span>
+      </div>
+      <div class="cta"><span>Open selection screen</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="gen-7-hunters/index.html" style="--accent:#a46bff">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/gumdramon.jpg" alt="Gumdramon"></div>
+      <div class="season">Season 7 &middot; 2011</div>
+      <div class="series">The Young Hunters Who Leapt Through Time</div>
+      <div class="meta">
+        <span class="group">Hunters</span>
+        <span class="count">0 / 5 lines</span>
+      </div>
+      <div class="cta"><span>Open selection screen</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="gen-8-app-monsters/index.html" style="--accent:#2fc4e8">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://wikimon.net/images/b/b4/Gatchmon3.jpg" alt="Gatchmon"></div>
+      <div class="season">Season 8 &middot; 2016</div>
+      <div class="series">Digimon Universe App Monsters</div>
+      <div class="meta">
+        <span class="group">App Drivers</span>
+        <span class="count">0 / 5 lines</span>
+      </div>
+      <div class="cta"><span>Open selection screen</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="gen-10-ghost-game/index.html" style="--accent:#5ad1a8">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/gammamon.jpg" alt="Gammamon"></div>
+      <div class="season">Season 10 &middot; 2021</div>
+      <div class="series">Digimon Ghost Game</div>
+      <div class="meta">
+        <span class="group">Hiro, Ruli &amp; Kiyoshiro</span>
+        <span class="count">0 / 3 lines</span>
+      </div>
+      <div class="cta"><span>Open selection screen</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="gen-11-beatbreak/index.html" style="--accent:#7ed957">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/gekkomon.jpg" alt="Gekkomon"></div>
+      <div class="season">Season 11 &middot; 2025</div>
+      <div class="series">Digimon Beatbreak</div>
+      <div class="meta">
+        <span class="group">Glowing Dawn</span>
+        <span class="count">0 / 4 lines</span>
+      </div>
+      <div class="cta"><span>Open selection screen</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+  </div>
+
+  <p class="note">Season 9, <a href="https://digimon.fandom.com/wiki/Digimon_Adventure:" target="_blank" rel="noopener">Digimon Adventure: (2020)</a>, is a reboot of the first series with the same partner Digimon, so it has no card of its own. Films and sequels that continue an existing cast, such as Digimon Adventure tri., belong to that cast's generation.</p>
+
+  <div class="support">
+    <span class="support-label">Support this project</span>
+    <a class="support-btn kofi" href="https://ko-fi.com/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9749;</span><span class="support-text">Buy me a coffee</span><span class="support-url">ko-fi.com/drigos</span></a>
+    <a class="support-btn sponsors" href="https://github.com/sponsors/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9829;</span><span class="support-text">GitHub Sponsors</span><span class="support-url">github.com/sponsors/drigos</span></a>
+  </div>
+
+  <p class="foot">Names link to DigimonWiki/Fandom (CC BY-SA unless noted otherwise); artwork &copy; Bandai, shown from the official Digimon Reference Book and Wikimon.</p>
+
+</div>
+</body>
+</html>

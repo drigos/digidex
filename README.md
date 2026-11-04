@@ -3,12 +3,12 @@
 Self-contained HTML infographics that render a Digimon's evolution tree, published as the
 **Digidex** site. All site files live under `src/` (the folder deployed to GitHub Pages);
 tree pages sit in `src/evolution-lines/`, split by the anime generation. The root
-[src/index.html](src/index.html) is the site landing page: a selection screen with three
-sections (Generations, Digital World Cosmology and Special groups), linking to each
-generation's own `index.html` (which in turn links to the individual evolution-tree pages
-and back to the root via its "Home" pill), to the cosmology atlas and to each group roster:
+[src/index.html](src/index.html) is the site landing page: three cards (Generations, Digital
+World Cosmology and Special groups), each opening that section's own selection page, which
+then lists the generations, the atlas pages or the group rosters:
 
-- `src/index.html` - top-level selection screen (Generations + Digital World Cosmology + Special groups).
+- `src/index.html` - top-level selection screen: one card per section, nothing else.
+- [src/evolution-lines/index.html](src/evolution-lines/index.html) - Generations selection screen: one card per anime generation in airing order, linking to each generation's own `index.html`, with a "done / total lines" pill. Season numbers follow DigimonWiki's count (Hunters is Season 7), the TV film Digital Monster X-Evolution sits in airing order between Frontier and Data Squad, and a note explains why Season 9 (the Digimon Adventure: reboot) has no card.
 - `src/evolution-lines/gen-1-adventure/` - Digimon Adventure:
   - [index.html](src/evolution-lines/gen-1-adventure/index.html) - DigiDestined selection screen (by Crest).
   - [agumon.html](src/evolution-lines/gen-1-adventure/agumon.html) - Agumon line (Data Squad, Bond and Burst branches; AncientGreymon ancestral link).
@@ -31,6 +31,13 @@ and back to the root via its "Home" pill), to the cosmology atlas and to each gr
   - [lobomon.html](src/evolution-lines/gen-4-frontier/lobomon.html) - Warrior of Light line (Child Strabimon, Human/Beast Spirit, Fusion, Unified, Susanoomon).
 - `src/evolution-lines/gen-5-data-squad/` - Digimon Data Squad / Savers:
   - [index.html](src/evolution-lines/gen-5-data-squad/index.html) - DATS selection screen (by Burst Mode; the Agumon card links into the gen-1 Agumon tree).
+- Generations whose selection screen exists but whose trees are all "Coming soon" (partners and peak forms taken from the DigimonWiki character infoboxes):
+  - [film-x-evolution/index.html](src/evolution-lines/film-x-evolution/index.html) - Digital Monster X-Evolution (TV film, no human partners): Dorumon, WarGreymon X and MetalGarurumon X.
+  - [gen-6-fusion/index.html](src/evolution-lines/gen-6-fusion/index.html) - Digimon Fusion: the Fusion Fighters' partners (Shoutmon, Greymon, Sparrowmon, Cutemon).
+  - [gen-7-hunters/index.html](src/evolution-lines/gen-7-hunters/index.html) - The Young Hunters Who Leapt Through Time: Xros Heart (Gumdramon, Shoutmon (King Version), Damemon) and the other Hunters (Psychemon, Opossummon).
+  - [gen-8-app-monsters/index.html](src/evolution-lines/gen-8-app-monsters/index.html) - Digimon Universe App Monsters: the App Drivers' Appmon by God grade; Appmon have no official Reference Book entry, so this page's artwork comes from Wikimon.
+  - [gen-10-ghost-game/index.html](src/evolution-lines/gen-10-ghost-game/index.html) - Digimon Ghost Game: Gammamon, Angoramon and Jellymon.
+  - [gen-11-beatbreak/index.html](src/evolution-lines/gen-11-beatbreak/index.html) - Digimon Beatbreak: Glowing Dawn's partners (Gekkomon, Pristimon, Chiropmon, Murasamemon).
 - `src/cosmology/` - the Digital World Cosmology atlas (see "Digital World Cosmology" below):
   - [index.html](src/cosmology/index.html) - the atlas overview: Homeostasis, the Kernel, the Net Ocean holding the three worlds and their underworlds, Cocytus, a comparison table and the reading rules.
   - [classic.html](src/cosmology/classic.html) - Digital World (Classic): Yggdrasill, Royal Knights, Four Sovereigns with their Deva, Ten Legendary Warriors, and Anubismon's Dark Area.
@@ -38,8 +45,9 @@ and back to the root via its "Home" pill), to the cosmology atlas and to each gr
   - [shambala.html](src/cosmology/shambala.html) - Digital World: Shambala: Kunlun, Susanoomon's founding legend, the Tentei Hachibushu hierarchy, the Shikyoju, the Saiyu Warriors / Toho Braves line-ups, and Yomi.
   - [kernel.html](src/cosmology/kernel.html) - the Kernel: the chain Kernel -> Three Great Angels -> Angelic Army, related fallen forms and Rasielmon.
   - [dark-areas.html](src/cosmology/dark-areas.html) - Dark Areas & Cocytus: the three underworld authorities compared, the Seven Great Demon Lords, the Embodiment of the Seven Sins, GranDracmon and Gulfmon.
-- `src/groups/` - roster pages for Digimon groups (no evolution arrows). The folder holds every roster; the landing page decides which section lists it. URLs never move.
-  - Rosters filed under Digital World Cosmology (breadcrumb trail instead of the Home pill):
+- `src/groups/` - roster pages for Digimon groups (no evolution arrows). The folder holds every roster; the section pages decide where each one is listed. URLs never move.
+  - [index.html](src/groups/index.html) - Special groups selection screen: one card per special group, then "Organizations of the Digital Worlds", a directory of the cosmology-filed rosters grouped by world.
+  - Rosters filed under Digital World Cosmology (breadcrumb `Home / Cosmology / <world> / <page>`):
     - [royal-knights.html](src/groups/royal-knights.html) - the thirteen Royal Knights plus Imperialdramon Paladin Mode as the order's origin.
     - [four-sovereigns.html](src/groups/four-sovereigns.html) - the Four Holy Beasts guarding the compass points, with Fanglongmon as the emperor of the Center.
     - [deva.html](src/groups/deva.html) - the twelve Deva serving the Four Sovereigns, three per master, each card carrying its zodiac animal as the rank pill.
@@ -51,7 +59,7 @@ and back to the root via its "Home" pill), to the cosmology atlas and to each gr
     - [tentei-hachibushu.html](src/groups/tentei-hachibushu.html) - Shambala's eight guardians in their hierarchy: Shakamon, the Saneiketsu, the Sanmyojin and Enmamon.
     - [shikyoju.html](src/groups/shikyoju.html) - the Four Perilous Beasts sealed in Jakeizan, each card carrying its Peril.
     - [demon-lords.html](src/groups/demon-lords.html) - the Seven Great Demon Lords, each card carrying its deadly sin as the rank pill, plus Ogudomon and Ogudomon X as the Embodiment of the Seven Sins.
-  - Rosters listed under Special groups (Home pill):
+  - Rosters listed under Special groups (breadcrumb `Home / Special groups / <page>`):
     - [four-great-dragons.html](src/groups/four-great-dragons.html) - the Four Great Dragons, named after the Dragon Kings of the four seas.
     - [vortex-warriors.html](src/groups/vortex-warriors.html) - Witchelny's Vortex Warriors, led by the Whirlwind General MedievalGallantmon.
     - [bancho.html](src/groups/bancho.html) - the five bearers of the Bancho title.
@@ -85,13 +93,15 @@ cannot drift apart:
 - the `evolution-lines/gen-*/index.html` selection screens - a **different kind of page**:
   self-contained (own inline CSS, no `digivolution.js`), they render a responsive grid of
   partner cards linking to that generation's tree pages. They only `<link>` `digivolution.css`
-  to inherit the shared color tokens, the font and the `.backnav` pill style.
-- the root `index.html` - the same selection-screen pattern one level up: a self-contained
-  page split into sections (Generations, Digital World Cosmology, Special groups) whose
-  cards link to each `evolution-lines/gen-*/index.html`, `cosmology/*.html` and
-  `groups/*.html` page (assets are linked without a path prefix, since it sits at the
-  `src/` root). The cosmology section is one wide card for the atlas followed by quick links
-  to each world page, kept outside the card because a link cannot nest another link.
+  to inherit the shared color tokens, the font and the `.crumbs` breadcrumb style.
+  `evolution-lines/index.html` (Generations) and `groups/index.html` (Special groups) are
+  the same pattern one level up. Every selection screen shows an entry without a page yet
+  as a "Coming soon" card (`.card.soon` + `.badge-soon`, a `div` instead of a link).
+- the root `index.html` - the same selection-screen pattern at the top: a self-contained
+  page with one card per section (Generations, Digital World Cosmology, Special groups),
+  each showing three sample thumbnails and linking to `evolution-lines/index.html`,
+  `cosmology/index.html` or `groups/index.html` (assets are linked without a path prefix,
+  since it sits at the `src/` root). Details belong on the section pages, not here.
 - the `cosmology/*.html` atlas pages - self-contained like the rosters (one `../` asset
   prefix), carrying the roster card styles they need for their few full cards; their shared
   atlas components (chips, organization panels, region cards, interpretation labels,
@@ -346,14 +356,21 @@ only outputs to `Millenniummon`.
 
 ### Cross-page navigation
 
-Every page links one level up with a `.backnav` pill (styled in `digivolution.css`),
-placed as the first element inside `.wrap`: tree pages link to their generation's
-`index.html` labeled with the partner group (`DigiDestined`, `The Tamers`, ...), and the
-generation index and Special groups roster pages link to the root `index.html` labeled `Home`.
-Pages in the Digital World Cosmology section (the `cosmology/` pages and the rosters filed
-under it) use a `nav.crumbs` breadcrumb trail in the same place instead
-(`Home / Cosmology / <world> / <page>`), since they sit two levels below Home in the
-navigation even though their files stay in `groups/`. Both are hidden in print.
+Every page places its way back as the first element inside `.wrap` (both styled in
+`digivolution.css` and hidden in print):
+
+- tree pages use a `.backnav` pill to their generation's `index.html`, labeled with the
+  partner group (`DigiDestined`, `The Tamers`, ...);
+- every other page uses a `nav.crumbs` breadcrumb trail from Home down to itself:
+  `Home / Generations / <partner group>` for the generation indexes,
+  `Home / Special groups / <page>` for the special group rosters, and
+  `Home / Cosmology / <world> / <page>` for the atlas pages and the rosters filed under it
+  (their files stay in `groups/`; the trail follows the navigation, not the folder).
+
+Every page with a breadcrumb uses the same frame, `.wrap { padding: 40px 22px 56px;
+max-width: 1280px; }`, so the trail stays in the same spot while navigating. A page that
+needs a narrower or differently packed card layout caps or tunes its `.grid` (or its
+`.section`), never the `.wrap`.
 
 A node may also carry `nav: { href, title }`: the engine then renders a round arrow button
 (`.node-nav`, an inline SVG arrow) to the right of the card that jumps to another

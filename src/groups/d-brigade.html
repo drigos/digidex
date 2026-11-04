@@ -22,10 +22,8 @@
   }
   .hero p { color: var(--muted); font-size: 17px; line-height: 1.5; margin: 0; }
 
-  /* military identity: olive kicker and a hazard-stripe band under the hero */
+  /* military identity: olive kicker */
   .hero .kicker { color: #e6efc9; background: rgba(155,179,90,.16); border-color: rgba(155,179,90,.5); letter-spacing: 3px; }
-  .stripe { height: 10px; max-width: 420px; margin: 22px auto 0; border-radius: 3px; opacity: .8;
-    background: repeating-linear-gradient(-45deg, #9bb35a 0 8px, #1b2410 8px 16px); }
 
   /* power-tier section headings */
   .tier { margin: 40px 0 18px; }
@@ -134,13 +132,16 @@
 <body>
 <div class="wrap">
 
-  <a class="backnav" href="../index.html"><span class="arrow">&#8592;</span> Home</a>
+  <nav class="crumbs" aria-label="Breadcrumb"><ol>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="index.html">Special groups</a></li>
+    <li aria-current="page">D-Brigade</li>
+  </ol></nav>
 
   <header class="hero">
     <span class="kicker">Special group</span>
     <h1>D-Brigade</h1>
     <p>A mechanized brigade of Dragon Cyborg Digimon: a special forces unit deployed on missions that must never become public. Who commands it, and how it is organized, remains unknown; what is known comes from its members' own profiles.</p>
-    <div class="stripe" aria-hidden="true"></div>
   </header>
 
   <section class="tier">
