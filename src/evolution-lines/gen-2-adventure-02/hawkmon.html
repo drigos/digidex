@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hawkmon: evolution tree</title>
+<link rel="stylesheet" href="../../digivolution.css" />
+<style>
+  /* page-specific layout */
+  .infographic { width:1598px; height:2136px; }
+  .columns { top:200px; }
+  .jogress-panel { top:1430px; width:468px; }
+  .armor-panel { top:1785px; width:1550px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="backnav" href="index.html"><span class="arrow">&#8592;</span> DigiDestined 02</a>
+  <div class="infographic" id="canvas">
+    <div class="title">
+      <h1>Hawkmon: evolution tree</h1>
+      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega hierarchy, with the Garudamon and Hippogriffomon alternate Ultimates, the Silphymon Jogress and its Megas, the Varodurumon Jogress with Sinduramon and Hawkmon's Armor Digivolutions.</div>
+    </div>
+
+    <div class="legend">
+      <div class="legend-title">Digivolution triggers</div>
+      <div class="legend-grid"></div>
+    </div>
+
+    <div class="columns"></div>
+
+    <svg id="edges" viewBox="0 0 1598 2136" preserveAspectRatio="none"></svg>
+    <div id="labels"></div>
+    <div id="nodes"></div>
+
+    <section class="jogress-panel">
+      <div class="jogress-panel-title">
+        <h2>Jogress partners</h2>
+        <span>Gatomon fuses with Aquilamon, Sinduramon with Silphymon</span>
+      </div>
+      <div class="jogress-body">
+        <a class="jogress-card" href="https://digimon.fandom.com/wiki/Gatomon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/tailmon.jpg" alt="Gatomon">
+          <div class="jogress-name">Gatomon</div>
+          <div class="jogress-level">Champion</div>
+          <div class="jogress-fuse">+ Aquilamon = Silphymon</div>
+        </a>
+        <a class="jogress-card" href="https://digimon.fandom.com/wiki/Sinduramon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/sinduramon.jpg" alt="Sinduramon">
+          <div class="jogress-name">Sinduramon</div>
+          <div class="jogress-level">Ultimate</div>
+          <div class="jogress-fuse">+ Silphymon = Varodurumon</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="armor-panel" id="armor-panel">
+      <div class="armor-panel-title">
+        <h2>Hawkmon's Armor Digivolutions</h2>
+        <span>a single branch from Hawkmon, organized by Digi-Egg</span>
+      </div>
+      <div class="armor-grid">
+        <a class="armor-card" id="armor-allomon" href="https://digimon.fandom.com/wiki/Allomon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/allomon.jpg" alt="Allomon">
+          <div class="armor-name">Allomon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Courage</div>
+        </a>
+        <a class="armor-card" id="armor-rinkmon" href="https://digimon.fandom.com/wiki/Rinkmon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/rinkmon.jpg" alt="Rinkmon">
+          <div class="armor-name">Rinkmon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Friendship</div>
+        </a>
+        <a class="armor-card" id="armor-halsemon" href="https://digimon.fandom.com/wiki/Halsemon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/holsmon.jpg" alt="Halsemon">
+          <div class="armor-name">Halsemon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Love</div>
+        </a>
+        <a class="armor-card" id="armor-shurimon" href="https://digimon.fandom.com/wiki/Shurimon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/shurimon.jpg" alt="Shurimon">
+          <div class="armor-name">Shurimon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Sincerity</div>
+        </a>
+        <a class="armor-card" id="armor-flybeemon" href="https://digimon.fandom.com/wiki/Flybeemon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/flybeemon.jpg" alt="Flybeemon">
+          <div class="armor-name">Flybeemon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Knowledge</div>
+        </a>
+        <a class="armor-card" id="armor-orcamon" href="https://digimon.fandom.com/wiki/Orcamon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/orcamon.jpg" alt="Orcamon">
+          <div class="armor-name">Orcamon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Reliability</div>
+        </a>
+        <a class="armor-card" id="armor-moosemon" href="https://digimon.fandom.com/wiki/Moosemon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/moosemon.jpg" alt="Moosemon">
+          <div class="armor-name">Moosemon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Hope</div>
+        </a>
+        <a class="armor-card" id="armor-harpymon" href="https://digimon.fandom.com/wiki/Harpymon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/harpymon.jpg" alt="Harpymon">
+          <div class="armor-name">Harpymon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Light</div>
+        </a>
+        <a class="armor-card" id="armor-toucanmon" href="https://digimon.fandom.com/wiki/Toucanmon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/tocanmon.jpg" alt="Toucanmon">
+          <div class="armor-name">Toucanmon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Kindness</div>
+        </a>
+        <a class="armor-card" id="armor-peacockmon" href="https://digimon.fandom.com/wiki/Peacockmon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/peacockmon.jpg" alt="Peacockmon">
+          <div class="armor-name">Peacockmon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Miracles</div>
+        </a>
+      </div>
+    </section>
+
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. Hippogriffomon digivolves to Zhuqiaomon in Digimon Adventure tri. Hawkmon has no recorded form for the Digi-Egg of Destiny.</div>
+  </div>
+  <div class="support">
+    <span class="support-label">Support this project</span>
+    <a class="support-btn kofi" href="https://ko-fi.com/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9749;</span><span class="support-text">Buy me a coffee</span><span class="support-url">ko-fi.com/drigos</span></a>
+    <a class="support-btn sponsors" href="https://github.com/sponsors/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9829;</span><span class="support-text">GitHub Sponsors</span><span class="support-url">github.com/sponsors/drigos</span></a>
+  </div>
+</div>
+<script src="../../digivolution.js"></script>
+<script>
+DigiTree.mount({
+  legend: [
+    ['normal','Normal evolution'],
+    ['armor','Armor Digivolution'],
+    ['dna','DNA / Jogress']
+  ],
+  columns: [
+    [42,'Fresh'],[304,'In-Training'],[566,'Rookie'],[828,'Champion'],
+    [1090,'Ultimate'],[1352,'Mega']
+  ],
+  nodes: [
+    // alternate Ultimates of Aquilamon, each with its Mega
+    {id:'hippogriffomon', x:1090, y:250, cls:'normal', name:'Hippogriffomon', lvl:'Ultimate', note:'Mythical beast; alternate Ultimate.', wiki:'Hippogriffomon', img:'hippogriffomon'},
+    {id:'zhuqiaomon', x:1352, y:250, cls:'normal', name:'Zhuqiaomon', lvl:'Mega', note:'Sovereign of the south.', wiki:'Zhuqiaomon', img:'zhuqiaomon', badge:{cls:'fs', text:'Four Sovereigns', href:'../../groups/four-sovereigns.html#zhuqiaomon', title:'Four Sovereigns roster'}},
+    {id:'garudamon', x:1090, y:490, cls:'normal', name:'Garudamon', lvl:'Ultimate', note:'Bird warrior; alternate Ultimate.', wiki:'Garudamon', img:'garudamon'},
+    {id:'phoenixmon', x:1352, y:490, cls:'normal', name:'Phoenixmon', lvl:'Mega', note:'Holy Beast; also reached from Silphymon.', wiki:'Phoenixmon', img:'hououmon'},
+
+    // main spine
+    {id:'pururumon', x:42, y:730, cls:'normal', name:'Pururumon', lvl:'Fresh', note:'Initial form of the line.', wiki:'Pururumon', img:'pururumon'},
+    {id:'poromon', x:304, y:730, cls:'normal', name:'Poromon', lvl:'In-Training', note:'Little bird In-Training form.', wiki:'Poromon', img:'poromon'},
+    {id:'hawkmon', x:566, y:730, cls:'normal', name:'Hawkmon', lvl:'Rookie', note:'Main branching point.', wiki:'Hawkmon', img:'hawkmon'},
+    {id:'aquilamon', x:828, y:730, cls:'normal', name:'Aquilamon', lvl:'Champion', note:'Giant bird; fuses with Gatomon.', wiki:'Aquilamon', img:'aquilamon'},
+    {id:'silphymon', x:1090, y:730, cls:'dna', name:'Silphymon', lvl:'Ultimate', note:'Aquilamon + Gatomon.', wiki:'Silphymon', img:'silphymon'},
+    {id:'valkyrimon', x:1352, y:730, cls:'normal', name:'Valkyrimon', lvl:'Mega', note:'Peak of the Silphymon Jogress line.', wiki:'Valkyrimon', img:'valkyrimon'},
+
+    // other Megas of Silphymon
+    {id:'dynasmon', x:1352, y:970, cls:'normal', name:'Dynasmon', lvl:'Mega', note:'Royal Knight; dragon warrior.', wiki:'Dynasmon', img:'dynasmon', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#dynasmon', title:'Royal Knights roster'}},
+    {id:'varodurumon', x:1352, y:1210, cls:'dna', name:'Varodurumon', lvl:'Mega', note:'Silphymon + Sinduramon.', wiki:'Varodurumon', img:'valdurmon'}
+  ],
+  edges: function (edge) {
+    // main line
+    edge('pururumon','poromon','normal');
+    edge('poromon','hawkmon','normal');
+    edge('hawkmon','aquilamon','normal');
+
+    // Aquilamon's Ultimates: two alternates above, the Jogress with Gatomon (see panel)
+    edge('aquilamon','garudamon','normal');
+    edge('aquilamon','hippogriffomon','normal');
+    edge('aquilamon','silphymon','dna');
+    edge('garudamon','phoenixmon','normal');
+    edge('hippogriffomon','zhuqiaomon','normal');
+
+    // Silphymon's Megas; the second arrow into Phoenixmon lands below Garudamon's
+    edge('silphymon','valkyrimon','normal');
+    edge('silphymon','phoenixmon','normal','right','left',{toY:619});
+    edge('silphymon','dynasmon','normal');
+    edge('silphymon','varodurumon','dna');
+
+    // connector to the Armor panel (appendix, not a normal edge)
+    edge('hawkmon','armor-panel','armor','bottom','top',{shape:'vertical', toX:668, label:'Digi-Eggs', lx:668, ly:1550, width:3});
+  }
+});
+</script>
+</body>
+</html>

@@ -20,8 +20,11 @@ then lists the generations, the atlas pages or the group rosters:
   - [patamon.html](src/evolution-lines/gen-1-adventure/patamon.html) - Patamon line (Priest Mode and Goldramon 2020 branches, fallen angel dark branch, Shakkoumon Jogress, Armor Digivolutions, collective composition).
   - [gatomon.html](src/evolution-lines/gen-1-adventure/gatomon.html) - Gatomon line (X line up to Magnadramon X, Ophanimon Falldown Mode and ChronoCore variants, Silphymon Jogress, BlackGatomon dark branch, Mastemon holy-dark fusion, SkullKnightmon corruption, Armor Digivolutions, collective composition).
 - `src/evolution-lines/gen-2-adventure-02/` - Digimon Adventure 02:
-  - [index.html](src/evolution-lines/gen-2-adventure-02/index.html) - DigiDestined selection screen (by Digi-Egg).
+  - [index.html](src/evolution-lines/gen-2-adventure-02/index.html) - DigiDestined selection screen (by Digi-Egg; the Patamon and Gatomon cards link into the gen-1 trees, which already carry their Armor Digivolutions).
   - [veemon.html](src/evolution-lines/gen-2-adventure-02/veemon.html) - Veemon line (includes the Armor branch).
+  - [hawkmon.html](src/evolution-lines/gen-2-adventure-02/hawkmon.html) - Hawkmon line (Garudamon and Hippogriffomon alternate Ultimates, Silphymon Jogress and its Megas, Varodurumon Jogress, Armor Digivolutions).
+  - [armadillomon.html](src/evolution-lines/gen-2-adventure-02/armadillomon.html) - Armadillomon line (Brachiomon alternate Ultimate, Shakkoumon Jogress up to Vikemon and SlashAngemon, Armor Digivolutions).
+  - [wormmon.html](src/evolution-lines/gen-2-adventure-02/wormmon.html) - Wormmon line (Paildramon and Dinobeemon Jogresses, Imperialdramon Mode Changes, JewelBeemon branch, Hudiemon side form, Armor Digivolutions).
 - `src/evolution-lines/gen-3-tamers/` - Digimon Tamers:
   - [index.html](src/evolution-lines/gen-3-tamers/index.html) - Tamers selection screen (by Biomerge / peak form).
   - [guilmon.html](src/evolution-lines/gen-3-tamers/guilmon.html) - Guilmon line (X, Data/Yellow, Virus and Digital Hazard branches).
@@ -230,7 +233,7 @@ Format: `Level` optionally followed by ` / Virus` and/or ` / X`, in that order.
 | `Ultimate` | Perfect / Ultimate stage. |
 | `Mega` | Ultimate (JP) / Mega stage. |
 | `Ultra` | Fusion pinnacle above Mega: Omnimon / Omegamon-class Jogress results and their variants. |
-| `Armor` | Result of an Armor Digivolution (Digi-Egg). Veemon, Patamon and Gatomon lines. |
+| `Armor` | Result of an Armor Digivolution (Digi-Egg). The Adventure 02 partners' lines (Veemon, Hawkmon, Armadillomon, Wormmon, Patamon, Gatomon). |
 
 Frontier (`gen-4-frontier`) does not use these ranks; it has its own Spirit-rank levels.
 See "Frontier: Spirit Evolution" under Notes on specific cases.
@@ -270,7 +273,7 @@ Every arrow is colored by the digivolution trigger. This is the single vocabular
 | DNA / Jogress | purple | Fusion of two digimon into one. | both |
 | Mode Change | teal | Same digimon switching mode / form. | both |
 | Dark / Virus | red | Dark or Virus-attribute branch (including rage / loss of control). | both |
-| Armor Digivolution | amber | Armor evolution via a Digi-Egg. | veemon, patamon, gatomon |
+| Armor Digivolution | amber | Armor evolution via a Digi-Egg. | veemon, hawkmon, armadillomon, wormmon, patamon, gatomon |
 | Bond Evolution | pink | Bond-driven evolution. | agumon |
 | Burst Mode | gold | Burst Digivolution. | agumon |
 | Ancestral link | grey (dotted, no arrowhead) | Lore ancestry, not an evolution: a Legendary Warrior linked to the root of the line it spawned. | agumon, gabumon, tentomon |
@@ -305,7 +308,7 @@ The on-image legend lists only the triggers that the file actually uses.
 
 - Shared by both: Normal evolution, X-Digivolution, DNA / Jogress, Mode Change,
   Dark / Virus.
-- Veemon, Patamon and Gatomon add: Armor Digivolution.
+- The Adventure 02 partners (Veemon, Hawkmon, Armadillomon, Wormmon, Patamon, Gatomon) add: Armor Digivolution.
 - Agumon adds: Bond Evolution, Burst Mode.
 - Agumon, Gabumon and Tentomon add: Ancestral link.
 - Frontier (agunimon) relabels the shared colors: Spirit Evolution, Slide Evolution,

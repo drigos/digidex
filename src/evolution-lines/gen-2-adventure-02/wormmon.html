@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Wormmon: evolution tree</title>
+<link rel="stylesheet" href="../../digivolution.css" />
+<style>
+  /* page-specific layout */
+  .infographic { width:2122px; height:2151px; }
+  .columns { top:200px; }
+  .jogress-panel { top:1430px; width:248px; }
+  .armor-panel { top:1800px; width:2074px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="backnav" href="index.html"><span class="arrow">&#8592;</span> DigiDestined 02</a>
+  <div class="infographic" id="canvas">
+    <div class="title">
+      <h1>Wormmon: evolution tree</h1>
+      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega -> Ultra hierarchy, with the Paildramon and Dinobeemon Jogresses, the Imperialdramon Mode Changes, the JewelBeemon alternate Ultimate, the Hudiemon side form and Wormmon's Armor Digivolutions.</div>
+    </div>
+
+    <div class="legend">
+      <div class="legend-title">Digivolution triggers</div>
+      <div class="legend-grid"></div>
+    </div>
+
+    <div class="columns"></div>
+
+    <svg id="edges" viewBox="0 0 2122 2151" preserveAspectRatio="none"></svg>
+    <div id="labels"></div>
+    <div id="nodes"></div>
+
+    <section class="jogress-panel">
+      <div class="jogress-panel-title">
+        <h2>Jogress partner</h2>
+        <span>fuses with Stingmon to form Paildramon / Dinobeemon</span>
+      </div>
+      <div class="jogress-body">
+        <a class="jogress-card" href="https://digimon.fandom.com/wiki/ExVeemon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/xv-mon.jpg" alt="ExVeemon">
+          <div class="jogress-name">ExVeemon</div>
+          <div class="jogress-level">Champion</div>
+          <div class="jogress-fuse">+ Stingmon = Paildramon / Dinobeemon</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="armor-panel" id="armor-panel">
+      <div class="armor-panel-title">
+        <h2>Wormmon's Armor Digivolutions</h2>
+        <span>a single branch from Wormmon, organized by Digi-Egg</span>
+      </div>
+      <div class="armor-grid">
+        <a class="armor-card" id="armor-shadramon" href="https://digimon.fandom.com/wiki/Shadramon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/shadramon.jpg" alt="Shadramon">
+          <div class="armor-name">Shadramon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Courage</div>
+        </a>
+        <a class="armor-card" id="armor-flamewizardmon" href="https://digimon.fandom.com/wiki/FlameWizardmon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/flawizarmon.jpg" alt="FlameWizardmon">
+          <div class="armor-name">FlameWizardmon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Courage</div>
+        </a>
+        <a class="armor-card" id="armor-togemogumon" href="https://digimon.fandom.com/wiki/Togemogumon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/togemogumon.jpg" alt="Togemogumon">
+          <div class="armor-name">Togemogumon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Friendship</div>
+        </a>
+        <a class="armor-card" id="armor-aurumon" href="https://digimon.fandom.com/wiki/Aurumon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/owlmon.jpg" alt="Aurumon">
+          <div class="armor-name">Aurumon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Love</div>
+        </a>
+        <a class="armor-card" id="armor-nohemon" href="https://digimon.fandom.com/wiki/Nohemon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/nohemon.jpg" alt="Nohemon">
+          <div class="armor-name">Nohemon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Sincerity</div>
+        </a>
+        <a class="armor-card" id="armor-searchmon" href="https://digimon.fandom.com/wiki/Searchmon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/searchmon.jpg" alt="Searchmon">
+          <div class="armor-name">Searchmon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Knowledge</div>
+        </a>
+        <a class="armor-card" id="armor-archelomon" href="https://digimon.fandom.com/wiki/Archelomon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/archelomon.jpg" alt="Archelomon">
+          <div class="armor-name">Archelomon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Reliability</div>
+        </a>
+        <a class="armor-card" id="armor-bullmon" href="https://digimon.fandom.com/wiki/Bullmon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/bullmon.jpg" alt="Bullmon">
+          <div class="armor-name">Bullmon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Hope</div>
+        </a>
+        <a class="armor-card" id="armor-quetzalmon" href="https://digimon.fandom.com/wiki/Quetzalmon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/quetzalmon.jpg" alt="Quetzalmon">
+          <div class="armor-name">Quetzalmon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Light</div>
+        </a>
+        <a class="armor-card" id="armor-bucchiemon" href="https://digimon.fandom.com/wiki/Bucchiemon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/pucchiemon.jpg" alt="Bucchiemon">
+          <div class="armor-name">Bucchiemon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Kindness</div>
+        </a>
+        <a class="armor-card" id="armor-bucchiemongreen" href="https://digimon.fandom.com/wiki/Bucchiemon_(Green)" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/pucchiemon-green.jpg" alt="Bucchiemon (Green)">
+          <div class="armor-name">Bucchiemon (Green)</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Kindness</div>
+        </a>
+        <a class="armor-card" id="armor-kongoumon" href="https://digimon.fandom.com/wiki/Kongoumon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/kongoumon.jpg" alt="Kongoumon">
+          <div class="armor-name">Kongoumon</div>
+          <div class="armor-level">Armor</div>
+          <div class="armor-egg">Digi-Egg of Miracles / Destiny</div>
+        </a>
+      </div>
+    </section>
+
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. Hudiemon is born from Wormmon and the human Erika Mishima (Digimon Story: Cyber Sleuth - Hacker's Memory). Kongoumon answers to both the Digi-Egg of Miracles and the Digi-Egg of Destiny.</div>
+  </div>
+  <div class="support">
+    <span class="support-label">Support this project</span>
+    <a class="support-btn kofi" href="https://ko-fi.com/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9749;</span><span class="support-text">Buy me a coffee</span><span class="support-url">ko-fi.com/drigos</span></a>
+    <a class="support-btn sponsors" href="https://github.com/sponsors/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9829;</span><span class="support-text">GitHub Sponsors</span><span class="support-url">github.com/sponsors/drigos</span></a>
+  </div>
+</div>
+<script src="../../digivolution.js"></script>
+<script>
+DigiTree.mount({
+  legend: [
+    ['normal','Normal evolution'],
+    ['armor','Armor Digivolution'],
+    ['mode','Mode Change'],
+    ['dna','DNA / Jogress']
+  ],
+  columns: [
+    [42,'Fresh'],[304,'In-Training'],[566,'Rookie'],[828,'Champion'],
+    [1090,'Ultimate'],[1352,'Mega'],[1614,'Ultra / Variant']
+  ],
+  nodes: [
+    // JewelBeemon branch above the spine
+    {id:'jewelbeemon', x:1090, y:250, cls:'normal', name:'JewelBeemon', lvl:'Ultimate', note:'Jewel bee; alternate Ultimate.', wiki:'JewelBeemon', img:'jewelbeemon'},
+    {id:'grandiskuwagamon', x:1352, y:250, cls:'normal', name:'GrandisKuwagamon', lvl:'Mega', note:'Giant stag beetle Mega.', wiki:'GrandisKuwagamon', img:'grandiskuwagamon'},
+    {id:'banchostingmon', x:1352, y:490, cls:'normal', name:'BanchoStingmon', lvl:'Mega', note:'One of the Bancho Digimon.', wiki:'BanchoStingmon', img:'banchostingmon', badge:{cls:'bc', text:'Bancho', href:'../../groups/bancho.html#banchostingmon', title:'Bancho Digimon roster'}},
+
+    // main spine
+    {id:'leafmon', x:42, y:730, cls:'normal', name:'Leafmon', lvl:'Fresh', note:'Initial form of the line.', wiki:'Leafmon', img:'leafmon'},
+    {id:'minomon', x:304, y:730, cls:'normal', name:'Minomon', lvl:'In-Training', note:'Bagworm In-Training form.', wiki:'Minomon', img:'minomon'},
+    {id:'wormmon', x:566, y:730, cls:'normal', name:'Wormmon', lvl:'Rookie', note:'Main branching point.', wiki:'Wormmon', img:'wormmon'},
+    {id:'stingmon', x:828, y:730, cls:'normal', name:'Stingmon', lvl:'Champion', note:'Insect warrior; fuses with ExVeemon.', wiki:'Stingmon', img:'stingmon'},
+    {id:'paildramon', x:1090, y:730, cls:'dna', name:'Paildramon', lvl:'Ultimate', note:'ExVeemon + Stingmon.', wiki:'Paildramon', img:'paildramon'},
+    {id:'imperialdm', x:1352, y:730, cls:'normal', name:'Imperialdramon Dragon Mode', lvl:'Mega', note:'Dragon form.', wiki:'Imperialdramon_Dragon_Mode', img:'imperialdramondragonmode'},
+    {id:'imperialfm', x:1614, y:730, cls:'mode', name:'Imperialdramon Fighter Mode', lvl:'Mega', note:'Mode Change: Dragon to Fighter.', wiki:'Imperialdramon_Fighter_Mode', img:'imperialdramonfightermode'},
+    {id:'paladin', x:1876, y:730, cls:'mode', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#imperialdramon-paladin-mode', title:'Royal Knights roster'}, name:'Imperialdramon Paladin Mode', lvl:'Ultra', note:'Omnimon data / Omni Sword.', wiki:'Imperialdramon_Paladin_Mode', img:'imperialdramonpaladinmode'},
+
+    // side Champion and the Dinobeemon Jogress below the spine
+    {id:'hudiemon', x:828, y:970, cls:'normal', name:'Hudiemon', lvl:'Champion', note:'Wormmon + Erika Mishima.', wiki:'Hudiemon', img:'hudiemon'},
+    {id:'dinobeemon', x:1090, y:970, cls:'dna', name:'Dinobeemon', lvl:'Ultimate', note:'Stingmon + ExVeemon; insect side dominates.', wiki:'Dinobeemon', img:'dinobeemon'},
+    {id:'grankuwagamon', x:1352, y:970, cls:'normal', name:'GranKuwagamon', lvl:'Mega', note:'Peak of the Dinobeemon line.', wiki:'GranKuwagamon', img:'grankuwagamon'},
+    {id:'tigervespamon', x:1352, y:1210, cls:'normal', name:'TigerVespamon', lvl:'Mega', note:'Wasp warrior; alternate Mega.', wiki:'TigerVespamon', img:'tigervespamon'}
+  ],
+  edges: function (edge) {
+    // main line
+    edge('leafmon','minomon','normal');
+    edge('minomon','wormmon','normal');
+    edge('wormmon','stingmon','normal');
+    edge('wormmon','hudiemon','normal');
+
+    // Stingmon: JewelBeemon above, the two Jogresses with ExVeemon (see panel)
+    edge('stingmon','jewelbeemon','normal');
+    edge('stingmon','paildramon','dna');
+    edge('stingmon','dinobeemon','dna');
+    edge('jewelbeemon','grandiskuwagamon','normal');
+    edge('jewelbeemon','banchostingmon','normal');
+
+    // Imperialdramon: reached from Paildramon and Dinobeemon; the second arrow lands below the first
+    edge('paildramon','imperialdm','normal');
+    edge('dinobeemon','imperialdm','normal','right','left',{toY:859});
+    edge('imperialdm','imperialfm','mode');
+    edge('imperialfm','paladin','normal');
+
+    // Dinobeemon's Megas
+    edge('dinobeemon','grankuwagamon','normal');
+    edge('dinobeemon','tigervespamon','normal');
+
+    // connector to the Armor panel (appendix, not a normal edge)
+    edge('wormmon','armor-panel','armor','bottom','top',{shape:'vertical', toX:668, label:'Digi-Eggs', lx:668, ly:1550, width:3});
+  }
+});
+</script>
+</body>
+</html>
