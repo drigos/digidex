@@ -7,12 +7,12 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:1860px; height:3319px; }
+  .infographic { width:1860px; height:2922px; }
   .columns { top:200px; }
-  .jogress-panel { top:2211px; width:248px; }
-  .partner-panel { top:2608px; width:1348px; }
-  .armor-panel { top:1910px; width:1776px; }
-  .lore-panel { top:2963px; width:1776px; }
+  .jogress-panel { top:1910px; width:370px; }
+  .partner-panel { top:1910px; left:470px; width:1348px; }
+  .armor-panel { top:2265px; width:1776px; }
+  .lore-panel { top:2566px; width:1776px; }
 </style>
 </head>
 <body>
@@ -31,7 +31,7 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 1860 3319" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 1860 2922" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
@@ -307,7 +307,7 @@ DigiTree.mount({
     edge('daemon','daemonultra','dark','right','left',{fromY:1600, points:[[1585,1600],[1585,1789]], label:'V-Tamer', lx:1585, ly:1670});
 
     // connector to the Armor panel (appendix, not a normal edge)
-    edge('patamon','armor-panel','armor','bottom','top',{fromX:600, toX:380, points:[[600,952],[380,952]], width:3});
+    edge('patamon','armor-panel','armor','bottom','top',{fromX:600, toX:442, points:[[600,950],[442,950]], width:3});
     edge('armor-pegasusmon','armor-pegasusmonx','x','right','left',{width:3});
   }
 });

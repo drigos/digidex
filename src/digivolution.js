@@ -107,7 +107,7 @@
           (n.badge && !n.badge.href ? '<span class="' + n.badge.cls + '">' + n.badge.text + '</span>' : '') +
           '<img referrerpolicy="no-referrer" src="' + imageUrl(n.img) + '" alt="' + n.name + '">' +
           '<div class="name">' + n.name + '</div>' +
-          '<div class="level">' + n.lvl + '</div>' +
+          (n.lvl ? '<div class="level">' + n.lvl + '</div>' : '') +
           '<div class="note">' + n.note + '</div>';
         nodesEl.appendChild(a);
         if (n.badge && n.badge.href) {

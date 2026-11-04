@@ -71,7 +71,8 @@ generation (create the folder if that generation has no page yet).
 
 - Node: `{ id, x, y, cls, name, lvl, note, wiki, img, badge? }`
   - `cls` (pill color): `normal | x | dna | mode | dark | lateral | bond | burst`.
-  - `lvl` (card tag): `Level` optionally `+ / Virus + / X` only. See README section 1.
+  - `lvl` (card tag): `Level` optionally `+ / Virus + / X` only; omit it for a being with no
+    Level (Grani). See README section 1.
   - `badge`: `{ cls, text, href?, title? }` with `cls` one of `rk` (Royal Knight),
     `lw` (Legendary Warrior), `fgd` (Four Great Dragons), `vw` (Vortex Warrior),
     `cd` (Celestial Digimon), `aa` (Angelic Army), `fa` (Fallen Angel),
@@ -99,7 +100,8 @@ generation (create the folder if that generation has no page yet).
   the latter is added via the `digimon-lore-notes` skill); position them via
   the page `<style>` (`top` and `width` only; the shared CSS aligns every panel with the
   card grid). One panel per row: Armor first, then the reference panels from narrowest to
-  widest, Lore notes last (README "Panel placement"). Only the Armor panel gets a connector,
+  widest, Lore notes last; patamon trials a shared Jogress + composition row above the Armor
+  panel (README "Panel placement"). Only the Armor panel gets a connector,
   from the line's node, e.g.
   `edge('veemon','armor-panel','armor','bottom','top',{shape:'vertical', toX:668, ...})`.
   A panel that feeds a node is titled by its result (`Shakkoumon: Jogress partner`), states

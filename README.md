@@ -236,7 +236,7 @@ bottom depends on its note length. When you move a panel you must recompute the 
 Panels sit on the card grid: the shared CSS places every panel at `left: 42px`, the first
 column's margin, and a full-width panel ends at the last column's right edge. Each panel has
 its own row (two panels side by side end at different heights and break the `22px` rhythm),
-stacked in this order:
+except in the shared row below, stacked in this order:
 
 1. the Armor panel, right under the diagram, because the line evolves into its forms: it is
    the only panel with a connector, an amber edge from the line's node down to it;
@@ -244,6 +244,14 @@ stacked in this order:
    collective composition; on Frontier the DNA panel, then the Unified Spirit one), so they
    read as a pyramid;
 3. `Lore notes`, last.
+
+Shared row (trial on patamon): when a page has one Jogress panel, a composition panel and an
+Armor panel, the two reference panels share the row under the diagram and the Armor panel
+goes below them. The Jogress panel stays at the left margin, just wide enough for its title
+and subtitle on one line, so it matches the composition panel's height. The composition
+panel ends flush with the last column (page style `left = canvas width - 42 - panel width`).
+The two panels keep a `58px` gap, the same as between card columns, and the Armor connector
+runs down its middle.
 
 A panel that feeds a node (Jogress, composition, DNA, Unified Spirit) has no connector: its
 title names the result and its subtitle and cards state who fuses into it, which is enough to
@@ -254,7 +262,7 @@ the canvas free of long lines.
 
 Format: `Level` optionally followed by ` / Virus` and/or ` / X`, in that order.
 
-### Level (exactly one, required)
+### Level (exactly one)
 
 | Level | Meaning |
 |---|---|
@@ -269,6 +277,9 @@ Format: `Level` optionally followed by ` / Virus` and/or ` / X`, in that order.
 
 Frontier (`gen-4-frontier`) does not use these ranks; it has its own Spirit-rank levels.
 See "Frontier: Spirit Evolution" under Notes on specific cases.
+
+A card for a being DigimonWiki gives no Level (Grani, Gallantmon's steed) has no pill: leave
+`lvl` out of the node and the engine skips it. Never invent a rank such as `Support` for it.
 
 ### Qualifiers (optional, only these two)
 
@@ -322,7 +333,11 @@ another lane, `laneY` another row gap for top/bottom edges, `points` gives the c
 Anchors come from the cards' layout position, so a hovered card never skews its arrows.
 
 - An edge runs in a lane or row gap, never under a card or panel, and crosses no other edge
-  unless no route can avoid it (the `Bond with Tai` edge on agumon crosses two branches).
+  unless no route can avoid it (the `Bond with Tai` edge on agumon crosses two branches; on
+  gatomon, Angewomon -> Junomon must cross the LadyDevimon -> Mastemon fusion, because
+  Gatomon, Angewomon, Mastemon, LadyDevimon and BlackGatomon close a loop around its start).
+- A run alone in a row gap or lane sits on its centerline (21px below the card above, 29px
+  past the card's side); ports and lanes are split only where edges compete for the space.
 - Edges of the same trigger may share a trunk (a fan, or two Spirits merging into a Fusion).
   Edges of different triggers never share a run: each leaves from its own port (`fromY` /
   `fromX`) and, when both turn, in its own lane. On a downward fan the higher port takes the
