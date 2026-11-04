@@ -9,8 +9,8 @@
   /* page-specific layout */
   .infographic { width:2122px; height:2205px; }
   .columns { top:200px; }
-  .jogress-panel { top:1430px; width:248px; left:1067px; }
-  .armor-panel { top:1854px; width:2074px; }
+  .jogress-panel { top:1731px; width:248px; }
+  .armor-panel { top:1430px; width:2038px; }
 </style>
 </head>
 <body>
@@ -180,7 +180,7 @@ DigiTree.mount({
     edge('wormmon','hudiemon','normal');
 
     // Stingmon: JewelBeemon above, the two Jogresses with ExVeemon (see panel)
-    edge('stingmon','jewelbeemon','normal');
+    edge('stingmon','jewelbeemon','normal','right','left',{fromY:800});
     edge('stingmon','paildramon','dna');
     edge('stingmon','dinobeemon','dna');
     edge('jewelbeemon','grandiskuwagamon','normal');

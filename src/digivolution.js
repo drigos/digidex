@@ -23,10 +23,17 @@
  * edge(from, to, type, fromSide='right', toSide='left', opts)
  *   type    : one of the trigger keys (normal|x|dna|mode|dark|lateral|armor|bond|burst|lore)
  *   *Side   : left|right|top|bottom (anchor on the card's bounding box)
- *   opts    : { shape:'vertical'|'leftbus', busX, points:[[x,y],...], r,
+ *   opts    : { shape:'vertical'|'leftbus', busX, laneX, laneY, points:[[x,y],...], r,
  *               label, lx, ly, width, opacity, startArrow,   // startArrow: double-headed
  *               noArrow,                                      // noArrow: draw no arrowhead (e.g. lore links)
  *               fromX, fromY, toX, toY }   // override any computed anchor coord
+ *
+ * Every edge is orthogonal: horizontal and vertical runs joined by rounded corners. It leaves
+ * along the source side's axis and enters along the target side's axis. A side-to-side edge
+ * between different rows turns in the lane just before the target column (laneX overrides
+ * it; shape 'leftbus' turns at busX); a top/bottom edge between different columns turns in
+ * the row gap just before the target (laneY overrides it). Explicit points are kept, with
+ * near-aligned corners (anchor rounding) snapped straight.
  */
 (function (global) {
   'use strict';
@@ -118,11 +125,13 @@
       });
     }
 
+    // layout position relative to the canvas border box, summed up the offsetParent chain so
+    // a hover transform (cards lift by 2px) never skews the anchors when the page redraws
     function rect(id) {
-      var e = document.getElementById(id);
-      var r = e.getBoundingClientRect();
-      var c = canvas.getBoundingClientRect();
-      return { left: r.left - c.left, top: r.top - c.top, width: r.width, height: r.height };
+      var e = document.getElementById(id), left = canvas.clientLeft, top = canvas.clientTop;
+      var w = e.offsetWidth, h = e.offsetHeight;
+      for (var n = e; n && n !== canvas; n = n.offsetParent) { left += n.offsetLeft; top += n.offsetTop; }
+      return { left: left, top: top, width: w, height: h };
     }
     function point(id, side) {
       var r = rect(id);
@@ -132,20 +141,59 @@
       if (side === 'bottom') return { x: r.left + r.width / 2, y: r.top + r.height };
       return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
     }
-    function curvePath(a, b, shape, o) {
-      o = o || {};
-      var dx = b.x - a.x, dy = b.y - a.y;
-      if (shape === 'vertical') {
-        var mid = a.y + dy * 0.56;
-        return 'M ' + a.x + ' ' + a.y + ' C ' + a.x + ' ' + mid + ', ' + b.x + ' ' + mid + ', ' + b.x + ' ' + b.y;
+    function across(side) { return side === 'left' || side === 'right'; }
+    // corner points of an orthogonal route from a to b (see the header comment)
+    function route(a, b, fromSide, toSide, o) {
+      // a cross-axis offset of a few pixels (toX/fromX set against a computed anchor) is
+      // alignment noise, not a jog: land straight
+      if (!o.points && o.shape !== 'leftbus') {
+        if (across(fromSide) && across(toSide) && Math.abs(a.y - b.y) <= 8) b = { x: b.x, y: a.y };
+        if (!across(fromSide) && !across(toSide) && Math.abs(a.x - b.x) <= 8) b = { x: a.x, y: b.y };
       }
-      if (shape === 'leftbus') {
-        var cx = o.busX;
-        return 'M ' + a.x + ' ' + a.y + ' C ' + cx + ' ' + a.y + ', ' + cx + ' ' + b.y + ', ' + b.x + ' ' + b.y;
+      var pts = [[a.x, a.y]];
+      if (o.points) {
+        pts = pts.concat(o.points);
+      } else if (o.shape === 'leftbus') {
+        pts.push([o.busX, a.y], [o.busX, b.y]);
+      } else if (across(fromSide) && across(toSide)) {
+        if (Math.abs(a.y - b.y) > 0.5) {
+          var lx = o.laneX != null ? o.laneX : b.x - 29 * Math.sign(b.x - a.x || 1);
+          pts.push([lx, a.y], [lx, b.y]);
+        }
+      } else if (!across(fromSide) && !across(toSide)) {
+        if (Math.abs(a.x - b.x) > 0.5) {
+          var ly = o.laneY != null ? o.laneY : b.y - 21 * Math.sign(b.y - a.y || 1);
+          pts.push([a.x, ly], [b.x, ly]);
+        }
+      } else if (across(fromSide)) {
+        pts.push([b.x, a.y]);
+      } else {
+        pts.push([a.x, b.y]);
       }
-      var bend = Math.max(48, Math.min(120, Math.abs(dx) * 0.33));
-      var s = Math.sign(dx || 1);
-      return 'M ' + a.x + ' ' + a.y + ' C ' + (a.x + s * bend) + ' ' + a.y + ', ' + (b.x - s * bend) + ' ' + b.y + ', ' + b.x + ' ' + b.y;
+      pts.push([b.x, b.y]);
+      return straighten(pts.map(function (q) { return q.slice(); }), fromSide, toSide);
+    }
+    // snap runs that are off-axis by a few pixels (hand-set points against computed anchors)
+    // and turn any remaining diagonal run into an elbow
+    function straighten(pts, fromSide, toSide) {
+      var last = pts.length - 1;
+      for (var i = 1; i <= last; i++) {
+        var p = pts[i - 1], q = pts[i], dx = Math.abs(q[0] - p[0]), dy = Math.abs(q[1] - p[1]);
+        if (!dx || !dy || Math.max(dx, dy) <= 0.5) continue;
+        var k = dy <= dx ? 1 : 0;              // the axis that is only slightly off
+        if (Math.min(dx, dy) > 8) continue;
+        if (i < last) q[k] = p[k]; else if (i - 1 > 0) p[k] = q[k];
+      }
+      var out = [pts[0]];
+      for (var j = 1; j <= last; j++) {
+        var s = out[out.length - 1], t = pts[j];
+        if (Math.abs(t[0] - s[0]) > 0.5 && Math.abs(t[1] - s[1]) > 0.5) {
+          var flat = j === 1 ? across(fromSide) : (j === last ? !across(toSide) : true);
+          out.push(flat ? [t[0], s[1]] : [s[0], t[1]]);
+        }
+        out.push(t);
+      }
+      return out;
     }
     function polyPath(pts, r) {
       r = r || 16;
@@ -172,11 +220,7 @@
       if (o.toX != null) b.x = o.toX;
       if (o.toY != null) b.y = o.toY;
       var p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      if (o.points) {
-        p.setAttribute('d', polyPath([[a.x, a.y]].concat(o.points).concat([[b.x, b.y]]), o.r));
-      } else {
-        p.setAttribute('d', curvePath(a, b, o.shape || 'auto', o));
-      }
+      p.setAttribute('d', polyPath(route(a, b, fromSide, toSide, o), o.r));
       p.setAttribute('fill', 'none');
       p.setAttribute('stroke', colors[type]);
       p.setAttribute('stroke-width', o.width || 3);

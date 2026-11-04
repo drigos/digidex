@@ -197,7 +197,7 @@ a.panel-badge { position:static; justify-self:end; align-self:start; margin:9px 
    content, so the gap below the last card equals the panel's 22px bottom padding) ---------- */
 /* Jogress / partner panel (purple) */
 .partner-panel, .jogress-panel {
-  position:absolute; left:24px; z-index:4;
+  position:absolute; left:42px; z-index:4;
   padding:22px; border-radius:24px; border:1px solid rgba(176,132,245,.42);
   background:linear-gradient(180deg, rgba(48,32,74,.68), rgba(16,24,36,.94));
   box-shadow:0 20px 56px rgba(0,0,0,.36), inset 0 0 0 1px rgba(255,255,255,.05);
@@ -218,7 +218,7 @@ a.panel-badge { position:static; justify-self:end; align-self:start; margin:9px 
 
 /* Armor panel (amber) */
 .armor-panel {
-  position:absolute; left:24px; z-index:4;
+  position:absolute; left:42px; z-index:4;
   padding:20px 22px 22px; border-radius:24px; border:1px solid rgba(245,165,36,.42);
   background:linear-gradient(180deg, rgba(74,49,16,.68), rgba(16,24,36,.94));
   box-shadow:0 20px 56px rgba(0,0,0,.36), inset 0 0 0 1px rgba(255,255,255,.05);
@@ -242,7 +242,7 @@ a.panel-badge { position:static; justify-self:end; align-self:start; margin:9px 
 /* Lore notes panel (grey, matching the lore trigger color): source-verified
    explanations for the unusual arrows and nodes of the page */
 .lore-panel {
-  position:absolute; left:24px; z-index:4;
+  position:absolute; left:42px; z-index:4;
   padding:20px 22px 22px; border-radius:24px; border:1px solid rgba(148,163,184,.42);
   background:linear-gradient(180deg, rgba(44,52,64,.68), rgba(16,24,36,.94));
   box-shadow:0 20px 56px rgba(0,0,0,.36), inset 0 0 0 1px rgba(255,255,255,.05);

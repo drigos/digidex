@@ -9,8 +9,8 @@
   /* page-specific layout */
   .infographic { width:2122px; height:3643px; }
   .columns { top:200px; }
-  .partner-panel { top:2883px; width:1348px; left:auto; right:44px; }
-  .jogress-panel { top:3238px; width:908px; }
+  .partner-panel { top:3238px; width:1348px; }
+  .jogress-panel { top:2883px; width:908px; }
 </style>
 </head>
 <body>
@@ -218,7 +218,7 @@ DigiTree.mount({
 
     // MetalGreymon (Vaccine) special branches
     edge('metalgreymon','alterous','mode','bottom','top',{shape:'vertical'});
-    edge('metalgreymon','machinedramon','dark','right','left',{label:'Corrupted (Adventure: 2020)', lx:1324, ly:950});
+    edge('metalgreymon','machinedramon','dark','bottom','left',{fromX:1110, points:[[1110,710],[1061,710],[1061,950],[1333,950],[1333,1040]], toY:1040, label:'Corrupted (Adventure: 2020)', lx:1197, ly:950});
     // AncientGreymon ancestral (lore) link: origin -> root of the line, no arrowhead
     edge('ancientgreymon','botamon','lore','bottom','top',{shape:'vertical', noArrow:true});
     edge('alterous','blitzgreymon','normal','right','left');
@@ -232,10 +232,10 @@ DigiTree.mount({
     edge('omnimon','omnimonmerciful','dna','right','left');
 
     // Dark Digivolution off Greymon
-    edge('greymon','skullgreymon','dark','bottom','left',{label:'Loss of control', lx:1016, ly:972});
+    edge('greymon','skullgreymon','dark','bottom','left',{label:'Loss of control', lx:931, ly:950});
 
     // Dark / Virus line
-    edge('agumon','blackagumon','dark','left','left',{shape:'leftbus', busX:524});
+    edge('agumon','blackagumon','dark','left','left',{shape:'leftbus', busX:528, fromY:650});
     edge('blackagumon','greymonblue','dark');
     edge('greymonblue','metalgreymonvirus','dark');
     edge('metalgreymonvirus','blackwargreymon','dark');
@@ -250,8 +250,8 @@ DigiTree.mount({
     edge('metalgreymonvirusx','blackwargreymonx','x');
 
     // alternate rookie forms + bond
-    edge('agumon','snowagumon','normal','left','left',{shape:'leftbus', busX:548});
-    edge('agumon','agumonexpert','normal','left','left',{shape:'leftbus', busX:536});
+    edge('agumon','snowagumon','normal','left','left',{shape:'leftbus', busX:548, fromY:625});
+    edge('agumon','agumonexpert','normal','left','left',{shape:'leftbus', busX:548, fromY:625});
     edge('agumon','agumonbond','bond','bottom','left',{points:[[668,695],[800,695],[800,2755]], label:'Bond with Tai', lx:800, ly:1340});
 
     // Data Squad (2006) line
@@ -260,16 +260,12 @@ DigiTree.mount({
     edge('geogreymon','rizegreymon','normal');
     edge('rizegreymon','shinegreymon','normal');
     edge('rizegreymon','rizegreymonx','x','bottom','top',{shape:'vertical'});
-    edge('rizegreymon','victorygreymon','normal','right','left');
-    edge('rizegreymon','gaiomon','x');
+    edge('rizegreymon','victorygreymon','normal','right','left',{fromY:2055, laneX:1333});
+    edge('rizegreymon','gaiomon','x','right','left',{fromY:2080, laneX:1313});
     edge('shinegreymon','shineburst','burst');
     edge('shinegreymon','shineruin','burst','right','left',{fromY:2090, points:[[1585,2090],[1585,2269]]});
     edge('agumon2006','agumonburst','burst','bottom','top',{shape:'vertical'});
     edge('gaiomon','gaiomonfierce','mode');
-
-    // the composition panel feeds the collective form through the free right gutter
-    // (the column below Omnimon Merciful Mode is taken)
-    edge('composition-panel','omnimonmerciful','dna','right','right',{fromY:2944, points:[[2101,2944],[2101,590]]});
   }
 });
 </script>

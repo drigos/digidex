@@ -9,8 +9,8 @@
   /* page-specific layout */
   .infographic { width:1598px; height:2163px; }
   .columns { top:200px; }
-  .jogress-panel { top:1430px; width:468px; left:1067px; }
-  .armor-panel { top:1812px; width:1550px; }
+  .jogress-panel { top:1731px; width:468px; }
+  .armor-panel { top:1430px; width:1514px; }
 </style>
 </head>
 <body>
@@ -169,24 +169,20 @@ DigiTree.mount({
     edge('hawkmon','aquilamon','normal');
 
     // Aquilamon's Ultimates: two alternates above, the Jogress with Gatomon (see panel)
-    edge('aquilamon','garudamon','normal');
-    edge('aquilamon','hippogriffomon','normal');
+    edge('aquilamon','garudamon','normal','right','left',{fromY:800});
+    edge('aquilamon','hippogriffomon','normal','right','left',{fromY:800});
     edge('aquilamon','silphymon','dna');
     edge('garudamon','phoenixmon','normal');
     edge('hippogriffomon','zhuqiaomon','normal');
 
     // Silphymon's Megas; the second arrow into Phoenixmon lands below Garudamon's
     edge('silphymon','valkyrimon','normal');
-    edge('silphymon','phoenixmon','normal','right','left',{toY:619});
-    edge('silphymon','dynasmon','normal');
-    edge('silphymon','varodurumon','dna');
+    edge('silphymon','phoenixmon','normal','right','left',{fromY:800, toY:619});
+    edge('silphymon','dynasmon','normal','right','left',{fromY:855, laneX:1333});
+    edge('silphymon','varodurumon','dna','right','left',{fromY:880, laneX:1313});
 
     // connector to the Armor panel (appendix, not a normal edge)
     edge('hawkmon','armor-panel','armor','bottom','top',{shape:'vertical', toX:668, width:3});
-
-    // each partner feeds its fusion straight above the panel
-    edge('jogress-panel','silphymon','dna','top','bottom',{shape:'vertical', fromX:1193});
-    edge('jogress-panel','varodurumon','dna','top','bottom',{shape:'vertical', fromX:1455});
   }
 });
 </script>

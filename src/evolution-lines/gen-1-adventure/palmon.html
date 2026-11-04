@@ -9,8 +9,8 @@
   /* page-specific layout */
   .infographic { width:1860px; height:1752px; }
   .columns { top:200px; }
-  .jogress-panel { top:950px; width:248px; left:auto; right:44px; }
-  .partner-panel { top:1347px; width:1348px; left:auto; right:44px; }
+  .jogress-panel { top:950px; width:248px; }
+  .partner-panel { top:1347px; width:1348px; }
 </style>
 </head>
 <body>
@@ -158,7 +158,7 @@ DigiTree.mount({
 
     // Rookie side forms
     edge('palmon','aruraumon','normal','bottom','top',{shape:'vertical'});
-    edge('palmon','ponchomon','dark','right','left',{label:'Sonic disruption', lx:782, ly:710});
+    edge('palmon','ponchomon','dark','right','left',{fromY:630, label:'Sonic disruption', lx:799, ly:710});
 
     // Mega / Ultimate variants
     edge('lillymon','banchoLillymon','normal','bottom','top',{shape:'vertical'});
@@ -166,12 +166,6 @@ DigiTree.mount({
 
     // Rafflesimon Jogress (Rosemon + Lotosmon; Lotosmon lives in the Jogress partners panel)
     edge('rosemon','rafflesimon','dna','right','left',{points:[[1590,589],[1590,819]]});
-
-    // Lotosmon feeds Rafflesimon straight above its panel
-    edge('jogress-panel','rafflesimon','dna','top','bottom',{shape:'vertical', fromX:1717});
-    // the composition panel feeds the collective form through the free right gutter
-    // (the column below Omnimon Merciful Mode is taken)
-    edge('composition-panel','omnimonmerciful','dna','right','right',{fromY:1408, points:[[1839,1408],[1839,590]]});
   }
 });
 </script>

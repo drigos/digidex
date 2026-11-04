@@ -9,9 +9,9 @@
   /* page-specific layout */
   .infographic { width:1860px; height:3013px; }
   .columns { top:200px; }
-  .jogress-panel { top:1910px; width:248px; left:1067px; }
-  .partner-panel { top:2307px; width:1348px; left:auto; right:44px; }
-  .armor-panel { top:2662px; width:1812px; }
+  .jogress-panel { top:2211px; width:248px; }
+  .partner-panel { top:2608px; width:1348px; }
+  .armor-panel { top:1910px; width:1776px; }
 </style>
 </head>
 <body>
@@ -263,27 +263,21 @@ DigiTree.mount({
 
     // dark branch up to the holy-dark fusion
     edge('gatomon','blackgatomon','dark','bottom','top',{shape:'vertical', fromX:960, toX:960});
-    edge('blackgatomon','blackgatomonuver','mode','bottom','top',{shape:'vertical', label:'Ghost Game', lx:995, ly:1187});
+    edge('blackgatomon','blackgatomonuver','mode','bottom','top',{shape:'vertical', label:'Ghost Game', lx:931, ly:1190});
     edge('blackgatomon','ladydevimon','dark');
     edge('ladydevimon','mastemon','dna');
 
     // Adventure: corruption
-    edge('gatomon','skullknightmon','dark','bottom','left',{fromX:900, points:[[900,910],[812,910],[812,1549]], label:'Corrupted (Adventure: 2020)', lx:812, ly:1188});
+    edge('gatomon','skullknightmon','dark','bottom','left',{fromX:920, points:[[920,910],[812,910],[812,1550]], label:'Corrupted (Adventure: 2020)', lx:812, ly:1430});
     edge('skullknightmon','darkknightmon','dark');
 
     // DNA / Jogress with Aquilamon (see panel)
-    edge('gatomon','silphymon','dna','bottom','left',{fromX:880, points:[[880,890],[790,890],[790,1789]]});
+    edge('gatomon','silphymon','dna','bottom','left',{fromX:880, points:[[880,750],[537,750],[537,1790]]});
     edge('silphymon','valkyrimon','normal');
 
     // connector to the Armor panel (appendix, not a normal edge)
     edge('gatomon','armor-panel','armor','bottom','top',{fromX:850, toX:380, points:[[850,730],[380,730]], width:3});
     edge('armor-nefertimon','armor-nefertimonx','x','right','left',{width:3});
-
-    // Aquilamon feeds Silphymon straight above its panel
-    edge('jogress-panel','silphymon','dna','top','bottom',{shape:'vertical', fromX:1193});
-    // the composition panel feeds the collective form through the free right gutter
-    // (the column below Omnimon Merciful Mode is taken)
-    edge('composition-panel','omnimonmerciful','dna','right','right',{fromY:2368, points:[[1839,2368],[1839,590]]});
   }
 });
 </script>

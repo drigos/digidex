@@ -9,9 +9,9 @@
   /* page-specific layout */
   .infographic { width:1598px; height:1560px; }
   .columns { top:200px; }
-  /* both reference panels are right-aligned and stacked (narrow DNA on top, wide Unified below) */
-  .jogress-panel { top:710px; width:248px; left:auto; right:24px; }
-  .partner-panel { top:1122px; width:1128px; left:auto; right:24px; }
+  /* both reference panels are left-aligned and stacked (narrow DNA on top, wide Unified below) */
+  .jogress-panel { top:710px; width:248px; }
+  .partner-panel { top:1122px; width:1128px; }
 </style>
 </head>
 <body>
@@ -139,7 +139,7 @@ DigiTree.mount({
     edge('duskmon','velgemon','mode','bottom','top',{shape:'vertical', startArrow:true});
 
     // purification: H Spirit -> L Spirit, B Spirit -> K Spirit
-    edge('duskmon','loweemon','normal','right','left',{label:'Purified', lx:537, ly:469});
+    edge('duskmon','loweemon','normal','right','left');
     edge('velgemon','jagerloweemon','normal','right','left');
 
     // slide between the purified Human and Beast
@@ -155,10 +155,6 @@ DigiTree.mount({
 
     // DNA Digivolve with EmperorGreymon
     edge('magnagarurumon','susanoomon','dna','right','left');
-
-    // connectors from the reference panels up into the nodes they form
-    edge('unified-panel','magnagarurumon','burst','top','bottom',{shape:'vertical', fromX:1193});
-    edge('dna-panel','susanoomon','dna','top','bottom',{shape:'vertical', fromX:1455});
   }
 });
 </script>

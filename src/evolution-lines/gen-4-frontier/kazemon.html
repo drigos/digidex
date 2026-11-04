@@ -11,9 +11,9 @@
   .columns { top:200px; }
   /* the narrower canvas brings the legend closer, so the subtitle wraps before it */
   .subtitle { max-width:680px; }
-  /* both reference panels are right-aligned and stacked (narrow DNA on top, wide Unified below) */
-  .jogress-panel { top:710px; width:248px; left:auto; right:24px; }
-  .partner-panel { top:1107px; width:1128px; left:auto; right:24px; }
+  /* both reference panels are left-aligned and stacked (narrow DNA on top, wide Unified below) */
+  .jogress-panel { top:710px; width:248px; }
+  .partner-panel { top:1107px; width:1128px; }
 </style>
 </head>
 <body>
@@ -145,10 +145,6 @@ DigiTree.mount({
 
     // DNA Digivolve with MagnaGarurumon
     edge('emperorgreymon','susanoomon','dna','right','left');
-
-    // connectors from the reference panels up into the nodes they form
-    edge('unified-panel','emperorgreymon','burst','top','bottom',{shape:'vertical', fromX:931});
-    edge('dna-panel','susanoomon','dna','top','bottom',{shape:'vertical', fromX:1193});
   }
 });
 </script>

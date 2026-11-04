@@ -9,8 +9,8 @@
   /* page-specific layout */
   .infographic { width:2122px; height:1949px; }
   .columns { top:200px; }
-  .jogress-panel { top:1190px; width:248px; left:1067px; }
-  .armor-panel { top:1614px; width:2074px; }
+  .jogress-panel { top:1491px; width:248px; }
+  .armor-panel { top:1190px; width:2038px; }
 </style>
 </head>
 <body>
@@ -180,12 +180,12 @@ DigiTree.mount({
   edges: function (edge) {
     edge('chibomon','demiveemon','normal');
     edge('demiveemon','veemon','normal');
-    edge('veemon','veedramon','normal');
+    edge('veemon','veedramon','normal','top','left');
     edge('veedramon','aeroveedramon','normal');
     edge('aeroveedramon','ulforce','normal');
     edge('ulforce','future','mode');
-    edge('ulforce','ulforcex','x');
-    edge('veemon','redvee','dark','right','left', {label:'Loss of control', lx:799, ly:705});
+    edge('ulforce','ulforcex','x','right','left',{fromY:400});
+    edge('veemon','redvee','dark','right','left', {fromY:800, label:'Loss of control', lx:799, ly:710});
     edge('veemon','exveemon','normal');
 
     edge('exveemon','paildramon','dna');
@@ -200,11 +200,6 @@ DigiTree.mount({
     // connector to the Armor panel (kept: the panel is an appendix, not a normal edge)
     edge('veemon','armor-panel','armor','bottom','top', {shape:'vertical', toX:668, width:3});
     edge('armor-magnamon','armor-magnamonx','x','right','left', {width:3});
-
-    // Stingmon feeds Dinobeemon straight above its panel and Paildramon through the free
-    // row gap and the lane right of the column
-    edge('jogress-panel','dinobeemon','dna','top','bottom',{shape:'vertical', fromX:1193});
-    edge('jogress-panel','paildramon','dna','top','right',{fromX:1300, points:[[1300,1180],[1323,1180],[1323,900]], toY:900});
   }
 });
 </script>

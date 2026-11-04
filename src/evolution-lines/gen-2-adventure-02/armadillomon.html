@@ -9,8 +9,8 @@
   /* page-specific layout */
   .infographic { width:1598px; height:1698px; }
   .columns { top:200px; }
-  .jogress-panel { top:950px; width:248px; left:1067px; }
-  .armor-panel { top:1347px; width:1550px; }
+  .jogress-panel { top:1251px; width:248px; }
+  .armor-panel { top:950px; width:1514px; }
 </style>
 </head>
 <body>
@@ -161,7 +161,7 @@ DigiTree.mount({
     edge('tsubumon','upamon','normal');
     edge('upamon','armadillomon','normal');
     edge('armadillomon','ankylomon','normal');
-    edge('ankylomon','brachiomon','normal');
+    edge('ankylomon','brachiomon','normal','right','left',{fromY:560});
 
     // DNA / Jogress with Angemon (see panel)
     edge('ankylomon','shakkoumon','dna');
@@ -170,9 +170,6 @@ DigiTree.mount({
 
     // connector to the Armor panel (appendix, not a normal edge)
     edge('armadillomon','armor-panel','armor','bottom','top',{shape:'vertical', toX:668, width:3});
-
-    // Angemon feeds Shakkoumon straight above its panel
-    edge('jogress-panel','shakkoumon','dna','top','bottom',{shape:'vertical', fromX:1193});
   }
 });
 </script>

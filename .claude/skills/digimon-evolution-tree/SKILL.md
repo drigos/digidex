@@ -89,17 +89,21 @@ generation (create the folder if that generation has no page yet).
   `edge(from, to, type, fromSide='right', toSide='left', opts)`
   - `type`: the trigger (`normal|x|dna|mode|dark|lateral|armor|bond|burst`).
   - sides: `left|right|top|bottom`.
-  - `opts`: `shape:'vertical'|'leftbus'`, `busX`, `points:[[x,y],...]`, `label`, `lx`, `ly`,
-    `width`, `opacity`, and `fromX/fromY/toX/toY` to override any anchor coordinate.
+  - `opts`: `shape:'vertical'|'leftbus'`, `busX`, `laneX`, `laneY`, `points:[[x,y],...]`,
+    `label`, `lx`, `ly`, `width`, `opacity`, and `fromX/fromY/toX/toY` to override any anchor
+    coordinate.
+  - Edges are orthogonal (no curves). Give edges of different triggers that leave the same
+    side of a card their own port (`fromY`/`fromX`) and lane (`laneX`), so no two colors share a
+    run; keep every label on its own run inside a lane or row gap (README "Routing").
 - Panels stay as HTML sections (partner/jogress = purple, armor = amber, lore notes = grey;
   the latter is added via the `digimon-lore-notes` skill); position them via
-  the page `<style>`. Connectors target panels by id. A panel that feeds a node (Jogress
-  partner, collective composition, Unified Spirit) connects **from the panel to the node**,
-  e.g. `edge('jogress-panel','shakkoumon','dna','top','bottom',{shape:'vertical', fromX:1193})`;
-  the Armor connector runs from the node to its panel,
+  the page `<style>` (`top` and `width` only; the shared CSS aligns every panel with the
+  card grid). One panel per row: Armor first, then the reference panels from narrowest to
+  widest, Lore notes last (README "Panel placement"). Only the Armor panel gets a connector,
+  from the line's node, e.g.
   `edge('veemon','armor-panel','armor','bottom','top',{shape:'vertical', toX:668, ...})`.
-  Title a feeding panel by its result (`Shakkoumon: Jogress partner`) and draw the connector
-  only if its route crosses no edge, card or panel (README "Panel connectors").
+  A panel that feeds a node is titled by its result (`Shakkoumon: Jogress partner`), states
+  the mechanic in its subtitle and has no connector.
 
 ## Conventions (enforce; details in README.md)
 

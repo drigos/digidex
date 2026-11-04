@@ -7,12 +7,12 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:1860px; height:2964px; }
+  .infographic { width:1860px; height:3319px; }
   .columns { top:200px; }
-  .jogress-panel { top:1910px; width:248px; }
-  .partner-panel { top:1910px; width:1348px; left:auto; right:44px; }
-  .armor-panel { top:2307px; width:1812px; }
-  .lore-panel { top:2608px; width:1812px; }
+  .jogress-panel { top:2211px; width:248px; }
+  .partner-panel { top:2608px; width:1348px; }
+  .armor-panel { top:1910px; width:1776px; }
+  .lore-panel { top:2963px; width:1776px; }
 </style>
 </head>
 <body>
@@ -31,7 +31,7 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 1860 2964" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 1860 3319" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
@@ -287,8 +287,8 @@ DigiTree.mount({
 
     // Seraphimon: collective composition and corrupted variants
     edge('seraphimon','omnimonmerciful','dna');
-    edge('seraphimon','shadowseraphimon','dark','right','left',{fromY:870, points:[[1585,870],[1585,1069]], label:'Inner resentment', lx:1560, ly:988});
-    edge('seraphimon','blackseraphimon','dark','bottom','left',{fromX:1490, points:[[1490,1309]], label:'Digimon World 3', lx:1540, ly:1282});
+    edge('seraphimon','shadowseraphimon','dark','right','left',{fromY:870, points:[[1585,870],[1585,1069]], label:'Inner resentment', lx:1585, ly:950});
+    edge('seraphimon','blackseraphimon','dark','bottom','left',{fromX:1490, points:[[1490,1309]], label:'Digimon World 3', lx:1540, ly:1310});
 
     // DNA / Jogress with Ankylomon (see panel)
     edge('angemon','shakkoumon','dna','bottom','left',{fromX:960, points:[[960,1309]]});
@@ -307,12 +307,8 @@ DigiTree.mount({
     edge('daemon','daemonultra','dark','right','left',{fromY:1600, points:[[1585,1600],[1585,1789]], label:'V-Tamer', lx:1585, ly:1670});
 
     // connector to the Armor panel (appendix, not a normal edge)
-    edge('patamon','armor-panel','armor','bottom','top',{toX:380, points:[[668,952],[380,952]], width:3});
+    edge('patamon','armor-panel','armor','bottom','top',{fromX:600, toX:380, points:[[600,952],[380,952]], width:3});
     edge('armor-pegasusmon','armor-pegasusmonx','x','right','left',{width:3});
-
-    // the composition panel feeds the collective form through the free right gutter
-    // (the column below Omnimon Merciful Mode is taken)
-    edge('composition-panel','omnimonmerciful','dna','right','right',{fromY:1971, points:[[1839,1971],[1839,830]]});
   }
 });
 </script>

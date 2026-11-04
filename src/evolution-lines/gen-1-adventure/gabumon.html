@@ -9,8 +9,8 @@
   /* page-specific layout */
   .infographic { width:2122px; height:2430px; }
   .columns { top:200px; }
-  .partner-panel { top:1670px; width:1348px; left:auto; right:44px; }
-  .jogress-panel { top:2025px; width:908px; }
+  .partner-panel { top:2025px; width:1348px; }
+  .jogress-panel { top:1670px; width:908px; }
 </style>
 </head>
 <body>
@@ -216,18 +216,14 @@ DigiTree.mount({
     edge('omnimonzwart','zwartdefeat','dark');
 
     // Dark / Virus line
-    edge('gabumon','blackgabumon','dark','left','left',{shape:'leftbus', busX:524});
+    edge('gabumon','blackgabumon','dark','left','left',{shape:'leftbus', busX:528, fromY:650});
     edge('blackgabumon','blackgarurumon','dark');
     edge('blackgarurumon','shadowweregarurumon','dark');
     edge('shadowweregarurumon','blackmetalgarurumon','dark');
 
     // alternate rookie form + bond
-    edge('gabumon','psychemon','normal','left','left',{shape:'leftbus', busX:548});
+    edge('gabumon','psychemon','normal','left','left',{shape:'leftbus', busX:548, fromY:625});
     edge('gabumon','gabumonbond','bond','bottom','left',{points:[[668,695],[820,695],[820,1309]], label:'Bond with Matt', lx:820, ly:990});
-
-    // the composition panel feeds the collective form through the free right gutter
-    // (the column below Omnimon Merciful Mode is taken)
-    edge('composition-panel','omnimonmerciful','dna','right','right',{fromY:1731, points:[[2101,1731],[2101,590]]});
   }
 });
 </script>

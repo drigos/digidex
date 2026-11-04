@@ -9,7 +9,7 @@
   /* page-specific layout */
   .infographic { width:1860px; height:1355px; }
   .columns { top:200px; }
-  .partner-panel { top:950px; width:1348px; left:auto; right:24px; }
+  .partner-panel { top:950px; width:1348px; }
 </style>
 </head>
 <body>
@@ -135,9 +135,6 @@ DigiTree.mount({
 
     // AncientBeetlemon ancestral (lore) link: origin -> root of the line, no arrowhead
     edge('ancientbeetlemon','pabumon','lore','bottom','top',{shape:'vertical', noArrow:true});
-
-    // the composition panel feeds the collective form straight above it
-    edge('composition-panel','omnimonmerciful','dna','top','bottom',{shape:'vertical', fromX:1717});
   }
 });
 </script>

@@ -219,7 +219,7 @@ Panel cards match the node card width so the whole page reads as one grid: `.par
 `.jogress-card` are `204px`, laid out in a `16px`-gap flex row, so a panel with `n` cards is
 `220n + 28` wide (`248px` for one card, `908px` for four, `1348px` for six). The `.armor-panel`
 is the exception: it holds many Digimon, so it keeps the fractional `repeat(12, 1fr)` grid of
-smaller cards and spans the full `width - 48` (a `24px` gutter each side). The `.lore-panel`
+smaller cards and spans the card grid, `width - 84` (the `42px` margin each side). The `.lore-panel`
 (grey, matching the `lore` trigger color) also spans the full width with a fractional
 `repeat(4, 1fr)` grid of text-only cards; its entries are source-verified explanations of the
 page's unusual arrows and nodes, added via the `digimon-lore-notes` skill.
@@ -231,24 +231,24 @@ panel-to-footer gap, this gives the whole footer block one uniform `22px` vertic
 bottom depends on its note length. When you move a panel you must recompute the canvas
 `height` (and the matching `<svg viewBox>` height) so the footer gap stays `22px`.
 
-### Panel connectors
+### Panel placement
 
-A panel that holds what feeds a node on the canvas (a Jogress or DNA partner, the members of
-a collective composition, the Spirits of a Unified form) is linked to that node by a connector
-in the trigger color, drawn **from the panel to the node** with the arrowhead on the node,
-because the panel's Digimon flow into it. The Armor connector is the opposite case and runs
-from the line's node down to its Armor panel, since the line evolves into those forms. Lore
-notes get no connector.
+Panels sit on the card grid: the shared CSS places every panel at `left: 42px`, the first
+column's margin, and a full-width panel ends at the last column's right edge. Each panel has
+its own row (two panels side by side end at different heights and break the `22px` rhythm),
+stacked in this order:
 
-- Place the panel under the column of the node it feeds, so the connector is a straight
-  vertical from the panel's top to the node's bottom (`fromX` = the node's center, `x + 103`).
-- When cards sit between the node and the panel, the connector may climb the canvas' right
-  gutter instead (panel at `right: 44px`, line at the gutter's center, entering the node's
-  right side), as Omnimon Merciful Mode does on agumon, gabumon, palmon, patamon and gatomon.
-- A connector is drawn only when its route crosses no edge, card or panel. When none exists,
-  the panel goes without one and states the mechanic in its subtitle and cards: the Omnimon
-  forms on agumon and gabumon (four results across every branch), Shakkoumon on patamon and
-  Paildramon / Dinobeemon on wormmon.
+1. the Armor panel, right under the diagram, because the line evolves into its forms: it is
+   the only panel with a connector, an amber edge from the line's node down to it;
+2. the reference panels, from the narrowest to the widest (`Jogress partner(s)`, then the
+   collective composition; on Frontier the DNA panel, then the Unified Spirit one), so they
+   read as a pyramid;
+3. `Lore notes`, last.
+
+A panel that feeds a node (Jogress, composition, DNA, Unified Spirit) has no connector: its
+title names the result and its subtitle and cards state who fuses into it, which is enough to
+tell several fusions apart (the Omnimon forms on agumon and gabumon) and keeps the bottom of
+the canvas free of long lines.
 
 ## 1. Card labels (the pill under each name)
 
@@ -313,6 +313,21 @@ Every arrow is colored by the digivolution trigger. This is the single vocabular
 Alternate forms (e.g. `SnowAgumon`, `Agumon Expert`, `HiMachineDramon`) use the
 **Normal evolution** color; they are just extra branches, not a distinct trigger.
 
+### Routing
+
+Edges are orthogonal: horizontal and vertical runs joined by rounded corners, never curves.
+The engine leaves along the source side's axis, enters along the target side's axis and,
+between different rows, turns in the lane just before the target column (`laneX` picks
+another lane, `laneY` another row gap for top/bottom edges, `points` gives the corners).
+Anchors come from the cards' layout position, so a hovered card never skews its arrows.
+
+- An edge runs in a lane or row gap, never under a card or panel, and crosses no other edge
+  unless no route can avoid it (the `Bond with Tai` edge on agumon crosses two branches).
+- Edges of the same trigger may share a trunk (a fan, or two Spirits merging into a Fusion).
+  Edges of different triggers never share a run: each leaves from its own port (`fromY` /
+  `fromX`) and, when both turn, in its own lane. On a downward fan the higher port takes the
+  outer lane (an upward fan mirrors it), so the runs do not cross.
+
 Frontier reuses these colors under Spirit-Evolution names (Spirit = `normal`, Slide =
 `mode`, Fusion = `dna`, Unified = `burst`); no new color tokens are added. See "Frontier:
 Spirit Evolution" under Notes on specific cases.
@@ -325,15 +340,16 @@ restates it** (no "X-Antibody" on a green arrow, no "DNA / Jogress" on a purple 
 only when it carries information the color cannot:
 
 - a specific event or continuity: `Corrupted (Adventure: 2020)`, `Data Squad`
-- a narrative cause: `Loss of control`, `Purified`
+- a narrative cause: `Loss of control`
 - the specific partner in an otherwise-ambiguous link: `Bond with Tai`, `Unified by Takuya`
 
 A continuity is named the way the site names the series (`Adventure: 2020`, `Data Squad`,
 `Adventure 02`, `V-Tamer`); an event label puts it in parentheses. Descriptors of the target
 (`Subspecies`, `Data variant`, `Blue form`) belong in its card note, and a group title
 (`Bancho`) in its badge. A label sits on its own edge inside a free lane or row gap, never over
-a card: when the lane is narrower than the label, route the edge through a row gap (see the
-Daemon -> Daemon (Mantled) arch on patamon).
+a card or another edge: when the lane is narrower than the label, place it where the edge
+crosses a row gap or route the edge through one (see the Daemon -> Daemon (Mantled) arch on
+patamon). When no spot fits and the card note already says it, drop the label.
 
 Ancestral (lore) links are the exception that needs **no** label: the dedicated dotted
 grey **Ancestral link** trigger already communicates "ancestry, not evolution". See the
@@ -473,15 +489,16 @@ follow these rules:
   EmperorGreymon (Flame, Earth, Wood, Ice, Wind) or Koji's MagnaGarurumon (Light, Thunder,
   Darkness, Water, Steel). Both Spirits reach the Unified node with `burst` edges labeled
   `Unified by Takuya` or `Unified by Koji`, since the form is not the line's own. The
-  `<Unified>: Unified Spirit` panel marks the line's Ancient card `(this line)`. On all ten
-  pages both panels feed their node from below (see "Panel connectors").
+  `<Unified>: Unified Spirit` panel marks the line's Ancient card `(this line)`. Both
+  panels sit below the diagram, the narrow DNA panel above the Unified one (see "Panel
+  placement").
 - **Fusion**: the Wind, Thunder, Ice and Darkness Fusions exist only outside the Frontier
   anime (Reference Book, D-Tector 3.0, figures), which the node note states. Earth, Wood,
   Water and Steel have none recorded: their Fusion column stays empty and unlabeled, and
   the Unified label sits in the gap.
 - **Darkness** (`loweemon.html`, `1598px`): a `Corrupted Spirit` column in the Child slot
-  holds Duskmon and Velgemon (`cls:'dark'` pill), and Spirit Evolution edges labeled
-  `Purified` lead to Loweemon (H -> L Spirit) and JagerLoweemon (B -> K Spirit).
+  holds Duskmon and Velgemon (`cls:'dark'` pill), and Spirit Evolution edges lead to
+  Loweemon (H -> L Spirit) and JagerLoweemon (B -> K Spirit), whose notes say purified.
 - **Cherubimon's warriors** (Grumblemon, Arbormon, Ranamon, Mercurymon) draw no extra
   nodes; the footer states that Cherubimon gave the H Spirit life and that the Spirits end
   in the Unified form.
