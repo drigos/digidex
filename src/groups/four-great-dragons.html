@@ -92,6 +92,12 @@
   }
   .rank .glyph { font-size: 14px; line-height: 1; }
 
+  /* linked group badge over a roster card: the card is itself an <a>, so the badge is an
+     <a> sibling inside a positioned wrapper occupying the card's grid cell */
+  .card-cell { position: relative; display: flex; }
+  .card-cell .card { flex: 1 1 auto; width: 100%; }
+  .card-cell a.badge-link { position: absolute; top: 12px; right: 12px; left: auto; transform: none; }
+
   .role { position: relative; z-index: 1; margin: 10px 0 14px; color: var(--muted);
     font-size: 12px; line-height: 1.4; font-weight: 700; }
 
@@ -137,17 +143,20 @@
   </section>
   <div class="grid">
 
-    <a class="card" id="azulongmon" href="https://digimon.fandom.com/wiki/Azulongmon" target="_blank" style="--accent:#3aa0ff">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Azulongmon_b.jpg" alt="Azulongmon"></div>
-      <div class="level">Mega</div>
-      <div class="mon">Azulongmon</div>
-      <span class="rank"><span class="glyph">&#128009;</span> Holy Dragon</span>
-      <div class="role">Dragon King of the East Sea; protector of the East and one of the Four Sovereigns.</div>
-      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
-    </a>
+    <div class="card-cell">
+      <a class="card" id="azulongmon" href="https://digimon.fandom.com/wiki/Azulongmon" target="_blank" style="--accent:#3aa0ff">
+        <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/qinglongmon.jpg" alt="Azulongmon"></div>
+        <div class="level">Mega</div>
+        <div class="mon">Azulongmon</div>
+        <span class="rank"><span class="glyph">&#128009;</span> Holy Dragon</span>
+        <div class="role">Dragon King of the East Sea; protector of the East and one of the Four Sovereigns.</div>
+        <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+      </a>
+      <a class="fs badge-link" href="four-sovereigns.html#azulongmon" title="Four Sovereigns roster">Sovereign</a>
+    </div>
 
     <a class="card" id="goldramon" href="https://digimon.fandom.com/wiki/Goldramon" target="_blank" style="--accent:#3aa0ff">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Goldramon_b.jpg" alt="Goldramon"></div>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/goddramon.jpg" alt="Goldramon"></div>
       <div class="level">Mega</div>
       <div class="mon">Goldramon</div>
       <span class="rank"><span class="glyph">&#128009;</span> Holy Dragon</span>
@@ -156,7 +165,7 @@
     </a>
 
     <a class="card" id="magnadramon" href="https://digimon.fandom.com/wiki/Magnadramon" target="_blank" style="--accent:#3aa0ff">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Magnadramon_b.jpg" alt="Magnadramon"></div>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/holydramon.jpg" alt="Magnadramon"></div>
       <div class="level">Mega</div>
       <div class="mon">Magnadramon</div>
       <span class="rank"><span class="glyph">&#128009;</span> Holy Dragon</span>
@@ -165,7 +174,7 @@
     </a>
 
     <a class="card" id="megidramon" href="https://digimon.fandom.com/wiki/Megidramon" target="_blank" style="--accent:#e5484d">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Megidramon_b.jpg" alt="Megidramon"></div>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/megidramon.jpg" alt="Megidramon"></div>
       <div class="level">Mega</div>
       <div class="mon">Megidramon</div>
       <span class="rank"><span class="glyph">&#128009;</span> Evil Dragon</span>
@@ -214,7 +223,7 @@
     <a class="support-btn sponsors" href="https://github.com/sponsors/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9829;</span><span class="support-text">GitHub Sponsors</span><span class="support-url">github.com/sponsors/drigos</span></a>
   </div>
 
-  <p class="foot">Images and names link to DigimonWiki/Fandom (CC BY-SA unless noted otherwise). In Japanese materials the four are Qinglongmon, Goddramon, Holydramon and Megidramon.</p>
+  <p class="foot">Names link to DigimonWiki/Fandom (CC BY-SA unless noted otherwise); artwork &copy; Bandai, shown from the official Digimon Reference Book. In Japanese materials the four are Qinglongmon, Goddramon, Holydramon and Megidramon.</p>
 
 </div>
 </body>

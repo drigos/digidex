@@ -14,6 +14,10 @@
  *     edges:   function (edge) { edge('a','b','normal'); ... }
  *   });
  *
+ * img is the official Reference Book slug (e.g. 'agumon', 'vamdemon'), which imageUrl turns
+ * into the digimon.net artwork address, or an absolute URL for a Digimon with no official
+ * entry (also exported as DigiTree.imageUrl).
+ *
  * nav renders a round arrow button to the right of the card that jumps to another
  * infographic page (relative href), while the card itself keeps linking to the wiki.
  * A badge with an href becomes a clickable link (e.g. to a group roster page); without
@@ -33,7 +37,16 @@
   var TRIGGERS = ['normal', 'x', 'dna', 'mode', 'dark', 'lateral', 'armor', 'bond', 'burst', 'lore'];
   var DASH = { normal: '', x: '7 6', dna: '6 6', mode: '10 6', dark: '4 7', lateral: '10 7', armor: '10 7', bond: '2 7', burst: '11 5', lore: '1 8' };
   var WIKI = 'https://digimon.fandom.com/wiki/';
-  var FILE = WIKI + 'Special:Redirect/file/';
+  // Artwork is hotlinked from the official Digimon Reference Book: DigimonWiki/Fandom now
+  // answers embedded images with a bot challenge. A node's img is the Reference Book slug
+  // (the directory_name of its digimon.net page) or, for a Digimon without an official
+  // entry, an absolute image URL from another source.
+  var ART = 'https://digimon.net/cimages/digimon/';
+
+  // 'agumon' -> https://digimon.net/cimages/digimon/agumon.jpg; absolute URLs pass through
+  function imageUrl(img) {
+    return /^https?:\/\//.test(img) ? img : ART + img + '.jpg';
+  }
 
   function cssVar(k) { return getComputedStyle(document.documentElement).getPropertyValue(k).trim(); }
 
@@ -88,7 +101,7 @@
         a.style.top = n.y + 'px';
         a.innerHTML =
           (n.badge && !n.badge.href ? '<span class="' + n.badge.cls + '">' + n.badge.text + '</span>' : '') +
-          '<img referrerpolicy="no-referrer" src="' + FILE + n.img + '" alt="' + n.name + '">' +
+          '<img referrerpolicy="no-referrer" src="' + imageUrl(n.img) + '" alt="' + n.name + '">' +
           '<div class="name">' + n.name + '</div>' +
           '<div class="level">' + n.lvl + '</div>' +
           '<div class="note">' + n.note + '</div>';
@@ -205,5 +218,5 @@
     window.addEventListener('resize', redraw);
   }
 
-  global.DigiTree = { mount: mount };
+  global.DigiTree = { mount: mount, imageUrl: imageUrl };
 })(window);

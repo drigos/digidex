@@ -95,15 +95,32 @@
   a.card:hover .cta .arrow { transform: translateX(5px); }
 
   .foot { text-align: center; color: rgba(225,238,255,.6); font-size: 12.5px; line-height: 1.5; margin-top: 44px; }
+
+  /* Digital World Cosmology feature: one wide card for the atlas (three world thumbnails
+     + copy), followed by quick links to each world page outside the card link */
+  .cosmo { max-width: 1210px; margin: 0 auto; flex-direction: row; gap: 26px; align-items: stretch;
+    background: linear-gradient(135deg, rgba(20,52,96,.96), rgba(10,18,40,.98) 55%, rgba(30,14,48,.98)); }
+  .cosmo-worlds { position: relative; z-index: 1; flex: 0 0 47%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .cosmo-worlds figure { margin: 0; display: flex; flex-direction: column; }
+  .cosmo-worlds .thumb { margin-bottom: 8px; }
+  .cosmo-worlds figcaption { text-align: center; font-size: 11.5px; font-weight: 900; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); }
+  .cosmo-body { position: relative; z-index: 1; flex: 1 1 auto; display: flex; flex-direction: column; }
+  .cosmo-text { margin: 0 0 16px; color: var(--muted); font-size: 14px; line-height: 1.55; font-weight: 600; }
+  @media (max-width: 860px) { .cosmo { flex-direction: column; } .cosmo-worlds { flex-basis: auto; } }
+  @media (max-width: 460px) { .cosmo-worlds .thumb { height: 96px; padding: 6px; } }
+  .cosmo-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 16px 0 0; padding: 0; list-style: none; }
+  .cosmo-links a { display: inline-flex; padding: 7px 14px; border-radius: 999px; font-size: 12.5px; font-weight: 900;
+    color: #dce9fb; background: rgba(3,14,27,.6); border: 1px solid rgba(159,211,255,.3); transition: border-color .18s ease, background .18s ease; }
+  .cosmo-links a:hover { border-color: rgba(159,211,255,.7); background: rgba(159,211,255,.12); }
 </style>
 </head>
 <body>
 <div class="wrap">
 
   <header class="hero">
-    <span class="kicker">Evolution trees &amp; group rosters</span>
+    <span class="kicker">Evolution trees, cosmology &amp; group rosters</span>
     <h1>Digidex</h1>
-    <p>Evolution trees for the partner Digimon of the classic anime generations, plus rosters of the Digital World's special groups. Pick a generation to open its selection screen, or dive into a group roster.</p>
+    <p>Evolution trees for the partner Digimon of the classic anime generations, an atlas of the Digital Worlds and the organizations that guard them, and rosters of special Digimon groups. Pick a generation, open the atlas, or dive into a group roster.</p>
   </header>
 
   <div class="section-title">
@@ -114,7 +131,7 @@
   <div class="grid">
 
     <a class="card" href="evolution-lines/gen-1-adventure/index.html" style="--accent:#ff7a1a">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Agumon_b.jpg" alt="Agumon"></div>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/agumon.jpg" alt="Agumon"></div>
       <div class="season">Season 1 &middot; 1999</div>
       <div class="series">Digimon Adventure</div>
       <div class="meta">
@@ -124,7 +141,7 @@
     </a>
 
     <a class="card" href="evolution-lines/gen-2-adventure-02/index.html" style="--accent:#3aa0ff">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Veemon_b.jpg" alt="Veemon"></div>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/v-mon.jpg" alt="Veemon"></div>
       <div class="season">Season 2 &middot; 2000</div>
       <div class="series">Digimon Adventure 02</div>
       <div class="meta">
@@ -135,7 +152,7 @@
     </a>
 
     <a class="card" href="evolution-lines/gen-3-tamers/index.html" style="--accent:#e5484d">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Guilmon_b.jpg" alt="Guilmon"></div>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/guilmon.jpg" alt="Guilmon"></div>
       <div class="season">Season 3 &middot; 2001</div>
       <div class="series">Digimon Tamers</div>
       <div class="meta">
@@ -146,7 +163,7 @@
     </a>
 
     <a class="card" href="evolution-lines/gen-4-frontier/index.html" style="--accent:#b084f5">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Agunimon_b.jpg" alt="Agunimon"></div>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/agnimon.jpg" alt="Agunimon"></div>
       <div class="season">Season 4 &middot; 2002</div>
       <div class="series">Digimon Frontier</div>
       <div class="meta">
@@ -157,7 +174,7 @@
     </a>
 
     <a class="card" href="evolution-lines/gen-5-data-squad/index.html" style="--accent:#f0b429">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Agumon_(2006_anime)_b.jpg" alt="Agumon (2006 anime)"></div>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/agumon-2006.jpg" alt="Agumon (2006 anime)"></div>
       <div class="season">Season 5 &middot; 2006</div>
       <div class="series">Digimon Data Squad</div>
       <div class="meta">
@@ -170,64 +187,45 @@
   </div>
 
   <div class="section-title">
+    <h2>Digital World Cosmology</h2>
+    <p>The Digital Worlds, their host computers, guardian organizations and underworlds</p>
+  </div>
+
+  <a class="card cosmo" href="cosmology/index.html" style="--accent:#9fd3ff">
+    <div class="cosmo-worlds">
+      <figure><div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/omegamon.jpg" alt="Omnimon, Royal Knight of the Classic Digital World"></div><figcaption>Classic</figcaption></figure>
+      <figure><div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/jupitermon.jpg" alt="Jupitermon, leader of the Olympos XII of Iliad"></div><figcaption>Iliad</figcaption></figure>
+      <figure><div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/shakamon.jpg" alt="Shakamon, leader of the Tentei Hachibushu of Shambala"></div><figcaption>Shambala</figcaption></figure>
+    </div>
+    <div class="cosmo-body">
+      <div class="season">Cosmology atlas</div>
+      <div class="series">Three Digital Worlds, one network</div>
+      <p class="cosmo-text">Follow the Net Ocean from the classic Digital World to Iliad and Shambala: who administers each world, which organizations guard it, the Kernel watched by the Three Great Angels, and the Dark Areas that sink toward Cocytus.</p>
+      <div class="meta">
+        <span class="group">Classic &middot; Iliad &middot; Shambala</span>
+        <span class="count">Kernel</span>
+        <span class="count">Dark Areas &amp; Cocytus</span>
+      </div>
+      <div class="cta"><span>Open the atlas</span><span class="arrow">&#8594;</span></div>
+    </div>
+  </a>
+  <ul class="cosmo-links" aria-label="Cosmology pages">
+    <li><a href="cosmology/classic.html">Digital World (Classic)</a></li>
+    <li><a href="cosmology/iliad.html">Digital World: Iliad</a></li>
+    <li><a href="cosmology/shambala.html">Digital World: Shambala</a></li>
+    <li><a href="cosmology/kernel.html">Kernel</a></li>
+    <li><a href="cosmology/dark-areas.html">Dark Areas &amp; Cocytus</a></li>
+  </ul>
+
+  <div class="section-title">
     <h2>Special groups</h2>
-    <p>Rosters of the Digital World's famous organizations and categories</p>
+    <p>Independent organizations and themed categories that live outside the worlds' governing structures</p>
   </div>
 
   <div class="grid">
 
-    <a class="card" href="groups/angelic.html" style="--accent:#f0b429">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Seraphimon_b.jpg" alt="Seraphimon"></div>
-      <div class="season">Special group</div>
-      <div class="series">Angelic Digimon</div>
-      <div class="meta">
-        <span class="group">Celestials + Angelic Army</span>
-      </div>
-      <div class="cta"><span>Open group roster</span><span class="arrow">&#8594;</span></div>
-    </a>
-
-    <a class="card" href="groups/royal-knights.html" style="--accent:#cbd7ea">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Omnimon_b.jpg" alt="Omnimon"></div>
-      <div class="season">Special group</div>
-      <div class="series">Royal Knights</div>
-      <div class="meta">
-        <span class="group">Thirteen Holy Knights</span>
-      </div>
-      <div class="cta"><span>Open group roster</span><span class="arrow">&#8594;</span></div>
-    </a>
-
-    <a class="card" href="groups/demon-lords.html" style="--accent:#e5484d">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Lucemon_Chaos_Mode_b.jpg" alt="Lucemon Chaos Mode"></div>
-      <div class="season">Special group</div>
-      <div class="series">Seven Great Demon Lords</div>
-      <div class="meta">
-        <span class="group">Seven deadly sins</span>
-      </div>
-      <div class="cta"><span>Open group roster</span><span class="arrow">&#8594;</span></div>
-    </a>
-
-    <a class="card" href="groups/four-sovereigns.html" style="--accent:#22c55e">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Huanglongmon_b.jpg" alt="Fanglongmon"></div>
-      <div class="season">Special group</div>
-      <div class="series">Four Sovereigns</div>
-      <div class="meta">
-        <span class="group">Guardians of the compass</span>
-      </div>
-      <div class="cta"><span>Open group roster</span><span class="arrow">&#8594;</span></div>
-    </a>
-
-    <a class="card" href="groups/deva.html" style="--accent:#a78bfa">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Mihiramon_b.jpg" alt="Mihiramon"></div>
-      <div class="season">Special group</div>
-      <div class="series">Deva</div>
-      <div class="meta">
-        <span class="group">Twelve Heavenly Generals</span>
-      </div>
-      <div class="cta"><span>Open group roster</span><span class="arrow">&#8594;</span></div>
-    </a>
-
     <a class="card" href="groups/four-great-dragons.html" style="--accent:#3aa0ff">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Azulongmon_b.jpg" alt="Azulongmon"></div>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/qinglongmon.jpg" alt="Azulongmon"></div>
       <div class="season">Special group</div>
       <div class="series">Four Great Dragons</div>
       <div class="meta">
@@ -237,7 +235,7 @@
     </a>
 
     <a class="card" href="groups/vortex-warriors.html" style="--accent:#2dd4a8">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/MedievalGallantmon_b.jpg" alt="MedievalGallantmon"></div>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/medievaldukemon.jpg" alt="MedievalGallantmon"></div>
       <div class="season">Special group</div>
       <div class="series">Vortex Warriors</div>
       <div class="meta">
@@ -247,13 +245,33 @@
     </a>
 
     <a class="card" href="groups/bancho.html" style="--accent:#ff7a1a">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/BanchoLeomon_b.jpg" alt="BanchoLeomon"></div>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/bancholeomon.jpg" alt="BanchoLeomon"></div>
       <div class="season">Special group</div>
       <div class="series">Bancho Digimon</div>
       <div class="meta">
         <span class="group">Ringleaders</span>
       </div>
       <div class="cta"><span>Open group roster</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="groups/d-brigade.html" style="--accent:#9bb35a">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/commandramon.jpg" alt="Commandramon"></div>
+      <div class="season">Special group</div>
+      <div class="series">D-Brigade</div>
+      <div class="meta">
+        <span class="group">Military unit</span>
+      </div>
+      <div class="cta"><span>Open group roster</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" href="groups/mark-of-evil.html" style="--accent:#b07cf0">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/devimon.jpg" alt="Devimon"></div>
+      <div class="season">Themed category</div>
+      <div class="series">Mark of Evil</div>
+      <div class="meta">
+        <span class="group">Bat-shaped sigil</span>
+      </div>
+      <div class="cta"><span>Open category roster</span><span class="arrow">&#8594;</span></div>
     </a>
 
   </div>
@@ -264,7 +282,7 @@
     <a class="support-btn sponsors" href="https://github.com/sponsors/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9829;</span><span class="support-text">GitHub Sponsors</span><span class="support-url">github.com/sponsors/drigos</span></a>
   </div>
 
-  <p class="foot">Images and names link to DigimonWiki/Fandom (CC BY-SA unless noted otherwise).</p>
+  <p class="foot">Names link to DigimonWiki/Fandom (CC BY-SA unless noted otherwise); artwork &copy; Bandai, shown from the official Digimon Reference Book.</p>
 
 </div>
 </body>

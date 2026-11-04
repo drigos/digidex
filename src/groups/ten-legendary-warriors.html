@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ten Legendary Warriors: group roster</title>
+<link rel="stylesheet" href="../digivolution.css" />
+<style>
+  /* group-roster layout (self-contained; reuses the shared tokens from digivolution.css) */
+  .wrap { padding: 40px 22px 56px; max-width: 1280px; margin: 0 auto; overflow: visible; }
+
+  .hero { text-align: center; margin: 18px auto 10px; max-width: 860px; }
+  .hero .kicker {
+    display: inline-block; margin-bottom: 14px; padding: 6px 16px; border-radius: 999px;
+    font-size: 12.5px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;
+    color: #cfe6ff; background: rgba(88,166,255,.14); border: 1px solid rgba(88,166,255,.34);
+  }
+  .hero h1 {
+    font-size: 54px; line-height: 1.03; letter-spacing: -1.5px; margin: 0 0 14px;
+    background: linear-gradient(180deg, #ffffff, #a9c7ee);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero p { color: var(--muted); font-size: 17px; line-height: 1.5; margin: 0; }
+
+  /* power-tier section headings */
+  .tier { margin: 40px 0 18px; }
+  .tier h2 { margin: 0; font-size: 28px; letter-spacing: -.5px; }
+  .tier p { margin: 5px 0 0; color: var(--muted); font-size: 13.5px; font-weight: 700; }
+
+  .grid {
+    display: grid; gap: 22px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (max-width: 1100px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 820px)  { .grid { grid-template-columns: repeat(2, 1fr); } .hero h1 { font-size: 40px; } }
+  @media (max-width: 520px)  { .grid { grid-template-columns: 1fr; } }
+
+  .card {
+    position: relative; display: flex; flex-direction: column; overflow: hidden;
+    padding: 20px 18px 18px; border-radius: 22px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: linear-gradient(180deg, rgba(16,43,76,.96), rgba(7,19,36,.98));
+    box-shadow: 0 16px 40px rgba(0,0,0,.36);
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  /* accent glow strip at the top, tinted by the warrior's element (--accent) */
+  .card::before {
+    content: ""; position: absolute; inset: 0 0 auto 0; height: 4px;
+    background: var(--accent); box-shadow: 0 0 18px var(--accent);
+  }
+  .card::after {
+    content: ""; position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
+    width: 200px; height: 200px; border-radius: 50%;
+    background: radial-gradient(circle, var(--accent), transparent 65%);
+    opacity: .16; pointer-events: none; transition: opacity .18s ease;
+  }
+  a.card:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--accent) 60%, rgba(255,255,255,.2));
+    box-shadow: 0 26px 60px rgba(0,0,0,.5), 0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent);
+  }
+  a.card:hover::after { opacity: .32; }
+
+  /* card addressed by the URL fragment (e.g. a chip on the Classic world page): the browser
+     scrolls to it and :target keeps it highlighted in its own accent color */
+  .card { scroll-margin: 110px; }
+  a.card:target {
+    border-color: color-mix(in srgb, var(--accent) 80%, rgba(255,255,255,.2));
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 65%, transparent), 0 26px 60px rgba(0,0,0,.5);
+    animation: target-pulse 1.1s ease-out 2;
+  }
+  a.card:target::after { opacity: .45; }
+  @keyframes target-pulse { 50% { transform: translateY(-6px); } }
+
+  .thumb {
+    position: relative; z-index: 1; height: 150px; border-radius: 16px; background: #fff;
+    padding: 12px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center;
+  }
+  .thumb img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+  .level { position: relative; z-index: 1; font-size: 11.5px; font-weight: 900; letter-spacing: 1.2px;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+  .mon { position: relative; z-index: 1; font-size: 22px; font-weight: 950; letter-spacing: -.5px; margin-bottom: 12px; }
+
+  /* element pill, tinted by the element accent */
+  .rank {
+    position: relative; z-index: 1; align-self: flex-start; display: inline-flex; align-items: center; gap: 7px;
+    padding: 5px 11px 5px 9px; border-radius: 999px; font-size: 11.5px; font-weight: 900;
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 16%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 42%, transparent);
+  }
+  .rank .glyph { font-size: 14px; line-height: 1; }
+
+  /* linked group badge over a roster card: the card is itself an <a>, so the badge is an
+     <a> sibling inside a positioned wrapper occupying the card's grid cell */
+  .card-cell { position: relative; display: flex; }
+  .card-cell .card { flex: 1 1 auto; width: 100%; }
+  .card-cell a.badge-link { position: absolute; top: 12px; right: 12px; left: auto; transform: none; }
+
+  .role { position: relative; z-index: 1; margin: 10px 0 14px; color: var(--muted);
+    font-size: 12px; line-height: 1.4; font-weight: 700; }
+
+  .cta {
+    /* pinned to the card bottom so the row of CTAs stays aligned when roles wrap */
+    position: relative; z-index: 1; margin-top: auto; padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.09);
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 13px; font-weight: 900; color: #dce9fb;
+  }
+  .cta .arrow { transition: transform .18s ease; color: var(--accent); }
+  a.card:hover .cta .arrow { transform: translateX(5px); }
+
+  .foot { text-align: center; color: rgba(225,238,255,.6); font-size: 12.5px; line-height: 1.5; margin-top: 40px; }
+
+  /* Lore notes: static, responsive variant of the shared .lore-panel (which is
+     absolute-positioned for the tree canvas); the cards reuse .lore-card styles
+     and .lore-panel-title from digivolution.css */
+  .lore-section {
+    margin-top: 34px; padding: 20px 22px 22px; border-radius: 24px;
+    border: 1px solid rgba(148,163,184,.42);
+    background: linear-gradient(180deg, rgba(44,52,64,.68), rgba(16,24,36,.94));
+    box-shadow: 0 20px 56px rgba(0,0,0,.36), inset 0 0 0 1px rgba(255,255,255,.05);
+  }
+  @media (max-width: 1100px) { .lore-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px)  { .lore-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body class="world-classic">
+<div class="wrap">
+
+  <nav class="crumbs" aria-label="Breadcrumb"><ol>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../cosmology/index.html">Cosmology</a></li>
+    <li><a href="../cosmology/classic.html">Classic</a></li>
+    <li aria-current="page">Ten Legendary Warriors</li>
+  </ol></nav>
+
+  <header class="hero">
+    <span class="kicker">Digital World (Classic) &middot; Ancient era</span>
+    <h1>Ten Legendary Warriors</h1>
+    <p>The warriors who saved the Ancient Digital World, each the master of one element and said to be among the first Mega Digimon. They belong to legendary history: a power of the distant past whose strength survives in the twenty Legendary Spirits, not an organization serving the present-day world.</p>
+  </header>
+
+  <section class="tier">
+    <h2>The Ten</h2>
+    <p>one warrior per element; their Human and Beast Spirits carry the same ten elements</p>
+  </section>
+  <div class="grid">
+
+    <div class="card-cell">
+      <a class="card" id="ancientgreymon" href="https://digimon.fandom.com/wiki/AncientGreymon" target="_blank" style="--accent:#ff7a1a">
+        <div class="thumb"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/ancientgreymon.jpg" alt="AncientGreymon"></div>
+        <div class="level">Mega</div>
+        <div class="mon">AncientGreymon</div>
+        <span class="rank"><span class="glyph">&#9733;</span> Flame</span>
+        <div class="role">Survived the ancient holy war with AncientGarurumon and is said to have sealed Lucemon.</div>
+        <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+      </a>
+      <a class="lw badge-link" href="../evolution-lines/gen-4-frontier/agunimon.html" title="Warrior of Flame: Spirit Evolution tree">Spirit tree</a>
+    </div>
+
+    <div class="card-cell">
+      <a class="card" id="ancientgarurumon" href="https://digimon.fandom.com/wiki/AncientGarurumon" target="_blank" style="--accent:#ffd43b">
+        <div class="thumb"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/ancientgarurumon.jpg" alt="AncientGarurumon"></div>
+        <div class="level">Mega</div>
+        <div class="mon">AncientGarurumon</div>
+        <span class="rank"><span class="glyph">&#9733;</span> Light</span>
+        <div class="role">The Supreme Shining Beast; fought to the end beside AncientGreymon to seal Lucemon.</div>
+        <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+      </a>
+      <a class="lw badge-link" href="../evolution-lines/gen-4-frontier/lobomon.html" title="Warrior of Light: Spirit Evolution tree">Spirit tree</a>
+    </div>
+
+    <a class="card" id="ancientbeetlemon" href="https://digimon.fandom.com/wiki/AncientBeetlemon" target="_blank" style="--accent:#58a6ff">
+      <div class="thumb"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/ancientbeatmon.jpg" alt="AncientBeetlemon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">AncientBeetlemon</div>
+      <span class="rank"><span class="glyph">&#9733;</span> Thunder</span>
+      <div class="role">Wore a near-indestructible shell; its legacy passed down to the Insectoid Digimon.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" id="ancientkazemon" href="https://digimon.fandom.com/wiki/AncientKazemon" target="_blank" style="--accent:#8bd450">
+      <div class="thumb"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/ancientirismon.jpg" alt="AncientKazemon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">AncientKazemon</div>
+      <span class="rank"><span class="glyph">&#9733;</span> Wind</span>
+      <div class="role">Flew on golden wings and moved freely over bridges of rainbow.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" id="ancientmegatheriummon" href="https://digimon.fandom.com/wiki/AncientMegatheriummon" target="_blank" style="--accent:#9fd3ff">
+      <div class="thumb"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/ancientmegatheriumon.jpg" alt="AncientMegatheriummon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">AncientMegatheriummon</div>
+      <span class="rank"><span class="glyph">&#9733;</span> Ice</span>
+      <div class="role">Its absolute-zero attacks could shatter giant icebergs.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" id="ancientmermaidmon" href="https://digimon.fandom.com/wiki/AncientMermaidmon" target="_blank" style="--accent:#3aa0ff">
+      <div class="thumb"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/ancientmermaimon.jpg" alt="AncientMermaidmon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">AncientMermaidmon</div>
+      <span class="rank"><span class="glyph">&#9733;</span> Water</span>
+      <div class="role">Guardian goddess ruling the whole Net Ocean, the birthplace of all Digimon.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" id="ancientsphinxmon" href="https://digimon.fandom.com/wiki/AncientSphinxmon" target="_blank" style="--accent:#b084f5">
+      <div class="thumb"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/ancientsphinkmon.jpg" alt="AncientSphinxmon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">AncientSphinxmon</div>
+      <span class="rank"><span class="glyph">&#9733;</span> Darkness</span>
+      <div class="role">The opposite pole of AncientGarurumon, feared as a bringer of death.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" id="ancienttroiamon" href="https://digimon.fandom.com/wiki/AncientTroiamon" target="_blank" style="--accent:#2dd4a8">
+      <div class="thumb"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/ancienttroiamon.jpg" alt="AncientTroiamon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">AncientTroiamon</div>
+      <span class="rank"><span class="glyph">&#9733;</span> Wood</span>
+      <div class="role">The largest of the ancient warriors, its body full of trick mechanisms.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" id="ancientvolcanomon" href="https://digimon.fandom.com/wiki/AncientVolcanomon" target="_blank" style="--accent:#c8915a">
+      <div class="thumb"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/ancientvolcamon.jpg" alt="AncientVolcanomon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">AncientVolcanomon</div>
+      <span class="rank"><span class="glyph">&#9733;</span> Earth</span>
+      <div class="role">The strongest of the ancient warriors, powered by the magma inside its body.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" id="ancientwisemon" href="https://digimon.fandom.com/wiki/AncientWisemon" target="_blank" style="--accent:#cbd7ea">
+      <div class="thumb"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/ancientwisetmon.jpg" alt="AncientWisemon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">AncientWisemon</div>
+      <span class="rank"><span class="glyph">&#9733;</span> Steel</span>
+      <div class="role">The wisest of beings, able to foresee the distant future.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+  </div>
+
+  <section class="lore-section">
+    <div class="lore-panel-title">
+      <h2>Lore notes</h2>
+      <span>the stories behind the ancient war</span>
+    </div>
+    <div class="lore-grid">
+      <div class="lore-card">
+        <div class="lore-card-title">Saviors of the Ancient World <span class="lore-tag tag-legendary">Legendary</span></div>
+        <div class="lore-card-text">Every one of the ten Japanese Reference Book profiles opens the same way: a Legendary Warrior who saved the Ancient Digital World, and the first Mega to exist, in the distant past.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Sealing Lucemon <span class="lore-tag tag-legendary">Legendary</span></div>
+        <div class="lore-card-text">AncientGreymon's profile says it survived the holy war to the end alongside AncientGarurumon and is said to have sealed Lucemon. The other eight profiles do not mention Lucemon at all.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Twenty Spirits</div>
+        <div class="lore-card-text">Digimon Profile #014 describes the Spirits as items that seal the power of the Ten Legendary Warriors, two kinds for each element: a Human Spirit and a Beast Spirit, twenty in all.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">History, Not Government</div>
+        <div class="lore-card-text">No official text ties the ten to <a href="../cosmology/classic.html">Yggdrasill</a> or the <a href="royal-knights.html">Royal Knights</a>. They are a legend of the Ancient Digital World, not a present-day guardian order or anyone's subordinates.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Heirs in Frontier <span class="lore-tag tag-continuity">Continuity-Specific</span></div>
+        <div class="lore-card-text">In Frontier the warriors left their Spirits with the <a href="three-great-angels.html">Celestial Digimon</a>, and the chosen children Spirit Evolve with them. The site's <a href="../evolution-lines/gen-4-frontier/index.html">Frontier selection screen</a> follows that inheritance.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Ancestors of Species</div>
+        <div class="lore-card-text">AncientBeetlemon's legacy passed to the Insectoid Digimon, and the site's Agumon, Gabumon and Tentomon trees draw ancestral links from AncientGreymon, AncientGarurumon and AncientBeetlemon to the lines they are said to have spawned.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="support">
+    <span class="support-label">Support this project</span>
+    <a class="support-btn kofi" href="https://ko-fi.com/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9749;</span><span class="support-text">Ko-fi</span><span class="support-url">ko-fi.com/drigos</span></a>
+    <a class="support-btn sponsors" href="https://github.com/sponsors/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9829;</span><span class="support-text">GitHub Sponsors</span><span class="support-url">github.com/sponsors/drigos</span></a>
+  </div>
+
+  <p class="foot">Names link to DigimonWiki/Fandom (CC BY-SA unless noted otherwise); artwork &copy; Bandai, shown from the official Digimon Reference Book. Japanese material calls AncientKazemon and AncientVolcanomon AncientIrismon and AncientVolcamon; the official English Reference Book spells AncientMermaidmon and AncientTroiamon as AncientMermaimon and AncientTroymon.</p>
+
+</div>
+</body>
+</html>

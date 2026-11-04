@@ -3,12 +3,12 @@
 Self-contained HTML infographics that render a Digimon's evolution tree, published as the
 **Digidex** site. All site files live under `src/` (the folder deployed to GitHub Pages);
 tree pages sit in `src/evolution-lines/`, split by the anime generation. The root
-[src/index.html](src/index.html) is the site landing page: a selection screen with a
-Generations section and a Special groups section, linking to each generation's own
-`index.html` (which in turn links to the individual evolution-tree pages and back to the
-root via its "Home" pill) and to each group roster:
+[src/index.html](src/index.html) is the site landing page: a selection screen with three
+sections (Generations, Digital World Cosmology and Special groups), linking to each
+generation's own `index.html` (which in turn links to the individual evolution-tree pages
+and back to the root via its "Home" pill), to the cosmology atlas and to each group roster:
 
-- `src/index.html` - top-level selection screen (Generations + Special groups).
+- `src/index.html` - top-level selection screen (Generations + Digital World Cosmology + Special groups).
 - `src/evolution-lines/gen-1-adventure/` - Digimon Adventure:
   - [index.html](src/evolution-lines/gen-1-adventure/index.html) - DigiDestined selection screen (by Crest).
   - [agumon.html](src/evolution-lines/gen-1-adventure/agumon.html) - Agumon line (Data Squad, Bond and Burst branches; AncientGreymon ancestral link).
@@ -31,19 +31,37 @@ root via its "Home" pill) and to each group roster:
   - [lobomon.html](src/evolution-lines/gen-4-frontier/lobomon.html) - Warrior of Light line (Child Strabimon, Human/Beast Spirit, Fusion, Unified, Susanoomon).
 - `src/evolution-lines/gen-5-data-squad/` - Digimon Data Squad / Savers:
   - [index.html](src/evolution-lines/gen-5-data-squad/index.html) - DATS selection screen (by Burst Mode; the Agumon card links into the gen-1 Agumon tree).
-- `src/groups/` - roster pages for special Digimon groups (no evolution arrows):
-  - [angelic.html](src/groups/angelic.html) - Angelic Digimon roster (Celestial Digimon, Angelic Army, fallen counterparts), each card carrying its official angelic-rank Type.
-  - [royal-knights.html](src/groups/royal-knights.html) - the thirteen Royal Knights plus Imperialdramon Paladin Mode as the order's origin.
-  - [four-great-dragons.html](src/groups/four-great-dragons.html) - the Four Great Dragons, named after the Dragon Kings of the four seas.
-  - [vortex-warriors.html](src/groups/vortex-warriors.html) - Witchelny's Vortex Warriors, led by the Whirlwind General MedievalGallantmon.
-  - [demon-lords.html](src/groups/demon-lords.html) - the Seven Great Demon Lords, each card carrying its deadly sin as the rank pill, plus Ogudomon as the culmination of the seven sins.
-  - [bancho.html](src/groups/bancho.html) - the five bearers of the Bancho title.
-  - [four-sovereigns.html](src/groups/four-sovereigns.html) - the Four Holy Beasts guarding the compass points, with Fanglongmon as the emperor of the Center.
-  - [deva.html](src/groups/deva.html) - the twelve Deva serving the Four Sovereigns, three per master, each card carrying its zodiac animal as the rank pill.
+- `src/cosmology/` - the Digital World Cosmology atlas (see "Digital World Cosmology" below):
+  - [index.html](src/cosmology/index.html) - the atlas overview: Homeostasis, the Kernel, the Net Ocean holding the three worlds and their underworlds, Cocytus, a comparison table and the reading rules.
+  - [classic.html](src/cosmology/classic.html) - Digital World (Classic): Yggdrasill, Royal Knights, Four Sovereigns with their Deva, Ten Legendary Warriors, and Anubismon's Dark Area.
+  - [iliad.html](src/cosmology/iliad.html) - Digital World: Iliad: Homeros, the six guardian regions of the Olympos XII, the Titans, Plutomon's Dark Area, and the Celestial Walker / Astral Sentinel line-ups.
+  - [shambala.html](src/cosmology/shambala.html) - Digital World: Shambala: Kunlun, Susanoomon's founding legend, the Tentei Hachibushu hierarchy, the Shikyoju, the Saiyu Warriors / Toho Braves line-ups, and Yomi.
+  - [kernel.html](src/cosmology/kernel.html) - the Kernel: the chain Kernel -> Three Great Angels -> Angelic Army, related fallen forms and Rasielmon.
+  - [dark-areas.html](src/cosmology/dark-areas.html) - Dark Areas & Cocytus: the three underworld authorities compared, the Seven Great Demon Lords, the Embodiment of the Seven Sins, GranDracmon and Gulfmon.
+- `src/groups/` - roster pages for Digimon groups (no evolution arrows). The folder holds every roster; the landing page decides which section lists it. URLs never move.
+  - Rosters filed under Digital World Cosmology (breadcrumb trail instead of the Home pill):
+    - [royal-knights.html](src/groups/royal-knights.html) - the thirteen Royal Knights plus Imperialdramon Paladin Mode as the order's origin.
+    - [four-sovereigns.html](src/groups/four-sovereigns.html) - the Four Holy Beasts guarding the compass points, with Fanglongmon as the emperor of the Center.
+    - [deva.html](src/groups/deva.html) - the twelve Deva serving the Four Sovereigns, three per master, each card carrying its zodiac animal as the rank pill.
+    - [ten-legendary-warriors.html](src/groups/ten-legendary-warriors.html) - the ten ancient warriors of the Ancient Digital World, each card carrying its element.
+    - [three-great-angels.html](src/groups/three-great-angels.html) - Seraphimon, Ophanimon and Cherubimon (Good) as the Kernel's guardians, with related forms as chips.
+    - [angelic.html](src/groups/angelic.html) - Angelic Digimon roster (Celestial Digimon, Angelic Army, fallen counterparts), each card carrying its official angelic-rank Type.
+    - [olympos-xii.html](src/groups/olympos-xii.html) - the twelve gods of Iliad ordered by guardian pair, each card carrying its region and Roman god, plus GraceNovamon as a related fusion.
+    - [titans.html](src/groups/titans.html) - Iliad's ancient faction: Titamon as its principal figure, connected figures as chips, no fixed roster.
+    - [tentei-hachibushu.html](src/groups/tentei-hachibushu.html) - Shambala's eight guardians in their hierarchy: Shakamon, the Saneiketsu, the Sanmyojin and Enmamon.
+    - [shikyoju.html](src/groups/shikyoju.html) - the Four Perilous Beasts sealed in Jakeizan, each card carrying its Peril.
+    - [demon-lords.html](src/groups/demon-lords.html) - the Seven Great Demon Lords, each card carrying its deadly sin as the rank pill, plus Ogudomon and Ogudomon X as the Embodiment of the Seven Sins.
+  - Rosters listed under Special groups (Home pill):
+    - [four-great-dragons.html](src/groups/four-great-dragons.html) - the Four Great Dragons, named after the Dragon Kings of the four seas.
+    - [vortex-warriors.html](src/groups/vortex-warriors.html) - Witchelny's Vortex Warriors, led by the Whirlwind General MedievalGallantmon.
+    - [bancho.html](src/groups/bancho.html) - the five bearers of the Bancho title.
+    - [d-brigade.html](src/groups/d-brigade.html) - the D-Brigade: operational personnel, the missing Darkdramon, cadets, and Digimon tied to its history (Chaosmon, Ludomon).
+    - [mark-of-evil.html](src/groups/mark-of-evil.html) - a themed category, not an organization: each card records where its bearer wears the Mark of Evil.
 
 Each file is a fixed-size canvas with cards positioned by column (evolution level),
-SVG arrows drawn between them, a trigger legend, and an optional bottom panel. Images
-and links point to [DigimonWiki/Fandom](https://digimon.fandom.com).
+SVG arrows drawn between them, a trigger legend, and an optional bottom panel. Cards link
+to [DigimonWiki/Fandom](https://digimon.fandom.com); the artwork comes from the official
+[Digimon Reference Book](https://digimon.net/reference_en/) (see "Artwork sources" below).
 
 **Print-friendly by design.** Every page is prepared to be printable, so no content may
 depend on interaction: no modals, popups or hover-only information. Interaction that does
@@ -69,9 +87,15 @@ cannot drift apart:
   partner cards linking to that generation's tree pages. They only `<link>` `digivolution.css`
   to inherit the shared color tokens, the font and the `.backnav` pill style.
 - the root `index.html` - the same selection-screen pattern one level up: a self-contained
-  page split into sections (Generations, Special groups) whose cards link to each
-  `evolution-lines/gen-*/index.html` and `groups/*.html` page (assets are linked without
-  a path prefix, since it sits at the `src/` root).
+  page split into sections (Generations, Digital World Cosmology, Special groups) whose
+  cards link to each `evolution-lines/gen-*/index.html`, `cosmology/*.html` and
+  `groups/*.html` page (assets are linked without a path prefix, since it sits at the
+  `src/` root). The cosmology section is one wide card for the atlas followed by quick links
+  to each world page, kept outside the card because a link cannot nest another link.
+- the `cosmology/*.html` atlas pages - self-contained like the rosters (one `../` asset
+  prefix), carrying the roster card styles they need for their few full cards; their shared
+  atlas components (chips, organization panels, region cards, interpretation labels,
+  relationship lists, comparison tables, breadcrumbs) live in `digivolution.css`.
 - the `groups/<group>.html` roster pages - selection-screen-style pages (self-contained
   CSS, no `digivolution.js`, one `../` asset prefix) for special Digimon groups. There are
   no evolution arrows: cards are grouped into power tiers by `.tier` section headings
@@ -85,6 +109,11 @@ cannot drift apart:
   `angelic.html`): a static, responsive wrapper around the shared `.lore-grid` /
   `.lore-card` styles (the tree pages' `.lore-panel` is absolute-positioned and does not
   fit these pages), with the grid collapsing to 2 and 1 columns at 1100px and 640px.
+  Two optional card fields exist: a `.myth` line under the rank pill naming the
+  mythological inspiration (Olympos XII, Tentei Hachibushu, Shikyoju), and the Mark of Evil
+  record, a `dl.mark` whose first row is the mark location followed by count, color and a
+  form-specific note. Data a source leaves open is written as `Not stated` or
+  `Not recorded`, never guessed.
 
 To scaffold a new page consistently, use the `digimon-evolution-tree` skill
 (`.claude/skills/digimon-evolution-tree/`), which walks through the steps and points
@@ -283,7 +312,7 @@ product. A page states more or less detail depending on its size, but never repu
 | Title (`h1`) | Identity: whose tree, and what kind of artifact. | `<Partner>: evolution tree`. Frontier is Spirit Evolution, not Digivolution, so `agunimon` reads `Agunimon: Spirit Evolution tree`. |
 | Subtitle (`.subtitle`) | Scope: the stage span plus the branches and appendices that make this line distinctive. | `<Stage1> -> ... -> <StageN> hierarchy, with <distinctive branches / appendices>.` Large trees summarize by trigger kind (`with X, DNA/Jogress, Mode Change ... branches`); small trees name the actual forms (`with the X-Antibody branch (Gomamon X) and the collective composition ...`). Frontier states its Spirit tiers instead of the Fresh->Mega ranks. |
 | Panel title + subtitle | Local relationship: the off-grid relationship the appendix panel captures. | Title names the relationship **kind**; subtitle states the concrete **mechanic** (who + who = what). Kinds: `Jogress partner(s)` (external forms that fuse with this line - singular for one card, plural for many); `Collective composition` (this line's peak is one member of a larger fusion); `<Name>'s Armor Digivolutions` (Veemon's compact Digi-Egg branch); `Lore notes` (source-verified stories behind the page's unusual arrows; subtitle `the stories behind the unusual arrows`). Frontier keeps its own result-led titles (`Susanoomon: DNA Digivolve`, `EmperorGreymon: Unified Spirit`) since its vocabulary differs, but the subtitle still states the mechanic. |
-| Footer (`.footer`) | Provenance + reading key + caveats. | Fixed lead: attribution to DigimonWiki/Fandom, then `Card labels show Level (+ Virus / X); edge colors show the digivolution trigger.` Then any page-specific caveats about non-obvious nodes/links (a synthesis with no incoming arrow, a lore link, a collective composition). Close with `See README.md for the full term conventions.` |
+| Footer (`.footer`) | Provenance + reading key + caveats. | Fixed lead: attribution (`Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork © Bandai, via the official Reference Book.`, adding `and Wikimon` when the page uses a Wikimon image), then `Card labels show Level (+ Virus / X); edge colors show the digivolution trigger.` Then any page-specific caveats about non-obvious nodes/links (a synthesis with no incoming arrow, a lore link, a collective composition). Close with `See README.md for the full term conventions.` |
 
 ## Notes on specific cases
 
@@ -320,7 +349,11 @@ only outputs to `Millenniummon`.
 Every page links one level up with a `.backnav` pill (styled in `digivolution.css`),
 placed as the first element inside `.wrap`: tree pages link to their generation's
 `index.html` labeled with the partner group (`DigiDestined`, `The Tamers`, ...), and the
-generation index and group roster pages link to the root `index.html` labeled `Home`.
+generation index and Special groups roster pages link to the root `index.html` labeled `Home`.
+Pages in the Digital World Cosmology section (the `cosmology/` pages and the rosters filed
+under it) use a `nav.crumbs` breadcrumb trail in the same place instead
+(`Home / Cosmology / <world> / <page>`), since they sit two levels below Home in the
+navigation even though their files stay in `groups/`. Both are hidden in print.
 
 A node may also carry `nav: { href, title }`: the engine then renders a round arrow button
 (`.node-nav`, an inline SVG arrow) to the right of the card that jumps to another
@@ -350,7 +383,13 @@ A roster card has the same constraint; there the card and the badge are wrapped 
 `.card-cell` (a positioned flex wrapper that takes the card's grid cell) with the badge
 absolutely positioned in its top-right corner, e.g. the `Demon Lord` badges on the
 Daemon and Lilithmon cards of `groups/angelic.html` linking into
-`groups/demon-lords.html`.
+`groups/demon-lords.html`. These badges are how the rosters express many-to-many
+membership: Azulongmon carries `Great Dragon` / `Sovereign` badges between the two rosters
+that list it, Lilithmon and Belphemon Rage Mode link between the Demon Lords and the Mark of
+Evil, and Enmamon's `Rules Yomi` badge points at the Shambala page. Badge classes, all in
+`digivolution.css`: `.rk`, `.lw`, `.fgd`, `.vw`, `.cd`, `.aa`, `.fa`, `.dl`, `.fs` (Four
+Sovereigns), `.moe` (Mark of Evil), `.db` (D-Brigade), `.bc` (Bancho), `.ul` (underworld
+authority).
 
 ### Frontier: Spirit Evolution
 
@@ -370,6 +409,94 @@ layers its own vocabulary on the shared engine instead of the Fresh->Mega ranks.
 The engine is otherwise unchanged: same `nodes`/`edges` config, same layout grid and
 header band.
 
+## Digital World Cosmology
+
+The cosmology section explains how the Digital Worlds relate without inventing canon. It is
+an editorial model built from official Bandai material, and every page says so in its footer.
+
+### Information architecture
+
+`cosmology/index.html` is the overview: Homeostasis and the Kernel on top, the Net Ocean
+holding the three world columns (each world above its own underworld), and Cocytus at the
+bottom. Each box links to a detail page; complete rosters appear only on the roster pages.
+World pages share one section order: facts strip (host computer, cultural theme, main
+guardians, underworld), the world, its organizations, historical groups, line-ups or
+regional ecosystems, the underworld, notable relationships, and sources.
+
+### The data model, expressed in static HTML
+
+The site has no build step and no data files, so the entity model maps onto markup:
+
+| Entity | Where it lives |
+|---|---|
+| World | A `cosmology/<world>.html` page and its `.facts` strip. |
+| Region | A `.region` card with an `id` (`#guardian-palace`, `#genshi-continent`, `#yomi`). |
+| Organization | A `groups/<org>.html` roster, summarized on its world page by an `.org` panel. |
+| Digimon | One full card (`a.card` with an `id`) on its home roster or page; every other mention is a `.chip` linking to that card. |
+| Relationship | An item in a `.relations` list: subject, `.rel` predicate, object, interpretation label. Cross-roster memberships are badge links. |
+
+The one-full-card rule keeps species data in one place: Enmamon has its card in
+`tentei-hachibushu.html#enmamon`, and the Shambala page, the Yomi section and the Dark
+Areas page reference it with chips. Digimon without a roster get their full card on the
+page that explains them (Susanoomon, Plutomon, Anubismon on their world pages; GranDracmon
+and Gulfmon on the Dark Areas page). A roster still shows a full card for each of its own
+members, which is why Azulongmon has one card on each of its two rosters.
+
+### Interpretation labels
+
+`.lore-tag` pills mark how firmly a statement is established. Each carries a glyph and text,
+so nothing depends on color:
+
+| Class | Label | Use for |
+|---|---|---|
+| `.tag-established` | Established Lore | Stated in official material. |
+| `.tag-continuity` | Continuity-Specific | True in one anime, manga or game only. |
+| `.tag-legendary` | Legendary | Told as ancient history or legend. |
+| `.tag-parallel` | Thematic Parallel | Shared inspiration with no stated tie. |
+| `.tag-unconfirmed` | Unconfirmed | Plausible, not stated (e.g. Yomi's link to Cocytus). |
+
+Use them where ambiguity matters, not on every sentence. The atlas overview has the key.
+
+### Content rules specific to the section
+
+- Do not invent a chain of command: host computers are presented as equivalent
+  administrators, the Kernel is not placed under Yggdrasill, and nobody is named ruler of
+  Cocytus.
+- Fixed counts are only shown where the source fixes them (13 Royal Knights, 12 Olympos XII,
+  8 Tentei Hachibushu, ...). The Titans and the Angelic Army have no universal roster; the
+  Angelic Army page follows the official poll of eleven and says so.
+- Product line-ups (Saiyu Warriors, Toho Braves, Celestial Walker, Astral Sentinel) are
+  presented as line-ups, never as organizations.
+- No collapsible sections: they would hide content in print. Navigation is the `.jump` bar
+  of in-page anchors (hidden in print) plus links between pages.
+- New pages add `loading="lazy"` to their images; the official artwork files are small.
+- Every world page ends with a `.sources` list. Official digimon.net pages first, Wikimon and
+  DigimonWiki only for terminology and continuity details.
+
+## Artwork sources
+
+Since November 2026 DigimonWiki/Fandom answers embedded images with a Cloudflare bot
+challenge, on both `digimon.fandom.com/wiki/Special:Redirect/file/...` and its CDN
+`static.wikia.nocookie.net`, so the site no longer loads any image from Fandom. Cards still
+link to DigimonWiki articles.
+
+- Primary source: the official Digimon Reference Book,
+  `https://digimon.net/cimages/digimon/<slug>.jpg`. The slug is the `directory_name` of the
+  Digimon's page (`https://digimon.net/reference_en/detail.php?directory_name=<slug>`); find it
+  with the Reference Book search. Official slugs often follow the Japanese name and differ
+  from DigimonWiki's (`vamdemon` for Myotismon, `lordknightmon` for Crusadermon,
+  `rucemonfalldownmode` for Lucemon Chaos Mode, `agumon_x` for Agumon X).
+- Tree pages give the bare slug, `img:'agumon'`, and `digivolution.js` builds the URL;
+  selection screens, rosters and cosmology pages write the full URL in `src`.
+- Fallback for a Digimon with no Reference Book entry (game-only forms, toys, card art,
+  recolors): an absolute Wikimon image URL (`https://wikimon.net/images/...`, the infobox
+  image of its Wikimon page), also as `img` on tree pages. Pages that use one add
+  `and Wikimon` to the footer's artwork credit. Fourteen images use it today, among them
+  Agumon (Burst Mode), HiMachineDramon, BlackGuilmon, Grani, the Digimon World 3
+  BlackSeraphimon, the ChronoCore forms and PetitMamon.
+- Do not try to get around a source that blocks embedding (no user-agent or referrer
+  tricks); switch to another source instead.
+
 ## Publishing (GitHub Pages)
 
 The site is served from the `src/` folder by the
@@ -382,8 +509,8 @@ does not support a `/src` folder, only root or `/docs`):
   `../../digivolution.js`, `evolution-lines/gen-*/...`), so the site works both at a
   user/organization domain root and under a project subpath
   (`https://<user>.github.io/<repo>/`).
-- Images are hotlinked from DigimonWiki/Fandom (`Special:Redirect/file/...` with
-  `referrerpolicy="no-referrer"`); nothing is bundled locally.
+- Images are hotlinked (with `referrerpolicy="no-referrer"`); nothing is bundled locally.
+  See "Artwork sources" below.
 - `src/.nojekyll` is kept as a safety net: artifact deployments never run Jekyll, but it
   keeps a fallback branch-based deployment (root folder) working as-is.
 

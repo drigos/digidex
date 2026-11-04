@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Digital World (Classic): cosmology</title>
+<link rel="stylesheet" href="../digivolution.css" />
+<style>
+  /* world-page layout (self-contained like the rosters; atlas components come from digivolution.css) */
+  .wrap { padding: 40px 22px 56px; max-width: 1280px; margin: 0 auto; overflow: visible; }
+
+  .hero { text-align: center; margin: 18px auto 10px; max-width: 900px; }
+  .hero .kicker {
+    display: inline-block; margin-bottom: 14px; padding: 6px 16px; border-radius: 999px;
+    font-size: 12.5px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--world); background: color-mix(in srgb, var(--world) 14%, transparent);
+    border: 1px solid color-mix(in srgb, var(--world) 40%, transparent);
+  }
+  .hero h1 {
+    font-size: 54px; line-height: 1.03; letter-spacing: -1.5px; margin: 0 0 14px;
+    background: linear-gradient(180deg, #ffffff, #a9c7ee);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero p { color: var(--muted); font-size: 17px; line-height: 1.5; margin: 0; }
+
+  /* section headings */
+  .tier { margin: 44px 0 16px; }
+  .tier h2 { margin: 0; font-size: 28px; letter-spacing: -.5px; }
+  .tier p { margin: 5px 0 0; color: var(--muted); font-size: 13.5px; font-weight: 700; }
+
+  @media (max-width: 820px) { .hero h1 { font-size: 40px; } }
+
+  /* full card (same look as the roster cards) */
+  .card {
+    position: relative; display: flex; flex-direction: column; overflow: hidden;
+    padding: 20px 18px 18px; border-radius: 22px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: linear-gradient(180deg, rgba(16,43,76,.96), rgba(7,19,36,.98));
+    box-shadow: 0 16px 40px rgba(0,0,0,.36);
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .card::before {
+    content: ""; position: absolute; inset: 0 0 auto 0; height: 4px;
+    background: var(--accent); box-shadow: 0 0 18px var(--accent);
+  }
+  .card::after {
+    content: ""; position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
+    width: 200px; height: 200px; border-radius: 50%;
+    background: radial-gradient(circle, var(--accent), transparent 65%);
+    opacity: .16; pointer-events: none; transition: opacity .18s ease;
+  }
+  a.card:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--accent) 60%, rgba(255,255,255,.2));
+    box-shadow: 0 26px 60px rgba(0,0,0,.5), 0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent);
+  }
+  a.card:hover::after { opacity: .32; }
+  .card { scroll-margin: 110px; }
+  a.card:target {
+    border-color: color-mix(in srgb, var(--accent) 80%, rgba(255,255,255,.2));
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 65%, transparent), 0 26px 60px rgba(0,0,0,.5);
+    animation: target-pulse 1.1s ease-out 2;
+  }
+  @keyframes target-pulse { 50% { transform: translateY(-6px); } }
+  .thumb {
+    position: relative; z-index: 1; height: 150px; border-radius: 16px; background: #fff;
+    padding: 12px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center;
+  }
+  .thumb img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .level { position: relative; z-index: 1; font-size: 11.5px; font-weight: 900; letter-spacing: 1.2px;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+  .mon { position: relative; z-index: 1; font-size: 22px; font-weight: 950; letter-spacing: -.5px; margin-bottom: 12px; }
+  .rank {
+    position: relative; z-index: 1; align-self: flex-start; display: inline-flex; align-items: center; gap: 7px;
+    padding: 5px 11px 5px 9px; border-radius: 999px; font-size: 11.5px; font-weight: 900;
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 16%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 42%, transparent);
+  }
+  .rank .glyph { font-size: 14px; line-height: 1; }
+  .role { position: relative; z-index: 1; margin: 10px 0 14px; color: var(--muted);
+    font-size: 12px; line-height: 1.4; font-weight: 700; }
+  .cta {
+    position: relative; z-index: 1; margin-top: auto; padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.09);
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 13px; font-weight: 900; color: #dce9fb;
+  }
+  .cta .arrow { transition: transform .18s ease; color: var(--accent); }
+  a.card:hover .cta .arrow { transform: translateX(5px); }
+
+  /* Four Sovereigns compass: the emperor of the Center on top, then one column per
+     compass point holding its Sovereign and that Sovereign's three Deva */
+  .center { display: flex; flex-direction: column; align-items: center; margin-bottom: 14px; }
+  .center .chip { width: min(340px, 100%); }
+  .compass { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .compass .chips { grid-template-columns: 1fr; }
+  .compass .deva-label { margin: 12px 0 6px; font-size: 10.5px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+  @media (max-width: 1100px) { .compass { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px)  { .compass { grid-template-columns: 1fr; } }
+
+  .foot { text-align: center; color: rgba(225,238,255,.6); font-size: 12.5px; line-height: 1.5; margin-top: 40px; }
+</style>
+</head>
+<body class="world-classic">
+<div class="wrap">
+
+  <nav class="crumbs" aria-label="Breadcrumb"><ol>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="index.html">Cosmology</a></li>
+    <li aria-current="page">Classic</li>
+  </ol></nav>
+
+  <header class="hero">
+    <span class="kicker">Digital World</span>
+    <h1>Digital World (Classic)</h1>
+    <p>The Digital World of most anime series, governed by the host computer Yggdrasill. Its knights take their name from medieval chivalry and its host from the world tree of Norse myth, while holy beasts of Chinese cosmology guard its compass and an ancient war still echoes through its history.</p>
+    <div class="motif" aria-hidden="true"></div>
+  </header>
+
+  <ul class="jump" aria-label="On this page">
+    <li><a href="#overview">The world</a></li>
+    <li><a href="#royal-knights">Royal Knights</a></li>
+    <li><a href="#sovereigns">Four Sovereigns &amp; Deva</a></li>
+    <li><a href="#warriors">Ten Legendary Warriors</a></li>
+    <li><a href="#dark-area">Dark Area</a></li>
+    <li><a href="#relations">Relationships</a></li>
+  </ul>
+
+  <dl class="facts">
+    <div><dt>Host computer</dt><dd>Yggdrasill</dd></div>
+    <div><dt>Cultural theme</dt><dd>Norse myth and medieval chivalry</dd></div>
+    <div><dt>Main guardians</dt><dd><a href="../groups/royal-knights.html">Royal Knights</a> (13)</dd></div>
+    <div><dt>Underworld</dt><dd><a href="#dark-area">Dark Area</a>, guarded by Anubismon</dd></div>
+  </dl>
+
+  <section class="block" id="overview">
+    <header class="tier">
+      <h2>The world under Yggdrasill</h2>
+      <p>the ordinary Digital World, as official material calls it</p>
+    </header>
+    <div class="prose">
+      <p>Official material refers to this world simply as the Digital World, or the ordinary Digital World when it sets it beside Iliad and Shambala; the atlas calls it Classic to tell them apart. Yggdrasill, the mysterious host computer, governs the entirety of the Digital World on the Network. The Royal Knights are the highest rank of network security under its jurisdiction: Yggdrasill apparently selects them, and each knight interprets its orders for itself.</p>
+      <p>The world's identity is mixed. The host computer is named after the world tree of Norse myth and the knights draw on medieval chivalry, but the Four Sovereigns and their Deva come from Chinese and Buddhist cosmology, and the Ten Legendary Warriors belong to an ancient era of their own.</p>
+    </div>
+    <div class="callout"><span class="lore-tag tag-continuity">Continuity-Specific</span> Each anime series, film and game shows its own version of this world. The atlas groups them as the Classic world for orientation, without merging their timelines into one history.</div>
+  </section>
+
+  <section class="block" id="royal-knights">
+    <header class="tier">
+      <h2>Royal Knights</h2>
+      <p>main guardian organization: the thirteen Holy Knights</p>
+    </header>
+    <div class="org">
+      <div class="org-head"><h3>Royal Knights</h3><span class="org-count">13 members</span><span class="lore-tag tag-established">Established Lore</span></div>
+      <p class="org-text">Said to number thirteen, the knights are the highest rank of network security in Yggdrasill's Digital World. Because each one interprets Yggdrasill's orders for itself, their ideas of justice do not always align, and some have turned against the world they guard. Alphamon, the Lord of the Empty Seat, stays hidden from normal sight as a deterrent.</p>
+      <div class="chips">
+        <a class="chip" href="../groups/royal-knights.html#omnimon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/omegamon.jpg" alt="Omnimon"><span class="chip-text"><span class="chip-name">Omnimon</span><span class="chip-tag">Holy Knight</span></span></a>
+        <a class="chip lead" href="../groups/royal-knights.html#alphamon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/alphamon.jpg" alt="Alphamon"><span class="chip-text"><span class="chip-name">Alphamon</span><span class="chip-tag">Lord of the Empty Seat</span></span></a>
+        <a class="chip" href="../groups/royal-knights.html#gallantmon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/dukemon.jpg" alt="Gallantmon"><span class="chip-text"><span class="chip-name">Gallantmon</span><span class="chip-tag">Holy Knight</span></span></a>
+        <a class="chip" href="../groups/royal-knights.html#magnamon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/magnamon.jpg" alt="Magnamon"><span class="chip-text"><span class="chip-name">Magnamon</span><span class="chip-tag">Holy Knight</span></span></a>
+        <a class="chip" href="../groups/royal-knights.html#ulforceveedramon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/ulforcevdramon.jpg" alt="UlforceVeedramon"><span class="chip-text"><span class="chip-name">UlforceVeedramon</span><span class="chip-tag">Holy Knight</span></span></a>
+        <a class="chip" href="../groups/royal-knights.html#dynasmon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/dynasmon.jpg" alt="Dynasmon"><span class="chip-text"><span class="chip-name">Dynasmon</span><span class="chip-tag">Holy Knight</span></span></a>
+        <a class="chip" href="../groups/royal-knights.html#crusadermon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/lordknightmon.jpg" alt="Crusadermon"><span class="chip-text"><span class="chip-name">Crusadermon</span><span class="chip-tag">Holy Knight</span></span></a>
+        <a class="chip" href="../groups/royal-knights.html#craniamon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/craniummon.jpg" alt="Craniamon"><span class="chip-text"><span class="chip-name">Craniamon</span><span class="chip-tag">Holy Knight</span></span></a>
+        <a class="chip" href="../groups/royal-knights.html#kentaurosmon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/sleipmon.jpg" alt="Kentaurosmon"><span class="chip-text"><span class="chip-name">Kentaurosmon</span><span class="chip-tag">Holy Knight</span></span></a>
+        <a class="chip" href="../groups/royal-knights.html#leopardmon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/duftmon.jpg" alt="Leopardmon"><span class="chip-text"><span class="chip-name">Leopardmon</span><span class="chip-tag">Holy Knight</span></span></a>
+        <a class="chip" href="../groups/royal-knights.html#examon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/examon.jpg" alt="Examon"><span class="chip-text"><span class="chip-name">Examon</span><span class="chip-tag">Holy Knight</span></span></a>
+        <a class="chip" href="../groups/royal-knights.html#gankoomon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/gankoomon.jpg" alt="Gankoomon"><span class="chip-text"><span class="chip-name">Gankoomon</span><span class="chip-tag">Holy Knight</span></span></a>
+        <a class="chip" href="../groups/royal-knights.html#jesmon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/jesmon.jpg" alt="Jesmon"><span class="chip-text"><span class="chip-name">Jesmon</span><span class="chip-tag">Thirteenth seat</span></span></a>
+      </div>
+      <div class="org-sub">Founder, not a fourteenth member</div>
+      <div class="chips" style="max-width:380px">
+        <a class="chip" href="../groups/royal-knights.html#imperialdramon-paladin-mode"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/imperialdramonpaladinmode.jpg" alt="Imperialdramon Paladin Mode"><span class="chip-text"><span class="chip-name">Imperialdramon Paladin Mode</span><span class="chip-tag">Legendary founder of the order</span></span></a>
+      </div>
+      <a class="panel-link" href="../groups/royal-knights.html">Open the Royal Knights roster <span class="arrow">&#8594;</span></a>
+    </div>
+  </section>
+
+  <section class="block" id="sovereigns">
+    <header class="tier">
+      <h2>Four Sovereigns and the Deva</h2>
+      <p>secondary organization: guardians of the compass and their twelve generals</p>
+    </header>
+    <div class="org" style="--world:#5cc46a; --world2:#f0b429">
+      <div class="org-head"><h3>Four Sovereigns</h3><span class="org-count">4 guardians + the Center</span><span class="lore-tag tag-established">Established Lore</span></div>
+      <p class="org-text">Four Holy Beasts that have protected the Digital World and governed its stability since the age of myth, each ruling a compass point and commanding three of the twelve Deva. Fanglongmon, the golden emperor of the Center, stands above them as their ruler rather than as a fifth guardian; it was sealed deep underground in ancient times. They are not subordinates of the Royal Knights: no official text ranks one group under the other.</p>
+      <div class="center">
+        <a class="chip lead" href="../groups/four-sovereigns.html#fanglongmon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/huanglongmon.jpg" alt="Fanglongmon"><span class="chip-text"><span class="chip-name">Fanglongmon</span><span class="chip-tag">Emperor of the Center</span></span></a>
+      </div>
+      <div class="compass">
+        <div class="sub">
+          <div class="sub-kind">East &middot; lightning</div>
+          <div class="chips"><a class="chip" href="../groups/four-sovereigns.html#azulongmon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/qinglongmon.jpg" alt="Azulongmon"><span class="chip-text"><span class="chip-name">Azulongmon</span><span class="chip-tag">Also a Great Dragon</span></span></a></div>
+          <div class="deva-label">Deva: Tiger, Rabbit, Dragon</div>
+          <div class="chips">
+            <a class="chip" href="../groups/deva.html#mihiramon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/mihiramon.jpg" alt="Mihiramon"><span class="chip-text"><span class="chip-name">Mihiramon</span><span class="chip-tag">Tiger</span></span></a>
+            <a class="chip" href="../groups/deva.html#antylamon-deva"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/andiramon.jpg" alt="Antylamon (Deva)"><span class="chip-text"><span class="chip-name">Antylamon (Deva)</span><span class="chip-tag">Rabbit</span></span></a>
+            <a class="chip" href="../groups/deva.html#majiramon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/majiramon.jpg" alt="Majiramon"><span class="chip-text"><span class="chip-name">Majiramon</span><span class="chip-tag">Dragon</span></span></a>
+          </div>
+        </div>
+        <div class="sub">
+          <div class="sub-kind">South &middot; flame</div>
+          <div class="chips"><a class="chip" href="../groups/four-sovereigns.html#zhuqiaomon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/zhuqiaomon.jpg" alt="Zhuqiaomon"><span class="chip-text"><span class="chip-name">Zhuqiaomon</span><span class="chip-tag">Sovereign of the South</span></span></a></div>
+          <div class="deva-label">Deva: Snake, Horse, Sheep</div>
+          <div class="chips">
+            <a class="chip" href="../groups/deva.html#sandiramon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/sandiramon.jpg" alt="Sandiramon"><span class="chip-text"><span class="chip-name">Sandiramon</span><span class="chip-tag">Snake</span></span></a>
+            <a class="chip" href="../groups/deva.html#indramon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/indaramon.jpg" alt="Indramon"><span class="chip-text"><span class="chip-name">Indramon</span><span class="chip-tag">Horse</span></span></a>
+            <a class="chip" href="../groups/deva.html#pajiramon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/pajiramon.jpg" alt="Pajiramon"><span class="chip-text"><span class="chip-name">Pajiramon</span><span class="chip-tag">Sheep</span></span></a>
+          </div>
+        </div>
+        <div class="sub">
+          <div class="sub-kind">West &middot; steel</div>
+          <div class="chips"><a class="chip" href="../groups/four-sovereigns.html#baihumon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/baihumon.jpg" alt="Baihumon"><span class="chip-text"><span class="chip-name">Baihumon</span><span class="chip-tag">Sovereign of the West</span></span></a></div>
+          <div class="deva-label">Deva: Monkey, Rooster, Dog</div>
+          <div class="chips">
+            <a class="chip" href="../groups/deva.html#makuramon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/makuramon.jpg" alt="Makuramon"><span class="chip-text"><span class="chip-name">Makuramon</span><span class="chip-tag">Monkey</span></span></a>
+            <a class="chip" href="../groups/deva.html#sinduramon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/sinduramon.jpg" alt="Sinduramon"><span class="chip-text"><span class="chip-name">Sinduramon</span><span class="chip-tag">Rooster</span></span></a>
+            <a class="chip" href="../groups/deva.html#caturamon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/caturamon.jpg" alt="Caturamon"><span class="chip-text"><span class="chip-name">Caturamon</span><span class="chip-tag">Dog</span></span></a>
+          </div>
+        </div>
+        <div class="sub">
+          <div class="sub-kind">North &middot; water</div>
+          <div class="chips"><a class="chip" href="../groups/four-sovereigns.html#ebonwumon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/xuanwumon.jpg" alt="Ebonwumon"><span class="chip-text"><span class="chip-name">Ebonwumon</span><span class="chip-tag">Sovereign of the North</span></span></a></div>
+          <div class="deva-label">Deva: Rat, Ox, Pig</div>
+          <div class="chips">
+            <a class="chip" href="../groups/deva.html#kumbhiramon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/kumbhiramon.jpg" alt="Kumbhiramon"><span class="chip-text"><span class="chip-name">Kumbhiramon</span><span class="chip-tag">Rat</span></span></a>
+            <a class="chip" href="../groups/deva.html#vajramon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/vajramon.jpg" alt="Vajramon"><span class="chip-text"><span class="chip-name">Vajramon</span><span class="chip-tag">Ox</span></span></a>
+            <a class="chip" href="../groups/deva.html#vikaralamon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/vikaralamon.jpg" alt="Vikaralamon"><span class="chip-text"><span class="chip-name">Vikaralamon</span><span class="chip-tag">Pig</span></span></a>
+          </div>
+        </div>
+      </div>
+      <div class="callout"><span class="lore-tag tag-continuity">Continuity-Specific</span> The Reference Book assigns three Deva to each Sovereign; in Tamers, all twelve serve Zhuqiaomon alone. The Deva draw on the Twelve Heavenly Generals of Buddhism and the Chinese zodiac, a separate tradition from the mythology of Shambala's guardians.</div>
+      <a class="panel-link" href="../groups/four-sovereigns.html">Open the Four Sovereigns roster <span class="arrow">&#8594;</span></a>
+      <a class="panel-link" href="../groups/deva.html">Open the Deva roster <span class="arrow">&#8594;</span></a>
+    </div>
+  </section>
+
+  <section class="block" id="warriors">
+    <header class="tier">
+      <h2>Ten Legendary Warriors</h2>
+      <p>historical group: the saviors of the Ancient Digital World</p>
+    </header>
+    <div class="org" style="--world:#b084f5">
+      <div class="org-head"><h3>Ten Legendary Warriors</h3><span class="org-count">10 members</span><span class="lore-tag tag-legendary">Legendary</span></div>
+      <p class="org-text">Ancient warriors, one per element, who saved the Ancient Digital World and are said to be among the first Mega Digimon. AncientGreymon and AncientGarurumon survived the holy war to the end and are said to have sealed Lucemon, and the warriors' power lives on in twenty Legendary Spirits. They belong to the world's distant past, not to its present government: no official text places them under Yggdrasill or the Royal Knights.</p>
+      <div class="chips">
+        <a class="chip" href="../groups/ten-legendary-warriors.html#ancientgreymon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/ancientgreymon.jpg" alt="AncientGreymon"><span class="chip-text"><span class="chip-name">AncientGreymon</span><span class="chip-tag">Flame</span></span></a>
+        <a class="chip" href="../groups/ten-legendary-warriors.html#ancientgarurumon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/ancientgarurumon.jpg" alt="AncientGarurumon"><span class="chip-text"><span class="chip-name">AncientGarurumon</span><span class="chip-tag">Light</span></span></a>
+        <a class="chip" href="../groups/ten-legendary-warriors.html#ancientbeetlemon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/ancientbeatmon.jpg" alt="AncientBeetlemon"><span class="chip-text"><span class="chip-name">AncientBeetlemon</span><span class="chip-tag">Thunder</span></span></a>
+        <a class="chip" href="../groups/ten-legendary-warriors.html#ancientkazemon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/ancientirismon.jpg" alt="AncientKazemon"><span class="chip-text"><span class="chip-name">AncientKazemon</span><span class="chip-tag">Wind</span></span></a>
+        <a class="chip" href="../groups/ten-legendary-warriors.html#ancientmegatheriummon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/ancientmegatheriumon.jpg" alt="AncientMegatheriummon"><span class="chip-text"><span class="chip-name">AncientMegatheriummon</span><span class="chip-tag">Ice</span></span></a>
+        <a class="chip" href="../groups/ten-legendary-warriors.html#ancientmermaidmon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/ancientmermaimon.jpg" alt="AncientMermaidmon"><span class="chip-text"><span class="chip-name">AncientMermaidmon</span><span class="chip-tag">Water</span></span></a>
+        <a class="chip" href="../groups/ten-legendary-warriors.html#ancientsphinxmon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/ancientsphinkmon.jpg" alt="AncientSphinxmon"><span class="chip-text"><span class="chip-name">AncientSphinxmon</span><span class="chip-tag">Darkness</span></span></a>
+        <a class="chip" href="../groups/ten-legendary-warriors.html#ancienttroiamon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/ancienttroiamon.jpg" alt="AncientTroiamon"><span class="chip-text"><span class="chip-name">AncientTroiamon</span><span class="chip-tag">Wood</span></span></a>
+        <a class="chip" href="../groups/ten-legendary-warriors.html#ancientvolcanomon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/ancientvolcamon.jpg" alt="AncientVolcanomon"><span class="chip-text"><span class="chip-name">AncientVolcanomon</span><span class="chip-tag">Earth</span></span></a>
+        <a class="chip" href="../groups/ten-legendary-warriors.html#ancientwisemon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/ancientwisetmon.jpg" alt="AncientWisemon"><span class="chip-text"><span class="chip-name">AncientWisemon</span><span class="chip-tag">Steel</span></span></a>
+      </div>
+      <a class="panel-link" href="../groups/ten-legendary-warriors.html">Open the Ten Legendary Warriors roster <span class="arrow">&#8594;</span></a>
+    </div>
+  </section>
+
+  <section class="block" id="dark-area">
+    <header class="tier">
+      <h2>Dark Area</h2>
+      <p>the Classic world's underworld, guarded and judged by Anubismon</p>
+    </header>
+    <div class="feature">
+      <a class="card" id="anubismon" href="https://digimon.fandom.com/wiki/Anubismon" target="_blank" style="--accent:#c4a1ff">
+        <div class="thumb"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/anubimon.jpg" alt="Anubismon"></div>
+        <div class="level">Mega</div>
+        <div class="mon">Anubismon</div>
+        <span class="rank"><span class="glyph">&#9878;</span> Guardian &amp; judge</span>
+        <div class="role">Guards and presides over the Dark Area, judging the data that arrives there.</div>
+        <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+      </a>
+      <div class="prose">
+        <p><span class="lore-tag tag-established">Established Lore</span></p>
+        <p>Anubismon guards and supervises the Dark Area and acts as the judge of the Digital World. Its profile says it seals Digimon made of evil data away in eternal darkness and lets Digimon made of good data be reborn as Digi-Eggs; Digimon Profile #035 adds that data judged bad keeps wandering the Dark Area.</p>
+        <p>Anubismon is a guardian and a judge, not a sovereign. Official material gives every Digital World its own Dark Area, and nowhere calls Anubismon the ruler of all of them. Below this Dark Area lies <a href="dark-areas.html#cocytus">Cocytus</a>, the single deepest layer shared by every world.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="relations">
+    <header class="tier">
+      <h2>Notable relationships</h2>
+      <p>who answers to whom, and how firmly each link is established</p>
+    </header>
+    <ul class="relations">
+      <li>Yggdrasill <span class="rel">governs</span> the Classic Digital World <span class="lore-tag tag-established">Established Lore</span></li>
+      <li>Yggdrasill <span class="rel">selects</span> <a href="../groups/royal-knights.html">Royal Knights</a> <span class="lore-tag tag-established">Established Lore</span></li>
+      <li><a href="../groups/royal-knights.html#imperialdramon-paladin-mode">Imperialdramon Paladin Mode</a> <span class="rel">founded</span> <a href="../groups/royal-knights.html">Royal Knights</a> <span class="lore-tag tag-legendary">Legendary</span></li>
+      <li><a href="../groups/royal-knights.html">Royal Knights</a> <span class="rel">natural rivals of</span> <a href="../groups/demon-lords.html">Seven Great Demon Lords</a> <span class="lore-tag tag-established">Established Lore</span></li>
+      <li><a href="../groups/royal-knights.html">Royal Knights</a> <span class="rel">rival in power</span> <a href="../groups/olympos-xii.html">Olympos XII</a> <span class="lore-tag tag-established">Established Lore</span></li>
+      <li><a href="../groups/four-sovereigns.html#fanglongmon">Fanglongmon</a> <span class="rel">emperor of</span> <a href="../groups/four-sovereigns.html">Four Sovereigns</a> <span class="lore-tag tag-established">Established Lore</span></li>
+      <li><a href="../groups/four-sovereigns.html#azulongmon">Azulongmon</a> <span class="rel">member of</span> <a href="../groups/four-sovereigns.html">Four Sovereigns</a> <span class="lore-tag tag-established">Established Lore</span></li>
+      <li><a href="../groups/four-great-dragons.html#azulongmon">Azulongmon</a> <span class="rel">member of</span> <a href="../groups/four-great-dragons.html">Four Great Dragons</a> <span class="lore-tag tag-established">Established Lore</span></li>
+      <li><a href="../groups/deva.html">Deva</a> <span class="rel">serve, three each</span> <a href="../groups/four-sovereigns.html">Four Sovereigns</a> <span class="lore-tag tag-established">Established Lore</span></li>
+      <li><a href="../groups/deva.html">Deva</a> <span class="rel">all serve</span> <a href="../groups/four-sovereigns.html#zhuqiaomon">Zhuqiaomon</a> (Tamers) <span class="lore-tag tag-continuity">Continuity-Specific</span></li>
+      <li><a href="../groups/ten-legendary-warriors.html#ancientgreymon">AncientGreymon</a> &amp; <a href="../groups/ten-legendary-warriors.html#ancientgarurumon">AncientGarurumon</a> <span class="rel">sealed</span> Lucemon <span class="lore-tag tag-legendary">Legendary</span></li>
+      <li><a href="#anubismon">Anubismon</a> <span class="rel">guards and judges</span> <a href="#dark-area">Dark Area</a> <span class="lore-tag tag-established">Established Lore</span></li>
+      <li><a href="#dark-area">Dark Area</a> <span class="rel">leads down to</span> <a href="dark-areas.html#cocytus">Cocytus</a> <span class="lore-tag tag-established">Established Lore</span></li>
+    </ul>
+  </section>
+
+  <section class="sources">
+    <h2>Sources</h2>
+    <ul>
+      <li>Digimon Profile #036, Royal Knights: <a href="https://digimon.net/profile/report036/" target="_blank" rel="noopener">digimon.net/profile/report036</a></li>
+      <li>Digimon Profile #035, Dark Areas and Cocytus: <a href="https://digimon.net/profile/report035/" target="_blank" rel="noopener">digimon.net/profile/report035</a></li>
+      <li>Digimon Profile #014, Legendary Spirits: <a href="https://digimon.net/profile/report014/" target="_blank" rel="noopener">digimon.net/profile/report014</a></li>
+      <li>Digimon Reference Book profiles (English), including Yggdrasill_7D6 and Anubismon: <a href="https://digimon.net/reference_en/" target="_blank" rel="noopener">digimon.net/reference_en</a></li>
+      <li>The site's own rosters, whose lore notes carry their sources: <a href="../groups/royal-knights.html">Royal Knights</a>, <a href="../groups/four-sovereigns.html">Four Sovereigns</a>, <a href="../groups/deva.html">Deva</a></li>
+    </ul>
+  </section>
+
+  <div class="support">
+    <span class="support-label">Support this project</span>
+    <a class="support-btn kofi" href="https://ko-fi.com/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9749;</span><span class="support-text">Ko-fi</span><span class="support-url">ko-fi.com/drigos</span></a>
+    <a class="support-btn sponsors" href="https://github.com/sponsors/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9829;</span><span class="support-text">GitHub Sponsors</span><span class="support-url">github.com/sponsors/drigos</span></a>
+  </div>
+
+  <p class="foot">Names link to DigimonWiki/Fandom (CC BY-SA unless noted otherwise); artwork &copy; Bandai, shown from the official Digimon Reference Book. The atlas is an editorial model built from official material, not a universal chain of command. Yggdrasill keeps its official name here (King Drasil on DigimonWiki); Anubismon is Anubimon in Japanese material.</p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dark Areas &amp; Cocytus: cosmology</title>
+<link rel="stylesheet" href="../digivolution.css" />
+<style>
+  /* world-page layout (self-contained like the rosters; atlas components come from digivolution.css) */
+  .wrap { padding: 40px 22px 56px; max-width: 1280px; margin: 0 auto; overflow: visible; }
+
+  .hero { text-align: center; margin: 18px auto 10px; max-width: 900px; }
+  .hero .kicker {
+    display: inline-block; margin-bottom: 14px; padding: 6px 16px; border-radius: 999px;
+    font-size: 12.5px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--world); background: color-mix(in srgb, var(--world) 14%, transparent);
+    border: 1px solid color-mix(in srgb, var(--world) 40%, transparent);
+  }
+  .hero h1 {
+    font-size: 54px; line-height: 1.03; letter-spacing: -1.5px; margin: 0 0 14px;
+    background: linear-gradient(180deg, #ffffff, #c4a1ff);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero p { color: var(--muted); font-size: 17px; line-height: 1.5; margin: 0; }
+
+  /* section headings */
+  .tier { margin: 44px 0 16px; }
+  .tier h2 { margin: 0; font-size: 28px; letter-spacing: -.5px; }
+  .tier p { margin: 5px 0 0; color: var(--muted); font-size: 13.5px; font-weight: 700; }
+
+  @media (max-width: 820px) { .hero h1 { font-size: 40px; } }
+
+  /* full card (same look as the roster cards) */
+  .card {
+    position: relative; display: flex; flex-direction: column; overflow: hidden;
+    padding: 20px 18px 18px; border-radius: 22px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: linear-gradient(180deg, rgba(16,43,76,.96), rgba(7,19,36,.98));
+    box-shadow: 0 16px 40px rgba(0,0,0,.36);
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .card::before {
+    content: ""; position: absolute; inset: 0 0 auto 0; height: 4px;
+    background: var(--accent); box-shadow: 0 0 18px var(--accent);
+  }
+  .card::after {
+    content: ""; position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
+    width: 200px; height: 200px; border-radius: 50%;
+    background: radial-gradient(circle, var(--accent), transparent 65%);
+    opacity: .16; pointer-events: none; transition: opacity .18s ease;
+  }
+  a.card:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--accent) 60%, rgba(255,255,255,.2));
+    box-shadow: 0 26px 60px rgba(0,0,0,.5), 0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent);
+  }
+  a.card:hover::after { opacity: .32; }
+  .card { scroll-margin: 110px; }
+  a.card:target {
+    border-color: color-mix(in srgb, var(--accent) 80%, rgba(255,255,255,.2));
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 65%, transparent), 0 26px 60px rgba(0,0,0,.5);
+    animation: target-pulse 1.1s ease-out 2;
+  }
+  @keyframes target-pulse { 50% { transform: translateY(-6px); } }
+  .thumb {
+    position: relative; z-index: 1; height: 150px; border-radius: 16px; background: #fff;
+    padding: 12px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center;
+  }
+  .thumb img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .level { position: relative; z-index: 1; font-size: 11.5px; font-weight: 900; letter-spacing: 1.2px;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+  .mon { position: relative; z-index: 1; font-size: 22px; font-weight: 950; letter-spacing: -.5px; margin-bottom: 12px; }
+  .rank {
+    position: relative; z-index: 1; align-self: flex-start; display: inline-flex; align-items: center; gap: 7px;
+    padding: 5px 11px 5px 9px; border-radius: 999px; font-size: 11.5px; font-weight: 900;
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 16%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 42%, transparent);
+  }
+  .rank .glyph { font-size: 14px; line-height: 1; }
+  .role { position: relative; z-index: 1; margin: 10px 0 14px; color: var(--muted);
+    font-size: 12px; line-height: 1.4; font-weight: 700; }
+  .cta {
+    position: relative; z-index: 1; margin-top: auto; padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.09);
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 13px; font-weight: 900; color: #dce9fb;
+  }
+  .cta .arrow { transition: transform .18s ease; color: var(--accent); }
+  a.card:hover .cta .arrow { transform: translateX(5px); }
+
+  /* Cocytus: an abyssal, icy panel set apart from the three underworlds above it */
+  .abyss { margin-top: 20px; padding: 22px 22px 24px; border-radius: 26px;
+    border: 1px solid rgba(125,211,252,.35);
+    background: radial-gradient(circle at 50% 0%, rgba(125,211,252,.10), transparent 60%), linear-gradient(180deg, rgba(8,20,36,.95), rgba(2,6,14,.98));
+    box-shadow: 0 24px 70px rgba(0,0,0,.5), inset 0 0 60px rgba(0,0,0,.45); }
+  .abyss .org { --world:#c4a1ff; background: rgba(3,10,22,.7); }
+  .powers { display: grid; grid-template-columns: repeat(2, minmax(0, 290px)) 1fr; gap: 22px; align-items: start; }
+  @media (max-width: 1000px) { .powers { grid-template-columns: repeat(2, minmax(0, 1fr)); } .powers .prose { grid-column: 1 / -1; } }
+  @media (max-width: 560px)  { .powers { grid-template-columns: 1fr; } }
+
+  .foot { text-align: center; color: rgba(225,238,255,.6); font-size: 12.5px; line-height: 1.5; margin-top: 40px; }
+</style>
+</head>
+<body class="world-dark">
+<div class="wrap">
+
+  <nav class="crumbs" aria-label="Breadcrumb"><ol>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="index.html">Cosmology</a></li>
+    <li aria-current="page">Dark Areas &amp; Cocytus</li>
+  </ol></nav>
+
+  <header class="hero">
+    <span class="kicker">Underworlds</span>
+    <h1>Dark Areas &amp; Cocytus</h1>
+    <p>Every Digital World has its own underworld, each kept by a different authority with a different role. Beneath them lies Cocytus, a single lowest layer shared by every world, where the most dangerous powers of the dark make their stronghold and no one is named its ruler.</p>
+    <div class="motif" aria-hidden="true"></div>
+  </header>
+
+  <ul class="jump" aria-label="On this page">
+    <li><a href="#underworlds">Three underworlds</a></li>
+    <li><a href="#compared">Authorities compared</a></li>
+    <li><a href="#cocytus">Cocytus</a></li>
+    <li><a href="#demon-lords">Seven Great Demon Lords</a></li>
+    <li><a href="#embodiment">Embodiment of the Seven Sins</a></li>
+    <li><a href="#powers">GranDracmon &amp; Gulfmon</a></li>
+    <li><a href="#relations">Relationships</a></li>
+  </ul>
+
+  <dl class="facts">
+    <div><dt>Underworlds</dt><dd>One per Digital World</dd></div>
+    <div><dt>Deepest layer</dt><dd>Cocytus, shared by every world</dd></div>
+    <div><dt>Ruler of Cocytus</dt><dd>None named in any source</dd></div>
+    <div><dt>Notable powers</dt><dd>Seven Great Demon Lords, GranDracmon, Gulfmon</dd></div>
+  </dl>
+
+  <section class="block" id="underworlds">
+    <header class="tier">
+      <h2>Three underworlds</h2>
+      <p>functional underworlds with different keepers, not branches of one organization</p>
+    </header>
+    <div class="region-grid">
+      <article class="region" id="classic-dark-area">
+        <span class="region-kind">Digital World (Classic)</span>
+        <h3>Dark Area</h3>
+        <p>Anubismon guards and supervises it as the judge of the Digital World: good data is reborn as Digi-Eggs, evil data is sealed in darkness.</p>
+        <div class="chips">
+          <a class="chip" href="classic.html#anubismon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/anubimon.jpg" alt="Anubismon"><span class="chip-text"><span class="chip-name">Anubismon</span><span class="chip-tag">Guardian &amp; judge</span></span></a>
+        </div>
+        <p><span class="lore-tag tag-established">Established Lore</span> Leads down to Cocytus.</p>
+      </article>
+      <article class="region" id="iliad-dark-area">
+        <span class="region-kind">Digital World: Iliad</span>
+        <h3>Dark Area</h3>
+        <p>The lowest layer of Iliad, ruled by Plutomon apart from the Olympos XII: working DigiCores return upward as Digi-Eggs, badly bugged ones are imprisoned.</p>
+        <div class="chips">
+          <a class="chip" href="iliad.html#plutomon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/plutomon.jpg" alt="Plutomon"><span class="chip-text"><span class="chip-name">Plutomon</span><span class="chip-tag">Ruler</span></span></a>
+        </div>
+        <p><span class="lore-tag tag-established">Established Lore</span> Leads down to Cocytus.</p>
+      </article>
+      <article class="region" id="yomi">
+        <span class="region-kind">Digital World: Shambala</span>
+        <h3>Yomi</h3>
+        <p>An underworld equivalent to the other worlds' Dark Areas. Enmamon rules it and confines bugged DigiCores for good, but is itself bound to Yomi.</p>
+        <div class="chips">
+          <a class="chip" href="../groups/tentei-hachibushu.html#enmamon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/enmamon.jpg" alt="Enmamon"><span class="chip-text"><span class="chip-name">Enmamon</span><span class="chip-tag">Ruler, one of the Tentei Hachibushu</span></span></a>
+        </div>
+        <p><span class="lore-tag tag-unconfirmed">Unconfirmed</span> A link to Cocytus is plausible but not stated.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="block" id="compared">
+    <header class="tier">
+      <h2>Authorities compared</h2>
+      <p>three keepers, three different kinds of authority</p>
+    </header>
+    <table class="data-table">
+      <thead><tr><th scope="col">Underworld</th><th scope="col">Authority</th><th scope="col">Role in official text</th><th scope="col">What happens to the dead</th><th scope="col">Link to Cocytus</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Dark Area (Classic)</th><td data-label="Authority"><a href="classic.html#anubismon">Anubismon</a></td><td data-label="Role in official text">Guardian and supervisor; judge of the Digital World</td><td data-label="What happens to the dead">Good data is reborn as Digi-Eggs; evil data is sealed in eternal darkness or left wandering the Dark Area</td><td data-label="Link to Cocytus">Stated (Profile #035)</td></tr>
+        <tr><th scope="row">Dark Area (Iliad)</th><td data-label="Authority"><a href="iliad.html#plutomon">Plutomon</a></td><td data-label="Role in official text">Ruler, acting apart from the Olympos XII</td><td data-label="What happens to the dead">Working DigiCores return as Digi-Eggs; seriously bugged ones are imprisoned; Titan souls are kept in Erebus</td><td data-label="Link to Cocytus">Stated (Profile #035)</td></tr>
+        <tr><th scope="row">Yomi (Shambala)</th><td data-label="Authority"><a href="../groups/tentei-hachibushu.html#enmamon">Enmamon</a></td><td data-label="Role in official text">Ruler, and one of the Tentei Hachibushu; itself unable to leave</td><td data-label="What happens to the dead">Bugged DigiCores are confined in Yomi and never reborn on the surface</td><td data-label="Link to Cocytus">Not stated</td></tr>
+      </tbody>
+    </table>
+    <div class="callout">No source calls any of the three the sovereign of all underworlds. Their worlds keep separate administrations, and their roles differ: Anubismon judges, Plutomon rules and hunts the wicked even among the living, and Enmamon governs a realm it is bound to itself.</div>
+  </section>
+
+  <section class="block" id="cocytus">
+    <header class="tier">
+      <h2>Cocytus</h2>
+      <p>the shared deepest layer</p>
+    </header>
+    <div class="abyss">
+      <div class="prose">
+        <p><span class="lore-tag tag-established">Established Lore</span></p>
+        <p>Digimon Profile #035 describes a lowest-layer area, Cocytus, that connects from each Dark Area. It is common to every Digital World, and only one exists. The profile names the ordinary Digital World and Iliad; it predates Shambala and does not mention Yomi.</p>
+        <p>Cocytus has no named ruler. The Seven Great Demon Lords, GranDracmon and Gulfmon all make it their stronghold, but they are separate powers, not a single government, and the Demon Lords are said to neither cooperate nor turn on each other.</p>
+      </div>
+
+      <div class="org" id="demon-lords">
+        <div class="org-head"><h3>Seven Great Demon Lords</h3><span class="org-count">7 members</span><span class="lore-tag tag-established">Established Lore</span></div>
+        <p class="org-text">Seven Evil King Digimon, each bearing the Crown of a deadly sin. Profile #035 and the official Digimon Chronicle X story both place their stronghold in Cocytus, the lowest layer of the Dark Area; individual profiles speak of the Dark Area's heart and its deepest parts, and Leviamon sleeps in the Net Ocean near it.</p>
+        <div class="chips">
+          <a class="chip" href="../groups/demon-lords.html#lucemon-chaos-mode"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/rucemonfalldownmode.jpg" alt="Lucemon Chaos Mode"><span class="chip-text"><span class="chip-name">Lucemon Chaos Mode</span><span class="chip-tag">Pride</span></span></a>
+          <a class="chip" href="../groups/demon-lords.html#leviamon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/leviamon.jpg" alt="Leviamon"><span class="chip-text"><span class="chip-name">Leviamon</span><span class="chip-tag">Envy</span></span></a>
+          <a class="chip" href="../groups/demon-lords.html#daemon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/demon.jpg" alt="Daemon"><span class="chip-text"><span class="chip-name">Daemon</span><span class="chip-tag">Wrath</span></span></a>
+          <a class="chip" href="../groups/demon-lords.html#belphemon-rage-mode"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/belphemonragemode.jpg" alt="Belphemon Rage Mode"><span class="chip-text"><span class="chip-name">Belphemon Rage Mode</span><span class="chip-tag">Sloth</span></span></a>
+          <a class="chip" href="../groups/demon-lords.html#barbamon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/barbamon.jpg" alt="Barbamon"><span class="chip-text"><span class="chip-name">Barbamon</span><span class="chip-tag">Greed</span></span></a>
+          <a class="chip" href="../groups/demon-lords.html#beelzemon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/beelzebumon.jpg" alt="Beelzemon"><span class="chip-text"><span class="chip-name">Beelzemon</span><span class="chip-tag">Gluttony</span></span></a>
+          <a class="chip" href="../groups/demon-lords.html#lilithmon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/lilithmon.jpg" alt="Lilithmon"><span class="chip-text"><span class="chip-name">Lilithmon</span><span class="chip-tag">Lust</span></span></a>
+        </div>
+        <a class="panel-link" href="../groups/demon-lords.html">Open the Seven Great Demon Lords roster <span class="arrow">&#8594;</span></a>
+      </div>
+
+      <div class="org" id="embodiment">
+        <div class="org-head"><h3>Embodiment of the Seven Sins</h3><span class="org-count">Related, not an eighth member</span></div>
+        <p class="org-text">Ogudomon is a Super Demon Lord holding all the sins of the Digital World together with the power to atone for them. Its profile never counts it among the Seven. Its X Antibody form, Ogudomon X, further amplifies the Seven Great Demon Lords' evil thoughts and destructive urges, and its arms and head become blades carrying each of their powers.</p>
+        <div class="chips">
+          <a class="chip lead" href="../groups/demon-lords.html#ogudomon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/ogudomon.jpg" alt="Ogudomon"><span class="chip-text"><span class="chip-name">Ogudomon</span><span class="chip-tag">Sum of the sins</span></span></a>
+          <a class="chip lead" href="../groups/demon-lords.html#ogudomon-x"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/ogudomon_x.jpg" alt="Ogudomon X"><span class="chip-text"><span class="chip-name">Ogudomon X</span><span class="chip-tag">X Antibody form</span></span></a>
+        </div>
+        <div class="callout"><span class="lore-tag tag-continuity">Continuity-Specific</span> In the official Digimon Chronicle X story, the defeated Seven are dragged down to Cocytus, where seven copies of Diablomon X absorb them and fuse into Ogudomon X; Lucemon X meant to destroy the whole Digital World by becoming it. After Jesmon GX cuts it down, the released Seven return to Cocytus.</div>
+      </div>
+
+      <section id="powers" aria-labelledby="powers-title">
+        <header class="tier">
+          <h2 id="powers-title">Independent powers</h2>
+          <p>inhabitants of the depths that answer to no one</p>
+        </header>
+        <div class="powers">
+          <a class="card" id="grandracmon" href="https://digimon.fandom.com/wiki/GranDracmon" target="_blank" style="--accent:#e5484d">
+            <div class="thumb"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/granddracumon.jpg" alt="GranDracmon"></div>
+            <div class="level">Mega</div>
+            <div class="mon">GranDracmon</div>
+            <span class="rank"><span class="glyph">&#127769;</span> King of vampires</span>
+            <div class="role">Keeps its own castle in the Dark Area; not even the Seven Great Demon Lords dare interfere with it.</div>
+            <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+          </a>
+          <a class="card" id="gulfmon" href="https://digimon.fandom.com/wiki/Gulfmon" target="_blank" style="--accent:#7dd3fc">
+            <div class="thumb"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/gulfmon.jpg" alt="Gulfmon"></div>
+            <div class="level">Mega</div>
+            <div class="mon">Gulfmon</div>
+            <span class="rank"><span class="glyph">&#9888;</span> Dark Beast of the abyss</span>
+            <div class="role">A mountain-sized beast from the abyss; its lower maw crushes DigiCores beyond escape.</div>
+            <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+          </a>
+          <div class="prose">
+            <p><span class="lore-tag tag-established">Established Lore</span> Profile #035 introduces GranDracmon and Gulfmon together: like the Seven Great Demon Lords, both make Cocytus their stronghold, and each is an extremely dangerous being.</p>
+            <p>GranDracmon is the king of all vampire Digimon. It has long kept its own castle in the Dark Area, and its power is so overwhelming that not even the Seven dare to interfere with it; it is believed to have been involved in the creation of the Dark Area and to know the truth behind the mysterious Death-X-evolution. It is not a Demon Lord.</p>
+            <p>Gulfmon is a Dark Beast that emerged from the abyss of the Dark Area. Its giant maw is said to connect to that abyss, and it is described as capable of destroying the world in seven days. Neither it nor GranDracmon is called the ruler of Cocytus.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <section class="block" id="relations">
+    <header class="tier">
+      <h2>Notable relationships</h2>
+      <p>who lives where, and how firmly each link is established</p>
+    </header>
+    <ul class="relations">
+      <li><a href="#classic-dark-area">Classic Dark Area</a> <span class="rel">leads down to</span> <a href="#cocytus">Cocytus</a> <span class="lore-tag tag-established">Established Lore</span></li>
+      <li><a href="#iliad-dark-area">Iliad's Dark Area</a> <span class="rel">leads down to</span> <a href="#cocytus">Cocytus</a> <span class="lore-tag tag-established">Established Lore</span></li>
+      <li><a href="#yomi">Yomi</a> <span class="rel">leads down to</span> <a href="#cocytus">Cocytus</a> <span class="lore-tag tag-unconfirmed">Unconfirmed</span></li>
+      <li><a href="classic.html#anubismon">Anubismon</a> <span class="rel">guards and judges</span> <a href="#classic-dark-area">Classic Dark Area</a> <span class="lore-tag tag-established">Established Lore</span></li>
+      <li><a href="iliad.html#plutomon">Plutomon</a> <span class="rel">rules</span> <a href="#iliad-dark-area">Iliad's Dark Area</a> <span class="lore-tag tag-established">Established Lore</span></li>
+      <li><a href="../groups/tentei-hachibushu.html#enmamon">Enmamon</a> <span class="rel">rules</span> <a href="#yomi">Yomi</a> <span class="lore-tag tag-established">Established Lore</span></li>
+      <li><a href="../groups/demon-lords.html">Seven Great Demon Lords</a> <span class="rel">stronghold in</span> <a href="#cocytus">Cocytus</a> <span class="lore-tag tag-established">Established Lore</span></li>
+      <li><a href="#grandracmon">GranDracmon</a> <span class="rel">stronghold in</span> <a href="#cocytus">Cocytus</a> <span class="lore-tag tag-established">Established Lore</span></li>
+      <li><a href="#gulfmon">Gulfmon</a> <span class="rel">stronghold in</span> <a href="#cocytus">Cocytus</a> <span class="lore-tag tag-established">Established Lore</span></li>
+      <li><a href="#grandracmon">GranDracmon</a> <span class="rel">beyond the reach of</span> <a href="../groups/demon-lords.html">Seven Great Demon Lords</a> <span class="lore-tag tag-established">Established Lore</span></li>
+      <li><a href="../groups/demon-lords.html#lilithmon">Lilithmon</a> <span class="rel">member of</span> <a href="../groups/demon-lords.html">Seven Great Demon Lords</a> <span class="lore-tag tag-established">Established Lore</span></li>
+      <li><a href="../groups/demon-lords.html#lilithmon">Lilithmon</a> <span class="rel">bears</span> <a href="../groups/mark-of-evil.html#lilithmon">Mark of Evil</a> <span class="lore-tag tag-established">Established Lore</span></li>
+      <li>Seven Great Demon Lords <span class="rel">fused into</span> <a href="../groups/demon-lords.html#ogudomon-x">Ogudomon X</a> <span class="lore-tag tag-continuity">Continuity-Specific</span></li>
+      <li><a href="../groups/demon-lords.html">Seven Great Demon Lords</a> <span class="rel">natural rivals of</span> <a href="../groups/royal-knights.html">Royal Knights</a> <span class="lore-tag tag-established">Established Lore</span></li>
+    </ul>
+  </section>
+
+  <section class="sources">
+    <h2>Sources</h2>
+    <ul>
+      <li>Digimon Profile #035, Dark Areas and Cocytus: <a href="https://digimon.net/profile/report035/" target="_blank" rel="noopener">digimon.net/profile/report035</a></li>
+      <li>Digimon Reference Book profiles (English), including Anubismon, Plutomon, Enmamon, GranDracmon, Gulfmon and Ogudomon: <a href="https://digimon.net/reference_en/" target="_blank" rel="noopener">digimon.net/reference_en</a></li>
+      <li>Digital World: Iliad and Digital World: Shambala, official pages: <a href="https://digimon.net/digitalworld-Iliad/" target="_blank" rel="noopener">Iliad</a>, <a href="https://digimon.net/digitalworld-shambala/" target="_blank" rel="noopener">Shambala</a></li>
+      <li>Digimon Chronicle X, official story: <a href="https://digimon.net/x-evo/" target="_blank" rel="noopener">digimon.net/x-evo</a></li>
+    </ul>
+  </section>
+
+  <div class="support">
+    <span class="support-label">Support this project</span>
+    <a class="support-btn kofi" href="https://ko-fi.com/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9749;</span><span class="support-text">Ko-fi</span><span class="support-url">ko-fi.com/drigos</span></a>
+    <a class="support-btn sponsors" href="https://github.com/sponsors/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9829;</span><span class="support-text">GitHub Sponsors</span><span class="support-url">github.com/sponsors/drigos</span></a>
+  </div>
+
+  <p class="foot">Names link to DigimonWiki/Fandom (CC BY-SA unless noted otherwise); artwork &copy; Bandai, shown from the official Digimon Reference Book. The atlas is an editorial model built from official material, not a universal chain of command. Anubismon is Anubimon in Japanese material.</p>
+
+</div>
+</body>
+</html>

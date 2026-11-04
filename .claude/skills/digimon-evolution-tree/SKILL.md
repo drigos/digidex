@@ -42,8 +42,11 @@ generation (create the folder if that generation has no page yet).
 
 1. Research the line on DigimonWiki/Fandom. Collect stages, X-Antibody / Virus variants,
    DNA/Jogress fusions, mode changes, bond/burst forms, and external fusion partners.
-   For images use `Special:Redirect/file/<File>` (the engine builds this from `img`); if a
-   `<Name>_b.jpg` does not exist, query `https://digimon.fandom.com/api.php?action=query&prop=images&titles=<Name>&format=json` for the real file.
+   For each node's `img`, use the official Reference Book slug (the `directory_name` in
+   `https://digimon.net/reference_en/detail.php?directory_name=<slug>`); the engine turns it
+   into `https://digimon.net/cimages/digimon/<slug>.jpg`. If the Digimon has no official
+   entry, give an absolute Wikimon image URL instead (see README "Artwork sources").
+   DigimonWiki/Fandom images can no longer be embedded.
 2. Place nodes on the grid: pick a column x per level, a row index per node (`y = firstRow + i*240`).
    Keep the main spine on one horizontal row; branch variants to adjacent rows.
 3. Copy `veemon.html`/`agumon.html` into the target `src/evolution-lines/gen-*/` folder as
@@ -83,7 +86,8 @@ generation (create the folder if that generation has no page yet).
   - `nav`: `{ href, title }` - renders a round arrow button to the right of the card that
     jumps to another infographic page (relative href); the card itself keeps linking to
     the wiki. See README "Cross-page navigation".
-  - `wiki`/`img`: the Fandom page slug and the redirect file name.
+  - `wiki`/`img`: the Fandom page slug (the card link) and the official Reference Book slug
+    (or an absolute fallback image URL).
 - Edge (inside `edges: function(edge){ ... }`):
   `edge(from, to, type, fromSide='right', toSide='left', opts)`
   - `type`: the trigger (`normal|x|dna|mode|dark|lateral|armor|bond|burst`).

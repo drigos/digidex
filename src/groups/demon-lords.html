@@ -92,6 +92,12 @@
   }
   .rank .glyph { font-size: 14px; line-height: 1; }
 
+  /* linked group badge over a roster card: the card is itself an <a>, so the badge is an
+     <a> sibling inside a positioned wrapper occupying the card's grid cell */
+  .card-cell { position: relative; display: flex; }
+  .card-cell .card { flex: 1 1 auto; width: 100%; }
+  .card-cell a.badge-link { position: absolute; top: 12px; right: 12px; left: auto; transform: none; }
+
   .role { position: relative; z-index: 1; margin: 10px 0 14px; color: var(--muted);
     font-size: 12px; line-height: 1.4; font-weight: 700; }
 
@@ -123,10 +129,15 @@
 <body>
 <div class="wrap">
 
-  <a class="backnav" href="../index.html"><span class="arrow">&#8592;</span> Home</a>
+  <nav class="crumbs" aria-label="Breadcrumb"><ol>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../cosmology/index.html">Cosmology</a></li>
+    <li><a href="../cosmology/dark-areas.html">Dark Areas &amp; Cocytus</a></li>
+    <li aria-current="page">Seven Great Demon Lords</li>
+  </ol></nav>
 
   <header class="hero">
-    <span class="kicker">Special group</span>
+    <span class="kicker">Cocytus</span>
     <h1>Seven Great Demon Lords</h1>
     <p>Seven Evil King Digimon tied to the Dark Area, each bearing the Crown of one of the seven deadly sins. Together they oppose the order of the Digital World; alone, each one is a calamity.</p>
   </header>
@@ -138,7 +149,7 @@
   <div class="grid">
 
     <a class="card" id="lucemon-chaos-mode" href="https://digimon.fandom.com/wiki/Lucemon_Chaos_Mode" target="_blank" style="--accent:#e5484d">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Lucemon_Chaos_Mode_b.jpg" alt="Lucemon Chaos Mode"></div>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/rucemonfalldownmode.jpg" alt="Lucemon Chaos Mode"></div>
       <div class="level">Ultimate</div>
       <div class="mon">Lucemon Chaos Mode</div>
       <span class="rank"><span class="glyph">&#128081;</span> Pride</span>
@@ -147,7 +158,7 @@
     </a>
 
     <a class="card" id="leviamon" href="https://digimon.fandom.com/wiki/Leviamon" target="_blank" style="--accent:#e5484d">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Leviamon_b.jpg" alt="Leviamon"></div>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/leviamon.jpg" alt="Leviamon"></div>
       <div class="level">Mega</div>
       <div class="mon">Leviamon</div>
       <span class="rank"><span class="glyph">&#128081;</span> Envy</span>
@@ -156,7 +167,7 @@
     </a>
 
     <a class="card" id="daemon" href="https://digimon.fandom.com/wiki/Daemon" target="_blank" style="--accent:#e5484d">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Daemon_b.jpg" alt="Daemon"></div>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/demon.jpg" alt="Daemon"></div>
       <div class="level">Mega</div>
       <div class="mon">Daemon</div>
       <span class="rank"><span class="glyph">&#128081;</span> Wrath</span>
@@ -164,17 +175,20 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" id="belphemon-rage-mode" href="https://digimon.fandom.com/wiki/Belphemon_Rage_Mode" target="_blank" style="--accent:#e5484d">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Belphemon_Rage_Mode_b.jpg" alt="Belphemon Rage Mode"></div>
-      <div class="level">Mega</div>
-      <div class="mon">Belphemon Rage Mode</div>
-      <span class="rank"><span class="glyph">&#128081;</span> Sloth</span>
-      <div class="role">Wakes from its slumber once every thousand years as an avatar of rage.</div>
-      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
-    </a>
+    <div class="card-cell">
+      <a class="card" id="belphemon-rage-mode" href="https://digimon.fandom.com/wiki/Belphemon_Rage_Mode" target="_blank" style="--accent:#e5484d">
+        <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/belphemonragemode.jpg" alt="Belphemon Rage Mode"></div>
+        <div class="level">Mega</div>
+        <div class="mon">Belphemon Rage Mode</div>
+        <span class="rank"><span class="glyph">&#128081;</span> Sloth</span>
+        <div class="role">Wakes from its slumber once every thousand years as an avatar of rage.</div>
+        <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+      </a>
+      <a class="moe badge-link" href="mark-of-evil.html#belphemon-rage-mode" title="Mark of Evil roster">Mark of Evil</a>
+    </div>
 
     <a class="card" id="barbamon" href="https://digimon.fandom.com/wiki/Barbamon" target="_blank" style="--accent:#e5484d">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Barbamon_b.jpg" alt="Barbamon"></div>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/barbamon.jpg" alt="Barbamon"></div>
       <div class="level">Mega</div>
       <div class="mon">Barbamon</div>
       <span class="rank"><span class="glyph">&#128081;</span> Greed</span>
@@ -183,7 +197,7 @@
     </a>
 
     <a class="card" id="beelzemon" href="https://digimon.fandom.com/wiki/Beelzemon" target="_blank" style="--accent:#e5484d">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Beelzemon_b.jpg" alt="Beelzemon"></div>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/beelzebumon.jpg" alt="Beelzemon"></div>
       <div class="level">Mega</div>
       <div class="mon">Beelzemon</div>
       <span class="rank"><span class="glyph">&#128081;</span> Gluttony</span>
@@ -191,29 +205,41 @@
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
-    <a class="card" id="lilithmon" href="https://digimon.fandom.com/wiki/Lilithmon" target="_blank" style="--accent:#e5484d">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Lilithmon_b.jpg" alt="Lilithmon"></div>
-      <div class="level">Mega</div>
-      <div class="mon">Lilithmon</div>
-      <span class="rank"><span class="glyph">&#128081;</span> Lust</span>
-      <div class="role">The Goddess of Darkness; thought to have once been an Ophanimon.</div>
-      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
-    </a>
+    <div class="card-cell">
+      <a class="card" id="lilithmon" href="https://digimon.fandom.com/wiki/Lilithmon" target="_blank" style="--accent:#e5484d">
+        <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/lilithmon.jpg" alt="Lilithmon"></div>
+        <div class="level">Mega</div>
+        <div class="mon">Lilithmon</div>
+        <span class="rank"><span class="glyph">&#128081;</span> Lust</span>
+        <div class="role">The Goddess of Darkness; thought to have once been an Ophanimon.</div>
+        <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+      </a>
+      <a class="moe badge-link" href="mark-of-evil.html#lilithmon" title="Mark of Evil roster">Mark of Evil</a>
+    </div>
 
   </div>
 
   <section class="tier">
-    <h2>Culmination</h2>
-    <p>the embodiment of all seven sins</p>
+    <h2>Embodiment of the Seven Sins</h2>
+    <p>related to the Seven, not an eighth member</p>
   </section>
   <div class="grid">
 
     <a class="card" id="ogudomon" href="https://digimon.fandom.com/wiki/Ogudomon" target="_blank" style="--accent:#f0b429">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Ogudomon_b.jpg" alt="Ogudomon"></div>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/ogudomon.jpg" alt="Ogudomon"></div>
       <div class="level">Mega</div>
       <div class="mon">Ogudomon</div>
       <span class="rank"><span class="glyph">&#128081;</span> Sum of Sins</span>
       <div class="role">A strange incarnation containing all the sins of the Digital World, and the power to atone for them.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" id="ogudomon-x" href="https://digimon.fandom.com/wiki/Ogudomon_X" target="_blank" style="--accent:#f0b429">
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/ogudomon_x.jpg" alt="Ogudomon X"></div>
+      <div class="level">Mega / X</div>
+      <div class="mon">Ogudomon X</div>
+      <span class="rank"><span class="glyph">&#128081;</span> Sum of Sins</span>
+      <div class="role">The X Antibody amplifies the Seven's evil and destructive urges; its mere presence can break the world.</div>
       <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
     </a>
 
@@ -253,6 +279,14 @@
         <div class="lore-card-title">Nobility of the Dark Area</div>
         <div class="lore-card-text">Today the seven are the chief nobility of the Dark Area, residing in the den of demons at its heart, and each member holds the right to command legions of the Nightmare Soldiers.</div>
       </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Stronghold in Cocytus</div>
+        <div class="lore-card-text">Digimon Profile #035 and the official Digimon Chronicle X story place the Seven's stronghold in <a href="../cosmology/dark-areas.html#cocytus">Cocytus</a>, the single lowest layer shared by the Dark Areas of every Digital World. GranDracmon and Gulfmon live there too, but neither belongs to the Seven.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Ogudomon X <span class="lore-tag tag-continuity">Continuity-Specific</span></div>
+        <div class="lore-card-text">In Digimon Chronicle X, the defeated Seven are dragged to Cocytus and absorbed by seven copies of Diablomon X, which fuse into Ogudomon X: Lucemon X's plan to destroy the whole Digital World. Once Jesmon GX cuts it down, the Seven return to Cocytus.</div>
+      </div>
     </div>
   </section>
 
@@ -262,7 +296,7 @@
     <a class="support-btn sponsors" href="https://github.com/sponsors/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9829;</span><span class="support-text">GitHub Sponsors</span><span class="support-url">github.com/sponsors/drigos</span></a>
   </div>
 
-  <p class="foot">Images and names link to DigimonWiki/Fandom (CC BY-SA unless noted otherwise). Lucemon Chaos Mode and Lucemon Shadowlord Mode are DigimonWiki's names for Lucemon: Falldown Mode and Lucemon: Satan Mode; Chaos Mode is the only non-Mega member.</p>
+  <p class="foot">Names link to DigimonWiki/Fandom (CC BY-SA unless noted otherwise); artwork &copy; Bandai, shown from the official Digimon Reference Book. Lucemon Chaos Mode is the English name of the Japanese Lucemon: Falldown Mode, and Lucemon Shadowlord Mode is DigimonWiki's name for Lucemon: Satan Mode; Chaos Mode is the only non-Mega member.</p>
 
 </div>
 </body>

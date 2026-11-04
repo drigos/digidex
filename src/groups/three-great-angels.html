@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Three Great Angels: group roster</title>
+<link rel="stylesheet" href="../digivolution.css" />
+<style>
+  /* group-roster layout (self-contained; reuses the shared tokens from digivolution.css) */
+  .wrap { padding: 40px 22px 56px; max-width: 1280px; margin: 0 auto; overflow: visible; }
+
+  .hero { text-align: center; margin: 18px auto 10px; max-width: 860px; }
+  .hero .kicker {
+    display: inline-block; margin-bottom: 14px; padding: 6px 16px; border-radius: 999px;
+    font-size: 12.5px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;
+    color: #cfe6ff; background: rgba(88,166,255,.14); border: 1px solid rgba(88,166,255,.34);
+  }
+  .hero h1 {
+    font-size: 54px; line-height: 1.03; letter-spacing: -1.5px; margin: 0 0 14px;
+    background: linear-gradient(180deg, #ffffff, #a9c7ee);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero p { color: var(--muted); font-size: 17px; line-height: 1.5; margin: 0; }
+
+  /* power-tier section headings */
+  .tier { margin: 40px 0 18px; }
+  .tier h2 { margin: 0; font-size: 28px; letter-spacing: -.5px; }
+  .tier p { margin: 5px 0 0; color: var(--muted); font-size: 13.5px; font-weight: 700; }
+
+  .grid {
+    display: grid; gap: 22px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (max-width: 1100px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 820px)  { .grid { grid-template-columns: repeat(2, 1fr); } .hero h1 { font-size: 40px; } }
+  @media (max-width: 520px)  { .grid { grid-template-columns: 1fr; } }
+
+  .card {
+    position: relative; display: flex; flex-direction: column; overflow: hidden;
+    padding: 20px 18px 18px; border-radius: 22px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: linear-gradient(180deg, rgba(16,43,76,.96), rgba(7,19,36,.98));
+    box-shadow: 0 16px 40px rgba(0,0,0,.36);
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  /* accent glow strip at the top, tinted by the celestial gold (--accent) */
+  .card::before {
+    content: ""; position: absolute; inset: 0 0 auto 0; height: 4px;
+    background: var(--accent); box-shadow: 0 0 18px var(--accent);
+  }
+  .card::after {
+    content: ""; position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
+    width: 200px; height: 200px; border-radius: 50%;
+    background: radial-gradient(circle, var(--accent), transparent 65%);
+    opacity: .16; pointer-events: none; transition: opacity .18s ease;
+  }
+  a.card:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--accent) 60%, rgba(255,255,255,.2));
+    box-shadow: 0 26px 60px rgba(0,0,0,.5), 0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent);
+  }
+  a.card:hover::after { opacity: .32; }
+
+  /* card addressed by the URL fragment (e.g. a chip on the Kernel page): the browser
+     scrolls to it and :target keeps it highlighted in its own accent color */
+  .card { scroll-margin: 110px; }
+  a.card:target {
+    border-color: color-mix(in srgb, var(--accent) 80%, rgba(255,255,255,.2));
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 65%, transparent), 0 26px 60px rgba(0,0,0,.5);
+    animation: target-pulse 1.1s ease-out 2;
+  }
+  a.card:target::after { opacity: .45; }
+  @keyframes target-pulse { 50% { transform: translateY(-6px); } }
+
+  .thumb {
+    position: relative; z-index: 1; height: 150px; border-radius: 16px; background: #fff;
+    padding: 12px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center;
+  }
+  .thumb img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+  .level { position: relative; z-index: 1; font-size: 11.5px; font-weight: 900; letter-spacing: 1.2px;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+  .mon { position: relative; z-index: 1; font-size: 22px; font-weight: 950; letter-spacing: -.5px; margin-bottom: 12px; }
+
+  /* responsibility pill, tinted by the accent */
+  .rank {
+    position: relative; z-index: 1; align-self: flex-start; display: inline-flex; align-items: center; gap: 7px;
+    padding: 5px 11px 5px 9px; border-radius: 999px; font-size: 11.5px; font-weight: 900;
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 16%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 42%, transparent);
+  }
+  .rank .glyph { font-size: 14px; line-height: 1; }
+
+  .role { position: relative; z-index: 1; margin: 10px 0 14px; color: var(--muted);
+    font-size: 12px; line-height: 1.4; font-weight: 700; }
+
+  .cta {
+    /* pinned to the card bottom so the row of CTAs stays aligned when roles wrap */
+    position: relative; z-index: 1; margin-top: auto; padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.09);
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 13px; font-weight: 900; color: #dce9fb;
+  }
+  .cta .arrow { transition: transform .18s ease; color: var(--accent); }
+  a.card:hover .cta .arrow { transform: translateX(5px); }
+
+  .foot { text-align: center; color: rgba(225,238,255,.6); font-size: 12.5px; line-height: 1.5; margin-top: 40px; }
+
+  /* Lore notes: static, responsive variant of the shared .lore-panel (which is
+     absolute-positioned for the tree canvas); the cards reuse .lore-card styles
+     and .lore-panel-title from digivolution.css */
+  .lore-section {
+    margin-top: 34px; padding: 20px 22px 22px; border-radius: 24px;
+    border: 1px solid rgba(148,163,184,.42);
+    background: linear-gradient(180deg, rgba(44,52,64,.68), rgba(16,24,36,.94));
+    box-shadow: 0 20px 56px rgba(0,0,0,.36), inset 0 0 0 1px rgba(255,255,255,.05);
+  }
+  @media (max-width: 1100px) { .lore-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px)  { .lore-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body class="world-kernel">
+<div class="wrap">
+
+  <nav class="crumbs" aria-label="Breadcrumb"><ol>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../cosmology/index.html">Cosmology</a></li>
+    <li><a href="../cosmology/kernel.html">Kernel</a></li>
+    <li aria-current="page">Three Great Angels</li>
+  </ol></nav>
+
+  <header class="hero">
+    <span class="kicker">Kernel</span>
+    <h1>Three Great Angels</h1>
+    <p>The three Celestial Digimon that guard the Kernel, the place rumored to compute all the data of the Digital World. Seraphimon carries God's law, Ophanimon God's love and mercy, and Cherubimon guards God and wisdom; together they stand over every other Angel Digimon.</p>
+  </header>
+
+  <section class="tier">
+    <h2>The Three</h2>
+    <p>exactly three seats; a fallen angel's seat is said to be refilled</p>
+  </section>
+  <div class="grid">
+
+    <a class="card" id="seraphimon" href="https://digimon.fandom.com/wiki/Seraphimon" target="_blank" style="--accent:#f0b429">
+      <div class="thumb"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/seraphimon.jpg" alt="Seraphimon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">Seraphimon</div>
+      <span class="rank"><span class="glyph">&#10022;</span> Divine law</span>
+      <div class="role">Governs all angel Digimon as the thorough executor of God's law; the highest of the angels.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" id="ophanimon" href="https://digimon.fandom.com/wiki/Ophanimon" target="_blank" style="--accent:#f0b429">
+      <div class="thumb"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/ofanimon.jpg" alt="Ophanimon"></div>
+      <div class="level">Mega</div>
+      <div class="mon">Ophanimon</div>
+      <span class="rank"><span class="glyph">&#10022;</span> Love and mercy</span>
+      <div class="role">The holy mother of the Digital World, conveying the love and mercy that are aspects of God.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+    <a class="card" id="cherubimon-good" href="https://digimon.fandom.com/wiki/Cherubimon_(Good)" target="_blank" style="--accent:#f0b429">
+      <div class="thumb"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/cherubimon.jpg" alt="Cherubimon (Good)"></div>
+      <div class="level">Mega</div>
+      <div class="mon">Cherubimon (Good)</div>
+      <span class="rank"><span class="glyph">&#10022;</span> Wisdom</span>
+      <div class="role">Guardian of God and of wisdom in the Digital World, striking with divine lightning.</div>
+      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+    </a>
+
+  </div>
+
+  <section class="tier">
+    <h2>Related, not counted among the three</h2>
+    <p>fallen forms and a former peer; their full cards are on the Angelic Digimon roster</p>
+  </section>
+  <div class="chips">
+    <a class="chip" href="angelic.html#shadowseraphimon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/blackseraphimon.jpg" alt="ShadowSeraphimon"><span class="chip-text"><span class="chip-name">ShadowSeraphimon</span><span class="chip-tag">Seraphimon swallowed by darkness</span></span></a>
+    <a class="chip" href="angelic.html#ophanimon-falldown-mode"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/ofanimonfalldownmode.jpg" alt="Ophanimon Falldown Mode"><span class="chip-text"><span class="chip-name">Ophanimon Falldown Mode</span><span class="chip-tag">Ophanimon maddened by rage</span></span></a>
+    <a class="chip" href="angelic.html#cherubimon-evil"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/cherubimon-vice.jpg" alt="Cherubimon (Evil)"><span class="chip-text"><span class="chip-name">Cherubimon (Evil)</span><span class="chip-tag">Cherubimon fallen to darkness</span></span></a>
+    <a class="chip lead" href="angelic.html#rasielmon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/rasielmon.jpg" alt="Rasielmon"><span class="chip-text"><span class="chip-name">Rasielmon</span><span class="chip-tag">Sees the whole world through the Kernel</span></span></a>
+  </div>
+
+  <section class="lore-section">
+    <div class="lore-panel-title">
+      <h2>Lore notes</h2>
+      <span>the stories behind the three seats</span>
+    </div>
+    <div class="lore-grid">
+      <div class="lore-card">
+        <div class="lore-card-title">Guardians of the Kernel</div>
+        <div class="lore-card-text">Ophanimon's profile places the trio at the heart of the Digital World, the <a href="../cosmology/kernel.html">Kernel</a> (God's Domain). Digimon Profile #015 adds that the Kernel is rumored to compute all the data of the Digital World, and that the world would collapse if it malfunctioned.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Law, Love and Wisdom</div>
+        <div class="lore-card-text">Ophanimon's official profile defines the division: Seraphimon is the thorough executor of God's law, Ophanimon the holy mother who conveys love and mercy, and Cherubimon the guardian of God and wisdom.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Lucemon's Divided Power <span class="lore-tag tag-legendary">Legendary</span></div>
+        <div class="lore-card-text">Profile #015 and Lucemon's own profile both say, with a hedge, that the power Lucemon once held was split in three and inherited by the Three Great Angels.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Over Every Angel</div>
+        <div class="lore-card-text">Seraphimon governs all angel Digimon. An official digimon.net poll describes the <a href="angelic.html">Angelic Army</a> as the Digimon who keep order in the Digital World under the Three Great Angels, led into battle by SlashAngemon.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">When an Angel Falls</div>
+        <div class="lore-card-text">Negative emotions that swell day by day can drag a Great Angel into a fallen form, and falling further is said to make it an Evil King. If one of the three falls, a new Digimon is apparently chosen, evolves and fills the empty seat.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Rasielmon, the Former Peer</div>
+        <div class="lore-card-text">Rasielmon once held the same rank as Ophanimon and is said to see all of the Digital World through the Kernel. It is related to the trio's domain but holds none of the three seats.</div>
+      </div>
+      <div class="lore-card">
+        <div class="lore-card-title">Frontier's Celestials <span class="lore-tag tag-continuity">Continuity-Specific</span></div>
+        <div class="lore-card-text">In Frontier the three are called the Celestial Digimon. The <a href="ten-legendary-warriors.html">Ten Legendary Warriors</a> left their Spirits in their care, and Cherubimon's fall into darkness sets the series in motion.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="support">
+    <span class="support-label">Support this project</span>
+    <a class="support-btn kofi" href="https://ko-fi.com/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9749;</span><span class="support-text">Ko-fi</span><span class="support-url">ko-fi.com/drigos</span></a>
+    <a class="support-btn sponsors" href="https://github.com/sponsors/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9829;</span><span class="support-text">GitHub Sponsors</span><span class="support-url">github.com/sponsors/drigos</span></a>
+  </div>
+
+  <p class="foot">Names link to DigimonWiki/Fandom (CC BY-SA unless noted otherwise); artwork &copy; Bandai, shown from the official Digimon Reference Book. Roles follow Digimon Profile #015 and the Reference Book profiles at digimon.net. Cherubimon (Good) and Cherubimon (Evil) are also known as Cherubimon (Virtue) and Cherubimon (Vice). ShadowSeraphimon is DigimonWiki's name for the official BlackSeraphimon; DigimonWiki's own BlackSeraphimon page is a different, Digimon World 3 recolor.</p>
+
+</div>
+</body>
+</html>

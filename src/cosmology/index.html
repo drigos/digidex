@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Digital World Cosmology: atlas</title>
+<link rel="stylesheet" href="../digivolution.css" />
+<style>
+  /* atlas overview layout (self-contained like the rosters; atlas components come from digivolution.css) */
+  .wrap { padding: 40px 22px 56px; max-width: 1280px; margin: 0 auto; overflow: visible; }
+
+  .hero { text-align: center; margin: 18px auto 10px; max-width: 900px; }
+  .hero .kicker {
+    display: inline-block; margin-bottom: 14px; padding: 6px 16px; border-radius: 999px;
+    font-size: 12.5px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--world); background: color-mix(in srgb, var(--world) 14%, transparent);
+    border: 1px solid color-mix(in srgb, var(--world) 40%, transparent);
+  }
+  .hero h1 {
+    font-size: 58px; line-height: 1.03; letter-spacing: -1.6px; margin: 0 0 14px;
+    background: linear-gradient(180deg, #ffffff, #a9c7ee);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero p { color: var(--muted); font-size: 17px; line-height: 1.5; margin: 0; }
+  @media (max-width: 820px) { .hero h1 { font-size: 40px; } }
+
+  .tier { margin: 44px 0 16px; }
+  .tier h2 { margin: 0; font-size: 28px; letter-spacing: -.5px; }
+  .tier p { margin: 5px 0 0; color: var(--muted); font-size: 13.5px; font-weight: 700; }
+
+  /* ---------- the atlas diagram: strata from the overseers down to Cocytus ---------- */
+  .stratum-kind { display: block; font-size: 11px; font-weight: 900; letter-spacing: 1.2px; text-transform: uppercase; color: var(--s); }
+  .stratum { --s: #9fd3ff; position: relative; padding: 18px 20px 20px; border-radius: 22px; scroll-margin: 24px;
+    border: 1px dashed color-mix(in srgb, var(--s) 55%, transparent);
+    background: radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--s) 14%, transparent), transparent 70%), rgba(3,14,27,.62); }
+  .stratum h3 { margin: 2px 0 6px; font-size: 22px; letter-spacing: -.4px; }
+  .stratum p { margin: 0 0 10px; color: var(--muted); font-size: 13px; line-height: 1.55; font-weight: 600; }
+  .stratum .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+  .stratum.homeostasis { --s: #e6edf7; }
+  .stratum.kernel { --s: #fff1b8; }
+  .stratum.solid { border-style: solid; }
+
+  .top-row { display: grid; grid-template-columns: 3fr 2fr; gap: 16px; }
+
+  /* vertical connector with a label; dashed when the link is not established */
+  .link-v { position: relative; display: flex; justify-content: center; align-items: center; min-height: 48px; }
+  .link-v::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; border-left: 2px solid rgba(159,211,255,.45); }
+  .link-v span { position: relative; padding: 3px 10px; border-radius: 999px; background: #0a1a2e;
+    border: 1px solid rgba(255,255,255,.16); font-size: 11px; font-weight: 900; color: var(--muted); text-align: center; }
+  .link-v.dashed::before { border-left-style: dashed; border-left-color: rgba(255,92,114,.6); }
+
+  /* Net Ocean: the container holding the three world columns */
+  .ocean { --s: #58a6ff; padding: 18px 18px 20px; border-radius: 28px; scroll-margin: 24px;
+    border: 1px solid rgba(88,166,255,.38);
+    background:
+      repeating-linear-gradient(170deg, rgba(88,166,255,.05) 0 2px, transparent 2px 22px),
+      linear-gradient(180deg, rgba(14,52,96,.55), rgba(6,20,40,.88)); }
+  .ocean-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; }
+  .ocean-head h3 { margin: 0; font-size: 22px; }
+  .ocean > p { margin: 6px 0 0; max-width: 980px; color: var(--muted); font-size: 13px; line-height: 1.55; font-weight: 600; }
+  .worlds { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+  .wcol { display: flex; flex-direction: column; }
+
+  .wcard { flex: 1 1 auto; display: flex; flex-direction: column; padding: 16px 16px 18px; border-radius: 20px; scroll-margin: 24px;
+    border: 1px solid color-mix(in srgb, var(--world) 40%, rgba(255,255,255,.08)); border-top: 4px solid var(--world);
+    background: linear-gradient(180deg, color-mix(in srgb, var(--world) 10%, rgba(16,43,76,.9)), rgba(7,19,36,.96)); }
+  .wcard h3 { margin: 2px 0 8px; font-size: 21px; letter-spacing: -.3px; }
+  .wcard .stratum-kind { color: var(--world); }
+  .wfacts { margin: 0 0 10px; display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; font-size: 12.5px; }
+  .wfacts dt { color: var(--muted); font-weight: 900; }
+  .wfacts dd { margin: 0; font-weight: 800; }
+  .orgs { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 800; }
+  .orgs li { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+  .orgs a { text-decoration: underline; text-decoration-color: rgba(255,255,255,.35); text-underline-offset: 3px; }
+  .orgs .n { padding: 1px 8px; border-radius: 999px; font-size: 10.5px; font-weight: 900; color: var(--world);
+    background: color-mix(in srgb, var(--world) 14%, transparent); border: 1px solid color-mix(in srgb, var(--world) 38%, transparent); }
+  .wcard .panel-link { align-self: flex-start; margin-top: auto; }
+  .wcard .orgs { margin-bottom: 14px; }
+
+  .ucard { padding: 14px 14px 16px; border-radius: 18px;
+    border: 1px solid rgba(196,161,255,.32);
+    background: linear-gradient(180deg, rgba(30,16,48,.9), rgba(6,6,16,.96)); }
+  .ucard h4 { margin: 2px 0 8px; font-size: 17px; }
+  .ucard .stratum-kind { color: #c4a1ff; }
+  .ucard p { margin: 10px 0 0; color: var(--muted); font-size: 12px; font-weight: 700; line-height: 1.45; }
+
+  /* drops from each underworld to Cocytus (desktop); one combined drop on narrow screens */
+  .drops { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 0 18px; }
+  .drop-single { display: none; }
+
+  .cocytus { --s: #7dd3fc; scroll-margin: 24px; padding: 20px 22px 22px; border-radius: 26px;
+    border: 1px solid rgba(125,211,252,.35);
+    background: radial-gradient(circle at 50% 0%, rgba(125,211,252,.12), transparent 60%), linear-gradient(180deg, rgba(8,20,36,.95), rgba(2,6,14,.98));
+    box-shadow: inset 0 0 60px rgba(0,0,0,.45); }
+  .cocytus h3 { margin: 2px 0 6px; font-size: 22px; }
+  .cocytus p { margin: 0 0 12px; max-width: 980px; color: var(--muted); font-size: 13px; line-height: 1.55; font-weight: 600; }
+
+  @media (max-width: 900px) {
+    .top-row, .worlds { grid-template-columns: 1fr; }
+    .drops { display: none; }
+    .drop-single { display: flex; }
+  }
+
+  .foot { text-align: center; color: rgba(225,238,255,.6); font-size: 12.5px; line-height: 1.5; margin-top: 40px; }
+
+  /* Lore notes: static, responsive variant of the shared .lore-panel */
+  .lore-section {
+    margin-top: 22px; padding: 20px 22px 22px; border-radius: 24px;
+    border: 1px solid rgba(148,163,184,.42);
+    background: linear-gradient(180deg, rgba(44,52,64,.68), rgba(16,24,36,.94));
+    box-shadow: 0 20px 56px rgba(0,0,0,.36), inset 0 0 0 1px rgba(255,255,255,.05);
+  }
+  @media (max-width: 1100px) { .lore-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px)  { .lore-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body class="world-cosmos">
+<div class="wrap">
+
+  <nav class="crumbs" aria-label="Breadcrumb"><ol>
+    <li><a href="../index.html">Home</a></li>
+    <li aria-current="page">Cosmology</li>
+  </ol></nav>
+
+  <header class="hero">
+    <span class="kicker">Digital World Cosmology</span>
+    <h1>Cosmology atlas</h1>
+    <p>How the Digital Worlds fit together: three worlds with their own host computers and guardians, the Kernel watched by angels, and the underworlds that sink toward one shared abyss. This atlas is an editorial model built from official Bandai material, not a universal chain of command; the labels below mark how firmly each link is established.</p>
+    <div class="motif" aria-hidden="true"></div>
+  </header>
+
+  <div class="tag-key" aria-label="Interpretation labels">
+    <div><span class="lore-tag tag-established">Established Lore</span> stated in official material</div>
+    <div><span class="lore-tag tag-continuity">Continuity-Specific</span> true in one anime, manga or game</div>
+    <div><span class="lore-tag tag-legendary">Legendary</span> told as ancient history or legend</div>
+    <div><span class="lore-tag tag-parallel">Thematic Parallel</span> shared inspiration, no stated tie</div>
+    <div><span class="lore-tag tag-unconfirmed">Unconfirmed</span> plausible, not stated</div>
+  </div>
+
+  <ul class="jump" aria-label="On this page">
+    <li><a href="#atlas">Atlas</a></li>
+    <li><a href="#glance">At a glance</a></li>
+    <li><a href="#reading">Reading the atlas</a></li>
+  </ul>
+
+  <section class="block" id="atlas" aria-labelledby="atlas-title">
+    <header class="tier">
+      <h2 id="atlas-title">The atlas</h2>
+      <p>from the overseers at the top to the shared abyss at the bottom; each box opens its own page</p>
+    </header>
+
+    <div class="top-row">
+      <article class="stratum homeostasis" id="homeostasis">
+        <span class="stratum-kind">Overseer, in some continuities</span>
+        <h3>Homeostasis</h3>
+        <div class="tags"><span class="lore-tag tag-continuity">Continuity-Specific</span><span class="lore-tag tag-unconfirmed">Unconfirmed</span></div>
+        <p>A formless entity tied to the balance of the Digital World. In Adventure it chose the DigiDestined; according to the wikis, Digimon Story: Time Stranger makes it the being above all three host computers. No official profile describes it, and no anime series places it over Iliad or Shambala, so the atlas does not draw it as the ruler of every world.</p>
+      </article>
+      <article class="stratum kernel solid" id="kernel">
+        <span class="stratum-kind">Special structure</span>
+        <h3>Kernel</h3>
+        <div class="tags"><span class="lore-tag tag-established">Established Lore</span><span class="lore-tag tag-unconfirmed">Scope unconfirmed</span></div>
+        <p>God's Domain, rumored to compute all the data of the Digital World and guarded by the Three Great Angels, with the Angelic Army beneath them. Its reach beyond the Classic world is not established.</p>
+        <div class="chips">
+          <a class="chip" href="../groups/three-great-angels.html"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/seraphimon.jpg" alt="Seraphimon"><span class="chip-text"><span class="chip-name">Three Great Angels</span><span class="chip-tag">3 guardians</span></span></a>
+        </div>
+        <a class="panel-link" href="kernel.html" style="--world:#fff1b8">Explore the Kernel <span class="arrow">&#8594;</span></a>
+      </article>
+    </div>
+
+    <div class="link-v"><span>host computers above the worlds: Time Stranger only</span></div>
+
+    <section class="ocean" id="net-ocean" aria-labelledby="ocean-title">
+      <div class="ocean-head">
+        <span class="stratum-kind">Shared sea</span>
+        <h3 id="ocean-title">Net Ocean</h3>
+        <span class="lore-tag tag-established">Established Lore</span>
+        <span class="lore-tag tag-unconfirmed">Links every world: unconfirmed</span>
+      </div>
+      <p>The great ocean of the network where Digimon were born. Shambala's continent and islands float on it, and AncientMermaidmon is its guardian goddess. The atlas draws the three worlds inside it; official material never describes it as a conscious or governing system.</p>
+
+      <div class="worlds">
+        <div class="wcol world-classic">
+          <article class="wcard" id="classic">
+            <span class="stratum-kind">Digital World</span>
+            <h3>Classic</h3>
+            <dl class="wfacts"><dt>Host</dt><dd>Yggdrasill</dd><dt>Culture</dt><dd>Norse myth, medieval chivalry</dd></dl>
+            <ul class="orgs">
+              <li><a href="../groups/royal-knights.html">Royal Knights</a> <span class="n">13</span></li>
+              <li><a href="../groups/four-sovereigns.html">Four Sovereigns</a> <span class="n">4 + Center</span></li>
+              <li><a href="../groups/deva.html">Deva</a> <span class="n">12</span></li>
+              <li><a href="../groups/ten-legendary-warriors.html">Ten Legendary Warriors</a> <span class="n">10, ancient</span></li>
+            </ul>
+            <a class="panel-link" href="classic.html">Explore the Classic world <span class="arrow">&#8594;</span></a>
+          </article>
+          <div class="link-v"><span>underworld</span></div>
+          <article class="ucard">
+            <span class="stratum-kind">Underworld</span>
+            <h4>Dark Area</h4>
+            <div class="chips"><a class="chip" href="classic.html#anubismon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/anubimon.jpg" alt="Anubismon"><span class="chip-text"><span class="chip-name">Anubismon</span><span class="chip-tag">Guardian &amp; judge</span></span></a></div>
+            <p><span class="lore-tag tag-established">Established Lore</span> Leads down to Cocytus.</p>
+          </article>
+        </div>
+
+        <div class="wcol world-iliad">
+          <article class="wcard" id="iliad">
+            <span class="stratum-kind">Digital World</span>
+            <h3>Iliad</h3>
+            <dl class="wfacts"><dt>Host</dt><dd>Homeros</dd><dt>Culture</dt><dd>Greek and Roman myth</dd></dl>
+            <ul class="orgs">
+              <li><a href="../groups/olympos-xii.html">Olympos XII</a> <span class="n">12</span></li>
+              <li><a href="iliad.html#regions">Six guardian regions</a> <span class="n">pairs</span></li>
+              <li><a href="../groups/titans.html">Titans</a> <span class="n">ancient faction</span></li>
+              <li><a href="iliad.html#lineups">Celestial Walker &amp; Astral Sentinel</a></li>
+            </ul>
+            <a class="panel-link" href="iliad.html">Explore Iliad <span class="arrow">&#8594;</span></a>
+          </article>
+          <div class="link-v"><span>underworld</span></div>
+          <article class="ucard">
+            <span class="stratum-kind">Underworld</span>
+            <h4>Dark Area</h4>
+            <div class="chips"><a class="chip" href="iliad.html#plutomon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/plutomon.jpg" alt="Plutomon"><span class="chip-text"><span class="chip-name">Plutomon</span><span class="chip-tag">Ruler</span></span></a></div>
+            <p><span class="lore-tag tag-established">Established Lore</span> Leads down to Cocytus.</p>
+          </article>
+        </div>
+
+        <div class="wcol world-shambala">
+          <article class="wcard" id="shambala">
+            <span class="stratum-kind">Digital World</span>
+            <h3>Shambala</h3>
+            <dl class="wfacts"><dt>Host</dt><dd>Kunlun</dd><dt>Culture</dt><dd>Chinese and Japanese myth</dd></dl>
+            <ul class="orgs">
+              <li><a href="../groups/tentei-hachibushu.html">Tentei Hachibushu</a> <span class="n">8</span></li>
+              <li><a href="../groups/shikyoju.html">Shikyoju</a> <span class="n">4, sealed</span></li>
+              <li><a href="shambala.html#legend">Susanoomon</a> <span class="n">legendary precursor</span></li>
+              <li><a href="shambala.html#lineups">Saiyu Warriors &amp; Toho Braves</a></li>
+            </ul>
+            <a class="panel-link" href="shambala.html">Explore Shambala <span class="arrow">&#8594;</span></a>
+          </article>
+          <div class="link-v"><span>underworld</span></div>
+          <article class="ucard">
+            <span class="stratum-kind">Underworld</span>
+            <h4>Yomi</h4>
+            <div class="chips"><a class="chip" href="../groups/tentei-hachibushu.html#enmamon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/enmamon.jpg" alt="Enmamon"><span class="chip-text"><span class="chip-name">Enmamon</span><span class="chip-tag">Ruler</span></span></a></div>
+            <p><span class="lore-tag tag-unconfirmed">Unconfirmed</span> A link to Cocytus is plausible, not stated.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="drops" aria-hidden="true">
+      <div class="link-v"><span>leads down</span></div>
+      <div class="link-v"><span>leads down</span></div>
+      <div class="link-v dashed"><span>unconfirmed</span></div>
+    </div>
+    <div class="link-v drop-single"><span>the Dark Areas lead down; Yomi's link is unconfirmed</span></div>
+
+    <section class="cocytus" id="cocytus" aria-labelledby="cocytus-title">
+      <span class="stratum-kind">Shared deepest layer</span>
+      <h3 id="cocytus-title">Cocytus</h3>
+      <div class="tags" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px"><span class="lore-tag tag-established">Established Lore</span><span class="lore-tag tag-unconfirmed">No ruler named</span></div>
+      <p>A single lowest layer connected from each Dark Area and common to every Digital World. The Seven Great Demon Lords, GranDracmon and Gulfmon make it their stronghold as separate powers; no source names anyone its ruler.</p>
+      <div class="chips">
+        <a class="chip" href="../groups/demon-lords.html"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/rucemonfalldownmode.jpg" alt="Lucemon Chaos Mode"><span class="chip-text"><span class="chip-name">Seven Great Demon Lords</span><span class="chip-tag">7 members</span></span></a>
+        <a class="chip" href="../groups/demon-lords.html#ogudomon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/ogudomon.jpg" alt="Ogudomon"><span class="chip-text"><span class="chip-name">Ogudomon</span><span class="chip-tag">Embodiment of the sins</span></span></a>
+        <a class="chip" href="dark-areas.html#grandracmon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/granddracumon.jpg" alt="GranDracmon"><span class="chip-text"><span class="chip-name">GranDracmon</span><span class="chip-tag">King of vampires</span></span></a>
+        <a class="chip" href="dark-areas.html#gulfmon"><img referrerpolicy="no-referrer" loading="lazy" src="https://digimon.net/cimages/digimon/gulfmon.jpg" alt="Gulfmon"><span class="chip-text"><span class="chip-name">Gulfmon</span><span class="chip-tag">Dark Beast of the abyss</span></span></a>
+      </div>
+      <a class="panel-link" href="dark-areas.html" style="--world:#7dd3fc">Explore the Dark Areas &amp; Cocytus <span class="arrow">&#8594;</span></a>
+    </section>
+  </section>
+
+  <section class="block" id="glance">
+    <header class="tier">
+      <h2>At a glance</h2>
+      <p>the three worlds side by side</p>
+    </header>
+    <table class="data-table">
+      <thead><tr><th scope="col">World</th><th scope="col">Host computer</th><th scope="col">Cultural theme</th><th scope="col">Main guardians</th><th scope="col">Other groups</th><th scope="col">Underworld</th></tr></thead>
+      <tbody>
+        <tr><th scope="row"><a href="classic.html">Digital World (Classic)</a></th><td data-label="Host computer">Yggdrasill</td><td data-label="Cultural theme">Norse myth, medieval chivalry</td><td data-label="Main guardians"><a href="../groups/royal-knights.html">Royal Knights</a> (13)</td><td data-label="Other groups"><a href="../groups/four-sovereigns.html">Four Sovereigns</a>, <a href="../groups/deva.html">Deva</a>, <a href="../groups/ten-legendary-warriors.html">Ten Legendary Warriors</a> (ancient)</td><td data-label="Underworld">Dark Area: Anubismon, guardian and judge</td></tr>
+        <tr><th scope="row"><a href="iliad.html">Digital World: Iliad</a></th><td data-label="Host computer">Homeros</td><td data-label="Cultural theme">Greek and Roman myth</td><td data-label="Main guardians"><a href="../groups/olympos-xii.html">Olympos XII</a> (12)</td><td data-label="Other groups"><a href="../groups/titans.html">Titans</a> (ancient faction)</td><td data-label="Underworld">Dark Area: Plutomon, ruler</td></tr>
+        <tr><th scope="row"><a href="shambala.html">Digital World: Shambala</a></th><td data-label="Host computer">Kunlun</td><td data-label="Cultural theme">Chinese and Japanese myth, Buddhist lore</td><td data-label="Main guardians"><a href="../groups/tentei-hachibushu.html">Tentei Hachibushu</a> (8)</td><td data-label="Other groups"><a href="../groups/shikyoju.html">Shikyoju</a> (sealed), Susanoomon (legendary)</td><td data-label="Underworld">Yomi: Enmamon, ruler</td></tr>
+      </tbody>
+    </table>
+    <div class="callout">Kunlun is officially said to rank alongside Yggdrasill and Homeros as the administrators of their worlds. That is a statement of equivalent function, not a ranking: no source places one host computer above another.</div>
+  </section>
+
+  <section class="block" id="reading">
+    <header class="tier">
+      <h2>Reading the atlas</h2>
+      <p>the rules this model follows</p>
+    </header>
+    <div class="lore-section">
+      <div class="lore-grid">
+        <div class="lore-card">
+          <div class="lore-card-title">Many Memberships</div>
+          <div class="lore-card-text">A Digimon can belong to several groups at once: Azulongmon is both a <a href="../groups/four-sovereigns.html#azulongmon">Sovereign</a> and a <a href="../groups/four-great-dragons.html#azulongmon">Great Dragon</a>, and Enmamon is one of the Tentei Hachibushu as well as the ruler of Yomi.</div>
+        </div>
+        <div class="lore-card">
+          <div class="lore-card-title">History Is Not Membership</div>
+          <div class="lore-card-text">A tie to the past is not a place in the present: the Ten Legendary Warriors and the Titans belong to ancient history, not to today's governments.</div>
+        </div>
+        <div class="lore-card">
+          <div class="lore-card-title">Shared Myths, Not Rivalries</div>
+          <div class="lore-card-text">Similar inspiration does not make enemies: the Four Sovereigns and the Shikyoju mirror each other in theme only.</div>
+        </div>
+        <div class="lore-card">
+          <div class="lore-card-title">Not Every Group Reports Up</div>
+          <div class="lore-card-text">An organization does not necessarily answer to its world's host computer: no source places the Kernel's angels or the Four Sovereigns under Yggdrasill.</div>
+        </div>
+        <div class="lore-card">
+          <div class="lore-card-title">Living There Is Not Ruling</div>
+          <div class="lore-card-text">GranDracmon and Gulfmon make Cocytus their stronghold without governing it, and the Seven Great Demon Lords never act as one government.</div>
+        </div>
+        <div class="lore-card">
+          <div class="lore-card-title">Absence Is Not Proof</div>
+          <div class="lore-card-text">No Kernel has been described for Iliad or Shambala, and no Deva for Iliad. A structure missing from one world's sources may still exist there.</div>
+        </div>
+        <div class="lore-card">
+          <div class="lore-card-title">Continuities Stay Separate</div>
+          <div class="lore-card-text">Each anime, manga and game keeps its own timeline. When a fact belongs to one of them, it carries the Continuity-Specific label instead of joining one merged history.</div>
+        </div>
+        <div class="lore-card">
+          <div class="lore-card-title">A Model, Not a Chain of Command</div>
+          <div class="lore-card-text">The atlas arranges official material so it can be read in one place. Its layout is editorial; it is not an official hierarchy of the Digital Worlds.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sources">
+    <h2>Sources</h2>
+    <ul>
+      <li>Digital World: Iliad and Digital World: Shambala, official pages: <a href="https://digimon.net/digitalworld-Iliad/" target="_blank" rel="noopener">Iliad</a>, <a href="https://digimon.net/digitalworld-shambala/" target="_blank" rel="noopener">Shambala</a></li>
+      <li>Digimon Profile #015 (Kernel and Three Great Angels), #025 (D-Brigade), #035 (Dark Areas and Cocytus), #036 (Royal Knights): <a href="https://digimon.net/profile/report015/" target="_blank" rel="noopener">#015</a>, <a href="https://digimon.net/profile/report025/" target="_blank" rel="noopener">#025</a>, <a href="https://digimon.net/profile/report035/" target="_blank" rel="noopener">#035</a>, <a href="https://digimon.net/profile/report036/" target="_blank" rel="noopener">#036</a></li>
+      <li>Digimon Reference Book (English): <a href="https://digimon.net/reference_en/" target="_blank" rel="noopener">digimon.net/reference_en</a></li>
+      <li>Secondary, for terminology and continuity details: <a href="https://wikimon.net/" target="_blank" rel="noopener">Wikimon</a> and <a href="https://digimon.fandom.com/" target="_blank" rel="noopener">DigimonWiki</a>; each page lists the sources it relies on</li>
+    </ul>
+  </section>
+
+  <div class="support">
+    <span class="support-label">Support this project</span>
+    <a class="support-btn kofi" href="https://ko-fi.com/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9749;</span><span class="support-text">Ko-fi</span><span class="support-url">ko-fi.com/drigos</span></a>
+    <a class="support-btn sponsors" href="https://github.com/sponsors/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9829;</span><span class="support-text">GitHub Sponsors</span><span class="support-url">github.com/sponsors/drigos</span></a>
+  </div>
+
+  <p class="foot">Names link to DigimonWiki/Fandom (CC BY-SA unless noted otherwise); artwork &copy; Bandai, shown from the official Digimon Reference Book. Yggdrasill keeps its official name here (King Drasil on DigimonWiki); Anubismon is Anubimon in Japanese material, and Susanoomon is DigimonWiki's name for the official Susanomon.</p>
+
+</div>
+</body>
+</html>

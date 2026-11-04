@@ -92,6 +92,12 @@
   }
   .rank .glyph { font-size: 14px; line-height: 1; }
 
+  /* linked group badge over a roster card: the card is itself an <a>, so the badge is an
+     <a> sibling inside a positioned wrapper occupying the card's grid cell */
+  .card-cell { position: relative; display: flex; }
+  .card-cell .card { flex: 1 1 auto; width: 100%; }
+  .card-cell a.badge-link { position: absolute; top: 12px; right: 12px; left: auto; transform: none; }
+
   .role { position: relative; z-index: 1; margin: 10px 0 14px; color: var(--muted);
     font-size: 12px; line-height: 1.4; font-weight: 700; }
 
@@ -123,10 +129,15 @@
 <body>
 <div class="wrap">
 
-  <a class="backnav" href="../index.html"><span class="arrow">&#8592;</span> Home</a>
+  <nav class="crumbs" aria-label="Breadcrumb"><ol>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../cosmology/index.html">Cosmology</a></li>
+    <li><a href="../cosmology/classic.html">Classic</a></li>
+    <li aria-current="page">Four Sovereigns</li>
+  </ol></nav>
 
   <header class="hero">
-    <span class="kicker">Special group</span>
+    <span class="kicker">Digital World (Classic)</span>
     <h1>Four Sovereigns</h1>
     <p>The four Holy Beast Digimon that have protected the Digital World and governed its stability since the age of myth. Each rules a compass point with strength said to rival the gods, each commands three of the twelve Deva, and all of them answer to the golden emperor enshrined in the Center.</p>
   </header>
@@ -138,7 +149,7 @@
   <div class="grid">
 
     <a class="card" id="fanglongmon" href="https://digimon.fandom.com/wiki/Huanglongmon" target="_blank" style="--accent:#f0b429">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Huanglongmon_b.jpg" alt="Huanglongmon"></div>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/huanglongmon.jpg" alt="Huanglongmon"></div>
       <div class="level">Mega</div>
       <div class="mon">Fanglongmon</div>
       <span class="rank"><span class="glyph">&#9775;</span> Center</span>
@@ -154,17 +165,20 @@
   </section>
   <div class="grid">
 
-    <a class="card" id="azulongmon" href="https://digimon.fandom.com/wiki/Azulongmon" target="_blank" style="--accent:#3aa0ff">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Azulongmon_b.jpg" alt="Azulongmon"></div>
-      <div class="level">Mega</div>
-      <div class="mon">Azulongmon</div>
-      <span class="rank"><span class="glyph">&#9775;</span> East</span>
-      <div class="role">Protector of the East and wielder of lightning; also counted among the Four Great Dragons.</div>
-      <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
-    </a>
+    <div class="card-cell">
+      <a class="card" id="azulongmon" href="https://digimon.fandom.com/wiki/Azulongmon" target="_blank" style="--accent:#3aa0ff">
+        <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/qinglongmon.jpg" alt="Azulongmon"></div>
+        <div class="level">Mega</div>
+        <div class="mon">Azulongmon</div>
+        <span class="rank"><span class="glyph">&#9775;</span> East</span>
+        <div class="role">Protector of the East and wielder of lightning; also counted among the Four Great Dragons.</div>
+        <div class="cta"><span>View on DigimonWiki</span><span class="arrow">&#8594;</span></div>
+      </a>
+      <a class="fgd badge-link" href="four-great-dragons.html#azulongmon" title="Four Great Dragons roster">Great Dragon</a>
+    </div>
 
     <a class="card" id="zhuqiaomon" href="https://digimon.fandom.com/wiki/Zhuqiaomon" target="_blank" style="--accent:#e5484d">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Zhuqiaomon_b.jpg" alt="Zhuqiaomon"></div>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/zhuqiaomon.jpg" alt="Zhuqiaomon"></div>
       <div class="level">Mega</div>
       <div class="mon">Zhuqiaomon</div>
       <span class="rank"><span class="glyph">&#9775;</span> South</span>
@@ -173,7 +187,7 @@
     </a>
 
     <a class="card" id="baihumon" href="https://digimon.fandom.com/wiki/Baihumon" target="_blank" style="--accent:#cbd7ea">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Baihumon_b.jpg" alt="Baihumon"></div>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/baihumon.jpg" alt="Baihumon"></div>
       <div class="level">Mega</div>
       <div class="mon">Baihumon</div>
       <span class="rank"><span class="glyph">&#9775;</span> West</span>
@@ -182,7 +196,7 @@
     </a>
 
     <a class="card" id="ebonwumon" href="https://digimon.fandom.com/wiki/Ebonwumon" target="_blank" style="--accent:#2dd4a8">
-      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.fandom.com/wiki/Special:Redirect/file/Ebonwumon_b.jpg" alt="Ebonwumon"></div>
+      <div class="thumb"><img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/xuanwumon.jpg" alt="Ebonwumon"></div>
       <div class="level">Mega</div>
       <div class="mon">Ebonwumon</div>
       <span class="rank"><span class="glyph">&#9775;</span> North</span>
@@ -227,7 +241,7 @@
     <a class="support-btn sponsors" href="https://github.com/sponsors/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9829;</span><span class="support-text">GitHub Sponsors</span><span class="support-url">github.com/sponsors/drigos</span></a>
   </div>
 
-  <p class="foot">Images and names link to DigimonWiki/Fandom (CC BY-SA unless noted otherwise). DigimonWiki hosts Fanglongmon under its Japanese name, Huanglongmon; in Japanese materials the four are Qinglongmon, Zhuqiaomon, Baihumon and Xuanwumon. The dub also calls the group the Digimon Sovereigns.</p>
+  <p class="foot">Names link to DigimonWiki/Fandom (CC BY-SA unless noted otherwise); artwork &copy; Bandai, shown from the official Digimon Reference Book. DigimonWiki hosts Fanglongmon under its Japanese name, Huanglongmon; in Japanese materials the four are Qinglongmon, Zhuqiaomon, Baihumon and Xuanwumon. The dub also calls the group the Digimon Sovereigns.</p>
 
 </div>
 </body>
