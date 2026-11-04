@@ -273,11 +273,11 @@ a.panel-badge { position:static; justify-self:end; align-self:start; margin:9px 
 
 .footer { position:absolute; left:32px; right:32px; bottom:16px; color:rgba(225,238,255,.72); font-size:12px; line-height:1.35; z-index:6; }
 
-/* Support / donation block. Shared by every page: the selection screens and rosters
+/* Support block (Ko-fi "buy me a coffee" + GitHub Sponsors). Shared by every page: the selection screens and rosters
    (in normal flow above the .foot line) and the tree pages (below the canvas, inside
    .wrap, so it never touches the canvas geometry). On screen it renders as two pill
    buttons; the written URL of each is hidden. In print the pill styling is dropped and
-   the URL is revealed, so a printed page still shows where to donate (see @media print). */
+   the URL is revealed, so a printed page still shows where to send support (see @media print). */
 .support {
   display:flex; flex-wrap:wrap; align-items:center; justify-content:center;
   gap:12px; margin:40px auto 0; padding:20px 22px; max-width:560px;
