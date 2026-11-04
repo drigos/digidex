@@ -99,9 +99,10 @@ generation (create the folder if that generation has no page yet).
 - Panels stay as HTML sections (partner/jogress = purple, armor = amber, lore notes = grey;
   the latter is added via the `digimon-lore-notes` skill); position them via
   the page `<style>` (`top` and `width` only; the shared CSS aligns every panel with the
-  card grid). One panel per row: Armor first, then the reference panels from narrowest to
-  widest, Lore notes last; patamon trials a shared Jogress + composition row above the Armor
-  panel (README "Panel placement"). Only the Armor panel gets a connector,
+  card grid). Panels stack as a pyramid: Jogress, then composition (sharing one row when both
+  fit with a 58px gap), then Armor, Lore notes last; each Jogress/composition panel is wide
+  enough for a one-line title and subtitle, so all are 333px tall (README "Panel placement").
+  Only the Armor panel gets a connector,
   from the line's node, e.g.
   `edge('veemon','armor-panel','armor','bottom','top',{shape:'vertical', toX:668, ...})`.
   A panel that feeds a node is titled by its result (`Shakkoumon: Jogress partner`), states

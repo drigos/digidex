@@ -7,11 +7,11 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:1860px; height:3013px; }
+  .infographic { width:1860px; height:2616px; }
   .columns { top:200px; }
-  .jogress-panel { top:2211px; width:248px; }
-  .partner-panel { top:2608px; width:1348px; }
-  .armor-panel { top:1910px; width:1776px; }
+  .jogress-panel { top:1910px; width:370px; }
+  .partner-panel { top:1910px; left:470px; width:1348px; }
+  .armor-panel { top:2265px; width:1776px; }
 </style>
 </head>
 <body>
@@ -30,7 +30,7 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 1860 3013" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 1860 2616" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
@@ -276,7 +276,7 @@ DigiTree.mount({
     edge('silphymon','valkyrimon','normal');
 
     // connector to the Armor panel (appendix, not a normal edge)
-    edge('gatomon','armor-panel','armor','bottom','top',{fromX:850, toX:380, points:[[850,730],[380,730]], width:3});
+    edge('gatomon','armor-panel','armor','bottom','top',{fromX:850, toX:442, points:[[850,730],[442,730]], width:3});
     edge('armor-nefertimon','armor-nefertimonx','x','right','left',{width:3});
   }
 });

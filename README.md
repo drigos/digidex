@@ -217,7 +217,10 @@ leaves an uneven band under the cards, so do not set one.
 
 Panel cards match the node card width so the whole page reads as one grid: `.partner-card` and
 `.jogress-card` are `204px`, laid out in a `16px`-gap flex row, so a panel with `n` cards is
-`220n + 28` wide (`248px` for one card, `908px` for four, `1348px` for six). The `.armor-panel`
+at least `220n + 28` wide (`908px` for four, `1348px` for six). A panel with one or two cards
+grows past that until its title and its subtitle each fit on one line (`350px` to `490px`),
+so every Jogress, composition, DNA and Unified Spirit panel is `333px` tall, alone or side by
+side. The `.armor-panel`
 is the exception: it holds many Digimon, so it keeps the fractional `repeat(12, 1fr)` grid of
 smaller cards and spans the card grid, `width - 84` (the `42px` margin each side). The `.lore-panel`
 (grey, matching the `lore` trigger color) also spans the full width with a fractional
@@ -234,24 +237,24 @@ bottom depends on its note length. When you move a panel you must recompute the 
 ### Panel placement
 
 Panels sit on the card grid: the shared CSS places every panel at `left: 42px`, the first
-column's margin, and a full-width panel ends at the last column's right edge. Each panel has
-its own row (two panels side by side end at different heights and break the `22px` rhythm),
-except in the shared row below, stacked in this order:
+column's margin, and a full-width panel ends at the last column's right edge. Panels stack
+as a pyramid, the narrowest on top and the widest at the bottom:
 
-1. the Armor panel, right under the diagram, because the line evolves into its forms: it is
-   the only panel with a connector, an amber edge from the line's node down to it;
-2. the reference panels, from the narrowest to the widest (`Jogress partner(s)`, then the
-   collective composition; on Frontier the DNA panel, then the Unified Spirit one), so they
-   read as a pyramid;
+1. the reference panels: `Jogress partner(s)`, then the collective composition (on Frontier
+   the DNA panel, then the Unified Spirit one);
+2. the Armor panel, the widest, under them;
 3. `Lore notes`, last.
 
-Shared row (trial on patamon): when a page has one Jogress panel, a composition panel and an
-Armor panel, the two reference panels share the row under the diagram and the Armor panel
-goes below them. The Jogress panel stays at the left margin, just wide enough for its title
-and subtitle on one line, so it matches the composition panel's height. The composition
-panel ends flush with the last column (page style `left = canvas width - 42 - panel width`).
-The two panels keep a `58px` gap, the same as between card columns, and the Armor connector
-runs down its middle.
+A Jogress panel and a composition panel share one row when both fit with a `58px` gap
+between them, the same as between card columns (patamon, gatomon, palmon): the Jogress panel
+stays at the left margin and the composition panel ends flush with the last column (page
+style `left = canvas width - 42 - panel width`). Since both are `333px` tall, their bottoms
+line up. Where they do not fit (agumon and gabumon, with four Jogress cards; Frontier), each
+takes its own row.
+
+The Armor panel is the only panel with a connector, an amber edge from the line's node down
+to it, because the line evolves into its forms. The edge passes the panels above it: down the
+middle of the shared row's gap, or beside a lone Jogress panel (Adventure 02).
 
 A panel that feeds a node (Jogress, composition, DNA, Unified Spirit) has no connector: its
 title names the result and its subtitle and cards state who fuses into it, which is enough to
