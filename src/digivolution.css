@@ -315,32 +315,14 @@ a.panel-badge { position:static; justify-self:end; align-self:start; margin:9px 
    Used by the cosmology/ pages and by the rosters filed under that section. Everything is
    static, readable without interaction, so the print-friendly rule holds. */
 
-/* World identity: each cosmology page sets one class on <body>; --world tints panels,
-   pills and the hero motif, --world2 is the secondary hue of the motif. */
+/* World identity: each cosmology page sets one class on <body>; --world tints panels
+   and pills, --world2 is the secondary hue (lead chips and a few accents). */
 .world-cosmos   { --world:#9fd3ff; --world2:#b084f5; }
 .world-classic  { --world:#cbd7ea; --world2:#e3ac33; }
 .world-iliad    { --world:#f2d27a; --world2:#7fb5ff; }
 .world-shambala { --world:#ff7a5c; --world2:#2dd4a8; }
 .world-kernel   { --world:#fff1b8; --world2:#9fd3ff; }
 .world-dark     { --world:#c4a1ff; --world2:#e5484d; }
-
-/* Hero motif: a thin decorative band under the hero text, patterned per world
-   (knightly lattice, temple fluting, wave crests, data grid, abyss fade) */
-.motif { height:12px; max-width:420px; margin:22px auto 0; border-radius:999px; opacity:.85;
-  border:1px solid color-mix(in srgb, var(--world) 45%, transparent);
-  background:linear-gradient(90deg, transparent, color-mix(in srgb, var(--world) 55%, transparent), transparent); }
-.world-classic .motif { background:
-  repeating-linear-gradient(45deg, color-mix(in srgb, var(--world2) 70%, transparent) 0 2px, transparent 2px 10px),
-  repeating-linear-gradient(-45deg, color-mix(in srgb, var(--world) 60%, transparent) 0 2px, transparent 2px 10px); }
-.world-iliad .motif { background:
-  repeating-linear-gradient(90deg, color-mix(in srgb, var(--world) 75%, transparent) 0 3px, transparent 3px 9px); }
-.world-shambala .motif { background:
-  radial-gradient(circle at 50% 100%, transparent 5px, color-mix(in srgb, var(--world) 70%, transparent) 5px 6px, transparent 6px) 0 0 / 14px 12px,
-  linear-gradient(90deg, color-mix(in srgb, var(--world2) 40%, transparent), color-mix(in srgb, var(--world) 40%, transparent)); }
-.world-kernel .motif { background:
-  linear-gradient(90deg, color-mix(in srgb, var(--world) 70%, transparent) 1px, transparent 1px) 0 0 / 8px 8px,
-  linear-gradient(0deg, color-mix(in srgb, var(--world2) 50%, transparent) 1px, transparent 1px) 0 0 / 8px 8px; }
-.world-dark .motif { background:linear-gradient(90deg, #000, color-mix(in srgb, var(--world) 60%, transparent), color-mix(in srgb, var(--world2) 60%, transparent), #000); }
 
 /* Breadcrumb trail: replaces the single .backnav pill on pages inside the cosmology
    section (Home / Cosmology / <world> / <page>). Navigation only, hidden in print. */
