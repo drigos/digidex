@@ -39,7 +39,7 @@
     <section class="jogress-panel" id="dna-panel">
       <div class="jogress-panel-title">
         <h2>Susanoomon: DNA Digivolve</h2>
-        <span>Koji's MagnaGarurumon completes the union</span>
+        <span>Koji's MagnaGarurumon + EmperorGreymon = Susanoomon</span>
       </div>
       <div class="jogress-body">
         <a class="jogress-card" href="https://digimon.fandom.com/wiki/MagnaGarurumon" target="_blank">
@@ -90,7 +90,7 @@
       </div>
     </section>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Frontier has no partner Digimon: Cherubimon gave life to the H Spirit of Wood as Arbormon, who already held the B Spirit to become Petaldramon; AncientTroiamon is the ancestral Warrior of Wood (lore links, not steps). No Fusion of the Wood Spirits is recorded. In episode 35 Takuya unifies the Spirits of Wood with four other Warriors' Spirits into EmperorGreymon (see panel), which DNA-Digivolves with Koji's MagnaGarurumon into Susanoomon (see panel). AncientTroiamon and Susanoomon are DigimonWiki's names for the official AncientTroymon and Susanomon.</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show the Spirit tier; edge colors show the Spirit trigger. Frontier has no partner Digimon: Cherubimon gave life to the H Spirit of Wood as Arbormon, who already held the B Spirit to become Petaldramon; AncientTroiamon is the ancestral Warrior of Wood (lore links, not steps). No Fusion of the Wood Spirits is recorded. In episode 35 Takuya unifies the Spirits of Wood with four other Warriors' Spirits into EmperorGreymon (see panel), which DNA-Digivolves with Koji's MagnaGarurumon into Susanoomon (see panel). AncientTroiamon and Susanoomon are DigimonWiki's names for the official AncientTroymon and Susanomon.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -132,7 +132,7 @@ DigiTree.mount({
     edge('ancienttroiamon','petaldramon','lore','right','left',{noArrow:true});
 
     // slide between Human and Beast
-    edge('arbormon','petaldramon','mode','bottom','top',{shape:'vertical', startArrow:true, label:'Slide', lx:406, ly:469});
+    edge('arbormon','petaldramon','mode','bottom','top',{shape:'vertical', startArrow:true});
 
     // both Spirits go to Takuya's EmperorGreymon
     edge('arbormon','emperorgreymon','burst','right','left',{label:'Unified by Takuya', lx:668, ly:470});
@@ -141,9 +141,9 @@ DigiTree.mount({
     // DNA Digivolve with MagnaGarurumon
     edge('emperorgreymon','susanoomon','dna','right','left');
 
-    // connectors from the top nodes down to their reference panels
-    edge('emperorgreymon','unified-panel','burst','bottom','top',{shape:'vertical', toX:930});
-    edge('susanoomon','dna-panel','dna','bottom','top',{shape:'vertical', toX:1192});
+    // connectors from the reference panels up into the nodes they form
+    edge('unified-panel','emperorgreymon','burst','top','bottom',{shape:'vertical', fromX:931});
+    edge('dna-panel','susanoomon','dna','top','bottom',{shape:'vertical', fromX:1193});
   }
 });
 </script>

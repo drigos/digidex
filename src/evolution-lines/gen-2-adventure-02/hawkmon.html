@@ -7,10 +7,10 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:1598px; height:2136px; }
+  .infographic { width:1598px; height:2163px; }
   .columns { top:200px; }
-  .jogress-panel { top:1430px; width:468px; }
-  .armor-panel { top:1785px; width:1550px; }
+  .jogress-panel { top:1430px; width:468px; left:1067px; }
+  .armor-panel { top:1812px; width:1550px; }
 </style>
 </head>
 <body>
@@ -19,7 +19,7 @@
   <div class="infographic" id="canvas">
     <div class="title">
       <h1>Hawkmon: evolution tree</h1>
-      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega hierarchy, with the Garudamon and Hippogriffomon alternate Ultimates, the Silphymon Jogress and its Megas, the Varodurumon Jogress with Sinduramon and Hawkmon's Armor Digivolutions.</div>
+      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega hierarchy, with the Garudamon and HippoGryphonmon alternate Ultimates, the Silphymon Jogress and its Megas, the Varodurumon Jogress with Sinduramon and Hawkmon's Armor Digivolutions.</div>
     </div>
 
     <div class="legend">
@@ -29,13 +29,13 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 1598 2136" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 1598 2163" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
-    <section class="jogress-panel">
+    <section class="jogress-panel" id="jogress-panel">
       <div class="jogress-panel-title">
-        <h2>Jogress partners</h2>
+        <h2>Silphymon / Varodurumon: Jogress partners</h2>
         <span>Gatomon fuses with Aquilamon, Sinduramon with Silphymon</span>
       </div>
       <div class="jogress-body">
@@ -123,7 +123,7 @@
       </div>
     </section>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. Hippogriffomon digivolves to Zhuqiaomon in Digimon Adventure tri. Hawkmon has no recorded form for the Digi-Egg of Destiny.</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. HippoGryphonmon digivolves to Zhuqiaomon in Digimon Adventure tri. Hawkmon has no recorded form for the Digi-Egg of Destiny.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -145,7 +145,7 @@ DigiTree.mount({
   ],
   nodes: [
     // alternate Ultimates of Aquilamon, each with its Mega
-    {id:'hippogriffomon', x:1090, y:250, cls:'normal', name:'Hippogriffomon', lvl:'Ultimate', note:'Mythical beast; alternate Ultimate.', wiki:'Hippogriffomon', img:'hippogriffomon'},
+    {id:'hippogriffomon', x:1090, y:250, cls:'normal', name:'HippoGryphonmon', lvl:'Ultimate', note:'Mythical beast; alternate Ultimate.', wiki:'HippoGryphonmon', img:'hippogriffomon'},
     {id:'zhuqiaomon', x:1352, y:250, cls:'normal', name:'Zhuqiaomon', lvl:'Mega', note:'Sovereign of the south.', wiki:'Zhuqiaomon', img:'zhuqiaomon', badge:{cls:'fs', text:'Four Sovereigns', href:'../../groups/four-sovereigns.html#zhuqiaomon', title:'Four Sovereigns roster'}},
     {id:'garudamon', x:1090, y:490, cls:'normal', name:'Garudamon', lvl:'Ultimate', note:'Bird warrior; alternate Ultimate.', wiki:'Garudamon', img:'garudamon'},
     {id:'phoenixmon', x:1352, y:490, cls:'normal', name:'Phoenixmon', lvl:'Mega', note:'Holy Beast; also reached from Silphymon.', wiki:'Phoenixmon', img:'hououmon'},
@@ -182,7 +182,11 @@ DigiTree.mount({
     edge('silphymon','varodurumon','dna');
 
     // connector to the Armor panel (appendix, not a normal edge)
-    edge('hawkmon','armor-panel','armor','bottom','top',{shape:'vertical', toX:668, label:'Digi-Eggs', lx:668, ly:1550, width:3});
+    edge('hawkmon','armor-panel','armor','bottom','top',{shape:'vertical', toX:668, width:3});
+
+    // each partner feeds its fusion straight above the panel
+    edge('jogress-panel','silphymon','dna','top','bottom',{shape:'vertical', fromX:1193});
+    edge('jogress-panel','varodurumon','dna','top','bottom',{shape:'vertical', fromX:1455});
   }
 });
 </script>

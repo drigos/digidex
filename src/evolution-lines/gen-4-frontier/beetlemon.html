@@ -7,13 +7,13 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:1336px; height:1545px; }
+  .infographic { width:1336px; height:1560px; }
   .columns { top:200px; }
   /* the narrower canvas brings the legend closer, so the subtitle wraps before it */
   .subtitle { max-width:680px; }
   /* both reference panels are right-aligned and stacked (narrow DNA on top, wide Unified below) */
   .jogress-panel { top:710px; width:248px; left:auto; right:24px; }
-  .partner-panel { top:1107px; width:1128px; left:auto; right:24px; }
+  .partner-panel { top:1122px; width:1128px; left:auto; right:24px; }
 </style>
 </head>
 <body>
@@ -32,14 +32,14 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 1336 1545" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 1336 1560" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
     <section class="jogress-panel" id="dna-panel">
       <div class="jogress-panel-title">
         <h2>Susanoomon: DNA Digivolve</h2>
-        <span>Takuya's EmperorGreymon completes the union</span>
+        <span>Takuya's EmperorGreymon + MagnaGarurumon = Susanoomon</span>
       </div>
       <div class="jogress-body">
         <a class="jogress-card" href="https://digimon.fandom.com/wiki/EmperorGreymon" target="_blank">
@@ -90,7 +90,7 @@
       </div>
     </section>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Frontier has no partner Digimon: J.P. Spirit-Evolves into these forms and has no Child form; AncientBeetlemon is the ancestral Warrior of Thunder (lore links, not steps). RhinoKabuterimon, the Fusion of the two Thunder Spirits, comes from the Reference Book and the D-Tector 3.0 toy, outside the Frontier anime. In episode 35 Koji unifies the Spirits of Thunder with four other Warriors' Spirits into MagnaGarurumon (see panel), which DNA-Digivolves with Takuya's EmperorGreymon into Susanoomon (see panel). Susanoomon and AncientMermaidmon are DigimonWiki's names for the official Susanomon and AncientMermaimon.</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show the Spirit tier; edge colors show the Spirit trigger. Frontier has no partner Digimon: J.P. Spirit-Evolves into these forms and has no Child form; AncientBeetlemon is the ancestral Warrior of Thunder (lore links, not steps). RhinoKabuterimon, the Fusion of the two Thunder Spirits, comes from the Reference Book and the D-Tector 3.0 toy, outside the Frontier anime. In episode 35 Koji unifies the Spirits of Thunder with four other Warriors' Spirits into MagnaGarurumon (see panel), which DNA-Digivolves with Takuya's EmperorGreymon into Susanoomon (see panel). Susanoomon and AncientMermaidmon are DigimonWiki's names for the official Susanomon and AncientMermaimon.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -133,7 +133,7 @@ DigiTree.mount({
     edge('ancientbeetlemon','metalkabuterimon','lore','right','left',{noArrow:true});
 
     // slide between Human and Beast
-    edge('beetlemon','metalkabuterimon','mode','bottom','top',{shape:'vertical', startArrow:true, label:'Slide', lx:406, ly:469});
+    edge('beetlemon','metalkabuterimon','mode','bottom','top',{shape:'vertical', startArrow:true});
 
     // fusion of both spirits
     edge('beetlemon','rhinokabuterimon','dna','right','left');
@@ -146,9 +146,9 @@ DigiTree.mount({
     // DNA Digivolve with EmperorGreymon
     edge('magnagarurumon','susanoomon','dna','right','left');
 
-    // connectors from the top nodes down to their reference panels
-    edge('magnagarurumon','unified-panel','burst','bottom','top',{shape:'vertical', toX:930});
-    edge('susanoomon','dna-panel','dna','bottom','top',{shape:'vertical', toX:1192});
+    // connectors from the reference panels up into the nodes they form
+    edge('unified-panel','magnagarurumon','burst','top','bottom',{shape:'vertical', fromX:931});
+    edge('dna-panel','susanoomon','dna','top','bottom',{shape:'vertical', fromX:1193});
   }
 });
 </script>

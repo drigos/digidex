@@ -116,22 +116,9 @@ h1 { margin:0 0 8px; font-size:42px; line-height:1.02; letter-spacing:-1px; }
 .node.burst .level { background:rgba(255,212,59,.18); color:#fff0b8; }
 .node.lore .level { background:rgba(138,151,173,.20); color:#d9e0ea; }
 
-/* Cross-page navigation arrow (node option `nav`): a round button to the right of a
-   card that jumps to another infographic page, while the card itself links to the wiki.
-   Placed by the engine at the card's right edge, vertically centered on the 198px card. */
-.node-nav {
-  position:absolute; z-index:5; width:36px; height:36px;
-  display:flex; align-items:center; justify-content:center;
-  border-radius:50%; color:#cfe6ff;
-  background:rgba(3,14,27,.85); border:1px solid rgba(255,255,255,.28);
-  box-shadow:0 8px 22px rgba(0,0,0,.40);
-  transition: transform .15s ease, border-color .15s ease, background .15s ease;
-}
-.node-nav svg { display:block; }
-.node-nav:hover { transform:translateX(3px); border-color:var(--normal); background:rgba(88,166,255,.20); }
 /* Pages must stay print-friendly: purely navigational widgets add no value on paper.
    Badges stay visible in print because they carry category information. */
-@media print { .node-nav, .backnav, .crumbs, .jump { display:none; } }
+@media print { .backnav, .crumbs, .jump { display:none; } }
 
 /* Links inside running text (lore notes, section subtitles, atlas prose) need an underline,
    since the global reset above removes it */

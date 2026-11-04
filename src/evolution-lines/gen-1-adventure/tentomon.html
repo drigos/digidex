@@ -7,9 +7,9 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:1860px; height:1353px; }
+  .infographic { width:1860px; height:1355px; }
   .columns { top:200px; }
-  .partner-panel { top:950px; width:1348px; }
+  .partner-panel { top:950px; width:1348px; left:auto; right:24px; }
 </style>
 </head>
 <body>
@@ -28,14 +28,14 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 1860 1353" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 1860 1355" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
     <section class="partner-panel" id="composition-panel">
       <div class="partner-panel-title">
-        <h2>Collective composition (Adventure tri.)</h2>
-        <span>HerculesKabuterimon joins Omnimon and the other partners' Mega forms to compose Omnimon Merciful Mode</span>
+        <h2>Omnimon Merciful Mode: collective composition</h2>
+        <span>HerculesKabuterimon joins Omnimon and the other partners' Mega forms (Adventure tri.)</span>
       </div>
       <div class="partner-grid">
         <a class="partner-card" href="https://digimon.fandom.com/wiki/Omnimon" target="_blank">
@@ -44,17 +44,11 @@
           <div class="partner-level">Ultra</div>
           <div class="partner-fuse">Royal Knight core</div>
         </a>
-        <a class="partner-card" href="https://digimon.fandom.com/wiki/Seraphimon" target="_blank">
-          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/seraphimon.jpg" alt="Seraphimon">
-          <div class="partner-name">Seraphimon</div>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Phoenixmon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/hououmon.jpg" alt="Phoenixmon">
+          <div class="partner-name">Phoenixmon</div>
           <div class="partner-level">Mega</div>
-          <div class="partner-fuse">Angel (holy) member</div>
-        </a>
-        <a class="partner-card" href="https://digimon.fandom.com/wiki/Magnadramon" target="_blank">
-          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/holydramon.jpg" alt="Magnadramon">
-          <div class="partner-name">Magnadramon</div>
-          <div class="partner-level">Mega</div>
-          <div class="partner-fuse">Holy dragon member</div>
+          <div class="partner-fuse">Holy bird member</div>
         </a>
         <a class="partner-card" href="https://digimon.fandom.com/wiki/Rosemon" target="_blank">
           <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/rosemon.jpg" alt="Rosemon">
@@ -62,17 +56,23 @@
           <div class="partner-level">Mega</div>
           <div class="partner-fuse">Fairy / plant member</div>
         </a>
-        <a class="partner-card" href="https://digimon.fandom.com/wiki/Phoenixmon" target="_blank">
-          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/hououmon.jpg" alt="Phoenixmon">
-          <div class="partner-name">Phoenixmon</div>
-          <div class="partner-level">Mega</div>
-          <div class="partner-fuse">Holy bird member</div>
-        </a>
         <a class="partner-card" href="https://digimon.fandom.com/wiki/Vikemon" target="_blank">
           <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/vikemon.jpg" alt="Vikemon">
           <div class="partner-name">Vikemon</div>
           <div class="partner-level">Mega</div>
           <div class="partner-fuse">Beast warrior member</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Seraphimon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/seraphimon.jpg" alt="Seraphimon">
+          <div class="partner-name">Seraphimon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Holy angel member</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Magnadramon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/holydramon.jpg" alt="Magnadramon">
+          <div class="partner-name">Magnadramon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Holy dragon member</div>
         </a>
       </div>
     </section>
@@ -115,7 +115,7 @@ DigiTree.mount({
     {id:'megablue', x:1090, y:730, cls:'normal', name:'MegaKabuterimon (Blue)', lvl:'Ultimate', note:'Blue variation; pincer-type beetle warrior.', wiki:'MegaKabuterimon_(Blue)', img:'atlurkabuterimon-blue'},
 
     // AncientBeetlemon: ancestral origin of the line (lore, not an evolution)
-    {id:'ancientbeetlemon', x:42, y:250, cls:'lore', badge:{cls:'lw', text:'Legendary Warrior', href:'../../groups/ten-legendary-warriors.html#ancientbeetlemon', title:'Ten Legendary Warriors roster'}, name:'AncientBeetlemon', lvl:'Mega', note:'Warrior of Thunder; ancestor of the Kabuterimon species.', wiki:'AncientBeetlemon', img:'ancientbeatmon', nav:{href:'../gen-4-frontier/beetlemon.html', title:'Open the Warrior of Thunder Spirit Evolution tree (Frontier)'}}
+    {id:'ancientbeetlemon', x:42, y:250, cls:'lore', badge:{cls:'lw', text:'Legendary Warrior', href:'../../groups/ten-legendary-warriors.html#ancientbeetlemon', title:'Ten Legendary Warriors roster'}, name:'AncientBeetlemon', lvl:'Mega', note:'Warrior of Thunder; ancestor of the Kabuterimon species.', wiki:'AncientBeetlemon', img:'ancientbeatmon'}
   ],
   edges: function (edge) {
     // main spine
@@ -130,11 +130,14 @@ DigiTree.mount({
     edge('hercules','herculesx','x','top','bottom',{shape:'vertical'});
 
     // Blue branch (drops to the variants row, then rejoins HerculesKabuterimon)
-    edge('kabuterimon','megablue','normal','bottom','left',{points:[[930,829]], label:'Blue form', lx:1010, ly:815});
+    edge('kabuterimon','megablue','normal','bottom','left',{points:[[930,829]]});
     edge('megablue','hercules','normal','right','left',{points:[[1323,829],[1323,589]]});
 
     // AncientBeetlemon ancestral (lore) link: origin -> root of the line, no arrowhead
     edge('ancientbeetlemon','pabumon','lore','bottom','top',{shape:'vertical', noArrow:true});
+
+    // the composition panel feeds the collective form straight above it
+    edge('composition-panel','omnimonmerciful','dna','top','bottom',{shape:'vertical', fromX:1717});
   }
 });
 </script>

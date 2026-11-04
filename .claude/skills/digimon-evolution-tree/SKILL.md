@@ -69,7 +69,7 @@ generation (create the folder if that generation has no page yet).
 
 ## Config reference
 
-- Node: `{ id, x, y, cls, name, lvl, note, wiki, img, badge?, nav? }`
+- Node: `{ id, x, y, cls, name, lvl, note, wiki, img, badge? }`
   - `cls` (pill color): `normal | x | dna | mode | dark | lateral | bond | burst`.
   - `lvl` (card tag): `Level` optionally `+ / Virus + / X` only. See README section 1.
   - `badge`: `{ cls, text, href?, title? }` with `cls` one of `rk` (Royal Knight),
@@ -83,9 +83,6 @@ generation (create the folder if that generation has no page yet).
     `<a class="rk badge-link panel-badge">` sibling stacked into the same grid cell,
     setting the same explicit `grid-column`/`grid-row` on both the card and the badge
     (see Magnamon in veemon.html; README "Cross-page navigation").
-  - `nav`: `{ href, title }` - renders a round arrow button to the right of the card that
-    jumps to another infographic page (relative href); the card itself keeps linking to
-    the wiki. See README "Cross-page navigation".
   - `wiki`/`img`: the Fandom page slug (the card link) and the official Reference Book slug
     (or an absolute fallback image URL).
 - Edge (inside `edges: function(edge){ ... }`):
@@ -96,8 +93,13 @@ generation (create the folder if that generation has no page yet).
     `width`, `opacity`, and `fromX/fromY/toX/toY` to override any anchor coordinate.
 - Panels stay as HTML sections (partner/jogress = purple, armor = amber, lore notes = grey;
   the latter is added via the `digimon-lore-notes` skill); position them via
-  the page `<style>`. An amber connector to a panel targets it by id, e.g.
+  the page `<style>`. Connectors target panels by id. A panel that feeds a node (Jogress
+  partner, collective composition, Unified Spirit) connects **from the panel to the node**,
+  e.g. `edge('jogress-panel','shakkoumon','dna','top','bottom',{shape:'vertical', fromX:1193})`;
+  the Armor connector runs from the node to its panel,
   `edge('veemon','armor-panel','armor','bottom','top',{shape:'vertical', toX:668, ...})`.
+  Title a feeding panel by its result (`Shakkoumon: Jogress partner`) and draw the connector
+  only if its route crosses no edge, card or panel (README "Panel connectors").
 
 ## Conventions (enforce; details in README.md)
 
@@ -110,8 +112,9 @@ generation (create the folder if that generation has no page yet).
 - English on-image text. No em dash (U+2014). Identifiers in English.
 - Print-friendly: pages are prepared to be printable. Never add modals, popups or
   hover-only content. Interaction is OK only when print loses nothing (badges print as
-  category pills); purely navigational widgets (like `.node-nav`) must be hidden by the
-  `@media print` rule in `digivolution.css` and avoided in new features when possible.
+  category pills); purely navigational widgets (like the `.backnav` pill) must be hidden by
+  the `@media print` rule in `digivolution.css` and avoided in new features when possible.
+  Cards carry at most two links: the card to DigimonWiki and the badge to its roster.
 
 ## Verify before finishing
 

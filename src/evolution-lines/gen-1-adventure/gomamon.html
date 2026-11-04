@@ -7,9 +7,9 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:1860px; height:1112px; }
+  .infographic { width:1860px; height:1115px; }
   .columns { top:200px; }
-  .partner-panel { top:710px; width:1348px; }
+  .partner-panel { top:710px; width:1348px; left:auto; right:24px; }
 </style>
 </head>
 <body>
@@ -28,14 +28,14 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 1860 1112" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 1860 1115" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
     <section class="partner-panel" id="composition-panel">
       <div class="partner-panel-title">
-        <h2>Collective composition (Adventure tri.)</h2>
-        <span>Vikemon joins Omnimon and the other partners' Mega forms to compose Omnimon Merciful Mode</span>
+        <h2>Omnimon Merciful Mode: collective composition</h2>
+        <span>Vikemon joins Omnimon and the other partners' Mega forms (Adventure tri.)</span>
       </div>
       <div class="partner-grid">
         <a class="partner-card" href="https://digimon.fandom.com/wiki/Omnimon" target="_blank">
@@ -44,23 +44,11 @@
           <div class="partner-level">Ultra</div>
           <div class="partner-fuse">Royal Knight core</div>
         </a>
-        <a class="partner-card" href="https://digimon.fandom.com/wiki/Seraphimon" target="_blank">
-          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/seraphimon.jpg" alt="Seraphimon">
-          <div class="partner-name">Seraphimon</div>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Phoenixmon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/hououmon.jpg" alt="Phoenixmon">
+          <div class="partner-name">Phoenixmon</div>
           <div class="partner-level">Mega</div>
-          <div class="partner-fuse">Angel (holy) member</div>
-        </a>
-        <a class="partner-card" href="https://digimon.fandom.com/wiki/Magnadramon" target="_blank">
-          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/holydramon.jpg" alt="Magnadramon">
-          <div class="partner-name">Magnadramon</div>
-          <div class="partner-level">Mega</div>
-          <div class="partner-fuse">Holy dragon member</div>
-        </a>
-        <a class="partner-card" href="https://digimon.fandom.com/wiki/Rosemon" target="_blank">
-          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/rosemon.jpg" alt="Rosemon">
-          <div class="partner-name">Rosemon</div>
-          <div class="partner-level">Mega</div>
-          <div class="partner-fuse">Fairy / plant member</div>
+          <div class="partner-fuse">Holy bird member</div>
         </a>
         <a class="partner-card" href="https://digimon.fandom.com/wiki/HerculesKabuterimon" target="_blank">
           <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/heraklekabuterimon.jpg" alt="HerculesKabuterimon">
@@ -68,11 +56,23 @@
           <div class="partner-level">Mega</div>
           <div class="partner-fuse">Insect titan member</div>
         </a>
-        <a class="partner-card" href="https://digimon.fandom.com/wiki/Phoenixmon" target="_blank">
-          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/hououmon.jpg" alt="Phoenixmon">
-          <div class="partner-name">Phoenixmon</div>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Rosemon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/rosemon.jpg" alt="Rosemon">
+          <div class="partner-name">Rosemon</div>
           <div class="partner-level">Mega</div>
-          <div class="partner-fuse">Holy beast member</div>
+          <div class="partner-fuse">Fairy / plant member</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Seraphimon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/seraphimon.jpg" alt="Seraphimon">
+          <div class="partner-name">Seraphimon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Holy angel member</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Magnadramon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/holydramon.jpg" alt="Magnadramon">
+          <div class="partner-name">Magnadramon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Holy dragon member</div>
         </a>
       </div>
     </section>
@@ -121,6 +121,9 @@ DigiTree.mount({
 
     // X-Antibody branch
     edge('gomamon','gomamonx','x','top','bottom',{shape:'vertical'});
+
+    // the composition panel feeds the collective form straight above it
+    edge('composition-panel','omnimonmerciful','dna','top','bottom',{shape:'vertical', fromX:1717});
   }
 });
 </script>

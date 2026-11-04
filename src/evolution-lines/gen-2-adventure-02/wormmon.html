@@ -7,10 +7,10 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:2122px; height:2151px; }
+  .infographic { width:2122px; height:2205px; }
   .columns { top:200px; }
-  .jogress-panel { top:1430px; width:248px; }
-  .armor-panel { top:1800px; width:2074px; }
+  .jogress-panel { top:1430px; width:248px; left:1067px; }
+  .armor-panel { top:1854px; width:2074px; }
 </style>
 </head>
 <body>
@@ -29,14 +29,14 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 2122 2151" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 2122 2205" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
-    <section class="jogress-panel">
+    <section class="jogress-panel" id="jogress-panel">
       <div class="jogress-panel-title">
-        <h2>Jogress partner</h2>
-        <span>fuses with Stingmon to form Paildramon / Dinobeemon</span>
+        <h2>Paildramon / Dinobeemon: Jogress partner</h2>
+        <span>ExVeemon + Stingmon = Paildramon or Dinobeemon</span>
       </div>
       <div class="jogress-body">
         <a class="jogress-card" href="https://digimon.fandom.com/wiki/ExVeemon" target="_blank">
@@ -197,7 +197,7 @@ DigiTree.mount({
     edge('dinobeemon','tigervespamon','normal');
 
     // connector to the Armor panel (appendix, not a normal edge)
-    edge('wormmon','armor-panel','armor','bottom','top',{shape:'vertical', toX:668, label:'Digi-Eggs', lx:668, ly:1550, width:3});
+    edge('wormmon','armor-panel','armor','bottom','top',{shape:'vertical', toX:668, width:3});
   }
 });
 </script>

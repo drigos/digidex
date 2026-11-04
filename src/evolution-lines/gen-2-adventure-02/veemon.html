@@ -7,10 +7,10 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:2122px; height:1889px; }
+  .infographic { width:2122px; height:1949px; }
   .columns { top:200px; }
-  .jogress-panel { top:1190px; width:248px; }
-  .armor-panel { top:1557px; width:2074px; }
+  .jogress-panel { top:1190px; width:248px; left:1067px; }
+  .armor-panel { top:1614px; width:2074px; }
 </style>
 </head>
 <body>
@@ -29,14 +29,14 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 2122 1889" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 2122 1949" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
-    <section class="jogress-panel">
+    <section class="jogress-panel" id="jogress-panel">
       <div class="jogress-panel-title">
-        <h2>Jogress partner</h2>
-        <span>fuses with ExVeemon to form Paildramon / Dinobeemon</span>
+        <h2>Paildramon / Dinobeemon: Jogress partner</h2>
+        <span>Stingmon + ExVeemon = Paildramon or Dinobeemon</span>
       </div>
       <div class="jogress-body">
         <a class="jogress-card" href="https://digimon.fandom.com/wiki/Stingmon" target="_blank">
@@ -198,8 +198,13 @@ DigiTree.mount({
     edge('imperialblackdm','imperialblackfm','dark');
 
     // connector to the Armor panel (kept: the panel is an appendix, not a normal edge)
-    edge('veemon','armor-panel','armor','bottom','top', {shape:'vertical', toX:668, label:'Digi-Eggs', lx:668, ly:1310, width:3});
+    edge('veemon','armor-panel','armor','bottom','top', {shape:'vertical', toX:668, width:3});
     edge('armor-magnamon','armor-magnamonx','x','right','left', {width:3});
+
+    // Stingmon feeds Dinobeemon straight above its panel and Paildramon through the free
+    // row gap and the lane right of the column
+    edge('jogress-panel','dinobeemon','dna','top','bottom',{shape:'vertical', fromX:1193});
+    edge('jogress-panel','paildramon','dna','top','right',{fromX:1300, points:[[1300,1180],[1323,1180],[1323,900]], toY:900});
   }
 });
 </script>

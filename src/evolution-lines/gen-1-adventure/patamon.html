@@ -7,12 +7,12 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:1860px; height:2917px; }
+  .infographic { width:1860px; height:2964px; }
   .columns { top:200px; }
   .jogress-panel { top:1910px; width:248px; }
-  .partner-panel { top:1910px; width:1348px; left:auto; right:24px; }
-  .armor-panel { top:2263px; width:1812px; }
-  .lore-panel { top:2563px; width:1812px; }
+  .partner-panel { top:1910px; width:1348px; left:auto; right:44px; }
+  .armor-panel { top:2307px; width:1812px; }
+  .lore-panel { top:2608px; width:1812px; }
 </style>
 </head>
 <body>
@@ -31,14 +31,14 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 1860 2917" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 1860 2964" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
-    <section class="jogress-panel">
+    <section class="jogress-panel" id="jogress-panel">
       <div class="jogress-panel-title">
-        <h2>Jogress partner</h2>
-        <span>external Armadillomon line</span>
+        <h2>Shakkoumon: Jogress partner</h2>
+        <span>Ankylomon + Angemon = Shakkoumon</span>
       </div>
       <div class="jogress-body">
         <a class="jogress-card" href="https://digimon.fandom.com/wiki/Ankylomon" target="_blank">
@@ -127,8 +127,8 @@
 
     <section class="partner-panel" id="composition-panel">
       <div class="partner-panel-title">
-        <h2>Collective composition (Adventure tri.)</h2>
-        <span>Seraphimon joins Omnimon and the other partners' Mega forms to compose Omnimon Merciful Mode</span>
+        <h2>Omnimon Merciful Mode: collective composition</h2>
+        <span>Seraphimon joins Omnimon and the other partners' Mega forms (Adventure tri.)</span>
       </div>
       <div class="partner-grid">
         <a class="partner-card" href="https://digimon.fandom.com/wiki/Omnimon" target="_blank">
@@ -143,11 +143,11 @@
           <div class="partner-level">Mega</div>
           <div class="partner-fuse">Holy bird member</div>
         </a>
-        <a class="partner-card" href="https://digimon.fandom.com/wiki/Magnadramon" target="_blank">
-          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/holydramon.jpg" alt="Magnadramon">
-          <div class="partner-name">Magnadramon</div>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/HerculesKabuterimon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/heraklekabuterimon.jpg" alt="HerculesKabuterimon">
+          <div class="partner-name">HerculesKabuterimon</div>
           <div class="partner-level">Mega</div>
-          <div class="partner-fuse">Holy dragon member</div>
+          <div class="partner-fuse">Insect titan member</div>
         </a>
         <a class="partner-card" href="https://digimon.fandom.com/wiki/Rosemon" target="_blank">
           <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/rosemon.jpg" alt="Rosemon">
@@ -155,17 +155,17 @@
           <div class="partner-level">Mega</div>
           <div class="partner-fuse">Fairy / plant member</div>
         </a>
-        <a class="partner-card" href="https://digimon.fandom.com/wiki/HerculesKabuterimon" target="_blank">
-          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/heraklekabuterimon.jpg" alt="HerculesKabuterimon">
-          <div class="partner-name">HerculesKabuterimon</div>
-          <div class="partner-level">Mega</div>
-          <div class="partner-fuse">Insect titan member</div>
-        </a>
         <a class="partner-card" href="https://digimon.fandom.com/wiki/Vikemon" target="_blank">
           <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/vikemon.jpg" alt="Vikemon">
           <div class="partner-name">Vikemon</div>
           <div class="partner-level">Mega</div>
           <div class="partner-fuse">Beast warrior member</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Magnadramon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/holydramon.jpg" alt="Magnadramon">
+          <div class="partner-name">Magnadramon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Holy dragon member</div>
         </a>
       </div>
     </section>
@@ -251,7 +251,7 @@ DigiTree.mount({
 
     // side form, mode change and Seraphimon variants
     {id:'tsukaimon', x:566, y:970, cls:'normal', name:'Tsukaimon', lvl:'Rookie', note:'Subspecies of Patamon; dark counterpart.', wiki:'Tsukaimon', img:'tukaimon'},
-    {id:'priest', x:1090, y:970, cls:'mode', name:'MagnaAngemon Priest Mode', lvl:'Ultimate', note:'Priest garb mode (2020 reboot).', wiki:'MagnaAngemon_(Priest_Mode)', img:'https://wikimon.net/images/d/d2/Holyangemon_shinkan.jpg'},
+    {id:'priest', x:1090, y:970, cls:'mode', name:'MagnaAngemon Priest Mode', lvl:'Ultimate', note:'Priest garb mode (Adventure: 2020).', wiki:'MagnaAngemon_(Priest_Mode)', img:'https://wikimon.net/images/d/d2/Holyangemon_shinkan.jpg'},
     {id:'shadowseraphimon', x:1614, y:970, cls:'dark', name:'ShadowSeraphimon', lvl:'Mega / Virus', note:'Born of Seraphimon\'s concealed inner resentment.', wiki:'ShadowSeraphimon', img:'blackseraphimon', badge:{cls:'fa', text:'Fallen Angel', href:'../../groups/angelic.html#shadowseraphimon', title:'Angelic Digimon roster'}},
 
     // Jogress row
@@ -265,7 +265,7 @@ DigiTree.mount({
     // fallen angel dark line
     {id:'devimon', x:828, y:1690, cls:'dark', name:'Devimon', lvl:'Champion / Virus', note:'Fallen angel; corrupted Angemon data.', wiki:'Devimon', img:'devimon'},
     {id:'neodevimon', x:1090, y:1690, cls:'dark', name:'NeoDevimon', lvl:'Ultimate / Virus', note:'Strengthened Devimon.', wiki:'NeoDevimon', img:'neodevimon'},
-    {id:'dandevimon', x:1352, y:1690, cls:'dark', name:'DanDevimon', lvl:'Mega / Virus', note:'Peak of the fallen angel branch (2020 reboot).', wiki:'DanDevimon', img:'donedevimon'},
+    {id:'dandevimon', x:1352, y:1690, cls:'dark', name:'DanDevimon', lvl:'Mega / Virus', note:'Peak of the fallen angel branch (Adventure: 2020).', wiki:'DanDevimon', img:'donedevimon'},
     {id:'daemonultra', x:1614, y:1690, cls:'dark', name:'Daemon (Ultra)', lvl:'Ultra / Virus', note:'Super Ultimate form after absorbing Arkadimon (V-Tamer).', wiki:'Daemon_(Ultra)', img:'https://wikimon.net/images/f/f0/Demon_superultimate.jpg', badge:{cls:'dl', text:'Demon Lord', href:'../../groups/demon-lords.html#daemon', title:'Seven Great Demon Lords roster'}}
   ],
   edges: function (edge) {
@@ -282,8 +282,8 @@ DigiTree.mount({
 
     // Ultimate branches: Priest Mode and the 2020 holy-dragon alternative
     edge('magnaangemon','priest','mode','bottom','top',{shape:'vertical'});
-    edge('priest','seraphimon','normal','right','bottom',{toX:1440, points:[[1440,1069]]});
-    edge('magnaangemon','goldramon','normal','right','left',{fromY:785, points:[[1318,785],[1318,589]], label:'Adventure 2020', lx:1318, ly:700});
+    edge('priest','seraphimon','normal','right','bottom',{toX:1390, points:[[1390,1069]]});
+    edge('magnaangemon','goldramon','normal','right','left',{fromY:785, points:[[1318,785],[1318,589]], label:'Adventure: 2020', lx:1318, ly:700});
 
     // Seraphimon: collective composition and corrupted variants
     edge('seraphimon','omnimonmerciful','dna');
@@ -294,21 +294,25 @@ DigiTree.mount({
     edge('angemon','shakkoumon','dna','bottom','left',{fromX:960, points:[[960,1309]]});
 
     // side form and the fallen angel line
-    edge('patamon','tsukaimon','normal','bottom','top',{shape:'vertical', label:'Subspecies', lx:722, ly:949});
+    edge('patamon','tsukaimon','normal','bottom','top',{shape:'vertical'});
     edge('tsukaimon','devimon','dark','right','left',{points:[[799,1069],[799,1789]], label:"Devimon's familiar", lx:799, ly:1350});
-    edge('angemon','devimon','dark','bottom','top',{shape:'vertical', fromX:900, toX:900, label:'Corrupted (2020)', lx:900, ly:1600});
+    edge('angemon','devimon','dark','bottom','top',{shape:'vertical', fromX:900, toX:900, label:'Corrupted (Adventure: 2020)', lx:900, ly:1600});
     edge('devimon','neodevimon','dark');
     edge('neodevimon','dandevimon','dark');
 
     // Demon Lord branch: the official fall from Seraphimon (its profile names Daemon as its
     // fallen form), the Adventure 02 mantled look and the V-Tamer Ultra form
     edge('seraphimon','daemon','dark','bottom','top',{shape:'vertical', fromX:1420, toX:1420, label:'Fell to the Dark Area', lx:1420, ly:1180});
-    edge('daemon','daemonmantled','mode','right','left',{label:'Adventure 02', lx:1585, ly:1530});
-    edge('daemon','daemonultra','dark','right','left',{fromY:1600, points:[[1585,1600],[1585,1789]], label:'V-Tamer', lx:1585, ly:1700});
+    edge('daemon','daemonmantled','mode','top','top',{fromX:1500, toX:1670, points:[[1500,1430],[1670,1430]], label:'Adventure 02', lx:1585, ly:1430});
+    edge('daemon','daemonultra','dark','right','left',{fromY:1600, points:[[1585,1600],[1585,1789]], label:'V-Tamer', lx:1585, ly:1670});
 
     // connector to the Armor panel (appendix, not a normal edge)
-    edge('patamon','armor-panel','armor','bottom','top',{toX:380, points:[[668,952],[380,952]], label:'Digi-Eggs', lx:380, ly:1300, width:3});
+    edge('patamon','armor-panel','armor','bottom','top',{toX:380, points:[[668,952],[380,952]], width:3});
     edge('armor-pegasusmon','armor-pegasusmonx','x','right','left',{width:3});
+
+    // the composition panel feeds the collective form through the free right gutter
+    // (the column below Omnimon Merciful Mode is taken)
+    edge('composition-panel','omnimonmerciful','dna','right','right',{fromY:1971, points:[[1839,1971],[1839,830]]});
   }
 });
 </script>

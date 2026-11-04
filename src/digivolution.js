@@ -9,8 +9,7 @@
  *     legend:  [ ['normal','Normal evolution'], ['x','X-Digivolution'], ... ],
  *     columns: [ [42,'Fresh'], [304,'In-Training'], ... ],   // [xPx, label]
  *     nodes:   [ {id,x,y,cls,name,lvl,note,wiki,img,
- *                 badge:{cls:'lw',text:'...', href:'...', title:'...'},
- *                 nav:{href:'...', title:'...'}}, ... ],
+ *                 badge:{cls:'lw',text:'...', href:'...', title:'...'}}, ... ],
  *     edges:   function (edge) { edge('a','b','normal'); ... }
  *   });
  *
@@ -18,8 +17,6 @@
  * into the digimon.net artwork address, or an absolute URL for a Digimon with no official
  * entry (also exported as DigiTree.imageUrl).
  *
- * nav renders a round arrow button to the right of the card that jumps to another
- * infographic page (relative href), while the card itself keeps linking to the wiki.
  * A badge with an href becomes a clickable link (e.g. to a group roster page); without
  * one it stays a plain label on the card.
  *
@@ -117,17 +114,6 @@
           badge.style.left = (n.x + 195) + 'px';
           badge.style.top = (n.y + 9) + 'px';
           nodesEl.appendChild(badge);
-        }
-        if (n.nav) {
-          var navBtn = document.createElement('a');
-          navBtn.className = 'node-nav';
-          navBtn.href = n.nav.href;
-          if (n.nav.title) navBtn.title = n.nav.title;
-          navBtn.style.left = (n.x + 216) + 'px';
-          navBtn.style.top = (n.y + 81) + 'px';
-          // inline SVG arrow: text glyphs sit below the optical center of the circle
-          navBtn.innerHTML = '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M2.5 8 H13 M9 3.8 L13.2 8 L9 12.2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-          nodesEl.appendChild(navBtn);
         }
       });
     }

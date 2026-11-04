@@ -7,10 +7,10 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:1598px; height:1671px; }
+  .infographic { width:1598px; height:1698px; }
   .columns { top:200px; }
-  .jogress-panel { top:950px; width:248px; }
-  .armor-panel { top:1320px; width:1550px; }
+  .jogress-panel { top:950px; width:248px; left:1067px; }
+  .armor-panel { top:1347px; width:1550px; }
 </style>
 </head>
 <body>
@@ -29,14 +29,14 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 1598 1671" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 1598 1698" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
-    <section class="jogress-panel">
+    <section class="jogress-panel" id="jogress-panel">
       <div class="jogress-panel-title">
-        <h2>Jogress partner</h2>
-        <span>fuses with Ankylomon to form Shakkoumon</span>
+        <h2>Shakkoumon: Jogress partner</h2>
+        <span>Angemon + Ankylomon = Shakkoumon</span>
       </div>
       <div class="jogress-body">
         <a class="jogress-card" href="https://digimon.fandom.com/wiki/Angemon" target="_blank">
@@ -169,7 +169,10 @@ DigiTree.mount({
     edge('shakkoumon','slashangemon','normal');
 
     // connector to the Armor panel (appendix, not a normal edge)
-    edge('armadillomon','armor-panel','armor','bottom','top',{shape:'vertical', toX:668, label:'Digi-Eggs', lx:668, ly:1070, width:3});
+    edge('armadillomon','armor-panel','armor','bottom','top',{shape:'vertical', toX:668, width:3});
+
+    // Angemon feeds Shakkoumon straight above its panel
+    edge('jogress-panel','shakkoumon','dna','top','bottom',{shape:'vertical', fromX:1193});
   }
 });
 </script>

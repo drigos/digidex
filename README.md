@@ -22,7 +22,7 @@ then lists the generations, the atlas pages or the group rosters:
 - `src/evolution-lines/gen-2-adventure-02/` - Digimon Adventure 02:
   - [index.html](src/evolution-lines/gen-2-adventure-02/index.html) - DigiDestined selection screen (by Digi-Egg; the Patamon and Gatomon cards link into the gen-1 trees, which already carry their Armor Digivolutions).
   - [veemon.html](src/evolution-lines/gen-2-adventure-02/veemon.html) - Veemon line (includes the Armor branch).
-  - [hawkmon.html](src/evolution-lines/gen-2-adventure-02/hawkmon.html) - Hawkmon line (Garudamon and Hippogriffomon alternate Ultimates, Silphymon Jogress and its Megas, Varodurumon Jogress, Armor Digivolutions).
+  - [hawkmon.html](src/evolution-lines/gen-2-adventure-02/hawkmon.html) - Hawkmon line (Garudamon and HippoGryphonmon alternate Ultimates, Silphymon Jogress and its Megas, Varodurumon Jogress, Armor Digivolutions).
   - [armadillomon.html](src/evolution-lines/gen-2-adventure-02/armadillomon.html) - Armadillomon line (Brachiomon alternate Ultimate, Shakkoumon Jogress up to Vikemon and SlashAngemon, Armor Digivolutions).
   - [wormmon.html](src/evolution-lines/gen-2-adventure-02/wormmon.html) - Wormmon line (Paildramon and Dinobeemon Jogresses, Imperialdramon Mode Changes, JewelBeemon branch, Hudiemon side form, Armor Digivolutions).
 - `src/evolution-lines/gen-3-tamers/` - Digimon Tamers:
@@ -85,9 +85,10 @@ to [DigimonWiki/Fandom](https://digimon.fandom.com); the artwork comes from the 
 **Print-friendly by design.** Every page is prepared to be printable, so no content may
 depend on interaction: no modals, popups or hover-only information. Interaction that does
 not hurt print is fine - the group badges are the good example (on paper they still read
-as a category pill). Purely navigational widgets are the bad example (the `.node-nav`
-round arrow adds no value on paper): they are hidden via the `@media print` rule in
-`digivolution.css`, and new features should avoid needing such elements at all.
+as a category pill). Purely navigational widgets are the bad example (the `.backnav` pill
+and the breadcrumb add nothing on paper): they are hidden via the `@media print` rule in
+`digivolution.css`, and new features should avoid needing such elements at all. This is why
+tree cards carry no cross-page arrow (see "Cross-page navigation").
 
 ## Files (shared design system)
 
@@ -164,7 +165,9 @@ Both files use the same card and grid metrics so they read as one product:
 Cards are placed on an implicit grid: each node's `left` is its level column and its
 `top` is `firstRow + rowIndex * 240`. When a column skips a row, the gap is a multiple
 of the pitch (282px, 522px, ...), which is expected. Keep rows aligned to the pitch so
-bottoms line up across the whole graph.
+bottoms line up across the whole graph. Frontier is the one exception: a node that merges the
+Human and Beast rows (the Ancient, the Fusion, the Unified form and Susanoomon) sits half a
+pitch down (`y: 370`), centered between them, with no row-mates in its column.
 
 ### Canvas width
 
@@ -227,6 +230,25 @@ panel-to-footer gap, this gives the whole footer block one uniform `22px` vertic
 (diagram -> panel -> panel -> footer). Measure `top` in the browser, because a node's rendered
 bottom depends on its note length. When you move a panel you must recompute the canvas
 `height` (and the matching `<svg viewBox>` height) so the footer gap stays `22px`.
+
+### Panel connectors
+
+A panel that holds what feeds a node on the canvas (a Jogress or DNA partner, the members of
+a collective composition, the Spirits of a Unified form) is linked to that node by a connector
+in the trigger color, drawn **from the panel to the node** with the arrowhead on the node,
+because the panel's Digimon flow into it. The Armor connector is the opposite case and runs
+from the line's node down to its Armor panel, since the line evolves into those forms. Lore
+notes get no connector.
+
+- Place the panel under the column of the node it feeds, so the connector is a straight
+  vertical from the panel's top to the node's bottom (`fromX` = the node's center, `x + 103`).
+- When cards sit between the node and the panel, the connector may climb the canvas' right
+  gutter instead (panel at `right: 44px`, line at the gutter's center, entering the node's
+  right side), as Omnimon Merciful Mode does on agumon, gabumon, palmon, patamon and gatomon.
+- A connector is drawn only when its route crosses no edge, card or panel. When none exists,
+  the panel goes without one and states the mechanic in its subtitle and cards: the Omnimon
+  forms on agumon and gabumon (four results across every branch), Shakkoumon on patamon and
+  Paildramon / Dinobeemon on wormmon.
 
 ## 1. Card labels (the pill under each name)
 
@@ -299,12 +321,19 @@ Spirit Evolution" under Notes on specific cases.
 
 The color already communicates the trigger, so **do not add a text label that only
 restates it** (no "X-Antibody" on a green arrow, no "DNA / Jogress" on a purple one, no
-"Mode Change" on a teal one, etc.). Add a label only when it carries information the
-color cannot:
+"Mode Change" or Frontier "Slide" on a teal one, no "Digi-Eggs" on an amber one). Add a label
+only when it carries information the color cannot:
 
-- a specific event or continuity: `Corrupted (2020)`, `Savers (2006)`
-- a narrative cause: `Loss of control`
-- the specific partner in an otherwise-ambiguous link: `Bond with Tai`
+- a specific event or continuity: `Corrupted (Adventure: 2020)`, `Data Squad`
+- a narrative cause: `Loss of control`, `Purified`
+- the specific partner in an otherwise-ambiguous link: `Bond with Tai`, `Unified by Takuya`
+
+A continuity is named the way the site names the series (`Adventure: 2020`, `Data Squad`,
+`Adventure 02`, `V-Tamer`); an event label puts it in parentheses. Descriptors of the target
+(`Subspecies`, `Data variant`, `Blue form`) belong in its card note, and a group title
+(`Bancho`) in its badge. A label sits on its own edge inside a free lane or row gap, never over
+a card: when the lane is narrower than the label, route the edge through a row gap (see the
+Daemon -> Daemon (Mantled) arch on patamon).
 
 Ancestral (lore) links are the exception that needs **no** label: the dedicated dotted
 grey **Ancestral link** trigger already communicates "ancestry, not evolution". See the
@@ -335,8 +364,8 @@ product. A page states more or less detail depending on its size, but never repu
 |---|---|---|
 | Title (`h1`) | Identity: whose tree, and what kind of artifact. | `<Partner>: evolution tree`. Frontier is Spirit Evolution, not Digivolution, so `agunimon` reads `Agunimon: Spirit Evolution tree`. |
 | Subtitle (`.subtitle`) | Scope: the stage span plus the branches and appendices that make this line distinctive. | `<Stage1> -> ... -> <StageN> hierarchy, with <distinctive branches / appendices>.` Large trees summarize by trigger kind (`with X, DNA/Jogress, Mode Change ... branches`); small trees name the actual forms (`with the X-Antibody branch (Gomamon X) and the collective composition ...`). Frontier states its Spirit tiers instead of the Fresh->Mega ranks. |
-| Panel title + subtitle | Local relationship: the off-grid relationship the appendix panel captures. | Title names the relationship **kind**; subtitle states the concrete **mechanic** (who + who = what). Kinds: `Jogress partner(s)` (external forms that fuse with this line - singular for one card, plural for many); `Collective composition` (this line's peak is one member of a larger fusion); `<Name>'s Armor Digivolutions` (Veemon's compact Digi-Egg branch); `Lore notes` (source-verified stories behind the page's unusual arrows; subtitle `the stories behind the unusual arrows`). Frontier keeps its own result-led titles (`Susanoomon: DNA Digivolve`, `EmperorGreymon: Unified Spirit`) since its vocabulary differs, but the subtitle still states the mechanic. |
-| Footer (`.footer`) | Provenance + reading key + caveats. | Fixed lead: attribution (`Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork © Bandai, via the official Reference Book.`, adding `and Wikimon` when the page uses a Wikimon image), then `Card labels show Level (+ Virus / X); edge colors show the digivolution trigger.` Then any page-specific caveats about non-obvious nodes/links (a synthesis with no incoming arrow, a lore link, a collective composition). Close with `See README.md for the full term conventions.` |
+| Panel title + subtitle | Local relationship: the off-grid relationship the appendix panel captures. | A panel that feeds a node names that result first, then the relationship kind: `<Result>: Jogress partner(s)` (singular for one card, plural for many; `Omnimon forms` when one panel feeds several variants), `Omnimon Merciful Mode: collective composition`, and on Frontier `Susanoomon: DNA Digivolve` and `EmperorGreymon: Unified Spirit`. The subtitle states the concrete **mechanic** (`Aquilamon + Gatomon = Silphymon`). Panels that feed no single node keep a kind title: `<Name>'s Armor Digivolutions` (the compact Digi-Egg branch) and `Lore notes` (source-verified stories behind the page's unusual arrows; subtitle `the stories behind the unusual arrows`). The members of Omnimon Merciful Mode are listed in the Adventure partner order, without the page's own member. |
+| Footer (`.footer`) | Provenance + reading key + caveats. | Fixed lead: attribution (`Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork © Bandai, via the official Reference Book.`, adding `and Wikimon` when the page uses a Wikimon image), then `Card labels show Level (+ Virus / X); edge colors show the digivolution trigger.` Frontier pages read `Card labels show the Spirit tier; edge colors show the Spirit trigger.` instead. Then any page-specific caveats about non-obvious nodes/links (a synthesis with no incoming arrow, a lore link, a collective composition), and the official names that differ (`Susanoomon is DigimonWiki's name for the official Susanomon.`). Public pages never point at this README. |
 
 ## Notes on specific cases
 
@@ -386,15 +415,11 @@ max-width: 1280px; }`, so the trail stays in the same spot while navigating. A p
 needs a narrower or differently packed card layout caps or tunes its `.grid` (or its
 `.section`), never the `.wrap`.
 
-A node may also carry `nav: { href, title }`: the engine then renders a round arrow button
-(`.node-nav`, an inline SVG arrow) to the right of the card that jumps to another
-infographic page, while the card itself keeps linking to the wiki. Use it when a node has
-a dedicated tree on another page - currently `AncientGreymon` in `agumon.html` (links to
-`../gen-4-frontier/agunimon.html`), `AncientGarurumon` in `gabumon.html` (links to
-`../gen-4-frontier/lobomon.html`) and `AncientBeetlemon` in `tentomon.html` (links to
-`../gen-4-frontier/beetlemon.html`).
-The `href` is relative to the page, and the button is placed at the card's right edge,
-vertically centered on the 198px card, so keep that slot free of neighboring nodes.
+A tree card carries at most two links: the card itself (DigimonWiki) and its category
+badge (the roster). There is no per-card arrow to another tree page: a related tree is
+reached through the badge's roster, e.g. every Ancient card in
+`groups/ten-legendary-warriors.html` links its `Spirit tree`, or through the selection
+screens.
 
 A node's category `badge` may also carry an `href` (plus optional `title`): the engine
 then renders it as a clickable link instead of a plain label, e.g. the `Celestial Digimon`
@@ -448,7 +473,8 @@ follow these rules:
   EmperorGreymon (Flame, Earth, Wood, Ice, Wind) or Koji's MagnaGarurumon (Light, Thunder,
   Darkness, Water, Steel). Both Spirits reach the Unified node with `burst` edges labeled
   `Unified by Takuya` or `Unified by Koji`, since the form is not the line's own. The
-  `<Unified>: Unified Spirit` panel marks the line's Ancient card `(this line)`.
+  `<Unified>: Unified Spirit` panel marks the line's Ancient card `(this line)`. On all ten
+  pages both panels feed their node from below (see "Panel connectors").
 - **Fusion**: the Wind, Thunder, Ice and Darkness Fusions exist only outside the Frontier
   anime (Reference Book, D-Tector 3.0, figures), which the node note states. Earth, Wood,
   Water and Steel have none recorded: their Fusion column stays empty and unlabeled, and

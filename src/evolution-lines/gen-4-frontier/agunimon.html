@@ -37,7 +37,7 @@
     <section class="jogress-panel" id="dna-panel">
       <div class="jogress-panel-title">
         <h2>Susanoomon: DNA Digivolve</h2>
-        <span>Koji's MagnaGarurumon completes the union</span>
+        <span>Koji's MagnaGarurumon + EmperorGreymon = Susanoomon</span>
       </div>
       <div class="jogress-body">
         <a class="jogress-card" href="https://digimon.fandom.com/wiki/MagnaGarurumon" target="_blank">
@@ -88,7 +88,7 @@
       </div>
     </section>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Frontier has no partner Digimon: Takuya's Child form Flamemon Spirit-Evolves into these forms; AncientGreymon is the ancestral Warrior of Flame (lore links, not steps) and the origin of both the Human line (via Flamemon) and the Beast Spirit. Aldamon fuses the two Flame Spirits; EmperorGreymon unifies five Warriors' Spirits (see panel); Susanoomon is EmperorGreymon DNA-Digivolved with Koji's MagnaGarurumon (see panel), uniting all ten Legendary Warriors. Susanoomon and AncientTroiamon are DigimonWiki's names for the official Susanomon and AncientTroymon.</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show the Spirit tier; edge colors show the Spirit trigger. Frontier has no partner Digimon: Takuya's Child form Flamemon Spirit-Evolves into these forms; AncientGreymon is the ancestral Warrior of Flame (lore links, not steps) and the origin of both the Human line (via Flamemon) and the Beast Spirit. Aldamon fuses the two Flame Spirits; EmperorGreymon unifies five Warriors' Spirits (see panel); Susanoomon is EmperorGreymon DNA-Digivolved with Koji's MagnaGarurumon (see panel), uniting all ten Legendary Warriors. Susanoomon and AncientTroiamon are DigimonWiki's names for the official Susanomon and AncientTroymon.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -138,7 +138,7 @@ DigiTree.mount({
     edge('flamemon','agunimon','normal','right','left');
 
     // slide between Human and Beast
-    edge('agunimon','burninggreymon','mode','bottom','top',{shape:'vertical', startArrow:true, label:'Slide', lx:668, ly:469});
+    edge('agunimon','burninggreymon','mode','bottom','top',{shape:'vertical', startArrow:true});
 
     // fusion of both spirits
     edge('agunimon','aldamon','dna','right','left');
@@ -148,9 +148,9 @@ DigiTree.mount({
     edge('aldamon','emperorgreymon','burst');
     edge('emperorgreymon','susanoomon','dna','right','left');
 
-    // connectors from the top nodes down to their reference panels
-    edge('emperorgreymon','unified-panel','burst','bottom','top',{shape:'vertical', toX:1192});
-    edge('susanoomon','dna-panel','dna','bottom','top',{shape:'vertical', toX:1454});
+    // connectors from the reference panels up into the nodes they form
+    edge('unified-panel','emperorgreymon','burst','top','bottom',{shape:'vertical', fromX:1193});
+    edge('dna-panel','susanoomon','dna','top','bottom',{shape:'vertical', fromX:1455});
   }
 });
 </script>

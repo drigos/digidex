@@ -39,7 +39,7 @@
     <section class="jogress-panel" id="dna-panel">
       <div class="jogress-panel-title">
         <h2>Susanoomon: DNA Digivolve</h2>
-        <span>Koji's MagnaGarurumon completes the union</span>
+        <span>Koji's MagnaGarurumon + EmperorGreymon = Susanoomon</span>
       </div>
       <div class="jogress-body">
         <a class="jogress-card" href="https://digimon.fandom.com/wiki/MagnaGarurumon" target="_blank">
@@ -90,7 +90,7 @@
       </div>
     </section>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Frontier has no partner Digimon: Zoe Spirit-Evolves into these forms and has no Child form; AncientKazemon is the ancestral Warrior of Wind (lore links, not steps). JetSilphymon, the Fusion of the two Wind Spirits, comes from the Reference Book and the D-Tector 3.0 toy, outside the Frontier anime. In episode 35 Takuya unifies the Spirits of Wind with four other Warriors' Spirits into EmperorGreymon (see panel), which DNA-Digivolves with Koji's MagnaGarurumon into Susanoomon (see panel). Susanoomon and AncientTroiamon are DigimonWiki's names for the official Susanomon and AncientTroymon.</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show the Spirit tier; edge colors show the Spirit trigger. Frontier has no partner Digimon: Zoe Spirit-Evolves into these forms and has no Child form; AncientKazemon is the ancestral Warrior of Wind (lore links, not steps). JetSilphymon, the Fusion of the two Wind Spirits, comes from the Reference Book and the D-Tector 3.0 toy, outside the Frontier anime. In episode 35 Takuya unifies the Spirits of Wind with four other Warriors' Spirits into EmperorGreymon (see panel), which DNA-Digivolves with Koji's MagnaGarurumon into Susanoomon (see panel). Susanoomon and AncientTroiamon are DigimonWiki's names for the official Susanomon and AncientTroymon.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -133,7 +133,7 @@ DigiTree.mount({
     edge('ancientkazemon','zephyrmon','lore','right','left',{noArrow:true});
 
     // slide between Human and Beast
-    edge('kazemon','zephyrmon','mode','bottom','top',{shape:'vertical', startArrow:true, label:'Slide', lx:406, ly:469});
+    edge('kazemon','zephyrmon','mode','bottom','top',{shape:'vertical', startArrow:true});
 
     // fusion of both spirits
     edge('kazemon','jetsilphymon','dna','right','left');
@@ -146,9 +146,9 @@ DigiTree.mount({
     // DNA Digivolve with MagnaGarurumon
     edge('emperorgreymon','susanoomon','dna','right','left');
 
-    // connectors from the top nodes down to their reference panels
-    edge('emperorgreymon','unified-panel','burst','bottom','top',{shape:'vertical', toX:930});
-    edge('susanoomon','dna-panel','dna','bottom','top',{shape:'vertical', toX:1192});
+    // connectors from the reference panels up into the nodes they form
+    edge('unified-panel','emperorgreymon','burst','top','bottom',{shape:'vertical', fromX:931});
+    edge('dna-panel','susanoomon','dna','top','bottom',{shape:'vertical', fromX:1193});
   }
 });
 </script>

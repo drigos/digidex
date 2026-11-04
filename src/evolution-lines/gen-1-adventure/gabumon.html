@@ -7,9 +7,10 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:2122px; height:2057px; }
+  .infographic { width:2122px; height:2430px; }
   .columns { top:200px; }
-  .partner-panel { top:1670px; width:908px; }
+  .partner-panel { top:1670px; width:1348px; left:auto; right:44px; }
+  .jogress-panel { top:2025px; width:908px; }
 </style>
 </head>
 <body>
@@ -28,44 +29,89 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 2122 2057" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 2122 2430" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
-    <section class="partner-panel">
+    <section class="partner-panel" id="composition-panel">
       <div class="partner-panel-title">
-        <h2>Jogress partners</h2>
-        <span>external Agumon line used in the DNA fusions that form the Omnimon</span>
+        <h2>Omnimon Merciful Mode: collective composition</h2>
+        <span>Omnimon joins the other partners' Mega forms (Adventure tri.)</span>
       </div>
       <div class="partner-grid">
-        <a class="partner-card" href="https://digimon.fandom.com/wiki/WarGreymon" target="_blank">
-          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/wargreymon.jpg" alt="WarGreymon">
-          <div class="partner-name">WarGreymon</div>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Phoenixmon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/hououmon.jpg" alt="Phoenixmon">
+          <div class="partner-name">Phoenixmon</div>
           <div class="partner-level">Mega</div>
-          <div class="partner-fuse">+ MetalGarurumon = Omnimon</div>
+          <div class="partner-fuse">Holy bird member</div>
         </a>
-        <a class="partner-card" href="https://digimon.fandom.com/wiki/WarGreymon_X" target="_blank">
-          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/wargreymon_x.jpg" alt="WarGreymon X">
-          <div class="partner-name">WarGreymon X</div>
-          <div class="partner-level">Mega / X</div>
-          <div class="partner-fuse">+ MetalGarurumon X = Omnimon X</div>
-        </a>
-        <a class="partner-card" href="https://digimon.fandom.com/wiki/BlitzGreymon" target="_blank">
-          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/blitzgreymon.jpg" alt="BlitzGreymon">
-          <div class="partner-name">BlitzGreymon</div>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/HerculesKabuterimon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/heraklekabuterimon.jpg" alt="HerculesKabuterimon">
+          <div class="partner-name">HerculesKabuterimon</div>
           <div class="partner-level">Mega</div>
-          <div class="partner-fuse">+ CresGarurumon = Omegamon Alter-S</div>
+          <div class="partner-fuse">Insect titan member</div>
         </a>
-        <a class="partner-card" href="https://digimon.fandom.com/wiki/BlackWarGreymon" target="_blank">
-          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/blackwargreymon.jpg" alt="BlackWarGreymon">
-          <div class="partner-name">BlackWarGreymon</div>
-          <div class="partner-level">Mega / Virus</div>
-          <div class="partner-fuse">+ BlackMetalGarurumon = Omnimon Zwart</div>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Rosemon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/rosemon.jpg" alt="Rosemon">
+          <div class="partner-name">Rosemon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Fairy / plant member</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Vikemon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/vikemon.jpg" alt="Vikemon">
+          <div class="partner-name">Vikemon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Beast warrior member</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Seraphimon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/seraphimon.jpg" alt="Seraphimon">
+          <div class="partner-name">Seraphimon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Holy angel member</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Magnadramon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/holydramon.jpg" alt="Magnadramon">
+          <div class="partner-name">Magnadramon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Holy dragon member</div>
         </a>
       </div>
     </section>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. Psychemon is a color variant of Gabumon (Normal branch); AncientGarurumon is an ancestral (lore) relation, not a direct path.</div>
+    <section class="jogress-panel" id="jogress-panel">
+      <div class="jogress-panel-title">
+        <h2>Omnimon forms: Jogress partners</h2>
+        <span>the Agumon line's Megas fuse with this line's to form each Omnimon</span>
+      </div>
+      <div class="jogress-body">
+        <a class="jogress-card" href="https://digimon.fandom.com/wiki/WarGreymon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/wargreymon.jpg" alt="WarGreymon">
+          <div class="jogress-name">WarGreymon</div>
+          <div class="jogress-level">Mega</div>
+          <div class="jogress-fuse">+ MetalGarurumon = Omnimon</div>
+        </a>
+        <a class="jogress-card" href="https://digimon.fandom.com/wiki/WarGreymon_X" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/wargreymon_x.jpg" alt="WarGreymon X">
+          <div class="jogress-name">WarGreymon X</div>
+          <div class="jogress-level">Mega / X</div>
+          <div class="jogress-fuse">+ MetalGarurumon X = Omnimon X</div>
+        </a>
+        <a class="jogress-card" href="https://digimon.fandom.com/wiki/BlitzGreymon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/blitzgreymon.jpg" alt="BlitzGreymon">
+          <div class="jogress-name">BlitzGreymon</div>
+          <div class="jogress-level">Mega</div>
+          <div class="jogress-fuse">+ CresGarurumon = Omegamon Alter-S</div>
+        </a>
+        <a class="jogress-card" href="https://digimon.fandom.com/wiki/BlackWarGreymon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/blackwargreymon.jpg" alt="BlackWarGreymon">
+          <div class="jogress-name">BlackWarGreymon</div>
+          <div class="jogress-level">Mega / Virus</div>
+          <div class="jogress-fuse">+ BlackMetalGarurumon = Omnimon Zwart</div>
+        </a>
+      </div>
+    </section>
+
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. Psychemon is a color variant of Gabumon (Normal branch); AncientGarurumon is an ancestral (lore) relation, not a direct path. Omnimon Merciful Mode is a collective composition (Adventure tri.): Omnimon plus Phoenixmon, HerculesKabuterimon, Rosemon, Vikemon, Seraphimon and Magnadramon.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -112,7 +158,7 @@ DigiTree.mount({
     {id:'shadowweregarurumon', x:1090, y:1450, cls:'dark', name:'ShadowWereGarurumon', lvl:'Ultimate / Virus', note:'Virus branch of the dark line.', wiki:'ShadowWereGarurumon', img:'weregarurumon_black'},
 
     // AncientGarurumon: ancestral origin of the line (lore, not an evolution)
-    {id:'ancientgarurumon', x:42, y:250, cls:'lore', badge:{cls:'lw', text:'Legendary Warrior', href:'../../groups/ten-legendary-warriors.html#ancientgarurumon', title:'Ten Legendary Warriors roster'}, name:'AncientGarurumon', lvl:'Mega', note:'Warrior of Light; ancestor of the Garurumon species.', wiki:'AncientGarurumon', img:'ancientgarurumon', nav:{href:'../gen-4-frontier/lobomon.html', title:'Open the Warrior of Light Spirit Evolution tree (Frontier)'}},
+    {id:'ancientgarurumon', x:42, y:250, cls:'lore', badge:{cls:'lw', text:'Legendary Warrior', href:'../../groups/ten-legendary-warriors.html#ancientgarurumon', title:'Ten Legendary Warriors roster'}, name:'AncientGarurumon', lvl:'Mega', note:'Warrior of Light; ancestor of the Garurumon species.', wiki:'AncientGarurumon', img:'ancientgarurumon'},
 
     // mega column
     {id:'metalgarurumonx', x:1352, y:250, cls:'x', name:'MetalGarurumon X', lvl:'Mega / X', note:'X-Antibody form.', wiki:'MetalGarurumon_X', img:'metalgarurumon_x'},
@@ -156,7 +202,7 @@ DigiTree.mount({
     edge('weregarurumon','sagittarius','mode','bottom','top',{shape:'vertical'});
     edge('sagittarius','cresgarurumon','normal','right','left');
     edge('sagittarius','metalgarurumon','normal','right','left',{points:[[1310,829],[1310,640]], toY:640});
-    edge('weregarurumon','zeedgarurumon','normal','bottom','left',{fromX:1245, points:[[1245,710],[1338,710],[1338,1069]]});
+    edge('weregarurumon','zeedgarurumon','normal','bottom','left',{fromX:1120, points:[[1120,710],[1061,710],[1061,950],[1338,950],[1338,1069]]});
     // AncientGarurumon ancestral (lore) link: origin -> root of the line, no arrowhead
     edge('ancientgarurumon','punimon','lore','bottom','top',{shape:'vertical', noArrow:true});
 
@@ -178,6 +224,10 @@ DigiTree.mount({
     // alternate rookie form + bond
     edge('gabumon','psychemon','normal','left','left',{shape:'leftbus', busX:548});
     edge('gabumon','gabumonbond','bond','bottom','left',{points:[[668,695],[820,695],[820,1309]], label:'Bond with Matt', lx:820, ly:990});
+
+    // the composition panel feeds the collective form through the free right gutter
+    // (the column below Omnimon Merciful Mode is taken)
+    edge('composition-panel','omnimonmerciful','dna','right','right',{fromY:1731, points:[[2101,1731],[2101,590]]});
   }
 });
 </script>

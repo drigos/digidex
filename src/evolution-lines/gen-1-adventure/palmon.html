@@ -7,10 +7,10 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:1860px; height:1735px; }
+  .infographic { width:1860px; height:1752px; }
   .columns { top:200px; }
-  .jogress-panel { top:951px; width:248px; }
-  .partner-panel { top:1333px; width:1348px; }
+  .jogress-panel { top:950px; width:248px; left:auto; right:44px; }
+  .partner-panel { top:1347px; width:1348px; left:auto; right:44px; }
 </style>
 </head>
 <body>
@@ -29,14 +29,14 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 1860 1735" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 1860 1752" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
     <section class="jogress-panel" id="jogress-panel">
       <div class="jogress-panel-title">
-        <h2>Jogress partner</h2>
-        <span>external Lalamon line used in the DNA fusion that forms Rafflesimon</span>
+        <h2>Rafflesimon: Jogress partner</h2>
+        <span>Lotosmon + Rosemon = Rafflesimon</span>
       </div>
       <div class="jogress-body">
         <a class="jogress-card" href="https://digimon.fandom.com/wiki/Lotosmon" target="_blank">
@@ -50,8 +50,8 @@
 
     <section class="partner-panel" id="composition-panel">
       <div class="partner-panel-title">
-        <h2>Collective composition (Adventure tri.)</h2>
-        <span>Rosemon joins Omnimon and the other partners' Mega forms to compose Omnimon Merciful Mode</span>
+        <h2>Omnimon Merciful Mode: collective composition</h2>
+        <span>Rosemon joins Omnimon and the other partners' Mega forms (Adventure tri.)</span>
       </div>
       <div class="partner-grid">
         <a class="partner-card" href="https://digimon.fandom.com/wiki/Omnimon" target="_blank">
@@ -59,18 +59,6 @@
           <div class="partner-name">Omnimon</div>
           <div class="partner-level">Ultra</div>
           <div class="partner-fuse">Royal Knight core</div>
-        </a>
-        <a class="partner-card" href="https://digimon.fandom.com/wiki/Seraphimon" target="_blank">
-          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/seraphimon.jpg" alt="Seraphimon">
-          <div class="partner-name">Seraphimon</div>
-          <div class="partner-level">Mega</div>
-          <div class="partner-fuse">Angel (holy) member</div>
-        </a>
-        <a class="partner-card" href="https://digimon.fandom.com/wiki/Magnadramon" target="_blank">
-          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/holydramon.jpg" alt="Magnadramon">
-          <div class="partner-name">Magnadramon</div>
-          <div class="partner-level">Mega</div>
-          <div class="partner-fuse">Holy dragon member</div>
         </a>
         <a class="partner-card" href="https://digimon.fandom.com/wiki/Phoenixmon" target="_blank">
           <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/hououmon.jpg" alt="Phoenixmon">
@@ -89,6 +77,18 @@
           <div class="partner-name">Vikemon</div>
           <div class="partner-level">Mega</div>
           <div class="partner-fuse">Beast warrior member</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Seraphimon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/seraphimon.jpg" alt="Seraphimon">
+          <div class="partner-name">Seraphimon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Holy angel member</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Magnadramon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/holydramon.jpg" alt="Magnadramon">
+          <div class="partner-name">Magnadramon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Holy dragon member</div>
         </a>
       </div>
     </section>
@@ -133,8 +133,8 @@ DigiTree.mount({
 
     // Rookie side forms + Mega / Ultimate variants (variants band)
     {id:'aruraumon', x:566, y:730, cls:'normal', name:'Aruraumon', lvl:'Rookie', note:'Subspecies of Palmon.', wiki:'Aruraumon', img:'alraumon'},
-    {id:'ponchomon', x:828, y:730, cls:'dark', name:'Ponchomon', lvl:'Champion', note:'Irregular Mutant / Ghost form (Adventure:).', wiki:'Ponchomon', img:'ponchomon'},
-    {id:'banchoLillymon', x:1090, y:730, cls:'normal', name:'BanchoLillymon', lvl:'Mega', note:'Bancho form; alternate Mega off Lillymon.', wiki:'BanchoLillymon', img:'bancholilimon'},
+    {id:'ponchomon', x:828, y:730, cls:'dark', name:'Ponchomon', lvl:'Champion', note:'Irregular Mutant / Ghost form (Adventure: 2020).', wiki:'Ponchomon', img:'ponchomon'},
+    {id:'banchoLillymon', x:1090, y:730, cls:'normal', badge:{cls:'bc', text:'Bancho', href:'../../groups/bancho.html#bancholillymon', title:'Bancho Digimon roster'}, name:'BanchoLillymon', lvl:'Mega', note:'Bancho form; alternate Mega off Lillymon.', wiki:'BanchoLillymon', img:'bancholilimon'},
     {id:'rosemonburst', x:1352, y:730, cls:'burst', name:'Rosemon Burst Mode', lvl:'Mega', note:'Burst Mode of Rosemon (Data Squad).', wiki:'Rosemon_Burst_Mode', img:'rosemonburstmode'},
     {id:'rafflesimon', x:1614, y:730, cls:'dna', name:'Rafflesimon', lvl:'Mega', note:'Jogress of Rosemon and Lotosmon.', wiki:'Rafflesimon', img:'rafflesimon'}
   ],
@@ -157,15 +157,21 @@ DigiTree.mount({
     edge('lillymonx','rosemonx','x');
 
     // Rookie side forms
-    edge('palmon','aruraumon','normal','bottom','top',{shape:'vertical', label:'Subspecies', lx:614, ly:700});
+    edge('palmon','aruraumon','normal','bottom','top',{shape:'vertical'});
     edge('palmon','ponchomon','dark','right','left',{label:'Sonic disruption', lx:782, ly:710});
 
     // Mega / Ultimate variants
-    edge('lillymon','banchoLillymon','normal','bottom','top',{shape:'vertical', label:'Bancho', lx:1160, ly:700});
+    edge('lillymon','banchoLillymon','normal','bottom','top',{shape:'vertical'});
     edge('rosemon','rosemonburst','burst','bottom','top',{shape:'vertical'});
 
     // Rafflesimon Jogress (Rosemon + Lotosmon; Lotosmon lives in the Jogress partners panel)
     edge('rosemon','rafflesimon','dna','right','left',{points:[[1590,589],[1590,819]]});
+
+    // Lotosmon feeds Rafflesimon straight above its panel
+    edge('jogress-panel','rafflesimon','dna','top','bottom',{shape:'vertical', fromX:1717});
+    // the composition panel feeds the collective form through the free right gutter
+    // (the column below Omnimon Merciful Mode is taken)
+    edge('composition-panel','omnimonmerciful','dna','right','right',{fromY:1408, points:[[1839,1408],[1839,590]]});
   }
 });
 </script>

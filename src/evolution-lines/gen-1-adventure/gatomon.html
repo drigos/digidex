@@ -7,11 +7,11 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:1860px; height:2614px; }
+  .infographic { width:1860px; height:3013px; }
   .columns { top:200px; }
-  .jogress-panel { top:1910px; width:248px; }
-  .partner-panel { top:1910px; width:1348px; left:auto; right:24px; }
-  .armor-panel { top:2264px; width:1812px; }
+  .jogress-panel { top:1910px; width:248px; left:1067px; }
+  .partner-panel { top:2307px; width:1348px; left:auto; right:44px; }
+  .armor-panel { top:2662px; width:1812px; }
 </style>
 </head>
 <body>
@@ -30,14 +30,14 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 1860 2614" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 1860 3013" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
-    <section class="jogress-panel">
+    <section class="jogress-panel" id="jogress-panel">
       <div class="jogress-panel-title">
-        <h2>Jogress partner</h2>
-        <span>external Hawkmon line</span>
+        <h2>Silphymon: Jogress partner</h2>
+        <span>Aquilamon + Gatomon = Silphymon</span>
       </div>
       <div class="jogress-body">
         <a class="jogress-card" href="https://digimon.fandom.com/wiki/Aquilamon" target="_blank">
@@ -51,8 +51,8 @@
 
     <section class="partner-panel" id="composition-panel">
       <div class="partner-panel-title">
-        <h2>Collective composition (Adventure tri.)</h2>
-        <span>Magnadramon joins Omnimon and the other partners' Mega forms to compose Omnimon Merciful Mode</span>
+        <h2>Omnimon Merciful Mode: collective composition</h2>
+        <span>Magnadramon joins Omnimon and the other partners' Mega forms (Adventure tri.)</span>
       </div>
       <div class="partner-grid">
         <a class="partner-card" href="https://digimon.fandom.com/wiki/Omnimon" target="_blank">
@@ -61,23 +61,11 @@
           <div class="partner-level">Ultra</div>
           <div class="partner-fuse">Royal Knight core</div>
         </a>
-        <a class="partner-card" href="https://digimon.fandom.com/wiki/Seraphimon" target="_blank">
-          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/seraphimon.jpg" alt="Seraphimon">
-          <div class="partner-name">Seraphimon</div>
-          <div class="partner-level">Mega</div>
-          <div class="partner-fuse">Holy angel member</div>
-        </a>
         <a class="partner-card" href="https://digimon.fandom.com/wiki/Phoenixmon" target="_blank">
           <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/hououmon.jpg" alt="Phoenixmon">
           <div class="partner-name">Phoenixmon</div>
           <div class="partner-level">Mega</div>
           <div class="partner-fuse">Holy bird member</div>
-        </a>
-        <a class="partner-card" href="https://digimon.fandom.com/wiki/Rosemon" target="_blank">
-          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/rosemon.jpg" alt="Rosemon">
-          <div class="partner-name">Rosemon</div>
-          <div class="partner-level">Mega</div>
-          <div class="partner-fuse">Fairy / plant member</div>
         </a>
         <a class="partner-card" href="https://digimon.fandom.com/wiki/HerculesKabuterimon" target="_blank">
           <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/heraklekabuterimon.jpg" alt="HerculesKabuterimon">
@@ -85,11 +73,23 @@
           <div class="partner-level">Mega</div>
           <div class="partner-fuse">Insect titan member</div>
         </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Rosemon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/rosemon.jpg" alt="Rosemon">
+          <div class="partner-name">Rosemon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Fairy / plant member</div>
+        </a>
         <a class="partner-card" href="https://digimon.fandom.com/wiki/Vikemon" target="_blank">
           <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/vikemon.jpg" alt="Vikemon">
           <div class="partner-name">Vikemon</div>
           <div class="partner-level">Mega</div>
           <div class="partner-fuse">Beast warrior member</div>
+        </a>
+        <a class="partner-card" href="https://digimon.fandom.com/wiki/Seraphimon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/seraphimon.jpg" alt="Seraphimon">
+          <div class="partner-name">Seraphimon</div>
+          <div class="partner-level">Mega</div>
+          <div class="partner-fuse">Holy angel member</div>
         </a>
       </div>
     </section>
@@ -213,7 +213,7 @@ DigiTree.mount({
     {id:'ophanimonfalldown', x:1614, y:730, cls:'dark', name:'Ophanimon Falldown Mode', lvl:'Mega / Virus', note:'Ophanimon fallen into madness.', wiki:'Ophanimon_Falldown_Mode', img:'ofanimonfalldownmode', badge:{cls:'fa', text:'Fallen Angel', href:'../../groups/angelic.html#ophanimon-falldown-mode', title:'Angelic Digimon roster'}},
 
     // dark branch and the holy-dark fusion on one row
-    {id:'blackgatomon', x:828, y:970, cls:'dark', name:'BlackGatomon', lvl:'Champion / Virus', note:'Virus-attribute counterpart of Gatomon.', wiki:'BlackGatomon', img:'blacktailmon'},
+    {id:'blackgatomon', x:828, y:970, cls:'dark', name:'BlackGatomon', lvl:'Champion / Virus', note:'Subspecies; Virus-attribute counterpart of Gatomon.', wiki:'BlackGatomon', img:'blacktailmon'},
     {id:'ladydevimon', x:1090, y:970, cls:'dark', name:'LadyDevimon', lvl:'Ultimate / Virus', note:'Fallen angel of the dark branch.', wiki:'LadyDevimon', img:'ladydevimon'},
     {id:'mastemon', x:1352, y:970, cls:'dna', name:'Mastemon', lvl:'Mega', note:'Angewomon + LadyDevimon.', wiki:'Mastemon', img:'mastemon'},
     {id:'ophanimonc', x:1614, y:970, cls:'mode', name:'Ophanimon C', lvl:'Mega', note:'Game-specific form using the ChronoCore.', wiki:'Ophanimon_C', img:'https://wikimon.net/images/4/4b/Spr_DS_Ophani_Core.png'},
@@ -223,7 +223,7 @@ DigiTree.mount({
     {id:'junomonhysteric', x:1614, y:1210, cls:'mode', name:'Junomon Hysteric Mode', lvl:'Mega', note:'Enraged mode of Junomon.', wiki:'Junomon_Hysteric_Mode', img:'junomon_hysteric'},
 
     // Adventure: corruption
-    {id:'skullknightmon', x:828, y:1450, cls:'dark', name:'SkullKnightmon', lvl:'Champion / Virus', note:'Corrupted form of Gatomon (Adventure: reboot).', wiki:'SkullKnightmon', img:'skullknightmon'},
+    {id:'skullknightmon', x:828, y:1450, cls:'dark', name:'SkullKnightmon', lvl:'Champion / Virus', note:'Corrupted form of Gatomon (Adventure: 2020).', wiki:'SkullKnightmon', img:'skullknightmon'},
     {id:'darkknightmon', x:1090, y:1450, cls:'dark', name:'DarkKnightmon', lvl:'Ultimate / Virus', note:'Dark knight; peak of the corrupted branch.', wiki:'DarkKnightmon', img:'darkknightmon'},
 
     // Jogress row
@@ -262,13 +262,13 @@ DigiTree.mount({
     edge('junomon','junomonhysteric','mode');
 
     // dark branch up to the holy-dark fusion
-    edge('gatomon','blackgatomon','dark','bottom','top',{shape:'vertical', fromX:960, toX:960, label:'Subspecies', lx:1008, ly:810});
+    edge('gatomon','blackgatomon','dark','bottom','top',{shape:'vertical', fromX:960, toX:960});
     edge('blackgatomon','blackgatomonuver','mode','bottom','top',{shape:'vertical', label:'Ghost Game', lx:995, ly:1187});
     edge('blackgatomon','ladydevimon','dark');
     edge('ladydevimon','mastemon','dna');
 
     // Adventure: corruption
-    edge('gatomon','skullknightmon','dark','bottom','left',{fromX:900, points:[[900,910],[812,910],[812,1549]], label:'Corrupted (2020)', lx:812, ly:1188});
+    edge('gatomon','skullknightmon','dark','bottom','left',{fromX:900, points:[[900,910],[812,910],[812,1549]], label:'Corrupted (Adventure: 2020)', lx:812, ly:1188});
     edge('skullknightmon','darkknightmon','dark');
 
     // DNA / Jogress with Aquilamon (see panel)
@@ -276,8 +276,14 @@ DigiTree.mount({
     edge('silphymon','valkyrimon','normal');
 
     // connector to the Armor panel (appendix, not a normal edge)
-    edge('gatomon','armor-panel','armor','bottom','top',{fromX:850, toX:380, points:[[850,730],[380,730]], label:'Digi-Eggs', lx:380, ly:1500, width:3});
+    edge('gatomon','armor-panel','armor','bottom','top',{fromX:850, toX:380, points:[[850,730],[380,730]], width:3});
     edge('armor-nefertimon','armor-nefertimonx','x','right','left',{width:3});
+
+    // Aquilamon feeds Silphymon straight above its panel
+    edge('jogress-panel','silphymon','dna','top','bottom',{shape:'vertical', fromX:1193});
+    // the composition panel feeds the collective form through the free right gutter
+    // (the column below Omnimon Merciful Mode is taken)
+    edge('composition-panel','omnimonmerciful','dna','right','right',{fromY:2368, points:[[1839,2368],[1839,590]]});
   }
 });
 </script>
