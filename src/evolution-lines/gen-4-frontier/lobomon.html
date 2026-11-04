@@ -7,11 +7,11 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:1598px; height:1506px; }
+  .infographic { width:1598px; height:1529px; }
   .columns { top:200px; }
   /* both reference panels are right-aligned and stacked (narrow DNA on top, wide Unified below) */
-  .jogress-panel { top:711px; width:248px; left:auto; right:24px; }
-  .partner-panel { top:1104px; width:1128px; left:auto; right:24px; }
+  .jogress-panel { top:710px; width:248px; left:auto; right:24px; }
+  .partner-panel { top:1107px; width:1128px; left:auto; right:24px; }
 </style>
 </head>
 <body>
@@ -30,7 +30,7 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 1598 1506" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 1598 1529" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
@@ -88,7 +88,7 @@
       </div>
     </section>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Frontier has no partner Digimon: Koji's Child form Strabimon Spirit-Evolves into these forms; AncientGarurumon is the ancestral Warrior of Light (lore links, not steps) and the origin of both the Human line (via Strabimon) and the Beast Spirit. BeoWolfmon fuses the two Light Spirits; MagnaGarurumon unifies five Warriors' Spirits (see panel); Susanoomon is MagnaGarurumon DNA-Digivolved with Takuya's EmperorGreymon (see panel), uniting all ten Legendary Warriors.</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Frontier has no partner Digimon: Koji's Child form Strabimon Spirit-Evolves into these forms; AncientGarurumon is the ancestral Warrior of Light (lore links, not steps) and the origin of both the Human line (via Strabimon) and the Beast Spirit. BeoWolfmon fuses the two Light Spirits; MagnaGarurumon unifies five Warriors' Spirits (see panel); Susanoomon is MagnaGarurumon DNA-Digivolved with Takuya's EmperorGreymon (see panel), uniting all ten Legendary Warriors. Susanoomon and AncientMermaidmon are DigimonWiki's names for the official Susanomon and AncientMermaimon.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -111,7 +111,7 @@ DigiTree.mount({
   ],
   nodes: [
     // ancestral origin (far left): ancient Warrior of Light, source of both branches
-    {id:'ancientgarurumon', x:42, y:370, cls:'lore', badge:{cls:'lw', text:'Legendary Warrior'}, name:'AncientGarurumon', lvl:'Ancient', note:'Ancient Warrior of Light; ancestor of the entire Light line.', wiki:'AncientGarurumon', img:'ancientgarurumon'},
+    {id:'ancientgarurumon', x:42, y:370, cls:'lore', badge:{cls:'lw', text:'Legendary Warrior', href:'../../groups/ten-legendary-warriors.html#ancientgarurumon', title:'Ten Legendary Warriors roster'}, name:'AncientGarurumon', lvl:'Ancient', note:'Ancient Warrior of Light; ancestor of the entire Light line.', wiki:'AncientGarurumon', img:'ancientgarurumon'},
 
     // child form (Koji's Rookie-level Digimon), level with the Human Spirit
     {id:'strabimon', x:304, y:250, cls:'normal', name:'Strabimon', lvl:'Child', note:'Koji&rsquo;s Child form; Spirit-Evolves into Lobomon.', wiki:'Strabimon', img:'storabimon'},

@@ -32,6 +32,14 @@ then lists the generations, the atlas pages or the group rosters:
   - [index.html](src/evolution-lines/gen-4-frontier/index.html) - Legendary Warriors selection screen (6 chosen + 4 Cherubimon's warriors).
   - [agunimon.html](src/evolution-lines/gen-4-frontier/agunimon.html) - Warrior of Flame line (Child Flamemon, Human/Beast Spirit, Fusion, Unified, Susanoomon).
   - [lobomon.html](src/evolution-lines/gen-4-frontier/lobomon.html) - Warrior of Light line (Child Strabimon, Human/Beast Spirit, Fusion, Unified, Susanoomon).
+  - [kazemon.html](src/evolution-lines/gen-4-frontier/kazemon.html) - Warrior of Wind line (Human/Beast Spirit, Fusion JetSilphymon, the Spirits unified into EmperorGreymon, Susanoomon).
+  - [beetlemon.html](src/evolution-lines/gen-4-frontier/beetlemon.html) - Warrior of Thunder line (Human/Beast Spirit, Fusion RhinoKabuterimon, the Spirits unified into MagnaGarurumon, Susanoomon).
+  - [kumamon.html](src/evolution-lines/gen-4-frontier/kumamon.html) - Warrior of Ice line (Human/Beast Spirit, Fusion Daipenmon, the Spirits unified into EmperorGreymon, Susanoomon).
+  - [loweemon.html](src/evolution-lines/gen-4-frontier/loweemon.html) - Warrior of Darkness line (corrupted Duskmon/Velgemon purified into Loweemon/JagerLoweemon, Fusion Rhihimon, the Spirits unified into MagnaGarurumon, Susanoomon).
+  - [grumblemon.html](src/evolution-lines/gen-4-frontier/grumblemon.html) - Warrior of Earth line, one of Cherubimon's warriors (Human/Beast Spirit, the Spirits unified into EmperorGreymon, Susanoomon).
+  - [arbormon.html](src/evolution-lines/gen-4-frontier/arbormon.html) - Warrior of Wood line, one of Cherubimon's warriors (Human/Beast Spirit, the Spirits unified into EmperorGreymon, Susanoomon).
+  - [ranamon.html](src/evolution-lines/gen-4-frontier/ranamon.html) - Warrior of Water line, one of Cherubimon's warriors (Human/Beast Spirit, the Spirits unified into MagnaGarurumon, Susanoomon).
+  - [mercurymon.html](src/evolution-lines/gen-4-frontier/mercurymon.html) - Warrior of Steel line, one of Cherubimon's warriors (Human/Beast Spirit, the Spirits unified into MagnaGarurumon, Susanoomon).
 - `src/evolution-lines/gen-5-data-squad/` - Digimon Data Squad / Savers:
   - [index.html](src/evolution-lines/gen-5-data-squad/index.html) - DATS selection screen (by Burst Mode; the Agumon card links into the gen-1 Agumon tree).
 - Generations whose selection screen exists but whose trees are all "Coming soon" (partners and peak forms taken from the DigimonWiki character infoboxes):
@@ -178,9 +186,11 @@ Every tree page uses the same header geometry so the pages read as one product:
 | First card row | `y: 250px` | The topmost node, a uniform `50px` below the column headers. |
 | Legend | `.legend { width: 560px }` + `.legend-grid { repeat(3, 1fr) }`, both shared in `digivolution.css` | Constant size on every page (no per-page override): 3 columns sized for the longest label (`Fusion / DNA Digivolve`); rows grow with the trigger count. |
 
-The legend is the same size on every page, including the narrow `agunimon.html` (`1598px`): the
-`560px` box clears the title on all current pages. Do not override it per page; if a future page's
-title would collide with it, shorten the title rather than shrinking the legend.
+The legend is the same size on every page, including the narrowest Frontier pages (`1336px`):
+the `560px` box clears the title on all current pages. On those `1336px` pages the default
+`920px` subtitle would run under the legend, so the page caps it with `.subtitle { max-width:680px; }`.
+Do not override the legend per page; if a future page's title would collide with it, shorten
+the title rather than shrinking the legend.
 
 ### Canvas height and the footer
 
@@ -276,7 +286,7 @@ Every arrow is colored by the digivolution trigger. This is the single vocabular
 | Armor Digivolution | amber | Armor evolution via a Digi-Egg. | veemon, hawkmon, armadillomon, wormmon, patamon, gatomon |
 | Bond Evolution | pink | Bond-driven evolution. | agumon |
 | Burst Mode | gold | Burst Digivolution. | agumon |
-| Ancestral link | grey (dotted, no arrowhead) | Lore ancestry, not an evolution: a Legendary Warrior linked to the root of the line it spawned. | agumon, gabumon, tentomon |
+| Ancestral link | grey (dotted, no arrowhead) | Lore ancestry, not an evolution: a Legendary Warrior linked to the root of the line it spawned. | agumon, gabumon, tentomon, gen-4-frontier |
 
 Alternate forms (e.g. `SnowAgumon`, `Agumon Expert`, `HiMachineDramon`) use the
 **Normal evolution** color; they are just extra branches, not a distinct trigger.
@@ -311,8 +321,9 @@ The on-image legend lists only the triggers that the file actually uses.
 - The Adventure 02 partners (Veemon, Hawkmon, Armadillomon, Wormmon, Patamon, Gatomon) add: Armor Digivolution.
 - Agumon adds: Bond Evolution, Burst Mode.
 - Agumon, Gabumon and Tentomon add: Ancestral link.
-- Frontier (agunimon) relabels the shared colors: Spirit Evolution, Slide Evolution,
-  Fusion / DNA Digivolve, Unified Spirit.
+- Frontier relabels the shared colors: Spirit Evolution, Slide Evolution,
+  Fusion / DNA Digivolve, Unified Spirit, plus Ancestral link. Pages without a Child or a
+  purification step draw no blue edge and so omit Spirit Evolution.
 
 ## 4. Page copy (title, subtitle, panels, footer)
 
@@ -379,15 +390,17 @@ A node may also carry `nav: { href, title }`: the engine then renders a round ar
 (`.node-nav`, an inline SVG arrow) to the right of the card that jumps to another
 infographic page, while the card itself keeps linking to the wiki. Use it when a node has
 a dedicated tree on another page - currently `AncientGreymon` in `agumon.html` (links to
-`../gen-4-frontier/agunimon.html`) and `AncientGarurumon` in `gabumon.html` (links to
-`../gen-4-frontier/lobomon.html`). `AncientBeetlemon` (tentomon) gets the same arrow once
-the Beetlemon Frontier page exists.
+`../gen-4-frontier/agunimon.html`), `AncientGarurumon` in `gabumon.html` (links to
+`../gen-4-frontier/lobomon.html`) and `AncientBeetlemon` in `tentomon.html` (links to
+`../gen-4-frontier/beetlemon.html`).
 The `href` is relative to the page, and the button is placed at the card's right edge,
 vertically centered on the 198px card, so keep that slot free of neighboring nodes.
 
 A node's category `badge` may also carry an `href` (plus optional `title`): the engine
 then renders it as a clickable link instead of a plain label, e.g. the `Celestial Digimon`
-and `Angelic Army` badges in `patamon.html` linking to the `groups/angelic.html` roster.
+and `Angelic Army` badges in `patamon.html` linking to the `groups/angelic.html` roster, or
+the `Legendary Warrior` badge of every Ancient node linking to its card in
+`groups/ten-legendary-warriors.html`.
 The card itself keeps linking to the wiki.
 Every roster card has an `id` (the Digimon name lowercased, parentheses dropped,
 separators hyphenated: `#angemon`, `#cherubimon-good`, `#ophanimon-falldown-mode`), so a
@@ -425,6 +438,31 @@ layers its own vocabulary on the shared engine instead of the Fresh->Mega ranks.
   dotted, arrowless lore edge, as in the gen-1 pages). No new color tokens are added.
 - **Columns** are relabeled to the Spirit tiers (`Ancestor`, `Child`, `Human / Beast Spirit`,
   `Fusion`, `Unified Spirit`, `Susanoomon`) rather than evolution levels.
+
+Only Takuya and Koji have a Child and a Unified form of their own. The other eight pages
+follow these rules:
+
+- **No Child column**: the `Ancient` ties straight to the Human and Beast Spirits with the
+  lore fan, and the canvas is `1336px` (five columns).
+- **Unified and Susanoomon stay as nodes**: the warrior's Spirits feed Takuya's
+  EmperorGreymon (Flame, Earth, Wood, Ice, Wind) or Koji's MagnaGarurumon (Light, Thunder,
+  Darkness, Water, Steel). Both Spirits reach the Unified node with `burst` edges labeled
+  `Unified by Takuya` or `Unified by Koji`, since the form is not the line's own. The
+  `<Unified>: Unified Spirit` panel marks the line's Ancient card `(this line)`.
+- **Fusion**: the Wind, Thunder, Ice and Darkness Fusions exist only outside the Frontier
+  anime (Reference Book, D-Tector 3.0, figures), which the node note states. Earth, Wood,
+  Water and Steel have none recorded: their Fusion column stays empty and unlabeled, and
+  the Unified label sits in the gap.
+- **Darkness** (`loweemon.html`, `1598px`): a `Corrupted Spirit` column in the Child slot
+  holds Duskmon and Velgemon (`cls:'dark'` pill), and Spirit Evolution edges labeled
+  `Purified` lead to Loweemon (H -> L Spirit) and JagerLoweemon (B -> K Spirit).
+- **Cherubimon's warriors** (Grumblemon, Arbormon, Ranamon, Mercurymon) draw no extra
+  nodes; the footer states that Cherubimon gave the H Spirit life and that the Spirits end
+  in the Unified form.
+- **Footer**: game forms with other species, card-game evolutions into an Ancient and
+  `{{DSR}}` entries stay out, as on the Flame and Light pages. Official Reference Book
+  names that differ are mapped (`Susanomon`, `AncientTroymon`, `AncientMermaimon`,
+  `Lanamon`, `Sephirothmon`, `Velgrmon`, `DaiPenmon`).
 
 The engine is otherwise unchanged: same `nodes`/`edges` config, same layout grid and
 header band.
