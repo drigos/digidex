@@ -11,7 +11,7 @@ then lists the generations, the atlas pages or the group rosters:
 - [src/evolution-lines/index.html](src/evolution-lines/index.html) - Generations selection screen: one card per anime generation in airing order, linking to each generation's own `index.html`, with a "done / total lines" pill while a generation still has "Coming soon" lines. Season numbers follow DigimonWiki's count (Hunters is Season 7), the TV film Digital Monster X-Evolution sits in airing order between Frontier and Data Squad, and a note explains why Season 9 (the Digimon Adventure: reboot) has no card.
 - `src/evolution-lines/gen-1-adventure/` - Digimon Adventure:
   - [index.html](src/evolution-lines/gen-1-adventure/index.html) - DigiDestined selection screen (by Crest).
-  - [agumon.html](src/evolution-lines/gen-1-adventure/agumon.html) - Agumon line (Data Squad, Bond and Burst branches; AncientGreymon ancestral link).
+  - [agumon.html](src/evolution-lines/gen-1-adventure/agumon.html) - Agumon line (Data Squad, Bond and Burst branches, the Virus forms, the Agumon and Greymon subspecies; AncientGreymon ancestral link).
   - [gabumon.html](src/evolution-lines/gen-1-adventure/gabumon.html) - Gabumon line (X, Virus and Bond branches; AncientGarurumon ancestral link).
   - [biyomon.html](src/evolution-lines/gen-1-adventure/biyomon.html) - Biyomon line (X line, dark bird branch, Ornismon variation, collective composition).
   - [tentomon.html](src/evolution-lines/gen-1-adventure/tentomon.html) - Tentomon line (Red/Blue MegaKabuterimon branches, HerculesKabuterimon X, AncientBeetlemon ancestral link, collective composition).
@@ -265,11 +265,11 @@ as a pyramid, the narrowest on top and the widest at the bottom:
 3. `Lore notes`, last.
 
 A Jogress panel and a composition panel share one row when both fit with a `58px` gap
-between them, the same as between card columns (patamon, gatomon, palmon): the Jogress panel
-stays at the left margin and the composition panel ends flush with the last column (page
-style `left = canvas width - 42 - panel width`). Since both are `333px` tall, their bottoms
-line up. Where they do not fit (agumon and gabumon, with four Jogress cards; Frontier), each
-takes its own row.
+between them, the same as between card columns (patamon, gatomon, palmon, agumon): the
+Jogress panel stays at the left margin and the composition panel ends flush with the last
+column (page style `left = canvas width - 42 - panel width`); on a wider canvas the Jogress
+panel takes the rest of the row (agumon). Since both are `333px` tall, their bottoms line up.
+Where they do not fit (gabumon, with four Jogress cards; Frontier), each takes its own row.
 
 The Armor panel is the only panel with a connector, an amber edge from the line's node down
 to it, because the line evolves into its forms. The edge passes the panels above it: down the
@@ -294,7 +294,7 @@ Format: `Level` optionally followed by ` / Virus` and/or ` / X`, in that order.
 | `Champion` | Adult / Champion stage. |
 | `Ultimate` | Perfect / Ultimate stage. |
 | `Mega` | Ultimate (JP) / Mega stage. |
-| `Ultra` | Fusion pinnacle above Mega: Omnimon / Omegamon-class Jogress results and their variants. |
+| `Ultra` | Fusion pinnacle above Mega: Omnimon / Omegamon-class Jogress results and their variants. The Reference Book lists them as Mega; the site sets these exceptional forms apart (games often treat them as Mega+). |
 | `Armor` | Result of an Armor Digivolution (Digi-Egg). The Adventure 02 partners' lines (Veemon, Hawkmon, Armadillomon, Wormmon, Patamon, Gatomon) and the golden Rapidmon on terriermon, the one Armor form drawn as a tree card (`cls:'armor'`, amber pill). |
 
 Frontier (`gen-4-frontier`) does not use these ranks; it has its own Spirit-rank levels.
@@ -341,10 +341,14 @@ Every arrow is colored by the digivolution trigger. This is the single vocabular
 | Armor Digivolution | amber | Armor evolution via a Digi-Egg. | veemon, hawkmon, armadillomon, wormmon, patamon, gatomon, terriermon |
 | Bond Evolution | pink | Bond-driven evolution. | agumon |
 | Burst Mode | gold | Burst Digivolution. | agumon |
+| Variant / subspecies | silver | Not an evolution: the target is a separate species or subspecies of the source ("a separate species of Agumon", "a subspecies of Greymon"). | agumon |
 | Ancestral link | grey (dotted, no arrowhead) | Lore ancestry, not an evolution: a Legendary Warrior linked to the root of the line it spawned. | agumon, gabumon, tentomon, gen-4-frontier |
 
-Alternate forms (e.g. `SnowAgumon`, `Agumon Expert`, `HiMachineDramon`) use the
-**Normal evolution** color; they are just extra branches, not a distinct trigger.
+A form the Reference Book describes as a separate species or a subspecies (`SnowAgumon`,
+`Agumon Expert`, `Gaiomon`) uses **Variant / subspecies** and `cls:'variant'` (silver pill),
+so it never reads as an evolution. A subspecies no accepted source shows digivolving from the
+line (`Gaiomon`) gets no arrow; the footer says why. A form reached by digivolution
+(`HiMachineDramon`, upgraded from Machinedramon in Xros Wars) keeps **Normal evolution**.
 
 ### Routing
 
@@ -355,7 +359,7 @@ another lane, `laneY` another row gap for top/bottom edges, `points` gives the c
 Anchors come from the cards' layout position, so a hovered card never skews its arrows.
 
 - An edge runs in a lane or row gap, never under a card or panel, and crosses no other edge
-  unless no route can avoid it (the `Bond with Tai` edge on agumon crosses two branches; on
+  unless no route can avoid it (the `Bond with Tai` edge on agumon crosses the Data Squad line; on
   gatomon, Angewomon -> Junomon must cross the LadyDevimon -> Mastemon fusion, because
   Gatomon, Angewomon, Mastemon, LadyDevimon and BlackGatomon close a loop around its start;
   on guilmon, `Biomerge with Takato` crosses the Growlmon X and WarGrowlmon X edges, because
@@ -404,7 +408,7 @@ The on-image legend lists only the triggers that the file actually uses.
 - Shared by both: Normal evolution, X-Digivolution, DNA / Jogress, Mode Change,
   Dark / Virus.
 - The Adventure 02 partners (Veemon, Hawkmon, Armadillomon, Wormmon, Patamon, Gatomon) and Terriermon add: Armor Digivolution.
-- Agumon adds: Bond Evolution, Burst Mode.
+- Agumon adds: Bond Evolution, Burst Mode, Variant / subspecies.
 - Agumon, Gabumon and Tentomon add: Ancestral link.
 - Frontier relabels the shared colors: Spirit Evolution, Slide Evolution,
   Fusion / DNA Digivolve, Unified Spirit, plus Ancestral link. Pages without a Child or a
@@ -450,8 +454,9 @@ conventions, so the relation is never mistaken for an evolution:
 - **Placement**: the Ancient node sits at the top row of the **Fresh column** (`x` of the
   Fresh form), so the link is a short vertical connector down its own column.
 
-`Kimeramon` is a synthesis of several Greymon-line data, so it has no incoming arrow and
-only outputs to `Millenniummon`.
+`Kimeramon` is a composite of parts from various Digimon (Reference Book), so it has no
+incoming arrow and only outputs to `Millenniummon`. `BlackWarGreymon` has none either:
+Arukenimon built it from 100 Control Spires in Adventure 02.
 
 ### Cross-page navigation
 
@@ -644,8 +649,9 @@ Use them where ambiguity matters, not on every sentence. The atlas overview has 
 
 ## Relation sources
 
-Every evolution relation on a tree (an edge, or a card in an Armor panel) must rest on one of
-these sources:
+Every evolution relation on a tree (an edge, or a card in an Armor panel), and every other
+claim on a page (a card note, a roster role, a lore note, a footer sentence), must rest on one
+of these sources:
 
 1. the official Reference Book profile. Read the profiles at both ends: GoldVeedramon's is
    the only Armor profile that names its Rookie ("Armor Digivolved from Veemon with the
@@ -653,10 +659,14 @@ these sources:
    (`https://digimon.net/reference/detail.php?directory_name=<slug>`): only its Growlmon
    profile says the form follows Guilmon. The "See related Digimon" list under a profile is
    thematic (Guilmon is related to Guardromon and Yaamon), so it proves nothing;
-2. the anime series and films, then the manga (V-Tamer 01, ...);
-3. the drama CDs (`Digimon Adventure 02: Armor Evolution to the Unknown`, the Tamers 15th
+2. other official Bandai material: the Digital Monster Art Book, the digimon.net articles
+   (Digimon Chronicle X, Digimon Profile) and Bandai's own product texts (Premium Bandai).
+   Imperialdramon Paladin Mode as founder of the Royal Knights rests on the Art Book, and
+   Jesmon filling the thirteenth seat on a Premium Bandai text;
+3. the anime series and films, then the manga (V-Tamer 01, ...);
+4. the drama CDs (`Digimon Adventure 02: Armor Evolution to the Unknown`, the Tamers 15th
    Blu-ray BOX drama CD, ...);
-4. the V-pets released with the series:
+5. the V-pets released with the series:
    - the D-3 (Adventure 02). Version 1 covers Veemon and Wormmon, Version 2 Hawkmon and
      Gatomon, and Version 3 Armadillomon and Patamon. Each gives its partners one Armor form
      per Digi-Egg and none for Destiny;
@@ -684,9 +694,14 @@ cites a source per relation, but those citations are incomplete on both sides (t
 partner's full Armor set. Wikimon uses the Japanese Digi-Egg names: Purity is DigimonWiki's
 Sincerity, Sincerity (also written Faith) is Reliability, and Fate is Destiny.
 
-Wikimon's episode summaries are empty, so an anime relation is read from the Digimon's own
-page (its anime section and its `rfe` episode citations) or from a Tamers character page
-(`Renamon (Tamers)`), whose evolution box cites every form that does not come from the anime.
+An anime or film relation is read first from the DigimonWiki episode or film article, through
+the MediaWiki API: its "Digivolutions" section lists every digivolution shown (forward and warp
+arrows, red arrows for a regression, blue for a form change). The Agumon (Burst Mode) and
+Machinedramon cases were settled this way. Wikimon's episode summaries are empty, so there the
+relation is read from the Digimon's own page (its anime section and its `rfe` episode
+citations) or from a Tamers character page (`Renamon (Tamers)`), whose evolution box cites
+every form that does not come from the anime. When the two wikis disagree, the episode
+article decides (Gallantmon comes from Guilmon in Tamers 35, not from WarGrowlmon).
 A form missing from both can still rest on an episode's cast list when the same scene is cited
 for its siblings: Tamers episode 51 sends the partners back as In-Training forms, Wikimon
 cites it for Gigimon, Gummymon and Viximon, and the same cast list debuts Kokomon, Kapurimon

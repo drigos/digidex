@@ -42,8 +42,9 @@ generation (create the folder if that generation has no page yet).
 
 1. Research the line on DigimonWiki/Fandom. Collect stages, X-Antibody / Virus variants,
    DNA/Jogress fusions, mode changes, bond/burst forms, and external fusion partners.
-   Keep only relations backed by the Reference Book, the anime, films or manga, the
-   drama CDs or the V-pets released with the series (the D-3, the D-Ark and the D-Power);
+   Keep only relations backed by the Reference Book or other official Bandai material, the
+   anime, films or manga, the drama CDs or the V-pets released with the series (the D-3, the
+   D-Ark and the D-Power);
    never by a card game or video game, and never by a DigimonWiki chart cell alone (README
    "Relation sources").
    For each node's `img`, use the official Reference Book slug (the `directory_name` in
@@ -78,7 +79,7 @@ generation (create the folder if that generation has no page yet).
 ## Config reference
 
 - Node: `{ id, x, y, cls, name, lvl, note, wiki, img, badge? }`
-  - `cls` (pill color): `normal | x | dna | mode | dark | lateral | armor | bond | burst`.
+  - `cls` (pill color): `normal | x | dna | mode | dark | lateral | armor | bond | burst | variant`.
   - `lvl` (card tag): `Level` optionally `+ / Virus + / X` only; omit it for a being with no
     Level (Grani). See README section 1.
   - `badge`: `{ cls, text, href?, title? }` with `cls` one of `rk` (Royal Knight),
@@ -96,7 +97,8 @@ generation (create the folder if that generation has no page yet).
     (or an absolute fallback image URL).
 - Edge (inside `edges: function(edge){ ... }`):
   `edge(from, to, type, fromSide='right', toSide='left', opts)`
-  - `type`: the trigger (`normal|x|dna|mode|dark|lateral|armor|bond|burst`).
+  - `type`: the trigger (`normal|x|dna|mode|dark|lateral|armor|bond|burst|variant|lore`);
+    `variant` marks a separate species or subspecies, not an evolution (README trigger table).
   - sides: `left|right|top|bottom`.
   - `opts`: `shape:'vertical'|'leftbus'`, `busX`, `laneX`, `laneY`, `points:[[x,y],...]`,
     `label`, `lx`, `ly`, `width`, `opacity`, and `fromX/fromY/toX/toY` to override any anchor

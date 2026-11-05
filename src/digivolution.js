@@ -25,7 +25,7 @@
  * generation indexes load this file too, only to answer that request.
  *
  * edge(from, to, type, fromSide='right', toSide='left', opts)
- *   type    : one of the trigger keys (normal|x|dna|mode|dark|lateral|armor|bond|burst|lore)
+ *   type    : one of the trigger keys (normal|x|dna|mode|dark|lateral|armor|bond|burst|variant|lore)
  *   *Side   : left|right|top|bottom (anchor on the card's bounding box)
  *   opts    : { shape:'vertical'|'leftbus', busX, laneX, laneY, points:[[x,y],...], r,
  *               label, lx, ly, width, opacity, startArrow,   // startArrow: double-headed
@@ -42,8 +42,8 @@
 (function (global) {
   'use strict';
 
-  var TRIGGERS = ['normal', 'x', 'dna', 'mode', 'dark', 'lateral', 'armor', 'bond', 'burst', 'lore'];
-  var DASH = { normal: '', x: '7 6', dna: '6 6', mode: '10 6', dark: '4 7', lateral: '10 7', armor: '10 7', bond: '2 7', burst: '11 5', lore: '1 8' };
+  var TRIGGERS = ['normal', 'x', 'dna', 'mode', 'dark', 'lateral', 'armor', 'bond', 'burst', 'variant', 'lore'];
+  var DASH = { normal: '', x: '7 6', dna: '6 6', mode: '10 6', dark: '4 7', lateral: '10 7', armor: '10 7', bond: '2 7', burst: '11 5', variant: '6 4', lore: '1 8' };
   var WIKI = 'https://digimon.fandom.com/wiki/';
   // Artwork is hotlinked from the official Digimon Reference Book: DigimonWiki/Fandom now
   // answers embedded images with a bot challenge. A node's img is the Reference Book slug

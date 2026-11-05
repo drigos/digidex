@@ -37,8 +37,10 @@ This skill NEVER edits a file before the user approves the plan. The flow is:
   2. **Manga** (V-Tamer 01, ...)
   3. **Drama CDs and the V-pets released with the series** (the D-3, the D-Ark and the
      D-Power; README "Relation sources").
-  The official Reference Book profiles sit alongside tier 1 as the species-lore baseline;
-  when a profile and a continuity disagree, present both rather than picking silently.
+  The official Reference Book profiles sit alongside tier 1 as the species-lore baseline,
+  with other official Bandai material (the Digital Monster Art Book, the digimon.net
+  articles, Premium Bandai product texts); when a profile and a continuity disagree, present
+  both rather than picking silently.
   Card games and video games are never a source, not even as a last resort: they adapt
   lore to serve mechanics (level caps, evolution items, roster balance).
 - **Do not trust wiki summaries blindly.** Fandom and Wikimon paraphrase; when an entry

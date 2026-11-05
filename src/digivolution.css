@@ -25,6 +25,7 @@
   --armor: #f5a524;
   --bond: #ff7eb6;
   --burst: #ffd43b;
+  --variant: #d0d7e2;
   --lore: #8a97ad;
 }
 * { box-sizing: border-box; }
@@ -127,6 +128,7 @@ h1 { margin:0 0 8px; font-size:42px; line-height:1.02; letter-spacing:-1px; }
 .node.x .level { background:rgba(139,212,80,.18); color:#dbffc8; }
 .node.lateral .level { background:rgba(245,165,36,.18); color:#ffe1a4; }
 .node.armor .level { background:rgba(245,165,36,.18); color:#ffe1a4; }
+.node.variant .level { background:rgba(208,215,226,.16); color:#eef2f7; }
 .node.bond .level { background:rgba(255,126,182,.20); color:#ffd6ea; }
 .node.burst .level { background:rgba(255,212,59,.18); color:#fff0b8; }
 .node.lore .level { background:rgba(138,151,173,.20); color:#d9e0ea; }
@@ -206,7 +208,7 @@ a.panel-badge { position:static; justify-self:end; align-self:start; margin:9px 
 .label-normal { color:#b7d9ff; } .label-x { color:#dbffc8; } .label-dna { color:#eadcff; }
 .label-mode { color:#bff7e5; } .label-dark { color:#ffd1d7; } .label-lateral { color:#ffe1a4; }
 .label-armor { color:#ffe1a4; } .label-bond { color:#ffd6ea; } .label-burst { color:#fff0b8; }
-.label-lore { color:#c2ccd9; }
+.label-variant { color:#eef2f7; } .label-lore { color:#c2ccd9; }
 
 /* ---------- Bottom appendix panels (set top/width per page; height auto-sizes to
    content, so the gap below the last card equals the panel's 22px bottom padding) ---------- */
