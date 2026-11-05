@@ -451,12 +451,13 @@ so it does not belong in the level label. Both are now `Mega / Virus`.
 ### Lore / non-evolution links
 
 `AncientGreymon`, `AncientGarurumon` and `AncientBeetlemon` are Legendary Warriors: the
-ancestral (lore) origin of the Greymon and Kabuterimon species and of the Beast Digimon, not a
-real evolution path. AncientGarurumon's profile names no single species ("Its abilities were
-subsequently passed on to Beast Digimon"), so the Gabumon tree's link rests on Garurumon being
-a Beast Digimon, and its card note quotes that wording. Each is drawn with the dedicated
-**Ancestral link** trigger and these conventions, so the relation is never mistaken for an
-evolution:
+ancestral (lore) origin of the Greymon species and of the Beast and Insectoid Digimon, not a
+real evolution path. The AncientGarurumon and AncientBeetlemon profiles name no single species
+("Its abilities were subsequently passed on to Beast Digimon", "would later be inherited by
+Insectoid Digimon and others"), so the Gabumon and Tentomon links rest on Garurumon being a
+Beast Digimon and Kabuterimon an Insectoid one, and their card notes quote that wording. Each
+is drawn with the dedicated **Ancestral link** trigger and these conventions, so the relation
+is never mistaken for an evolution:
 
 - **Trigger / style**: `cls:'lore'` on the node (grey level pill); the edge uses the
   `lore` type, a dotted grey line drawn with `{noArrow:true}` (no arrowhead) and no text
