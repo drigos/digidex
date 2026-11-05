@@ -82,8 +82,8 @@ generation (create the folder if that generation has no page yet).
   - `cls` (pill color): `normal | x | dna | mode | dark | lateral | armor | bond | burst | variant`.
   - `lvl` (card tag): `Level` optionally `+ / Virus + / X` only; omit it for a being with no
     Level (Grani). `Ultra` only for a Super Ultimate per README section 1 (V-Tamer 01, the
-    Reference Book, or the Cyber Sleuth, Survive and Time Stranger stage); a tree with one ends
-    its subtitle in `-> Ultra hierarchy`. See README section 1.
+    Reference Book, or the Cyber Sleuth, ReArise, Survive and Time Stranger stage); the card sits
+    in the Ultra column, and a tree with one ends its subtitle in `-> Ultra hierarchy`. See README section 1.
   - `badge`: `{ cls, text, href?, title? }` with `cls` one of `rk` (Royal Knight),
     `lw` (Legendary Warrior), `fgd` (Four Great Dragons), `vw` (Vortex Warrior),
     `cd` (Celestial Digimon), `aa` (Angelic Army), `fa` (Fallen Angel),
