@@ -623,20 +623,42 @@ these sources:
 
 1. the official Reference Book profile. Read the profiles at both ends: GoldVeedramon's is
    the only Armor profile that names its Rookie ("Armor Digivolved from Veemon with the
-   Digi-Egg of Destiny");
+   Digi-Egg of Destiny"). When the English text is silent, read the Japanese edition
+   (`https://digimon.net/reference/detail.php?directory_name=<slug>`): only its Growlmon
+   profile says the form follows Guilmon. The "See related Digimon" list under a profile is
+   thematic (Guilmon is related to Guardromon and Yaamon), so it proves nothing;
 2. the anime series and films, then the manga (V-Tamer 01, ...);
-3. the Adventure 02 drama CDs (`Digimon Adventure 02: Armor Evolution to the Unknown`);
-4. the D-3 V-pets released with Adventure 02. Version 1 covers Veemon and Wormmon, Version 2
-   Hawkmon and Gatomon, and Version 3 Armadillomon and Patamon. Each gives its partners one
-   Armor form per Digi-Egg and none for Destiny.
+3. the drama CDs (`Digimon Adventure 02: Armor Evolution to the Unknown`, the Tamers 15th
+   Blu-ray BOX drama CD, ...);
+4. the V-pets released with the series:
+   - the D-3 (Adventure 02). Version 1 covers Veemon and Wormmon, Version 2 Hawkmon and
+     Gatomon, and Version 3 Armadillomon and Patamon. Each gives its partners one Armor form
+     per Digi-Egg and none for Destiny;
+   - the D-Ark and D-Power (Tamers): D-Ark Version 1.0, 1.5, 2.0 and Ultimate, D-Power
+     Version 1.0 to 3.0. Each gives a partner one form per level, picked by a condition
+     (wins, losses, Notes entries), which yields an alternate line (Youkomon, Doumon,
+     Kuzuhamon for Renamon).
+
+   Later re-releases (D-Ark Ver.15th of 2017, D-Ark 25th COLOR EVOLUTION) and V-pets of other
+   lines (Pendulum, Vital Bracelet) do not count.
 
 Card games and video games are not sources, not even as a fallback: they multiply relations
-to serve their mechanics. DigimonWiki's "Digi-Egg Digivolution Chart" mixes every medium in
+to serve their mechanics. Neither are the D-Cyber manhua, the British comic `Ryo's Story!`
+(it retells the WonderSwan games) or manga adaptations of video games (`Digimon Story: Cyber
+Sleuth`). DigimonWiki's "Digi-Egg Digivolution Chart" mixes every medium in
 one table, so a cell there proves nothing by itself; trace it to a source above. Wikimon
 cites a source per relation, but those citations are incomplete on both sides (the Rookie's
 "Evolves To" and the Armor's "Evolves From"). Its `D-3 Version 1` to `3` pages list each
 partner's full Armor set. Wikimon uses the Japanese Digi-Egg names: Purity is DigimonWiki's
 Sincerity, Sincerity (also written Faith) is Reliability, and Fate is Destiny.
+
+Wikimon's episode summaries are empty, so an anime relation is read from the Digimon's own
+page (its anime section and its `rfe` episode citations) or from a Tamers character page
+(`Renamon (Tamers)`), whose evolution box cites every form that does not come from the anime.
+A form missing from both can still rest on an episode's cast list when the same scene is cited
+for its siblings: Tamers episode 51 sends the partners back as In-Training forms, Wikimon
+cites it for Gigimon, Gummymon and Viximon, and the same cast list debuts Kokomon, Kapurimon
+and Hopmon, which the character boxes list without a citation.
 
 A partner with no form for a Digi-Egg says so in its footer (`Patamon has no recorded form
 for the Digi-Egg of Destiny.`). The six Armor panels were checked against this rule in

@@ -35,7 +35,8 @@ This skill NEVER edits a file before the user approves the plan. The flow is:
 - **Source priority** when continuities disagree or a claim needs backing:
   1. **Anime series and films** (Adventure, 02, the 2020 reboot, Frontier, tri., ...)
   2. **Manga** (V-Tamer 01, ...)
-  3. **Adventure 02 drama CDs and the D-3 V-pets** (README "Relation sources").
+  3. **Drama CDs and the V-pets released with the series** (the D-3, the D-Ark and the
+     D-Power; README "Relation sources").
   The official Reference Book profiles sit alongside tier 1 as the species-lore baseline;
   when a profile and a continuity disagree, present both rather than picking silently.
   Card games and video games are never a source, not even as a last resort: they adapt
