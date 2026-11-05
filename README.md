@@ -13,7 +13,7 @@ then lists the generations, the atlas pages or the group rosters:
   - [index.html](src/evolution-lines/gen-1-adventure/index.html) - DigiDestined selection screen (by Crest).
   - [agumon.html](src/evolution-lines/gen-1-adventure/agumon.html) - Agumon line (Data Squad, Bond and Burst branches, the Virus forms, the Agumon and Greymon subspecies; AncientGreymon ancestral link).
   - [gabumon.html](src/evolution-lines/gen-1-adventure/gabumon.html) - Gabumon line (X, Virus and Bond branches, the Gabumon and MetalGarurumon variants; AncientGarurumon ancestral link).
-  - [biyomon.html](src/evolution-lines/gen-1-adventure/biyomon.html) - Biyomon line (X line, dark bird branch, Ornismon variation, collective composition).
+  - [biyomon.html](src/evolution-lines/gen-1-adventure/biyomon.html) - Biyomon line (X-Antibody forms, collective composition).
   - [tentomon.html](src/evolution-lines/gen-1-adventure/tentomon.html) - Tentomon line (Red/Blue MegaKabuterimon branches, HerculesKabuterimon X, AncientBeetlemon ancestral link, collective composition).
   - [palmon.html](src/evolution-lines/gen-1-adventure/palmon.html) - Palmon line (X line, Rookie side forms, Rosemon/Lillymon variants, Rafflesimon Jogress, collective composition).
   - [gomamon.html](src/evolution-lines/gen-1-adventure/gomamon.html) - Gomamon line (Gomamon X branch, collective composition).
