@@ -56,7 +56,9 @@ generation (create the folder if that generation has no page yet).
    the skeleton (same `<head>` links, stylesheet and favicons, with the `../../` asset prefix,
    empty `.legend-grid`, `.columns`, `#nodes`, empty `#edges` svg, `#labels`, appendix panels,
    footer). Link the new page from its card in the generation `index.html`: that card also
-   puts it in the generation pills the engine adds next to the `.backnav`.
+   puts it in the generation pills the engine adds next to the `.backnav`. A card that links
+   to another generation's tree adds `?gen=<its own folder>` to the href (README "Cross-page
+   navigation").
 4. Set the page `<style>` block: `.infographic{width;height}`, `.columns{top}`,
    `.legend{width}`, `.legend-grid{grid-template-columns}`, and each panel's `{top;width}`.
    Do NOT set a panel `height`: panels auto-size to content, so the gap below the last card

@@ -98,7 +98,8 @@ cannot drift apart:
 - `digivolution.css` - all styling + the layout-grid tokens.
 - `digivolution.js` - the renderer `DigiTree.mount({ legend, columns, nodes, edges })`,
   which builds the arrow markers, legend, column headers, node cards, edges and the
-  generation pills next to the back pill.
+  generation pills next to the back pill. Every generation `index.html` loads it too, at the
+  end of its `<body>`, only to answer the trees' request for its partner list.
 - `favicon.svg`, `favicon.ico` (16, 32 and 48px) and `apple-touch-icon.png` (180px) - the
   site icon, a gold "D" on the navy tile. The `.ico` and the `.png` are rasterized from the
   `.svg`; redo them whenever it changes. Every page links all three in its `<head>`, right
@@ -447,11 +448,18 @@ Every page places its way back as the first element inside `.wrap` (both styled 
 
 - tree pages use a `.backnav` pill to their generation's `index.html`, labeled with the
   partner group (`DigiDestined`, `The Tamers`, ...). Next to it the engine adds a `nav.gennav`
-  row with one pill per partner, the current one highlighted. It reads the partners from the
-  linked cards of that same `index.html`, in their order, so the index is the only list: a new
-  tree joins the row once its index card links to it, a "Coming soon" card never does, and a
-  generation with a single finished tree (Tamers) shows no row. The Adventure 02 row includes
-  Patamon and Gatomon, whose cards link to the Adventure trees;
+  row with one pill per partner, the current one highlighted. The partners are the linked
+  cards of that same `index.html`, in their order, so the index is the only list: a new tree
+  joins the row once its index card links to it, a "Coming soon" card never does, and a
+  generation with a single finished tree (Tamers) shows no row. The tree opens the index in a
+  hidden frame (`index.html#partners`) and the index posts back its `h1` and its cards; unlike
+  `fetch`, this also works on a page opened straight from disk (`file://`). The index images
+  are `loading="lazy"`, so the hidden frame downloads none of them.
+  A card linking to another generation's tree adds `?gen=<folder>` to its href (Patamon and
+  Gatomon on Adventure 02, `?gen=gen-2-adventure-02`; Agumon on Data Squad). The tree then
+  points its back pill at that index, takes the index's `h1` as the label (`DigiDestined 02`)
+  and shows that generation's pills, which carry the parameter on, so the visitor stays in the
+  generation they came from. The printed page is the same either way;
 - every other page uses a `nav.crumbs` breadcrumb trail from Home down to itself:
   `Home / Generations / <partner group>` for the generation indexes,
   `Home / Special groups / <page>` for the special group rosters, and

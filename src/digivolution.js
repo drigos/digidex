@@ -20,8 +20,9 @@
  * A badge with an href becomes a clickable link (e.g. to a group roster page); without
  * one it stays a plain label on the card.
  *
- * mount also adds pills to the other partners of the generation next to the page's
- * .backnav, taken from the generation index that pill links to.
+ * mount also adds pills to the partners of the generation next to the page's .backnav,
+ * taken from the generation index that pill links to (or the one named by ?gen=). The
+ * generation indexes load this file too, only to answer that request.
  *
  * edge(from, to, type, fromSide='right', toSide='left', opts)
  *   type    : one of the trigger keys (normal|x|dna|mode|dark|lateral|armor|bond|burst|lore)
@@ -57,31 +58,63 @@
 
   function cssVar(k) { return getComputedStyle(document.documentElement).getPropertyValue(k).trim(); }
 
-  // Pills to the other partners of the same generation, next to the back pill. They are read
-  // from the generation index the back pill points to, so that index stays the only list; a
-  // generation with a single finished tree gets none. Navigation only: hidden in print.
+  function bare(url) { return url.split('#')[0].split('?')[0]; }
+
+  // Pills to the partners of the generation next to the back pill, the current one highlighted.
+  // The list is the generation index itself: the tree opens it in a hidden frame and the index
+  // posts back its title and linked cards (a frame and postMessage also work on a page opened
+  // straight from disk, where fetch is blocked). A tree linked from another generation's index
+  // carries ?gen=<folder> (Patamon from Adventure 02): the back pill and the pills then follow
+  // that generation. A generation with a single finished tree gets no pills. Navigation only:
+  // hidden in print.
   function generationNav() {
     var back = document.querySelector('.backnav');
-    if (!back || !global.fetch || !global.DOMParser) return;
-    var indexUrl = back.href;
-    fetch(indexUrl).then(function (r) { return r.ok ? r.text() : ''; }).then(function (html) {
-      var cards = new DOMParser().parseFromString(html, 'text/html').querySelectorAll('a.card[href]');
-      if (cards.length < 2) return;
+    if (!back) return;
+    var gen = new URLSearchParams(location.search).get('gen');
+    var indexUrl = gen && /^[a-z0-9-]+$/.test(gen) ? new URL('../' + gen + '/index.html', location.href).href : back.href;
+    var frame = document.createElement('iframe');
+    frame.hidden = true;
+    frame.src = indexUrl + '#partners';
+    function done() { global.removeEventListener('message', receive); frame.remove(); }
+    function receive(e) {
+      if (e.source !== frame.contentWindow || !e.data || !e.data.digidexIndex) return;
+      done();
+      var index = e.data.digidexIndex;
+      if (indexUrl !== back.href) {
+        back.href = indexUrl;
+        back.lastChild.textContent = ' ' + index.title;
+      }
+      if (index.cards.length < 2) return;
       var nav = document.createElement('nav');
       nav.className = 'gennav';
-      nav.setAttribute('aria-label', 'Other partners of this generation');
-      [].forEach.call(cards, function (card) {
-        var url = new URL(card.getAttribute('href'), indexUrl);
-        var mon = card.querySelector('.mon');
-        var here = url.pathname === location.pathname;
+      nav.setAttribute('aria-label', 'Partners of this generation');
+      index.cards.forEach(function (card) {
+        var here = bare(card.href) === bare(location.href);
         var item = document.createElement(here ? 'span' : 'a');
         if (here) item.setAttribute('aria-current', 'page');
-        else item.href = url.href;
-        item.textContent = mon ? mon.textContent : url.pathname.split('/').pop();
+        else item.href = card.href;
+        item.textContent = card.name;
         nav.appendChild(item);
       });
       back.insertAdjacentElement('afterend', nav);
-    }).catch(function () {});
+    }
+    global.addEventListener('message', receive);
+    setTimeout(done, 10000);
+    document.body.appendChild(frame);
+  }
+
+  // The index side of generationNav: a generation index opened by a tree (#partners, in a
+  // frame) answers with its title and its linked partner cards, in order.
+  function announceIndex() {
+    if (global.parent === global || location.hash !== '#partners') return;
+    var h1 = document.querySelector('h1');
+    global.parent.postMessage({ digidexIndex: {
+      title: h1 ? h1.textContent.trim() : '',
+      cards: [].map.call(document.querySelectorAll('a.card[href]'), function (a) {
+        var mon = a.querySelector('.mon');
+        return { name: mon ? mon.textContent.trim() : '', href: a.href };
+      })
+    } }, '*');
   }
 
   function mount(cfg) {
@@ -281,4 +314,5 @@
   }
 
   global.DigiTree = { mount: mount, imageUrl: imageUrl };
+  announceIndex();
 })(window);
