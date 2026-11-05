@@ -28,6 +28,7 @@ then lists the generations, the atlas pages or the group rosters:
 - `src/evolution-lines/gen-3-tamers/` - Digimon Tamers:
   - [index.html](src/evolution-lines/gen-3-tamers/index.html) - Tamers selection screen (by Biomerge / peak form).
   - [guilmon.html](src/evolution-lines/gen-3-tamers/guilmon.html) - Guilmon line (X, Data/Yellow, Virus and Digital Hazard branches).
+  - [renamon.html](src/evolution-lines/gen-3-tamers/renamon.html) - Renamon line (Sakuyamon Biomerge, the D-Ark's alternate line up to Kuzuhamon, X-Antibody forms, Maid Mode changes).
 - `src/evolution-lines/gen-4-frontier/` - Digimon Frontier (Spirit Evolution; the children become Digimon, no partner):
   - [index.html](src/evolution-lines/gen-4-frontier/index.html) - Legendary Warriors selection screen (6 chosen + 4 Cherubimon's warriors).
   - [agunimon.html](src/evolution-lines/gen-4-frontier/agunimon.html) - Warrior of Flame line (Child Flamemon, Human/Beast Spirit, Fusion, Unified, Susanoomon).
@@ -371,7 +372,8 @@ only when it carries information the color cannot:
 
 - a specific event or continuity: `Corrupted (Adventure: 2020)`, `Data Squad`
 - a narrative cause: `Loss of control`
-- the specific partner in an otherwise-ambiguous link: `Bond with Tai`, `Unified by Takuya`
+- the specific partner in an otherwise-ambiguous link: `Bond with Tai`, `Unified by Takuya`,
+  `Biomerge with Rika`
 
 A continuity is named the way the site names the series (`Adventure: 2020`, `Data Squad`,
 `Adventure 02`, `V-Tamer`); an event label puts it in parentheses. Descriptors of the target
@@ -453,7 +455,7 @@ Every page places its way back as the first element inside `.wrap` (both styled 
   row with one pill per partner, the current one highlighted. The partners are the linked
   cards of that same `index.html`, in their order, so the index is the only list: a new tree
   joins the row once its index card links to it, a "Coming soon" card never does, and a
-  generation with a single finished tree (Tamers) shows no row. The tree opens the index in a
+  generation with a single linked card (Data Squad) shows no row. The tree opens the index in a
   hidden frame (`index.html#partners`) and the index posts back its `h1` and its cards; unlike
   `fetch`, this also works on a page opened straight from disk (`file://`). The index images
   are `loading="lazy"`, so the hidden frame downloads none of them.
@@ -506,6 +508,20 @@ Evil, and Enmamon's `Rules Yomi` badge points at the Shambala page. Badge classe
 `digivolution.css`: `.rk`, `.lw`, `.fgd`, `.vw`, `.cd`, `.aa`, `.fa`, `.dl`, `.fs` (Four
 Sovereigns), `.moe` (Mark of Evil), `.db` (D-Brigade), `.bc` (Bancho), `.ul` (underworld
 authority).
+
+### Tamers: Biomerge and the D-Ark lines
+
+- **Biomerge** (Matrix Evolution): in the anime the Rookie merges with its Tamer straight into
+  the Mega. The edge is a Normal evolution from the Rookie to the Mega, labeled
+  `Biomerge with <Tamer>`, and runs along the row gap above the main line, between ports
+  that clear the X-Antibody edges. The footer says it is drawn as a Normal evolution. The
+  V-pet's step from the Ultimate into the same Mega is not drawn, since it would add a second
+  arrow into the Mega; the footer mentions it instead (`renamon.html`).
+- **D-Ark / D-Power alternate line**: the V-pet picks one form per level by a condition, so
+  any Champion of the line can lead to any Ultimate. The alternate forms are drawn as their
+  own chain, one Normal edge per level, in the row under the main line (Renamon -> Youkomon
+  -> Doumon -> Kuzuhamon), and the mixed paths the conditions allow are not drawn. The
+  footer names the V-pet.
 
 ### Frontier: Spirit Evolution
 

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="../../favicon.ico" sizes="32x32" />
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png" />
+<title>Renamon: evolution tree</title>
+<link rel="stylesheet" href="../../digivolution.css" />
+<style>
+  /* page-specific layout */
+  .infographic { width:1860px; height:1000px; }
+  .columns { top:200px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="backnav" href="index.html"><span class="arrow">&#8592;</span> The Tamers</a>
+  <div class="infographic" id="canvas">
+    <div class="title">
+      <h1>Renamon: evolution tree</h1>
+      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega hierarchy, with the Sakuyamon Biomerge, the D-Ark's alternate line (Youkomon, Doumon, Kuzuhamon), the X-Antibody forms and the Maid Mode changes.</div>
+    </div>
+
+    <div class="legend">
+      <div class="legend-title">Digivolution triggers</div>
+      <div class="legend-grid"></div>
+    </div>
+
+    <div class="columns"></div>
+
+    <svg id="edges" viewBox="0 0 1860 1000" preserveAspectRatio="none"></svg>
+    <div id="labels"></div>
+    <div id="nodes"></div>
+
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. Biomerge (Matrix Evolution): Renamon and Rika merge straight into Sakuyamon, drawn as a Normal evolution; the D-Ark V-pet also reaches it from Taomon. Youkomon, Doumon and Kuzuhamon are the D-Ark's alternate line. The Reference Book says fox Digimon normally become Kuzuhamon, and only the greatest reach Sakuyamon.</div>
+  </div>
+  <div class="support">
+    <span class="support-label">Support this project</span>
+    <a class="support-btn kofi" href="https://ko-fi.com/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9749;</span><span class="support-text">Buy me a coffee</span><span class="support-url">ko-fi.com/drigos</span></a>
+    <a class="support-btn sponsors" href="https://github.com/sponsors/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9829;</span><span class="support-text">GitHub Sponsors</span><span class="support-url">github.com/sponsors/drigos</span></a>
+  </div>
+</div>
+<script src="../../digivolution.js"></script>
+<script>
+DigiTree.mount({
+  legend: [
+    ['normal','Normal evolution'],
+    ['x','X-Digivolution'],
+    ['mode','Mode Change']
+  ],
+  columns: [
+    [42,'Fresh'],[304,'In-Training'],[566,'Rookie'],[828,'Champion'],
+    [1090,'Ultimate'],[1352,'Mega'],[1614,'Variant']
+  ],
+  nodes: [
+    // X-Antibody forms (top row)
+    {id:'renamonx', x:566, y:250, cls:'x', name:'Renamon X', lvl:'Rookie / X', note:'X-Antibody form.', wiki:'Renamon_X', img:'renamon_x'},
+    {id:'sakuyamonx', x:1352, y:250, cls:'x', name:'Sakuyamon X', lvl:'Mega / X', note:'X-Antibody form.', wiki:'Sakuyamon_X', img:'sakuyamon_x'},
+
+    // main line (anime)
+    {id:'relemon', x:42, y:490, cls:'normal', name:'Relemon', lvl:'Fresh', note:'Said to be born on moonlit nights.', wiki:'Relemon', img:'relemon'},
+    {id:'viximon', x:304, y:490, cls:'normal', name:'Viximon', lvl:'In-Training', note:'Nocturnal In-Training form.', wiki:'Viximon', img:'pokomon'},
+    {id:'renamon', x:566, y:490, cls:'normal', name:'Renamon', lvl:'Rookie', note:'Rika\'s partner; main branching point.', wiki:'Renamon', img:'renamon'},
+    {id:'kyubimon', x:828, y:490, cls:'normal', name:'Kyubimon', lvl:'Champion', note:'Nine-tailed fox of blue flame.', wiki:'Kyubimon', img:'kyubimon'},
+    {id:'taomon', x:1090, y:490, cls:'normal', name:'Taomon', lvl:'Ultimate', note:'Taoist master of charms.', wiki:'Taomon', img:'taomon'},
+    {id:'sakuyamon', x:1352, y:490, cls:'normal', name:'Sakuyamon', lvl:'Mega', note:'Biomerge of Renamon and Rika.', wiki:'Sakuyamon', img:'sakuyamon'},
+    {id:'sakuyamonmaid', x:1614, y:490, cls:'mode', name:'Sakuyamon Maid Mode', lvl:'Mega', note:'Ritual form of Sakuyamon.', wiki:'Sakuyamon_Maid_Mode', img:'sakuyamon:mikomode'},
+
+    // the D-Ark's alternate line
+    {id:'youkomon', x:828, y:730, cls:'normal', name:'Youkomon', lvl:'Champion', note:'Red-flame fox; alternate Champion.', wiki:'Youkomon', img:'youkomon'},
+    {id:'doumon', x:1090, y:730, cls:'normal', name:'Doumon', lvl:'Ultimate', note:'Master of death curses.', wiki:'Doumon', img:'doumon'},
+    {id:'kuzuhamon', x:1352, y:730, cls:'normal', name:'Kuzuhamon', lvl:'Mega', note:'The usual Mega of fox Digimon.', wiki:'Kuzuhamon', img:'kuzuhamon'},
+    {id:'kuzuhamonmaid', x:1614, y:730, cls:'mode', name:'Kuzuhamon Maid Mode', lvl:'Mega', note:'Ritual form of Kuzuhamon.', wiki:'Kuzuhamon_Maid_Mode', img:'kuzuhamon_miko'}
+  ],
+  edges: function (edge) {
+    // main line
+    edge('relemon','viximon','normal');
+    edge('viximon','renamon','normal');
+    edge('renamon','kyubimon','normal');
+    edge('kyubimon','taomon','normal');
+
+    // Biomerge with Rika: Renamon straight into Sakuyamon, along the row gap above the line
+    edge('renamon','sakuyamon','normal','top','top',{fromX:710, toX:1410, laneY:469, label:'Biomerge with Rika', lx:1061, ly:469});
+
+    // X-Antibody forms
+    edge('renamon','renamonx','x','top','bottom',{shape:'vertical'});
+    edge('sakuyamon','sakuyamonx','x','top','bottom',{shape:'vertical'});
+
+    // the D-Ark's alternate line, fanning out of Renamon's main port
+    edge('renamon','youkomon','normal');
+    edge('youkomon','doumon','normal');
+    edge('doumon','kuzuhamon','normal');
+
+    // Maid Mode changes
+    edge('sakuyamon','sakuyamonmaid','mode');
+    edge('kuzuhamon','kuzuhamonmaid','mode');
+  }
+});
+</script>
+</body>
+</html>
