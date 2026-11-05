@@ -336,7 +336,7 @@ Every arrow is colored by the digivolution trigger. This is the single vocabular
 | Normal evolution | blue | Standard or alternate in-line evolution. | both |
 | X-Digivolution | green | Digivolution driven by the X-Antibody. | both |
 | DNA / Jogress | purple | Fusion of two digimon into one. | both |
-| Mode Change | teal | Same digimon switching mode / form. | both |
+| Mode Change | teal | Same digimon switching mode / form, including the temporary forms Black Digitron causes (Omnimon Zwart, Omegamon Alter-B). | both |
 | Dark / Virus | red | Dark or Virus-attribute branch (including rage / loss of control). | both |
 | Armor Digivolution | amber | Armor evolution via a Digi-Egg. | veemon, hawkmon, armadillomon, wormmon, patamon, gatomon, terriermon |
 | Bond Evolution | pink | Bond-driven evolution. | agumon |
@@ -346,8 +346,9 @@ Every arrow is colored by the digivolution trigger. This is the single vocabular
 
 A form the Reference Book describes as a separate species or a subspecies (`SnowAgumon`,
 `Agumon Expert`, `Gaiomon`) uses **Variant / subspecies** and `cls:'variant'` (silver pill),
-so it never reads as an evolution. A subspecies no accepted source shows digivolving from the
-line (`Gaiomon`) gets no arrow; the footer says why. A form reached by digivolution
+so it never reads as an evolution. The edge starts at the species the profile names, even when
+that is another level (`Gaiomon`, "a subspecies of Greymon", hangs from Greymon). A form
+reached by digivolution
 (`HiMachineDramon`, upgraded from Machinedramon in Xros Wars) keeps **Normal evolution**.
 
 ### Routing
@@ -359,7 +360,8 @@ another lane, `laneY` another row gap for top/bottom edges, `points` gives the c
 Anchors come from the cards' layout position, so a hovered card never skews its arrows.
 
 - An edge runs in a lane or row gap, never under a card or panel, and crosses no other edge
-  unless no route can avoid it (the `Bond with Tai` edge on agumon crosses the Data Squad line; on
+  unless no route can avoid it (on agumon, the `Bond with Tai` edge and Greymon -> Gaiomon run
+  down the lane beside the Champion column and cross the Data Squad line; on
   gatomon, Angewomon -> Junomon must cross the LadyDevimon -> Mastemon fusion, because
   Gatomon, Angewomon, Mastemon, LadyDevimon and BlackGatomon close a loop around its start;
   on guilmon, `Biomerge with Takato` crosses the Growlmon X and WarGrowlmon X edges, because

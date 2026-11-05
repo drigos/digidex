@@ -102,7 +102,7 @@
       </div>
     </section>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book and Wikimon. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. AncientGreymon is an ancestral (lore) relation, not a direct path. Kimeramon is a composite of parts from various Digimon, and Arukenimon built BlackWarGreymon from 100 Control Spires (Adventure 02), so neither has an incoming arrow; Gaiomon is a subspecies of Greymon with none either. Omnimon Merciful Mode is a collective composition (Adventure tri.): Omnimon plus Phoenixmon, HerculesKabuterimon, Rosemon, Vikemon, Seraphimon and Magnadramon.</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book and Wikimon. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. AncientGreymon is an ancestral (lore) relation, not a direct path. Kimeramon is a composite of parts from various Digimon, and Arukenimon built BlackWarGreymon from 100 Control Spires (Adventure 02), so neither has an incoming arrow. Omnimon Zwart and Omegamon Alter-B are temporary forms caused by Black Digitron, drawn as Mode Changes. Omnimon Merciful Mode is a collective composition (Adventure tri.): Omnimon plus Phoenixmon, HerculesKabuterimon, Rosemon, Vikemon, Seraphimon and Magnadramon.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -185,8 +185,8 @@ DigiTree.mount({
 
     // variant / mode column
     {id:'omnimonmerciful', x:1876, y:490, cls:'dna', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#omnimon', title:'Royal Knights roster'}, name:'Omnimon Merciful Mode', lvl:'Ultra', note:'Collective composition.', wiki:'Omnimon_Merciful_Mode', img:'omegamon_merciful'},
-    {id:'alterb', x:1876, y:730, cls:'dark', name:'Omegamon Alter-B', lvl:'Ultra', note:'Corrupted variant of Alter-S.', wiki:'Omegamon_Alter-B', img:'omegamon_alter-b'},
-    {id:'omnimonzwart', x:1876, y:970, cls:'dark', name:'Omnimon Zwart', lvl:'Ultra', note:'Omnimon darkened by Black Digitron.', wiki:'Omnimon_Zwart', img:'omegamon_zwart'},
+    {id:'alterb', x:1876, y:730, cls:'mode', name:'Omegamon Alter-B', lvl:'Ultra', note:'Temporary Black Digitron form; mindless rage.', wiki:'Omegamon_Alter-B', img:'omegamon_alter-b'},
+    {id:'omnimonzwart', x:1876, y:970, cls:'mode', name:'Omnimon Zwart', lvl:'Ultra', note:'Omnimon temporarily blackened by Black Digitron.', wiki:'Omnimon_Zwart', img:'omegamon_zwart'},
     {id:'zwartdefeat', x:1876, y:1210, cls:'dark', name:'Omegamon Zwart Defeat', lvl:'Ultra / Virus', note:'Zwart turned berserk by a virus program.', wiki:'Omegamon_Zwart_Defeat', img:'omegamonzwart_d'}
   ],
   edges: function (edge) {
@@ -212,7 +212,7 @@ DigiTree.mount({
     edge('alterous','blitzgreymon','normal','right','left');
     edge('alterous','machinedramon','dark','right','left',{fromY:880, laneX:1313, label:'Corrupted (Adventure: 2020)', lx:1313, ly:949});
     edge('blitzgreymon','omnimonalters','dna');
-    edge('omnimonalters','alterb','dark');
+    edge('omnimonalters','alterb','mode');
     edge('machinedramon','himachinedramon','normal');
     edge('machinedramon','millenniummon','dna','bottom','top',{shape:'vertical'});
     edge('kimeramon','millenniummon','dna','right','left',{fromY:1100, laneX:1333});
@@ -220,7 +220,7 @@ DigiTree.mount({
     // Omnimon forms
     edge('omnimon','omnimonmerciful','dna','right','left');
     // Omnimon Zwart: around Merciful Mode and Alter-B, down the canvas edge
-    edge('omnimon','omnimonzwart','dark','bottom','right',{fromX:1790, points:[[1790,709],[2101,709],[2101,1069]], label:'Black Digitron', lx:1950, ly:709});
+    edge('omnimon','omnimonzwart','mode','bottom','right',{fromX:1790, points:[[1790,709],[2101,709],[2101,1069]], label:'Black Digitron', lx:1950, ly:709});
     edge('omnimonzwart','zwartdefeat','dark','bottom','top',{shape:'vertical'});
 
     // Dark Digivolution and the Virus forms off Greymon, sharing one trunk
@@ -237,7 +237,9 @@ DigiTree.mount({
     // separate species / subspecies of Agumon + bond
     edge('agumon','snowagumon','variant','left','left',{shape:'leftbus', busX:548, fromY:650});
     edge('agumon','agumonexpert','variant','left','left',{shape:'leftbus', busX:548, fromY:650});
-    edge('agumon','agumonbond','bond','bottom','left',{points:[[669,710],[800,710],[800,2755]], label:'Bond with Tai', lx:800, ly:1340});
+    edge('agumon','agumonbond','bond','bottom','left',{points:[[669,710],[785,710],[785,2755]], label:'Bond with Tai', lx:785, ly:1340});
+    // Gaiomon, a subspecies of Greymon: down the same lane as the bond edge, on its own run
+    edge('greymon','gaiomon','variant','left','left',{fromY:650, points:[[813,650],[813,2509]]});
 
     // Data Squad (2006) line
     edge('koromon','agumon2006','normal','bottom','left',{points:[[406,2029]], label:'Data Squad', lx:406, ly:1270});
