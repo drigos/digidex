@@ -211,7 +211,7 @@ the footer top.
   every arrow shifts vertically.
 
 Appendix panels (`.partner-panel` / `.jogress-panel` / `.armor-panel` / `.lore-panel`) take
-only `top` and `width` per page (the Armor panel only `top`), never a `height`: they auto-size to their content, so the
+only `top` and `width` per page, never a `height`: they auto-size to their content, so the
 gap below the last card is always the panel's `22px` bottom padding. A fixed panel height
 leaves an uneven band under the cards, so do not set one.
 
@@ -222,10 +222,12 @@ grows past that until its title and its subtitle each fit on one line (`350px` t
 so every Jogress, composition, DNA and Unified Spirit panel is `333px` tall, alone or side by
 side. The `.armor-panel` holds ten to twelve Digimon in one row, so its cards are smaller but
 just as fixed: `136px` wide, enough for the longest name and Digi-Egg label on one line, and
-at least `198px` tall, the node card's height, in a `12px`-gap grid of fixed columns. The page
-sets no width: the panel hugs its cards, `148n + 34` wide (`1514px` for ten, `1662px` for
-eleven, `1810px` for twelve), and every Armor panel is `287px` tall. Ten cards fill the
-narrowest canvas (`1598px`) exactly. The `.lore-panel`
+at least `198px` tall, the node card's height. The panel spans the card grid, `width - 84`
+(the `42px` margin each side), and the grid spreads its fixed columns across it
+(`justify-content: space-between`, at least `12px` apart): ten cards fill the narrowest canvas
+(`1598px`) at the minimum gap, and wider canvases or fewer cards widen it (`23px` on patamon
+and gatomon, `33px` on veemon, `70px` on wormmon). Every Armor panel is `287px` tall. The
+`.lore-panel`
 (grey, matching the `lore` trigger color) also spans the full width with a fractional
 `repeat(4, 1fr)` grid of text-only cards; its entries are source-verified explanations of the
 page's unusual arrows and nodes, added via the `digimon-lore-notes` skill.
@@ -245,8 +247,7 @@ as a pyramid, the narrowest on top and the widest at the bottom:
 
 1. the reference panels: `Jogress partner(s)`, then the collective composition (on Frontier
    the DNA panel, then the Unified Spirit one);
-2. the Armor panel under them, wider than any panel above it. Its width follows its cards, so
-   on patamon and gatomon it ends `114px` short of the shared Jogress and composition row;
+2. the Armor panel, the widest, under them;
 3. `Lore notes`, last.
 
 A Jogress panel and a composition panel share one row when both fit with a `58px` gap

@@ -56,8 +56,7 @@ generation (create the folder if that generation has no page yet).
    the skeleton (same `<head>` link with the `../../` asset prefix, empty `.legend-grid`,
    `.columns`, `#nodes`, empty `#edges` svg, `#labels`, appendix panels, footer).
 4. Set the page `<style>` block: `.infographic{width;height}`, `.columns{top}`,
-   `.legend{width}`, `.legend-grid{grid-template-columns}`, and each panel's `{top;width}`
-   (the Armor panel takes only `top`: it hugs its fixed 136px cards).
+   `.legend{width}`, `.legend-grid{grid-template-columns}`, and each panel's `{top;width}`.
    Do NOT set a panel `height`: panels auto-size to content, so the gap below the last card
    is always the panel's 22px bottom padding (a fixed height leaves an uneven bottom band).
    Set each panel's `top` 22px below the element above it (lowest node for the first panel,
@@ -105,8 +104,9 @@ generation (create the folder if that generation has no page yet).
   the page `<style>` (`top` and `width` only; the shared CSS aligns every panel with the
   card grid). Panels stack as a pyramid: Jogress, then composition (sharing one row when both
   fit with a 58px gap), then Armor, Lore notes last; each Jogress/composition panel is wide
-  enough for a one-line title and subtitle, so all are 333px tall; the Armor panel is one row
-  of 136px x 198px cards, 287px tall (README "Panel placement").
+  enough for a one-line title and subtitle, so all are 333px tall; the Armor panel spans the
+  full width with one row of 136px x 198px cards spread across it, 287px tall (README "Panel
+  placement").
   Only the Armor panel gets a connector,
   from the line's node, e.g.
   `edge('veemon','armor-panel','armor','bottom','top',{shape:'vertical', toX:668, ...})`.

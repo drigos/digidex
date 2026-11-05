@@ -5,7 +5,7 @@
  * Per-page values are set inline in each page's own <style> block:
  *   .infographic { width; height }   .columns { top }
  *   .legend { width }                .legend-grid { grid-template-columns }
- *   .partner-panel / .jogress-panel { top; width }  .armor-panel { top }  (height auto-sizes to content)
+ *   .partner-panel / .jogress-panel / .armor-panel { top; width }  (height auto-sizes to content)
  */
 
 :root {
@@ -226,8 +226,8 @@ a.panel-badge { position:static; justify-self:end; align-self:start; margin:9px 
 .armor-panel-title { display:flex; align-items:baseline; gap:14px; margin-bottom:14px; }
 .armor-panel-title h2 { margin:0; font-size:26px; letter-spacing:-.45px; }
 .armor-panel-title span { color:#ffe1a4; font-weight:800; font-size:14px; }
-/* One row of fixed 136px columns: the panel takes no page width and hugs its cards */
-.armor-grid { display:grid; grid-template-rows:auto; grid-auto-flow:column; grid-auto-columns:136px; gap:12px; }
+/* One row of fixed 136px columns spread across the full-width panel */
+.armor-grid { display:grid; grid-template-rows:auto; grid-auto-flow:column; grid-auto-columns:136px; gap:12px; justify-content:space-between; }
 .armor-card {
   position:relative;
   min-height:198px; padding:10px 10px 12px; border-radius:16px; border:1px solid rgba(255,255,255,.16);
