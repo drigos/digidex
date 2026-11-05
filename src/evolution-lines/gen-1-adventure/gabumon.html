@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:2122px; height:2075px; }
+  .infographic { width:2122px; height:2092px; }
   .columns { top:200px; }
   .jogress-panel { top:1670px; width:632px; }
   .partner-panel { top:1670px; left:732px; width:1348px; }
@@ -32,7 +32,7 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 2122 2075" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 2122 2092" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
@@ -102,7 +102,7 @@
       </div>
     </section>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. AncientGarurumon is an ancestral (lore) relation, not a direct path. Omnimon Zwart and Omnimon Alter-B are temporary forms caused by Black Digitron, drawn as Mode Changes. Omnimon Merciful Mode is a collective composition (Adventure tri.): Omnimon plus Phoenixmon, HerculesKabuterimon, Rosemon, Vikemon, Seraphimon and Magnadramon. Omnimon Alter-S, Alter-B and Zwart Defeat keep their official names here (Omegamon on DigimonWiki).</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. AncientGarurumon is an ancestral (lore) relation, not a direct path. The Virus forms are drawn as one chain from BlackGabumon because each profile makes its form the Virus counterpart of the Vaccine one, not because a source shows them digivolving. Omnimon Zwart and Omnimon Alter-B are temporary forms caused by Black Digitron, drawn as Mode Changes. Omnimon Merciful Mode is a collective composition (Adventure tri.): Omnimon plus Phoenixmon, HerculesKabuterimon, Rosemon, Vikemon, Seraphimon and Magnadramon. Omnimon Alter-S, Alter-B and Zwart Defeat keep their official names here (Omegamon on DigimonWiki).</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -136,18 +136,18 @@ DigiTree.mount({
     {id:'gabumonx', x:566, y:250, cls:'x', name:'Gabumon X', lvl:'Rookie / X', note:'X-Antibody form.', wiki:'Gabumon_X', img:'gabumon_x'},
     {id:'gabumon', x:566, y:490, cls:'normal', name:'Gabumon', lvl:'Rookie', note:'Main branching point.', wiki:'Gabumon', img:'gabumon'},
     {id:'psychemon', x:566, y:730, cls:'variant', name:'Psychemon', lvl:'Rookie', note:'Said to be a mutation of Gabumon.', wiki:'Psychemon', img:'psychemon'},
-    {id:'blackgabumon', x:566, y:1210, cls:'dark', name:'BlackGabumon', lvl:'Rookie / Virus', note:'A Gabumon that Digivolved into a Virus type.', wiki:'BlackGabumon', img:'gabumon_black'},
+    {id:'blackgabumon', x:566, y:1450, cls:'dark', name:'BlackGabumon', lvl:'Rookie / Virus', note:'A Gabumon that Digivolved into a Virus type.', wiki:'BlackGabumon', img:'gabumon_black'},
 
     // champion column
     {id:'garurumonx', x:828, y:250, cls:'x', name:'Garurumon X', lvl:'Champion / X', note:'X-Antibody form.', wiki:'Garurumon_X', img:'garurumon_x'},
     {id:'garurumon', x:828, y:490, cls:'normal', name:'Garurumon', lvl:'Champion', note:'Classic Garurumon branch.', wiki:'Garurumon', img:'garurumon'},
-    {id:'blackgarurumon', x:828, y:1210, cls:'dark', name:'BlackGarurumon', lvl:'Champion / Virus', note:'A Virus Garurumon.', wiki:'BlackGarurumon', img:'garurumon_black'},
+    {id:'blackgarurumon', x:828, y:1450, cls:'dark', name:'BlackGarurumon', lvl:'Champion / Virus', note:'A Virus Garurumon.', wiki:'BlackGarurumon', img:'garurumon_black'},
 
     // ultimate column
     {id:'weregarurumonx', x:1090, y:250, cls:'x', name:'WereGarurumon X', lvl:'Ultimate / X', note:'X-Antibody form.', wiki:'WereGarurumon_X', img:'weregarurumon_x'},
     {id:'weregarurumon', x:1090, y:490, cls:'normal', name:'WereGarurumon', lvl:'Ultimate', note:'Beast-man warrior.', wiki:'WereGarurumon', img:'weregarrumon'},
     {id:'sagittarius', x:1090, y:970, cls:'mode', name:'WereGarurumon Sagittarius Mode', lvl:'Ultimate', note:'Uses the mobility device Sagittarius.', wiki:'WereGarurumon_Sagittarius_Mode', img:'waregarurumon_sagittarius'},
-    {id:'shadowweregarurumon', x:1090, y:1210, cls:'dark', name:'ShadowWereGarurumon', lvl:'Ultimate / Virus', note:'Digivolved from a Virus type Garurumon.', wiki:'ShadowWereGarurumon', img:'weregarurumon_black'},
+    {id:'shadowweregarurumon', x:1090, y:1450, cls:'dark', name:'ShadowWereGarurumon', lvl:'Ultimate / Virus', note:'Digivolved from a Virus type Garurumon.', wiki:'ShadowWereGarurumon', img:'weregarurumon_black'},
 
     // AncientGarurumon: ancestral origin of the line (lore, not an evolution)
     {id:'ancientgarurumon', x:42, y:250, cls:'lore', badge:{cls:'lw', text:'Legendary Warrior', href:'../../groups/ten-legendary-warriors.html#ancientgarurumon', title:'Ten Legendary Warriors roster'}, name:'AncientGarurumon', lvl:'Mega', note:'Warrior of Light; its abilities passed on to Beast Digimon.', wiki:'AncientGarurumon', img:'ancientgarurumon'},
@@ -157,8 +157,8 @@ DigiTree.mount({
     {id:'metalgarurumon', x:1352, y:490, cls:'normal', name:'MetalGarurumon', lvl:'Mega', note:'Cyborg wolf; Jogress partner of WarGreymon.', wiki:'MetalGarurumon', img:'metalgarurumon'},
     {id:'zeedgarurumon', x:1352, y:730, cls:'variant', name:'ZeedGarurumon', lvl:'Mega', note:'Beast-tank subspecies of MetalGarurumon.', wiki:'ZeedGarurumon', img:'zdgarurumon'},
     {id:'cresgarurumon', x:1352, y:970, cls:'normal', name:'CresGarurumon', lvl:'Mega', note:'Subspecies of MetalGarurumon.', wiki:'CresGarurumon', img:'cresgarurumon'},
-    {id:'blackmetalgarurumon', x:1352, y:1210, cls:'dark', name:'BlackMetalGarurumon', lvl:'Mega / Virus', note:'A Virus type MetalGarurumon.', wiki:'BlackMetalGarurumon', img:'metalgarurumon_black'},
-    {id:'gabumonbond', x:1614, y:1450, cls:'bond', name:'Gabumon (Bond of Friendship)', lvl:'Ultra', note:'The final, legendary Digivolution.', wiki:'Gabumon_(Bond_of_Friendship)', img:'gabumon_kizuna'},
+    {id:'blackmetalgarurumon', x:1352, y:1450, cls:'dark', name:'BlackMetalGarurumon', lvl:'Mega / Virus', note:'A Virus type MetalGarurumon.', wiki:'BlackMetalGarurumon', img:'metalgarurumon_black'},
+    {id:'gabumonbond', x:1614, y:1210, cls:'bond', name:'Gabumon (Bond of Friendship)', lvl:'Ultra', note:'The final, legendary Digivolution.', wiki:'Gabumon_(Bond_of_Friendship)', img:'gabumon_kizuna'},
 
     // ultra / variant column
     {id:'omnimonx', x:1614, y:250, cls:'x', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#omnimon', title:'Royal Knights roster'}, name:'Omnimon X', lvl:'Ultra / X', note:'X-Antibody form.', wiki:'Omnimon_X', img:'omegamon-x'},
@@ -203,16 +203,15 @@ DigiTree.mount({
     edge('omnimon','omnimonzwart','mode','bottom','top',{shape:'vertical', label:'Black Digitron', lx:1716, ly:709});
     edge('omnimonzwart','zwartdefeat','dark');
 
-    // the Virus forms, each off the counterpart its profile names
+    // the Virus line as one chain from BlackGabumon (the footer says it is a reading of the profiles)
     edge('gabumon','blackgabumon','dark','left','left',{shape:'leftbus', busX:528, fromY:625});
-    edge('garurumon','blackgarurumon','dark','bottom','top',{shape:'vertical'});
+    edge('blackgabumon','blackgarurumon','dark');
     edge('blackgarurumon','shadowweregarurumon','dark');
-    // MetalGarurumon (Black): down the lane past ZeedGarurumon, crossing the CresGarurumon fusion
-    edge('metalgarurumon','blackmetalgarurumon','dark','right','right',{fromY:640, laneX:1585});
+    edge('shadowweregarurumon','blackmetalgarurumon','dark');
 
-    // Psychemon, a mutation of Gabumon + bond (under the Virus line)
+    // Psychemon, a mutation of Gabumon + bond (above the Virus line)
     edge('gabumon','psychemon','variant','left','left',{shape:'leftbus', busX:548, fromY:650});
-    edge('gabumon','gabumonbond','bond','bottom','left',{points:[[669,710],[800,710],[800,1549]], label:'Bond with Matt', lx:800, ly:1069});
+    edge('gabumon','gabumonbond','bond','bottom','left',{points:[[669,710],[800,710],[800,1309]], label:'Bond with Matt', lx:800, ly:1069});
   }
 });
 </script>
