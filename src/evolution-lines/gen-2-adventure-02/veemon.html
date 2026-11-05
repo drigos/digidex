@@ -168,7 +168,7 @@ DigiTree.mount({
     {id:'future', x:1614, y:250, cls:'mode', name:'UlforceVeedramon Future Mode', lvl:'Ultra', note:'Mode Change (Digimental Code-F).', wiki:'UlforceVeedramon_Future_Mode', img:'https://wikimon.net/images/b/b7/Alforcevdramon_zero_superultimate.jpg'},
 
     {id:'redvee', x:828, y:490, cls:'dark', name:'RedVeedramon', lvl:'Champion', note:'Rage peak of the dark line.', wiki:'RedVeedramon', img:'https://wikimon.net/images/7/77/Red_V-dramon_N0.png'},
-    {id:'ulforcex', x:1614, y:490, cls:'x', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#ulforceveedramon', title:'Royal Knights roster'}, name:'UlforceVeedramon X', lvl:'Mega / X', note:'X-Antibody form.', wiki:'UlforceVeedramon_X', img:'ulforcevdramon_x'},
+    {id:'ulforcex', x:1352, y:490, cls:'x', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#ulforceveedramon', title:'Royal Knights roster'}, name:'UlforceVeedramon X', lvl:'Mega / X', note:'X-Antibody form.', wiki:'UlforceVeedramon_X', img:'ulforcevdramon_x'},
 
     {id:'exveemon', x:828, y:730, cls:'normal', name:'ExVeemon', lvl:'Champion', note:'Veedramon purebred.', wiki:'ExVeemon', img:'xv-mon'},
     {id:'paildramon', x:1090, y:730, cls:'dna', name:'Paildramon', lvl:'Ultimate', note:'ExVeemon + Stingmon.', wiki:'Paildramon', img:'paildramon'},
@@ -187,7 +187,7 @@ DigiTree.mount({
     edge('veedramon','aeroveedramon','normal');
     edge('aeroveedramon','ulforce','normal');
     edge('ulforce','future','mode');
-    edge('ulforce','ulforcex','x','right','left',{fromY:400});
+    edge('ulforce','ulforcex','x','bottom','top',{shape:'vertical'});
     edge('veemon','redvee','dark','right','left', {fromY:800, label:'Loss of control', lx:799, ly:710});
     edge('veemon','exveemon','normal');
 
