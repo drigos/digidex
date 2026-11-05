@@ -20,6 +20,9 @@
  * A badge with an href becomes a clickable link (e.g. to a group roster page); without
  * one it stays a plain label on the card.
  *
+ * mount also adds pills to the other partners of the generation next to the page's
+ * .backnav, taken from the generation index that pill links to.
+ *
  * edge(from, to, type, fromSide='right', toSide='left', opts)
  *   type    : one of the trigger keys (normal|x|dna|mode|dark|lateral|armor|bond|burst|lore)
  *   *Side   : left|right|top|bottom (anchor on the card's bounding box)
@@ -54,7 +57,36 @@
 
   function cssVar(k) { return getComputedStyle(document.documentElement).getPropertyValue(k).trim(); }
 
+  // Pills to the other partners of the same generation, next to the back pill. They are read
+  // from the generation index the back pill points to, so that index stays the only list; a
+  // generation with a single finished tree gets none. Navigation only: hidden in print.
+  function generationNav() {
+    var back = document.querySelector('.backnav');
+    if (!back || !global.fetch || !global.DOMParser) return;
+    var indexUrl = back.href;
+    fetch(indexUrl).then(function (r) { return r.ok ? r.text() : ''; }).then(function (html) {
+      var cards = new DOMParser().parseFromString(html, 'text/html').querySelectorAll('a.card[href]');
+      if (cards.length < 2) return;
+      var nav = document.createElement('nav');
+      nav.className = 'gennav';
+      nav.setAttribute('aria-label', 'Other partners of this generation');
+      [].forEach.call(cards, function (card) {
+        var url = new URL(card.getAttribute('href'), indexUrl);
+        var mon = card.querySelector('.mon');
+        var here = url.pathname === location.pathname;
+        var item = document.createElement(here ? 'span' : 'a');
+        if (here) item.setAttribute('aria-current', 'page');
+        else item.href = url.href;
+        item.textContent = mon ? mon.textContent : url.pathname.split('/').pop();
+        nav.appendChild(item);
+      });
+      back.insertAdjacentElement('afterend', nav);
+    }).catch(function () {});
+  }
+
   function mount(cfg) {
+    generationNav();
+
     var canvas = document.getElementById('canvas');
     var svg = document.getElementById('edges');
     var labels = document.getElementById('labels');

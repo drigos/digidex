@@ -85,8 +85,8 @@ to [DigimonWiki/Fandom](https://digimon.fandom.com); the artwork comes from the 
 **Print-friendly by design.** Every page is prepared to be printable, so no content may
 depend on interaction: no modals, popups or hover-only information. Interaction that does
 not hurt print is fine - the group badges are the good example (on paper they still read
-as a category pill). Purely navigational widgets are the bad example (the `.backnav` pill
-and the breadcrumb add nothing on paper): they are hidden via the `@media print` rule in
+as a category pill). Purely navigational widgets are the bad example (the `.backnav` pill,
+the generation pills and the breadcrumb add nothing on paper): they are hidden via the `@media print` rule in
 `digivolution.css`, and new features should avoid needing such elements at all. This is why
 tree cards carry no cross-page arrow (see "Cross-page navigation").
 
@@ -97,7 +97,12 @@ cannot drift apart:
 
 - `digivolution.css` - all styling + the layout-grid tokens.
 - `digivolution.js` - the renderer `DigiTree.mount({ legend, columns, nodes, edges })`,
-  which builds the arrow markers, legend, column headers, node cards, and edges.
+  which builds the arrow markers, legend, column headers, node cards, edges and the
+  generation pills next to the back pill.
+- `favicon.svg`, `favicon.ico` (16, 32 and 48px) and `apple-touch-icon.png` (180px) - the
+  site icon, a gold "D" on the navy tile. The `.ico` and the `.png` are rasterized from the
+  `.svg`; redo them whenever it changes. Every page links all three in its `<head>`, right
+  after the viewport `<meta>`, with the `../` prefix of its depth.
 - the `evolution-lines/gen-*/<partner>.html` tree pages - **config only**: each `<link>`s
   the CSS and `<script src>`s the JS with a `../../` prefix (they sit two levels below the
   `src/` root), then passes its data. Per-page dimensions live in a small inline `<style>`
@@ -441,7 +446,12 @@ Every page places its way back as the first element inside `.wrap` (both styled 
 `digivolution.css` and hidden in print):
 
 - tree pages use a `.backnav` pill to their generation's `index.html`, labeled with the
-  partner group (`DigiDestined`, `The Tamers`, ...);
+  partner group (`DigiDestined`, `The Tamers`, ...). Next to it the engine adds a `nav.gennav`
+  row with one pill per partner, the current one highlighted. It reads the partners from the
+  linked cards of that same `index.html`, in their order, so the index is the only list: a new
+  tree joins the row once its index card links to it, a "Coming soon" card never does, and a
+  generation with a single finished tree (Tamers) shows no row. The Adventure 02 row includes
+  Patamon and Gatomon, whose cards link to the Adventure trees;
 - every other page uses a `nav.crumbs` breadcrumb trail from Home down to itself:
   `Home / Generations / <partner group>` for the generation indexes,
   `Home / Special groups / <page>` for the special group rosters, and

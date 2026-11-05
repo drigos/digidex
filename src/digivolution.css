@@ -50,6 +50,17 @@ a { color: inherit; text-decoration: none; }
 .backnav .arrow { transition: transform .18s ease; }
 .backnav:hover .arrow { transform: translateX(-4px); }
 
+/* Generation nav: the other partners of the same generation, built by the engine next to the
+   back pill. The current partner is the highlighted, non-link pill. */
+.gennav { display:inline-flex; flex-wrap:wrap; gap:6px; margin:0 0 14px 10px; vertical-align:top; }
+.gennav a, .gennav span {
+  padding:8px 14px; border-radius:999px; font-size:12.5px; font-weight:900; letter-spacing:.4px;
+  color:#cfe6ff; background:rgba(3,14,27,.6); border:1px solid rgba(255,255,255,.16);
+  transition:border-color .18s ease, background .18s ease;
+}
+.gennav a:hover { border-color:rgba(88,166,255,.55); background:rgba(88,166,255,.14); }
+.gennav [aria-current] { color:#fff; background:rgba(88,166,255,.24); border-color:rgba(88,166,255,.7); }
+
 /* Canvas (set width/height per page) */
 .infographic {
   position: relative;
@@ -118,7 +129,7 @@ h1 { margin:0 0 8px; font-size:42px; line-height:1.02; letter-spacing:-1px; }
 
 /* Pages must stay print-friendly: purely navigational widgets add no value on paper.
    Badges stay visible in print because they carry category information. */
-@media print { .backnav, .crumbs, .jump { display:none; } }
+@media print { .backnav, .gennav, .crumbs, .jump { display:none; } }
 
 /* Links inside running text (lore notes, section subtitles, atlas prose) need an underline,
    since the global reset above removes it */

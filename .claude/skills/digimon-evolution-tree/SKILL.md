@@ -53,8 +53,10 @@ generation (create the folder if that generation has no page yet).
 2. Place nodes on the grid: pick a column x per level, a row index per node (`y = firstRow + i*240`).
    Keep the main spine on one horizontal row; branch variants to adjacent rows.
 3. Copy `veemon.html`/`agumon.html` into the target `src/evolution-lines/gen-*/` folder as
-   the skeleton (same `<head>` link with the `../../` asset prefix, empty `.legend-grid`,
-   `.columns`, `#nodes`, empty `#edges` svg, `#labels`, appendix panels, footer).
+   the skeleton (same `<head>` links, stylesheet and favicons, with the `../../` asset prefix,
+   empty `.legend-grid`, `.columns`, `#nodes`, empty `#edges` svg, `#labels`, appendix panels,
+   footer). Link the new page from its card in the generation `index.html`: that card also
+   puts it in the generation pills the engine adds next to the `.backnav`.
 4. Set the page `<style>` block: `.infographic{width;height}`, `.columns{top}`,
    `.legend{width}`, `.legend-grid{grid-template-columns}`, and each panel's `{top;width}`.
    Do NOT set a panel `height`: panels auto-size to content, so the gap below the last card
@@ -124,7 +126,7 @@ generation (create the folder if that generation has no page yet).
 - English on-image text. No em dash (U+2014). Identifiers in English.
 - Print-friendly: pages are prepared to be printable. Never add modals, popups or
   hover-only content. Interaction is OK only when print loses nothing (badges print as
-  category pills); purely navigational widgets (like the `.backnav` pill) must be hidden by
+  category pills); purely navigational widgets (like the `.backnav` and `.gennav` pills) must be hidden by
   the `@media print` rule in `digivolution.css` and avoided in new features when possible.
   Cards carry at most two links: the card to DigimonWiki and the badge to its roster.
 
