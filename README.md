@@ -15,7 +15,7 @@ then lists the generations, the atlas pages or the group rosters:
   - [gabumon.html](src/evolution-lines/gen-1-adventure/gabumon.html) - Gabumon line (X, Virus and Bond branches, the Gabumon and MetalGarurumon variants; AncientGarurumon ancestral link).
   - [biyomon.html](src/evolution-lines/gen-1-adventure/biyomon.html) - Biyomon line (X-Antibody forms, collective composition).
   - [tentomon.html](src/evolution-lines/gen-1-adventure/tentomon.html) - Tentomon line (Red/Blue MegaKabuterimon branches, HerculesKabuterimon X, AncientBeetlemon ancestral link, collective composition).
-  - [palmon.html](src/evolution-lines/gen-1-adventure/palmon.html) - Palmon line (X line, Rookie side forms, Rosemon/Lillymon variants, Rafflesimon Jogress, collective composition).
+  - [palmon.html](src/evolution-lines/gen-1-adventure/palmon.html) - Palmon line (X-Antibody forms, the Aruraumon variant, the Adventure: 2020 Ponchomon, BanchoLillymon, Rosemon Burst Mode, collective composition).
   - [gomamon.html](src/evolution-lines/gen-1-adventure/gomamon.html) - Gomamon line (Gomamon X branch, collective composition).
   - [patamon.html](src/evolution-lines/gen-1-adventure/patamon.html) - Patamon line (Priest Mode and Goldramon 2020 branches, fallen angel dark branch, Shakkoumon Jogress, Armor Digivolutions, collective composition).
   - [gatomon.html](src/evolution-lines/gen-1-adventure/gatomon.html) - Gatomon line (X line up to Magnadramon X, Ophanimon Falldown Mode and ChronoCore variants, Silphymon Jogress, BlackGatomon dark branch, Mastemon holy-dark fusion, SkullKnightmon corruption, Armor Digivolutions, collective composition).
@@ -269,7 +269,7 @@ as a pyramid, the narrowest on top and the widest at the bottom:
 3. `Lore notes`, last.
 
 A Jogress panel and a composition panel share one row when both fit with a `58px` gap
-between them, the same as between card columns (patamon, gatomon, palmon, agumon, gabumon): the
+between them, the same as between card columns (patamon, gatomon, agumon, gabumon): the
 Jogress panel stays at the left margin and the composition panel ends flush with the last
 column (page style `left = canvas width - 42 - panel width`); on a wider canvas the Jogress
 panel takes the rest of the row (agumon, gabumon). Since both are `333px` tall, their bottoms
@@ -299,7 +299,7 @@ Format: `Level` optionally followed by ` / Virus` and/or ` / X`, in that order.
 | `Ultimate` | Perfect / Ultimate stage. |
 | `Mega` | Ultimate (JP) / Mega stage. |
 | `Ultra` | Super Ultimate (超究極体): a Mega that V-Tamer 01 or the Reference Book calls Super Ultimate (Daemon (Ultra), UlforceVeedramon Future Mode, Armageddemon), or that Digimon Story: Cyber Sleuth ("Ultra"), Digimon ReArise, Digimon Survive ("Super Ultimate") or Digimon Story: Time Stranger ("Mega+") place in that stage (the Omnimon forms, Imperialdramon Paladin Mode, the Bond and Burst Mode forms, Gallantmon Crimson Mode, Millenniummon). No official stage exists above Mega: the Reference Book lists them all as Mega, and Kenji Watanabe calls Super Ultimate a title for the strongest Megas. So the label is editorial, taken from those games because they share one list, and only tree pages use it, where it marks the exceptional power a Digimon gains; rosters and the cosmology keep the official Mega. Other games do not count (Digimon New Century and Digimon Masters have their own longer lists), and a game never supports a relation or a claim. An Ultra card sits in the Ultra column. Wikimon's "Super Ultimate" page tags each member with the media that classify it. |
-| `Armor` | Result of an Armor Digivolution (Digi-Egg). The Adventure 02 partners' lines (Veemon, Hawkmon, Armadillomon, Wormmon, Patamon, Gatomon) and the golden Rapidmon on terriermon, the one Armor form drawn as a tree card (`cls:'armor'`, amber pill). |
+| `Armor` | Result of an Armor Digivolution (Digi-Egg). The Adventure 02 partners' lines (Veemon, Hawkmon, Armadillomon, Wormmon, Patamon, Gatomon) and the golden Rapidmon on terriermon, the one Armor form drawn as a tree card (`cls:'armor'`, amber pill). Ponchomon on palmon keeps its official Armor level with a Normal pill, since Palmon reaches it without a Digi-Egg (Adventure: 2020). |
 
 Frontier (`gen-4-frontier`) does not use these ranks; it has its own Spirit-rank levels.
 See "Frontier: Spirit Evolution" under Notes on specific cases.
@@ -344,8 +344,8 @@ Every arrow is colored by the digivolution trigger. This is the single vocabular
 | Dark / Virus | red | Dark or Virus-attribute branch (including rage / loss of control). | both |
 | Armor Digivolution | amber | Armor evolution via a Digi-Egg. | veemon, hawkmon, armadillomon, wormmon, patamon, gatomon, terriermon |
 | Bond Evolution | pink | Bond-driven evolution. | agumon, gabumon |
-| Burst Mode | gold | Burst Digivolution. | agumon |
-| Variant / subspecies | silver | Not an evolution: the target is a separate species or subspecies of the source ("a separate species of Agumon", "a subspecies of Greymon"). | agumon, gabumon |
+| Burst Mode | gold | Burst Digivolution. | agumon, palmon |
+| Variant / subspecies | silver | Not an evolution: the target is a separate species or subspecies of the source ("a separate species of Agumon", "a subspecies of Greymon"). | agumon, gabumon, palmon |
 | Ancestral link | grey (dotted, no arrowhead) | Lore ancestry, not an evolution: a Legendary Warrior linked to the root of the line it spawned. | agumon, gabumon, tentomon, gen-4-frontier |
 
 A form the Reference Book describes as a separate species or a subspecies (`SnowAgumon`,
@@ -420,6 +420,7 @@ The on-image legend lists only the triggers that the file actually uses.
 - The Adventure 02 partners (Veemon, Hawkmon, Armadillomon, Wormmon, Patamon, Gatomon) and Terriermon add: Armor Digivolution.
 - Agumon adds: Bond Evolution, Burst Mode, Variant / subspecies.
 - Gabumon adds: Bond Evolution, Variant / subspecies.
+- Palmon adds: Burst Mode, Variant / subspecies.
 - Agumon, Gabumon and Tentomon add: Ancestral link.
 - Frontier relabels the shared colors: Spirit Evolution, Slide Evolution,
   Fusion / DNA Digivolve, Unified Spirit, plus Ancestral link. Pages without a Child or a
