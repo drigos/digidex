@@ -126,6 +126,7 @@ h1 { margin:0 0 8px; font-size:42px; line-height:1.02; letter-spacing:-1px; }
 .node.dark .level { background:rgba(255,92,114,.18); color:#ffd1d7; }
 .node.x .level { background:rgba(139,212,80,.18); color:#dbffc8; }
 .node.lateral .level { background:rgba(245,165,36,.18); color:#ffe1a4; }
+.node.armor .level { background:rgba(245,165,36,.18); color:#ffe1a4; }
 .node.bond .level { background:rgba(255,126,182,.20); color:#ffd6ea; }
 .node.burst .level { background:rgba(255,212,59,.18); color:#fff0b8; }
 .node.lore .level { background:rgba(138,151,173,.20); color:#d9e0ea; }

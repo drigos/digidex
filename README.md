@@ -29,6 +29,7 @@ then lists the generations, the atlas pages or the group rosters:
   - [index.html](src/evolution-lines/gen-3-tamers/index.html) - Tamers selection screen (by Biomerge / peak form).
   - [guilmon.html](src/evolution-lines/gen-3-tamers/guilmon.html) - Guilmon line (Gallantmon Biomerge, the D-Ark's dark line up to ChaosGallantmon, Digital Hazard, X-Antibody forms, Data/Yellow variants).
   - [renamon.html](src/evolution-lines/gen-3-tamers/renamon.html) - Renamon line (Sakuyamon Biomerge, the D-Ark's alternate line up to Kuzuhamon, X-Antibody forms, Maid Mode changes).
+  - [terriermon.html](src/evolution-lines/gen-3-tamers/terriermon.html) - Terriermon line (MegaGargomon Biomerge, Black Digitron variants, the golden Rapidmon of the Digi-Egg of Destiny and its X form).
 - `src/evolution-lines/gen-4-frontier/` - Digimon Frontier (Spirit Evolution; the children become Digimon, no partner):
   - [index.html](src/evolution-lines/gen-4-frontier/index.html) - Legendary Warriors selection screen (6 chosen + 4 Cherubimon's warriors).
   - [agunimon.html](src/evolution-lines/gen-4-frontier/agunimon.html) - Warrior of Flame line (Child Flamemon, Human/Beast Spirit, Fusion, Unified, Susanoomon).
@@ -289,7 +290,7 @@ Format: `Level` optionally followed by ` / Virus` and/or ` / X`, in that order.
 | `Ultimate` | Perfect / Ultimate stage. |
 | `Mega` | Ultimate (JP) / Mega stage. |
 | `Ultra` | Fusion pinnacle above Mega: Omnimon / Omegamon-class Jogress results and their variants. |
-| `Armor` | Result of an Armor Digivolution (Digi-Egg). The Adventure 02 partners' lines (Veemon, Hawkmon, Armadillomon, Wormmon, Patamon, Gatomon). |
+| `Armor` | Result of an Armor Digivolution (Digi-Egg). The Adventure 02 partners' lines (Veemon, Hawkmon, Armadillomon, Wormmon, Patamon, Gatomon) and the golden Rapidmon on terriermon, the one Armor form drawn as a tree card (`cls:'armor'`, amber pill). |
 
 Frontier (`gen-4-frontier`) does not use these ranks; it has its own Spirit-rank levels.
 See "Frontier: Spirit Evolution" under Notes on specific cases.
@@ -332,7 +333,7 @@ Every arrow is colored by the digivolution trigger. This is the single vocabular
 | DNA / Jogress | purple | Fusion of two digimon into one. | both |
 | Mode Change | teal | Same digimon switching mode / form. | both |
 | Dark / Virus | red | Dark or Virus-attribute branch (including rage / loss of control). | both |
-| Armor Digivolution | amber | Armor evolution via a Digi-Egg. | veemon, hawkmon, armadillomon, wormmon, patamon, gatomon |
+| Armor Digivolution | amber | Armor evolution via a Digi-Egg. | veemon, hawkmon, armadillomon, wormmon, patamon, gatomon, terriermon |
 | Bond Evolution | pink | Bond-driven evolution. | agumon |
 | Burst Mode | gold | Burst Digivolution. | agumon |
 | Ancestral link | grey (dotted, no arrowhead) | Lore ancestry, not an evolution: a Legendary Warrior linked to the root of the line it spawned. | agumon, gabumon, tentomon, gen-4-frontier |
@@ -397,7 +398,7 @@ The on-image legend lists only the triggers that the file actually uses.
 
 - Shared by both: Normal evolution, X-Digivolution, DNA / Jogress, Mode Change,
   Dark / Virus.
-- The Adventure 02 partners (Veemon, Hawkmon, Armadillomon, Wormmon, Patamon, Gatomon) add: Armor Digivolution.
+- The Adventure 02 partners (Veemon, Hawkmon, Armadillomon, Wormmon, Patamon, Gatomon) and Terriermon add: Armor Digivolution.
 - Agumon adds: Bond Evolution, Burst Mode.
 - Agumon, Gabumon and Tentomon add: Ancestral link.
 - Frontier relabels the shared colors: Spirit Evolution, Slide Evolution,

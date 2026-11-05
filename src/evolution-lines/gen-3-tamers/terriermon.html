@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="../../favicon.ico" sizes="32x32" />
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png" />
+<title>Terriermon: evolution tree</title>
+<link rel="stylesheet" href="../../digivolution.css" />
+<style>
+  /* page-specific layout */
+  .infographic { width:1598px; height:1240px; }
+  .columns { top:200px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="backnav" href="index.html"><span class="arrow">&#8592;</span> The Tamers</a>
+  <div class="infographic" id="canvas">
+    <div class="title">
+      <h1>Terriermon: evolution tree</h1>
+      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega hierarchy, with the MegaGargomon Biomerge, the Black Digitron variants, the golden Rapidmon of the Digi-Egg of Destiny and the X-Antibody forms.</div>
+    </div>
+
+    <div class="legend">
+      <div class="legend-title">Digivolution triggers</div>
+      <div class="legend-grid"></div>
+    </div>
+
+    <div class="columns"></div>
+
+    <svg id="edges" viewBox="0 0 1598 1240" preserveAspectRatio="none"></svg>
+    <div id="labels"></div>
+    <div id="nodes"></div>
+
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. Biomerge (Matrix Evolution): Terriermon and Henry merge straight into MegaGargomon, drawn as a Normal evolution; the D-Ark V-pet also reaches it from Rapidmon. The golden Rapidmon is the Armor form of Willis's Terriermon in the Adventure 02 film.</div>
+  </div>
+  <div class="support">
+    <span class="support-label">Support this project</span>
+    <a class="support-btn kofi" href="https://ko-fi.com/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9749;</span><span class="support-text">Buy me a coffee</span><span class="support-url">ko-fi.com/drigos</span></a>
+    <a class="support-btn sponsors" href="https://github.com/sponsors/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9829;</span><span class="support-text">GitHub Sponsors</span><span class="support-url">github.com/sponsors/drigos</span></a>
+  </div>
+</div>
+<script src="../../digivolution.js"></script>
+<script>
+DigiTree.mount({
+  legend: [
+    ['normal','Normal evolution'],
+    ['x','X-Digivolution'],
+    ['armor','Armor Digivolution']
+  ],
+  columns: [
+    [42,'Fresh'],[304,'In-Training'],[566,'Rookie'],[828,'Champion'],
+    [1090,'Ultimate'],[1352,'Mega']
+  ],
+  nodes: [
+    // X-Antibody form (top row)
+    {id:'terriermonx', x:566, y:250, cls:'x', name:'Terriermon X', lvl:'Rookie / X', note:'X-Antibody form.', wiki:'Terriermon_X', img:'terriermon_x'},
+
+    // main line (anime)
+    {id:'zerimon', x:42, y:490, cls:'normal', name:'Zerimon', lvl:'Fresh', note:'Sometimes born as a twin.', wiki:'Zerimon', img:'zerimon'},
+    {id:'gummymon', x:304, y:490, cls:'normal', name:'Gummymon', lvl:'In-Training', note:'Squishy, headbutting In-Training form.', wiki:'Gummymon', img:'gummymon'},
+    {id:'terriermon', x:566, y:490, cls:'normal', name:'Terriermon', lvl:'Rookie', note:'Henry\'s partner; main branching point.', wiki:'Terriermon', img:'terriermon'},
+    {id:'gargomon', x:828, y:490, cls:'normal', name:'Gargomon', lvl:'Champion', note:'Beast Man hunter.', wiki:'Gargomon', img:'galgomon'},
+    {id:'rapidmon', x:1090, y:490, cls:'normal', name:'Rapidmon', lvl:'Ultimate', note:'The cyborg "Keen Hound".', wiki:'Rapidmon', img:'rapidmon'},
+    {id:'megagargomon', x:1352, y:490, cls:'normal', name:'MegaGargomon', lvl:'Mega', note:'Biomerge of Terriermon and Henry.', wiki:'MegaGargomon', img:'saintgalgomon'},
+
+    // Black Digitron variants (row 2)
+    {id:'blackgargomon', x:828, y:730, cls:'normal', name:'BlackGargomon', lvl:'Champion', note:'Gargomon coated in Black Digitron.', wiki:'BlackGargomon', img:'blackgalgomon'},
+    {id:'blackrapidmon', x:1090, y:730, cls:'normal', name:'BlackRapidmon', lvl:'Ultimate', note:'Rapidmon that ingested Black Digitron.', wiki:'BlackRapidmon', img:'blackrapidmon'},
+
+    // Digi-Egg of Destiny (row 3)
+    {id:'rapidmonarmor', x:1090, y:970, cls:'armor', name:'Rapidmon (Armor)', lvl:'Armor', note:'Golden Holy Knight with Mega-level power.', wiki:'Rapidmon_(Armor)', img:'rapidmon_gold'},
+    {id:'rapidmonx', x:1352, y:970, cls:'x', name:'Rapidmon X', lvl:'Mega / X', note:'X-Antibody form of the golden Rapidmon.', wiki:'Rapidmon_X', img:'rapidmon_x'}
+  ],
+  edges: function (edge) {
+    // main line
+    edge('zerimon','gummymon','normal');
+    edge('gummymon','terriermon','normal');
+    edge('terriermon','gargomon','normal');
+    edge('gargomon','rapidmon','normal');
+
+    // Biomerge with Henry: Terriermon straight into MegaGargomon, along the row gap above the line
+    edge('terriermon','megagargomon','normal','top','top',{fromX:710, toX:1410, laneY:469, label:'Biomerge with Henry', lx:1061, ly:469});
+
+    // X-Antibody forms
+    edge('terriermon','terriermonx','x','top','bottom',{shape:'vertical'});
+    edge('rapidmonarmor','rapidmonx','x');
+
+    // Black Digitron variants
+    edge('gargomon','blackgargomon','normal','bottom','top',{shape:'vertical'});
+    edge('rapidmon','blackrapidmon','normal','bottom','top',{shape:'vertical'});
+
+    // Armor Digivolution with the Digi-Egg of Destiny
+    edge('terriermon','rapidmonarmor','armor','bottom','left',{label:'Digi-Egg of Destiny', lx:930, ly:1069});
+  }
+});
+</script>
+</body>
+</html>

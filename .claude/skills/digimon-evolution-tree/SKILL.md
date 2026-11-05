@@ -78,7 +78,7 @@ generation (create the folder if that generation has no page yet).
 ## Config reference
 
 - Node: `{ id, x, y, cls, name, lvl, note, wiki, img, badge? }`
-  - `cls` (pill color): `normal | x | dna | mode | dark | lateral | bond | burst`.
+  - `cls` (pill color): `normal | x | dna | mode | dark | lateral | armor | bond | burst`.
   - `lvl` (card tag): `Level` optionally `+ / Virus + / X` only; omit it for a being with no
     Level (Grani). See README section 1.
   - `badge`: `{ cls, text, href?, title? }` with `cls` one of `rk` (Royal Knight),
