@@ -10,12 +10,12 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:1860px; height:2930px; }
+  .infographic { width:1860px; height:2706px; }
   .columns { top:200px; }
-  .jogress-panel { top:1910px; width:370px; }
-  .partner-panel { top:1910px; left:470px; width:1348px; }
-  .armor-panel { top:2265px; width:1776px; }
-  .lore-panel { top:2574px; width:1776px; }
+  .jogress-panel { top:1670px; width:370px; }
+  .partner-panel { top:1670px; left:470px; width:1348px; }
+  .armor-panel { top:2025px; width:1776px; }
+  .lore-panel { top:2334px; width:1776px; }
 </style>
 </head>
 <body>
@@ -34,7 +34,7 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 1860 2930" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 1860 2706" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
@@ -185,27 +185,19 @@
         </div>
         <div class="lore-card">
           <div class="lore-card-title">Every Devimon Is a Fallen Angemon</div>
-          <div class="lore-card-text">Devimon's official profile says it was an Angemon that fell into the Dark Area, with the Mark of Evil on its chest as proof. The red Angemon arrow also retells the corruption arc of the 2020 reboot.</div>
+          <div class="lore-card-text">Devimon's official profile says it was an Angemon that fell into the Dark Area, with the Mark of Evil on its chest as proof.</div>
         </div>
         <div class="lore-card">
           <div class="lore-card-title">Tsukaimon, the Familiar</div>
-          <div class="lore-card-text">Named after the tsukaima, the occult familiar spirit: despite looking like Patamon it serves Devimon, attacking by whispering slander (Bad Message).</div>
+          <div class="lore-card-text">Named after the tsukaima, the occult familiar spirit, it only looks like Patamon and serves Devimon, so no arrow leads to it. In Adventure: 2020 a Tsukaimon starts the Devimon line.</div>
         </div>
         <div class="lore-card">
           <div class="lore-card-title">Daemon, the Fallen Seraphimon</div>
           <div class="lore-card-text">Seraphimon's official profile states that Daemon is said to have originally been a Seraphimon that fell to the Dark Area after rebelling against the embodiment of good.</div>
         </div>
         <div class="lore-card">
-          <div class="lore-card-title">Daemon (Mantled)</div>
-          <div class="lore-card-text">Under this crimson mantle Daemon led the Daemon Corps in Adventure 02; too powerful to destroy, it was only banished into the Dark Ocean. A look, not an evolution.</div>
-        </div>
-        <div class="lore-card">
           <div class="lore-card-title">ShadowSeraphimon</div>
-          <div class="lore-card-text">The Frontier dub name for BlackSeraphimon: officially a form of Seraphimon engulfed by its concealed inner resentment. In the anime it is Mercurymon fused with Seraphimon's stolen data.</div>
-        </div>
-        <div class="lore-card">
-          <div class="lore-card-title">BlackSeraphimon</div>
-          <div class="lore-card-text">The Digimon World 3 boss shares its Japanese name with ShadowSeraphimon but is treated as a separate entity: an unobtainable jet-black recolor of Seraphimon.</div>
+          <div class="lore-card-text">The Frontier dub name for BlackSeraphimon: officially a form of Seraphimon engulfed by its concealed inner resentment. In Frontier it is Mercurymon fused with Seraphimon's stolen data.</div>
         </div>
         <div class="lore-card">
           <div class="lore-card-title">One Absorption from the Top</div>
@@ -214,7 +206,7 @@
       </div>
     </section>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book and Wikimon. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. Patamon has no recorded form for the Digi-Egg of Destiny.</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book and Wikimon. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. Omnimon Merciful Mode is a collective composition (Adventure tri.): Seraphimon plus Omnimon, Phoenixmon, HerculesKabuterimon, Rosemon, Vikemon and Magnadramon. Patamon has no recorded form for the Digi-Egg of Destiny.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -252,24 +244,20 @@ DigiTree.mount({
     {id:'seraphimon', x:1352, y:730, cls:'normal', name:'Seraphimon', lvl:'Mega', note:'One of the Three Great Angels (Celestial Digimon).', wiki:'Seraphimon', img:'seraphimon', badge:{cls:'cd', text:'Celestial Digimon', href:'../../groups/angelic.html#seraphimon', title:'Angelic Digimon roster'}},
     {id:'omnimonmerciful', x:1614, y:730, cls:'dna', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#omnimon', title:'Royal Knights roster'}, name:'Omnimon Merciful Mode', lvl:'Ultra', note:'Collective composition.', wiki:'Omnimon_Merciful_Mode', img:'omegamon_merciful'},
 
-    // side form, mode change and Seraphimon variants
-    {id:'tsukaimon', x:566, y:970, cls:'normal', name:'Tsukaimon', lvl:'Rookie', note:'Subspecies of Patamon; dark counterpart.', wiki:'Tsukaimon', img:'tukaimon'},
+    // Tsukaimon (no incoming arrow), mode change and Seraphimon variant
+    {id:'tsukaimon', x:566, y:970, cls:'dark', name:'Tsukaimon', lvl:'Rookie', note:'Looks like Patamon; a familiar to Devimon.', wiki:'Tsukaimon', img:'tukaimon'},
     {id:'priest', x:1090, y:970, cls:'mode', name:'MagnaAngemon Priest Mode', lvl:'Ultimate', note:'Priest garb mode (Adventure: 2020).', wiki:'MagnaAngemon_(Priest_Mode)', img:'https://wikimon.net/images/d/d2/Holyangemon_shinkan.jpg'},
     {id:'shadowseraphimon', x:1614, y:970, cls:'dark', name:'ShadowSeraphimon', lvl:'Mega / Virus', note:'Born of Seraphimon\'s concealed inner resentment.', wiki:'ShadowSeraphimon', img:'blackseraphimon', badge:{cls:'fa', text:'Fallen Angel', href:'../../groups/angelic.html#shadowseraphimon', title:'Angelic Digimon roster'}},
 
-    // Jogress row
+    // Jogress row, shared with Seraphimon's official fallen form and its V-Tamer Ultra form
     {id:'shakkoumon', x:1090, y:1210, cls:'dna', name:'Shakkoumon', lvl:'Ultimate', note:'Angemon + Ankylomon.', wiki:'Shakkoumon', img:'shakkoumon'},
-    {id:'blackseraphimon', x:1614, y:1210, cls:'dark', name:'BlackSeraphimon', lvl:'Mega / Virus', note:'Black variant (Digimon World 3).', wiki:'BlackSeraphimon', img:'https://wikimon.net/images/0/04/Blackseraphimon_dw3.png'},
-
-    // Demon Lord row: Seraphimon's official fallen form and its Adventure 02 mantled look
-    {id:'daemon', x:1352, y:1450, cls:'dark', name:'Daemon', lvl:'Mega / Virus', note:'Demon Lord of Wrath; said to be a fallen Seraphimon.', wiki:'Daemon', img:'demon', badge:{cls:'dl', text:'Demon Lord', href:'../../groups/demon-lords.html#daemon', title:'Seven Great Demon Lords roster'}},
-    {id:'daemonmantled', x:1614, y:1450, cls:'mode', name:'Daemon (Mantled)', lvl:'Mega / Virus', note:'Cloaked design variant (Adventure 02).', wiki:'Daemon_(Mantled)', img:'https://wikimon.net/images/f/ff/Demon_Adventure_02_reference_art.jpg', badge:{cls:'dl', text:'Demon Lord', href:'../../groups/demon-lords.html#daemon', title:'Seven Great Demon Lords roster'}},
+    {id:'daemon', x:1352, y:1210, cls:'dark', name:'Daemon', lvl:'Mega / Virus', note:'Said to have originally been a Seraphimon.', wiki:'Daemon', img:'demon', badge:{cls:'dl', text:'Demon Lord', href:'../../groups/demon-lords.html#daemon', title:'Seven Great Demon Lords roster'}},
+    {id:'daemonultra', x:1614, y:1210, cls:'dna', name:'Daemon (Ultra)', lvl:'Ultra / Virus', note:'Super Ultimate form after absorbing Arkadimon (V-Tamer).', wiki:'Daemon_(Ultra)', img:'https://wikimon.net/images/f/f0/Demon_superultimate.jpg', badge:{cls:'dl', text:'Demon Lord', href:'../../groups/demon-lords.html#daemon', title:'Seven Great Demon Lords roster'}},
 
     // fallen angel dark line
-    {id:'devimon', x:828, y:1690, cls:'dark', name:'Devimon', lvl:'Champion / Virus', note:'Fallen angel; corrupted Angemon data.', wiki:'Devimon', img:'devimon'},
-    {id:'neodevimon', x:1090, y:1690, cls:'dark', name:'NeoDevimon', lvl:'Ultimate / Virus', note:'Strengthened Devimon.', wiki:'NeoDevimon', img:'neodevimon'},
-    {id:'dandevimon', x:1352, y:1690, cls:'dark', name:'DanDevimon', lvl:'Mega / Virus', note:'Peak of the fallen angel branch (Adventure: 2020).', wiki:'DanDevimon', img:'donedevimon'},
-    {id:'daemonultra', x:1614, y:1690, cls:'dark', name:'Daemon (Ultra)', lvl:'Ultra / Virus', note:'Super Ultimate form after absorbing Arkadimon (V-Tamer).', wiki:'Daemon_(Ultra)', img:'https://wikimon.net/images/f/f0/Demon_superultimate.jpg', badge:{cls:'dl', text:'Demon Lord', href:'../../groups/demon-lords.html#daemon', title:'Seven Great Demon Lords roster'}}
+    {id:'devimon', x:828, y:1450, cls:'dark', name:'Devimon', lvl:'Champion / Virus', note:'An Angemon that fell into the Dark Area.', wiki:'Devimon', img:'devimon'},
+    {id:'neodevimon', x:1090, y:1450, cls:'dark', name:'NeoDevimon', lvl:'Ultimate / Virus', note:'Strengthened Devimon.', wiki:'NeoDevimon', img:'neodevimon'},
+    {id:'dandevimon', x:1352, y:1450, cls:'dark', name:'DanDevimon', lvl:'Mega / Virus', note:'Peak of the fallen angel branch (Adventure: 2020).', wiki:'DanDevimon', img:'donedevimon'}
   ],
   edges: function (edge) {
     // main line
@@ -288,26 +276,24 @@ DigiTree.mount({
     edge('priest','seraphimon','normal','right','bottom',{toX:1390, points:[[1390,1069]]});
     edge('magnaangemon','goldramon','normal','right','left',{fromY:785, points:[[1318,785],[1318,589]], label:'Adventure: 2020', lx:1318, ly:700});
 
-    // Seraphimon: collective composition and corrupted variants
+    // Seraphimon: collective composition and corrupted variant
     edge('seraphimon','omnimonmerciful','dna');
     edge('seraphimon','shadowseraphimon','dark','right','left',{fromY:870, points:[[1585,870],[1585,1069]], label:'Inner resentment', lx:1585, ly:950});
-    edge('seraphimon','blackseraphimon','dark','bottom','left',{fromX:1490, points:[[1490,1309]], label:'Digimon World 3', lx:1540, ly:1310});
 
     // DNA / Jogress with Ankylomon (see panel)
     edge('angemon','shakkoumon','dna','bottom','left',{fromX:960, points:[[960,1309]]});
 
-    // side form and the fallen angel line
-    edge('patamon','tsukaimon','normal','bottom','top',{shape:'vertical'});
-    edge('tsukaimon','devimon','dark','right','left',{points:[[799,1069],[799,1789]], label:"Devimon's familiar", lx:799, ly:1350});
-    edge('angemon','devimon','dark','bottom','top',{shape:'vertical', fromX:900, toX:900, label:'Corrupted (Adventure: 2020)', lx:900, ly:1600});
+    // the fallen angel line: Angemon's fall (Devimon's profile) and the Adventure: 2020 line
+    // that starts at Tsukaimon
+    edge('tsukaimon','devimon','dark','right','left',{points:[[799,1069],[799,1549]], label:'Adventure: 2020', lx:799, ly:1189});
+    edge('angemon','devimon','dark','bottom','top',{shape:'vertical', fromX:900, toX:900, label:'Fell to the Dark Area', lx:900, ly:1429});
     edge('devimon','neodevimon','dark');
     edge('neodevimon','dandevimon','dark');
 
     // Demon Lord branch: the official fall from Seraphimon (its profile names Daemon as its
-    // fallen form), the Adventure 02 mantled look and the V-Tamer Ultra form
-    edge('seraphimon','daemon','dark','bottom','top',{shape:'vertical', fromX:1420, toX:1420, label:'Fell to the Dark Area', lx:1420, ly:1180});
-    edge('daemon','daemonmantled','mode','top','top',{fromX:1500, toX:1670, points:[[1500,1430],[1670,1430]], label:'Adventure 02', lx:1585, ly:1430});
-    edge('daemon','daemonultra','dark','right','left',{fromY:1600, points:[[1585,1600],[1585,1789]], label:'V-Tamer', lx:1585, ly:1670});
+    // fallen form) and the V-Tamer Ultra form, which absorbs Arkadimon's data
+    edge('seraphimon','daemon','dark','bottom','top',{shape:'vertical', fromX:1420, toX:1420, label:'Fell to the Dark Area', lx:1420, ly:1120});
+    edge('daemon','daemonultra','dna','top','top',{fromX:1500, toX:1670, points:[[1500,1189],[1670,1189]], label:'V-Tamer', lx:1585, ly:1189});
 
     // connector to the Armor panel (appendix, not a normal edge)
     edge('patamon','armor-panel','armor','bottom','top',{fromX:600, toX:442, points:[[600,950],[442,950]], width:3});

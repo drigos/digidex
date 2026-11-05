@@ -75,7 +75,7 @@ will change, so the canvas height must be recomputed (see layout).
   of text. Keep the shared 4-column grid even when the last row does not fill completely;
   do not tweak the column count per page.
 - **Entry content**: each entry ties to a node or arrow on the page. Name the continuity
-  when the fact is continuity-specific (`Adventure 02`, `V-Tamer`, `Digimon World 3`).
+  when the fact is continuity-specific (`Adventure 02`, `V-Tamer`, `Adventure: 2020`).
   On-page text in English, title case titles, no em dash (U+2014).
 - **Naming**: Digimon, characters and series go by their DigimonWiki/Fandom names, the
   wiki every card links to (`Kentaurosmon`, not `Sleipmon`; `Kari`, not `Hikari`;

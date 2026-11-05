@@ -17,7 +17,7 @@ then lists the generations, the atlas pages or the group rosters:
   - [tentomon.html](src/evolution-lines/gen-1-adventure/tentomon.html) - Tentomon line (Red/Blue MegaKabuterimon branches, HerculesKabuterimon X, AncientBeetlemon ancestral link, collective composition).
   - [palmon.html](src/evolution-lines/gen-1-adventure/palmon.html) - Palmon line (X-Antibody forms, the Aruraumon variant, the Adventure: 2020 Ponchomon, BanchoLillymon, Rosemon Burst Mode, collective composition).
   - [gomamon.html](src/evolution-lines/gen-1-adventure/gomamon.html) - Gomamon line (Gomamon X branch, collective composition).
-  - [patamon.html](src/evolution-lines/gen-1-adventure/patamon.html) - Patamon line (Priest Mode and Goldramon 2020 branches, fallen angel dark branch, Shakkoumon Jogress, Armor Digivolutions, collective composition).
+  - [patamon.html](src/evolution-lines/gen-1-adventure/patamon.html) - Patamon line (Priest Mode and Goldramon 2020 branches, the Devimon and Daemon falls, the Adventure: 2020 Devimon line from Tsukaimon, Shakkoumon Jogress, Armor Digivolutions, collective composition).
   - [gatomon.html](src/evolution-lines/gen-1-adventure/gatomon.html) - Gatomon line (X line up to Magnadramon X, Ophanimon Falldown Mode and ChronoCore variants, Silphymon Jogress, BlackGatomon dark branch, Mastemon holy-dark fusion, SkullKnightmon corruption, Armor Digivolutions, collective composition).
 - `src/evolution-lines/gen-2-adventure-02/` - Digimon Adventure 02:
   - [index.html](src/evolution-lines/gen-2-adventure-02/index.html) - DigiDestined selection screen (by Digi-Egg; the Patamon and Gatomon cards link into the gen-1 trees, which already carry their Armor Digivolutions).
@@ -402,7 +402,7 @@ A continuity is named the way the site names the series (`Adventure: 2020`, `Dat
 (`Subspecies`, `Data variant`, `Blue form`) belong in its card note, and a group title
 (`Bancho`) in its badge. A label sits on its own edge inside a free lane or row gap, never over
 a card or another edge: when the lane is narrower than the label, place it where the edge
-crosses a row gap or route the edge through one (see the Daemon -> Daemon (Mantled) arch on
+crosses a row gap or route the edge through one (see the Daemon -> Daemon (Ultra) arch on
 patamon). When no spot fits and the card note already says it, drop the label.
 
 Ancestral (lore) links are the exception that needs **no** label: the dedicated dotted
@@ -768,9 +768,9 @@ page with it; a slug that lands on a disambiguation page (`Justimon`) needs the 
   frame, a full-body render from the page's gallery reads better on a card: HiMachineDramon
   uses the 320px thumbnail of its Digimon Super Rumble model (artwork only; a game is still
   no relation source). Pages that use one add
-  `and Wikimon` to the footer's artwork credit. Sixteen images use it today, among them
-  Agumon (Burst Mode), HiMachineDramon, Grani, the Digimon World 3 BlackSeraphimon,
-  Ophanimon C, PetitMamon and the App Monsters cards.
+  `and Wikimon` to the footer's artwork credit. Fifteen images use it today, among them
+  Agumon (Burst Mode), HiMachineDramon, Grani, Daemon (Ultra), Ophanimon C, PetitMamon and
+  the App Monsters cards.
 - Do not try to get around a source that blocks embedding (no user-agent or referrer
   tricks); switch to another source instead.
 
