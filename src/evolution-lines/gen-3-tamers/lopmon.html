@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="../../favicon.ico" sizes="32x32" />
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png" />
+<title>Lopmon: evolution tree</title>
+<link rel="stylesheet" href="../../digivolution.css" />
+<style>
+  /* page-specific layout */
+  .infographic { width:1598px; height:1240px; }
+  .columns { top:200px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="backnav" href="index.html"><span class="arrow">&#8592;</span> The Tamers</a>
+  <div class="infographic" id="canvas">
+    <div class="title">
+      <h1>Lopmon: evolution tree</h1>
+      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega hierarchy, with the Celestial line up to Cherubimon (Good), the dark line from Wendigomon to Cherubimon (Evil), the Frontier corruption and the X-Antibody forms.</div>
+    </div>
+
+    <div class="legend">
+      <div class="legend-title">Digivolution triggers</div>
+      <div class="legend-grid"></div>
+    </div>
+
+    <div class="columns"></div>
+
+    <svg id="edges" viewBox="0 0 1598 1240" preserveAspectRatio="none"></svg>
+    <div id="labels"></div>
+    <div id="nodes"></div>
+
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. In Tamers, Suzie's Lopmon goes straight to Antylamon (Good); Turuiemon and the Cherubimon (Good) step come from Adventure: 2020 and from Suzie's line in the D-Power V-pet. The dark line is Willis's Lopmon, infected by a virus, in the Adventure 02 film.</div>
+  </div>
+  <div class="support">
+    <span class="support-label">Support this project</span>
+    <a class="support-btn kofi" href="https://ko-fi.com/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9749;</span><span class="support-text">Buy me a coffee</span><span class="support-url">ko-fi.com/drigos</span></a>
+    <a class="support-btn sponsors" href="https://github.com/sponsors/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9829;</span><span class="support-text">GitHub Sponsors</span><span class="support-url">github.com/sponsors/drigos</span></a>
+  </div>
+</div>
+<script src="../../digivolution.js"></script>
+<script>
+DigiTree.mount({
+  legend: [
+    ['normal','Normal evolution'],
+    ['x','X-Digivolution'],
+    ['dark','Dark / Virus']
+  ],
+  columns: [
+    [42,'Fresh'],[304,'In-Training'],[566,'Rookie'],[828,'Champion'],
+    [1090,'Ultimate'],[1352,'Mega']
+  ],
+  nodes: [
+    // X-Antibody forms (top row)
+    {id:'lopmonx', x:566, y:250, cls:'x', name:'Lopmon X', lvl:'Rookie / X', note:'X-Antibody form.', wiki:'Lopmon_X', img:'lopmon_x'},
+    {id:'cherubimongoodx', x:1352, y:250, cls:'x', badge:{cls:'cd', text:'Celestial Digimon', href:'../../groups/angelic.html#cherubimon-good', title:'Angelic Digimon roster'}, name:'Cherubimon (Good) X', lvl:'Mega / X', note:'X-Antibody form.', wiki:'Cherubimon_(Good)_X', img:'cherubimon_x'},
+
+    // main line
+    {id:'conomon', x:42, y:490, cls:'normal', name:'Conomon', lvl:'Fresh', note:'Sometimes born as a twin.', wiki:'Conomon', img:'cocomon'},
+    {id:'kokomon', x:304, y:490, cls:'normal', name:'Kokomon', lvl:'In-Training', note:'Gentle twin of Gummymon.', wiki:'Kokomon', img:'chocomon'},
+    {id:'lopmon', x:566, y:490, cls:'normal', name:'Lopmon', lvl:'Rookie', note:'Suzie\'s partner; main branching point.', wiki:'Lopmon', img:'lopmon'},
+    {id:'turuiemon', x:828, y:490, cls:'normal', name:'Turuiemon', lvl:'Champion', note:'Martial artist of the mountains.', wiki:'Turuiemon', img:'turuiemon'},
+    {id:'antylamongood', x:1090, y:490, cls:'normal', name:'Antylamon (Good)', lvl:'Ultimate', note:'Rabbit Deva, minion of Azulongmon.', wiki:'Antylamon_(Good)', img:'andiramon'},
+    {id:'cherubimongood', x:1352, y:490, cls:'normal', badge:{cls:'cd', text:'Celestial Digimon', href:'../../groups/angelic.html#cherubimon-good', title:'Angelic Digimon roster'}, name:'Cherubimon (Good)', lvl:'Mega', note:'Guardian of the Kernel.', wiki:'Cherubimon_(Good)', img:'cherubimon'},
+
+    // dark line (row 2)
+    {id:'wendigomon', x:828, y:730, cls:'dark', name:'Wendigomon', lvl:'Champion / Virus', note:'Lopmon\'s Dark Digivolution.', wiki:'Wendigomon', img:'wendimon'},
+    {id:'antylamonevil', x:1090, y:730, cls:'dark', name:'Antylamon (Evil)', lvl:'Ultimate / Virus', note:'Rabbit deva of the Holy Beasts.', wiki:'Antylamon_(Evil)', img:'andiramon_2'},
+    {id:'cherubimonevil', x:1352, y:730, cls:'dark', badge:{cls:'fa', text:'Fallen Angel', href:'../../groups/angelic.html#cherubimon-evil', title:'Angelic Digimon roster'}, name:'Cherubimon (Evil)', lvl:'Mega', note:'The corrupted Celestial.', wiki:'Cherubimon_(Evil)', img:'cherubimon-vice'},
+
+    // X form of the dark Mega (row 3)
+    {id:'cherubimonevilx', x:1352, y:970, cls:'x', badge:{cls:'fa', text:'Fallen Angel', href:'../../groups/angelic.html#cherubimon-evil', title:'Angelic Digimon roster'}, name:'Cherubimon (Evil) X', lvl:'Mega / X', note:'X-Antibody form.', wiki:'Cherubimon_(Evil)_X', img:'cherubimondark_x'}
+  ],
+  edges: function (edge) {
+    // main line
+    edge('conomon','kokomon','normal');
+    edge('kokomon','lopmon','normal');
+    edge('lopmon','turuiemon','normal');
+    edge('turuiemon','antylamongood','normal');
+    edge('antylamongood','cherubimongood','normal');
+
+    // Tamers: Lopmon straight into Antylamon (Good), along the row gap above the line
+    edge('lopmon','antylamongood','normal','top','top',{fromX:710, toX:1192, laneY:469, label:'Tamers', lx:930, ly:469});
+
+    // X-Antibody forms
+    edge('lopmon','lopmonx','x','top','bottom',{shape:'vertical'});
+    edge('cherubimongood','cherubimongoodx','x','top','bottom',{shape:'vertical'});
+    edge('cherubimonevil','cherubimonevilx','x','bottom','top',{shape:'vertical'});
+
+    // dark line (Adventure 02 film), from its own port under the main one
+    edge('lopmon','wendigomon','dark','right','left',{fromY:650});
+    edge('wendigomon','antylamonevil','dark');
+    edge('antylamonevil','cherubimonevil','dark');
+
+    // Frontier: Cherubimon (Good) corrupted into Cherubimon (Evil)
+    edge('cherubimongood','cherubimonevil','dark','bottom','top',{shape:'vertical', label:'Corrupted (Frontier)', lx:1454, ly:709});
+  }
+});
+</script>
+</body>
+</html>

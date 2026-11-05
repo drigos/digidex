@@ -31,6 +31,7 @@ then lists the generations, the atlas pages or the group rosters:
   - [renamon.html](src/evolution-lines/gen-3-tamers/renamon.html) - Renamon line (Sakuyamon Biomerge, the D-Ark's alternate line up to Kuzuhamon, X-Antibody forms, Maid Mode changes).
   - [terriermon.html](src/evolution-lines/gen-3-tamers/terriermon.html) - Terriermon line (MegaGargomon Biomerge, Black Digitron variants, the golden Rapidmon of the Digi-Egg of Destiny and its X form).
   - [cyberdramon.html](src/evolution-lines/gen-3-tamers/cyberdramon.html) - Cyberdramon line (Justimon Biomerge and its three arms, the D-Power line from Monodramon, the Beatbreak branch, X-Antibody forms).
+  - [lopmon.html](src/evolution-lines/gen-3-tamers/lopmon.html) - Lopmon line (Celestial line up to Cherubimon (Good), the Adventure 02 film's dark line to Cherubimon (Evil), the Frontier corruption, X-Antibody forms).
 - `src/evolution-lines/gen-4-frontier/` - Digimon Frontier (Spirit Evolution; the children become Digimon, no partner):
   - [index.html](src/evolution-lines/gen-4-frontier/index.html) - Legendary Warriors selection screen (6 chosen + 4 Cherubimon's warriors).
   - [agunimon.html](src/evolution-lines/gen-4-frontier/agunimon.html) - Warrior of Flame line (Child Flamemon, Human/Beast Spirit, Fusion, Unified, Susanoomon).
