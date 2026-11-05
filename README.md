@@ -360,8 +360,8 @@ another lane, `laneY` another row gap for top/bottom edges, `points` gives the c
 Anchors come from the cards' layout position, so a hovered card never skews its arrows.
 
 - An edge runs in a lane or row gap, never under a card or panel, and crosses no other edge
-  unless no route can avoid it (on agumon, the `Bond with Tai` edge and Greymon -> Gaiomon run
-  down the lane beside the Champion column and cross the Data Squad line; on
+  unless no route can avoid it, and a card may move to clear one: on agumon, Gaiomon and
+  Agumon (Bond of Bravery) sit above the Data Squad line so their long edges never cross it (on
   gatomon, Angewomon -> Junomon must cross the LadyDevimon -> Mastemon fusion, because
   Gatomon, Angewomon, Mastemon, LadyDevimon and BlackGatomon close a loop around its start;
   on guilmon, `Biomerge with Takato` crosses the Growlmon X and WarGrowlmon X edges, because
