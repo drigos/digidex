@@ -12,7 +12,7 @@ then lists the generations, the atlas pages or the group rosters:
 - `src/evolution-lines/gen-1-adventure/` - Digimon Adventure:
   - [index.html](src/evolution-lines/gen-1-adventure/index.html) - DigiDestined selection screen (by Crest).
   - [agumon.html](src/evolution-lines/gen-1-adventure/agumon.html) - Agumon line (Data Squad, Bond and Burst branches, the Virus forms, the Agumon and Greymon subspecies; AncientGreymon ancestral link).
-  - [gabumon.html](src/evolution-lines/gen-1-adventure/gabumon.html) - Gabumon line (X, Virus and Bond branches; AncientGarurumon ancestral link).
+  - [gabumon.html](src/evolution-lines/gen-1-adventure/gabumon.html) - Gabumon line (X, Virus and Bond branches, the Gabumon and MetalGarurumon variants; AncientGarurumon ancestral link).
   - [biyomon.html](src/evolution-lines/gen-1-adventure/biyomon.html) - Biyomon line (X line, dark bird branch, Ornismon variation, collective composition).
   - [tentomon.html](src/evolution-lines/gen-1-adventure/tentomon.html) - Tentomon line (Red/Blue MegaKabuterimon branches, HerculesKabuterimon X, AncientBeetlemon ancestral link, collective composition).
   - [palmon.html](src/evolution-lines/gen-1-adventure/palmon.html) - Palmon line (X line, Rookie side forms, Rosemon/Lillymon variants, Rafflesimon Jogress, collective composition).
@@ -265,11 +265,11 @@ as a pyramid, the narrowest on top and the widest at the bottom:
 3. `Lore notes`, last.
 
 A Jogress panel and a composition panel share one row when both fit with a `58px` gap
-between them, the same as between card columns (patamon, gatomon, palmon, agumon): the
+between them, the same as between card columns (patamon, gatomon, palmon, agumon, gabumon): the
 Jogress panel stays at the left margin and the composition panel ends flush with the last
 column (page style `left = canvas width - 42 - panel width`); on a wider canvas the Jogress
-panel takes the rest of the row (agumon). Since both are `333px` tall, their bottoms line up.
-Where they do not fit (gabumon, with four Jogress cards; Frontier), each takes its own row.
+panel takes the rest of the row (agumon, gabumon). Since both are `333px` tall, their bottoms
+line up. Where they do not fit (Frontier), each takes its own row.
 
 The Armor panel is the only panel with a connector, an amber edge from the line's node down
 to it, because the line evolves into its forms. The edge passes the panels above it: down the
@@ -339,9 +339,9 @@ Every arrow is colored by the digivolution trigger. This is the single vocabular
 | Mode Change | teal | Same digimon switching mode / form, including the temporary forms Black Digitron causes (Omnimon Zwart, Omegamon Alter-B). | both |
 | Dark / Virus | red | Dark or Virus-attribute branch (including rage / loss of control). | both |
 | Armor Digivolution | amber | Armor evolution via a Digi-Egg. | veemon, hawkmon, armadillomon, wormmon, patamon, gatomon, terriermon |
-| Bond Evolution | pink | Bond-driven evolution. | agumon |
+| Bond Evolution | pink | Bond-driven evolution. | agumon, gabumon |
 | Burst Mode | gold | Burst Digivolution. | agumon |
-| Variant / subspecies | silver | Not an evolution: the target is a separate species or subspecies of the source ("a separate species of Agumon", "a subspecies of Greymon"). | agumon |
+| Variant / subspecies | silver | Not an evolution: the target is a separate species or subspecies of the source ("a separate species of Agumon", "a subspecies of Greymon"). | agumon, gabumon |
 | Ancestral link | grey (dotted, no arrowhead) | Lore ancestry, not an evolution: a Legendary Warrior linked to the root of the line it spawned. | agumon, gabumon, tentomon, gen-4-frontier |
 
 A form the Reference Book describes as a separate species or a subspecies (`SnowAgumon`,
@@ -411,6 +411,7 @@ The on-image legend lists only the triggers that the file actually uses.
   Dark / Virus.
 - The Adventure 02 partners (Veemon, Hawkmon, Armadillomon, Wormmon, Patamon, Gatomon) and Terriermon add: Armor Digivolution.
 - Agumon adds: Bond Evolution, Burst Mode, Variant / subspecies.
+- Gabumon adds: Bond Evolution, Variant / subspecies.
 - Agumon, Gabumon and Tentomon add: Ancestral link.
 - Frontier relabels the shared colors: Spirit Evolution, Slide Evolution,
   Fusion / DNA Digivolve, Unified Spirit, plus Ancestral link. Pages without a Child or a
@@ -442,9 +443,12 @@ so it does not belong in the level label. Both are now `Mega / Virus`.
 ### Lore / non-evolution links
 
 `AncientGreymon`, `AncientGarurumon` and `AncientBeetlemon` are Legendary Warriors: the
-ancestral (lore) origin of the Greymon, Garurumon and Kabuterimon species, not a real
-evolution path. Each is drawn with the dedicated **Ancestral link** trigger and these
-conventions, so the relation is never mistaken for an evolution:
+ancestral (lore) origin of the Greymon and Kabuterimon species and of the Beast Digimon, not a
+real evolution path. AncientGarurumon's profile names no single species ("Its abilities were
+subsequently passed on to Beast Digimon"), so the Gabumon tree's link rests on Garurumon being
+a Beast Digimon, and its card note quotes that wording. Each is drawn with the dedicated
+**Ancestral link** trigger and these conventions, so the relation is never mistaken for an
+evolution:
 
 - **Trigger / style**: `cls:'lore'` on the node (grey level pill); the edge uses the
   `lore` type, a dotted grey line drawn with `{noArrow:true}` (no arrowhead) and no text
