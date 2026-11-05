@@ -5,7 +5,7 @@
  * Per-page values are set inline in each page's own <style> block:
  *   .infographic { width; height }   .columns { top }
  *   .legend { width }                .legend-grid { grid-template-columns }
- *   .partner-panel / .jogress-panel / .armor-panel { top; width }  (height auto-sizes to content)
+ *   .partner-panel / .jogress-panel { top; width }  .armor-panel { top }  (height auto-sizes to content)
  */
 
 :root {
@@ -226,13 +226,14 @@ a.panel-badge { position:static; justify-self:end; align-self:start; margin:9px 
 .armor-panel-title { display:flex; align-items:baseline; gap:14px; margin-bottom:14px; }
 .armor-panel-title h2 { margin:0; font-size:26px; letter-spacing:-.45px; }
 .armor-panel-title span { color:#ffe1a4; font-weight:800; font-size:14px; }
-.armor-grid { display:grid; grid-template-columns: repeat(12, 1fr); gap:12px; }
+/* One row of fixed 136px columns: the panel takes no page width and hugs its cards */
+.armor-grid { display:grid; grid-template-rows:auto; grid-auto-flow:column; grid-auto-columns:136px; gap:12px; }
 .armor-card {
   position:relative;
-  min-height:190px; padding:10px 10px 12px; border-radius:16px; border:1px solid rgba(255,255,255,.16);
+  min-height:198px; padding:10px 10px 12px; border-radius:16px; border:1px solid rgba(255,255,255,.16);
   background:linear-gradient(180deg, rgba(17,43,70,.98), rgba(7,18,32,.98)); box-shadow:0 12px 28px rgba(0,0,0,.26);
 }
-.armor-card img { width:100%; height:72px; object-fit:contain; background:#fff; border-radius:11px; padding:5px; display:block; margin-bottom:8px; }
+.armor-card img { width:100%; height:96px; object-fit:contain; background:#fff; border-radius:11px; padding:5px; display:block; margin-bottom:8px; }
 .armor-name { font-size:14px; line-height:1.05; font-weight:950; margin-bottom:5px; }
 .armor-level { display:inline-block; padding:3px 7px; border-radius:999px; background:rgba(245,165,36,.22); color:#ffe1a4; font-size:10px; font-weight:900; margin-bottom:5px; }
 .armor-egg { color:#ffd28a; font-size:10px; line-height:1.2; font-weight:800; }
