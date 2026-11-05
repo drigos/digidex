@@ -18,7 +18,7 @@ then lists the generations, the atlas pages or the group rosters:
   - [palmon.html](src/evolution-lines/gen-1-adventure/palmon.html) - Palmon line (X-Antibody forms, the Aruraumon variant, the Adventure: 2020 Ponchomon, BanchoLillymon, Rosemon Burst Mode, collective composition).
   - [gomamon.html](src/evolution-lines/gen-1-adventure/gomamon.html) - Gomamon line (Gomamon X branch, collective composition).
   - [patamon.html](src/evolution-lines/gen-1-adventure/patamon.html) - Patamon line (Priest Mode and Goldramon 2020 branches, the Devimon and Daemon falls, the Adventure: 2020 Devimon line from Tsukaimon, Shakkoumon Jogress, Armor Digivolutions, collective composition).
-  - [gatomon.html](src/evolution-lines/gen-1-adventure/gatomon.html) - Gatomon line (X line up to Magnadramon X, Ophanimon Falldown Mode and ChronoCore variants, Silphymon Jogress, BlackGatomon dark branch, Mastemon holy-dark fusion, SkullKnightmon corruption, Armor Digivolutions, collective composition).
+  - [gatomon.html](src/evolution-lines/gen-1-adventure/gatomon.html) - Gatomon line (X-Antibody forms, Ophanimon and its Falldown Mode, Silphymon Jogress, BlackGatomon and its Uver. form, SkullKnightmon corruption, Armor Digivolutions, collective composition).
 - `src/evolution-lines/gen-2-adventure-02/` - Digimon Adventure 02:
   - [index.html](src/evolution-lines/gen-2-adventure-02/index.html) - DigiDestined selection screen (by Digi-Egg; the Patamon and Gatomon cards link into the gen-1 trees, which already carry their Armor Digivolutions).
   - [veemon.html](src/evolution-lines/gen-2-adventure-02/veemon.html) - Veemon line (includes the Armor branch).
@@ -368,10 +368,7 @@ Anchors come from the cards' layout position, so a hovered card never skews its 
 - An edge runs in a lane or row gap, never under a card or panel, and crosses no other edge
   unless no route can avoid it, and a card may move to clear one: on agumon, Gaiomon and
   Agumon (Bond of Bravery) sit above the Virus and Data Squad lines, and on gabumon the Bond of
-  Friendship sits above the Virus line, so their long edges never cross them (on
-  gatomon, Angewomon -> Junomon must cross the LadyDevimon -> Mastemon fusion, because
-  Gatomon, Angewomon, Mastemon, LadyDevimon and BlackGatomon close a loop around its start;
-  on guilmon, `Biomerge with Takato` crosses the Growlmon X and WarGrowlmon X edges, because
+  Friendship sits above the Virus line, so their long edges never cross them (on guilmon, `Biomerge with Takato` crosses the Growlmon X and WarGrowlmon X edges, because
   every row gap between Guilmon and Gallantmon carries a vertical edge). A single crossing is
   preferred to a detour around the canvas edge.
 - A run alone in a row gap or lane sits on its centerline (21px below the card above, 29px
@@ -483,8 +480,15 @@ counterpart fills the tree with crossing edges. To keep the two trees readable, 
 Rookie takes a Dark edge from its Vaccine form, and the Virus forms follow as one Dark chain:
 BlackAgumon -> Greymon (Blue) -> MetalGreymon (Virus) -> BlackWarGreymon, and BlackGabumon ->
 BlackGarurumon -> ShadowWereGarurumon -> BlackMetalGarurumon. The chain is an editorial reading
-of the profiles, the one exception to "Relation sources", and the footer says so. It also states
+of the profiles, an exception to "Relation sources", and the footer says so. It also states
 that the BlackWarGreymon of Adventure 02 was built by Arukenimon from 100 Control Spires.
+
+### X-Antibody forms
+
+Every X form hangs from its base form by a vertical X-Digivolution edge (Gatomon -> Gatomon X,
+Omnimon -> Omnimon X). The X forms of a line are not chained to one another, even where a
+source shows the step (Digimon Chronicle X has Gatomon X -> Angewomon X): an X form follows the
+line of its base form, so the chain is implied and the extra edges add nothing.
 
 ### Cross-page navigation
 
@@ -679,8 +683,10 @@ Use them where ambiguity matters, not on every sentence. The atlas overview has 
 
 Every evolution relation on a tree (an edge, or a card in an Armor panel), and every other
 claim on a page (a card note, a roster role, a lore note, a footer sentence), must rest on one
-of these sources (the one exception is the Virus chain of agumon and gabumon, see "Virus lines
-on agumon and gabumon"):
+of these sources. There are two exceptions, and each page states its own in the footer: the
+Virus chain of agumon and gabumon (see "Virus lines on agumon and gabumon"), and YukimiBotamon
+on gatomon, which only a game links to Nyaromon, kept as the line's Fresh form because its
+profile makes it a variant of Botamon. The sources are:
 
 1. the official Reference Book profile. Read the profiles at both ends: GoldVeedramon's is
    the only Armor profile that names its Rookie ("Armor Digivolved from Veemon with the
@@ -738,9 +744,9 @@ cites it for Gigimon, Gummymon and Viximon, and the same cast list debuts Kokomo
 and Hopmon, which the character boxes list without a citation.
 
 A partner with no form for a Digi-Egg says so in its footer (`Patamon has no recorded form
-for the Digi-Egg of Destiny.`). The six Armor panels were checked against this rule in
-November 2026. The edges of the older trees have not been checked yet, and some of them
-still rest on a game.
+for the Digi-Egg of Destiny.`). The six Armor panels and the eight Adventure trees were
+checked against this rule in November 2026. The edges of the other trees have not been checked
+yet, and some of them still rest on a game.
 
 ## Artwork sources
 
@@ -768,9 +774,9 @@ page with it; a slug that lands on a disambiguation page (`Justimon`) needs the 
   frame, a full-body render from the page's gallery reads better on a card: HiMachineDramon
   uses the 320px thumbnail of its Digimon Super Rumble model (artwork only; a game is still
   no relation source). Pages that use one add
-  `and Wikimon` to the footer's artwork credit. Fifteen images use it today, among them
-  Agumon (Burst Mode), HiMachineDramon, Grani, Daemon (Ultra), Ophanimon C, PetitMamon and
-  the App Monsters cards.
+  `and Wikimon` to the footer's artwork credit. Fourteen images use it today, among them
+  Agumon (Burst Mode), HiMachineDramon, Grani, Daemon (Ultra), PetitMamon and the App
+  Monsters cards.
 - Do not try to get around a source that blocks embedding (no user-agent or referrer
   tricks); switch to another source instead.
 
