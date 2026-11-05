@@ -654,10 +654,16 @@ these sources:
    - the D-3 (Adventure 02). Version 1 covers Veemon and Wormmon, Version 2 Hawkmon and
      Gatomon, and Version 3 Armadillomon and Patamon. Each gives its partners one Armor form
      per Digi-Egg and none for Destiny;
-   - the D-Ark and D-Power (Tamers): D-Ark Version 1.0, 1.5, 2.0 and Ultimate, D-Power
-     Version 1.0 to 3.0. Each gives a partner one form per level, picked by a condition
-     (wins, losses, Notes entries), which yields an alternate line (Youkomon, Doumon,
-     Kuzuhamon for Renamon).
+   - the D-Ark and D-Power (Tamers): D-Ark Version 1.0, 1.5, 2.0 and Ultimate (Japan) and
+     the D-Power Digivice Version 1 to 3 (Europe and Asia; the North American D-Power is a
+     different game with no lines of its own). Each gives a partner one form per level,
+     picked by a condition (wins, losses, Notes entries), which yields an alternate line
+     (Youkomon, Doumon, Kuzuhamon for Renamon). D-Power Version 2 adds the Monodramon and
+     Lopmon lines, and Version 3 the Elecmon, Kokuwamon and Penmon lines. In Version 3 the
+     Champion and Ultimate also follow the type of the area (Fire, Forest, Wind, Sea); the
+     line drawn keeps the Rookie's own type and is the only one that reaches the line's Mega
+     (Elecmon -> Leomon -> GrapLeomon -> SaberLeomon, all Forest). Wikimon's Version 3 data
+     comes from the instruction manual.
 
    Later re-releases (D-Ark Ver.15th of 2017, D-Ark 25th COLOR EVOLUTION) and V-pets of other
    lines (Pendulum, Vital Bracelet) do not count.
