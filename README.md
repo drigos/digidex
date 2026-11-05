@@ -223,11 +223,10 @@ so every Jogress, composition, DNA and Unified Spirit panel is `333px` tall, alo
 side. The `.armor-panel` holds ten to twelve Digimon in one row, so its cards are smaller but
 just as fixed: `136px` wide, enough for the longest name and Digi-Egg label on one line, and
 at least `198px` tall, the node card's height. The panel spans the card grid, `width - 84`
-(the `42px` margin each side), and the grid spreads its fixed columns across it
-(`justify-content: space-between`, at least `12px` apart): ten cards fill the narrowest canvas
-(`1598px`) at the minimum gap, and wider canvases or fewer cards widen it (`23px` on patamon
-and gatomon, `33px` on veemon, `70px` on wormmon). Every Armor panel is `287px` tall. The
-`.lore-panel`
+(the `42px` margin each side), while its cards keep a fixed `12px` gap and align left, like the
+cards of a Jogress panel: ten cards fill the narrowest canvas (`1598px`) exactly, and a wider
+canvas leaves room on the right (`114px` on patamon and gatomon, `228px` on veemon, `524px` on
+wormmon). Every Armor panel is `287px` tall. The `.lore-panel`
 (grey, matching the `lore` trigger color) also spans the full width with a fractional
 `repeat(4, 1fr)` grid of text-only cards; its entries are source-verified explanations of the
 page's unusual arrows and nodes, added via the `digimon-lore-notes` skill.
