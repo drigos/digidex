@@ -178,7 +178,7 @@ DigiTree.mount({
     {id:'omnimon', x:1614, y:490, cls:'dna', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#omnimon', title:'Royal Knights roster'}, name:'Omnimon', lvl:'Ultra', note:'WarGreymon + MetalGarurumon.', wiki:'Omnimon', img:'omegamon'},
     {id:'omnimonzwart', x:1614, y:730, cls:'mode', name:'Omnimon Zwart', lvl:'Ultra', note:'Omnimon temporarily blackened by Black Digitron.', wiki:'Omnimon_Zwart', img:'omegamon_zwart'},
     {id:'omnimonalters', x:1614, y:970, cls:'dna', name:'Omnimon Alter-S', lvl:'Ultra', note:'BlitzGreymon + CresGarurumon.', wiki:'Omegamon_Alter-S', img:'omegamon-alter-s'},
-    {id:'himachinedramon', x:1614, y:1210, cls:'normal', name:'HiMachineDramon', lvl:'Mega', note:'Upgraded Machinedramon.', wiki:'HiMachineDramon', img:'https://wikimon.net/images/thumb/d/d3/Hi_Mugendramon_Model_DSR.png/320px-Hi_Mugendramon_Model_DSR.png'},
+    {id:'himachinedramon', x:1614, y:1210, cls:'dna', name:'HiMachineDramon', lvl:'Mega', note:'Machinedramon after absorbing a SkullScorpionmon army.', wiki:'HiMachineDramon', img:'https://wikimon.net/images/thumb/d/d3/Hi_Mugendramon_Model_DSR.png/320px-Hi_Mugendramon_Model_DSR.png'},
     {id:'millenniummon', x:1614, y:1450, cls:'dna', name:'Millenniummon', lvl:'Ultra', note:'Machinedramon + Kimeramon.', wiki:'Millenniummon', img:'millenniumon'},
     {id:'shineburst', x:1614, y:2650, cls:'burst', name:'ShineGreymon Burst Mode', lvl:'Ultra', note:'Burst Digivolution.', wiki:'ShineGreymon_Burst_Mode', img:'shinegreymonburstmode'},
     {id:'shineruin', x:1614, y:2890, cls:'burst', name:'ShineGreymon Ruin Mode', lvl:'Mega', note:'Corrupted burst; dark emotions.', wiki:'ShineGreymon_Ruin_Mode', img:'shinegreymon_ruin'},
@@ -213,7 +213,8 @@ DigiTree.mount({
     edge('alterous','machinedramon','dark','right','left',{fromY:1120, laneX:1308, label:'Corrupted (Adventure: 2020)', lx:1308, ly:1189});
     edge('blitzgreymon','omnimonalters','dna');
     edge('omnimonalters','alterb','mode');
-    edge('machinedramon','himachinedramon','normal');
+    // HiMachineDramon: Machinedramon absorbs a SkullScorpionmon army (Digimon Fusion 14)
+    edge('machinedramon','himachinedramon','dna');
     // Millenniummon: Machinedramon drops through the empty Mega cell onto the Kimeramon fusion
     edge('kimeramon','millenniummon','dna');
     edge('machinedramon','millenniummon','dna','bottom','left',{points:[[1454,1549]]});

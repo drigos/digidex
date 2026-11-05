@@ -351,9 +351,11 @@ Every arrow is colored by the digivolution trigger. This is the single vocabular
 A form the Reference Book describes as a separate species or a subspecies (`SnowAgumon`,
 `Agumon Expert`, `Gaiomon`) uses **Variant / subspecies** and `cls:'variant'` (silver pill),
 so it never reads as an evolution. The edge starts at the species the profile names, even when
-that is another level (`Gaiomon`, "a subspecies of Greymon", hangs from Greymon). A form
-reached by digivolution
-(`HiMachineDramon`, upgraded from Machinedramon in Xros Wars) keeps **Normal evolution**.
+that is another level (`Gaiomon`, "a subspecies of Greymon", hangs from Greymon). A
+subspecies reached by digivolution keeps **Normal evolution** (`BlitzGreymon`, a subspecies of
+WarGreymon, digivolves from MetalGreymon Alterous Mode in Adventure: 2020), and one reached by
+absorbing other Digimon is a **DNA / Jogress** (`HiMachineDramon`, Machinedramon after
+absorbing a SkullScorpionmon army in Digimon Fusion episode 14).
 
 ### Routing
 
