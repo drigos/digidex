@@ -27,7 +27,7 @@ then lists the generations, the atlas pages or the group rosters:
   - [wormmon.html](src/evolution-lines/gen-2-adventure-02/wormmon.html) - Wormmon line (Paildramon and Dinobeemon Jogresses, Imperialdramon Mode Changes, JewelBeemon branch, Hudiemon side form, Armor Digivolutions).
 - `src/evolution-lines/gen-3-tamers/` - Digimon Tamers:
   - [index.html](src/evolution-lines/gen-3-tamers/index.html) - Tamers selection screen (by Biomerge / peak form).
-  - [guilmon.html](src/evolution-lines/gen-3-tamers/guilmon.html) - Guilmon line (X, Data/Yellow, Virus and Digital Hazard branches).
+  - [guilmon.html](src/evolution-lines/gen-3-tamers/guilmon.html) - Guilmon line (Gallantmon Biomerge, the D-Ark's dark line up to ChaosGallantmon, Digital Hazard, X-Antibody forms, Data/Yellow variants).
   - [renamon.html](src/evolution-lines/gen-3-tamers/renamon.html) - Renamon line (Sakuyamon Biomerge, the D-Ark's alternate line up to Kuzuhamon, X-Antibody forms, Maid Mode changes).
 - `src/evolution-lines/gen-4-frontier/` - Digimon Frontier (Spirit Evolution; the children become Digimon, no partner):
   - [index.html](src/evolution-lines/gen-4-frontier/index.html) - Legendary Warriors selection screen (6 chosen + 4 Cherubimon's warriors).
@@ -351,7 +351,9 @@ Anchors come from the cards' layout position, so a hovered card never skews its 
 - An edge runs in a lane or row gap, never under a card or panel, and crosses no other edge
   unless no route can avoid it (the `Bond with Tai` edge on agumon crosses two branches; on
   gatomon, Angewomon -> Junomon must cross the LadyDevimon -> Mastemon fusion, because
-  Gatomon, Angewomon, Mastemon, LadyDevimon and BlackGatomon close a loop around its start).
+  Gatomon, Angewomon, Mastemon, LadyDevimon and BlackGatomon close a loop around its start;
+  on guilmon, `Biomerge with Takato` crosses the Growlmon X and WarGrowlmon X edges, because
+  every row gap between Guilmon and Gallantmon carries a vertical edge).
 - A run alone in a row gap or lane sits on its centerline (21px below the card above, 29px
   past the card's side); ports and lanes are split only where edges compete for the space.
 - Edges of the same trigger may share a trunk (a fan, or two Spirits merging into a Fusion).
@@ -516,12 +518,14 @@ authority).
   `Biomerge with <Tamer>`, and runs along the row gap above the main line, between ports
   that clear the X-Antibody edges. The footer says it is drawn as a Normal evolution. The
   V-pet's step from the Ultimate into the same Mega is not drawn, since it would add a second
-  arrow into the Mega; the footer mentions it instead (`renamon.html`).
+  arrow into the Mega; the footer mentions it instead (`renamon.html`, `guilmon.html`).
 - **D-Ark / D-Power alternate line**: the V-pet picks one form per level by a condition, so
   any Champion of the line can lead to any Ultimate. The alternate forms are drawn as their
-  own chain, one Normal edge per level, in the row under the main line (Renamon -> Youkomon
-  -> Doumon -> Kuzuhamon), and the mixed paths the conditions allow are not drawn. The
-  footer names the V-pet.
+  own chain, one edge per level, in a row under the main line (Renamon -> Youkomon -> Doumon
+  -> Kuzuhamon), and the mixed paths the conditions allow are not drawn. The chain is a
+  Normal evolution, or Dark / Virus when its forms are the dark counterparts of the main line
+  (Guilmon -> BlackGrowlmon -> BlackWarGrowlmon -> ChaosGallantmon). The footer names the
+  V-pet.
 
 ### Frontier: Spirit Evolution
 
@@ -699,9 +703,9 @@ link to DigimonWiki articles.
 - Fallback for a Digimon with no Reference Book entry (game-only forms, toys, card art,
   recolors): an absolute Wikimon image URL (`https://wikimon.net/images/...`, the infobox
   image of its Wikimon page), also as `img` on tree pages. Pages that use one add
-  `and Wikimon` to the footer's artwork credit. Fourteen images use it today, among them
-  Agumon (Burst Mode), HiMachineDramon, BlackGuilmon, Grani, the Digimon World 3
-  BlackSeraphimon, the ChronoCore forms and PetitMamon.
+  `and Wikimon` to the footer's artwork credit. Sixteen images use it today, among them
+  Agumon (Burst Mode), HiMachineDramon, Grani, the Digimon World 3 BlackSeraphimon,
+  Ophanimon C, PetitMamon and the App Monsters cards.
 - Do not try to get around a source that blocks embedding (no user-agent or referrer
   tricks); switch to another source instead.
 
