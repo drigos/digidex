@@ -367,14 +367,13 @@ Anchors come from the cards' layout position, so a hovered card never skews its 
 
 - An edge runs in a lane or row gap, never under a card or panel, and crosses no other edge
   unless no route can avoid it, and a card may move to clear one: on agumon, Gaiomon and
-  Agumon (Bond of Bravery) sit above the Data Squad line so their long edges never cross it (on
+  Agumon (Bond of Bravery) sit above the Virus and Data Squad lines, and on gabumon the Bond of
+  Friendship sits above the Virus line, so their long edges never cross them (on
   gatomon, Angewomon -> Junomon must cross the LadyDevimon -> Mastemon fusion, because
   Gatomon, Angewomon, Mastemon, LadyDevimon and BlackGatomon close a loop around its start;
   on guilmon, `Biomerge with Takato` crosses the Growlmon X and WarGrowlmon X edges, because
-  every row gap between Guilmon and Gallantmon carries a vertical edge; on gabumon,
-  MetalGarurumon -> BlackMetalGarurumon crosses the CresGarurumon -> Omnimon Alter-S fusion,
-  because the only route around it would circle Omnimon Alter-B along the canvas edge). A
-  single crossing is preferred to a detour around the canvas edge.
+  every row gap between Guilmon and Gallantmon carries a vertical edge). A single crossing is
+  preferred to a detour around the canvas edge.
 - A run alone in a row gap or lane sits on its centerline (21px below the card above, 29px
   past the card's side); ports and lanes are split only where edges compete for the space.
 - Edges of the same trigger may share a trunk (a fan, or two Spirits merging into a Fusion).
@@ -470,8 +469,20 @@ evolution:
   Fresh form), so the link is a short vertical connector down its own column.
 
 `Kimeramon` is a composite of parts from various Digimon (Reference Book), so it has no
-incoming arrow and only outputs to `Millenniummon`. `BlackWarGreymon` has none either:
-Arukenimon built it from 100 Control Spires in Adventure 02.
+incoming arrow and only outputs to `Millenniummon`.
+
+### Virus lines on agumon and gabumon
+
+Each Virus form of these two lines is the Virus counterpart of a Vaccine one in its profile
+(BlackAgumon is "an Agumon that Digivolved into a Virus type", Greymon (Blue) "the Virus type
+of Greymon", MetalGarurumon (Black) "a Virus type MetalGarurumon"), but no accepted source shows
+the Virus forms digivolving into one another, and linking every Vaccine form to its Virus
+counterpart fills the tree with crossing edges. To keep the two trees readable, only the
+Rookie takes a Dark edge from its Vaccine form, and the Virus forms follow as one Dark chain:
+BlackAgumon -> Greymon (Blue) -> MetalGreymon (Virus) -> BlackWarGreymon, and BlackGabumon ->
+BlackGarurumon -> ShadowWereGarurumon -> BlackMetalGarurumon. The chain is an editorial reading
+of the profiles, the one exception to "Relation sources", and the footer says so. It also states
+that the BlackWarGreymon of Adventure 02 was built by Arukenimon from 100 Control Spires.
 
 ### Cross-page navigation
 
@@ -666,7 +677,8 @@ Use them where ambiguity matters, not on every sentence. The atlas overview has 
 
 Every evolution relation on a tree (an edge, or a card in an Armor panel), and every other
 claim on a page (a card note, a roster role, a lore note, a footer sentence), must rest on one
-of these sources:
+of these sources (the one exception is the Virus chain of agumon and gabumon, see "Virus lines
+on agumon and gabumon"):
 
 1. the official Reference Book profile. Read the profiles at both ends: GoldVeedramon's is
    the only Armor profile that names its Rookie ("Armor Digivolved from Veemon with the
