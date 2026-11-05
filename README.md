@@ -368,7 +368,10 @@ Anchors come from the cards' layout position, so a hovered card never skews its 
   gatomon, Angewomon -> Junomon must cross the LadyDevimon -> Mastemon fusion, because
   Gatomon, Angewomon, Mastemon, LadyDevimon and BlackGatomon close a loop around its start;
   on guilmon, `Biomerge with Takato` crosses the Growlmon X and WarGrowlmon X edges, because
-  every row gap between Guilmon and Gallantmon carries a vertical edge).
+  every row gap between Guilmon and Gallantmon carries a vertical edge; on gabumon,
+  MetalGarurumon -> BlackMetalGarurumon crosses the CresGarurumon -> Omnimon Alter-S fusion,
+  because the only route around it would circle Omnimon Alter-B along the canvas edge). A
+  single crossing is preferred to a detour around the canvas edge.
 - A run alone in a row gap or lane sits on its centerline (21px below the card above, 29px
   past the card's side); ports and lanes are split only where edges compete for the space.
 - Edges of the same trigger may share a trunk (a fan, or two Spirits merging into a Fusion).
