@@ -137,7 +137,8 @@ cannot drift apart:
   CSS, no `digivolution.js`, one `../` asset prefix) for special Digimon groups. There are
   no evolution arrows: cards are grouped into power tiers by `.tier` section headings
   (e.g. Celestial Digimon on top, then the Angelic Army, then fallen counterparts), and
-  each card shows the Digimon's level, an official-Type rank pill (`.rank`, accent-tinted
+  each card shows the Digimon's official level (`Mega`, never the tree pages' `Ultra`: every
+  member of a group is special, so the roster does not rank one above another), an official-Type rank pill (`.rank`, accent-tinted
   by angelic sphere) and a short role line sourced from the official profile. Cards link
   to DigimonWiki/Fandom. Verify every rank and role in the official encyclopedia
   (`digimon.net/reference_en`) before adding a member, in both directions when the claim
@@ -297,7 +298,7 @@ Format: `Level` optionally followed by ` / Virus` and/or ` / X`, in that order.
 | `Champion` | Adult / Champion stage. |
 | `Ultimate` | Perfect / Ultimate stage. |
 | `Mega` | Ultimate (JP) / Mega stage. |
-| `Ultra` | Fusion pinnacle above Mega: Omnimon-class Jogress results and their variants. The Reference Book lists them as Mega; the site sets these exceptional forms apart (games often treat them as Mega+). |
+| `Ultra` | Super Ultimate (超究極体): a Mega that V-Tamer 01 or the Reference Book calls Super Ultimate (Daemon (Ultra), UlforceVeedramon Future Mode, Armageddemon), or that Digimon Story: Cyber Sleuth ("Ultra"), Digimon Survive ("Super Ultimate") or Digimon Story: Time Stranger ("Mega+") place in that stage (the Omnimon forms, Imperialdramon Paladin Mode, the Bond and Burst Mode forms, Gallantmon Crimson Mode). No official stage exists above Mega: the Reference Book lists them all as Mega, and Kenji Watanabe calls Super Ultimate a title for the strongest Megas. So the label is editorial, taken from those games because they share one list, and only tree pages use it, where it marks the exceptional power a Digimon gains; rosters and the cosmology keep the official Mega. Other games do not count (Millenniummon, Super Ultimate only in ReArise, stays Mega), and a game never supports a relation or a claim. Wikimon's "Super Ultimate" page tags each member with the media that classify it. |
 | `Armor` | Result of an Armor Digivolution (Digi-Egg). The Adventure 02 partners' lines (Veemon, Hawkmon, Armadillomon, Wormmon, Patamon, Gatomon) and the golden Rapidmon on terriermon, the one Armor form drawn as a tree card (`cls:'armor'`, amber pill). |
 
 Frontier (`gen-4-frontier`) does not use these ranks; it has its own Spirit-rank levels.
@@ -697,7 +698,8 @@ of these sources:
    lines (Pendulum, Vital Bracelet) do not count.
 
 Card games and video games are not sources, not even as a fallback: they multiply relations
-to serve their mechanics. Neither are the D-Cyber manhua, the British comic `Ryo's Story!`
+to serve their mechanics. The one use of a game is the `Ultra` label on tree cards (section 1),
+since no official stage exists above Mega. Neither are the D-Cyber manhua, the British comic `Ryo's Story!`
 (it retells the WonderSwan games) or manga adaptations of video games (`Digimon Story: Cyber
 Sleuth`). DigimonWiki's "Digi-Egg Digivolution Chart" mixes every medium in
 one table, so a cell there proves nothing by itself; trace it to a source above. Wikimon
