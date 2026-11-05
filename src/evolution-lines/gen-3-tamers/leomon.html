@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="../../favicon.ico" sizes="32x32" />
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png" />
+<title>Leomon: evolution tree</title>
+<link rel="stylesheet" href="../../digivolution.css" />
+<style>
+  /* page-specific layout */
+  .infographic { width:1336px; height:1240px; }
+  .columns { top:200px; }
+  /* the narrower canvas brings the legend closer, so the subtitle wraps before it */
+  .subtitle { max-width:680px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="backnav" href="index.html"><span class="arrow">&#8592;</span> The Tamers</a>
+  <div class="infographic" id="canvas">
+    <div class="title">
+      <h1>Leomon: evolution tree</h1>
+      <div class="subtitle">Rookie -> Champion -> Ultimate -> Mega hierarchy, with the D-Power line from Elecmon to SaberLeomon, the IceLeomon branch, the Xros Wars MadLeomon and the X-Antibody forms.</div>
+    </div>
+
+    <div class="legend">
+      <div class="legend-title">Digivolution triggers</div>
+      <div class="legend-grid"></div>
+    </div>
+
+    <div class="columns"></div>
+
+    <svg id="edges" viewBox="0 0 1336 1240" preserveAspectRatio="none"></svg>
+    <div id="labels"></div>
+    <div id="nodes"></div>
+
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book and Wikimon. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. In Tamers, Jeri's Leomon never digivolves; Elecmon, GrapLeomon and SaberLeomon are its line in the D-Power V-pet. MadLeomon is a Leomon corrupted by the Bagra Army, and it returns to Leomon in Xros Wars episode 29.</div>
+  </div>
+  <div class="support">
+    <span class="support-label">Support this project</span>
+    <a class="support-btn kofi" href="https://ko-fi.com/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9749;</span><span class="support-text">Buy me a coffee</span><span class="support-url">ko-fi.com/drigos</span></a>
+    <a class="support-btn sponsors" href="https://github.com/sponsors/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9829;</span><span class="support-text">GitHub Sponsors</span><span class="support-url">github.com/sponsors/drigos</span></a>
+  </div>
+</div>
+<script src="../../digivolution.js"></script>
+<script>
+DigiTree.mount({
+  legend: [
+    ['normal','Normal evolution'],
+    ['x','X-Digivolution'],
+    ['mode','Mode Change'],
+    ['dark','Dark / Virus']
+  ],
+  columns: [
+    [42,'Rookie'],[304,'Champion'],[566,'Ultimate'],[828,'Mega'],[1090,'Variant']
+  ],
+  nodes: [
+    // top row: the Last Evolution Kizuna Rookie and the X-Antibody form
+    {id:'gazimon', x:42, y:250, cls:'normal', name:'Gazimon', lvl:'Rookie', note:'Bipedal mammal with huge claws.', wiki:'Gazimon', img:'gazimon'},
+    {id:'leomonx', x:304, y:250, cls:'x', name:'Leomon X', lvl:'Champion / X', note:'X-Antibody form.', wiki:'Leomon_X', img:'leomon_x'},
+
+    // main line (D-Power)
+    {id:'elecmon', x:42, y:490, cls:'normal', name:'Elecmon', lvl:'Rookie', note:'Mischievous mammal of electricity.', wiki:'Elecmon', img:'elecmon'},
+    {id:'leomon', x:304, y:490, cls:'normal', name:'Leomon', lvl:'Champion', note:'Jeri\'s partner; the King of Beasts.', wiki:'Leomon', img:'leomon'},
+    {id:'grapleomon', x:566, y:490, cls:'normal', name:'GrapLeomon', lvl:'Ultimate', note:'Martial artist of fighting games.', wiki:'GrapLeomon', img:'grappuleomon'},
+    {id:'saberleomon', x:828, y:490, cls:'normal', name:'SaberLeomon', lvl:'Mega', note:'Ancient Beast of Mach speed.', wiki:'SaberLeomon', img:'saberleomon'},
+    {id:'dinotigermon', x:1090, y:490, cls:'normal', name:'Dinotigermon', lvl:'Mega', note:'Only a very rare SaberLeomon becomes it.', wiki:'Dinotigermon', img:'dinotigermon'},
+
+    // MadLeomon and the IceLeomon branch (row 2)
+    {id:'madleomon', x:304, y:730, cls:'dark', name:'MadLeomon', lvl:'Champion / Virus', note:'Berserker that modified itself.', wiki:'MadLeomon', img:'madleomon'},
+    {id:'iceleomon', x:566, y:730, cls:'normal', name:'IceLeomon', lvl:'Ultimate', note:'Leomon infused with cold air.', wiki:'IceLeomon', img:'panjyamon'},
+    {id:'regulumon', x:828, y:730, cls:'normal', name:'Regulumon', lvl:'Mega', note:'IceLeomon\'s Mega in V-Tamer 01.', wiki:'Regulumon', img:'https://wikimon.net/images/f/f1/Regulumon.jpg'},
+
+    // row 3
+    {id:'madleomonarmed', x:304, y:970, cls:'mode', name:'MadLeomon Armed Mode', lvl:'Champion / Virus', note:'Chainsaw and other modifications.', wiki:'MadLeomon', img:'madleomon:armedmode'},
+    {id:'iceleomonx', x:566, y:970, cls:'x', name:'IceLeomon X', lvl:'Ultimate / X', note:'X-Antibody form.', wiki:'IceLeomon_X', img:'panjyamon_x'}
+  ],
+  edges: function (edge) {
+    // main line
+    edge('elecmon','leomon','normal');
+    edge('leomon','grapleomon','normal');
+    edge('grapleomon','saberleomon','normal');
+    edge('saberleomon','dinotigermon','normal');
+
+    // Last Evolution Kizuna: Gazimon merges into Leomon's entry
+    edge('gazimon','leomon','normal','right','left',{label:'Last Evolution Kizuna', lx:275, ly:469});
+
+    // Adventure: Leomon straight into SaberLeomon, along the row gap above the line
+    edge('leomon','saberleomon','normal','top','top',{fromX:450, toX:930, laneY:469, label:'Adventure', lx:668, ly:469});
+
+    // IceLeomon branch, fanning out of Leomon's main port
+    edge('leomon','iceleomon','normal');
+    edge('iceleomon','regulumon','normal');
+
+    // Xros Wars: Leomon corrupted into MadLeomon
+    edge('leomon','madleomon','dark','bottom','top',{shape:'vertical', label:'Corrupted (Xros Wars)', lx:406, ly:709});
+    edge('madleomon','madleomonarmed','mode','bottom','top',{shape:'vertical'});
+
+    // X-Antibody forms
+    edge('leomon','leomonx','x','top','bottom',{shape:'vertical'});
+    edge('iceleomon','iceleomonx','x','bottom','top',{shape:'vertical'});
+  }
+});
+</script>
+</body>
+</html>

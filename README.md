@@ -8,7 +8,7 @@ World Cosmology and Special groups), each opening that section's own selection p
 then lists the generations, the atlas pages or the group rosters:
 
 - `src/index.html` - top-level selection screen: one card per section, nothing else.
-- [src/evolution-lines/index.html](src/evolution-lines/index.html) - Generations selection screen: one card per anime generation in airing order, linking to each generation's own `index.html`, with a "done / total lines" pill. Season numbers follow DigimonWiki's count (Hunters is Season 7), the TV film Digital Monster X-Evolution sits in airing order between Frontier and Data Squad, and a note explains why Season 9 (the Digimon Adventure: reboot) has no card.
+- [src/evolution-lines/index.html](src/evolution-lines/index.html) - Generations selection screen: one card per anime generation in airing order, linking to each generation's own `index.html`, with a "done / total lines" pill while a generation still has "Coming soon" lines. Season numbers follow DigimonWiki's count (Hunters is Season 7), the TV film Digital Monster X-Evolution sits in airing order between Frontier and Data Squad, and a note explains why Season 9 (the Digimon Adventure: reboot) has no card.
 - `src/evolution-lines/gen-1-adventure/` - Digimon Adventure:
   - [index.html](src/evolution-lines/gen-1-adventure/index.html) - DigiDestined selection screen (by Crest).
   - [agumon.html](src/evolution-lines/gen-1-adventure/agumon.html) - Agumon line (Data Squad, Bond and Burst branches; AncientGreymon ancestral link).
@@ -34,6 +34,7 @@ then lists the generations, the atlas pages or the group rosters:
   - [lopmon.html](src/evolution-lines/gen-3-tamers/lopmon.html) - Lopmon line (Celestial line up to Cherubimon (Good), the Adventure 02 film's dark line to Cherubimon (Evil), the Frontier corruption, X-Antibody forms).
   - [guardromon.html](src/evolution-lines/gen-3-tamers/guardromon.html) - Guardromon line (the D-Power line from Kokuwamon to HiAndromon, the Ghost Game branch from Hagurumon, X-Antibody forms).
   - [marineangemon.html](src/evolution-lines/gen-3-tamers/marineangemon.html) - MarineAngemon line (the D-Power line from Penguinmon, the Digimon Next link from Pichimon).
+  - [leomon.html](src/evolution-lines/gen-3-tamers/leomon.html) - Leomon line (the D-Power line from Elecmon to SaberLeomon and Dinotigermon, the IceLeomon branch, the Xros Wars MadLeomon, X-Antibody forms).
 - `src/evolution-lines/gen-4-frontier/` - Digimon Frontier (Spirit Evolution; the children become Digimon, no partner):
   - [index.html](src/evolution-lines/gen-4-frontier/index.html) - Legendary Warriors selection screen (6 chosen + 4 Cherubimon's warriors).
   - [agunimon.html](src/evolution-lines/gen-4-frontier/agunimon.html) - Warrior of Flame line (Child Flamemon, Human/Beast Spirit, Fusion, Unified, Susanoomon).
