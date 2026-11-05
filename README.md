@@ -702,7 +702,12 @@ still rest on a game.
 Since November 2026 DigimonWiki/Fandom answers embedded images with a Cloudflare bot
 challenge, on both `digimon.fandom.com/wiki/Special:Redirect/file/...` and its CDN
 `static.wikia.nocookie.net`, so the site no longer loads any image from Fandom. Cards still
-link to DigimonWiki articles.
+link to DigimonWiki articles. The article pages answer scripts with the same challenge, but
+the MediaWiki API does not: one request to
+`https://digimon.fandom.com/api.php?action=query&format=json&redirects=1&titles=<A>|<B>|...`
+(up to 50 titles) tells which `wiki` slugs exist and which redirect. Check the slugs of a new
+page with it; a slug that lands on a disambiguation page (`Justimon`) needs the specific one
+(`Justimon_(Blitz_Arm)`).
 
 - Primary source: the official Digimon Reference Book,
   `https://digimon.net/cimages/digimon/<slug>.jpg`. The slug is the `directory_name` of the
