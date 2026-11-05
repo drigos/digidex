@@ -592,6 +592,33 @@ Use them where ambiguity matters, not on every sentence. The atlas overview has 
 - Every world page ends with a `.sources` list. Official digimon.net pages first, Wikimon and
   DigimonWiki only for terminology and continuity details.
 
+## Relation sources
+
+Every evolution relation on a tree (an edge, or a card in an Armor panel) must rest on one of
+these sources:
+
+1. the official Reference Book profile. Read the profiles at both ends: GoldVeedramon's is
+   the only Armor profile that names its Rookie ("Armor Digivolved from Veemon with the
+   Digi-Egg of Destiny");
+2. the anime series and films, then the manga (V-Tamer 01, ...);
+3. the Adventure 02 drama CDs (`Digimon Adventure 02: Armor Evolution to the Unknown`);
+4. the D-3 V-pets released with Adventure 02. Version 1 covers Veemon and Wormmon, Version 2
+   Hawkmon and Gatomon, and Version 3 Armadillomon and Patamon. Each gives its partners one
+   Armor form per Digi-Egg and none for Destiny.
+
+Card games and video games are not sources, not even as a fallback: they multiply relations
+to serve their mechanics. DigimonWiki's "Digi-Egg Digivolution Chart" mixes every medium in
+one table, so a cell there proves nothing by itself; trace it to a source above. Wikimon
+cites a source per relation, but those citations are incomplete on both sides (the Rookie's
+"Evolves To" and the Armor's "Evolves From"). Its `D-3 Version 1` to `3` pages list each
+partner's full Armor set. Wikimon uses the Japanese Digi-Egg names: Purity is DigimonWiki's
+Sincerity, Sincerity (also written Faith) is Reliability, and Fate is Destiny.
+
+A partner with no form for a Digi-Egg says so in its footer (`Patamon has no recorded form
+for the Digi-Egg of Destiny.`). The six Armor panels were checked against this rule in
+November 2026. The edges of the older trees have not been checked yet, and some of them
+still rest on a game.
+
 ## Artwork sources
 
 Since November 2026 DigimonWiki/Fandom answers embedded images with a Cloudflare bot

@@ -42,6 +42,9 @@ generation (create the folder if that generation has no page yet).
 
 1. Research the line on DigimonWiki/Fandom. Collect stages, X-Antibody / Virus variants,
    DNA/Jogress fusions, mode changes, bond/burst forms, and external fusion partners.
+   Keep only relations backed by the Reference Book, the anime, films or manga, the
+   Adventure 02 drama CDs or the D-3; never by a card game or video game, and never by a
+   DigimonWiki chart cell alone (README "Relation sources").
    For each node's `img`, use the official Reference Book slug (the `directory_name` in
    `https://digimon.net/reference_en/detail.php?directory_name=<slug>`); the engine turns it
    into `https://digimon.net/cimages/digimon/<slug>.jpg`. If the Digimon has no official

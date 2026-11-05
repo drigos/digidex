@@ -35,11 +35,11 @@ This skill NEVER edits a file before the user approves the plan. The flow is:
 - **Source priority** when continuities disagree or a claim needs backing:
   1. **Anime series and films** (Adventure, 02, the 2020 reboot, Frontier, tri., ...)
   2. **Manga** (V-Tamer 01, ...)
-  3. **Games** - the least reliable tier: games adapt lore to serve mechanics (level
-     caps, evolution items, roster balance). When a game is the only source, prefer what
-     its lore text says over what its mechanics do, and name the game in the entry.
+  3. **Adventure 02 drama CDs and the D-3 V-pets** (README "Relation sources").
   The official Reference Book profiles sit alongside tier 1 as the species-lore baseline;
   when a profile and a continuity disagree, present both rather than picking silently.
+  Card games and video games are never a source, not even as a last resort: they adapt
+  lore to serve mechanics (level caps, evolution items, roster balance).
 - **Do not trust wiki summaries blindly.** Fandom and Wikimon paraphrase; when an entry
   hinges on wording ("is said to have originally been..."), quote the official profile.
   Watch for dub-name splits: the same Japanese Digimon can have two English pages
