@@ -161,8 +161,11 @@ verification and a plan-and-approve step.
 All on-image text is in English so the graphics are universal, and Digimon, characters
 and series go by their DigimonWiki/Fandom names, the wiki every card links to
 (`Kentaurosmon`, not `Sleipmon`); when the official Bandai name differs, the page footer
-may state the mapping. Exception: `Yggdrasill` keeps its official name (DigimonWiki
-calls it `King Drasil`). This README is the
+may state the mapping. Exceptions: `Yggdrasill` keeps its official name (DigimonWiki
+calls it `King Drasil`), and every Omnimon form goes by the official `Omnimon`, as in the
+Reference Book, although DigimonWiki keeps `Omegamon Alter-S`, `Omegamon Alter-B` and
+`Omegamon Zwart Defeat` (the cards still link to those articles, and the footer states the
+mapping). This README is the
 source of truth for the vocabulary. Keep both files consistent with the tables below;
 when adding a node or edge, reuse an existing term instead of inventing a new one.
 
@@ -294,7 +297,7 @@ Format: `Level` optionally followed by ` / Virus` and/or ` / X`, in that order.
 | `Champion` | Adult / Champion stage. |
 | `Ultimate` | Perfect / Ultimate stage. |
 | `Mega` | Ultimate (JP) / Mega stage. |
-| `Ultra` | Fusion pinnacle above Mega: Omnimon / Omegamon-class Jogress results and their variants. The Reference Book lists them as Mega; the site sets these exceptional forms apart (games often treat them as Mega+). |
+| `Ultra` | Fusion pinnacle above Mega: Omnimon-class Jogress results and their variants. The Reference Book lists them as Mega; the site sets these exceptional forms apart (games often treat them as Mega+). |
 | `Armor` | Result of an Armor Digivolution (Digi-Egg). The Adventure 02 partners' lines (Veemon, Hawkmon, Armadillomon, Wormmon, Patamon, Gatomon) and the golden Rapidmon on terriermon, the one Armor form drawn as a tree card (`cls:'armor'`, amber pill). |
 
 Frontier (`gen-4-frontier`) does not use these ranks; it has its own Spirit-rank levels.
@@ -336,7 +339,7 @@ Every arrow is colored by the digivolution trigger. This is the single vocabular
 | Normal evolution | blue | Standard or alternate in-line evolution. | both |
 | X-Digivolution | green | Digivolution driven by the X-Antibody. | both |
 | DNA / Jogress | purple | Fusion of two digimon into one. | both |
-| Mode Change | teal | Same digimon switching mode / form, including the temporary forms Black Digitron causes (Omnimon Zwart, Omegamon Alter-B). | both |
+| Mode Change | teal | Same digimon switching mode / form, including the temporary forms Black Digitron causes (Omnimon Zwart, Omnimon Alter-B). | both |
 | Dark / Virus | red | Dark or Virus-attribute branch (including rage / loss of control). | both |
 | Armor Digivolution | amber | Armor evolution via a Digi-Egg. | veemon, hawkmon, armadillomon, wormmon, patamon, gatomon, terriermon |
 | Bond Evolution | pink | Bond-driven evolution. | agumon, gabumon |
@@ -740,7 +743,10 @@ page with it; a slug that lands on a disambiguation page (`Justimon`) needs the 
   selection screens, rosters and cosmology pages write the full URL in `src`.
 - Fallback for a Digimon with no Reference Book entry (game-only forms, toys, card art,
   recolors): an absolute Wikimon image URL (`https://wikimon.net/images/...`, the infobox
-  image of its Wikimon page), also as `img` on tree pages. Pages that use one add
+  image of its Wikimon page), also as `img` on tree pages. When the infobox image is an anime
+  frame, a full-body render from the page's gallery reads better on a card: HiMachineDramon
+  uses the 320px thumbnail of its Digimon Super Rumble model (artwork only; a game is still
+  no relation source). Pages that use one add
   `and Wikimon` to the footer's artwork credit. Sixteen images use it today, among them
   Agumon (Burst Mode), HiMachineDramon, Grani, the Digimon World 3 BlackSeraphimon,
   Ophanimon C, PetitMamon and the App Monsters cards.
