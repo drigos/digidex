@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="../../favicon.ico" sizes="32x32" />
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png" />
+<title>Guardromon: evolution tree</title>
+<link rel="stylesheet" href="../../digivolution.css" />
+<style>
+  /* page-specific layout */
+  .infographic { width:1336px; height:1256px; }
+  .columns { top:200px; }
+  /* the narrower canvas brings the legend closer, so the subtitle wraps before it */
+  .subtitle { max-width:680px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="backnav" href="index.html"><span class="arrow">&#8592;</span> The Tamers</a>
+  <div class="infographic" id="canvas">
+    <div class="title">
+      <h1>Guardromon: evolution tree</h1>
+      <div class="subtitle">In-Training -> Rookie -> Champion -> Ultimate -> Mega hierarchy, with the D-Power line from Kokuwamon to HiAndromon, the Ghost Game branch from Hagurumon and the X-Antibody forms.</div>
+    </div>
+
+    <div class="legend">
+      <div class="legend-title">Digivolution triggers</div>
+      <div class="legend-grid"></div>
+    </div>
+
+    <div class="columns"></div>
+
+    <svg id="edges" viewBox="0 0 1336 1256" preserveAspectRatio="none"></svg>
+    <div id="labels"></div>
+    <div id="nodes"></div>
+
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. Kazu's Guardromon was once an Andromon that regressed from its injuries (Tamers episode 31), and it regresses to Kapurimon in episode 51. Kokuwamon, Guardromon, Andromon and HiAndromon are the Kokuwamon line of the D-Power V-pet.</div>
+  </div>
+  <div class="support">
+    <span class="support-label">Support this project</span>
+    <a class="support-btn kofi" href="https://ko-fi.com/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9749;</span><span class="support-text">Buy me a coffee</span><span class="support-url">ko-fi.com/drigos</span></a>
+    <a class="support-btn sponsors" href="https://github.com/sponsors/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9829;</span><span class="support-text">GitHub Sponsors</span><span class="support-url">github.com/sponsors/drigos</span></a>
+  </div>
+</div>
+<script src="../../digivolution.js"></script>
+<script>
+DigiTree.mount({
+  legend: [
+    ['normal','Normal evolution'],
+    ['x','X-Digivolution']
+  ],
+  columns: [
+    [42,'In-Training'],[304,'Rookie'],[566,'Champion'],[828,'Ultimate'],[1090,'Mega']
+  ],
+  nodes: [
+    // X-Antibody form (top row)
+    {id:'kokuwamonx', x:304, y:250, cls:'x', name:'Kokuwamon X', lvl:'Rookie / X', note:'X-Antibody form.', wiki:'Kokuwamon_X', img:'kokuwamon_x'},
+
+    // main line (D-Power, Tamers)
+    {id:'kapurimon', x:42, y:490, cls:'normal', name:'Kapurimon', lvl:'In-Training', note:'Helmeted In-Training with radio horns.', wiki:'Kapurimon', img:'capromon'},
+    {id:'kokuwamon', x:304, y:490, cls:'normal', name:'Kokuwamon', lvl:'Rookie', note:'Rare insect Machine Digimon.', wiki:'Kokuwamon', img:'kokuwamon'},
+    {id:'guardromon', x:566, y:490, cls:'normal', name:'Guardromon', lvl:'Champion', note:'Kazu\'s partner; firewall guard.', wiki:'Guardromon', img:'guardromon'},
+    {id:'andromon', x:828, y:490, cls:'normal', name:'Andromon', lvl:'Ultimate', note:'Prototype human-type cyborg.', wiki:'Andromon', img:'andromon'},
+    {id:'hiandromon', x:1090, y:490, cls:'normal', name:'HiAndromon', lvl:'Mega', note:'The completed Andromon.', wiki:'HiAndromon', img:'hiandromon'},
+
+    // Ghost Game branch (row 2) and its X form (row 3)
+    {id:'hagurumon', x:304, y:730, cls:'normal', name:'Hagurumon', lvl:'Rookie', note:'Mutant gear Machine Digimon.', wiki:'Hagurumon', img:'hagurumon'},
+    {id:'hagurumonx', x:304, y:970, cls:'x', name:'Hagurumon X', lvl:'Rookie / X', note:'X-Antibody form.', wiki:'Hagurumon_X', img:'hagurumon_x'}
+  ],
+  edges: function (edge) {
+    // main line
+    edge('kapurimon','kokuwamon','normal');
+    edge('kokuwamon','guardromon','normal');
+    edge('guardromon','andromon','normal');
+    edge('andromon','hiandromon','normal');
+
+    // Ghost Game: Hagurumon merges into Guardromon's entry
+    edge('hagurumon','guardromon','normal','right','left',{label:'Ghost Game', lx:537, ly:709});
+
+    // X-Antibody forms
+    edge('kokuwamon','kokuwamonx','x','top','bottom',{shape:'vertical'});
+    edge('hagurumon','hagurumonx','x','bottom','top',{shape:'vertical'});
+  }
+});
+</script>
+</body>
+</html>
