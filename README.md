@@ -95,7 +95,9 @@ tree cards carry no cross-page arrow (see "Cross-page navigation").
 Styling and the rendering engine are shared (they live at the `src/` root), so pages
 cannot drift apart:
 
-- `digivolution.css` - all styling + the layout-grid tokens.
+- `digivolution.css` - all styling + the layout-grid tokens. The page and canvas backgrounds
+  use fixed-size gradients (px radii and offsets, never `%` or a default size), because a
+  gradient sized by the page would tint each tree differently with its height and width.
 - `digivolution.js` - the renderer `DigiTree.mount({ legend, columns, nodes, edges })`,
   which builds the arrow markers, legend, column headers, node cards, edges and the
   generation pills next to the back pill. Every generation `index.html` loads it too, at the
