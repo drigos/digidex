@@ -10,10 +10,10 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:2122px; height:3292px; }
+  .infographic { width:2122px; height:3532px; }
   .columns { top:200px; }
-  .jogress-panel { top:2870px; width:632px; }
-  .partner-panel { top:2870px; left:732px; width:1348px; }
+  .jogress-panel { top:3110px; width:632px; }
+  .partner-panel { top:3110px; left:732px; width:1348px; }
 </style>
 </head>
 <body>
@@ -32,7 +32,7 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 2122 3292" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 2122 3532" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
@@ -138,27 +138,27 @@ DigiTree.mount({
     {id:'agumon', x:566, y:490, cls:'normal', name:'Agumon', lvl:'Rookie', note:'Main branching point.', wiki:'Agumon', img:'agumon'},
     {id:'snowagumon', x:566, y:730, cls:'variant', name:'SnowAgumon', lvl:'Rookie', note:'A separate species of Agumon from snow fields.', wiki:'SnowAgumon', img:'yukiagumon'},
     {id:'agumonexpert', x:566, y:970, cls:'variant', name:'Agumon Expert', lvl:'Rookie', note:'A genius among Agumon, with a doctorate.', wiki:'Agumon_Expert', img:'agumonhakase'},
-    {id:'blackagumon', x:566, y:1450, cls:'dark', name:'BlackAgumon', lvl:'Rookie / Virus', note:'An Agumon that Digivolved into a Virus type.', wiki:'BlackAgumon', img:'agumon-black'},
-    {id:'agumon2006', x:566, y:2410, cls:'normal', name:'Agumon (2006 anime)', lvl:'Rookie', note:'Data Squad partner.', wiki:'Agumon_(2006_anime)', img:'agumon-2006'},
-    {id:'agumonburst', x:566, y:2650, cls:'burst', name:'Agumon (Burst Mode)', lvl:'Mega', note:'Burst Digivolution in the Data Squad finale.', wiki:'Agumon_(Burst_Mode)', img:'https://wikimon.net/images/2/2a/Agumon_burst.jpg'},
+    {id:'blackagumon', x:566, y:1690, cls:'dark', name:'BlackAgumon', lvl:'Rookie / Virus', note:'An Agumon that Digivolved into a Virus type.', wiki:'BlackAgumon', img:'agumon-black'},
+    {id:'agumon2006', x:566, y:2650, cls:'normal', name:'Agumon (2006 anime)', lvl:'Rookie', note:'Data Squad partner.', wiki:'Agumon_(2006_anime)', img:'agumon-2006'},
+    {id:'agumonburst', x:566, y:2890, cls:'burst', name:'Agumon (Burst Mode)', lvl:'Mega', note:'Burst Digivolution in the Data Squad finale.', wiki:'Agumon_(Burst_Mode)', img:'https://wikimon.net/images/2/2a/Agumon_burst.jpg'},
 
     // champion column
     {id:'greymonx', x:828, y:250, cls:'x', name:'Greymon X', lvl:'Champion / X', note:'X-Antibody form.', wiki:'Greymon_X', img:'greymon_x'},
     {id:'greymon', x:828, y:490, cls:'normal', name:'Greymon', lvl:'Champion', note:'Classic Greymon branch.', wiki:'Greymon', img:'greymon-first'},
-    {id:'greymonblue', x:828, y:1450, cls:'dark', name:'Greymon (Blue)', lvl:'Champion / Virus', note:'Wild (Virus) Greymon.', wiki:'Greymon_(Blue)', img:'greymon_blue'},
-    {id:'greymonbluex', x:828, y:1690, cls:'x', name:'Greymon (Blue) X', lvl:'Champion / Virus / X', note:'X-Antibody form.', wiki:'Greymon_(Blue)_X', img:'greymon_blue_x'},
-    {id:'geogreymon', x:828, y:2410, cls:'normal', name:'GeoGreymon', lvl:'Champion', note:'Data Squad Greymon subspecies.', wiki:'GeoGreymon', img:'geogreymon'},
+    {id:'greymonblue', x:828, y:1690, cls:'dark', name:'Greymon (Blue)', lvl:'Champion / Virus', note:'Wild (Virus) Greymon.', wiki:'Greymon_(Blue)', img:'greymon_blue'},
+    {id:'greymonbluex', x:828, y:1930, cls:'x', name:'Greymon (Blue) X', lvl:'Champion / Virus / X', note:'X-Antibody form.', wiki:'Greymon_(Blue)_X', img:'greymon_blue_x'},
+    {id:'geogreymon', x:828, y:2650, cls:'normal', name:'GeoGreymon', lvl:'Champion', note:'Data Squad Greymon subspecies.', wiki:'GeoGreymon', img:'geogreymon'},
 
     // ultimate column
     {id:'metalgreymonx', x:1090, y:250, cls:'x', name:'MetalGreymon X', lvl:'Ultimate / X', note:'X-Antibody form.', wiki:'MetalGreymon_X', img:'metalgreymon_va_x'},
     {id:'metalgreymon', x:1090, y:490, cls:'normal', name:'MetalGreymon (Vaccine)', lvl:'Ultimate', note:'Vaccine cyborg.', wiki:'MetalGreymon_(Vaccine)', img:'metalgreymon-v'},
-    {id:'skullgreymon', x:1090, y:730, cls:'dark', name:'SkullGreymon', lvl:'Ultimate', note:'Dark Digivolution. Dead end of this tree.', wiki:'SkullGreymon', img:'skullgreymon'},
     {id:'alterous', x:1090, y:970, cls:'mode', name:'MetalGreymon Alterous Mode', lvl:'Ultimate', note:'Weapon-swap Mode Change.', wiki:'MetalGreymon_Alterous_Mode', img:'metalgreymon_alter'},
-    {id:'kimeramon', x:1090, y:1210, cls:'dark', name:'Kimeramon', lvl:'Ultimate', note:'Composite of parts from various Digimon.', wiki:'Kimeramon', img:'chimairamon'},
-    {id:'metalgreymonvirus', x:1090, y:1450, cls:'dark', name:'MetalGreymon (Virus)', lvl:'Ultimate / Virus', note:'Virus cyborg; Digivolves from a Greymon.', wiki:'MetalGreymon_(Virus)', img:'metalgreymon-web'},
-    {id:'metalgreymonvirusx', x:1090, y:1690, cls:'x', name:'MetalGreymon (Virus) X', lvl:'Ultimate / Virus / X', note:'X-Antibody form.', wiki:'MetalGreymon_(Virus)_X', img:'metalgreymon_vi_x'},
-    {id:'rizegreymon', x:1090, y:2410, cls:'normal', name:'RizeGreymon', lvl:'Ultimate', note:'Data Squad cyborg.', wiki:'RizeGreymon', img:'rizegreymon'},
-    {id:'rizegreymonx', x:1090, y:2650, cls:'x', name:'RizeGreymon X', lvl:'Ultimate / X', note:'X-Antibody form.', wiki:'RizeGreymon_X', img:'rizegreymon_x'},
+    {id:'skullgreymon', x:1090, y:1210, cls:'dark', name:'SkullGreymon', lvl:'Ultimate', note:'Dark Digivolution. Dead end of this tree.', wiki:'SkullGreymon', img:'skullgreymon'},
+    {id:'kimeramon', x:1090, y:1450, cls:'dark', name:'Kimeramon', lvl:'Ultimate', note:'Composite of parts from various Digimon.', wiki:'Kimeramon', img:'chimairamon'},
+    {id:'metalgreymonvirus', x:1090, y:1690, cls:'dark', name:'MetalGreymon (Virus)', lvl:'Ultimate / Virus', note:'Virus cyborg; Digivolves from a Greymon.', wiki:'MetalGreymon_(Virus)', img:'metalgreymon-web'},
+    {id:'metalgreymonvirusx', x:1090, y:1930, cls:'x', name:'MetalGreymon (Virus) X', lvl:'Ultimate / Virus / X', note:'X-Antibody form.', wiki:'MetalGreymon_(Virus)_X', img:'metalgreymon_vi_x'},
+    {id:'rizegreymon', x:1090, y:2650, cls:'normal', name:'RizeGreymon', lvl:'Ultimate', note:'Data Squad cyborg.', wiki:'RizeGreymon', img:'rizegreymon'},
+    {id:'rizegreymonx', x:1090, y:2890, cls:'x', name:'RizeGreymon X', lvl:'Ultimate / X', note:'X-Antibody form.', wiki:'RizeGreymon_X', img:'rizegreymon_x'},
 
     // mega column
     {id:'ancientgreymon', x:42, y:250, cls:'lore', badge:{cls:'lw', text:'Legendary Warrior', href:'../../groups/ten-legendary-warriors.html#ancientgreymon', title:'Ten Legendary Warriors roster'}, name:'AncientGreymon', lvl:'Mega', note:'Warrior of Flame; ancestor of the Greymon species.', wiki:'AncientGreymon', img:'ancientgreymon'},
@@ -166,12 +166,13 @@ DigiTree.mount({
     {id:'wargreymon', x:1352, y:490, cls:'normal', name:'WarGreymon', lvl:'Mega', note:'Dragon warrior.', wiki:'WarGreymon', img:'wargreymon'},
     {id:'blitzgreymon', x:1352, y:970, cls:'normal', name:'BlitzGreymon', lvl:'Mega', note:'Subspecies of WarGreymon.', wiki:'BlitzGreymon', img:'blitzgreymon'},
     {id:'machinedramon', x:1352, y:1210, cls:'dark', name:'Machinedramon', lvl:'Mega', note:'Corrupted evolution (Adventure: 2020).', wiki:'Machinedramon', img:'mugendramon'},
-    {id:'blackwargreymon', x:1352, y:1450, cls:'dark', name:'BlackWarGreymon', lvl:'Mega / Virus', note:'The Virus version of WarGreymon.', wiki:'BlackWarGreymon', img:'blackwargreymon'},
-    {id:'blackwargreymonx', x:1352, y:1690, cls:'x', name:'BlackWarGreymon X', lvl:'Mega / Virus / X', note:'X-Antibody form.', wiki:'BlackWarGreymon_X', img:'blackwargreymon_x'},
-    {id:'shinegreymon', x:1352, y:2410, cls:'normal', name:'ShineGreymon', lvl:'Mega', note:'Data Squad peak.', wiki:'ShineGreymon', img:'shinegreymon'},
-    {id:'victorygreymon', x:1352, y:2650, cls:'normal', name:'VictoryGreymon', lvl:'Mega', note:'Subspecies of WarGreymon.', wiki:'VictoryGreymon', img:'victorygreymon'},
-    {id:'gaiomon', x:1352, y:1930, cls:'variant', name:'Gaiomon', lvl:'Mega', note:'A subspecies of Greymon.', wiki:'Gaiomon', img:'gaioumon'},
-    {id:'agumonbond', x:1352, y:2170, cls:'bond', name:'Agumon (Bond of Bravery)', lvl:'Mega', note:'The final, legendary Digivolution.', wiki:'Agumon_(Bond_of_Bravery)', img:'agumon_kizuna'},
+    {id:'millenniummon', x:1352, y:1450, cls:'dna', name:'Millenniummon', lvl:'Mega', note:'Machinedramon + Kimeramon.', wiki:'Millenniummon', img:'millenniumon'},
+    {id:'blackwargreymon', x:1352, y:1690, cls:'dark', name:'BlackWarGreymon', lvl:'Mega / Virus', note:'The Virus version of WarGreymon.', wiki:'BlackWarGreymon', img:'blackwargreymon'},
+    {id:'blackwargreymonx', x:1352, y:1930, cls:'x', name:'BlackWarGreymon X', lvl:'Mega / Virus / X', note:'X-Antibody form.', wiki:'BlackWarGreymon_X', img:'blackwargreymon_x'},
+    {id:'shinegreymon', x:1352, y:2650, cls:'normal', name:'ShineGreymon', lvl:'Mega', note:'Data Squad peak.', wiki:'ShineGreymon', img:'shinegreymon'},
+    {id:'victorygreymon', x:1352, y:2890, cls:'normal', name:'VictoryGreymon', lvl:'Mega', note:'Subspecies of WarGreymon.', wiki:'VictoryGreymon', img:'victorygreymon'},
+    {id:'gaiomon', x:1352, y:2170, cls:'variant', name:'Gaiomon', lvl:'Mega', note:'A subspecies of Greymon.', wiki:'Gaiomon', img:'gaioumon'},
+    {id:'agumonbond', x:1352, y:2410, cls:'bond', name:'Agumon (Bond of Bravery)', lvl:'Mega', note:'The final, legendary Digivolution.', wiki:'Agumon_(Bond_of_Bravery)', img:'agumon_kizuna'},
 
     // ultra / variant column
     {id:'omnimonx', x:1614, y:250, cls:'x', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#omnimon', title:'Royal Knights roster'}, name:'Omnimon X', lvl:'Ultra / X', note:'X-Antibody form.', wiki:'Omnimon_X', img:'omegamon-x'},
@@ -179,10 +180,9 @@ DigiTree.mount({
     {id:'omnimonzwart', x:1614, y:730, cls:'mode', name:'Omnimon Zwart', lvl:'Ultra', note:'Omnimon temporarily blackened by Black Digitron.', wiki:'Omnimon_Zwart', img:'omegamon_zwart'},
     {id:'omnimonalters', x:1614, y:970, cls:'dna', name:'Omnimon Alter-S', lvl:'Ultra', note:'BlitzGreymon + CresGarurumon.', wiki:'Omegamon_Alter-S', img:'omegamon-alter-s'},
     {id:'himachinedramon', x:1614, y:1210, cls:'normal', name:'HiMachineDramon', lvl:'Mega', note:'Upgraded Machinedramon.', wiki:'HiMachineDramon', img:'https://wikimon.net/images/thumb/d/d3/Hi_Mugendramon_Model_DSR.png/320px-Hi_Mugendramon_Model_DSR.png'},
-    {id:'millenniummon', x:1614, y:1450, cls:'dna', name:'Millenniummon', lvl:'Mega', note:'Machinedramon + Kimeramon.', wiki:'Millenniummon', img:'millenniumon'},
-    {id:'shineburst', x:1614, y:2410, cls:'burst', name:'ShineGreymon Burst Mode', lvl:'Mega', note:'Burst Digivolution.', wiki:'ShineGreymon_Burst_Mode', img:'shinegreymonburstmode'},
-    {id:'shineruin', x:1614, y:2650, cls:'burst', name:'ShineGreymon Ruin Mode', lvl:'Mega', note:'Corrupted burst; dark emotions.', wiki:'ShineGreymon_Ruin_Mode', img:'shinegreymon_ruin'},
-    {id:'gaiomonfierce', x:1614, y:1930, cls:'mode', name:'Gaiomon Fierce Blade Mode', lvl:'Mega', note:'Blade Mode Change.', wiki:'Gaiomon_Fierce_Blade_Mode', img:'gaioumon_itto'},
+    {id:'shineburst', x:1614, y:2650, cls:'burst', name:'ShineGreymon Burst Mode', lvl:'Mega', note:'Burst Digivolution.', wiki:'ShineGreymon_Burst_Mode', img:'shinegreymonburstmode'},
+    {id:'shineruin', x:1614, y:2890, cls:'burst', name:'ShineGreymon Ruin Mode', lvl:'Mega', note:'Corrupted burst; dark emotions.', wiki:'ShineGreymon_Ruin_Mode', img:'shinegreymon_ruin'},
+    {id:'gaiomonfierce', x:1614, y:2170, cls:'mode', name:'Gaiomon Fierce Blade Mode', lvl:'Mega', note:'Blade Mode Change.', wiki:'Gaiomon_Fierce_Blade_Mode', img:'gaioumon_itto'},
 
     // variant / mode column
     {id:'omnimonmerciful', x:1876, y:490, cls:'dna', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#omnimon', title:'Royal Knights roster'}, name:'Omnimon Merciful Mode', lvl:'Ultra', note:'Collective composition.', wiki:'Omnimon_Merciful_Mode', img:'omegamon_merciful'},
@@ -205,8 +205,8 @@ DigiTree.mount({
     edge('wargreymon','wargreymonx','x','top','bottom',{shape:'vertical'});
     edge('omnimon','omnimonx','x','top','bottom',{shape:'vertical'});
 
-    // MetalGreymon (Vaccine) special branches; the Mode Change rounds SkullGreymon in the lane
-    edge('metalgreymon','alterous','mode','right','right',{fromY:650, laneX:1323, toY:1000});
+    // MetalGreymon (Vaccine) special branches (the Mode Change skips the empty cell under it)
+    edge('metalgreymon','alterous','mode','bottom','top',{shape:'vertical'});
     // AncientGreymon ancestral (lore) link: origin -> root of the line, no arrowhead
     edge('ancientgreymon','botamon','lore','bottom','top',{shape:'vertical', noArrow:true});
     edge('alterous','blitzgreymon','normal','right','left');
@@ -214,9 +214,8 @@ DigiTree.mount({
     edge('blitzgreymon','omnimonalters','dna');
     edge('omnimonalters','alterb','mode');
     edge('machinedramon','himachinedramon','normal');
-    // Millenniummon: Machinedramon and Kimeramon merge in the row gap above BlackWarGreymon
-    edge('machinedramon','millenniummon','dna','bottom','left',{points:[[1454,1429],[1585,1429],[1585,1549]]});
-    edge('kimeramon','millenniummon','dna','right','left',{fromY:1360, points:[[1333,1360],[1333,1429],[1585,1429],[1585,1549]]});
+    edge('machinedramon','millenniummon','dna','bottom','top',{shape:'vertical'});
+    edge('kimeramon','millenniummon','dna');
 
     // Omnimon forms
     edge('omnimon','omnimonmerciful','dna','right','left');
@@ -224,8 +223,8 @@ DigiTree.mount({
     edge('omnimonzwart','zwartdefeat','dark');
 
     // Dark Digivolution and the Virus forms off Greymon, sharing one trunk
-    edge('greymon','skullgreymon','dark','bottom','left',{label:'Loss of control', lx:1010, ly:829});
-    edge('greymon','metalgreymonvirus','dark','bottom','top',{points:[[930,1429],[1192,1429]]});
+    edge('greymon','skullgreymon','dark','bottom','left',{label:'Loss of control', lx:1010, ly:1309});
+    edge('greymon','metalgreymonvirus','dark','bottom','top',{points:[[930,1669],[1192,1669]]});
     edge('greymon','greymonblue','dark','bottom','top',{shape:'vertical'});
     edge('agumon','blackagumon','dark','left','left',{shape:'leftbus', busX:528, fromY:625});
 
@@ -237,19 +236,19 @@ DigiTree.mount({
     // separate species / subspecies of Agumon + bond
     edge('agumon','snowagumon','variant','left','left',{shape:'leftbus', busX:548, fromY:650});
     edge('agumon','agumonexpert','variant','left','left',{shape:'leftbus', busX:548, fromY:650});
-    edge('agumon','agumonbond','bond','bottom','left',{points:[[669,710],[785,710],[785,2269]], label:'Bond with Tai', lx:785, ly:1340});
+    edge('agumon','agumonbond','bond','bottom','left',{points:[[669,710],[785,710],[785,2509]], label:'Bond with Tai', lx:785, ly:1340});
     // Gaiomon, a subspecies of Greymon: down the same lane as the bond edge, on its own run
-    edge('greymon','gaiomon','variant','left','left',{fromY:650, points:[[813,650],[813,2029]]});
+    edge('greymon','gaiomon','variant','left','left',{fromY:650, points:[[813,650],[813,2269]]});
 
     // Data Squad (2006) line
-    edge('koromon','agumon2006','normal','bottom','left',{points:[[406,2509]], label:'Data Squad', lx:406, ly:1270});
+    edge('koromon','agumon2006','normal','bottom','left',{points:[[406,2749]], label:'Data Squad', lx:406, ly:1270});
     edge('agumon2006','geogreymon','normal');
     edge('geogreymon','rizegreymon','normal');
     edge('rizegreymon','shinegreymon','normal');
     edge('rizegreymon','rizegreymonx','x','bottom','top',{shape:'vertical'});
-    edge('rizegreymon','victorygreymon','normal','right','left',{fromY:2535, laneX:1333});
+    edge('rizegreymon','victorygreymon','normal','right','left',{fromY:2775, laneX:1333});
     edge('shinegreymon','shineburst','burst');
-    edge('shinegreymon','shineruin','burst','right','left',{fromY:2570, points:[[1585,2570],[1585,2749]]});
+    edge('shinegreymon','shineruin','burst','right','left',{fromY:2810, points:[[1585,2810],[1585,2989]]});
     edge('agumon2006','agumonburst','burst','bottom','top',{shape:'vertical'});
     edge('gaiomon','gaiomonfierce','mode');
   }
