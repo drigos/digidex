@@ -803,10 +803,12 @@ page with it; a slug that lands on a disambiguation page (`Justimon`) needs the 
   image of its Wikimon page), also as `img` on tree pages. When the infobox image is an anime
   frame, a full-body render from the page's gallery reads better on a card: HiMachineDramon
   uses the 320px thumbnail of its Digimon Super Rumble model (artwork only; a game is still
-  no relation source). Pages that use one add
-  `and Wikimon` to the footer's artwork credit. Sixteen images use it today, among them
+  no relation source). A Reference Book image drawn over a scenery background can also give way
+  to the same official art on a plain background from Wikimon (BanchoGolemon on the Bancho
+  roster). Pages that use one add
+  `and Wikimon` to the footer's artwork credit. Seventeen images use it today, among them
   Agumon (Burst Mode), HiMachineDramon, Grani, Daemon (Ultra), Daemon (Mantled), Arcadiamon
-  (Ultra), PetitMamon and the App Monsters cards.
+  (Ultra), BanchoGolemon, PetitMamon and the App Monsters cards.
 - Do not try to get around a source that blocks embedding (no user-agent or referrer
   tricks); switch to another source instead.
 
