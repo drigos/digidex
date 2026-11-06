@@ -24,7 +24,7 @@ then lists the generations, the atlas pages or the group rosters:
   - [veemon.html](src/evolution-lines/gen-2-adventure-02/veemon.html) - Veemon line (Paildramon and Dinobeemon Jogresses, Imperialdramon Mode Changes and its Black forms, the Veedramon variant line from V-Tamer with RedVeedramon, Armor Digivolutions).
   - [hawkmon.html](src/evolution-lines/gen-2-adventure-02/hawkmon.html) - Hawkmon line (the HippoGryphonmon alternate Ultimate with Gryphonmon and Zhuqiaomon, Silphymon Jogress up to Valkyrimon, Armor Digivolutions).
   - [armadillomon.html](src/evolution-lines/gen-2-adventure-02/armadillomon.html) - Armadillomon line (Brachiomon alternate Ultimate, Shakkoumon Jogress up to Vikemon and SlashAngemon, Armor Digivolutions).
-  - [wormmon.html](src/evolution-lines/gen-2-adventure-02/wormmon.html) - Wormmon line (Paildramon and Dinobeemon Jogresses, Imperialdramon Mode Changes, the JewelBeemon branch up to BanchoStingmon, Armor Digivolutions).
+  - [wormmon.html](src/evolution-lines/gen-2-adventure-02/wormmon.html) - Wormmon line (Paildramon and Dinobeemon Jogresses, Imperialdramon Mode Changes and its Black forms, the JewelBeemon branch up to BanchoStingmon, Armor Digivolutions).
 - `src/evolution-lines/gen-3-tamers/` - Digimon Tamers:
   - [index.html](src/evolution-lines/gen-3-tamers/index.html) - Tamers selection screen (by Biomerge / peak form).
   - [guilmon.html](src/evolution-lines/gen-3-tamers/guilmon.html) - Guilmon line (Gallantmon Biomerge, the D-Ark's dark line up to ChaosGallantmon, Digital Hazard, X-Antibody forms, Data/Yellow variants).
