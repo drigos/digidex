@@ -357,6 +357,10 @@ WarGreymon, digivolves from MetalGreymon Alterous Mode in Adventure: 2020), and 
 absorbing other Digimon is a **DNA / Jogress** (`HiMachineDramon`, Machinedramon after
 absorbing a SkullScorpionmon army in Digimon Fusion episode 14).
 
+A Warp Digivolution gets no arrow of its own (Agumon -> WarGreymon, or Leomon -> SaberLeomon in
+Adventure episode 47): it passes through the skipped levels in one step, so the line already
+covers it, and the scene does not show which form it passed through. The footer may mention it.
+
 ### Routing
 
 Edges are orthogonal: horizontal and vertical runs joined by rounded corners, never curves.

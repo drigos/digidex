@@ -36,7 +36,7 @@
     <div id="labels"></div>
     <div id="nodes"></div>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book and Wikimon. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. In Tamers, Jeri's Leomon never digivolves; Elecmon, GrapLeomon and SaberLeomon are its line in the D-Power V-pet. MadLeomon is a Leomon corrupted by the Bagra Army, and it returns to Leomon in Xros Wars episode 29. Only games link Leomon to BanchoLeomon; the tree keeps the link, the way BanchoLillymon's profile ties it to Lillymon.</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book and Wikimon. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. In Tamers, Jeri's Leomon never digivolves; Elecmon, GrapLeomon and SaberLeomon are its line in the D-Power V-pet. Adventure's Leomon warp-digivolves into SaberLeomon (episode 47), skipping the Ultimate, so the scene has no arrow. MadLeomon is a Leomon corrupted by the Bagra Army, and it returns to Leomon in Xros Wars episode 29. Only games link Leomon to BanchoLeomon; the tree keeps the link, the way BanchoLillymon's profile ties it to Lillymon.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -88,11 +88,8 @@ DigiTree.mount({
     // Last Evolution Kizuna: Gazimon merges into Leomon's entry
     edge('gazimon','leomon','normal','right','left',{label:'Last Evolution Kizuna', lx:275, ly:469});
 
-    // the row gap above the line carries two runs: BanchoLeomon (editorial link, see the
-    // footer) from the left port up into its card, and the Adventure run under it into
-    // SaberLeomon, so neither crosses the other
-    edge('leomon','bancholeomon','normal','top','bottom',{fromX:430, toX:880, points:[[430,459],[880,459]]});
-    edge('leomon','saberleomon','normal','top','top',{fromX:460, toX:930, laneY:479, label:'Adventure', lx:668, ly:479});
+    // BanchoLeomon (editorial link, see the footer), along the row gap above the line
+    edge('leomon','bancholeomon','normal','top','bottom',{fromX:450, toX:930, laneY:469});
 
     // IceLeomon branch, fanning out of Leomon's main port
     edge('leomon','iceleomon','normal');
