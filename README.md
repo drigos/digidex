@@ -273,12 +273,15 @@ between them, the same as between card columns (gatomon, gabumon): the
 Jogress panel stays at the left margin and the composition panel ends flush with the last
 column (page style `left = canvas width - 42 - panel width`); on a wider canvas the Jogress
 panel takes the rest of the row (gabumon). Since both are `333px` tall, their bottoms
-line up. Where they do not fit (Frontier, agumon, patamon), each takes its own row; on patamon both
-start at the composition panel's left edge, so the Armor connector runs down beside them.
+line up. Where they do not fit (Frontier, agumon, patamon), each takes its own row at the left
+margin.
 
 The Armor panel is the only panel with a connector, an amber edge from the line's node down
 to it, because the line evolves into its forms. The edge passes the panels above it: down the
-middle of the shared row's gap, or beside a lone Jogress panel (Adventure 02).
+middle of the shared row's gap, beside a lone Jogress panel (Adventure 02), or around the right
+of a stacked Jogress and composition pair (patamon): there the panels start a row gap (`42px`)
+below the last card row instead of `22px`, and the connector runs along that gap to the right
+of the stack, then down to the Armor panel.
 
 A panel that feeds a node (Jogress, composition, DNA, Unified Spirit) has no connector: its
 title names the result and its subtitle and cards state who fuses into it, which is enough to
