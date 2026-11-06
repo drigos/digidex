@@ -269,11 +269,11 @@ as a pyramid, the narrowest on top and the widest at the bottom:
 3. `Lore notes`, last.
 
 A Jogress panel and a composition panel share one row when both fit with a `58px` gap
-between them, the same as between card columns (gatomon, agumon, gabumon): the
+between them, the same as between card columns (gatomon, gabumon): the
 Jogress panel stays at the left margin and the composition panel ends flush with the last
 column (page style `left = canvas width - 42 - panel width`); on a wider canvas the Jogress
-panel takes the rest of the row (agumon, gabumon). Since both are `333px` tall, their bottoms
-line up. Where they do not fit (Frontier, patamon), each takes its own row; on patamon both
+panel takes the rest of the row (gabumon). Since both are `333px` tall, their bottoms
+line up. Where they do not fit (Frontier, agumon, patamon), each takes its own row; on patamon both
 start at the composition panel's left edge, so the Armor connector runs down beside them.
 
 The Armor panel is the only panel with a connector, an amber edge from the line's node down
@@ -357,7 +357,8 @@ subspecies reached by digivolution keeps **Normal evolution** (`BlitzGreymon`, a
 WarGreymon, digivolves from MetalGreymon Alterous Mode in Adventure: 2020), and one reached by
 absorbing other Digimon is a **DNA / Jogress** (`HiMachineDramon`, Machinedramon after
 absorbing a SkullScorpionmon army in Digimon Fusion episode 14), and the Jogress panel carries
-the absorbed Digimon as a partner card (`Arcadiamon (Ultra)` for `Daemon (Ultra)` on patamon).
+the absorbed Digimon as a partner card (`SkullScorpionmon` for `HiMachineDramon` on agumon,
+`Arcadiamon (Ultra)` for `Daemon (Ultra)` on patamon).
 
 A Warp Digivolution gets no arrow of its own (Agumon -> WarGreymon, or Leomon -> SaberLeomon in
 Adventure episode 47): it passes through the skipped levels in one step, so the line already
