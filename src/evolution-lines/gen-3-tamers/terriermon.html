@@ -70,9 +70,9 @@ DigiTree.mount({
     {id:'blackgargomon', x:828, y:730, cls:'normal', name:'BlackGargomon', lvl:'Champion', note:'Gargomon coated in Black Digitron.', wiki:'BlackGargomon', img:'blackgalgomon'},
     {id:'blackrapidmon', x:1090, y:730, cls:'normal', name:'BlackRapidmon', lvl:'Ultimate', note:'Rapidmon that ingested Black Digitron.', wiki:'BlackRapidmon', img:'blackrapidmon'},
 
-    // Digi-Egg of Destiny (row 3)
-    {id:'rapidmonarmor', x:1090, y:970, cls:'armor', name:'Rapidmon (Armor)', lvl:'Armor', note:'Golden Holy Knight with Mega-level power.', wiki:'Rapidmon_(Armor)', img:'rapidmon_gold'},
-    {id:'rapidmonx', x:1352, y:970, cls:'x', name:'Rapidmon X', lvl:'Mega / X', note:'X-Antibody form of the golden Rapidmon.', wiki:'Rapidmon_X', img:'rapidmon_x'}
+    // Digi-Egg of Destiny: power on par with a Mega, so the Mega column, with its X form above
+    {id:'rapidmonx', x:1352, y:730, cls:'x', name:'Rapidmon X', lvl:'Mega / X', note:'X-Antibody form of the golden Rapidmon.', wiki:'Rapidmon_X', img:'rapidmon_x'},
+    {id:'rapidmonarmor', x:1352, y:970, cls:'armor', name:'Rapidmon (Armor)', lvl:'Armor', note:'Golden Holy Knight with Mega-level power.', wiki:'Rapidmon_(Armor)', img:'rapidmon_gold'}
   ],
   edges: function (edge) {
     // main line
@@ -86,7 +86,7 @@ DigiTree.mount({
 
     // X-Antibody forms
     edge('terriermon','terriermonx','x','top','bottom',{shape:'vertical'});
-    edge('rapidmonarmor','rapidmonx','x');
+    edge('rapidmonarmor','rapidmonx','x','top','bottom',{shape:'vertical'});
 
     // Black Digitron variants
     edge('gargomon','blackgargomon','normal','bottom','top',{shape:'vertical'});
