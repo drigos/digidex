@@ -141,18 +141,18 @@ DigiTree.mount({
     [1090,'Ultimate'],[1352,'Mega']
   ],
   nodes: [
-    // HippoGryphonmon, the alternate Ultimate of Aquilamon, with its two Megas
-    {id:'zhuqiaomon', x:1352, y:250, cls:'normal', name:'Zhuqiaomon', lvl:'Mega', note:'Sovereign of the south.', wiki:'Zhuqiaomon', img:'zhuqiaomon', badge:{cls:'fs', text:'Four Sovereigns', href:'../../groups/four-sovereigns.html#zhuqiaomon', title:'Four Sovereigns roster'}},
+    // main spine
+    {id:'pururumon', x:42, y:250, cls:'normal', name:'Pururumon', lvl:'Fresh', note:'Initial form of the line.', wiki:'Pururumon', img:'pururumon'},
+    {id:'poromon', x:304, y:250, cls:'normal', name:'Poromon', lvl:'In-Training', note:'Little bird In-Training form.', wiki:'Poromon', img:'poromon'},
+    {id:'hawkmon', x:566, y:250, cls:'normal', name:'Hawkmon', lvl:'Rookie', note:'Main branching point.', wiki:'Hawkmon', img:'hawkmon'},
+    {id:'aquilamon', x:828, y:250, cls:'normal', name:'Aquilamon', lvl:'Champion', note:'Giant bird; fuses with Gatomon.', wiki:'Aquilamon', img:'aquilamon'},
+    {id:'silphymon', x:1090, y:250, cls:'dna', name:'Silphymon', lvl:'Ultimate', note:'Aquilamon + Gatomon.', wiki:'Silphymon', img:'silphymon'},
+    {id:'valkyrimon', x:1352, y:250, cls:'normal', name:'Valkyrimon', lvl:'Mega', note:'Peak of the Silphymon Jogress line.', wiki:'Valkyrimon', img:'valkyrimon'},
+
+    // HippoGryphonmon, the alternate Ultimate of Aquilamon, with its two Megas below the spine
     {id:'hippogriffomon', x:1090, y:490, cls:'normal', name:'HippoGryphonmon', lvl:'Ultimate', note:'A Mythical Beast that resembles a chimera.', wiki:'HippoGryphonmon', img:'hippogriffomon'},
     {id:'gryphonmon', x:1352, y:490, cls:'normal', name:'Gryphonmon', lvl:'Mega', note:'Head and wings of a Bird, body of a Beast.', wiki:'Gryphonmon', img:'griffomon'},
-
-    // main spine
-    {id:'pururumon', x:42, y:730, cls:'normal', name:'Pururumon', lvl:'Fresh', note:'Initial form of the line.', wiki:'Pururumon', img:'pururumon'},
-    {id:'poromon', x:304, y:730, cls:'normal', name:'Poromon', lvl:'In-Training', note:'Little bird In-Training form.', wiki:'Poromon', img:'poromon'},
-    {id:'hawkmon', x:566, y:730, cls:'normal', name:'Hawkmon', lvl:'Rookie', note:'Main branching point.', wiki:'Hawkmon', img:'hawkmon'},
-    {id:'aquilamon', x:828, y:730, cls:'normal', name:'Aquilamon', lvl:'Champion', note:'Giant bird; fuses with Gatomon.', wiki:'Aquilamon', img:'aquilamon'},
-    {id:'silphymon', x:1090, y:730, cls:'dna', name:'Silphymon', lvl:'Ultimate', note:'Aquilamon + Gatomon.', wiki:'Silphymon', img:'silphymon'},
-    {id:'valkyrimon', x:1352, y:730, cls:'normal', name:'Valkyrimon', lvl:'Mega', note:'Peak of the Silphymon Jogress line.', wiki:'Valkyrimon', img:'valkyrimon'}
+    {id:'zhuqiaomon', x:1352, y:730, cls:'normal', name:'Zhuqiaomon', lvl:'Mega', note:'Sovereign of the south.', wiki:'Zhuqiaomon', img:'zhuqiaomon', badge:{cls:'fs', text:'Four Sovereigns', href:'../../groups/four-sovereigns.html#zhuqiaomon', title:'Four Sovereigns roster'}}
   ],
   edges: function (edge) {
     // main line
@@ -160,8 +160,8 @@ DigiTree.mount({
     edge('poromon','hawkmon','normal');
     edge('hawkmon','aquilamon','normal');
 
-    // Aquilamon's Ultimates: HippoGryphonmon above, the Jogress with Gatomon (see panel)
-    edge('aquilamon','hippogriffomon','normal','right','left',{fromY:800});
+    // Aquilamon's Ultimates: the Jogress with Gatomon (see panel), HippoGryphonmon below
+    edge('aquilamon','hippogriffomon','normal','right','left',{fromY:378});
     edge('aquilamon','silphymon','dna');
     edge('hippogriffomon','gryphonmon','normal');
     edge('hippogriffomon','zhuqiaomon','normal');
