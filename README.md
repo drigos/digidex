@@ -13,7 +13,7 @@ then lists the generations, the atlas pages or the group rosters:
   - [index.html](src/evolution-lines/gen-1-adventure/index.html) - DigiDestined selection screen (by Crest).
   - [agumon.html](src/evolution-lines/gen-1-adventure/agumon.html) - Agumon line (Data Squad, Bond and Burst branches, the Virus forms, the Agumon and Greymon subspecies; AncientGreymon ancestral link).
   - [gabumon.html](src/evolution-lines/gen-1-adventure/gabumon.html) - Gabumon line (X, Virus and Bond branches, the Gabumon and MetalGarurumon variants; AncientGarurumon ancestral link).
-  - [biyomon.html](src/evolution-lines/gen-1-adventure/biyomon.html) - Biyomon line (X-Antibody forms, collective composition).
+  - [biyomon.html](src/evolution-lines/gen-1-adventure/biyomon.html) - Biyomon line (X-Antibody forms, the Saberdramon variant, collective composition).
   - [tentomon.html](src/evolution-lines/gen-1-adventure/tentomon.html) - Tentomon line (Red/Blue MegaKabuterimon branches, HerculesKabuterimon X, AncientBeetlemon ancestral link, collective composition).
   - [palmon.html](src/evolution-lines/gen-1-adventure/palmon.html) - Palmon line (X-Antibody forms, the Aruraumon variant, the Adventure: 2020 Ponchomon, BanchoLillymon, Rosemon Burst Mode, collective composition).
   - [gomamon.html](src/evolution-lines/gen-1-adventure/gomamon.html) - Gomamon line (Gomamon X branch, collective composition).
@@ -345,7 +345,7 @@ Every arrow is colored by the digivolution trigger. This is the single vocabular
 | Armor Digivolution | amber | Armor evolution via a Digi-Egg. | veemon, hawkmon, armadillomon, wormmon, patamon, gatomon, terriermon |
 | Bond Evolution | pink | Bond-driven evolution. | agumon, gabumon |
 | Burst Mode | gold | Burst Digivolution. | agumon, palmon |
-| Variant / subspecies | silver | Not an evolution: the target is a separate species or subspecies of the source ("a separate species of Agumon", "a subspecies of Greymon"). | agumon, gabumon, palmon |
+| Variant / subspecies | silver | Not an evolution: the target is a separate species or subspecies of the source ("a separate species of Agumon", "a subspecies of Greymon"). | agumon, gabumon, biyomon, palmon |
 | Ancestral link | grey (dotted, no arrowhead) | Lore ancestry, not an evolution: a Legendary Warrior linked to the root of the line it spawned. | agumon, gabumon, tentomon, gen-4-frontier |
 
 A form the Reference Book describes as a separate species or a subspecies (`SnowAgumon`,
@@ -417,6 +417,7 @@ The on-image legend lists only the triggers that the file actually uses.
 - The Adventure 02 partners (Veemon, Hawkmon, Armadillomon, Wormmon, Patamon, Gatomon) and Terriermon add: Armor Digivolution.
 - Agumon adds: Bond Evolution, Burst Mode, Variant / subspecies.
 - Gabumon adds: Bond Evolution, Variant / subspecies.
+- Biyomon adds: Variant / subspecies.
 - Palmon adds: Burst Mode, Variant / subspecies.
 - Agumon, Gabumon and Tentomon add: Ancestral link.
 - Frontier relabels the shared colors: Spirit Evolution, Slide Evolution,
@@ -683,10 +684,18 @@ Use them where ambiguity matters, not on every sentence. The atlas overview has 
 
 Every evolution relation on a tree (an edge, or a card in an Armor panel), and every other
 claim on a page (a card note, a roster role, a lore note, a footer sentence), must rest on one
-of these sources. There are two exceptions, and each page states its own in the footer: the
-Virus chain of agumon and gabumon (see "Virus lines on agumon and gabumon"), and YukimiBotamon
-on gatomon, which only a game links to Nyaromon, kept as the line's Fresh form because its
-profile makes it a variant of Botamon. The sources are:
+of the sources below. A few editorial exceptions keep a relation that only a game or the
+design supports, because it is plain from the Digimon themselves; each page states its own in
+the footer:
+
+- the Virus chain of agumon and gabumon (see "Virus lines on agumon and gabumon");
+- YukimiBotamon on gatomon, which only a game links to Nyaromon: its profile makes it a variant
+  of Botamon, and the Fresh forms mirror the partners, Agumon's line (Tai's) starting at Botamon
+  and Gatomon's (Kari's) at YukimiBotamon;
+- Saberdramon on biyomon, drawn as a variant of Birdramon: no profile links them, but it is
+  Birdramon in dark flames.
+
+The sources are:
 
 1. the official Reference Book profile. Read the profiles at both ends: GoldVeedramon's is
    the only Armor profile that names its Rookie ("Armor Digivolved from Veemon with the

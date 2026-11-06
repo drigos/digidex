@@ -10,9 +10,9 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:1860px; height:1115px; }
+  .infographic { width:1860px; height:1355px; }
   .columns { top:200px; }
-  .partner-panel { top:710px; width:1348px; }
+  .partner-panel { top:950px; width:1348px; }
 </style>
 </head>
 <body>
@@ -21,7 +21,7 @@
   <div class="infographic" id="canvas">
     <div class="title">
       <h1>Biyomon: evolution tree</h1>
-      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega -> Ultra hierarchy, with the X-Antibody forms (Garudamon X, Phoenixmon X) and the collective composition that forms Omnimon Merciful Mode in Adventure tri.</div>
+      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega -> Ultra hierarchy, with the X-Antibody forms (Garudamon X, Phoenixmon X), the Saberdramon variant and the collective composition that forms Omnimon Merciful Mode in Adventure tri.</div>
     </div>
 
     <div class="legend">
@@ -31,7 +31,7 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 1860 1115" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 1860 1355" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
@@ -80,7 +80,7 @@
       </div>
     </section>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. Omnimon Merciful Mode is a collective composition (Adventure tri.): Phoenixmon plus Omnimon, HerculesKabuterimon, Rosemon, Vikemon, Seraphimon and Magnadramon.</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. No profile links Birdramon and Saberdramon; the tree draws Saberdramon as its variant in dark flames. Omnimon Merciful Mode is a collective composition (Adventure tri.): Phoenixmon plus Omnimon, HerculesKabuterimon, Rosemon, Vikemon, Seraphimon and Magnadramon.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -94,7 +94,8 @@ DigiTree.mount({
   legend: [
     ['normal','Normal evolution'],
     ['x','X-Digivolution'],
-    ['dna','DNA / Jogress']
+    ['dna','DNA / Jogress'],
+    ['variant','Variant / subspecies']
   ],
   columns: [
     [42,'Fresh'],[304,'In-Training'],[566,'Rookie'],[828,'Champion'],
@@ -112,7 +113,10 @@ DigiTree.mount({
     {id:'birdramon', x:828, y:490, cls:'normal', name:'Birdramon', lvl:'Champion', note:'Giant flame bird.', wiki:'Birdramon', img:'birdramon'},
     {id:'garudamon', x:1090, y:490, cls:'normal', name:'Garudamon', lvl:'Ultimate', note:'Known as the Guardian of Wind and Land.', wiki:'Garudamon', img:'garudamon'},
     {id:'phoenixmon', x:1352, y:490, cls:'normal', name:'Phoenixmon', lvl:'Mega', note:'Holy Beast; peak of the classic line.', wiki:'Phoenixmon', img:'hououmon'},
-    {id:'omnimonmerciful', x:1614, y:490, cls:'dna', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#omnimon', title:'Royal Knights roster'}, name:'Omnimon Merciful Mode', lvl:'Ultra', note:'Collective composition.', wiki:'Omnimon_Merciful_Mode', img:'omegamon_merciful'}
+    {id:'omnimonmerciful', x:1614, y:490, cls:'dna', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#omnimon', title:'Royal Knights roster'}, name:'Omnimon Merciful Mode', lvl:'Ultra', note:'Collective composition.', wiki:'Omnimon_Merciful_Mode', img:'omegamon_merciful'},
+
+    // Birdramon's variant (bottom row)
+    {id:'saberdramon', x:828, y:730, cls:'variant', name:'Saberdramon', lvl:'Champion', note:'A Digimon shrouded in dark flames.', wiki:'Saberdramon', img:'saberdramon'}
   ],
   edges: function (edge) {
     // main spine
@@ -126,6 +130,9 @@ DigiTree.mount({
     // X-Antibody forms
     edge('garudamon','garudamonx','x','top','bottom',{shape:'vertical'});
     edge('phoenixmon','phoenixmonx','x','top','bottom',{shape:'vertical'});
+
+    // Saberdramon, Birdramon in dark flames (editorial variant, see the footer)
+    edge('birdramon','saberdramon','variant','bottom','top',{shape:'vertical'});
   }
 });
 </script>
