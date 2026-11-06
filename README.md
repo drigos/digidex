@@ -22,7 +22,7 @@ then lists the generations, the atlas pages or the group rosters:
 - `src/evolution-lines/gen-2-adventure-02/` - Digimon Adventure 02:
   - [index.html](src/evolution-lines/gen-2-adventure-02/index.html) - DigiDestined selection screen (by Digi-Egg; the Patamon and Gatomon cards link into the gen-1 trees, which already carry their Armor Digivolutions).
   - [veemon.html](src/evolution-lines/gen-2-adventure-02/veemon.html) - Veemon line (Paildramon and Dinobeemon Jogresses, Imperialdramon Mode Changes and its Black forms, the Veedramon variant line from V-Tamer with RedVeedramon, Armor Digivolutions).
-  - [hawkmon.html](src/evolution-lines/gen-2-adventure-02/hawkmon.html) - Hawkmon line (Garudamon and HippoGryphonmon alternate Ultimates, Silphymon Jogress and its Megas, Varodurumon Jogress, Armor Digivolutions).
+  - [hawkmon.html](src/evolution-lines/gen-2-adventure-02/hawkmon.html) - Hawkmon line (the HippoGryphonmon alternate Ultimate with Gryphonmon and Zhuqiaomon, Silphymon Jogress up to Valkyrimon, Armor Digivolutions).
   - [armadillomon.html](src/evolution-lines/gen-2-adventure-02/armadillomon.html) - Armadillomon line (Brachiomon alternate Ultimate, Shakkoumon Jogress up to Vikemon and SlashAngemon, Armor Digivolutions).
   - [wormmon.html](src/evolution-lines/gen-2-adventure-02/wormmon.html) - Wormmon line (Paildramon and Dinobeemon Jogresses, Imperialdramon Mode Changes, JewelBeemon branch, Hudiemon side form, Armor Digivolutions).
 - `src/evolution-lines/gen-3-tamers/` - Digimon Tamers:
@@ -717,7 +717,10 @@ the footer:
   Leomon, but it is a Leomon that earned the Bancho title, the way BanchoLillymon's profile
   ties it to Lillymon;
 - RedVeedramon on veemon, drawn as Veedramon's Dark evolution: only Digimon World: Next Order
-  links them (Veedramon becomes it at the peak of anger), and no other source reaches it.
+  links them (Veedramon becomes it at the peak of anger), and no other source reaches it;
+- HippoGryphonmon on hawkmon: only games draw Aquilamon -> HippoGryphonmon, but the eagle
+  Aquilamon fits the line of bird-headed beasts that HippoGryphonmon's profile continues into
+  Gryphonmon (Adventure tri. adds Zhuqiaomon).
 
 The sources are:
 
@@ -737,7 +740,12 @@ The sources are:
 5. the V-pets released with the series:
    - the D-3 (Adventure 02). Version 1 covers Veemon and Wormmon, Version 2 Hawkmon and
      Gatomon, and Version 3 Armadillomon and Patamon. Each gives its partners one Armor form
-     per Digi-Egg and none for Destiny;
+     per Digi-Egg and none for Destiny. The Mega of each Jogress line takes a second Jogress
+     with a Digimon of the WonderSwan games (Silphymon + Garudamon = Valkyrimon), a mechanic
+     of linking the toys rather than a relation, so the tree draws the step as a Normal
+     evolution from the Jogress form (Silphymon -> Valkyrimon). It is left out when the Mega's
+     profile ties it to another species: Vikemon heads the Ikkakumon and Zudomon corps, and
+     GranKuwagamon is the ultimate form of the Kuwagamon species;
    - the D-Ark and D-Power (Tamers): D-Ark Version 1.0, 1.5, 2.0 and Ultimate (Japan) and
      the D-Power Digivice Version 1 to 3 (Europe and Asia; the North American D-Power is a
      different game with no lines of its own). Each gives a partner one form per level,

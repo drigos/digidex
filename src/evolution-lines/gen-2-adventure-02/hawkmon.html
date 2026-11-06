@@ -10,10 +10,10 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:1598px; height:2144px; }
+  .infographic { width:1598px; height:1664px; }
   .columns { top:200px; }
-  .jogress-panel { top:1430px; width:490px; }
-  .armor-panel { top:1785px; width:1514px; }
+  .jogress-panel { top:950px; width:370px; }
+  .armor-panel { top:1305px; width:1514px; }
 </style>
 </head>
 <body>
@@ -22,7 +22,7 @@
   <div class="infographic" id="canvas">
     <div class="title">
       <h1>Hawkmon: evolution tree</h1>
-      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega hierarchy, with the Garudamon and HippoGryphonmon alternate Ultimates, the Silphymon Jogress and its Megas, the Varodurumon Jogress with Sinduramon and Hawkmon's Armor Digivolutions.</div>
+      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega hierarchy, with the HippoGryphonmon alternate Ultimate and its two Megas, the Silphymon Jogress up to Valkyrimon and Hawkmon's Armor Digivolutions.</div>
     </div>
 
     <div class="legend">
@@ -32,14 +32,14 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 1598 2144" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 1598 1664" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
     <section class="jogress-panel" id="jogress-panel">
       <div class="jogress-panel-title">
-        <h2>Silphymon / Varodurumon: Jogress partners</h2>
-        <span>Gatomon fuses with Aquilamon, Sinduramon with Silphymon</span>
+        <h2>Silphymon: Jogress partner</h2>
+        <span>Aquilamon + Gatomon = Silphymon</span>
       </div>
       <div class="jogress-body">
         <a class="jogress-card" href="https://digimon.fandom.com/wiki/Gatomon" target="_blank">
@@ -47,12 +47,6 @@
           <div class="jogress-name">Gatomon</div>
           <div class="jogress-level">Champion</div>
           <div class="jogress-fuse">+ Aquilamon = Silphymon</div>
-        </a>
-        <a class="jogress-card" href="https://digimon.fandom.com/wiki/Sinduramon" target="_blank">
-          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/sinduramon.jpg" alt="Sinduramon">
-          <div class="jogress-name">Sinduramon</div>
-          <div class="jogress-level">Ultimate</div>
-          <div class="jogress-fuse">+ Silphymon = Varodurumon</div>
         </a>
       </div>
     </section>
@@ -126,7 +120,7 @@
       </div>
     </section>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. HippoGryphonmon digivolves to Zhuqiaomon in Digimon Adventure tri. Hawkmon has no recorded form for the Digi-Egg of Destiny.</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. Only games link Aquilamon to HippoGryphonmon; the tree keeps the link, since the eagle Aquilamon leads to the bird-headed beasts of HippoGryphonmon's line (its profile names Gryphonmon). HippoGryphonmon digivolves into Zhuqiaomon in Adventure tri. Hawkmon has no recorded form for the Digi-Egg of Destiny.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -147,11 +141,10 @@ DigiTree.mount({
     [1090,'Ultimate'],[1352,'Mega']
   ],
   nodes: [
-    // alternate Ultimates of Aquilamon, each with its Mega
-    {id:'hippogriffomon', x:1090, y:250, cls:'normal', name:'HippoGryphonmon', lvl:'Ultimate', note:'Mythical beast; alternate Ultimate.', wiki:'HippoGryphonmon', img:'hippogriffomon'},
+    // HippoGryphonmon, the alternate Ultimate of Aquilamon, with its two Megas
     {id:'zhuqiaomon', x:1352, y:250, cls:'normal', name:'Zhuqiaomon', lvl:'Mega', note:'Sovereign of the south.', wiki:'Zhuqiaomon', img:'zhuqiaomon', badge:{cls:'fs', text:'Four Sovereigns', href:'../../groups/four-sovereigns.html#zhuqiaomon', title:'Four Sovereigns roster'}},
-    {id:'garudamon', x:1090, y:490, cls:'normal', name:'Garudamon', lvl:'Ultimate', note:'Bird warrior; alternate Ultimate.', wiki:'Garudamon', img:'garudamon'},
-    {id:'phoenixmon', x:1352, y:490, cls:'normal', name:'Phoenixmon', lvl:'Mega', note:'Holy Beast; also reached from Silphymon.', wiki:'Phoenixmon', img:'hououmon'},
+    {id:'hippogriffomon', x:1090, y:490, cls:'normal', name:'HippoGryphonmon', lvl:'Ultimate', note:'A Mythical Beast that resembles a chimera.', wiki:'HippoGryphonmon', img:'hippogriffomon'},
+    {id:'gryphonmon', x:1352, y:490, cls:'normal', name:'Gryphonmon', lvl:'Mega', note:'Head and wings of a Bird, body of a Beast.', wiki:'Gryphonmon', img:'griffomon'},
 
     // main spine
     {id:'pururumon', x:42, y:730, cls:'normal', name:'Pururumon', lvl:'Fresh', note:'Initial form of the line.', wiki:'Pururumon', img:'pururumon'},
@@ -159,11 +152,7 @@ DigiTree.mount({
     {id:'hawkmon', x:566, y:730, cls:'normal', name:'Hawkmon', lvl:'Rookie', note:'Main branching point.', wiki:'Hawkmon', img:'hawkmon'},
     {id:'aquilamon', x:828, y:730, cls:'normal', name:'Aquilamon', lvl:'Champion', note:'Giant bird; fuses with Gatomon.', wiki:'Aquilamon', img:'aquilamon'},
     {id:'silphymon', x:1090, y:730, cls:'dna', name:'Silphymon', lvl:'Ultimate', note:'Aquilamon + Gatomon.', wiki:'Silphymon', img:'silphymon'},
-    {id:'valkyrimon', x:1352, y:730, cls:'normal', name:'Valkyrimon', lvl:'Mega', note:'Peak of the Silphymon Jogress line.', wiki:'Valkyrimon', img:'valkyrimon'},
-
-    // other Megas of Silphymon
-    {id:'dynasmon', x:1352, y:970, cls:'normal', name:'Dynasmon', lvl:'Mega', note:'Royal Knight; dragon warrior.', wiki:'Dynasmon', img:'dynasmon', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#dynasmon', title:'Royal Knights roster'}},
-    {id:'varodurumon', x:1352, y:1210, cls:'dna', name:'Varodurumon', lvl:'Mega', note:'Silphymon + Sinduramon.', wiki:'Varodurumon', img:'valdurmon'}
+    {id:'valkyrimon', x:1352, y:730, cls:'normal', name:'Valkyrimon', lvl:'Mega', note:'Peak of the Silphymon Jogress line.', wiki:'Valkyrimon', img:'valkyrimon'}
   ],
   edges: function (edge) {
     // main line
@@ -171,18 +160,12 @@ DigiTree.mount({
     edge('poromon','hawkmon','normal');
     edge('hawkmon','aquilamon','normal');
 
-    // Aquilamon's Ultimates: two alternates above, the Jogress with Gatomon (see panel)
-    edge('aquilamon','garudamon','normal','right','left',{fromY:800});
+    // Aquilamon's Ultimates: HippoGryphonmon above, the Jogress with Gatomon (see panel)
     edge('aquilamon','hippogriffomon','normal','right','left',{fromY:800});
     edge('aquilamon','silphymon','dna');
-    edge('garudamon','phoenixmon','normal');
+    edge('hippogriffomon','gryphonmon','normal');
     edge('hippogriffomon','zhuqiaomon','normal');
-
-    // Silphymon's Megas; the second arrow into Phoenixmon lands below Garudamon's
     edge('silphymon','valkyrimon','normal');
-    edge('silphymon','phoenixmon','normal','right','left',{fromY:800, toY:619});
-    edge('silphymon','dynasmon','normal','right','left',{fromY:855, laneX:1333});
-    edge('silphymon','varodurumon','dna','right','left',{fromY:880, laneX:1313});
 
     // connector to the Armor panel (appendix, not a normal edge)
     edge('hawkmon','armor-panel','armor','bottom','top',{shape:'vertical', toX:668, width:3});
