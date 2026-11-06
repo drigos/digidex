@@ -269,11 +269,12 @@ as a pyramid, the narrowest on top and the widest at the bottom:
 3. `Lore notes`, last.
 
 A Jogress panel and a composition panel share one row when both fit with a `58px` gap
-between them, the same as between card columns (patamon, gatomon, agumon, gabumon): the
+between them, the same as between card columns (gatomon, agumon, gabumon): the
 Jogress panel stays at the left margin and the composition panel ends flush with the last
 column (page style `left = canvas width - 42 - panel width`); on a wider canvas the Jogress
 panel takes the rest of the row (agumon, gabumon). Since both are `333px` tall, their bottoms
-line up. Where they do not fit (Frontier), each takes its own row.
+line up. Where they do not fit (Frontier, patamon), each takes its own row; on patamon both
+start at the composition panel's left edge, so the Armor connector runs down beside them.
 
 The Armor panel is the only panel with a connector, an amber edge from the line's node down
 to it, because the line evolves into its forms. The edge passes the panels above it: down the
@@ -355,7 +356,8 @@ that is another level (`Gaiomon`, "a subspecies of Greymon", hangs from Greymon)
 subspecies reached by digivolution keeps **Normal evolution** (`BlitzGreymon`, a subspecies of
 WarGreymon, digivolves from MetalGreymon Alterous Mode in Adventure: 2020), and one reached by
 absorbing other Digimon is a **DNA / Jogress** (`HiMachineDramon`, Machinedramon after
-absorbing a SkullScorpionmon army in Digimon Fusion episode 14).
+absorbing a SkullScorpionmon army in Digimon Fusion episode 14), and the Jogress panel carries
+the absorbed Digimon as a partner card (`Arcadiamon (Ultra)` for `Daemon (Ultra)` on patamon).
 
 A Warp Digivolution gets no arrow of its own (Agumon -> WarGreymon, or Leomon -> SaberLeomon in
 Adventure episode 47): it passes through the skipped levels in one step, so the line already
@@ -700,6 +702,8 @@ the footer:
   Birdramon in dark flames;
 - Tsukaimon on patamon, drawn as a variant of Patamon: the Reference Book only says it looks
   like Patamon, and only the encyclopedia of the Digimon Life mobile game calls it a subspecies;
+- Daemon (Mantled) on patamon, drawn as a variant of Daemon: it is Daemon's look in Adventure
+  02, and only a game links the two designs;
 - Junomon, Mastemon and LadyDevimon on gatomon: only games draw Angewomon -> Junomon,
   Angewomon + LadyDevimon -> Mastemon and BlackGatomon -> LadyDevimon, and no other source
   reaches these Digimon (the Reference Book only says BlackGatomon digivolves into Dark Angels
@@ -796,9 +800,9 @@ page with it; a slug that lands on a disambiguation page (`Justimon`) needs the 
   frame, a full-body render from the page's gallery reads better on a card: HiMachineDramon
   uses the 320px thumbnail of its Digimon Super Rumble model (artwork only; a game is still
   no relation source). Pages that use one add
-  `and Wikimon` to the footer's artwork credit. Fourteen images use it today, among them
-  Agumon (Burst Mode), HiMachineDramon, Grani, Daemon (Ultra), PetitMamon and the App
-  Monsters cards.
+  `and Wikimon` to the footer's artwork credit. Sixteen images use it today, among them
+  Agumon (Burst Mode), HiMachineDramon, Grani, Daemon (Ultra), Daemon (Mantled), Arcadiamon
+  (Ultra), PetitMamon and the App Monsters cards.
 - Do not try to get around a source that blocks embedding (no user-agent or referrer
   tricks); switch to another source instead.
 

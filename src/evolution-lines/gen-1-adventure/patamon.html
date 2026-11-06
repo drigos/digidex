@@ -10,12 +10,13 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:1860px; height:2706px; }
+  .infographic { width:1860px; height:3078px; }
   .columns { top:200px; }
-  .jogress-panel { top:1670px; width:370px; }
-  .partner-panel { top:1670px; left:470px; width:1348px; }
-  .armor-panel { top:2025px; width:1776px; }
-  .lore-panel { top:2334px; width:1776px; }
+  /* the Jogress and composition panels stack on one left edge, so the Armor connector runs beside them */
+  .jogress-panel { top:1670px; left:470px; width:556px; }
+  .partner-panel { top:2025px; left:470px; width:1348px; }
+  .armor-panel { top:2380px; width:1776px; }
+  .lore-panel { top:2689px; width:1776px; }
 </style>
 </head>
 <body>
@@ -34,14 +35,14 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 1860 2706" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 1860 3078" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
     <section class="jogress-panel" id="jogress-panel">
       <div class="jogress-panel-title">
-        <h2>Shakkoumon: Jogress partner</h2>
-        <span>Ankylomon + Angemon = Shakkoumon</span>
+        <h2>Shakkoumon and Daemon (Ultra): Jogress partners</h2>
+        <span>Ankylomon + Angemon = Shakkoumon; Daemon absorbs Arcadiamon (V-Tamer)</span>
       </div>
       <div class="jogress-body">
         <a class="jogress-card" href="https://digimon.fandom.com/wiki/Ankylomon" target="_blank">
@@ -49,6 +50,12 @@
           <div class="jogress-name">Ankylomon</div>
           <div class="jogress-level">Champion</div>
           <div class="jogress-fuse">+ Angemon = Shakkoumon</div>
+        </a>
+        <a class="jogress-card" href="https://digimon.fandom.com/wiki/Arcadiamon_(Ultra)" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://wikimon.net/images/e/ed/Arkadimon_superultimate.jpg" alt="Arcadiamon (Ultra)">
+          <div class="jogress-name">Arcadiamon (Ultra)</div>
+          <div class="jogress-level">Ultra</div>
+          <div class="jogress-fuse">+ Daemon = Daemon (Ultra)</div>
         </a>
       </div>
     </section>
@@ -196,17 +203,21 @@
           <div class="lore-card-text">Seraphimon's official profile states that Daemon is said to have originally been a Seraphimon that fell to the Dark Area after rebelling against the embodiment of good.</div>
         </div>
         <div class="lore-card">
+          <div class="lore-card-title">Daemon (Mantled)</div>
+          <div class="lore-card-text">Under this crimson mantle Daemon led the Daemon Corps in Adventure 02; too powerful to defeat, it was banished into the Dark Ocean. A look, not an evolution.</div>
+        </div>
+        <div class="lore-card">
           <div class="lore-card-title">ShadowSeraphimon</div>
           <div class="lore-card-text">The Frontier dub name for BlackSeraphimon: officially a form of Seraphimon engulfed by its concealed inner resentment. In Frontier it is Mercurymon fused with Seraphimon's stolen data.</div>
         </div>
         <div class="lore-card">
           <div class="lore-card-title">One Absorption from the Top</div>
-          <div class="lore-card-text">Daemon (Ultra) exists only in the V-Tamer 01 manga, where Daemon absorbs Arkadimon's data and surpasses the Mega level.</div>
+          <div class="lore-card-text">Daemon (Ultra) exists only in the V-Tamer 01 manga, where Daemon absorbs Arcadiamon's data and surpasses the Mega level.</div>
         </div>
       </div>
     </section>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book and Wikimon. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. The Reference Book only says Tsukaimon looks like Patamon (a game encyclopedia calls it a subspecies); the tree draws it as Patamon's variant. Omnimon Merciful Mode is a collective composition (Adventure tri.): Seraphimon plus Omnimon, Phoenixmon, HerculesKabuterimon, Rosemon, Vikemon and Magnadramon. Patamon has no recorded form for the Digi-Egg of Destiny.</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book and Wikimon. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. The Reference Book only says Tsukaimon looks like Patamon (a game encyclopedia calls it a subspecies); the tree draws it as Patamon's variant. Likewise, only a game links Daemon to Daemon (Mantled), its look in Adventure 02, drawn as a variant. Omnimon Merciful Mode is a collective composition (Adventure tri.): Seraphimon plus Omnimon, Phoenixmon, HerculesKabuterimon, Rosemon, Vikemon and Magnadramon. Patamon has no recorded form for the Digi-Egg of Destiny.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -253,12 +264,13 @@ DigiTree.mount({
     // Jogress row, shared with Seraphimon's official fallen form and its V-Tamer Ultra form
     {id:'shakkoumon', x:1090, y:1210, cls:'dna', name:'Shakkoumon', lvl:'Ultimate', note:'Angemon + Ankylomon.', wiki:'Shakkoumon', img:'shakkoumon'},
     {id:'daemon', x:1352, y:1210, cls:'dark', name:'Daemon', lvl:'Mega / Virus', note:'Said to have originally been a Seraphimon.', wiki:'Daemon', img:'demon', badge:{cls:'dl', text:'Demon Lord', href:'../../groups/demon-lords.html#daemon', title:'Seven Great Demon Lords roster'}},
-    {id:'daemonultra', x:1614, y:1210, cls:'dna', name:'Daemon (Ultra)', lvl:'Ultra / Virus', note:'Super Ultimate form after absorbing Arkadimon (V-Tamer).', wiki:'Daemon_(Ultra)', img:'https://wikimon.net/images/f/f0/Demon_superultimate.jpg', badge:{cls:'dl', text:'Demon Lord', href:'../../groups/demon-lords.html#daemon', title:'Seven Great Demon Lords roster'}},
+    {id:'daemonultra', x:1614, y:1210, cls:'dna', name:'Daemon (Ultra)', lvl:'Ultra / Virus', note:'Super Ultimate form after absorbing Arcadiamon (V-Tamer).', wiki:'Daemon_(Ultra)', img:'https://wikimon.net/images/f/f0/Demon_superultimate.jpg', badge:{cls:'dl', text:'Demon Lord', href:'../../groups/demon-lords.html#daemon', title:'Seven Great Demon Lords roster'}},
 
     // fallen angel dark line
     {id:'devimon', x:828, y:1450, cls:'dark', name:'Devimon', lvl:'Champion / Virus', note:'An Angemon that fell into the Dark Area.', wiki:'Devimon', img:'devimon'},
     {id:'neodevimon', x:1090, y:1450, cls:'dark', name:'NeoDevimon', lvl:'Ultimate / Virus', note:'Strengthened Devimon.', wiki:'NeoDevimon', img:'neodevimon'},
-    {id:'dandevimon', x:1352, y:1450, cls:'dark', name:'DanDevimon', lvl:'Mega / Virus', note:'Peak of the fallen angel branch (Adventure: 2020).', wiki:'DanDevimon', img:'donedevimon'}
+    {id:'dandevimon', x:1352, y:1450, cls:'dark', name:'DanDevimon', lvl:'Mega / Virus', note:'Peak of the fallen angel branch (Adventure: 2020).', wiki:'DanDevimon', img:'donedevimon'},
+    {id:'daemonmantled', x:1614, y:1450, cls:'variant', name:'Daemon (Mantled)', lvl:'Mega / Virus', note:'Daemon\'s mantled look in Adventure 02.', wiki:'Daemon_(Mantled)', img:'https://wikimon.net/images/f/ff/Demon_Adventure_02_reference_art.jpg', badge:{cls:'dl', text:'Demon Lord', href:'../../groups/demon-lords.html#daemon', title:'Seven Great Demon Lords roster'}}
   ],
   edges: function (edge) {
     // main line
@@ -293,9 +305,11 @@ DigiTree.mount({
     edge('neodevimon','dandevimon','dark');
 
     // Demon Lord branch: the official fall from Seraphimon (its profile names Daemon as its
-    // fallen form) and the V-Tamer Ultra form, which absorbs Arkadimon's data
+    // fallen form), the V-Tamer Ultra form, which absorbs Arcadiamon's data, and the Adventure 02
+    // mantled look (editorial variant, see the footer) along the row gap under Daemon
     edge('seraphimon','daemon','dark','bottom','top',{shape:'vertical', fromX:1420, toX:1420, label:'Fell to the Dark Area', lx:1420, ly:1120});
     edge('daemon','daemonultra','dna','top','top',{fromX:1500, toX:1670, points:[[1500,1189],[1670,1189]], label:'V-Tamer', lx:1585, ly:1189});
+    edge('daemon','daemonmantled','variant','bottom','top',{fromX:1500, toX:1670, points:[[1500,1429],[1670,1429]]});
 
     // connector to the Armor panel (appendix, not a normal edge)
     edge('patamon','armor-panel','armor','bottom','top',{fromX:600, toX:442, points:[[600,950],[442,950]], width:3});
