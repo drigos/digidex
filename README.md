@@ -23,7 +23,7 @@ then lists the generations, the atlas pages or the group rosters:
   - [index.html](src/evolution-lines/gen-2-adventure-02/index.html) - DigiDestined selection screen (by Digi-Egg; the Patamon and Gatomon cards link into the gen-1 trees, which already carry their Armor Digivolutions).
   - [veemon.html](src/evolution-lines/gen-2-adventure-02/veemon.html) - Veemon line (Paildramon and Dinobeemon Jogresses, Imperialdramon Mode Changes and its Black forms, the Veedramon variant line from V-Tamer with RedVeedramon, Armor Digivolutions).
   - [hawkmon.html](src/evolution-lines/gen-2-adventure-02/hawkmon.html) - Hawkmon line (the HippoGryphonmon alternate Ultimate with Gryphonmon and Zhuqiaomon, Silphymon Jogress up to Valkyrimon, Armor Digivolutions).
-  - [armadillomon.html](src/evolution-lines/gen-2-adventure-02/armadillomon.html) - Armadillomon line (Brachiomon alternate Ultimate, Shakkoumon Jogress up to Vikemon and SlashAngemon, Armor Digivolutions).
+  - [armadillomon.html](src/evolution-lines/gen-2-adventure-02/armadillomon.html) - Armadillomon line (the Brachiomon alternate Ultimate up to UltimateBrachiomon, Shakkoumon Jogress up to SlashAngemon, Armor Digivolutions).
   - [wormmon.html](src/evolution-lines/gen-2-adventure-02/wormmon.html) - Wormmon line (Paildramon and Dinobeemon Jogresses, Imperialdramon Mode Changes and its Black forms, the JewelBeemon branch up to BanchoStingmon, Armor Digivolutions).
 - `src/evolution-lines/gen-3-tamers/` - Digimon Tamers:
   - [index.html](src/evolution-lines/gen-3-tamers/index.html) - Tamers selection screen (by Biomerge / peak form).
@@ -723,7 +723,10 @@ the footer:
   Gryphonmon (Adventure tri. adds Zhuqiaomon);
 - JewelBeemon and BanchoStingmon on wormmon: only games draw Stingmon -> JewelBeemon ->
   BanchoStingmon, but no other source reaches JewelBeemon, and BanchoStingmon is a Stingmon that
-  earned the Bancho title.
+  earned the Bancho title;
+- Brachiomon, UltimateBrachiomon and SlashAngemon on armadillomon: only games draw Ankylomon ->
+  Brachiomon -> UltimateBrachiomon and Shakkoumon -> SlashAngemon, and no other source reaches
+  these Digimon (Shakkoumon's profile adds that it may be an Angel Digimon).
 
 The sources are:
 
@@ -788,8 +791,8 @@ cites it for Gigimon, Gummymon and Viximon, and the same cast list debuts Kokomo
 and Hopmon, which the character boxes list without a citation.
 
 A partner with no form for a Digi-Egg says so in its footer (`Patamon has no recorded form
-for the Digi-Egg of Destiny.`). The six Armor panels and the eight Adventure trees were
-checked against this rule in November 2026. The edges of the other trees have not been checked
+for the Digi-Egg of Destiny.`). The six Armor panels, the eight Adventure trees and the four
+Adventure 02 trees were checked against this rule in November 2026. The edges of the other trees have not been checked
 yet, and some of them still rest on a game.
 
 ## Artwork sources
@@ -820,9 +823,9 @@ page with it; a slug that lands on a disambiguation page (`Justimon`) needs the 
   no relation source). A Reference Book image drawn over a scenery background can also give way
   to the same official art on a plain background from Wikimon (BanchoGolemon on the Bancho
   roster). Pages that use one add
-  `and Wikimon` to the footer's artwork credit. Seventeen images use it today, among them
+  `and Wikimon` to the footer's artwork credit. Eighteen images use it today, among them
   Agumon (Burst Mode), HiMachineDramon, Grani, Daemon (Ultra), Daemon (Mantled), Arcadiamon
-  (Ultra), BanchoGolemon, PetitMamon and the App Monsters cards.
+  (Ultra), BanchoGolemon, PetitMamon, UltimateBrachiomon and the App Monsters cards.
 - Do not try to get around a source that blocks embedding (no user-agent or referrer
   tricks); switch to another source instead.
 

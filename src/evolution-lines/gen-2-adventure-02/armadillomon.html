@@ -10,10 +10,10 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:1598px; height:1664px; }
+  .infographic { width:1598px; height:1424px; }
   .columns { top:200px; }
-  .jogress-panel { top:950px; width:350px; }
-  .armor-panel { top:1305px; width:1514px; }
+  .jogress-panel { top:710px; width:350px; }
+  .armor-panel { top:1065px; width:1514px; }
 </style>
 </head>
 <body>
@@ -22,7 +22,7 @@
   <div class="infographic" id="canvas">
     <div class="title">
       <h1>Armadillomon: evolution tree</h1>
-      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega hierarchy, with the Brachiomon alternate Ultimate, the Shakkoumon Jogress up to Vikemon and SlashAngemon, and Armadillomon's Armor Digivolutions.</div>
+      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega hierarchy, with the Brachiomon alternate Ultimate up to UltimateBrachiomon, the Shakkoumon Jogress up to SlashAngemon and Armadillomon's Armor Digivolutions.</div>
     </div>
 
     <div class="legend">
@@ -32,14 +32,14 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 1598 1664" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 1598 1424" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
     <section class="jogress-panel" id="jogress-panel">
       <div class="jogress-panel-title">
         <h2>Shakkoumon: Jogress partner</h2>
-        <span>Angemon + Ankylomon = Shakkoumon</span>
+        <span>Ankylomon + Angemon = Shakkoumon</span>
       </div>
       <div class="jogress-body">
         <a class="jogress-card" href="https://digimon.fandom.com/wiki/Angemon" target="_blank">
@@ -120,7 +120,7 @@
       </div>
     </section>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. Brachiomon and SlashAngemon come from Digimon New Century. Armadillomon has no recorded form for the Digi-Egg of Destiny.</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book and Wikimon. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. Only games link Ankylomon to Brachiomon, Brachiomon to UltimateBrachiomon and Shakkoumon to SlashAngemon; the tree keeps the links, since no other source reaches these Digimon (Shakkoumon's profile adds that it may be an Angel Digimon). Armadillomon has no recorded form for the Digi-Egg of Destiny.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -141,17 +141,17 @@ DigiTree.mount({
     [1090,'Ultimate'],[1352,'Mega']
   ],
   nodes: [
-    {id:'brachiomon', x:1090, y:250, cls:'normal', name:'Brachiomon', lvl:'Ultimate', note:'Long-necked dinosaur; alternate Ultimate.', wiki:'Brachiomon', img:'brachiomon'},
+    // Brachiomon branch above the spine
+    {id:'brachiomon', x:1090, y:250, cls:'normal', name:'Brachiomon', lvl:'Ultimate', note:'A gentle herbivore, like the brachiosaurs.', wiki:'Brachiomon', img:'brachiomon'},
+    {id:'ultimatebrachiomon', x:1352, y:250, cls:'normal', name:'UltimateBrachiomon', lvl:'Mega', note:'Mega form of Brachiomon.', wiki:'UltimateBrachiomon', img:'https://wikimon.net/images/0/05/Ultimatebrachimon.jpg'},
 
     // main spine
     {id:'tsubumon', x:42, y:490, cls:'normal', name:'Tsubumon', lvl:'Fresh', note:'Initial form of the line.', wiki:'Tsubumon', img:'tsubumon'},
-    {id:'upamon', x:304, y:490, cls:'normal', name:'Upamon', lvl:'In-Training', note:'Axolotl-like In-Training form.', wiki:'Upamon', img:'upamon'},
+    {id:'upamon', x:304, y:490, cls:'normal', name:'Upamon', lvl:'In-Training', note:'Amphibian with ear-like gills.', wiki:'Upamon', img:'upamon'},
     {id:'armadillomon', x:566, y:490, cls:'normal', name:'Armadillomon', lvl:'Rookie', note:'Main branching point.', wiki:'Armadillomon', img:'armadimon'},
-    {id:'ankylomon', x:828, y:490, cls:'normal', name:'Ankylomon', lvl:'Champion', note:'Armored dinosaur; fuses with Angemon.', wiki:'Ankylomon', img:'ankylomon'},
+    {id:'ankylomon', x:828, y:490, cls:'normal', name:'Ankylomon', lvl:'Champion', note:'Armored Dragon; fuses with Angemon.', wiki:'Ankylomon', img:'ankylomon'},
     {id:'shakkoumon', x:1090, y:490, cls:'dna', name:'Shakkoumon', lvl:'Ultimate', note:'Ankylomon + Angemon.', wiki:'Shakkoumon', img:'shakkoumon'},
-    {id:'vikemon', x:1352, y:490, cls:'normal', name:'Vikemon', lvl:'Mega', note:'Peak of the Shakkoumon Jogress line.', wiki:'Vikemon', img:'vikemon'},
-
-    {id:'slashangemon', x:1352, y:730, cls:'normal', name:'SlashAngemon', lvl:'Mega', note:'Alternate Mega; Angelic Army member.', wiki:'SlashAngemon', img:'slashangemon', badge:{cls:'aa', text:'Angelic Army', href:'../../groups/angelic.html#slashangemon', title:'Angelic Digimon roster'}}
+    {id:'slashangemon', x:1352, y:490, cls:'normal', name:'SlashAngemon', lvl:'Mega', note:'Commands the Angelic Army (Powers).', wiki:'SlashAngemon', img:'slashangemon', badge:{cls:'aa', text:'Angelic Army', href:'../../groups/angelic.html#slashangemon', title:'Angelic Digimon roster'}}
   ],
   edges: function (edge) {
     // main line
@@ -159,10 +159,10 @@ DigiTree.mount({
     edge('upamon','armadillomon','normal');
     edge('armadillomon','ankylomon','normal');
     edge('ankylomon','brachiomon','normal','right','left',{fromY:560});
+    edge('brachiomon','ultimatebrachiomon','normal');
 
     // DNA / Jogress with Angemon (see panel)
     edge('ankylomon','shakkoumon','dna');
-    edge('shakkoumon','vikemon','normal');
     edge('shakkoumon','slashangemon','normal');
 
     // connector to the Armor panel (appendix, not a normal edge)
