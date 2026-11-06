@@ -121,7 +121,7 @@ DigiTree.mount({
     // Rookie side forms + Mega / Ultimate variants (variants band)
     {id:'aruraumon', x:566, y:730, cls:'variant', name:'Aruraumon', lvl:'Rookie', note:'Attained the same Digivolution as Palmon.', wiki:'Aruraumon', img:'alraumon'},
     {id:'ponchomon', x:828, y:730, cls:'normal', name:'Ponchomon', lvl:'Armor', note:'A Ghost type that looks like a Vegetation type.', wiki:'Ponchomon', img:'ponchomon'},
-    {id:'banchoLillymon', x:1090, y:730, cls:'normal', badge:{cls:'bc', text:'Bancho', href:'../../groups/bancho.html#bancholillymon', title:'Bancho Digimon roster'}, name:'BanchoLillymon', lvl:'Mega', note:'Bancho form; alternate Mega off Lillymon.', wiki:'BanchoLillymon', img:'bancholilimon'},
+    {id:'banchoLillymon', x:1352, y:730, cls:'normal', badge:{cls:'bc', text:'Bancho', href:'../../groups/bancho.html#bancholillymon', title:'Bancho Digimon roster'}, name:'BanchoLillymon', lvl:'Mega', note:'Bancho form; alternate Mega off Lillymon.', wiki:'BanchoLillymon', img:'bancholilimon'},
     {id:'rosemonburst', x:1614, y:730, cls:'burst', name:'Rosemon Burst Mode', lvl:'Ultra', note:'Burst Mode of Rosemon (Data Squad).', wiki:'Rosemon_Burst_Mode', img:'rosemonburstmode'}
   ],
   edges: function (edge) {
@@ -143,8 +143,8 @@ DigiTree.mount({
     edge('palmon','aruraumon','variant','bottom','top',{shape:'vertical'});
     edge('palmon','ponchomon','normal','right','left',{fromY:630, label:'Altered (Adventure: 2020)', lx:799, ly:710});
 
-    // Mega / Ultimate variants
-    edge('lillymon','banchoLillymon','normal','bottom','top',{shape:'vertical'});
+    // the Megas off Lillymon and Rosemon: BanchoLillymon fans out of Lillymon's main port
+    edge('lillymon','banchoLillymon','normal');
     // Rosemon Burst Mode (Ultra): down the lane from its own port, under the Merciful Mode fusion
     edge('rosemon','rosemonburst','burst','right','left',{fromY:640, laneX:1585});
   }
