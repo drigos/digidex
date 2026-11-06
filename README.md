@@ -34,7 +34,7 @@ then lists the generations, the atlas pages or the group rosters:
   - [lopmon.html](src/evolution-lines/gen-3-tamers/lopmon.html) - Lopmon line (Celestial line up to Cherubimon (Good), the Adventure 02 film's dark line to Cherubimon (Evil), the Frontier corruption, X-Antibody forms).
   - [guardromon.html](src/evolution-lines/gen-3-tamers/guardromon.html) - Guardromon line (the D-Power line from Kokuwamon to HiAndromon, the Ghost Game branch from Hagurumon, X-Antibody forms).
   - [marineangemon.html](src/evolution-lines/gen-3-tamers/marineangemon.html) - MarineAngemon line (the D-Power line from Penguinmon, the Digimon Next link from Pichimon).
-  - [leomon.html](src/evolution-lines/gen-3-tamers/leomon.html) - Leomon line (the D-Power line from Elecmon to SaberLeomon and Dinotigermon, the IceLeomon branch, the Xros Wars MadLeomon, X-Antibody forms).
+  - [leomon.html](src/evolution-lines/gen-3-tamers/leomon.html) - Leomon line (the D-Power line from Elecmon to SaberLeomon and Dinotigermon, the BanchoLeomon and IceLeomon branches, the Xros Wars MadLeomon, X-Antibody forms).
 - `src/evolution-lines/gen-4-frontier/` - Digimon Frontier (Spirit Evolution; the children become Digimon, no partner):
   - [index.html](src/evolution-lines/gen-4-frontier/index.html) - Legendary Warriors selection screen (6 chosen + 4 Cherubimon's warriors).
   - [agunimon.html](src/evolution-lines/gen-4-frontier/agunimon.html) - Warrior of Flame line (Child Flamemon, Human/Beast Spirit, Fusion, Unified, Susanoomon).
@@ -699,7 +699,10 @@ the footer:
 - Junomon, Mastemon and LadyDevimon on gatomon: only games draw Angewomon -> Junomon,
   Angewomon + LadyDevimon -> Mastemon and BlackGatomon -> LadyDevimon, and no other source
   reaches these Digimon (the Reference Book only says BlackGatomon digivolves into Dark Angels
-  and Mastemon fuses an Angel with a Dark Angel).
+  and Mastemon fuses an Angel with a Dark Angel);
+- BanchoLeomon on leomon: only games draw Leomon -> BanchoLeomon and its profile never names
+  Leomon, but it is a Leomon that earned the Bancho title, the way BanchoLillymon's profile
+  ties it to Lillymon.
 
 The sources are:
 
