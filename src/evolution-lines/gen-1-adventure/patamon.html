@@ -257,10 +257,10 @@ DigiTree.mount({
     {id:'seraphimon', x:1352, y:730, cls:'normal', name:'Seraphimon', lvl:'Mega', note:'One of the Three Great Angels (Celestial Digimon).', wiki:'Seraphimon', img:'seraphimon', badge:{cls:'cd', text:'Celestial Digimon', href:'../../groups/angelic.html#seraphimon', title:'Angelic Digimon roster'}},
     {id:'omnimonmerciful', x:1614, y:730, cls:'dna', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#omnimon', title:'Royal Knights roster'}, name:'Omnimon Merciful Mode', lvl:'Ultra', note:'Collective composition.', wiki:'Omnimon_Merciful_Mode', img:'omegamon_merciful'},
 
-    // Patamon's variant, mode change and Seraphimon's corrupted form
+    // Patamon's variant, mode change and Seraphimon's corrupted form, right under Seraphimon
     {id:'tsukaimon', x:566, y:970, cls:'variant', name:'Tsukaimon', lvl:'Rookie', note:'Looks like Patamon; a familiar to Devimon.', wiki:'Tsukaimon', img:'tukaimon'},
     {id:'priest', x:1090, y:970, cls:'mode', name:'MagnaAngemon Priest Mode', lvl:'Ultimate', note:'Priest garb mode (Adventure: 2020).', wiki:'MagnaAngemon_(Priest_Mode)', img:'https://wikimon.net/images/d/d2/Holyangemon_shinkan.jpg'},
-    {id:'shadowseraphimon', x:1614, y:970, cls:'dark', name:'ShadowSeraphimon', lvl:'Mega / Virus', note:'Born of Seraphimon\'s concealed inner resentment.', wiki:'ShadowSeraphimon', img:'blackseraphimon', badge:{cls:'fa', text:'Fallen Angel', href:'../../groups/angelic.html#shadowseraphimon', title:'Angelic Digimon roster'}},
+    {id:'shadowseraphimon', x:1352, y:970, cls:'dark', name:'ShadowSeraphimon', lvl:'Mega / Virus', note:'Born of Seraphimon\'s concealed inner resentment.', wiki:'ShadowSeraphimon', img:'blackseraphimon', badge:{cls:'fa', text:'Fallen Angel', href:'../../groups/angelic.html#shadowseraphimon', title:'Angelic Digimon roster'}},
 
     // Jogress row, shared with Seraphimon's official fallen form and its V-Tamer Ultra form
     {id:'shakkoumon', x:1090, y:1210, cls:'dna', name:'Shakkoumon', lvl:'Ultimate', note:'Angemon + Ankylomon.', wiki:'Shakkoumon', img:'shakkoumon'},
@@ -289,12 +289,14 @@ DigiTree.mount({
 
     // Ultimate branches: Priest Mode and the 2020 holy-dragon alternative
     edge('magnaangemon','priest','mode','bottom','top',{shape:'vertical'});
-    edge('priest','seraphimon','normal','right','bottom',{toX:1390, points:[[1390,1069]]});
+    // Priest Mode enters Seraphimon from the left, in the outer lane of the gap it shares with
+    // the Daemon fall below
+    edge('priest','seraphimon','normal','right','left',{points:[[1306,1069],[1306,880]], toY:880});
     edge('magnaangemon','goldramon','normal','right','left',{fromY:785, points:[[1318,785],[1318,589]], label:'Adventure: 2020', lx:1318, ly:700});
 
     // Seraphimon: collective composition and corrupted variant
     edge('seraphimon','omnimonmerciful','dna');
-    edge('seraphimon','shadowseraphimon','dark','right','left',{fromY:870, points:[[1585,870],[1585,1069]], label:'Inner resentment', lx:1585, ly:950});
+    edge('seraphimon','shadowseraphimon','dark','bottom','top',{shape:'vertical', label:'Inner resentment', lx:1454, ly:949});
 
     // DNA / Jogress with Ankylomon (see panel)
     edge('angemon','shakkoumon','dna','bottom','left',{fromX:960, points:[[960,1309]]});
@@ -310,14 +312,14 @@ DigiTree.mount({
     // Demon Lord branch: the official fall from Seraphimon (its profile names Daemon as its
     // fallen form), the V-Tamer Ultra form, which absorbs Arcadiamon's data, and the Adventure 02
     // mantled look (editorial variant, see the footer) right under Daemon
-    edge('seraphimon','daemon','dark','bottom','top',{shape:'vertical', fromX:1420, toX:1420, label:'Fell to the Dark Area', lx:1420, ly:1120});
+    edge('seraphimon','daemon','dark','left','left',{fromY:905, points:[[1323,905],[1323,1309]], toY:1309, label:'Fell to the Dark Area', lx:1323, ly:1189});
     edge('daemon','daemonultra','dna','top','top',{fromX:1500, toX:1670, points:[[1500,1189],[1670,1189]], label:'V-Tamer', lx:1585, ly:1189});
     edge('daemon','daemonmantled','variant','bottom','top',{shape:'vertical'});
 
-    // connector to the Armor panel (appendix, not a normal edge): down the empty In-Training
-    // column, along the gap kept between the last row and the panels, and down past the right
-    // of the left-aligned Jogress and composition panels
-    edge('patamon','armor-panel','armor','bottom','top',{fromX:600, toX:1419, points:[[600,950],[442,950],[442,1909],[1419,1909]], width:3});
+    // connector to the Armor panel (appendix, not a normal edge): down the lane left of the
+    // Rookie column, along the gap kept between the last row and the panels, and down past the
+    // right of the left-aligned Jogress and composition panels
+    edge('patamon','armor-panel','armor','bottom','top',{fromX:600, toX:1419, points:[[600,950],[537,950],[537,1909],[1419,1909]], width:3});
     edge('armor-pegasusmon','armor-pegasusmonx','x','right','left',{width:3});
   }
 });
