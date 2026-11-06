@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:2122px; height:1888px; }
+  .infographic { width:2122px; height:1904px; }
   .columns { top:200px; }
   .jogress-panel { top:1190px; width:480px; }
   .armor-panel { top:1545px; width:2038px; }
@@ -22,7 +22,7 @@
   <div class="infographic" id="canvas">
     <div class="title">
       <h1>Veemon: evolution tree</h1>
-      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega -> Ultra hierarchy, with Armor, DNA/Jogress, Mode Change, Dark/Virus and X-Digivolution branches.</div>
+      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega -> Ultra hierarchy, with Armor, DNA/Jogress, Mode Change, Dark/Virus and X-Digivolution branches and the Veedramon variant line.</div>
     </div>
 
     <div class="legend">
@@ -32,14 +32,14 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 2122 1888" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 2122 1904" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
     <section class="jogress-panel" id="jogress-panel">
       <div class="jogress-panel-title">
         <h2>Paildramon / Dinobeemon: Jogress partner</h2>
-        <span>Stingmon + ExVeemon = Paildramon or Dinobeemon</span>
+        <span>ExVeemon + Stingmon = Paildramon or Dinobeemon</span>
       </div>
       <div class="jogress-body">
         <a class="jogress-card" href="https://digimon.fandom.com/wiki/Stingmon" target="_blank">
@@ -134,7 +134,7 @@
       </div>
     </section>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book and Wikimon. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger.</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book and Wikimon. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. ExVeemon's profile calls Veedramon its derivative species, so the tree draws Veedramon as ExVeemon's variant; its line up to UlforceVeedramon Future Mode is Zeromaru's in V-Tamer. Only a game links Veedramon to RedVeedramon, which it becomes at the peak of anger; the tree keeps the link.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -151,7 +151,8 @@ DigiTree.mount({
     ['mode','Mode Change'],
     ['dark','Dark / Virus'],
     ['dna','DNA / Jogress'],
-    ['x','X-Digivolution']
+    ['x','X-Digivolution'],
+    ['variant','Variant / subspecies']
   ],
   columns: [
     [42,'Fresh'],[304,'In-Training'],[566,'Rookie'],[828,'Champion'],
@@ -162,19 +163,19 @@ DigiTree.mount({
     {id:'demiveemon', x:304, y:730, cls:'normal', name:'DemiVeemon', lvl:'In-Training', note:'Baby Dragon.', wiki:'DemiVeemon', img:'chibimon'},
     {id:'veemon', x:566, y:730, cls:'normal', name:'Veemon', lvl:'Rookie', note:'Main branching point.', wiki:'Veemon', img:'v-mon'},
 
-    {id:'veedramon', x:828, y:250, cls:'normal', name:'Veedramon', lvl:'Champion', note:'V-dramon branch.', wiki:'Veedramon', img:'v-dramon'},
-    {id:'aeroveedramon', x:1090, y:250, cls:'normal', name:'AeroVeedramon', lvl:'Ultimate', note:'Veteran Veedramon.', wiki:'AeroVeedramon', img:'earov-dramon'},
-    {id:'ulforce', x:1352, y:250, cls:'normal', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#ulforceveedramon', title:'Royal Knights roster'}, name:'UlforceVeedramon', lvl:'Mega', note:'The fastest of the Royal Knights.', wiki:'UlforceVeedramon', img:'ulforcevdramon'},
-    {id:'future', x:1614, y:250, cls:'mode', name:'UlforceVeedramon Future Mode', lvl:'Ultra', note:'Mode Change (Digimental Code-F).', wiki:'UlforceVeedramon_Future_Mode', img:'https://wikimon.net/images/b/b7/Alforcevdramon_zero_superultimate.jpg'},
+    {id:'redvee', x:828, y:250, cls:'dark', name:'RedVeedramon', lvl:'Champion', note:'Red counterpart of Veedramon.', wiki:'RedVeedramon', img:'https://wikimon.net/images/7/77/Red_V-dramon_N0.png'},
+    {id:'ulforcex', x:1352, y:250, cls:'x', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#ulforceveedramon', title:'Royal Knights roster'}, name:'UlforceVeedramon X', lvl:'Mega / X', note:'X-Antibody form.', wiki:'UlforceVeedramon_X', img:'ulforcevdramon_x'},
 
-    {id:'redvee', x:828, y:490, cls:'dark', name:'RedVeedramon', lvl:'Champion', note:'Rage peak of the dark line.', wiki:'RedVeedramon', img:'https://wikimon.net/images/7/77/Red_V-dramon_N0.png'},
-    {id:'ulforcex', x:1352, y:490, cls:'x', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#ulforceveedramon', title:'Royal Knights roster'}, name:'UlforceVeedramon X', lvl:'Mega / X', note:'X-Antibody form.', wiki:'UlforceVeedramon_X', img:'ulforcevdramon_x'},
+    {id:'veedramon', x:828, y:490, cls:'variant', name:'Veedramon', lvl:'Champion', note:'Said to be a derivative species of ExVeemon.', wiki:'Veedramon', img:'v-dramon'},
+    {id:'aeroveedramon', x:1090, y:490, cls:'normal', name:'AeroVeedramon', lvl:'Ultimate', note:'Veteran Veedramon.', wiki:'AeroVeedramon', img:'earov-dramon'},
+    {id:'ulforce', x:1352, y:490, cls:'normal', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#ulforceveedramon', title:'Royal Knights roster'}, name:'UlforceVeedramon', lvl:'Mega', note:'The fastest of the Royal Knights.', wiki:'UlforceVeedramon', img:'ulforcevdramon'},
+    {id:'future', x:1614, y:490, cls:'mode', name:'UlforceVeedramon Future Mode', lvl:'Ultra', note:'Digimental form (V-Tamer).', wiki:'UlforceVeedramon_Future_Mode', img:'https://wikimon.net/images/b/b7/Alforcevdramon_zero_superultimate.jpg'},
 
-    {id:'exveemon', x:828, y:730, cls:'normal', name:'ExVeemon', lvl:'Champion', note:'Veedramon purebred.', wiki:'ExVeemon', img:'xv-mon'},
+    {id:'exveemon', x:828, y:730, cls:'normal', name:'ExVeemon', lvl:'Champion', note:'Gained Veemon\'s original power.', wiki:'ExVeemon', img:'xv-mon'},
     {id:'paildramon', x:1090, y:730, cls:'dna', name:'Paildramon', lvl:'Ultimate', note:'ExVeemon + Stingmon.', wiki:'Paildramon', img:'paildramon'},
     {id:'imperialdm', x:1352, y:730, cls:'normal', name:'Imperialdramon Dragon Mode', lvl:'Mega', note:'Dragon form.', wiki:'Imperialdramon_Dragon_Mode', img:'imperialdramondragonmode'},
     {id:'imperialfm', x:1614, y:730, cls:'mode', name:'Imperialdramon Fighter Mode', lvl:'Mega', note:'Mode Change: Dragon to Fighter.', wiki:'Imperialdramon_Fighter_Mode', img:'imperialdramonfightermode'},
-    {id:'paladin', x:1876, y:730, cls:'mode', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#imperialdramon-paladin-mode', title:'Royal Knights roster'}, name:'Imperialdramon Paladin Mode', lvl:'Ultra', note:'Omnimon data / Omni Sword.', wiki:'Imperialdramon_Paladin_Mode', img:'imperialdramonpaladinmode'},
+    {id:'paladin', x:1876, y:730, cls:'mode', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#imperialdramon-paladin-mode', title:'Royal Knights roster'}, name:'Imperialdramon Paladin Mode', lvl:'Ultra', note:'Gained Omnimon\'s power.', wiki:'Imperialdramon_Paladin_Mode', img:'imperialdramonpaladinmode'},
 
     {id:'dinobeemon', x:1090, y:970, cls:'dna', name:'Dinobeemon', lvl:'Ultimate', note:'Stingmon + ExVeemon; insect side dominates.', wiki:'Dinobeemon', img:'dinobeemon'},
     {id:'imperialblackdm', x:1352, y:970, cls:'dark', name:'Imperialdramon Dragon Mode (Black)', lvl:'Mega / Virus', note:'Uncontrolled excess of power.', wiki:'Imperialdramon_Dragon_Mode_(Black)', img:'imperialdramon_dragon_black'},
@@ -183,22 +184,24 @@ DigiTree.mount({
   edges: function (edge) {
     edge('chibomon','demiveemon','normal');
     edge('demiveemon','veemon','normal');
-    edge('veemon','veedramon','normal','top','left');
+    edge('veemon','exveemon','normal');
+
+    // Veedramon: a derivative species of ExVeemon (variant), with its V-Tamer line
+    edge('exveemon','veedramon','variant','top','bottom',{shape:'vertical'});
     edge('veedramon','aeroveedramon','normal');
     edge('aeroveedramon','ulforce','normal');
     edge('ulforce','future','mode');
-    edge('ulforce','ulforcex','x','bottom','top',{shape:'vertical'});
-    edge('veemon','redvee','dark','right','left', {fromY:800, label:'Loss of control', lx:799, ly:710});
-    edge('veemon','exveemon','normal');
+    edge('ulforce','ulforcex','x','top','bottom',{shape:'vertical'});
+    edge('veedramon','redvee','dark','top','bottom',{shape:'vertical', label:'Loss of control', lx:930, ly:469});
 
     edge('exveemon','paildramon','dna');
     edge('exveemon','dinobeemon','dna');
 
     edge('paildramon','imperialdm','normal');
     edge('imperialdm','imperialfm','mode');
-    edge('imperialfm','paladin','normal');
+    edge('imperialfm','paladin','mode');
     edge('imperialdm','imperialblackdm','dark','bottom','top', {shape:'vertical', label:'Loss of control', lx:1454, ly:949});
-    edge('imperialblackdm','imperialblackfm','dark');
+    edge('imperialblackdm','imperialblackfm','mode');
 
     // connector to the Armor panel (kept: the panel is an appendix, not a normal edge)
     edge('veemon','armor-panel','armor','bottom','top', {shape:'vertical', toX:668, width:3});

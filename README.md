@@ -21,7 +21,7 @@ then lists the generations, the atlas pages or the group rosters:
   - [gatomon.html](src/evolution-lines/gen-1-adventure/gatomon.html) - Gatomon line (X-Antibody forms, Ophanimon and its Falldown Mode, the Junomon alternate Mega, Silphymon Jogress, BlackGatomon and its Uver. form, Mastemon holy-dark fusion, SkullKnightmon corruption, Armor Digivolutions, collective composition).
 - `src/evolution-lines/gen-2-adventure-02/` - Digimon Adventure 02:
   - [index.html](src/evolution-lines/gen-2-adventure-02/index.html) - DigiDestined selection screen (by Digi-Egg; the Patamon and Gatomon cards link into the gen-1 trees, which already carry their Armor Digivolutions).
-  - [veemon.html](src/evolution-lines/gen-2-adventure-02/veemon.html) - Veemon line (includes the Armor branch).
+  - [veemon.html](src/evolution-lines/gen-2-adventure-02/veemon.html) - Veemon line (Paildramon and Dinobeemon Jogresses, Imperialdramon Mode Changes and its Black forms, the Veedramon variant line from V-Tamer with RedVeedramon, Armor Digivolutions).
   - [hawkmon.html](src/evolution-lines/gen-2-adventure-02/hawkmon.html) - Hawkmon line (Garudamon and HippoGryphonmon alternate Ultimates, Silphymon Jogress and its Megas, Varodurumon Jogress, Armor Digivolutions).
   - [armadillomon.html](src/evolution-lines/gen-2-adventure-02/armadillomon.html) - Armadillomon line (Brachiomon alternate Ultimate, Shakkoumon Jogress up to Vikemon and SlashAngemon, Armor Digivolutions).
   - [wormmon.html](src/evolution-lines/gen-2-adventure-02/wormmon.html) - Wormmon line (Paildramon and Dinobeemon Jogresses, Imperialdramon Mode Changes, JewelBeemon branch, Hudiemon side form, Armor Digivolutions).
@@ -349,14 +349,15 @@ Every arrow is colored by the digivolution trigger. This is the single vocabular
 | Armor Digivolution | amber | Armor evolution via a Digi-Egg. | veemon, hawkmon, armadillomon, wormmon, patamon, gatomon, terriermon |
 | Bond Evolution | pink | Bond-driven evolution. | agumon, gabumon |
 | Burst Mode | gold | Burst Digivolution. | agumon, palmon |
-| Variant / subspecies | silver | Not an evolution: the target is a separate species or subspecies of the source ("a separate species of Agumon", "a subspecies of Greymon"). | agumon, gabumon, biyomon, palmon, patamon |
+| Variant / subspecies | silver | Not an evolution: the target is a separate species or subspecies of the source ("a separate species of Agumon", "a subspecies of Greymon"). | agumon, gabumon, biyomon, palmon, patamon, veemon |
 | Ancestral link | grey (dotted, no arrowhead) | Lore ancestry, not an evolution: a Legendary Warrior linked to the root of the line it spawned. | agumon, gabumon, tentomon, gen-4-frontier |
 
 A form the Reference Book describes as a separate species or a subspecies (`SnowAgumon`,
 `Agumon Expert`, `Gaiomon`) uses **Variant / subspecies** and `cls:'variant'` (silver pill),
 so it never reads as an evolution. The edge starts at the species the profile names, even when
-that is another level (`Gaiomon`, "a subspecies of Greymon", hangs from Greymon). A
-subspecies reached by digivolution keeps **Normal evolution** (`BlitzGreymon`, a subspecies of
+that is another level (`Gaiomon`, "a subspecies of Greymon", hangs from Greymon), or when only
+the other Digimon's profile names it (`Veedramon`, which ExVeemon's profile calls its derivative
+species, hangs from ExVeemon). A subspecies reached by digivolution keeps **Normal evolution** (`BlitzGreymon`, a subspecies of
 WarGreymon, digivolves from MetalGreymon Alterous Mode in Adventure: 2020), and one reached by
 absorbing other Digimon is a **DNA / Jogress** (`HiMachineDramon`, Machinedramon after
 absorbing a SkullScorpionmon army in Digimon Fusion episode 14), and the Jogress panel carries
@@ -427,7 +428,7 @@ The on-image legend lists only the triggers that the file actually uses.
 - The Adventure 02 partners (Veemon, Hawkmon, Armadillomon, Wormmon, Patamon, Gatomon) and Terriermon add: Armor Digivolution.
 - Agumon adds: Bond Evolution, Burst Mode, Variant / subspecies.
 - Gabumon adds: Bond Evolution, Variant / subspecies.
-- Biyomon and Patamon add: Variant / subspecies.
+- Biyomon, Patamon and Veemon add: Variant / subspecies.
 - Palmon adds: Burst Mode, Variant / subspecies.
 - Agumon, Gabumon and Tentomon add: Ancestral link.
 - Frontier relabels the shared colors: Spirit Evolution, Slide Evolution,
@@ -714,7 +715,9 @@ the footer:
   and Mastemon fuses an Angel with a Dark Angel);
 - BanchoLeomon on leomon: only games draw Leomon -> BanchoLeomon and its profile never names
   Leomon, but it is a Leomon that earned the Bancho title, the way BanchoLillymon's profile
-  ties it to Lillymon.
+  ties it to Lillymon;
+- RedVeedramon on veemon, drawn as Veedramon's Dark evolution: only Digimon World: Next Order
+  links them (Veedramon becomes it at the peak of anger), and no other source reaches it.
 
 The sources are:
 
