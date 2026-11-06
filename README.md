@@ -345,7 +345,7 @@ Every arrow is colored by the digivolution trigger. This is the single vocabular
 | Armor Digivolution | amber | Armor evolution via a Digi-Egg. | veemon, hawkmon, armadillomon, wormmon, patamon, gatomon, terriermon |
 | Bond Evolution | pink | Bond-driven evolution. | agumon, gabumon |
 | Burst Mode | gold | Burst Digivolution. | agumon, palmon |
-| Variant / subspecies | silver | Not an evolution: the target is a separate species or subspecies of the source ("a separate species of Agumon", "a subspecies of Greymon"). | agumon, gabumon, biyomon, palmon |
+| Variant / subspecies | silver | Not an evolution: the target is a separate species or subspecies of the source ("a separate species of Agumon", "a subspecies of Greymon"). | agumon, gabumon, biyomon, palmon, patamon |
 | Ancestral link | grey (dotted, no arrowhead) | Lore ancestry, not an evolution: a Legendary Warrior linked to the root of the line it spawned. | agumon, gabumon, tentomon, gen-4-frontier |
 
 A form the Reference Book describes as a separate species or a subspecies (`SnowAgumon`,
@@ -417,7 +417,7 @@ The on-image legend lists only the triggers that the file actually uses.
 - The Adventure 02 partners (Veemon, Hawkmon, Armadillomon, Wormmon, Patamon, Gatomon) and Terriermon add: Armor Digivolution.
 - Agumon adds: Bond Evolution, Burst Mode, Variant / subspecies.
 - Gabumon adds: Bond Evolution, Variant / subspecies.
-- Biyomon adds: Variant / subspecies.
+- Biyomon and Patamon add: Variant / subspecies.
 - Palmon adds: Burst Mode, Variant / subspecies.
 - Agumon, Gabumon and Tentomon add: Ancestral link.
 - Frontier relabels the shared colors: Spirit Evolution, Slide Evolution,
@@ -693,7 +693,9 @@ the footer:
   of Botamon, and the Fresh forms mirror the partners, Agumon's line (Tai's) starting at Botamon
   and Gatomon's (Kari's) at YukimiBotamon;
 - Saberdramon on biyomon, drawn as a variant of Birdramon: no profile links them, but it is
-  Birdramon in dark flames.
+  Birdramon in dark flames;
+- Tsukaimon on patamon, drawn as a variant of Patamon: the Reference Book only says it looks
+  like Patamon, and only the encyclopedia of the Digimon Life mobile game calls it a subspecies.
 
 The sources are:
 
