@@ -18,7 +18,7 @@ then lists the generations, the atlas pages or the group rosters:
   - [palmon.html](src/evolution-lines/gen-1-adventure/palmon.html) - Palmon line (X-Antibody forms, the Aruraumon variant, the Adventure: 2020 Ponchomon, BanchoLillymon, Rosemon Burst Mode, collective composition).
   - [gomamon.html](src/evolution-lines/gen-1-adventure/gomamon.html) - Gomamon line (Gomamon X branch, collective composition).
   - [patamon.html](src/evolution-lines/gen-1-adventure/patamon.html) - Patamon line (Priest Mode and Goldramon 2020 branches, the Devimon and Daemon falls, the Adventure: 2020 Devimon line from Tsukaimon, Shakkoumon Jogress, Armor Digivolutions, collective composition).
-  - [gatomon.html](src/evolution-lines/gen-1-adventure/gatomon.html) - Gatomon line (X-Antibody forms, Ophanimon and its Falldown Mode, Silphymon Jogress, BlackGatomon and its Uver. form, SkullKnightmon corruption, Armor Digivolutions, collective composition).
+  - [gatomon.html](src/evolution-lines/gen-1-adventure/gatomon.html) - Gatomon line (X-Antibody forms, Ophanimon and its Falldown Mode, the Junomon alternate Mega, Silphymon Jogress, BlackGatomon and its Uver. form, Mastemon holy-dark fusion, SkullKnightmon corruption, Armor Digivolutions, collective composition).
 - `src/evolution-lines/gen-2-adventure-02/` - Digimon Adventure 02:
   - [index.html](src/evolution-lines/gen-2-adventure-02/index.html) - DigiDestined selection screen (by Digi-Egg; the Patamon and Gatomon cards link into the gen-1 trees, which already carry their Armor Digivolutions).
   - [veemon.html](src/evolution-lines/gen-2-adventure-02/veemon.html) - Veemon line (includes the Armor branch).
@@ -553,7 +553,7 @@ that list it, Lilithmon and Belphemon Rage Mode link between the Demon Lords and
 Evil, and Enmamon's `Rules Yomi` badge points at the Shambala page. Badge classes, all in
 `digivolution.css`: `.rk`, `.lw`, `.fgd`, `.vw`, `.cd`, `.aa`, `.fa`, `.dl`, `.fs` (Four
 Sovereigns), `.moe` (Mark of Evil), `.db` (D-Brigade), `.bc` (Bancho), `.ul` (underworld
-authority).
+authority), `.ox` (Olympos XII).
 
 ### Tamers: Biomerge and the D-Ark lines
 
@@ -695,7 +695,11 @@ the footer:
 - Saberdramon on biyomon, drawn as a variant of Birdramon: no profile links them, but it is
   Birdramon in dark flames;
 - Tsukaimon on patamon, drawn as a variant of Patamon: the Reference Book only says it looks
-  like Patamon, and only the encyclopedia of the Digimon Life mobile game calls it a subspecies.
+  like Patamon, and only the encyclopedia of the Digimon Life mobile game calls it a subspecies;
+- Junomon, Mastemon and LadyDevimon on gatomon: only games draw Angewomon -> Junomon,
+  Angewomon + LadyDevimon -> Mastemon and BlackGatomon -> LadyDevimon, and no other source
+  reaches these Digimon (the Reference Book only says BlackGatomon digivolves into Dark Angels
+  and Mastemon fuses an Angel with a Dark Angel).
 
 The sources are:
 
