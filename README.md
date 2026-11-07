@@ -113,6 +113,9 @@ cannot drift apart:
   site icon, a gold "D" on the navy tile. The `.ico` and the `.png` are rasterized from the
   `.svg`; redo them whenever it changes. Every page links all three in its `<head>`, right
   after the viewport `<meta>`, with the `../` prefix of its depth.
+- `og-image.svg` and `og-image.png` (1200x630) - the share image that link previews show for
+  every page: the favicon tile above the name and the landing page's kicker line. The `.png`
+  is rasterized from the `.svg` (see "Sharing and SEO").
 - the `evolution-lines/gen-*/<partner>.html` tree pages - **config only**: each `<link>`s
   the CSS and `<script src>`s the JS with a `../../` prefix (they sit two levels below the
   `src/` root), then passes its data. Per-page dimensions live in a small inline `<style>`
@@ -834,6 +837,32 @@ page with it; a slug that lands on a disambiguation page (`Justimon`) needs the 
   (Ultra), BanchoGolemon, PetitMamon, UltimateBrachiomon and the App Monsters cards.
 - Do not try to get around a source that blocks embedding (no user-agent or referrer
   tricks); switch to another source instead.
+
+## Sharing and SEO
+
+### Share image
+
+Every page shares one image, `src/og-image.png` (1200x630 PNG), drawn from
+`src/og-image.svg`: the favicon tile above the name Digidex and the landing page's kicker line,
+on the page background gradient. It carries no Bandai artwork. The layout is stacked and
+centered because WhatsApp, when it does not show the large preview, shows a small square
+thumbnail cut from the middle, and the tile and the name survive that cut. Keep the PNG small:
+WhatsApp is reported to drop images of 300 KB or more (no official limit is published); the
+current one is about 80 KB.
+
+To regenerate the PNG after changing the SVG (its text is set in Noto Sans, the font it was
+rendered with; a machine without it falls back to another sans-serif):
+
+```sh
+google-chrome --headless=new --hide-scrollbars --force-device-scale-factor=1 \
+  --window-size=1200,630 --screenshot=/tmp/og-image-raw.png "file://$PWD/src/og-image.svg"
+python3 -c "from PIL import Image; Image.open('/tmp/og-image-raw.png').convert('RGB').quantize(128, method=Image.Quantize.LIBIMAGEQUANT, dither=Image.Dither.FLOYDSTEINBERG).save('src/og-image.png', optimize=True)"
+```
+
+The 128-color palette with dithering keeps the gradients smooth (256 colors without dithering
+left bands on the gold glyph); Pillow needs libimagequant for it
+(`PIL.features.check_feature('libimagequant')`). Apps cache link previews: adding `?v=<n>` to a
+shared link forces a new one.
 
 ## Publishing (GitHub Pages)
 
