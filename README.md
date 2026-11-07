@@ -27,7 +27,7 @@ then lists the generations, the atlas pages or the group rosters:
   - [wormmon.html](src/evolution-lines/gen-2-adventure-02/wormmon.html) - Wormmon line (Paildramon and Dinobeemon Jogresses, Imperialdramon Mode Changes and its Black forms, the JewelBeemon branch up to BanchoStingmon, Armor Digivolutions).
 - `src/evolution-lines/gen-3-tamers/` - Digimon Tamers:
   - [index.html](src/evolution-lines/gen-3-tamers/index.html) - Tamers selection screen (by Biomerge / peak form).
-  - [guilmon.html](src/evolution-lines/gen-3-tamers/guilmon.html) - Guilmon line (Gallantmon Biomerge, the D-Ark's dark line up to ChaosGallantmon, Digital Hazard, X-Antibody forms, Data/Yellow variants).
+  - [guilmon.html](src/evolution-lines/gen-3-tamers/guilmon.html) - Guilmon line (Gallantmon Biomerge, the D-Ark's dark line up to ChaosGallantmon, Digital Hazard, X-Antibody forms, the Data (Yellow) variant line).
   - [renamon.html](src/evolution-lines/gen-3-tamers/renamon.html) - Renamon line (Sakuyamon Biomerge, the D-Ark's alternate line up to Kuzuhamon, X-Antibody forms, Maid Mode changes).
   - [terriermon.html](src/evolution-lines/gen-3-tamers/terriermon.html) - Terriermon line (MegaGargomon Biomerge, Black Digitron variants, the golden Rapidmon of the Digi-Egg of Destiny and its X form).
   - [cyberdramon.html](src/evolution-lines/gen-3-tamers/cyberdramon.html) - Cyberdramon line (Justimon Biomerge and its three arms, the D-Power line from Monodramon, the Beatbreak branch, X-Antibody forms).
@@ -315,7 +315,7 @@ A card for a being DigimonWiki gives no Level (Grani, Gallantmon's steed) has no
 
 | Qualifier | Meaning |
 |---|---|
-| `Virus` | The Virus-attribute counterpart of a main (Vaccine) form on the same tree: e.g. `MetalGreymon (Virus)`, `BlackWarGreymon`, `Omnimon Zwart`, `Imperialdramon (Black)`. |
+| `Virus` | A Virus-attribute form of the tree's dark line, the forms reached by Dark / Virus edges: e.g. `MetalGreymon (Virus)`, `BlackWarGreymon`, `Imperialdramon (Black)`, `BlackGrowlmon`. It marks the dark line, not the attribute: the main line stays unmarked even when the Reference Book gives it Virus (Guilmon's), and so does a dark-line form the Reference Book gives as Vaccine (`Omnimon Zwart`, `Ophanimon Falldown Mode`). |
 | `X` | A named X-Antibody form: e.g. `WarGreymon X`, `Magnamon X`. |
 
 Combine as `Virus / X` for the X form of a Virus-line member
@@ -349,7 +349,7 @@ Every arrow is colored by the digivolution trigger. This is the single vocabular
 | Armor Digivolution | amber | Armor evolution via a Digi-Egg. | veemon, hawkmon, armadillomon, wormmon, patamon, gatomon, terriermon |
 | Bond Evolution | pink | Bond-driven evolution. | agumon, gabumon |
 | Burst Mode | gold | Burst Digivolution. | agumon, palmon |
-| Variant / subspecies | silver | Not an evolution: the target is a separate species or subspecies of the source ("a separate species of Agumon", "a subspecies of Greymon"). | agumon, gabumon, biyomon, palmon, patamon, veemon |
+| Variant / subspecies | silver | Not an evolution: the target is a separate species or subspecies of the source ("a separate species of Agumon", "a subspecies of Greymon"). | agumon, gabumon, biyomon, palmon, patamon, veemon, guilmon |
 | Ancestral link | grey (dotted, no arrowhead) | Lore ancestry, not an evolution: a Legendary Warrior linked to the root of the line it spawned. | agumon, gabumon, tentomon, gen-4-frontier |
 
 A form the Reference Book describes as a separate species or a subspecies (`SnowAgumon`,
@@ -379,9 +379,8 @@ Anchors come from the cards' layout position, so a hovered card never skews its 
 - An edge runs in a lane or row gap, never under a card or panel, and crosses no other edge
   unless no route can avoid it, and a card may move to clear one: on agumon, Gaiomon and
   Agumon (Bond of Bravery) sit above the Virus and Data Squad lines, and on gabumon the Bond of
-  Friendship sits above the Virus line, so their long edges never cross them (on guilmon, `Biomerge with Takato` crosses the Growlmon X and WarGrowlmon X edges, because
-  every row gap between Guilmon and Gallantmon carries a vertical edge). A single crossing is
-  preferred to a detour around the canvas edge.
+  Friendship sits above the Virus line, so their long edges never cross them. A single
+  crossing is preferred to a detour around the canvas edge.
 - A run alone in a row gap or lane sits on its centerline (21px below the card above, 29px
   past the card's side); ports and lanes are split only where edges compete for the space.
 - Edges of the same trigger may share a trunk (a fan, or two Spirits merging into a Fusion).
@@ -428,7 +427,7 @@ The on-image legend lists only the triggers that the file actually uses.
 - The Adventure 02 partners (Veemon, Hawkmon, Armadillomon, Wormmon, Patamon, Gatomon) and Terriermon add: Armor Digivolution.
 - Agumon adds: Bond Evolution, Burst Mode, Variant / subspecies.
 - Gabumon adds: Bond Evolution, Variant / subspecies.
-- Biyomon, Patamon and Veemon add: Variant / subspecies.
+- Biyomon, Patamon, Veemon and Guilmon add: Variant / subspecies.
 - Palmon adds: Burst Mode, Variant / subspecies.
 - Agumon, Gabumon and Tentomon add: Ancestral link.
 - Frontier relabels the shared colors: Spirit Evolution, Slide Evolution,
@@ -500,7 +499,8 @@ that the BlackWarGreymon of Adventure 02 was built by Arukenimon from 100 Contro
 Every X form hangs from its base form by a vertical X-Digivolution edge (Gatomon -> Gatomon X,
 Omnimon -> Omnimon X). The X forms of a line are not chained to one another, even where a
 source shows the step (Digimon Chronicle X has Gatomon X -> Angewomon X): an X form follows the
-line of its base form, so the chain is implied and the extra edges add nothing.
+line of its base form, so the chain is implied and the extra edges add nothing. Megidramon X on
+guilmon is the one X form beside its base, since cards fill Megidramon's column above and below.
 
 ### Cross-page navigation
 
@@ -568,12 +568,13 @@ authority), `.ox` (Olympos XII).
 
 ### Tamers: Biomerge and the D-Ark lines
 
-- **Biomerge** (Matrix Evolution): in the anime the Rookie merges with its Tamer straight into
-  the Mega. The edge is a Normal evolution from the Rookie to the Mega, labeled
-  `Biomerge with <Tamer>`, and runs along the row gap above the main line, between ports
-  that clear the X-Antibody edges. The footer says it is drawn as a Normal evolution. The
-  V-pet's step from the Ultimate into the same Mega is not drawn, since it would add a second
-  arrow into the Mega; the footer mentions it instead (`renamon.html`, `guilmon.html`).
+- **Biomerge** (Matrix Evolution): the partner merges with its Tamer into the Mega. Tamers
+  episode 45 shows it from the Ultimate (WarGrowlmon, Taomon, Rapidmon), as the D-Ark and
+  D-Power do, and Cyberdramon is the only form Ryo's partner merges from. The edge is a Normal
+  evolution from the Ultimate to the Mega, labeled `Biomerge with <Tamer>`, and arches over the
+  row gap above the main line, between ports that clear the X-Antibody edges. Most episodes
+  merge the Rookie straight into the Mega instead; like a Warp Digivolution, that jump gets no
+  arrow of its own, and the footer mentions it.
 - **D-Ark / D-Power alternate line**: the V-pet picks one form per level by a condition, so
   any Champion of the line can lead to any Ultimate. The alternate forms are drawn as their
   own chain, one edge per level, in a row under the main line (Renamon -> Youkomon -> Doumon

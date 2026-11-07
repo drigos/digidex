@@ -20,7 +20,7 @@
   <div class="infographic" id="canvas">
     <div class="title">
       <h1>Guilmon: evolution tree</h1>
-      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega -> Ultra hierarchy, with the Gallantmon Biomerge, the D-Ark's dark line (BlackGrowlmon, BlackWarGrowlmon, ChaosGallantmon), the Digital Hazard (Megidramon), the X-Antibody forms, the Data (Yellow) variants and the Crimson Mode change.</div>
+      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega -> Ultra hierarchy, with the Gallantmon Biomerge, the D-Ark's dark line (BlackGrowlmon, BlackWarGrowlmon, ChaosGallantmon), the Digital Hazard (Megidramon), the X-Antibody forms, the Data (Yellow) variant line and the Crimson Mode change.</div>
     </div>
 
     <div class="legend">
@@ -34,7 +34,7 @@
     <div id="labels"></div>
     <div id="nodes"></div>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book and Wikimon. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. Biomerge (Matrix Evolution): Guilmon and Takato merge straight into Gallantmon, drawn as a Normal evolution; the D-Ark V-pet also reaches it from WarGrowlmon. BlackGrowlmon, BlackWarGrowlmon and ChaosGallantmon are the D-Ark's dark line. Grani is an external support unit / steed, not an evolution stage. One theory holds that Megidramon and ChaosGallantmon are the same being seen as either a dark dragon or a dark knight; this is drawn as a faint two-way link, not a path.</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book and Wikimon. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. Biomerge (Matrix Evolution): WarGrowlmon and Takato merge into Gallantmon in Tamers episode 45, as in the D-Ark V-pet, drawn as a Normal evolution; most episodes merge Guilmon straight into it, a jump with no arrow of its own. BlackGrowlmon, BlackWarGrowlmon and ChaosGallantmon are the D-Ark's dark line. Grani is a Flying Dragon machine that Gallantmon pilots, not an evolution stage. One theory holds that Megidramon and ChaosGallantmon are the same being seen as either a dark dragon or a dark knight; this is drawn as a faint two-way link, not a path.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -49,7 +49,8 @@ DigiTree.mount({
     ['normal','Normal evolution'],
     ['x','X-Digivolution'],
     ['mode','Mode Change'],
-    ['dark','Dark / Virus']
+    ['dark','Dark / Virus'],
+    ['variant','Variant / subspecies']
   ],
   columns: [
     [42,'Fresh'],[304,'In-Training'],[566,'Rookie'],[828,'Champion'],
@@ -61,22 +62,22 @@ DigiTree.mount({
     {id:'growlmonx', x:828, y:250, cls:'x', name:'Growlmon X', lvl:'Champion / X', note:'X-Antibody form.', wiki:'Growlmon_X', img:'growmon_x'},
     {id:'wargrowlmonx', x:1090, y:250, cls:'x', name:'WarGrowlmon X', lvl:'Ultimate / X', note:'X-Antibody form.', wiki:'WarGrowlmon_X', img:'megalogrowmon_x'},
     {id:'gallantmonx', x:1352, y:250, cls:'x', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#gallantmon', title:'Royal Knights roster'}, name:'Gallantmon X', lvl:'Mega / X', note:'X-Antibody Royal Knight.', wiki:'Gallantmon_X', img:'dukemon_x'},
-    {id:'grani', x:1614, y:250, cls:'mode', name:'Grani', note:'External factor / Gallantmon steed.', wiki:'Grani', img:'https://wikimon.net/images/1/1a/Grani.jpg'},
+    {id:'grani', x:1614, y:250, cls:'mode', name:'Grani', note:'Flying Dragon machine Gallantmon pilots.', wiki:'Grani', img:'https://wikimon.net/images/1/1a/Grani.jpg'},
 
     // main spine (classic Guilmon line)
     {id:'jyarimon', x:42, y:490, cls:'normal', name:'Jyarimon', lvl:'Fresh', note:'Initial form of the line.', wiki:'Jyarimon', img:'jyarimon'},
-    {id:'gigimon', x:304, y:490, cls:'normal', name:'Gigimon', lvl:'In-Training', note:'Baby dragon.', wiki:'Gigimon', img:'gigimon'},
+    {id:'gigimon', x:304, y:490, cls:'normal', name:'Gigimon', lvl:'In-Training', note:'Digivolves into Dragon types.', wiki:'Gigimon', img:'gigimon'},
     {id:'guilmon', x:566, y:490, cls:'normal', name:'Guilmon', lvl:'Rookie', note:'Main branching point; carries the Digital Hazard.', wiki:'Guilmon', img:'guilmon'},
-    {id:'growlmon', x:828, y:490, cls:'normal', name:'Growlmon', lvl:'Champion', note:'Classic Growlmon branch.', wiki:'Growlmon', img:'growmon'},
-    {id:'wargrowlmon', x:1090, y:490, cls:'normal', name:'WarGrowlmon', lvl:'Ultimate', note:'Cyborg dragon.', wiki:'WarGrowlmon', img:'megalogrowmon'},
+    {id:'growlmon', x:828, y:490, cls:'normal', name:'Growlmon', lvl:'Champion', note:'Known as the "Deep Crimson Dragon".', wiki:'Growlmon', img:'growmon'},
+    {id:'wargrowlmon', x:1090, y:490, cls:'normal', name:'WarGrowlmon', lvl:'Ultimate', note:'Also known as a "Giant Growlmon".', wiki:'WarGrowlmon', img:'megalogrowmon'},
     {id:'gallantmon', x:1352, y:490, cls:'normal', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#gallantmon', title:'Royal Knights roster'}, name:'Gallantmon', lvl:'Mega', note:'Biomerge of Guilmon and Takato.', wiki:'Gallantmon', img:'dukemon'},
-    {id:'crimson', x:1614, y:490, cls:'mode', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#gallantmon', title:'Royal Knights roster'}, name:'Gallantmon Crimson Mode', lvl:'Ultra', note:'Mode Change with Grani.', wiki:'Gallantmon_Crimson_Mode', img:'dukemoncrimsonmode'},
+    {id:'crimson', x:1614, y:490, cls:'mode', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#gallantmon', title:'Royal Knights roster'}, name:'Gallantmon Crimson Mode', lvl:'Ultra', note:'Hidden form in crimson armor.', wiki:'Gallantmon_Crimson_Mode', img:'dukemoncrimsonmode'},
 
-    // Data (Yellow) variants + Digital Hazard (row 2)
-    {id:'growlmonyellow', x:828, y:730, cls:'normal', name:'Growlmon (Yellow)', lvl:'Champion', note:'Data-attribute variant.', wiki:'Growlmon_(Yellow)', img:'growmon_orange'},
-    {id:'wargrowlmonyellow', x:1090, y:730, cls:'normal', name:'WarGrowlmon (Yellow)', lvl:'Ultimate', note:'Data-attribute variant.', wiki:'WarGrowlmon_(Yellow)', img:'megalograwmon_orange'},
-    {id:'megidramon', x:1352, y:730, cls:'dark', badge:{cls:'fgd', text:'Four Great Dragons', href:'../../groups/four-great-dragons.html#megidramon', title:'Four Great Dragons roster'}, name:'Megidramon', lvl:'Mega / Virus', note:'Evil Dragon born from the Digital Hazard running wild.', wiki:'Megidramon', img:'megidramon'},
-    {id:'megidramonx', x:1614, y:730, cls:'x', name:'Megidramon X', lvl:'Mega / Virus / X', note:'X-Antibody form.', wiki:'Megidramon_X', img:'megidramon_x'},
+    // Data (Yellow) variant line + Digital Hazard (row 2)
+    {id:'growlmonyellow', x:828, y:730, cls:'variant', name:'Growlmon (Yellow)', lvl:'Champion', note:'A Growlmon that became a Data type.', wiki:'Growlmon_(Yellow)', img:'growmon_orange'},
+    {id:'wargrowlmonyellow', x:1090, y:730, cls:'normal', name:'WarGrowlmon (Yellow)', lvl:'Ultimate', note:'From the Data type of Growlmon.', wiki:'WarGrowlmon_(Yellow)', img:'megalograwmon_orange'},
+    {id:'megidramon', x:1352, y:730, cls:'dark', badge:{cls:'fgd', text:'Four Great Dragons', href:'../../groups/four-great-dragons.html#megidramon', title:'Four Great Dragons roster'}, name:'Megidramon', lvl:'Mega / Virus', note:'Considered a Digital Hazard in itself.', wiki:'Megidramon', img:'megidramon'},
+    {id:'megidramonx', x:1614, y:730, cls:'x', badge:{cls:'fgd', text:'Four Great Dragons', href:'../../groups/four-great-dragons.html#megidramon', title:'Four Great Dragons roster'}, name:'Megidramon X', lvl:'Mega / Virus / X', note:'X-Antibody form.', wiki:'Megidramon_X', img:'megidramon_x'},
 
     // the D-Ark's dark line (row 3)
     {id:'blackgrowlmon', x:828, y:970, cls:'dark', name:'BlackGrowlmon', lvl:'Champion / Virus', note:'Said to be Growlmon\'s original form.', wiki:'BlackGrowlmon', img:'blackgrowmon'},
@@ -92,10 +93,8 @@ DigiTree.mount({
     edge('gallantmon','crimson','mode');
     edge('grani','crimson','mode','bottom','top',{shape:'vertical'});
 
-    // Biomerge with Takato: Guilmon straight into Gallantmon, along the row gap above the line;
-    // it crosses the Growlmon X and WarGrowlmon X stubs, since every row gap between the two
-    // columns carries a vertical edge
-    edge('guilmon','gallantmon','normal','top','top',{fromX:710, toX:1410, laneY:469, label:'Biomerge with Takato', lx:1061, ly:469});
+    // Biomerge with Takato: WarGrowlmon into Gallantmon, along the row gap above the line
+    edge('wargrowlmon','gallantmon','normal','top','top',{fromX:1230, toX:1410, laneY:469, label:'Biomerge with Takato', lx:1320, ly:469});
 
     // X-Antibody forms
     edge('guilmon','guilmonx','x','top','bottom',{shape:'vertical'});
@@ -104,11 +103,11 @@ DigiTree.mount({
     edge('gallantmon','gallantmonx','x','top','bottom',{shape:'vertical'});
     edge('megidramon','megidramonx','x');
 
-    // Data (Yellow) variants
-    edge('growlmon','growlmonyellow','normal','bottom','top',{shape:'vertical'});
+    // Data (Yellow) variant line
+    edge('growlmon','growlmonyellow','variant','bottom','top',{shape:'vertical'});
     edge('growlmonyellow','wargrowlmonyellow','normal');
 
-    // Digital Hazard: WarGrowlmon loses control into Megidramon
+    // Digital Hazard: Takato's rage sets off WarGrowlmon's Digital Hazard (Tamers episode 34)
     edge('wargrowlmon','megidramon','dark','right','left',{fromY:650, label:'Digital Hazard', lx:1323, ly:709});
 
     // the D-Ark's dark line
