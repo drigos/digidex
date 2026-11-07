@@ -193,6 +193,11 @@ and it keeps its header, so the column scale reads without gaps; the footer says
 empty (the In-Training column on marineangemon, the Fusion column on grumblemon, arbormon,
 ranamon and mercurymon).
 
+The column after Mega is titled by what it holds: `Ultra` for Ultra cards only, `Other Megas`
+for Mega-level side forms only (the Justimon arms on cyberdramon), and `Ultra / Other Megas`
+when it holds both (agumon, guilmon). A later column for the forms those cards lead to stays
+untitled (the eighth column on agumon, gabumon, veemon and wormmon).
+
 ### Canvas width
 
 The canvas width is driven by the evolution line, not by the appendix panels. Nodes start
