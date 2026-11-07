@@ -188,6 +188,10 @@ bottoms line up across the whole graph. Frontier is the one exception: a node th
 Human and Beast rows (the Ancient, the Fusion, the Unified form and Susanoomon) sits half a
 pitch down (`y: 370`), centered between them, with no row-mates in its column.
 
+A level column between the first and last levels stays in place even when no card fills it,
+and it keeps its header, so the column scale reads without gaps; the footer says why it is
+empty (the In-Training column on marineangemon).
+
 ### Canvas width
 
 The canvas width is driven by the evolution line, not by the appendix panels. Nodes start
