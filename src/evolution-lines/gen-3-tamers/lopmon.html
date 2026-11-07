@@ -34,7 +34,7 @@
     <div id="labels"></div>
     <div id="nodes"></div>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. In Tamers, Suzie's Lopmon goes straight to Antylamon (Good); Turuiemon and the Cherubimon (Good) step come from Adventure: 2020 and from Suzie's line in the D-Power V-pet. The dark line is Willis's Lopmon, infected by a virus, in the Adventure 02 film.</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. In Tamers, Suzie's Lopmon warp-digivolves into Antylamon (Good), so the scene has no arrow; Turuiemon and the Cherubimon (Good) step come from Adventure: 2020 and from the D-Power V-pet's Lopmon line. The dark line is Willis's Lopmon, infected by a virus, in the Adventure 02 film.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -61,7 +61,7 @@ DigiTree.mount({
 
     // main line
     {id:'conomon', x:42, y:490, cls:'normal', name:'Conomon', lvl:'Fresh', note:'Sometimes born as a twin.', wiki:'Conomon', img:'cocomon'},
-    {id:'kokomon', x:304, y:490, cls:'normal', name:'Kokomon', lvl:'In-Training', note:'Gentle twin of Gummymon.', wiki:'Kokomon', img:'chocomon'},
+    {id:'kokomon', x:304, y:490, cls:'normal', name:'Kokomon', lvl:'In-Training', note:'Always hangs out with Gummymon.', wiki:'Kokomon', img:'chocomon'},
     {id:'lopmon', x:566, y:490, cls:'normal', name:'Lopmon', lvl:'Rookie', note:'Suzie\'s partner; main branching point.', wiki:'Lopmon', img:'lopmon'},
     {id:'turuiemon', x:828, y:490, cls:'normal', name:'Turuiemon', lvl:'Champion', note:'Martial artist of the mountains.', wiki:'Turuiemon', img:'turuiemon'},
     {id:'antylamongood', x:1090, y:490, cls:'normal', name:'Antylamon (Good)', lvl:'Ultimate', note:'Rabbit Deva, minion of Azulongmon.', wiki:'Antylamon_(Good)', img:'andiramon'},
@@ -82,9 +82,6 @@ DigiTree.mount({
     edge('lopmon','turuiemon','normal');
     edge('turuiemon','antylamongood','normal');
     edge('antylamongood','cherubimongood','normal');
-
-    // Tamers: Lopmon straight into Antylamon (Good), along the row gap above the line
-    edge('lopmon','antylamongood','normal','top','top',{fromX:710, toX:1192, laneY:469, label:'Tamers', lx:930, ly:469});
 
     // X-Antibody forms
     edge('lopmon','lopmonx','x','top','bottom',{shape:'vertical'});
