@@ -896,7 +896,12 @@ previews like any other; Google runs the JavaScript and indexes the cards.
   links would then resolve against the missing path, so it sets
   `<base href="https://digidex.martins.icu/">` before its favicon links and writes every link
   as if it sat at the `src/` root. Opened from disk, it loads its assets from the live site.
-  It carries `noindex`, no sharing tags, and stays out of the sitemap.
+  It carries `noindex`, no sharing tags, and stays out of the sitemap. The page is a joke in
+  the trees' own vocabulary: a three-card line drawn with the shared `.node`, `.level`,
+  `.edge-label` and legend styles, where the visitor's link (a wobbling Digi-Egg) falls
+  through a red Dark edge into a glitching 404 card, and a blue Normal edge leads to the
+  landing page. The art is inline SVG and text, with nothing from Bandai, and the shared
+  reduced-motion rule stops its animations.
 
 ### Share image
 
