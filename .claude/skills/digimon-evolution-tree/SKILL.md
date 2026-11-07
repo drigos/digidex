@@ -57,7 +57,11 @@ generation (create the folder if that generation has no page yet).
 3. Copy `veemon.html`/`agumon.html` into the target `src/evolution-lines/gen-*/` folder as
    the skeleton (same `<head>` links, stylesheet and favicons, with the `../../` asset prefix,
    empty `.legend-grid`, `.columns`, `#nodes`, empty `#edges` svg, `#labels`, appendix panels,
-   footer). Link the new page from its card in the generation `index.html`: that card also
+   footer). The `<head>` also carries the sharing and SEO tags (README "Sharing and SEO"):
+   copy them and rewrite `description` and `og:description` (the new subtitle condensed to at
+   most 160 characters, with no fact the page does not state), `og:title` (the new `<title>`),
+   and `canonical` and `og:url` (the new page's absolute URL).
+   Link the new page from its card in the generation `index.html`: that card also
    puts it in the generation pills the engine adds next to the `.backnav`. A card that links
    to another generation's tree adds `?gen=<its own folder>` to the href (README "Cross-page
    navigation").

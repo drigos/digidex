@@ -840,6 +840,48 @@ page with it; a slug that lands on a disambiguation page (`Justimon`) needs the 
 
 ## Sharing and SEO
 
+### Head tags
+
+Every page carries one block of sharing and search tags right after its `<title>`, which
+follows the favicon links, in this order:
+
+```html
+<meta name="description" content="<description>" />
+<link rel="canonical" href="https://digidex.martins.icu/<path>" />
+<meta name="theme-color" content="#06111f" />
+<meta property="og:site_name" content="Digidex" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="<title>" />
+<meta property="og:description" content="<description>" />
+<meta property="og:url" content="https://digidex.martins.icu/<path>" />
+<meta property="og:image" content="https://digidex.martins.icu/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:alt" content="The Digidex logo, a gold D on a navy tile, with the name Digidex and the line Evolution trees, cosmology &amp; group rosters" />
+<meta name="twitter:card" content="summary_large_image" />
+```
+
+- `description` and `og:description` hold the same text, unique per page and at most 160
+  characters, condensed from what the page already says: the subtitle of a tree, the hero
+  paragraph of any other page, led by the series name (the kicker) on a generation index. It
+  adds no fact; the "Relation sources" rules apply to it as to any other text.
+- `og:title` repeats the `<title>`; titles stay unique.
+- `canonical` and `og:url` hold the page's own address, `https://digidex.martins.icu/`
+  followed by its path under `src/`, with an `index.html` written as its folder
+  (`https://digidex.martins.icu/evolution-lines/gen-1-adventure/`), the address people type
+  and share.
+- `theme-color` is the `--bg` token of `digivolution.css`.
+- X reads the `og:` fields when its own are missing, but needs `twitter:card` to show the
+  large image.
+
+These are the only absolute URLs in the pages, an exception to the relative links of
+"Publishing": link previews and search engines need them. They tie the tags to the
+`digidex.martins.icu` domain, while navigation and assets stay relative. Link previews read
+only the `<head>` and run no JavaScript, so a tree page, whose cards the engine builds,
+previews like any other; Google runs the JavaScript and indexes the cards.
+
 ### Share image
 
 Every page shares one image, `src/og-image.png` (1200x630 PNG), drawn from
@@ -875,7 +917,8 @@ does not support a `/src` folder, only root or `/docs`):
 - Every internal link and asset reference is relative (`digivolution.css`,
   `../../digivolution.js`, `evolution-lines/gen-*/...`), so the site works both at a
   user/organization domain root and under a project subpath
-  (`https://<user>.github.io/<repo>/`).
+  (`https://<user>.github.io/<repo>/`). The one exception is the absolute URLs of the
+  sharing tags (see "Sharing and SEO").
 - Images are hotlinked (with `referrerpolicy="no-referrer"`); nothing is bundled locally.
   See "Artwork sources" below.
 - `src/.nojekyll` is kept as a safety net: artifact deployments never run Jekyll, but it
