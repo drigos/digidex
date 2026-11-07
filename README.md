@@ -190,7 +190,8 @@ pitch down (`y: 370`), centered between them, with no row-mates in its column.
 
 A level column between the first and last levels stays in place even when no card fills it,
 and it keeps its header, so the column scale reads without gaps; the footer says why it is
-empty (the In-Training column on marineangemon).
+empty (the In-Training column on marineangemon, the Fusion column on grumblemon, arbormon,
+ranamon and mercurymon).
 
 ### Canvas width
 
@@ -617,8 +618,8 @@ follow these rules:
   placement").
 - **Fusion**: the Wind, Thunder, Ice and Darkness Fusions exist only outside the Frontier
   anime (Reference Book, D-Tector 3.0, figures), which the node note states. Earth, Wood,
-  Water and Steel have none recorded: their Fusion column stays empty and unlabeled, and
-  the Unified label sits in the gap.
+  Water and Steel have none recorded: their Fusion column stays empty but keeps its header,
+  and the Unified label sits in the gap.
 - **Darkness** (`loweemon.html`, `1598px`): a `Corrupted Spirit` column in the Child slot
   holds Duskmon and Velgemon (`cls:'dark'` pill), and Spirit Evolution edges lead to
   Loweemon (H -> L Spirit) and JagerLoweemon (B -> K Spirit), whose notes say purified.
