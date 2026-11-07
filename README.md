@@ -882,6 +882,19 @@ These are the only absolute URLs in the pages, an exception to the relative link
 only the `<head>` and run no JavaScript, so a tree page, whose cards the engine builds,
 previews like any other; Google runs the JavaScript and indexes the cards.
 
+### robots.txt, sitemap.xml and 404.html
+
+- `src/robots.txt` allows every crawler and points at the sitemap. Crawlers only read it at
+  the domain root, so it works on `digidex.martins.icu` and not under a project subpath.
+- `src/sitemap.xml` lists the `canonical` URL of every page, in path order, with no
+  `lastmod` (without a build step it would go stale, and Google ignores an unreliable one).
+  A new page adds its URL there in the same change.
+- `src/404.html` is the page GitHub Pages serves at any missing path, at any depth. Relative
+  links would then resolve against the missing path, so it sets
+  `<base href="https://digidex.martins.icu/">` before its favicon links and writes every link
+  as if it sat at the `src/` root. Opened from disk, it loads its assets from the live site.
+  It carries `noindex`, no sharing tags, and stays out of the sitemap.
+
 ### Share image
 
 Every page shares one image, `src/og-image.png` (1200x630 PNG), drawn from
@@ -921,6 +934,8 @@ does not support a `/src` folder, only root or `/docs`):
   sharing tags (see "Sharing and SEO").
 - Images are hotlinked (with `referrerpolicy="no-referrer"`); nothing is bundled locally.
   See "Artwork sources" below.
+- `src/404.html` is the not-found page, and `src/robots.txt` and `src/sitemap.xml` sit at the
+  root (see "Sharing and SEO").
 - `src/.nojekyll` is kept as a safety net: artifact deployments never run Jekyll, but it
   keeps a fallback branch-based deployment (root folder) working as-is.
 
