@@ -727,7 +727,10 @@ the footer:
   earned the Bancho title;
 - Brachiomon, UltimateBrachiomon and SlashAngemon on armadillomon: only games draw Ankylomon ->
   Brachiomon -> UltimateBrachiomon and Shakkoumon -> SlashAngemon, and no other source reaches
-  these Digimon (Shakkoumon's profile adds that it may be an Angel Digimon).
+  these Digimon (Shakkoumon's profile adds that it may be an Angel Digimon);
+- Kapurimon -> Kokuwamon on guardromon: Kazu's Guardromon regresses to Kapurimon in Tamers
+  episode 51 and Kokuwamon is the Rookie of the D-Power's line, but only games join the two
+  (DigimonWiki cites the D-Power 3.0, whose known data starts at Rookie).
 
 The sources are:
 
@@ -785,11 +788,10 @@ Machinedramon cases were settled this way. Wikimon's episode summaries are empty
 relation is read from the Digimon's own page (its anime section and its `rfe` episode
 citations) or from a Tamers character page (`Renamon (Tamers)`), whose evolution box cites
 every form that does not come from the anime. When the two wikis disagree, the episode
-article decides (Gallantmon comes from Guilmon in Tamers 35, not from WarGrowlmon).
-A form missing from both can still rest on an episode's cast list when the same scene is cited
-for its siblings: Tamers episode 51 sends the partners back as In-Training forms, Wikimon
-cites it for Gigimon, Gummymon and Viximon, and the same cast list debuts Kokomon, Kapurimon
-and Hopmon, which the character boxes list without a citation.
+article decides. Tamers episode 51 sends the partners back as In-Training forms, and its
+article lists all six regressions (Gigimon, Gummymon, Viximon, Hopmon, Kokomon, Kapurimon). A
+regression shows which In-Training form belongs to the partner; the step up to the Rookie
+needs a source of its own (Cyberdramon also regresses to Monodramon in episode 41).
 
 A partner with no form for a Digi-Egg says so in its footer (`Patamon has no recorded form
 for the Digi-Egg of Destiny.`). The six Armor panels, the eight Adventure trees and the four
