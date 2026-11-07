@@ -300,7 +300,7 @@ the canvas free of long lines.
 
 ## 1. Card labels (the pill under each name)
 
-Format: `Level` optionally followed by ` / Virus` and/or ` / X`, in that order.
+Format: `Level` optionally followed by ` / X`.
 
 ### Level (exactly one)
 
@@ -321,15 +321,16 @@ See "Frontier: Spirit Evolution" under Notes on specific cases.
 A card for a being DigimonWiki gives no Level (Grani, Gallantmon's steed) has no pill: leave
 `lvl` out of the node and the engine skips it. Never invent a rank such as `Support` for it.
 
-### Qualifiers (optional, only these two)
+### Qualifier (optional, only this one)
 
 | Qualifier | Meaning |
 |---|---|
-| `Virus` | A Virus-attribute form of the tree's dark line, the forms reached by Dark / Virus edges: e.g. `MetalGreymon (Virus)`, `BlackWarGreymon`, `Imperialdramon (Black)`, `BlackGrowlmon`. It marks the dark line, not the attribute: the main line stays unmarked even when the Reference Book gives it Virus (Guilmon's), and so does a dark-line form the Reference Book gives as Vaccine (`Omnimon Zwart`, `Ophanimon Falldown Mode`). |
 | `X` | A named X-Antibody form: e.g. `WarGreymon X`, `Magnamon X`. |
 
-Combine as `Virus / X` for the X form of a Virus-line member
-(e.g. `Ultimate / Virus / X`).
+The label shows no attribute. A `Virus` qualifier on the dark-line forms was dropped in
+November 2026: it read as the Reference Book attribute, which the cards do not show elsewhere
+(Guilmon's whole line is Virus). The red pill and the red Dark edge mark the dark line, and the
+official names already say `(Virus)` or `(Black)` where they differ.
 
 ### Not in the label
 
@@ -355,7 +356,7 @@ Every arrow is colored by the digivolution trigger. This is the single vocabular
 | X-Digivolution | green | Digivolution driven by the X-Antibody. | both |
 | DNA / Jogress | purple | Fusion of two digimon into one. | both |
 | Mode Change | teal | Same digimon switching mode / form, including the temporary forms Black Digitron causes (Omnimon Zwart, Omnimon Alter-B). | both |
-| Dark / Virus | red | Dark or Virus-attribute branch (including rage / loss of control). | both |
+| Dark | red | Dark branch: a corruption, a fall, rage / loss of control, or a Virus counterpart (the Virus lines on agumon and gabumon). | both |
 | Armor Digivolution | amber | Armor evolution via a Digi-Egg. | veemon, hawkmon, armadillomon, wormmon, patamon, gatomon, terriermon |
 | Bond Evolution | pink | Bond-driven evolution. | agumon, gabumon |
 | Burst Mode | gold | Burst Digivolution. | agumon, palmon |
@@ -433,8 +434,7 @@ Keep such labels short, in title case, and consistent across both files.
 
 The on-image legend lists only the triggers that the file actually uses.
 
-- Shared by both: Normal evolution, X-Digivolution, DNA / Jogress, Mode Change,
-  Dark / Virus.
+- Shared by both: Normal evolution, X-Digivolution, DNA / Jogress, Mode Change, Dark.
 - The Adventure 02 partners (Veemon, Hawkmon, Armadillomon, Wormmon, Patamon, Gatomon) and Terriermon add: Armor Digivolution.
 - Agumon adds: Bond Evolution, Burst Mode, Variant / subspecies.
 - Gabumon adds: Bond Evolution, Variant / subspecies.
@@ -456,17 +456,9 @@ product. A page states more or less detail depending on its size, but never repu
 | Title (`h1`) | Identity: whose tree, and what kind of artifact. | `<Partner>: evolution tree`. Frontier is Spirit Evolution, not Digivolution, so `agunimon` reads `Agunimon: Spirit Evolution tree`. |
 | Subtitle (`.subtitle`) | Scope: the stage span plus the branches and appendices that make this line distinctive. | `<Stage1> -> ... -> <StageN> hierarchy, with <distinctive branches / appendices>.` Large trees summarize by trigger kind (`with X, DNA/Jogress, Mode Change ... branches`); small trees name the actual forms (`with the X-Antibody branch (Gomamon X) and the collective composition ...`). Frontier states its Spirit tiers instead of the Fresh->Mega ranks. |
 | Panel title + subtitle | Local relationship: the off-grid relationship the appendix panel captures. | A panel that feeds a node names that result first, then the relationship kind: `<Result>: Jogress partner(s)` (singular for one card, plural for many; `Omnimon forms` when one panel feeds several variants), `Omnimon Merciful Mode: collective composition`, and on Frontier `Susanoomon: DNA Digivolve` and `EmperorGreymon: Unified Spirit`. The subtitle states the concrete **mechanic** (`Aquilamon + Gatomon = Silphymon`). Panels that feed no single node keep a kind title: `<Name>'s Armor Digivolutions` (the compact Digi-Egg branch) and `Lore notes` (source-verified stories behind the page's unusual arrows; subtitle `the stories behind the unusual arrows`). The members of Omnimon Merciful Mode are listed in the Adventure partner order, without the page's own member. |
-| Footer (`.footer`) | Provenance + reading key + caveats. | Fixed lead: attribution (`Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork © Bandai, via the official Reference Book.`, adding `and Wikimon` when the page uses a Wikimon image), then `Card labels show Level (+ Virus / X); edge colors show the digivolution trigger.` Frontier pages read `Card labels show the Spirit tier; edge colors show the Spirit trigger.` instead. Then any page-specific caveats about non-obvious nodes/links (a synthesis with no incoming arrow, a lore link, a collective composition), and the official names that differ (`Susanoomon is DigimonWiki's name for the official Susanomon.`). Public pages never point at this README. |
+| Footer (`.footer`) | Provenance + reading key + caveats. | Fixed lead: attribution (`Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork © Bandai, via the official Reference Book.`, adding `and Wikimon` when the page uses a Wikimon image), then `Card labels show Level (+ X); edge colors show the digivolution trigger.` Frontier pages read `Card labels show the Spirit tier; edge colors show the Spirit trigger.` instead. Then any page-specific caveats about non-obvious nodes/links (a synthesis with no incoming arrow, a lore link, a collective composition), and the official names that differ (`Susanoomon is DigimonWiki's name for the official Susanomon.`). Public pages never point at this README. |
 
 ## Notes on specific cases
-
-### `Virus` vs `Virus Mode`
-
-`Imperialdramon Dragon Mode (Black)` and `Imperialdramon Fighter Mode (Black)` were
-previously labeled `Mega / Virus` and `Mega / Virus Mode`. There is no real difference:
-both are Mega-level, Virus-attribute Black forms. The Dragon vs Fighter distinction is a
-**Mode Change**, already carried by the digimon name and shown by the Mode Change edge,
-so it does not belong in the level label. Both are now `Mega / Virus`.
 
 ### Lore / non-evolution links
 
@@ -590,7 +582,7 @@ authority), `.ox` (Olympos XII).
   any Champion of the line can lead to any Ultimate. The alternate forms are drawn as their
   own chain, one edge per level, in a row under the main line (Renamon -> Youkomon -> Doumon
   -> Kuzuhamon), and the mixed paths the conditions allow are not drawn. The chain is a
-  Normal evolution, or Dark / Virus when its forms are the dark counterparts of the main line
+  Normal evolution, or Dark when its forms are the dark counterparts of the main line
   (Guilmon -> BlackGrowlmon -> BlackWarGrowlmon -> ChaosGallantmon). The footer names the
   V-pet.
 

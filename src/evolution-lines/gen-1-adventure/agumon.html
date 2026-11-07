@@ -22,7 +22,7 @@
   <div class="infographic" id="canvas">
     <div class="title">
       <h1>Agumon: evolution tree</h1>
-      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega -> Ultra hierarchy, with X, DNA/Jogress, Mode Change, Dark/Virus, Bond and Burst branches and the Agumon and Greymon subspecies.</div>
+      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega -> Ultra hierarchy, with X, DNA/Jogress, Mode Change, Dark, Bond and Burst branches and the Agumon and Greymon subspecies.</div>
     </div>
 
     <div class="legend">
@@ -108,7 +108,7 @@
       </div>
     </section>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book and Wikimon. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. AncientGreymon is an ancestral (lore) relation, not a direct path. Kimeramon is a composite of parts from various Digimon, so it has no incoming arrow. The Virus forms are drawn as one chain from BlackAgumon because each profile makes its form the Virus counterpart of the Vaccine one, not because a source shows them digivolving; the BlackWarGreymon of Adventure 02 was built by Arukenimon from 100 Control Spires. Omnimon Zwart and Omnimon Alter-B are temporary forms caused by Black Digitron, drawn as Mode Changes. Omnimon Merciful Mode is a collective composition (Adventure tri.): Omnimon plus Phoenixmon, HerculesKabuterimon, Rosemon, Vikemon, Seraphimon and Magnadramon. Omnimon Alter-S, Alter-B and Zwart Defeat keep their official names here (Omegamon on DigimonWiki).</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book and Wikimon. Card labels show Level (+ X); edge colors show the digivolution trigger. AncientGreymon is an ancestral (lore) relation, not a direct path. Kimeramon is a composite of parts from various Digimon, so it has no incoming arrow. The Virus forms are drawn as one chain from BlackAgumon because each profile makes its form the Virus counterpart of the Vaccine one, not because a source shows them digivolving; the BlackWarGreymon of Adventure 02 was built by Arukenimon from 100 Control Spires. Omnimon Zwart and Omnimon Alter-B are temporary forms caused by Black Digitron, drawn as Mode Changes. Omnimon Merciful Mode is a collective composition (Adventure tri.): Omnimon plus Phoenixmon, HerculesKabuterimon, Rosemon, Vikemon, Seraphimon and Magnadramon. Omnimon Alter-S, Alter-B and Zwart Defeat keep their official names here (Omegamon on DigimonWiki).</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -124,7 +124,7 @@ DigiTree.mount({
     ['x','X-Digivolution'],
     ['dna','DNA / Jogress'],
     ['mode','Mode Change'],
-    ['dark','Dark / Virus'],
+    ['dark','Dark'],
     ['bond','Bond Evolution'],
     ['burst','Burst Mode'],
     ['variant','Variant / subspecies'],
@@ -144,15 +144,15 @@ DigiTree.mount({
     {id:'agumon', x:566, y:490, cls:'normal', name:'Agumon', lvl:'Rookie', note:'Main branching point.', wiki:'Agumon', img:'agumon'},
     {id:'snowagumon', x:566, y:730, cls:'variant', name:'SnowAgumon', lvl:'Rookie', note:'A separate species of Agumon from snow fields.', wiki:'SnowAgumon', img:'yukiagumon'},
     {id:'agumonexpert', x:566, y:970, cls:'variant', name:'Agumon Expert', lvl:'Rookie', note:'A genius among Agumon, with a doctorate.', wiki:'Agumon_Expert', img:'agumonhakase'},
-    {id:'blackagumon', x:566, y:2170, cls:'dark', name:'BlackAgumon', lvl:'Rookie / Virus', note:'An Agumon that Digivolved into a Virus type.', wiki:'BlackAgumon', img:'agumon-black'},
+    {id:'blackagumon', x:566, y:2170, cls:'dark', name:'BlackAgumon', lvl:'Rookie', note:'An Agumon that Digivolved into a Virus type.', wiki:'BlackAgumon', img:'agumon-black'},
     {id:'agumon2006', x:566, y:2650, cls:'normal', name:'Agumon (2006 anime)', lvl:'Rookie', note:'Data Squad partner.', wiki:'Agumon_(2006_anime)', img:'agumon-2006'},
     {id:'agumonburst', x:566, y:2890, cls:'burst', name:'Agumon (Burst Mode)', lvl:'Mega', note:'Burst Digivolution in the Data Squad finale.', wiki:'Agumon_(Burst_Mode)', img:'https://wikimon.net/images/2/2a/Agumon_burst.jpg'},
 
     // champion column
     {id:'greymonx', x:828, y:250, cls:'x', name:'Greymon X', lvl:'Champion / X', note:'X-Antibody form.', wiki:'Greymon_X', img:'greymon_x'},
     {id:'greymon', x:828, y:490, cls:'normal', name:'Greymon', lvl:'Champion', note:'Classic Greymon branch.', wiki:'Greymon', img:'greymon-first'},
-    {id:'greymonblue', x:828, y:2170, cls:'dark', name:'Greymon (Blue)', lvl:'Champion / Virus', note:'Wild (Virus) Greymon.', wiki:'Greymon_(Blue)', img:'greymon_blue'},
-    {id:'greymonbluex', x:828, y:2410, cls:'x', name:'Greymon (Blue) X', lvl:'Champion / Virus / X', note:'X-Antibody form.', wiki:'Greymon_(Blue)_X', img:'greymon_blue_x'},
+    {id:'greymonblue', x:828, y:2170, cls:'dark', name:'Greymon (Blue)', lvl:'Champion', note:'Wild (Virus) Greymon.', wiki:'Greymon_(Blue)', img:'greymon_blue'},
+    {id:'greymonbluex', x:828, y:2410, cls:'x', name:'Greymon (Blue) X', lvl:'Champion / X', note:'X-Antibody form.', wiki:'Greymon_(Blue)_X', img:'greymon_blue_x'},
     {id:'geogreymon', x:828, y:2650, cls:'normal', name:'GeoGreymon', lvl:'Champion', note:'Data Squad Greymon subspecies.', wiki:'GeoGreymon', img:'geogreymon'},
 
     // ultimate column
@@ -161,8 +161,8 @@ DigiTree.mount({
     {id:'alterous', x:1090, y:970, cls:'mode', name:'MetalGreymon Alterous Mode', lvl:'Ultimate', note:'Weapon-swap Mode Change.', wiki:'MetalGreymon_Alterous_Mode', img:'metalgreymon_alter'},
     {id:'skullgreymon', x:1090, y:1210, cls:'dark', name:'SkullGreymon', lvl:'Ultimate', note:'Dark Digivolution. Dead end of this tree.', wiki:'SkullGreymon', img:'skullgreymon'},
     {id:'kimeramon', x:1090, y:1450, cls:'dark', name:'Kimeramon', lvl:'Ultimate', note:'Composite of parts from various Digimon.', wiki:'Kimeramon', img:'chimairamon'},
-    {id:'metalgreymonvirus', x:1090, y:2170, cls:'dark', name:'MetalGreymon (Virus)', lvl:'Ultimate / Virus', note:'Virus cyborg; Digivolves from a Greymon.', wiki:'MetalGreymon_(Virus)', img:'metalgreymon-web'},
-    {id:'metalgreymonvirusx', x:1090, y:2410, cls:'x', name:'MetalGreymon (Virus) X', lvl:'Ultimate / Virus / X', note:'X-Antibody form.', wiki:'MetalGreymon_(Virus)_X', img:'metalgreymon_vi_x'},
+    {id:'metalgreymonvirus', x:1090, y:2170, cls:'dark', name:'MetalGreymon (Virus)', lvl:'Ultimate', note:'Virus cyborg; Digivolves from a Greymon.', wiki:'MetalGreymon_(Virus)', img:'metalgreymon-web'},
+    {id:'metalgreymonvirusx', x:1090, y:2410, cls:'x', name:'MetalGreymon (Virus) X', lvl:'Ultimate / X', note:'X-Antibody form.', wiki:'MetalGreymon_(Virus)_X', img:'metalgreymon_vi_x'},
     {id:'rizegreymon', x:1090, y:2650, cls:'normal', name:'RizeGreymon', lvl:'Ultimate', note:'Data Squad cyborg.', wiki:'RizeGreymon', img:'rizegreymon'},
     {id:'rizegreymonx', x:1090, y:2890, cls:'x', name:'RizeGreymon X', lvl:'Ultimate / X', note:'X-Antibody form.', wiki:'RizeGreymon_X', img:'rizegreymon_x'},
 
@@ -172,8 +172,8 @@ DigiTree.mount({
     {id:'wargreymon', x:1352, y:490, cls:'normal', name:'WarGreymon', lvl:'Mega', note:'Dragon warrior.', wiki:'WarGreymon', img:'wargreymon'},
     {id:'blitzgreymon', x:1352, y:970, cls:'normal', name:'BlitzGreymon', lvl:'Mega', note:'Subspecies of WarGreymon.', wiki:'BlitzGreymon', img:'blitzgreymon'},
     {id:'machinedramon', x:1352, y:1210, cls:'dark', name:'Machinedramon', lvl:'Mega', note:'Corrupted evolution (Adventure: 2020).', wiki:'Machinedramon', img:'mugendramon'},
-    {id:'blackwargreymon', x:1352, y:2170, cls:'dark', name:'BlackWarGreymon', lvl:'Mega / Virus', note:'The Virus version of WarGreymon.', wiki:'BlackWarGreymon', img:'blackwargreymon'},
-    {id:'blackwargreymonx', x:1352, y:2410, cls:'x', name:'BlackWarGreymon X', lvl:'Mega / Virus / X', note:'X-Antibody form.', wiki:'BlackWarGreymon_X', img:'blackwargreymon_x'},
+    {id:'blackwargreymon', x:1352, y:2170, cls:'dark', name:'BlackWarGreymon', lvl:'Mega', note:'The Virus version of WarGreymon.', wiki:'BlackWarGreymon', img:'blackwargreymon'},
+    {id:'blackwargreymonx', x:1352, y:2410, cls:'x', name:'BlackWarGreymon X', lvl:'Mega / X', note:'X-Antibody form.', wiki:'BlackWarGreymon_X', img:'blackwargreymon_x'},
     {id:'shinegreymon', x:1352, y:2650, cls:'normal', name:'ShineGreymon', lvl:'Mega', note:'Data Squad peak.', wiki:'ShineGreymon', img:'shinegreymon'},
     {id:'victorygreymon', x:1352, y:2890, cls:'normal', name:'VictoryGreymon', lvl:'Mega', note:'Subspecies of WarGreymon.', wiki:'VictoryGreymon', img:'victorygreymon'},
     {id:'gaiomon', x:1352, y:1690, cls:'variant', name:'Gaiomon', lvl:'Mega', note:'A subspecies of Greymon.', wiki:'Gaiomon', img:'gaioumon'},
@@ -192,7 +192,7 @@ DigiTree.mount({
 
     // variant / mode column
     {id:'omnimonmerciful', x:1876, y:490, cls:'dna', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#omnimon', title:'Royal Knights roster'}, name:'Omnimon Merciful Mode', lvl:'Ultra', note:'Collective composition.', wiki:'Omnimon_Merciful_Mode', img:'omegamon_merciful'},
-    {id:'zwartdefeat', x:1876, y:730, cls:'dark', name:'Omnimon Zwart Defeat', lvl:'Ultra / Virus', note:'Zwart turned berserk by a virus program.', wiki:'Omegamon_Zwart_Defeat', img:'omegamonzwart_d'},
+    {id:'zwartdefeat', x:1876, y:730, cls:'dark', name:'Omnimon Zwart Defeat', lvl:'Ultra', note:'Zwart turned berserk by a virus program.', wiki:'Omegamon_Zwart_Defeat', img:'omegamonzwart_d'},
     {id:'alterb', x:1876, y:970, cls:'mode', name:'Omnimon Alter-B', lvl:'Ultra', note:'Temporary Black Digitron form; mindless rage.', wiki:'Omegamon_Alter-B', img:'omegamon_alter-b'}
   ],
   edges: function (edge) {

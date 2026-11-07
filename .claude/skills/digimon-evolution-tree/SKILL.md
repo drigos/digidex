@@ -80,7 +80,7 @@ generation (create the folder if that generation has no page yet).
 
 - Node: `{ id, x, y, cls, name, lvl, note, wiki, img, badge? }`
   - `cls` (pill color): `normal | x | dna | mode | dark | lateral | armor | bond | burst | variant`.
-  - `lvl` (card tag): `Level` optionally `+ / Virus + / X` only; omit it for a being with no
+  - `lvl` (card tag): `Level` optionally `+ / X` only (no attribute); omit it for a being with no
     Level (Grani). `Ultra` only for a Super Ultimate per README section 1 (V-Tamer 01, the
     Reference Book, or the Cyber Sleuth, ReArise, Survive, New Century and Time Stranger stage); the card sits
     in the Ultra column, and a tree with one ends its subtitle in `-> Ultra hierarchy`. See README section 1.
@@ -124,7 +124,7 @@ generation (create the folder if that generation has no page yet).
 
 ## Conventions (enforce; details in README.md)
 
-- Card tag: `Level [/ Virus] [/ X]`. Do not put "how it evolved" (Jogress, Mode, Bond, Burst)
+- Card tag: `Level [/ X]`. Do not put "how it evolved" (Jogress, Mode, Bond, Burst)
   or loose descriptors (Composite, Ancient, Cyborg, Machine, Lateral, ...) in the tag; those
   go in the note or are shown by the edge color.
 - Edge labels: NEVER restate the trigger color (no "X-Antibody" on a green arrow, no

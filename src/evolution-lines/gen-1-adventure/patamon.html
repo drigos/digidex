@@ -218,7 +218,7 @@
       </div>
     </section>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book and Wikimon. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. The Reference Book only says Tsukaimon looks like Patamon (a game encyclopedia calls it a subspecies); the tree draws it as Patamon's variant. Likewise, only a game links Daemon to Daemon (Mantled), its look in Adventure 02, drawn as a variant. Omnimon Merciful Mode is a collective composition (Adventure tri.): Seraphimon plus Omnimon, Phoenixmon, HerculesKabuterimon, Rosemon, Vikemon and Magnadramon. Patamon has no recorded form for the Digi-Egg of Destiny.</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book and Wikimon. Card labels show Level (+ X); edge colors show the digivolution trigger. The Reference Book only says Tsukaimon looks like Patamon (a game encyclopedia calls it a subspecies); the tree draws it as Patamon's variant. Likewise, only a game links Daemon to Daemon (Mantled), its look in Adventure 02, drawn as a variant. Omnimon Merciful Mode is a collective composition (Adventure tri.): Seraphimon plus Omnimon, Phoenixmon, HerculesKabuterimon, Rosemon, Vikemon and Magnadramon. Patamon has no recorded form for the Digi-Egg of Destiny.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -234,7 +234,7 @@ DigiTree.mount({
     ['x','X-Digivolution'],
     ['dna','DNA / Jogress'],
     ['mode','Mode Change'],
-    ['dark','Dark / Virus'],
+    ['dark','Dark'],
     ['armor','Armor Digivolution'],
     ['variant','Variant / subspecies']
   ],
@@ -260,20 +260,20 @@ DigiTree.mount({
     // Patamon's variant, mode change and Seraphimon's corrupted form, right under Seraphimon
     {id:'tsukaimon', x:566, y:970, cls:'variant', name:'Tsukaimon', lvl:'Rookie', note:'Looks like Patamon; a familiar to Devimon.', wiki:'Tsukaimon', img:'tukaimon'},
     {id:'priest', x:1090, y:970, cls:'mode', name:'MagnaAngemon Priest Mode', lvl:'Ultimate', note:'Priest garb mode (Adventure: 2020).', wiki:'MagnaAngemon_(Priest_Mode)', img:'https://wikimon.net/images/d/d2/Holyangemon_shinkan.jpg'},
-    {id:'shadowseraphimon', x:1352, y:970, cls:'dark', name:'ShadowSeraphimon', lvl:'Mega / Virus', note:'Born of Seraphimon\'s concealed inner resentment.', wiki:'ShadowSeraphimon', img:'blackseraphimon', badge:{cls:'fa', text:'Fallen Angel', href:'../../groups/angelic.html#shadowseraphimon', title:'Angelic Digimon roster'}},
+    {id:'shadowseraphimon', x:1352, y:970, cls:'dark', name:'ShadowSeraphimon', lvl:'Mega', note:'Born of Seraphimon\'s concealed inner resentment.', wiki:'ShadowSeraphimon', img:'blackseraphimon', badge:{cls:'fa', text:'Fallen Angel', href:'../../groups/angelic.html#shadowseraphimon', title:'Angelic Digimon roster'}},
 
     // Jogress row, shared with Seraphimon's official fallen form and its V-Tamer Ultra form
     {id:'shakkoumon', x:1090, y:1210, cls:'dna', name:'Shakkoumon', lvl:'Ultimate', note:'Ankylomon + Angemon.', wiki:'Shakkoumon', img:'shakkoumon'},
-    {id:'daemon', x:1352, y:1210, cls:'dark', name:'Daemon', lvl:'Mega / Virus', note:'Said to have originally been a Seraphimon.', wiki:'Daemon', img:'demon', badge:{cls:'dl', text:'Demon Lord', href:'../../groups/demon-lords.html#daemon', title:'Seven Great Demon Lords roster'}},
-    {id:'daemonultra', x:1614, y:1210, cls:'dna', name:'Daemon (Ultra)', lvl:'Ultra / Virus', note:'Super Ultimate form after absorbing Arcadiamon (V-Tamer).', wiki:'Daemon_(Ultra)', img:'https://wikimon.net/images/f/f0/Demon_superultimate.jpg', badge:{cls:'dl', text:'Demon Lord', href:'../../groups/demon-lords.html#daemon', title:'Seven Great Demon Lords roster'}},
+    {id:'daemon', x:1352, y:1210, cls:'dark', name:'Daemon', lvl:'Mega', note:'Said to have originally been a Seraphimon.', wiki:'Daemon', img:'demon', badge:{cls:'dl', text:'Demon Lord', href:'../../groups/demon-lords.html#daemon', title:'Seven Great Demon Lords roster'}},
+    {id:'daemonultra', x:1614, y:1210, cls:'dna', name:'Daemon (Ultra)', lvl:'Ultra', note:'Super Ultimate form after absorbing Arcadiamon (V-Tamer).', wiki:'Daemon_(Ultra)', img:'https://wikimon.net/images/f/f0/Demon_superultimate.jpg', badge:{cls:'dl', text:'Demon Lord', href:'../../groups/demon-lords.html#daemon', title:'Seven Great Demon Lords roster'}},
 
     // Daemon's Adventure 02 look, right under Daemon
-    {id:'daemonmantled', x:1352, y:1450, cls:'variant', name:'Daemon (Mantled)', lvl:'Mega / Virus', note:'Daemon\'s mantled look in Adventure 02.', wiki:'Daemon_(Mantled)', img:'https://wikimon.net/images/f/ff/Demon_Adventure_02_reference_art.jpg', badge:{cls:'dl', text:'Demon Lord', href:'../../groups/demon-lords.html#daemon', title:'Seven Great Demon Lords roster'}},
+    {id:'daemonmantled', x:1352, y:1450, cls:'variant', name:'Daemon (Mantled)', lvl:'Mega', note:'Daemon\'s mantled look in Adventure 02.', wiki:'Daemon_(Mantled)', img:'https://wikimon.net/images/f/ff/Demon_Adventure_02_reference_art.jpg', badge:{cls:'dl', text:'Demon Lord', href:'../../groups/demon-lords.html#daemon', title:'Seven Great Demon Lords roster'}},
 
     // fallen angel dark line
-    {id:'devimon', x:828, y:1690, cls:'dark', name:'Devimon', lvl:'Champion / Virus', note:'An Angemon that fell into the Dark Area.', wiki:'Devimon', img:'devimon'},
-    {id:'neodevimon', x:1090, y:1690, cls:'dark', name:'NeoDevimon', lvl:'Ultimate / Virus', note:'Strengthened Devimon.', wiki:'NeoDevimon', img:'neodevimon'},
-    {id:'dandevimon', x:1352, y:1690, cls:'dark', name:'DanDevimon', lvl:'Mega / Virus', note:'Peak of the fallen angel branch (Adventure: 2020).', wiki:'DanDevimon', img:'donedevimon'}
+    {id:'devimon', x:828, y:1690, cls:'dark', name:'Devimon', lvl:'Champion', note:'An Angemon that fell into the Dark Area.', wiki:'Devimon', img:'devimon'},
+    {id:'neodevimon', x:1090, y:1690, cls:'dark', name:'NeoDevimon', lvl:'Ultimate', note:'Strengthened Devimon.', wiki:'NeoDevimon', img:'neodevimon'},
+    {id:'dandevimon', x:1352, y:1690, cls:'dark', name:'DanDevimon', lvl:'Mega', note:'Peak of the fallen angel branch (Adventure: 2020).', wiki:'DanDevimon', img:'donedevimon'}
   ],
   edges: function (edge) {
     // main line

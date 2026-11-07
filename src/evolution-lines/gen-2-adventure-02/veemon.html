@@ -22,7 +22,7 @@
   <div class="infographic" id="canvas">
     <div class="title">
       <h1>Veemon: evolution tree</h1>
-      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega -> Ultra hierarchy, with Armor, DNA/Jogress, Mode Change, Dark/Virus and X-Digivolution branches and the Veedramon variant line.</div>
+      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega -> Ultra hierarchy, with Armor, DNA/Jogress, Mode Change, Dark and X-Digivolution branches and the Veedramon variant line.</div>
     </div>
 
     <div class="legend">
@@ -134,7 +134,7 @@
       </div>
     </section>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book and Wikimon. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. ExVeemon's profile calls Veedramon its derivative species, so the tree draws Veedramon as ExVeemon's variant; its line up to UlforceVeedramon Future Mode is Zeromaru's in V-Tamer. Only a game links Veedramon to RedVeedramon, which it becomes at the peak of anger; the tree keeps the link.</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book and Wikimon. Card labels show Level (+ X); edge colors show the digivolution trigger. ExVeemon's profile calls Veedramon its derivative species, so the tree draws Veedramon as ExVeemon's variant; its line up to UlforceVeedramon Future Mode is Zeromaru's in V-Tamer. Only a game links Veedramon to RedVeedramon, which it becomes at the peak of anger; the tree keeps the link.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -149,7 +149,7 @@ DigiTree.mount({
     ['normal','Normal evolution'],
     ['armor','Armor Digivolution'],
     ['mode','Mode Change'],
-    ['dark','Dark / Virus'],
+    ['dark','Dark'],
     ['dna','DNA / Jogress'],
     ['x','X-Digivolution'],
     ['variant','Variant / subspecies']
@@ -178,8 +178,8 @@ DigiTree.mount({
     {id:'paladin', x:1876, y:730, cls:'mode', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#imperialdramon-paladin-mode', title:'Royal Knights roster'}, name:'Imperialdramon Paladin Mode', lvl:'Ultra', note:'Gained Omnimon\'s power.', wiki:'Imperialdramon_Paladin_Mode', img:'imperialdramonpaladinmode'},
 
     {id:'dinobeemon', x:1090, y:970, cls:'dna', name:'Dinobeemon', lvl:'Ultimate', note:'Stingmon + ExVeemon; insect side dominates.', wiki:'Dinobeemon', img:'dinobeemon'},
-    {id:'imperialblackdm', x:1352, y:970, cls:'dark', name:'Imperialdramon Dragon Mode (Black)', lvl:'Mega / Virus', note:'Uncontrolled excess of power.', wiki:'Imperialdramon_Dragon_Mode_(Black)', img:'imperialdramon_dragon_black'},
-    {id:'imperialblackfm', x:1614, y:970, cls:'dark', name:'Imperialdramon Fighter Mode (Black)', lvl:'Ultra / Virus', note:'Shadows / heart of darkness.', wiki:'Imperialdramon_Fighter_Mode_(Black)', img:'imperialdramonfightermode_vi'}
+    {id:'imperialblackdm', x:1352, y:970, cls:'dark', name:'Imperialdramon Dragon Mode (Black)', lvl:'Mega', note:'Uncontrolled excess of power.', wiki:'Imperialdramon_Dragon_Mode_(Black)', img:'imperialdramon_dragon_black'},
+    {id:'imperialblackfm', x:1614, y:970, cls:'dark', name:'Imperialdramon Fighter Mode (Black)', lvl:'Ultra', note:'Shadows / heart of darkness.', wiki:'Imperialdramon_Fighter_Mode_(Black)', img:'imperialdramonfightermode_vi'}
   ],
   edges: function (edge) {
     edge('chibomon','demiveemon','normal');
