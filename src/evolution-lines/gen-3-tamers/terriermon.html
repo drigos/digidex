@@ -34,7 +34,7 @@
     <div id="labels"></div>
     <div id="nodes"></div>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. Biomerge (Matrix Evolution): Terriermon and Henry merge straight into MegaGargomon, drawn as a Normal evolution; the D-Ark V-pet also reaches it from Rapidmon. The golden Rapidmon is the Armor form of Willis's Terriermon in the Adventure 02 film.</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. Biomerge (Matrix Evolution): Rapidmon and Henry merge into MegaGargomon in Tamers episode 45, as in the D-Ark V-pet, drawn as a Normal evolution; most episodes merge Terriermon straight into it, a jump with no arrow of its own. The golden Rapidmon is the Armor form of Willis's Terriermon in the Adventure 02 film.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -48,7 +48,8 @@ DigiTree.mount({
   legend: [
     ['normal','Normal evolution'],
     ['x','X-Digivolution'],
-    ['armor','Armor Digivolution']
+    ['armor','Armor Digivolution'],
+    ['variant','Variant / subspecies']
   ],
   columns: [
     [42,'Fresh'],[304,'In-Training'],[566,'Rookie'],[828,'Champion'],
@@ -67,8 +68,8 @@ DigiTree.mount({
     {id:'megagargomon', x:1352, y:490, cls:'normal', name:'MegaGargomon', lvl:'Mega', note:'Biomerge of Terriermon and Henry.', wiki:'MegaGargomon', img:'saintgalgomon'},
 
     // Black Digitron variants (row 2)
-    {id:'blackgargomon', x:828, y:730, cls:'normal', name:'BlackGargomon', lvl:'Champion', note:'Gargomon coated in Black Digitron.', wiki:'BlackGargomon', img:'blackgalgomon'},
-    {id:'blackrapidmon', x:1090, y:730, cls:'normal', name:'BlackRapidmon', lvl:'Ultimate', note:'Rapidmon that ingested Black Digitron.', wiki:'BlackRapidmon', img:'blackrapidmon'},
+    {id:'blackgargomon', x:828, y:730, cls:'variant', name:'BlackGargomon', lvl:'Champion', note:'A type of Gargomon partly coated in Black Digitron.', wiki:'BlackGargomon', img:'blackgalgomon'},
+    {id:'blackrapidmon', x:1090, y:730, cls:'variant', name:'BlackRapidmon', lvl:'Ultimate', note:'A version of Rapidmon that ingested Black Digitron.', wiki:'BlackRapidmon', img:'blackrapidmon'},
 
     // Digi-Egg of Destiny: power on par with a Mega, so the Mega column, with its X form above
     {id:'rapidmonx', x:1352, y:730, cls:'x', name:'Rapidmon X', lvl:'Mega / X', note:'X-Antibody form of the golden Rapidmon.', wiki:'Rapidmon_X', img:'rapidmon_x'},
@@ -81,16 +82,16 @@ DigiTree.mount({
     edge('terriermon','gargomon','normal');
     edge('gargomon','rapidmon','normal');
 
-    // Biomerge with Henry: Terriermon straight into MegaGargomon, along the row gap above the line
-    edge('terriermon','megagargomon','normal','top','top',{fromX:710, toX:1410, laneY:469, label:'Biomerge with Henry', lx:1061, ly:469});
+    // Biomerge with Henry: Rapidmon into MegaGargomon, along the row gap above the line
+    edge('rapidmon','megagargomon','normal','top','top',{fromX:1230, toX:1410, laneY:469, label:'Biomerge with Henry', lx:1320, ly:469});
 
     // X-Antibody forms
     edge('terriermon','terriermonx','x','top','bottom',{shape:'vertical'});
     edge('rapidmonarmor','rapidmonx','x','top','bottom',{shape:'vertical'});
 
     // Black Digitron variants
-    edge('gargomon','blackgargomon','normal','bottom','top',{shape:'vertical'});
-    edge('rapidmon','blackrapidmon','normal','bottom','top',{shape:'vertical'});
+    edge('gargomon','blackgargomon','variant','bottom','top',{shape:'vertical'});
+    edge('rapidmon','blackrapidmon','variant','bottom','top',{shape:'vertical'});
 
     // Armor Digivolution with the Digi-Egg of Destiny
     edge('terriermon','rapidmonarmor','armor','bottom','left',{label:'Digi-Egg of Destiny', lx:930, ly:1069});

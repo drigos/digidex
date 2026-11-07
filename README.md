@@ -349,7 +349,7 @@ Every arrow is colored by the digivolution trigger. This is the single vocabular
 | Armor Digivolution | amber | Armor evolution via a Digi-Egg. | veemon, hawkmon, armadillomon, wormmon, patamon, gatomon, terriermon |
 | Bond Evolution | pink | Bond-driven evolution. | agumon, gabumon |
 | Burst Mode | gold | Burst Digivolution. | agumon, palmon |
-| Variant / subspecies | silver | Not an evolution: the target is a separate species or subspecies of the source ("a separate species of Agumon", "a subspecies of Greymon"). | agumon, gabumon, biyomon, palmon, patamon, veemon, guilmon |
+| Variant / subspecies | silver | Not an evolution: the target is a separate species or subspecies of the source ("a separate species of Agumon", "a subspecies of Greymon"). | agumon, gabumon, biyomon, palmon, patamon, veemon, guilmon, terriermon |
 | Ancestral link | grey (dotted, no arrowhead) | Lore ancestry, not an evolution: a Legendary Warrior linked to the root of the line it spawned. | agumon, gabumon, tentomon, gen-4-frontier |
 
 A form the Reference Book describes as a separate species or a subspecies (`SnowAgumon`,
@@ -427,7 +427,7 @@ The on-image legend lists only the triggers that the file actually uses.
 - The Adventure 02 partners (Veemon, Hawkmon, Armadillomon, Wormmon, Patamon, Gatomon) and Terriermon add: Armor Digivolution.
 - Agumon adds: Bond Evolution, Burst Mode, Variant / subspecies.
 - Gabumon adds: Bond Evolution, Variant / subspecies.
-- Biyomon, Patamon, Veemon and Guilmon add: Variant / subspecies.
+- Biyomon, Patamon, Veemon, Guilmon and Terriermon add: Variant / subspecies.
 - Palmon adds: Burst Mode, Variant / subspecies.
 - Agumon, Gabumon and Tentomon add: Ancestral link.
 - Frontier relabels the shared colors: Spirit Evolution, Slide Evolution,
