@@ -34,7 +34,7 @@
     <div id="labels"></div>
     <div id="nodes"></div>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. Biomerge (Matrix Evolution): Renamon and Rika merge straight into Sakuyamon, drawn as a Normal evolution; the D-Ark V-pet also reaches it from Taomon. Youkomon, Doumon and Kuzuhamon are the D-Ark's alternate line. The Reference Book says fox Digimon normally become Kuzuhamon, and only the greatest reach Sakuyamon.</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. Biomerge (Matrix Evolution): Taomon and Rika merge into Sakuyamon in Tamers episode 45, as in the D-Ark V-pet, drawn as a Normal evolution; most episodes merge Renamon straight into it, a jump with no arrow of its own. Youkomon, Doumon and Kuzuhamon are the D-Ark's alternate line. The Reference Book says fox Digimon normally become Kuzuhamon, and only the greatest reach Sakuyamon.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -81,8 +81,8 @@ DigiTree.mount({
     edge('renamon','kyubimon','normal');
     edge('kyubimon','taomon','normal');
 
-    // Biomerge with Rika: Renamon straight into Sakuyamon, along the row gap above the line
-    edge('renamon','sakuyamon','normal','top','top',{fromX:710, toX:1410, laneY:469, label:'Biomerge with Rika', lx:1061, ly:469});
+    // Biomerge with Rika: Taomon into Sakuyamon, along the row gap above the line
+    edge('taomon','sakuyamon','normal','top','top',{fromX:1230, toX:1410, laneY:469, label:'Biomerge with Rika', lx:1320, ly:469});
 
     // X-Antibody forms
     edge('renamon','renamonx','x','top','bottom',{shape:'vertical'});
