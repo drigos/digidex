@@ -10,10 +10,11 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:1336px; height:1257px; }
+  .infographic { width:1336px; height:1611px; }
   .columns { top:200px; }
   /* the narrower canvas brings the legend closer, so the subtitle wraps before it */
   .subtitle { max-width:680px; }
+  .jogress-panel { top:1190px; width:688px; }
 </style>
 </head>
 <body>
@@ -22,7 +23,7 @@
   <div class="infographic" id="canvas">
     <div class="title">
       <h1>Leomon: evolution tree</h1>
-      <div class="subtitle">Rookie -> Champion -> Ultimate -> Mega hierarchy, with the D-Power line from Elecmon to SaberLeomon, the BanchoLeomon and IceLeomon branches, the Xros Wars MadLeomon and the X-Antibody forms.</div>
+      <div class="subtitle">Rookie -> Champion -> Ultimate -> Mega hierarchy, with the D-Power line from Elecmon to SaberLeomon, the BanchoLeomon and IceLeomon branches, the Digimon Fusion MadLeomon and its Armed Mode Jogress, and the X-Antibody forms.</div>
     </div>
 
     <div class="legend">
@@ -32,11 +33,38 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 1336 1257" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 1336 1611" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book and Wikimon. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. In Tamers, Jeri's Leomon never digivolves; Elecmon, GrapLeomon and SaberLeomon are its line in the D-Power V-pet. Adventure's Leomon warp-digivolves into SaberLeomon (episode 47), skipping the Ultimate, so the scene has no arrow. MadLeomon is a Leomon corrupted by the Bagra Army, and it returns to Leomon in Xros Wars episode 29. Only games link Leomon to BanchoLeomon; the tree keeps the link, the way BanchoLillymon's profile ties it to Lillymon.</div>
+    <section class="jogress-panel" id="jogress-panel">
+      <div class="jogress-panel-title">
+        <h2>MadLeomon Armed Mode: Jogress partners</h2>
+        <span>MadLeomon absorbs Chikurimon, Troopmon and Mammothmon soldiers (Digimon Fusion)</span>
+      </div>
+      <div class="jogress-body">
+        <a class="jogress-card" href="https://digimon.fandom.com/wiki/Chikurimon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/chikurimon.jpg" alt="Chikurimon">
+          <div class="jogress-name">Chikurimon</div>
+          <div class="jogress-level">Rookie</div>
+          <div class="jogress-fuse">+ MadLeomon = Armed Mode</div>
+        </a>
+        <a class="jogress-card" href="https://digimon.fandom.com/wiki/Troopmon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/troopmon.jpg" alt="Troopmon">
+          <div class="jogress-name">Troopmon</div>
+          <div class="jogress-level">Champion</div>
+          <div class="jogress-fuse">+ MadLeomon = Armed Mode</div>
+        </a>
+        <a class="jogress-card" href="https://digimon.fandom.com/wiki/Mammothmon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/mammon.jpg" alt="Mammothmon">
+          <div class="jogress-name">Mammothmon</div>
+          <div class="jogress-level">Ultimate</div>
+          <div class="jogress-fuse">+ MadLeomon = Armed Mode</div>
+        </a>
+      </div>
+    </section>
+
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book and Wikimon. Card labels show Level (+ Virus / X); edge colors show the digivolution trigger. In Tamers, Jeri's Leomon never digivolves; Elecmon, GrapLeomon and SaberLeomon are its line in the D-Power V-pet. Adventure's Leomon warp-digivolves into SaberLeomon (episode 47), skipping the Ultimate, so the scene has no arrow. MadLeomon is a Leomon corrupted by the Bagra Army, and it returns to Leomon in Digimon Fusion episode 29. Only games link Leomon to BanchoLeomon; the tree keeps the link, the way BanchoLillymon's profile ties it to Lillymon.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -50,7 +78,7 @@ DigiTree.mount({
   legend: [
     ['normal','Normal evolution'],
     ['x','X-Digivolution'],
-    ['mode','Mode Change'],
+    ['dna','DNA / Jogress'],
     ['dark','Dark / Virus']
   ],
   columns: [
@@ -63,7 +91,7 @@ DigiTree.mount({
     {id:'bancholeomon', x:828, y:250, cls:'normal', badge:{cls:'bc', text:'Bancho', href:'../../groups/bancho.html#bancholeomon', title:'Bancho Digimon roster'}, name:'BanchoLeomon', lvl:'Mega', note:'Answers only to its own sense of justice.', wiki:'BanchoLeomon', img:'bancholeomon'},
 
     // main line (D-Power)
-    {id:'elecmon', x:42, y:490, cls:'normal', name:'Elecmon', lvl:'Rookie', note:'Mischievous mammal of electricity.', wiki:'Elecmon', img:'elecmon'},
+    {id:'elecmon', x:42, y:490, cls:'normal', name:'Elecmon', lvl:'Rookie', note:'Mischievous Mammal with nine tails.', wiki:'Elecmon', img:'elecmon'},
     {id:'leomon', x:304, y:490, cls:'normal', name:'Leomon', lvl:'Champion', note:'Jeri\'s partner; the King of Beasts.', wiki:'Leomon', img:'leomon'},
     {id:'grapleomon', x:566, y:490, cls:'normal', name:'GrapLeomon', lvl:'Ultimate', note:'Martial artist of fighting games.', wiki:'GrapLeomon', img:'grappuleomon'},
     {id:'saberleomon', x:828, y:490, cls:'normal', name:'SaberLeomon', lvl:'Mega', note:'Ancient Beast of Mach speed.', wiki:'SaberLeomon', img:'saberleomon'},
@@ -75,7 +103,7 @@ DigiTree.mount({
     {id:'regulumon', x:828, y:730, cls:'normal', name:'Regulumon', lvl:'Mega', note:'IceLeomon\'s Mega in V-Tamer 01.', wiki:'Regulumon', img:'https://wikimon.net/images/f/f1/Regulumon.jpg'},
 
     // row 3
-    {id:'madleomonarmed', x:304, y:970, cls:'mode', name:'MadLeomon Armed Mode', lvl:'Champion / Virus', note:'Chainsaw and other modifications.', wiki:'MadLeomon_Armed_Mode', img:'madleomon:armedmode'},
+    {id:'madleomonarmed', x:304, y:970, cls:'dna', name:'MadLeomon Armed Mode', lvl:'Champion / Virus', note:'Chainsaw and other modifications.', wiki:'MadLeomon_Armed_Mode', img:'madleomon:armedmode'},
     {id:'iceleomonx', x:566, y:970, cls:'x', name:'IceLeomon X', lvl:'Ultimate / X', note:'X-Antibody form.', wiki:'IceLeomon_X', img:'panjyamon_x'}
   ],
   edges: function (edge) {
@@ -95,9 +123,9 @@ DigiTree.mount({
     edge('leomon','iceleomon','normal');
     edge('iceleomon','regulumon','normal');
 
-    // Xros Wars: Leomon corrupted into MadLeomon
-    edge('leomon','madleomon','dark','bottom','top',{shape:'vertical', label:'Corrupted (Xros Wars)', lx:406, ly:709});
-    edge('madleomon','madleomonarmed','mode','bottom','top',{shape:'vertical'});
+    // Digimon Fusion: Leomon corrupted into MadLeomon, which absorbs its soldiers into the Armed Mode
+    edge('leomon','madleomon','dark','bottom','top',{shape:'vertical', label:'Corrupted (Digimon Fusion)', lx:406, ly:709});
+    edge('madleomon','madleomonarmed','dna','bottom','top',{shape:'vertical'});
 
     // X-Antibody forms
     edge('leomon','leomonx','x','top','bottom',{shape:'vertical'});

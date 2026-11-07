@@ -34,7 +34,7 @@ then lists the generations, the atlas pages or the group rosters:
   - [lopmon.html](src/evolution-lines/gen-3-tamers/lopmon.html) - Lopmon line (Celestial line up to Cherubimon (Good), the Adventure 02 film's dark line to Cherubimon (Evil), the Frontier corruption, X-Antibody forms).
   - [guardromon.html](src/evolution-lines/gen-3-tamers/guardromon.html) - Guardromon line (the D-Power line from Kokuwamon to HiAndromon, the Ghost Game branch from Hagurumon, X-Antibody forms).
   - [marineangemon.html](src/evolution-lines/gen-3-tamers/marineangemon.html) - MarineAngemon line (the D-Power line from Penguinmon, the Digimon Next link from Pichimon).
-  - [leomon.html](src/evolution-lines/gen-3-tamers/leomon.html) - Leomon line (the D-Power line from Elecmon to SaberLeomon and Dinotigermon, the BanchoLeomon and IceLeomon branches, the Xros Wars MadLeomon, X-Antibody forms).
+  - [leomon.html](src/evolution-lines/gen-3-tamers/leomon.html) - Leomon line (the D-Power line from Elecmon to SaberLeomon and Dinotigermon, the BanchoLeomon and IceLeomon branches, the Digimon Fusion MadLeomon and its Armed Mode Jogress, X-Antibody forms).
 - `src/evolution-lines/gen-4-frontier/` - Digimon Frontier (Spirit Evolution; the children become Digimon, no partner):
   - [index.html](src/evolution-lines/gen-4-frontier/index.html) - Legendary Warriors selection screen (6 chosen + 4 Cherubimon's warriors).
   - [agunimon.html](src/evolution-lines/gen-4-frontier/agunimon.html) - Warrior of Flame line (Child Flamemon, Human/Beast Spirit, Fusion, Unified, Susanoomon).
@@ -366,7 +366,8 @@ WarGreymon, digivolves from MetalGreymon Alterous Mode in Adventure: 2020), and 
 absorbing other Digimon is a **DNA / Jogress** (`HiMachineDramon`, Machinedramon after
 absorbing a SkullScorpionmon army in Digimon Fusion episode 14), and the Jogress panel carries
 the absorbed Digimon as a partner card (`SkullScorpionmon` for `HiMachineDramon` on agumon,
-`Arcadiamon (Ultra)` for `Daemon (Ultra)` on patamon).
+`Arcadiamon (Ultra)` for `Daemon (Ultra)` on patamon, the Chikurimon, Troopmon and Mammothmon
+soldiers for `MadLeomon Armed Mode` on leomon).
 
 A Warp Digivolution gets no arrow of its own (Agumon -> WarGreymon, or Leomon -> SaberLeomon in
 Adventure episode 47): it passes through the skipped levels in one step, so the line already
@@ -798,8 +799,8 @@ regression shows which In-Training form belongs to the partner; the step up to t
 needs a source of its own (Cyberdramon also regresses to Monodramon in episode 41).
 
 A partner with no form for a Digi-Egg says so in its footer (`Patamon has no recorded form
-for the Digi-Egg of Destiny.`). The six Armor panels, the eight Adventure trees and the four
-Adventure 02 trees were checked against this rule in November 2026. The edges of the other trees have not been checked
+for the Digi-Egg of Destiny.`). The six Armor panels, the eight Adventure trees, the four
+Adventure 02 trees and the eight Tamers trees were checked against this rule in November 2026. The edges of the other trees have not been checked
 yet, and some of them still rest on a game.
 
 ## Artwork sources
