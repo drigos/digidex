@@ -875,6 +875,9 @@ follows the favicon links, in this order:
 - `theme-color` is the `--bg` token of `digivolution.css`.
 - X reads the `og:` fields when its own are missing, but needs `twitter:card` to show the
   large image.
+- The landing page alone adds a `WebSite` JSON-LD block (`name` and `url`) after the tags,
+  which Google uses to show "Digidex" as the site name in its results. No other structured
+  data is used: a `BreadcrumbList` would repeat each `nav.crumbs` trail and drift from it.
 
 These are the only absolute URLs in the pages, an exception to the relative links of
 "Publishing": link previews and search engines need them. They tie the tags to the
