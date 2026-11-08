@@ -609,7 +609,9 @@ layers its own vocabulary on the shared engine instead of the Fresh->Mega ranks.
   Ancient's abilities on to Digimon types (Dragon, Beast, Insectoid), not to the line.
 
 Only Takuya and Koji have a Child and a Unified form of their own. Takuya travels as Flamemon
-in episode 22, and Flamemon Spirit-Evolves into Agunimon. Their Fusion leads to their Unified
+in episode 22, and Flamemon Spirit-Evolves into Agunimon. Strabimon, Lobomon with half its
+power lost in the Reference Book, takes the same slot on lobomon as an editorial exception (see
+"Relation sources"); it does not appear in Frontier. Their Fusion leads to their Unified
 form, as the Spirit-Digivolving figures build it; the anime unifies the Spirits straight from
 the child (episode 35), and the footer says both. The other eight pages follow these rules:
 
@@ -635,7 +637,7 @@ the child (episode 35), and the footer says both. The other eight pages follow t
 - **Footer**: game forms with other species, card-game evolutions into an Ancient and
   `{{DSR}}` entries stay out, as on the Flame and Light pages. Official Reference Book
   names that differ are mapped (`Susanomon`, `AncientTroymon`, `AncientMermaimon`,
-  `Lanamon`, `Sephirothmon`, `Velgrmon`, `DaiPenmon`).
+  `Lanamon`, `Sephirothmon`, `Velgrmon`, `DaiPenmon`, `Beowolfmon`).
 
 Susanoomon, on all ten pages: in episodes 48 to 50 the children merge with the Spirits of all
 ten Warriors ("Ancient Spirit Evolution"), Takuya and Koji first and all five in the last
@@ -749,7 +751,11 @@ the footer:
   these Digimon (Shakkoumon's profile adds that it may be an Angel Digimon);
 - Kapurimon -> Kokuwamon on guardromon: Kazu's Guardromon regresses to Kapurimon in Tamers
   episode 51 and Kokuwamon is the Rookie of the D-Power's line, but only games join the two
-  (DigimonWiki cites the D-Power 3.0, whose known data starts at Rookie).
+  (DigimonWiki cites the D-Power 3.0, whose known data starts at Rookie);
+- Strabimon -> Lobomon on lobomon: Strabimon does not appear in Frontier, and its Reference
+  Book profile makes it Lobomon with half its power lost, the counterpart of Flamemon, which
+  Frontier episode 22 shows Spirit-Evolving back into Agunimon; only the encyclopedia of the
+  Digimon Life game draws Strabimon digivolving into Lobomon.
 
 The sources are:
 

@@ -25,7 +25,7 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:1598px; height:1487px; }
+  .infographic { width:1598px; height:1519px; }
   .columns { top:200px; }
   /* both reference panels are left-aligned and stacked (narrow DNA on top, wide Unified below) */
   .jogress-panel { top:710px; width:430px; }
@@ -48,7 +48,7 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 1598 1487" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 1598 1519" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
@@ -106,7 +106,7 @@
       </div>
     </section>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show the Spirit tier; edge colors show the Spirit trigger. Frontier has no partner Digimon: Koji's Child form Strabimon Spirit-Evolves into these forms; AncientGarurumon is the ancestral Warrior of Light (lore links, not steps) and the origin of both the Human line (via Strabimon) and the Beast Spirit. BeoWolfmon fuses the two Light Spirits; MagnaGarurumon unifies five Warriors' Spirits (see panel); Susanoomon is MagnaGarurumon DNA-Digivolved with Takuya's EmperorGreymon (see panel), uniting all ten Legendary Warriors. Susanoomon and AncientMermaidmon are DigimonWiki's names for the official Susanomon and AncientMermaimon.</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show the Spirit tier; edge colors show the Spirit trigger. Frontier has no partner Digimon: Koji Spirit-Evolves into these forms; AncientGarurumon is the Warrior of Light whose Spirits Koji wields (lore links, not steps). Strabimon does not appear in Frontier: its Reference Book profile makes it Lobomon with half its power lost, as Flamemon is Agunimon without its power, and only a game draws it digivolving into Lobomon, an editorial exception kept for that parallel. BeoWolfmon fuses the two Light Spirits. In episode 35 Koji unifies them with four other Warriors' Spirits into MagnaGarurumon (see panel); the arrow from BeoWolfmon follows the Spirit-Digivolving figure. In episodes 48 to 50 Takuya and Koji, and in the last one all five children, merge with the ten Warriors' Spirits into Susanoomon; the tree draws it from MagnaGarurumon and Takuya's EmperorGreymon (see panel), which hold those Spirits, as the Hybrid-Digivolving figures do. BeoWolfmon, Susanoomon and AncientMermaidmon are DigimonWiki's names for the official Beowolfmon, Susanomon and AncientMermaimon.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -129,10 +129,10 @@ DigiTree.mount({
   ],
   nodes: [
     // ancestral origin (far left): ancient Warrior of Light, source of both branches
-    {id:'ancientgarurumon', x:42, y:370, cls:'lore', badge:{cls:'lw', text:'Legendary Warrior', href:'../../groups/ten-legendary-warriors.html#ancientgarurumon', title:'Ten Legendary Warriors roster'}, name:'AncientGarurumon', lvl:'Ancient', note:'Ancient Warrior of Light; ancestor of the entire Light line.', wiki:'AncientGarurumon', img:'ancientgarurumon'},
+    {id:'ancientgarurumon', x:42, y:370, cls:'lore', badge:{cls:'lw', text:'Legendary Warrior', href:'../../groups/ten-legendary-warriors.html#ancientgarurumon', title:'Ten Legendary Warriors roster'}, name:'AncientGarurumon', lvl:'Ancient', note:'Warrior of Light; left the Spirits of Light.', wiki:'AncientGarurumon', img:'ancientgarurumon'},
 
-    // child form (Koji's Rookie-level Digimon), level with the Human Spirit
-    {id:'strabimon', x:304, y:250, cls:'normal', name:'Strabimon', lvl:'Child', note:'Koji&rsquo;s Child form; Spirit-Evolves into Lobomon.', wiki:'Strabimon', img:'storabimon'},
+    // child form (Lobomon with half its power lost, per the Reference Book), level with the Human Spirit
+    {id:'strabimon', x:304, y:250, cls:'normal', name:'Strabimon', lvl:'Child', note:'Lobomon after losing half its power.', wiki:'Strabimon', img:'storabimon'},
 
     // spirit column (Human + Beast, slide-linked)
     {id:'lobomon', x:566, y:250, cls:'normal', name:'Lobomon', lvl:'Human Spirit', note:'Koji&rsquo;s Human Spirit of Light.', wiki:'Lobomon', img:'wolfmon'},
