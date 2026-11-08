@@ -70,7 +70,7 @@ then lists the generations, the atlas pages or the group rosters:
   - [index.html](src/groups/index.html) - Special groups selection screen: one card per special group, then "Organizations of the Digital Worlds", a directory of the cosmology-filed rosters grouped by world.
   - Rosters filed under Digital World Cosmology (breadcrumb `Home / Cosmology / <world> / <page>`):
     - [royal-knights.html](src/groups/royal-knights.html) - the thirteen Royal Knights plus Imperialdramon Paladin Mode as the order's origin.
-    - [four-sovereigns.html](src/groups/four-sovereigns.html) - the Four Holy Beasts guarding the compass points, with Fanglongmon as the emperor of the Center.
+    - [four-sovereigns.html](src/groups/four-sovereigns.html) - the Four Holy Beasts guarding the compass points, with Huanglongmon as the emperor of the Center.
     - [deva.html](src/groups/deva.html) - the twelve Deva serving the Four Sovereigns, three per master, each card carrying its zodiac animal as the rank pill.
     - [ten-legendary-warriors.html](src/groups/ten-legendary-warriors.html) - the ten ancient warriors of the Ancient Digital World, each card carrying its element.
     - [three-great-angels.html](src/groups/three-great-angels.html) - Seraphimon, Ophanimon and Cherubimon (Good) as the Kernel's guardians, with related forms as chips.
