@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="../../favicon.ico" sizes="32x32" />
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png" />
+<title>Ryudamon: evolution tree</title>
+<meta name="description" content="Ryudamon's evolution tree from Fresh to Ultra as told in Digimon Chronicle, up to Ouryumon and its Jogress with Alphamon into Alphamon Ouryuken." />
+<link rel="canonical" href="https://digidex.martins.icu/evolution-lines/film-x-evolution/ryudamon.html" />
+<meta name="theme-color" content="#06111f" />
+<meta property="og:site_name" content="Digidex" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="Ryudamon: evolution tree" />
+<meta property="og:description" content="Ryudamon's evolution tree from Fresh to Ultra as told in Digimon Chronicle, up to Ouryumon and its Jogress with Alphamon into Alphamon Ouryuken." />
+<meta property="og:url" content="https://digidex.martins.icu/evolution-lines/film-x-evolution/ryudamon.html" />
+<meta property="og:image" content="https://digidex.martins.icu/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:alt" content="The Digidex logo, a gold D on a navy tile, with the name Digidex and the line Evolution trees, cosmology &amp; group rosters" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="stylesheet" href="../../digivolution.css" />
+<style>
+  /* page-specific layout */
+  .infographic { width:1860px; height:892px; }
+  .columns { top:200px; }
+  .jogress-panel { top:470px; width:470px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="backnav" href="index.html"><span class="arrow">&#8592;</span> X-Antibody Digimon</a>
+  <div class="infographic" id="canvas">
+    <div class="title">
+      <h1>Ryudamon: evolution tree</h1>
+      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega -> Ultra hierarchy as told in Digimon Chronicle, from Yuji's Ryudamon through Ginryumon and Hisyaryumon to Ouryumon, which Alphamon turns into its sword to become Alphamon Ouryuken.</div>
+    </div>
+
+    <div class="legend">
+      <div class="legend-title">Digivolution triggers</div>
+      <div class="legend-grid"></div>
+    </div>
+
+    <div class="columns"></div>
+
+    <svg id="edges" viewBox="0 0 1860 892" preserveAspectRatio="none"></svg>
+    <div id="labels"></div>
+    <div id="nodes"></div>
+
+    <section class="jogress-panel" id="jogress-panel">
+      <div class="jogress-panel-title">
+        <h2>Alphamon Ouryuken: Jogress partner</h2>
+        <span>Kota's Alphamon turns Ouryumon into its sword (Digimon Chronicle)</span>
+      </div>
+      <div class="jogress-body">
+        <a class="jogress-card" href="https://digimon.fandom.com/wiki/Alphamon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/alphamon.jpg" alt="Alphamon">
+          <div class="jogress-name">Alphamon</div>
+          <div class="jogress-level">Mega</div>
+          <div class="jogress-fuse">+ Ouryumon = Alphamon Ouryuken</div>
+        </a>
+      </div>
+    </section>
+
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show Level (+ X); edge colors show the digivolution trigger. In Digimon Chronicle, Yuji's Ryudamon reaches Ouryumon without the story showing the path; only the Digimon Pendulum X V-pet and games draw Ginryumon -> Hisyaryumon -> Ouryumon, and only that V-pet and cards draw Fufumon -> Kyokyomon. The tree keeps both, since no other source reaches Hisyaryumon and the Reference Book ties Kyokyomon to Fufumon. The Reference Book marks the line's forms as X-Antibody carriers, so it has no X-Digivolution branch.</div>
+  </div>
+  <div class="support">
+    <span class="support-label">Support this project</span>
+    <a class="support-btn kofi" href="https://ko-fi.com/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9749;</span><span class="support-text">Buy me a coffee</span><span class="support-url">ko-fi.com/drigos</span></a>
+    <a class="support-btn sponsors" href="https://github.com/sponsors/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9829;</span><span class="support-text">GitHub Sponsors</span><span class="support-url">github.com/sponsors/drigos</span></a>
+  </div>
+</div>
+<script src="../../digivolution.js"></script>
+<script>
+DigiTree.mount({
+  legend: [
+    ['normal','Normal evolution'],
+    ['dna','DNA / Jogress']
+  ],
+  columns: [
+    [42,'Fresh'],[304,'In-Training'],[566,'Rookie'],[828,'Champion'],
+    [1090,'Ultimate'],[1352,'Mega'],[1614,'Ultra']
+  ],
+  nodes: [
+    // one line: Yuji's partner in Digimon Chronicle
+    {id:'fufumon', x:42, y:250, cls:'normal', name:'Fufumon', lvl:'Fresh', note:'Floats from birth; its horn is soft.', wiki:'Fufumon', img:'fufumon'},
+    {id:'kyokyomon', x:304, y:250, cls:'normal', name:'Kyokyomon', lvl:'In-Training', note:'Stretches to nine times its length.', wiki:'Kyokyomon', img:'kyokyomon'},
+    {id:'ryudamon', x:566, y:250, cls:'normal', name:'Ryudamon', lvl:'Rookie', note:'Prototype Digimon with a samurai spirit.', wiki:'Ryudamon', img:'ryudamon'},
+    {id:'ginryumon', x:828, y:250, cls:'normal', name:'Ginryumon', lvl:'Champion', note:'Parries attacks with its smooth armor.', wiki:'Ginryumon', img:'ginryumon'},
+    {id:'hisyaryumon', x:1090, y:250, cls:'normal', name:'Hisyaryumon', lvl:'Ultimate', note:'Its orbs hold its lost companions\' souls.', wiki:'Hisyaryumon', img:'hisyaryumon'},
+    {id:'ouryumon', x:1352, y:250, cls:'normal', name:'Ouryumon', lvl:'Mega', note:'Dragon warrior with a sword in each hand.', wiki:'Ouryumon', img:'ouryumon'},
+    {id:'alphamonouryuken', x:1614, y:250, cls:'dna', name:'Alphamon Ouryuken', lvl:'Ultra', note:'Wields Ouryumon as the Ouryuken.', wiki:'Alphamon_Ouryuken', img:'alphamon:ouryuken', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#alphamon', title:'Royal Knights roster'}}
+  ],
+  edges: function (edge) {
+    // Fufumon -> Kyokyomon and Ginryumon -> Hisyaryumon -> Ouryumon are editorial exceptions (see
+    // the footer); Kyokyomon -> Ryudamon rests on the Digimon Bilievers manga, Ryudamon ->
+    // Ginryumon on Ghost Game and Digimon Journal
+    edge('fufumon','kyokyomon','normal');
+    edge('kyokyomon','ryudamon','normal');
+    edge('ryudamon','ginryumon','normal');
+    edge('ginryumon','hisyaryumon','normal');
+    edge('hisyaryumon','ouryumon','normal');
+
+    // DNA / Jogress with Alphamon (see panel)
+    edge('ouryumon','alphamonouryuken','dna');
+  }
+});
+</script>
+</body>
+</html>

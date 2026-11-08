@@ -50,6 +50,7 @@ then lists the generations, the atlas pages or the group rosters:
 - `src/evolution-lines/film-x-evolution/` - Digital Monster X-Evolution (TV film, no human partners):
   - [index.html](src/evolution-lines/film-x-evolution/index.html) - X-Antibody Digimon selection screen (the WarGreymon X and MetalGarurumon X cards link into the gen-1 Agumon and Gabumon trees).
   - [dorumon.html](src/evolution-lines/film-x-evolution/dorumon.html) - Dorumon line as told in Digimon Chronicle (Dorugoramon, the line through Reptiledramon and Grademon to Alphamon Ouryuken with its Ouryumon Jogress, the Death-X line to Dexmon), plus the film's own step from DoruGreymon to Alphamon, the one edge labeled with a continuity.
+  - [ryudamon.html](src/evolution-lines/film-x-evolution/ryudamon.html) - Ryudamon line as told in Digimon Chronicle (Yuji's partner through Ginryumon and Hisyaryumon to Ouryumon, which Alphamon turns into its sword to become Alphamon Ouryuken).
 - `src/evolution-lines/gen-5-data-squad/` - Digimon Data Squad / Savers:
   - [index.html](src/evolution-lines/gen-5-data-squad/index.html) - DATS selection screen (by Burst Mode; the Agumon card links into the gen-1 Agumon tree).
 - Generations whose selection screen exists but whose trees are all "Coming soon" (partners and peak forms taken from the DigimonWiki character infoboxes):
@@ -769,7 +770,14 @@ the footer:
   -> DexDorugamon -> DexDoruGreymon -> DexDorugoramon (the V-pet and the games agree on the
   start from Dorumon), but the Reference Book describes DexDorugamon and DexDoruGreymon as
   resembling the Champion and the final form of the Doru series, and in the film DoruGreymon is
-  mistaken for the DexDoruGreymon swarm.
+  mistaken for the DexDoruGreymon swarm;
+- Fufumon -> Kyokyomon on ryudamon: only the Digimon Pendulum X V-pet and cards join the two
+  (Kyokyomon -> Ryudamon rests on the Digimon Bilievers manga), but Kyokyomon's Reference Book
+  profile compares its light body to Fufumon's, and both spit iron (Little Iron Spikes, Metal
+  Straw);
+- Ginryumon -> Hisyaryumon -> Ouryumon on ryudamon: Digimon Chronicle takes Yuji's Ryudamon to
+  Ouryumon without showing the path, and only the Digimon Pendulum X V-pet, games and cards draw
+  it through Hisyaryumon, which no other source reaches.
 
 The sources are:
 
@@ -780,9 +788,10 @@ The sources are:
    profile says the form follows Guilmon. The "See related Digimon" list under a profile is
    thematic (Guilmon is related to Guardromon and Yaamon), so it proves nothing;
 2. other official Bandai material: the Digital Monster Art Book, the digimon.net articles
-   (Digimon Chronicle X, Digimon Profile, and the Digimon Chronicle story pages of the Digimon
-   Pendulum X site, read through the Wayback Machine at
-   `digimon.net/digimon_archive2010/chronicle/`) and Bandai's own product texts (Premium Bandai).
+   (Digimon Chronicle X, Digimon Profile, Digimon Journal, and the Digimon Chronicle story pages
+   of the Digimon Pendulum X site, read through the Wayback Machine at
+   `digimon.net/digimon_archive2010/chronicle/` and at its first address,
+   `digimon.channel.or.jp/chronicle/`) and Bandai's own product texts (Premium Bandai).
    Imperialdramon Paladin Mode as founder of the Royal Knights rests on the Art Book, and
    Jesmon filling the thirteenth seat on a Premium Bandai text. The figures released with
    Digimon Frontier count too, like the V-pets of each series: the Spirit-Digivolving Figures
@@ -849,9 +858,9 @@ needs a source of its own (Cyberdramon also regresses to Monodramon in episode 4
 
 A partner with no form for a Digi-Egg says so in its footer (`Patamon has no recorded form
 for the Digi-Egg of Destiny.`). The six Armor panels, the eight Adventure trees, the four
-Adventure 02 trees, the eight Tamers trees, the ten Frontier trees and the Digital Monster
-X-Evolution tree were checked against this rule in November 2026. No other generation has a
-tree yet.
+Adventure 02 trees, the eight Tamers trees, the ten Frontier trees and the two X-Antibody trees
+(dorumon and ryudamon) were checked against this rule in November 2026. No other generation has
+a tree yet.
 
 ## Artwork sources
 
