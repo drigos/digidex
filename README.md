@@ -56,7 +56,7 @@ then lists the generations, the atlas pages or the group rosters:
 - Generations whose selection screen exists but whose trees are all "Coming soon" (partners taken from the DigimonWiki character infoboxes, peak forms by the rule under "Files"):
   - [gen-6-fusion/index.html](src/evolution-lines/gen-6-fusion/index.html) - Digimon Fusion: the Fusion Fighters' partners (Shoutmon, Greymon, Sparrowmon, Cutemon).
   - [gen-7-hunters/index.html](src/evolution-lines/gen-7-hunters/index.html) - The Young Hunters Who Leapt Through Time: Xros Heart (Gumdramon, Shoutmon (King Version), Damemon) and the other Hunters (Psychemon, Opossummon).
-  - [gen-8-app-monsters/index.html](src/evolution-lines/gen-8-app-monsters/index.html) - Digimon Universe App Monsters: the App Drivers' Appmon by God grade; Appmon have no official Reference Book entry, so this page's artwork comes from Wikimon.
+  - [gen-8-app-monsters/index.html](src/evolution-lines/gen-8-app-monsters/index.html) - Digimon Universe App Monsters: the App Drivers' Appmon by highest grade; Appmon have no official Reference Book entry, so this page's artwork comes from Wikimon.
   - [gen-10-ghost-game/index.html](src/evolution-lines/gen-10-ghost-game/index.html) - Digimon Ghost Game: Gammamon, Angoramon and Jellymon.
   - [gen-11-beatbreak/index.html](src/evolution-lines/gen-11-beatbreak/index.html) - Digimon Beatbreak: Glowing Dawn's partners (Gekkomon, Pristimon, Chiropmon, Murasamemon).
 - `src/cosmology/` - the Digital World Cosmology atlas (see "Digital World Cosmology" below):
@@ -865,9 +865,9 @@ needs a source of its own (Cyberdramon also regresses to Monodramon in episode 4
 
 A partner with no form for a Digi-Egg says so in its footer (`Patamon has no recorded form
 for the Digi-Egg of Destiny.`). The six Armor panels, the eight Adventure trees, the four
-Adventure 02 trees, the eight Tamers trees, the ten Frontier trees and the two X-Antibody trees
-(dorumon and ryudamon) were checked against this rule in November 2026. No other generation has
-a tree yet.
+Adventure 02 trees, the eight Tamers trees, the ten Frontier trees, the two X-Antibody trees
+(dorumon and ryudamon) and the partner and peak-form cards of every generation index were
+checked against this rule in November 2026. No other generation has a tree yet.
 
 ## Artwork sources
 
