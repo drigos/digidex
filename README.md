@@ -516,9 +516,7 @@ Every X form hangs from its base form by a vertical X-Digivolution edge (Gatomon
 Omnimon -> Omnimon X). The X forms of a line are not chained to one another, even where a
 source shows the step (Digimon Chronicle X has Gatomon X -> Angewomon X): an X form follows the
 line of its base form, so the chain is implied and the extra edges add nothing. Megidramon X on
-guilmon is the one X form off its base's column: cards fill Megidramon's column above and below
-and MedievalGallantmon takes the slot beside it, so Megidramon X sits one column right and one
-row down, reached through the outer lane.
+guilmon is the one X form beside its base, since cards fill Megidramon's column above and below.
 An X form takes the `Ultra` label only when its own entry qualifies (section 1): Omnimon X is
 `Ultra / X`, while Ophanimon Falldown Mode X on gatomon is `Mega / X` under its `Ultra` base,
 since none of the listed games places the X form in that stage.

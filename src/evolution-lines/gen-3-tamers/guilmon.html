@@ -25,7 +25,7 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:1860px; height:1273px; }
+  .infographic { width:1860px; height:1497px; }
   .columns { top:200px; }
 </style>
 </head>
@@ -45,7 +45,7 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 1860 1273" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 1860 1497" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
@@ -91,14 +91,14 @@ DigiTree.mount({
     // Data (Yellow) variant line + Digital Hazard (row 2)
     {id:'growlmonyellow', x:828, y:730, cls:'variant', name:'Growlmon (Yellow)', lvl:'Champion', note:'A Growlmon that became a Data type.', wiki:'Growlmon_(Yellow)', img:'growmon_orange'},
     {id:'wargrowlmonyellow', x:1090, y:730, cls:'normal', name:'WarGrowlmon (Yellow)', lvl:'Ultimate', note:'From the Data type of Growlmon.', wiki:'WarGrowlmon_(Yellow)', img:'megalograwmon_orange'},
-    {id:'megidramon', x:1352, y:730, cls:'dark', badge:{cls:'fgd', text:'Four Great Dragons', href:'../../groups/four-great-dragons.html#megidramon', title:'Four Great Dragons roster'}, name:'Megidramon', lvl:'Mega', note:'Considered a Digital Hazard in itself.', wiki:'Megidramon', img:'megidramon'},
-    {id:'medievalgallantmon', x:1614, y:730, cls:'mode', badge:{cls:'vw', text:'Vortex Warrior', href:'../../groups/vortex-warriors.html#medievalgallantmon', title:'Vortex Warriors roster'}, name:'MedievalGallantmon', lvl:'Mega', note:'Legendary hero of Witchelny.', wiki:'MedievalGallantmon', img:'medievaldukemon'},
+    {id:'megidramon', x:1352, y:970, cls:'dark', badge:{cls:'fgd', text:'Four Great Dragons', href:'../../groups/four-great-dragons.html#megidramon', title:'Four Great Dragons roster'}, name:'Megidramon', lvl:'Mega', note:'Considered a Digital Hazard in itself.', wiki:'Megidramon', img:'megidramon'},
+    {id:'medievalgallantmon', x:1352, y:730, cls:'mode', badge:{cls:'vw', text:'Vortex Warrior', href:'../../groups/vortex-warriors.html#medievalgallantmon', title:'Vortex Warriors roster'}, name:'MedievalGallantmon', lvl:'Mega', note:'Legendary hero of Witchelny.', wiki:'MedievalGallantmon', img:'medievaldukemon'},
     {id:'megidramonx', x:1614, y:970, cls:'x', badge:{cls:'fgd', text:'Four Great Dragons', href:'../../groups/four-great-dragons.html#megidramon', title:'Four Great Dragons roster'}, name:'Megidramon X', lvl:'Mega / X', note:'X-Antibody form.', wiki:'Megidramon_X', img:'megidramon_x'},
 
-    // the D-Ark's dark line (row 3)
-    {id:'blackgrowlmon', x:828, y:970, cls:'dark', name:'BlackGrowlmon', lvl:'Champion', note:'Said to be Growlmon\'s original form.', wiki:'BlackGrowlmon', img:'blackgrowmon'},
-    {id:'blackwargrowlmon', x:1090, y:970, cls:'dark', name:'BlackWarGrowlmon', lvl:'Ultimate', note:'The Black Destroyer Dragon.', wiki:'BlackWarGrowlmon', img:'blackmegalogrowmon'},
-    {id:'chaosgallantmon', x:1352, y:970, cls:'dark', name:'ChaosGallantmon', lvl:'Mega', note:'The dark side of Gallantmon.', wiki:'ChaosGallantmon', img:'chaosdukemon'}
+    // the D-Ark's dark line (row 4)
+    {id:'blackgrowlmon', x:828, y:1210, cls:'dark', name:'BlackGrowlmon', lvl:'Champion', note:'Said to be Growlmon\'s original form.', wiki:'BlackGrowlmon', img:'blackgrowmon'},
+    {id:'blackwargrowlmon', x:1090, y:1210, cls:'dark', name:'BlackWarGrowlmon', lvl:'Ultimate', note:'The Black Destroyer Dragon.', wiki:'BlackWarGrowlmon', img:'blackmegalogrowmon'},
+    {id:'chaosgallantmon', x:1352, y:1210, cls:'dark', name:'ChaosGallantmon', lvl:'Mega', note:'The dark side of Gallantmon.', wiki:'ChaosGallantmon', img:'chaosdukemon'}
   ],
   edges: function (edge) {
     // main spine
@@ -107,8 +107,8 @@ DigiTree.mount({
     edge('guilmon','growlmon','normal');
     edge('growlmon','wargrowlmon','normal');
     edge('gallantmon','crimson','mode');
-    // MedievalGallantmon with a Forest Leaf (card game), in the inner lane
-    edge('gallantmon','medievalgallantmon','mode','right','left',{fromY:650, points:[[1575,650],[1575,829]], toY:829, label:'Forest Leaf', lx:1575, ly:709});
+    // MedievalGallantmon with a Forest Leaf (card game), right below Gallantmon
+    edge('gallantmon','medievalgallantmon','mode','bottom','top',{shape:'vertical', label:'Forest Leaf', lx:1454, ly:709});
     edge('grani','crimson','mode','bottom','top',{shape:'vertical'});
 
     // Biomerge with Takato: WarGrowlmon into Gallantmon, along the row gap above the line
@@ -119,9 +119,8 @@ DigiTree.mount({
     edge('growlmon','growlmonx','x','top','bottom',{shape:'vertical'});
     edge('wargrowlmon','wargrowlmonx','x','top','bottom',{shape:'vertical'});
     edge('gallantmon','gallantmonx','x','top','bottom',{shape:'vertical'});
-    // Megidramon X: its column is full above and below, and MedievalGallantmon takes the slot
-    // beside it, so it sits one row down in the outer lane
-    edge('megidramon','megidramonx','x','right','left',{fromY:870, points:[[1595,870],[1595,1069]], toY:1069});
+    // Megidramon X sits beside its base: Megidramon's column is full above and below
+    edge('megidramon','megidramonx','x');
 
     // Data (Yellow) variant line
     edge('growlmon','growlmonyellow','variant','bottom','top',{shape:'vertical'});
@@ -136,7 +135,7 @@ DigiTree.mount({
     edge('blackwargrowlmon','chaosgallantmon','dark');
 
     // lore link: theory that Megidramon and ChaosGallantmon are the same being
-    edge('megidramon','chaosgallantmon','normal','bottom','top',{shape:'vertical', startArrow:true, label:'Same being (theory)', lx:1454, ly:949, width:2, opacity:0.5});
+    edge('megidramon','chaosgallantmon','normal','bottom','top',{shape:'vertical', startArrow:true, label:'Same being (theory)', lx:1454, ly:1189, width:2, opacity:0.5});
   }
 });
 </script>
