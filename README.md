@@ -851,6 +851,12 @@ cites a source per relation, but those citations are incomplete on both sides (t
 partner's full Armor set. Wikimon uses the Japanese Digi-Egg names: Purity is DigimonWiki's
 Sincerity, Sincerity (also written Faith) is Reliability, and Fate is Destiny.
 
+A note about a product rather than the lore (the V-pet line-up a group belongs to, the
+product a group debuted in) stays only when an official Bandai text states it: the
+tentei-hachibushu roster keeps the Digimon Pendulum COLOR line-ups, which the Monmon Memo
+articles of digimon.net describe, and a debut that only the wikis record, or a history told
+through cards, stays out.
+
 An anime or film relation is read first from the DigimonWiki episode or film article, through
 the MediaWiki API: its "Digivolutions" section lists every digivolution shown (forward and warp
 arrows, red arrows for a regression, blue for a form change). The Agumon (Burst Mode) and
