@@ -25,7 +25,7 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:1598px; height:1487px; }
+  .infographic { width:1598px; height:1503px; }
   .columns { top:200px; }
   /* both reference panels are left-aligned and stacked (narrow DNA on top, wide Unified below) */
   .jogress-panel { top:710px; width:430px; }
@@ -48,7 +48,7 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 1598 1487" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 1598 1503" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
@@ -106,7 +106,7 @@
       </div>
     </section>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show the Spirit tier; edge colors show the Spirit trigger. Frontier has no partner Digimon: Takuya's Child form Flamemon Spirit-Evolves into these forms; AncientGreymon is the ancestral Warrior of Flame (lore links, not steps) and the origin of both the Human line (via Flamemon) and the Beast Spirit. Aldamon fuses the two Flame Spirits; EmperorGreymon unifies five Warriors' Spirits (see panel); Susanoomon is EmperorGreymon DNA-Digivolved with Koji's MagnaGarurumon (see panel), uniting all ten Legendary Warriors. Susanoomon and AncientTroiamon are DigimonWiki's names for the official Susanomon and AncientTroymon.</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show the Spirit tier; edge colors show the Spirit trigger. Frontier has no partner Digimon: Takuya Spirit-Evolves into these forms, and in episode 22 he travels as Flamemon, which Spirit-Evolves into Agunimon; AncientGreymon is the Warrior of Flame whose Spirits Takuya wields (lore links, not steps). Aldamon fuses the two Flame Spirits. In episode 35 Takuya unifies them with four other Warriors' Spirits into EmperorGreymon (see panel); the arrow from Aldamon follows the Spirit-Digivolving figure. In episodes 48 to 50 Takuya and Koji, and in the last one all five children, merge with the ten Warriors' Spirits into Susanoomon; the tree draws it from EmperorGreymon and Koji's MagnaGarurumon (see panel), which hold those Spirits, as the Hybrid-Digivolving figures do. Susanoomon and AncientTroiamon are DigimonWiki's names for the official Susanomon and AncientTroymon.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -129,7 +129,7 @@ DigiTree.mount({
   ],
   nodes: [
     // ancestral origin (far left): ancient Warrior of Flame, source of both branches
-    {id:'ancientgreymon', x:42, y:370, cls:'lore', badge:{cls:'lw', text:'Legendary Warrior', href:'../../groups/ten-legendary-warriors.html#ancientgreymon', title:'Ten Legendary Warriors roster'}, name:'AncientGreymon', lvl:'Ancient', note:'Ancient Warrior of Flame; ancestor of the entire Flame line.', wiki:'AncientGreymon', img:'ancientgreymon'},
+    {id:'ancientgreymon', x:42, y:370, cls:'lore', badge:{cls:'lw', text:'Legendary Warrior', href:'../../groups/ten-legendary-warriors.html#ancientgreymon', title:'Ten Legendary Warriors roster'}, name:'AncientGreymon', lvl:'Ancient', note:'Warrior of Flame; left the Spirits of Flame.', wiki:'AncientGreymon', img:'ancientgreymon'},
 
     // child form (Takuya's Rookie-level Digimon), level with the Human Spirit
     {id:'flamemon', x:304, y:250, cls:'normal', name:'Flamemon', lvl:'Child', note:'Takuya’s Child form; Spirit-Evolves into Agunimon.', wiki:'Flamemon', img:'flamon'},

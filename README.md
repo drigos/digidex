@@ -603,9 +603,15 @@ layers its own vocabulary on the shared engine instead of the Fresh->Mega ranks.
   dotted, arrowless lore edge, as in the gen-1 pages). No new color tokens are added.
 - **Columns** are relabeled to the Spirit tiers (`Ancestor`, `Child`, `Human / Beast Spirit`,
   `Fusion`, `Unified Spirit`, `Susanoomon`) rather than evolution levels.
+- **Ancients**: the Ten Legendary Warriors released their Spirits and entrusted them to the
+  Three Great Angels (episode 38), so each Ancient's note says it left the Spirits of its
+  element (`Warrior of Flame; left the Spirits of Flame.`). The Reference Book passes an
+  Ancient's abilities on to Digimon types (Dragon, Beast, Insectoid), not to the line.
 
-Only Takuya and Koji have a Child and a Unified form of their own. The other eight pages
-follow these rules:
+Only Takuya and Koji have a Child and a Unified form of their own. Takuya travels as Flamemon
+in episode 22, and Flamemon Spirit-Evolves into Agunimon. Their Fusion leads to their Unified
+form, as the Spirit-Digivolving figures build it; the anime unifies the Spirits straight from
+the child (episode 35), and the footer says both. The other eight pages follow these rules:
 
 - **No Child column**: the `Ancient` ties straight to the Human and Beast Spirits with the
   lore fan, and the canvas is `1336px` (five columns).
@@ -630,6 +636,13 @@ follow these rules:
   `{{DSR}}` entries stay out, as on the Flame and Light pages. Official Reference Book
   names that differ are mapped (`Susanomon`, `AncientTroymon`, `AncientMermaimon`,
   `Lanamon`, `Sephirothmon`, `Velgrmon`, `DaiPenmon`).
+
+Susanoomon, on all ten pages: in episodes 48 to 50 the children merge with the Spirits of all
+ten Warriors ("Ancient Spirit Evolution"), Takuya and Koji first and all five in the last
+episode; no episode shows the Unified forms fusing. The tree draws a DNA edge from the line's
+Unified form, with the other Unified form in the `Susanoomon: DNA Digivolve` panel, because
+each holds the five Spirits that Takuya or Koji brings to the merge, as the Hybrid-Digivolving
+figures combine them. The footer states both.
 
 The engine is otherwise unchanged: same `nodes`/`edges` config, same layout grid and
 header band.
@@ -749,7 +762,11 @@ The sources are:
 2. other official Bandai material: the Digital Monster Art Book, the digimon.net articles
    (Digimon Chronicle X, Digimon Profile) and Bandai's own product texts (Premium Bandai).
    Imperialdramon Paladin Mode as founder of the Royal Knights rests on the Art Book, and
-   Jesmon filling the thirteenth seat on a Premium Bandai text;
+   Jesmon filling the thirteenth seat on a Premium Bandai text. The figures released with
+   Digimon Frontier count too, like the V-pets of each series: the Spirit-Digivolving Figures
+   build Aldamon into EmperorGreymon and BeoWolfmon into MagnaGarurumon, and the
+   Hybrid-Digivolving Figures combine Loweemon and JagerLoweemon into Rhihimon and the two
+   Unified forms into Susanoomon;
 3. the anime series and films, then the manga (V-Tamer 01, ...);
 4. the drama CDs (`Digimon Adventure 02: Armor Evolution to the Unknown`, the Tamers 15th
    Blu-ray BOX drama CD, ...);
