@@ -368,6 +368,13 @@ a.panel-badge { position:static; justify-self:end; align-self:start; margin:9px 
 .tag-key { display:flex; flex-wrap:wrap; justify-content:center; gap:8px 14px; margin:18px auto 0; max-width:980px;
   color:var(--muted); font-size:12px; font-weight:700; }
 .tag-key div { display:inline-flex; align-items:center; gap:7px; }
+/* On a narrow screen the key becomes two columns, labels flush right and meanings flush left,
+   so the rows line up whatever the device font */
+@media (max-width: 720px) {
+  .tag-key { display:grid; grid-template-columns:auto auto; justify-content:center; align-items:center; gap:8px 10px; }
+  .tag-key div { display:contents; }
+  .tag-key .lore-tag { justify-self:end; }
+}
 
 /* Facts strip under a world hero (host computer, culture, guardians, underworld) */
 .facts { display:grid; grid-template-columns:repeat(4, 1fr); gap:12px; margin:26px 0 0; }
