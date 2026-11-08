@@ -49,7 +49,7 @@
     <div id="labels"></div>
     <div id="nodes"></div>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book and Wikimon. Card labels show Level (+ X); edge colors show the digivolution trigger. Biomerge (Matrix Evolution): WarGrowlmon and Takato merge into Gallantmon in Tamers episode 45, as in the D-Ark V-pet, drawn as a Normal evolution; most episodes merge Guilmon straight into it, a jump with no arrow of its own. BlackGrowlmon, BlackWarGrowlmon and ChaosGallantmon are the D-Ark's dark line. Grani is a Flying Dragon machine that Gallantmon pilots, not an evolution stage. Only Wikimon's summary of Digimon Chronicle (the Pendulum X 2.0 installment) records Gallantmon taking the form of MedievalGallantmon, Witchelny's legendary hero, with a Forest Leaf; the tree keeps this link. One theory holds that Megidramon and ChaosGallantmon are the same being seen as either a dark dragon or a dark knight; this is drawn as a faint two-way link, not a path.</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book and Wikimon. Card labels show Level (+ X); edge colors show the digivolution trigger. Biomerge (Matrix Evolution): WarGrowlmon and Takato merge into Gallantmon in Tamers episode 45, as in the D-Ark V-pet, drawn as a Normal evolution; most episodes merge Guilmon straight into it, a jump with no arrow of its own. BlackGrowlmon, BlackWarGrowlmon and ChaosGallantmon are the D-Ark's dark line. Grani is a Flying Dragon machine that Gallantmon pilots, not an evolution stage. Only the card game links Gallantmon to MedievalGallantmon, Witchelny's legendary hero, through its Forest Leaf item card; the tree keeps this link. One theory holds that Megidramon and ChaosGallantmon are the same being seen as either a dark dragon or a dark knight; this is drawn as a faint two-way link, not a path.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -107,8 +107,8 @@ DigiTree.mount({
     edge('guilmon','growlmon','normal');
     edge('growlmon','wargrowlmon','normal');
     edge('gallantmon','crimson','mode');
-    // MedievalGallantmon with a Forest Leaf (Digimon Chronicle), in the inner lane
-    edge('gallantmon','medievalgallantmon','mode','right','left',{fromY:650, points:[[1575,650],[1575,829]], toY:829, label:'Forest Leaf (Digimon Chronicle)', lx:1575, ly:709});
+    // MedievalGallantmon with a Forest Leaf (card game), in the inner lane
+    edge('gallantmon','medievalgallantmon','mode','right','left',{fromY:650, points:[[1575,650],[1575,829]], toY:829, label:'Forest Leaf', lx:1575, ly:709});
     edge('grani','crimson','mode','bottom','top',{shape:'vertical'});
 
     // Biomerge with Takato: WarGrowlmon into Gallantmon, along the row gap above the line

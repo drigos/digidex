@@ -735,7 +735,7 @@ Use them where ambiguity matters, not on every sentence. The atlas overview has 
 
 Every evolution relation on a tree (an edge, or a card in an Armor panel), and every other
 claim on a page (a card note, a roster role, a lore note, a footer sentence), must rest on one
-of the sources below. A few editorial exceptions keep a relation that only a game or the
+of the sources below. A few editorial exceptions keep a relation that only a game, a card or the
 design supports, because it is plain from the Digimon themselves; each page states its own in
 the footer:
 
@@ -791,12 +791,13 @@ the footer:
 - Ginryumon -> Hisyaryumon -> Ouryumon on ryudamon: Digimon Chronicle takes Yuji's Ryudamon to
   Ouryumon without showing the path, and only the Digimon Pendulum X V-pet, games and cards draw
   it through Hisyaryumon, which no other source reaches;
-- Gallantmon -> MedievalGallantmon on guilmon, a Mode Change: Wikimon says that in Digimon
-  Chronicle (the Pendulum X 2.0 installment, set in the Ulud Terminal) Gallantmon takes the form
-  of Witchelny's legendary hero with a Forest Leaf, but its summary of that installment does not
-  show it, DigimonWiki records nothing, and the official Chronicle pages only offer the Forest
-  Leaf as a Pendulum X 2.0 item; the link stays, by the user's decision, until the booklet can be
-  checked.
+- Gallantmon -> MedievalGallantmon on guilmon, a Mode Change and the one card-only exception:
+  only the 2003 Digital Monster Card Game (the Forest Leaf item card, Sx-71) and a V-Jump page
+  join them. The Digimon Chronicle booklet of the Pendulum X 2.0 shows Gallantmon's trial in the
+  Ulud Terminal and a forest of the Rolan Continent where the "Warrior of Fantasy",
+  MedievalGallantmon's epithet, is said to appear, but no transformation; the V-pet itself
+  reaches MedievalGallantmon from five Ultimates fed the Forest Leaf and turns it into Gallantmon
+  X with a Master Tag.
 
 The sources are:
 
