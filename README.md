@@ -27,7 +27,7 @@ then lists the generations, the atlas pages or the group rosters:
   - [wormmon.html](src/evolution-lines/gen-2-adventure-02/wormmon.html) - Wormmon line (Paildramon and Dinobeemon Jogresses, Imperialdramon Mode Changes and its Black forms, the JewelBeemon branch up to BanchoStingmon, Armor Digivolutions).
 - `src/evolution-lines/gen-3-tamers/` - Digimon Tamers:
   - [index.html](src/evolution-lines/gen-3-tamers/index.html) - Tamers selection screen (by Biomerge / peak form).
-  - [guilmon.html](src/evolution-lines/gen-3-tamers/guilmon.html) - Guilmon line (Gallantmon Biomerge, the D-Ark's dark line up to ChaosGallantmon, Digital Hazard, X-Antibody forms, the Data (Yellow) variant line).
+  - [guilmon.html](src/evolution-lines/gen-3-tamers/guilmon.html) - Guilmon line (Gallantmon Biomerge, the D-Ark's dark line up to ChaosGallantmon, Digital Hazard, X-Antibody forms, the Data (Yellow) variant line, the MedievalGallantmon form).
   - [renamon.html](src/evolution-lines/gen-3-tamers/renamon.html) - Renamon line (Sakuyamon Biomerge, the D-Ark's alternate line up to Kuzuhamon, X-Antibody forms, Maid Mode changes).
   - [terriermon.html](src/evolution-lines/gen-3-tamers/terriermon.html) - Terriermon line (MegaGargomon Biomerge, Black Digitron variants, the golden Rapidmon of the Digi-Egg of Destiny and its X form).
   - [cyberdramon.html](src/evolution-lines/gen-3-tamers/cyberdramon.html) - Cyberdramon line (Justimon Biomerge and its three arms, the D-Power line from Monodramon, the Beatbreak branch, X-Antibody forms).
@@ -516,7 +516,9 @@ Every X form hangs from its base form by a vertical X-Digivolution edge (Gatomon
 Omnimon -> Omnimon X). The X forms of a line are not chained to one another, even where a
 source shows the step (Digimon Chronicle X has Gatomon X -> Angewomon X): an X form follows the
 line of its base form, so the chain is implied and the extra edges add nothing. Megidramon X on
-guilmon is the one X form beside its base, since cards fill Megidramon's column above and below.
+guilmon is the one X form off its base's column: cards fill Megidramon's column above and below
+and MedievalGallantmon takes the slot beside it, so Megidramon X sits one column right and one
+row down, reached through the outer lane.
 An X form takes the `Ultra` label only when its own entry qualifies (section 1): Omnimon X is
 `Ultra / X`, while Ophanimon Falldown Mode X on gatomon is `Mega / X` under its `Ultra` base,
 since none of the listed games places the X form in that stage.
@@ -788,7 +790,13 @@ the footer:
   Straw);
 - Ginryumon -> Hisyaryumon -> Ouryumon on ryudamon: Digimon Chronicle takes Yuji's Ryudamon to
   Ouryumon without showing the path, and only the Digimon Pendulum X V-pet, games and cards draw
-  it through Hisyaryumon, which no other source reaches.
+  it through Hisyaryumon, which no other source reaches;
+- Gallantmon -> MedievalGallantmon on guilmon, a Mode Change: Wikimon says that in Digimon
+  Chronicle (the Pendulum X 2.0 installment, set in the Ulud Terminal) Gallantmon takes the form
+  of Witchelny's legendary hero with a Forest Leaf, but its summary of that installment does not
+  show it, DigimonWiki records nothing, and the official Chronicle pages only offer the Forest
+  Leaf as a Pendulum X 2.0 item; the link stays, by the user's decision, until the booklet can be
+  checked.
 
 The sources are:
 

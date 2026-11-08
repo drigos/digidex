@@ -7,14 +7,14 @@
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="../../apple-touch-icon.png" />
 <title>Guilmon: evolution tree</title>
-<meta name="description" content="Guilmon's evolution tree from Fresh to Ultra, with the Gallantmon Biomerge, the D-Ark's dark line to ChaosGallantmon, the Digital Hazard and Crimson Mode." />
+<meta name="description" content="Guilmon's evolution tree from Fresh to Ultra, with the Gallantmon Biomerge, the D-Ark's dark line, the Digital Hazard, Crimson Mode and MedievalGallantmon." />
 <link rel="canonical" href="https://digidex.martins.icu/evolution-lines/gen-3-tamers/guilmon.html" />
 <meta name="theme-color" content="#06111f" />
 <meta property="og:site_name" content="Digidex" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:title" content="Guilmon: evolution tree" />
-<meta property="og:description" content="Guilmon's evolution tree from Fresh to Ultra, with the Gallantmon Biomerge, the D-Ark's dark line to ChaosGallantmon, the Digital Hazard and Crimson Mode." />
+<meta property="og:description" content="Guilmon's evolution tree from Fresh to Ultra, with the Gallantmon Biomerge, the D-Ark's dark line, the Digital Hazard, Crimson Mode and MedievalGallantmon." />
 <meta property="og:url" content="https://digidex.martins.icu/evolution-lines/gen-3-tamers/guilmon.html" />
 <meta property="og:image" content="https://digidex.martins.icu/og-image.png" />
 <meta property="og:image:width" content="1200" />
@@ -25,7 +25,7 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:1860px; height:1256px; }
+  .infographic { width:1860px; height:1273px; }
   .columns { top:200px; }
 </style>
 </head>
@@ -35,7 +35,7 @@
   <div class="infographic" id="canvas">
     <div class="title">
       <h1>Guilmon: evolution tree</h1>
-      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega -> Ultra hierarchy, with the Gallantmon Biomerge, the D-Ark's dark line (BlackGrowlmon, BlackWarGrowlmon, ChaosGallantmon), the Digital Hazard (Megidramon), the X-Antibody forms, the Data (Yellow) variant line and the Crimson Mode change.</div>
+      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega -> Ultra hierarchy, with the Gallantmon Biomerge, the D-Ark's dark line (BlackGrowlmon, BlackWarGrowlmon, ChaosGallantmon), the Digital Hazard (Megidramon), the X-Antibody forms, the Data (Yellow) variant line and the Crimson Mode and MedievalGallantmon form changes.</div>
     </div>
 
     <div class="legend">
@@ -45,11 +45,11 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 1860 1256" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 1860 1273" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book and Wikimon. Card labels show Level (+ X); edge colors show the digivolution trigger. Biomerge (Matrix Evolution): WarGrowlmon and Takato merge into Gallantmon in Tamers episode 45, as in the D-Ark V-pet, drawn as a Normal evolution; most episodes merge Guilmon straight into it, a jump with no arrow of its own. BlackGrowlmon, BlackWarGrowlmon and ChaosGallantmon are the D-Ark's dark line. Grani is a Flying Dragon machine that Gallantmon pilots, not an evolution stage. One theory holds that Megidramon and ChaosGallantmon are the same being seen as either a dark dragon or a dark knight; this is drawn as a faint two-way link, not a path.</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book and Wikimon. Card labels show Level (+ X); edge colors show the digivolution trigger. Biomerge (Matrix Evolution): WarGrowlmon and Takato merge into Gallantmon in Tamers episode 45, as in the D-Ark V-pet, drawn as a Normal evolution; most episodes merge Guilmon straight into it, a jump with no arrow of its own. BlackGrowlmon, BlackWarGrowlmon and ChaosGallantmon are the D-Ark's dark line. Grani is a Flying Dragon machine that Gallantmon pilots, not an evolution stage. Only Wikimon's summary of Digimon Chronicle (the Pendulum X 2.0 installment) records Gallantmon taking the form of MedievalGallantmon, Witchelny's legendary hero, with a Forest Leaf; the tree keeps this link. One theory holds that Megidramon and ChaosGallantmon are the same being seen as either a dark dragon or a dark knight; this is drawn as a faint two-way link, not a path.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -92,7 +92,8 @@ DigiTree.mount({
     {id:'growlmonyellow', x:828, y:730, cls:'variant', name:'Growlmon (Yellow)', lvl:'Champion', note:'A Growlmon that became a Data type.', wiki:'Growlmon_(Yellow)', img:'growmon_orange'},
     {id:'wargrowlmonyellow', x:1090, y:730, cls:'normal', name:'WarGrowlmon (Yellow)', lvl:'Ultimate', note:'From the Data type of Growlmon.', wiki:'WarGrowlmon_(Yellow)', img:'megalograwmon_orange'},
     {id:'megidramon', x:1352, y:730, cls:'dark', badge:{cls:'fgd', text:'Four Great Dragons', href:'../../groups/four-great-dragons.html#megidramon', title:'Four Great Dragons roster'}, name:'Megidramon', lvl:'Mega', note:'Considered a Digital Hazard in itself.', wiki:'Megidramon', img:'megidramon'},
-    {id:'megidramonx', x:1614, y:730, cls:'x', badge:{cls:'fgd', text:'Four Great Dragons', href:'../../groups/four-great-dragons.html#megidramon', title:'Four Great Dragons roster'}, name:'Megidramon X', lvl:'Mega / X', note:'X-Antibody form.', wiki:'Megidramon_X', img:'megidramon_x'},
+    {id:'medievalgallantmon', x:1614, y:730, cls:'mode', badge:{cls:'vw', text:'Vortex Warrior', href:'../../groups/vortex-warriors.html#medievalgallantmon', title:'Vortex Warriors roster'}, name:'MedievalGallantmon', lvl:'Mega', note:'Legendary hero of Witchelny.', wiki:'MedievalGallantmon', img:'medievaldukemon'},
+    {id:'megidramonx', x:1614, y:970, cls:'x', badge:{cls:'fgd', text:'Four Great Dragons', href:'../../groups/four-great-dragons.html#megidramon', title:'Four Great Dragons roster'}, name:'Megidramon X', lvl:'Mega / X', note:'X-Antibody form.', wiki:'Megidramon_X', img:'megidramon_x'},
 
     // the D-Ark's dark line (row 3)
     {id:'blackgrowlmon', x:828, y:970, cls:'dark', name:'BlackGrowlmon', lvl:'Champion', note:'Said to be Growlmon\'s original form.', wiki:'BlackGrowlmon', img:'blackgrowmon'},
@@ -106,6 +107,8 @@ DigiTree.mount({
     edge('guilmon','growlmon','normal');
     edge('growlmon','wargrowlmon','normal');
     edge('gallantmon','crimson','mode');
+    // MedievalGallantmon with a Forest Leaf (Digimon Chronicle), in the inner lane
+    edge('gallantmon','medievalgallantmon','mode','right','left',{fromY:650, points:[[1575,650],[1575,829]], toY:829, label:'Forest Leaf (Digimon Chronicle)', lx:1575, ly:709});
     edge('grani','crimson','mode','bottom','top',{shape:'vertical'});
 
     // Biomerge with Takato: WarGrowlmon into Gallantmon, along the row gap above the line
@@ -116,7 +119,9 @@ DigiTree.mount({
     edge('growlmon','growlmonx','x','top','bottom',{shape:'vertical'});
     edge('wargrowlmon','wargrowlmonx','x','top','bottom',{shape:'vertical'});
     edge('gallantmon','gallantmonx','x','top','bottom',{shape:'vertical'});
-    edge('megidramon','megidramonx','x');
+    // Megidramon X: its column is full above and below, and MedievalGallantmon takes the slot
+    // beside it, so it sits one row down in the outer lane
+    edge('megidramon','megidramonx','x','right','left',{fromY:870, points:[[1595,870],[1595,1069]], toY:1069});
 
     // Data (Yellow) variant line
     edge('growlmon','growlmonyellow','variant','bottom','top',{shape:'vertical'});
