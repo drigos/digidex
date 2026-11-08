@@ -32,6 +32,15 @@ This skill NEVER edits a file before the user approves the plan. The flow is:
   often stated on only one side. Real case: Daemon's own profile only says "high-ranking
   Angel Digimon", but Seraphimon's profile explicitly names Daemon as its fallen form;
   checking only the destination page produced a wrong caveat that shipped to the footer.
+- **Check every source tied to the event, not just the two ends.** For Veemon -> Magnamon by
+  the Digi-Egg of Miracles that means both Digimon's profiles and wiki pages, the item's page
+  (the Digi-Egg), the page that collects the topic (the Armor Digivolution chart, Wikimon's
+  `D-3 Version` pages), the page of every group involved (Royal Knights), and the episode or
+  chapter article plus the episode's subtitles. A claim with no arrow works the same way: a
+  Digimon from another world needs its own profile, the world's article and the world's
+  Digimon Profile report. Real case: a Wizardmon note was rewritten from Digimon Profile #032
+  alone, and Wizardmon's own profile, which says it came to the Digimon world to train, was
+  never read. Say in the plan which of these sources do not exist or were not checked.
 - **Source priority** when continuities disagree or a claim needs backing:
   1. **Anime series and films** (Adventure, 02, the 2020 reboot, Frontier, tri., ...)
   2. **Manga** (V-Tamer 01, ...)

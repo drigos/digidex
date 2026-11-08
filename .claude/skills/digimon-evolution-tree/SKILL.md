@@ -46,7 +46,10 @@ generation (create the folder if that generation has no page yet).
    anime, films or manga, the drama CDs or the V-pets released with the series (the D-3, the
    D-Ark, the D-Power and the D-Tector);
    never by a card game or video game, and never by a DigimonWiki chart cell alone (README
-   "Relation sources").
+   "Relation sources"). For each relation, read every source tied to it: both Digimon's
+   profiles and wiki pages, the item or mechanic's page (a Digi-Egg, a Forest Leaf), the page
+   that collects the topic, the page of each group involved, and the episode or chapter
+   article with its subtitles (see the `digimon-lore-notes` skill).
    For each node's `img`, use the official Reference Book slug (the `directory_name` in
    `https://digimon.net/reference_en/detail.php?directory_name=<slug>`); the engine turns it
    into `https://digimon.net/cimages/digimon/<slug>.jpg`. If the Digimon has no official

@@ -862,6 +862,13 @@ tentei-hachibushu roster keeps the Digimon Pendulum COLOR line-ups, which the Mo
 articles of digimon.net describe, and a debut that only the wikis record, or a history told
 through cards, stays out.
 
+A relation or claim is checked against every source tied to its event, not only the two
+Digimon: for Veemon -> Magnamon by the Digi-Egg of Miracles, both profiles and wiki pages, the
+Digi-Egg's page, the page that collects the topic (the Armor Digivolution chart), the Royal
+Knights page, the episode article and the episode's subtitles. A claim with no arrow works the
+same way (a Digimon from Witchelny needs its own profile, the world's article and Digimon
+Profile #032).
+
 An anime or film relation is read first from the DigimonWiki episode or film article, through
 the MediaWiki API: its "Digivolutions" section lists every digivolution shown (forward and warp
 arrows, red arrows for a regression, blue for a form change). The Agumon (Burst Mode) and
