@@ -208,7 +208,7 @@ ranamon and mercurymon).
 
 The column after Mega is titled by what it holds: `Ultra` for Ultra cards only, `Other Megas`
 for Mega-level side forms only (the Justimon arms on cyberdramon), and `Ultra / Other Megas`
-when it holds both (agumon, guilmon). A later column for the forms those cards lead to stays
+when it holds both (agumon, gatomon, guilmon). A later column for the forms those cards lead to stays
 untitled (the eighth column on agumon, gabumon, veemon and wormmon).
 
 ### Canvas width
@@ -517,6 +517,9 @@ Omnimon -> Omnimon X). The X forms of a line are not chained to one another, eve
 source shows the step (Digimon Chronicle X has Gatomon X -> Angewomon X): an X form follows the
 line of its base form, so the chain is implied and the extra edges add nothing. Megidramon X on
 guilmon is the one X form beside its base, since cards fill Megidramon's column above and below.
+An X form takes the `Ultra` label only when its own entry qualifies (section 1): Omnimon X is
+`Ultra / X`, while Ophanimon Falldown Mode X on gatomon is `Mega / X` under its `Ultra` base,
+since none of the listed games places the X form in that stage.
 
 ### Cross-page navigation
 
