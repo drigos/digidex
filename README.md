@@ -47,10 +47,12 @@ then lists the generations, the atlas pages or the group rosters:
   - [arbormon.html](src/evolution-lines/gen-4-frontier/arbormon.html) - Warrior of Wood line, one of Cherubimon's warriors (Human/Beast Spirit, the Spirits unified into EmperorGreymon, Susanoomon).
   - [ranamon.html](src/evolution-lines/gen-4-frontier/ranamon.html) - Warrior of Water line, one of Cherubimon's warriors (Human/Beast Spirit, the Spirits unified into MagnaGarurumon, Susanoomon).
   - [mercurymon.html](src/evolution-lines/gen-4-frontier/mercurymon.html) - Warrior of Steel line, one of Cherubimon's warriors (Human/Beast Spirit, the Spirits unified into MagnaGarurumon, Susanoomon).
+- `src/evolution-lines/film-x-evolution/` - Digital Monster X-Evolution (TV film, no human partners):
+  - [index.html](src/evolution-lines/film-x-evolution/index.html) - X-Antibody Digimon selection screen (the WarGreymon X and MetalGarurumon X cards link into the gen-1 Agumon and Gabumon trees).
+  - [dorumon.html](src/evolution-lines/film-x-evolution/dorumon.html) - Dorumon line (the film's line to Alphamon Ouryuken with its Ouryumon Jogress, the Digimon Chronicle line through Reptiledramon and Grademon, the Death-X branch from Dorugoramon to Dexmon).
 - `src/evolution-lines/gen-5-data-squad/` - Digimon Data Squad / Savers:
   - [index.html](src/evolution-lines/gen-5-data-squad/index.html) - DATS selection screen (by Burst Mode; the Agumon card links into the gen-1 Agumon tree).
 - Generations whose selection screen exists but whose trees are all "Coming soon" (partners and peak forms taken from the DigimonWiki character infoboxes):
-  - [film-x-evolution/index.html](src/evolution-lines/film-x-evolution/index.html) - Digital Monster X-Evolution (TV film, no human partners): Dorumon, WarGreymon X and MetalGarurumon X.
   - [gen-6-fusion/index.html](src/evolution-lines/gen-6-fusion/index.html) - Digimon Fusion: the Fusion Fighters' partners (Shoutmon, Greymon, Sparrowmon, Cutemon).
   - [gen-7-hunters/index.html](src/evolution-lines/gen-7-hunters/index.html) - The Young Hunters Who Leapt Through Time: Xros Heart (Gumdramon, Shoutmon (King Version), Damemon) and the other Hunters (Psychemon, Opossummon).
   - [gen-8-app-monsters/index.html](src/evolution-lines/gen-8-app-monsters/index.html) - Digimon Universe App Monsters: the App Drivers' Appmon by God grade; Appmon have no official Reference Book entry, so this page's artwork comes from Wikimon.
@@ -758,7 +760,11 @@ the footer:
 - Strabimon -> Lobomon on lobomon: Strabimon does not appear in Frontier, and its Reference
   Book profile makes it Lobomon with half its power lost, the counterpart of Flamemon, which
   Frontier episode 22 shows Spirit-Evolving back into Agunimon; only the encyclopedia of the
-  Digimon Life game draws Strabimon digivolving into Lobomon.
+  Digimon Life game draws Strabimon digivolving into Lobomon;
+- Dodomon and Dorimon on dorumon: only the Digimon Pendulum X V-pet and games join Dodomon,
+  Dorimon and Dorumon, but the three share the Doru name, the Reference Book gives each an
+  iron-bead attack (Little Iron Beads, Metal Drop, Metal Cannon), and no other In-Training
+  form of Dorumon has more than one source.
 
 The sources are:
 
@@ -769,14 +775,16 @@ The sources are:
    profile says the form follows Guilmon. The "See related Digimon" list under a profile is
    thematic (Guilmon is related to Guardromon and Yaamon), so it proves nothing;
 2. other official Bandai material: the Digital Monster Art Book, the digimon.net articles
-   (Digimon Chronicle X, Digimon Profile) and Bandai's own product texts (Premium Bandai).
+   (Digimon Chronicle X, Digimon Profile, and the Digimon Chronicle story pages of the Digimon
+   Pendulum X site, read through the Wayback Machine at
+   `digimon.net/digimon_archive2010/chronicle/`) and Bandai's own product texts (Premium Bandai).
    Imperialdramon Paladin Mode as founder of the Royal Knights rests on the Art Book, and
    Jesmon filling the thirteenth seat on a Premium Bandai text. The figures released with
    Digimon Frontier count too, like the V-pets of each series: the Spirit-Digivolving Figures
    build Aldamon into EmperorGreymon and BeoWolfmon into MagnaGarurumon, and the
    Hybrid-Digivolving Figures combine Loweemon and JagerLoweemon into Rhihimon and the two
    Unified forms into Susanoomon;
-3. the anime series and films, then the manga (V-Tamer 01, ...);
+3. the anime series and films, then the manga (V-Tamer 01, Digimon Chronicle, ...);
 4. the drama CDs (`Digimon Adventure 02: Armor Evolution to the Unknown`, the Tamers 15th
    Blu-ray BOX drama CD, ...);
 5. the V-pets released with the series:
@@ -836,8 +844,9 @@ needs a source of its own (Cyberdramon also regresses to Monodramon in episode 4
 
 A partner with no form for a Digi-Egg says so in its footer (`Patamon has no recorded form
 for the Digi-Egg of Destiny.`). The six Armor panels, the eight Adventure trees, the four
-Adventure 02 trees, the eight Tamers trees and the ten Frontier trees were checked against this
-rule in November 2026. No other generation has a tree yet.
+Adventure 02 trees, the eight Tamers trees, the ten Frontier trees and the Digital Monster
+X-Evolution tree were checked against this rule in November 2026. No other generation has a
+tree yet.
 
 ## Artwork sources
 

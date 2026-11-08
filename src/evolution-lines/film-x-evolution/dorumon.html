@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="../../favicon.ico" sizes="32x32" />
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png" />
+<title>Dorumon: evolution tree</title>
+<meta name="description" content="Dorumon's evolution tree from Fresh to Ultra, with the Ouryumon Jogress into Alphamon Ouryuken, the Digimon Chronicle line and the Death-X branch to Dexmon." />
+<link rel="canonical" href="https://digidex.martins.icu/evolution-lines/film-x-evolution/dorumon.html" />
+<meta name="theme-color" content="#06111f" />
+<meta property="og:site_name" content="Digidex" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:title" content="Dorumon: evolution tree" />
+<meta property="og:description" content="Dorumon's evolution tree from Fresh to Ultra, with the Ouryumon Jogress into Alphamon Ouryuken, the Digimon Chronicle line and the Death-X branch to Dexmon." />
+<meta property="og:url" content="https://digidex.martins.icu/evolution-lines/film-x-evolution/dorumon.html" />
+<meta property="og:image" content="https://digidex.martins.icu/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:alt" content="The Digidex logo, a gold D on a navy tile, with the name Digidex and the line Evolution trees, cosmology &amp; group rosters" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="stylesheet" href="../../digivolution.css" />
+<style>
+  /* page-specific layout */
+  .infographic { width:1860px; height:1595px; }
+  .columns { top:200px; }
+  .jogress-panel { top:1190px; width:430px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="backnav" href="index.html"><span class="arrow">&#8592;</span> X-Antibody Digimon</a>
+  <div class="infographic" id="canvas">
+    <div class="title">
+      <h1>Dorumon: evolution tree</h1>
+      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega -> Ultra hierarchy, with the film's line to Alphamon and its Ouryumon Jogress into Alphamon Ouryuken, the Digimon Chronicle line through Reptiledramon and Grademon, and the Death-X branch from Dorugoramon to Dexmon.</div>
+    </div>
+
+    <div class="legend">
+      <div class="legend-title">Digivolution triggers</div>
+      <div class="legend-grid"></div>
+    </div>
+
+    <div class="columns"></div>
+
+    <svg id="edges" viewBox="0 0 1860 1595" preserveAspectRatio="none"></svg>
+    <div id="labels"></div>
+    <div id="nodes"></div>
+
+    <section class="jogress-panel" id="jogress-panel">
+      <div class="jogress-panel-title">
+        <h2>Alphamon Ouryuken: Jogress partner</h2>
+        <span>Alphamon turns Ouryumon into its sword (Digimon Chronicle)</span>
+      </div>
+      <div class="jogress-body">
+        <a class="jogress-card" href="https://digimon.fandom.com/wiki/Ouryumon" target="_blank">
+          <img referrerpolicy="no-referrer" src="https://digimon.net/cimages/digimon/ouryumon.jpg" alt="Ouryumon">
+          <div class="jogress-name">Ouryumon</div>
+          <div class="jogress-level">Mega</div>
+          <div class="jogress-fuse">+ Alphamon = Alphamon Ouryuken</div>
+        </a>
+      </div>
+    </section>
+
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show Level (+ X); edge colors show the digivolution trigger. Only the Digimon Pendulum X V-pet and games join Dodomon, Dorimon and Dorumon; the tree keeps them, since the three share the Doru name and their iron-bead attacks. The Reference Book marks the line's forms as X-Antibody carriers, so it has no X-Digivolution branch. Reptiledramon and Dexmon are DigimonWiki's names for the official Raptordramon and DeathXmon.</div>
+  </div>
+  <div class="support">
+    <span class="support-label">Support this project</span>
+    <a class="support-btn kofi" href="https://ko-fi.com/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9749;</span><span class="support-text">Buy me a coffee</span><span class="support-url">ko-fi.com/drigos</span></a>
+    <a class="support-btn sponsors" href="https://github.com/sponsors/drigos" target="_blank" rel="noopener"><span class="support-icon" aria-hidden="true">&#9829;</span><span class="support-text">GitHub Sponsors</span><span class="support-url">github.com/sponsors/drigos</span></a>
+  </div>
+</div>
+<script src="../../digivolution.js"></script>
+<script>
+DigiTree.mount({
+  legend: [
+    ['normal','Normal evolution'],
+    ['dna','DNA / Jogress'],
+    ['dark','Dark']
+  ],
+  columns: [
+    [42,'Fresh'],[304,'In-Training'],[566,'Rookie'],[828,'Champion'],
+    [1090,'Ultimate'],[1352,'Mega'],[1614,'Ultra']
+  ],
+  nodes: [
+    // Digimon Chronicle line: Kota raises Dorumon again after DexDorugoramon
+    {id:'reptiledramon', x:828, y:250, cls:'normal', name:'Reptiledramon', lvl:'Champion', note:'Remodeled with heavy Chrondigizoid.', wiki:'Reptiledramon', img:'raptordramon'},
+    {id:'grademon', x:1090, y:250, cls:'normal', name:'Grademon', lvl:'Ultimate', note:'Called the "Golden Meteor."', wiki:'Grademon', img:'grademon'},
+
+    // main spine (the film)
+    {id:'dodomon', x:42, y:490, cls:'normal', name:'Dodomon', lvl:'Fresh', note:'Covered in tough Mithril Hair.', wiki:'Dodomon', img:'dodomon'},
+    {id:'dorimon', x:304, y:490, cls:'normal', name:'Dorimon', lvl:'In-Training', note:'Hates to be tamed; charges head-on.', wiki:'Dorimon', img:'dorimon'},
+    {id:'dorumon', x:566, y:490, cls:'normal', name:'Dorumon', lvl:'Rookie', note:'Presumed experimental Prototype Digimon.', wiki:'Dorumon', img:'dorumon'},
+    {id:'dorugamon', x:828, y:490, cls:'normal', name:'Dorugamon', lvl:'Champion', note:'Temperament of both beast and dragon.', wiki:'Dorugamon', img:'dorugamon'},
+    {id:'doruguremon', x:1090, y:490, cls:'normal', name:'DoruGreymon', lvl:'Ultimate', note:'Known as "The Final Enemy."', wiki:'DoruGreymon', img:'doruguremon'},
+    {id:'alphamon', x:1352, y:490, cls:'normal', name:'Alphamon', lvl:'Mega', note:'Royal Knight of the Empty Seat.', wiki:'Alphamon', img:'alphamon', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#alphamon', title:'Royal Knights roster'}},
+    {id:'alphamonouryuken', x:1614, y:490, cls:'dna', name:'Alphamon Ouryuken', lvl:'Ultra', note:'Wields Ouryumon as the Ouryuken.', wiki:'Alphamon_Ouryuken', img:'alphamon:ouryuken', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#alphamon', title:'Royal Knights roster'}},
+
+    // Digimon Chronicle: Dorugoramon and its Death-X branch
+    {id:'dorugoramon', x:1352, y:730, cls:'normal', name:'Dorugoramon', lvl:'Mega', note:'Born from a DigiCore\'s daydream.', wiki:'Dorugoramon', img:'dorugoramon'},
+    {id:'dexdorugoramon', x:1352, y:970, cls:'dark', name:'DexDorugoramon', lvl:'Mega', note:'Known as the DigiCore Predator.', wiki:'DexDorugoramon', img:'death-x-dorugoramon'},
+    {id:'dexmon', x:1614, y:970, cls:'dark', name:'Dexmon', lvl:'Ultra', note:'A program with no DigiCore.', wiki:'Dexmon', img:'death-x-mon'}
+  ],
+  edges: function (edge) {
+    // main line (Dodomon and Dorimon are an editorial exception, see the footer)
+    edge('dodomon','dorimon','normal');
+    edge('dorimon','dorumon','normal');
+    edge('dorumon','dorugamon','normal');
+    edge('dorugamon','doruguremon','normal');
+    edge('doruguremon','alphamon','normal');
+
+    // DNA / Jogress with Ouryumon (see panel)
+    edge('alphamon','alphamonouryuken','dna');
+
+    // Digimon Chronicle line: up the lane before the Champion column, then into Alphamon's top
+    // over the empty Mega slot, left of the badge, so it shares no lane with the Dorugoramon edge
+    edge('dorumon','reptiledramon','normal','right','left',{label:'Digimon Chronicle', lx:799, ly:469});
+    edge('reptiledramon','grademon','normal');
+    edge('grademon','alphamon','normal','right','top',{toX:1420});
+
+    // Digimon Chronicle: Dorugoramon from a lower port, then the Death-X branch
+    edge('doruguremon','dorugoramon','normal','right','left',{fromY:640, label:'Digimon Chronicle', lx:1323, ly:709});
+    edge('dorugoramon','dexdorugoramon','dark','bottom','top',{shape:'vertical', label:'Death-X Evolution', lx:1454, ly:949});
+    edge('dexdorugoramon','dexmon','dark');
+  }
+});
+</script>
+</body>
+</html>
