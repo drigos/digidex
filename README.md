@@ -49,7 +49,7 @@ then lists the generations, the atlas pages or the group rosters:
   - [mercurymon.html](src/evolution-lines/gen-4-frontier/mercurymon.html) - Warrior of Steel line, one of Cherubimon's warriors (Human/Beast Spirit, the Spirits unified into MagnaGarurumon, Susanoomon).
 - `src/evolution-lines/film-x-evolution/` - Digital Monster X-Evolution (TV film, no human partners):
   - [index.html](src/evolution-lines/film-x-evolution/index.html) - X-Antibody Digimon selection screen (the WarGreymon X and MetalGarurumon X cards link into the gen-1 Agumon and Gabumon trees).
-  - [dorumon.html](src/evolution-lines/film-x-evolution/dorumon.html) - Dorumon line (the film's line to Alphamon Ouryuken with its Ouryumon Jogress, the Digimon Chronicle line through Reptiledramon and Grademon, the Death-X branch from Dorugoramon to Dexmon).
+  - [dorumon.html](src/evolution-lines/film-x-evolution/dorumon.html) - Dorumon line (the film's line to Alphamon Ouryuken with its Ouryumon Jogress, the Digimon Chronicle line through Reptiledramon and Grademon, the Death-X line from DexDorugamon and Dorugoramon to Dexmon).
 - `src/evolution-lines/gen-5-data-squad/` - Digimon Data Squad / Savers:
   - [index.html](src/evolution-lines/gen-5-data-squad/index.html) - DATS selection screen (by Burst Mode; the Agumon card links into the gen-1 Agumon tree).
 - Generations whose selection screen exists but whose trees are all "Coming soon" (partners and peak forms taken from the DigimonWiki character infoboxes):
@@ -764,7 +764,12 @@ the footer:
 - Dodomon and Dorimon on dorumon: only the Digimon Pendulum X V-pet and games join Dodomon,
   Dorimon and Dorumon, but the three share the Doru name, the Reference Book gives each an
   iron-bead attack (Little Iron Beads, Metal Drop, Metal Cannon), and no other In-Training
-  form of Dorumon has more than one source.
+  form of Dorumon has more than one source;
+- the Death-X line on dorumon: only the Digimon Pendulum X V-pet, games and cards draw Dorumon
+  -> DexDorugamon -> DexDoruGreymon -> DexDorugoramon (the V-pet and the games agree on the
+  start from Dorumon), but the Reference Book describes DexDorugamon and DexDoruGreymon as
+  resembling the Champion and the final form of the Doru series, and in the film DoruGreymon is
+  mistaken for the DexDoruGreymon swarm.
 
 The sources are:
 
