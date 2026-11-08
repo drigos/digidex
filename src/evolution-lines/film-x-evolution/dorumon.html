@@ -107,7 +107,7 @@
       </div>
     </section>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show Level (+ X); edge colors show the digivolution trigger. Only the Digimon Pendulum X V-pet and games join Dodomon, Dorimon and Dorumon; the tree keeps them, since the three share the Doru name and their iron-bead attacks. Likewise, only that V-pet, games and cards draw Dorumon -> DexDorugamon -> DexDoruGreymon -> DexDorugoramon; the tree keeps the chain, since the Reference Book describes DexDorugamon and DexDoruGreymon as resembling the Doru series' forms. The Reference Book marks the line's forms as X-Antibody carriers, so it has no X-Digivolution branch. Reptiledramon and Dexmon are DigimonWiki's names for the official Raptordramon and DeathXmon.</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show Level (+ X); edge colors show the digivolution trigger. Only the Digimon Pendulum X V-pet and games join Dodomon, Dorimon and Dorumon; the tree keeps them, since the three share the Doru name and their iron-bead attacks. Likewise, only that V-pet, games and cards draw DexDorugamon -> DexDoruGreymon -> DexDorugoramon, and only cards start it at Dorugamon; the tree keeps the chain, since the Reference Book describes DexDorugamon and DexDoruGreymon as resembling the Doru series' forms. The Reference Book marks the line's forms as X-Antibody carriers, so it has no X-Digivolution branch. Reptiledramon and Dexmon are DigimonWiki's names for the official Raptordramon and DeathXmon.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -174,9 +174,9 @@ DigiTree.mount({
     edge('dorugoramon','dexdorugoramon','dark','bottom','top',{shape:'vertical', label:'Death-X Evolution', lx:1454, ly:709});
     edge('dexdorugoramon','dexmon','dark');
 
-    // Death-X line (editorial exception, see the footer): down from Dorumon through the empty
-    // Rookie slot
-    edge('dorumon','dexdorugamon','dark','bottom','left');
+    // Death-X line (editorial exception, see the footer): from the Dorugamon that DexDorugamon
+    // resembles, as agumon and gabumon hang each Virus line from the form of the same level
+    edge('dorugamon','dexdorugamon','dark','bottom','top',{shape:'vertical'});
     edge('dexdorugamon','dexdoruguremon','dark');
     edge('dexdoruguremon','dexdorugoramon','dark');
   }

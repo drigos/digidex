@@ -766,11 +766,12 @@ the footer:
   Dorimon and Dorumon, but the three share the Doru name, the Reference Book gives each an
   iron-bead attack (Little Iron Beads, Metal Drop, Metal Cannon), and no other In-Training
   form of Dorumon has more than one source;
-- the Death-X line on dorumon: only the Digimon Pendulum X V-pet, games and cards draw Dorumon
-  -> DexDorugamon -> DexDoruGreymon -> DexDorugoramon (the V-pet and the games agree on the
-  start from Dorumon), but the Reference Book describes DexDorugamon and DexDoruGreymon as
-  resembling the Champion and the final form of the Doru series, and in the film DoruGreymon is
-  mistaken for the DexDoruGreymon swarm;
+- the Death-X line on dorumon: only the Digimon Pendulum X V-pet, games and cards draw
+  DexDorugamon -> DexDoruGreymon -> DexDorugoramon, and only cards start it at Dorugamon (the
+  V-pet and the games start it at Dorumon), but the Reference Book describes DexDorugamon and
+  DexDoruGreymon as resembling the Champion and the final form of the Doru series, so
+  DexDorugamon hangs from Dorugamon, the way the Virus lines of agumon and gabumon start from
+  the form of the same level; in the film DoruGreymon is mistaken for the DexDoruGreymon swarm;
 - Fufumon -> Kyokyomon on ryudamon: only the Digimon Pendulum X V-pet and cards join the two
   (Kyokyomon -> Ryudamon rests on the Digimon Bilievers manga), but Kyokyomon's Reference Book
   profile compares its light body to Fufumon's, and both spit iron (Little Iron Spikes, Metal
