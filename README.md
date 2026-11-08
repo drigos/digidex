@@ -625,7 +625,9 @@ the child (episode 35), and the footer says both. The other eight pages follow t
   panels sit below the diagram, the narrow DNA panel above the Unified one (see "Panel
   placement").
 - **Fusion**: the Wind, Thunder, Ice and Darkness Fusions exist only outside the Frontier
-  anime (Reference Book, D-Tector 3.0, figures), which the node note states. Earth, Wood,
+  anime, which the node note states: the D-Tector V-pet fuses each pair of Spirits, and the
+  Hybrid-Digivolving figures also build Rhihimon. The Reference Book has the species but names
+  no Spirits ("fully inheriting the might of the Ten Legendary Warriors"). Earth, Wood,
   Water and Steel have none recorded: their Fusion column stays empty but keeps its header,
   and the Unified label sits in the gap.
 - **Darkness** (`loweemon.html`, `1598px`): a `Corrupted Spirit` column in the Child slot
@@ -794,7 +796,16 @@ The sources are:
      Champion and Ultimate also follow the type of the area (Fire, Forest, Wind, Sea); the
      line drawn keeps the Rookie's own type and is the only one that reaches the line's Mega
      (Elecmon -> Leomon -> GrapLeomon -> SaberLeomon, all Forest). Wikimon's Version 3 data
-     comes from the instruction manual.
+     comes from the instruction manual;
+   - the D-Tector and D-Scanner (Frontier). The D-Tector is the Bandai America and Asia line
+     (2002 and 2003, five firmware revisions): the player Spirit-Evolves as one of the children
+     and, in its later versions, fuses a Human and a Beast Spirit into the Fusion ("Combo"), the
+     only source of JetSilphymon, RhinoKabuterimon, Daipenmon and Rhihimon as fusions of their
+     Spirits. Wikimon cites it as "D-Tector Version 3" and lists the Combo forms in Revision E;
+     DigimonWiki writes "D-Tector 3.0", a label it also uses for the Japanese D-Scanner. The
+     D-Scanner is the Japanese line (versions 1.0, 2.0 and 3.0, 2002), which collects Digimon by
+     barcode; version 3.0 merges Spirits into the Fusions, the Unified forms and Susanoomon by
+     "Jogress Spirit", but no source records which Spirits, so no relation rests on it alone.
 
    Later re-releases (D-Ark Ver.15th of 2017, D-Ark 25th COLOR EVOLUTION) and V-pets of other
    lines (Pendulum, Vital Bracelet) do not count.

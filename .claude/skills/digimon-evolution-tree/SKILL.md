@@ -44,7 +44,7 @@ generation (create the folder if that generation has no page yet).
    DNA/Jogress fusions, mode changes, bond/burst forms, and external fusion partners.
    Keep only relations backed by the Reference Book or other official Bandai material, the
    anime, films or manga, the drama CDs or the V-pets released with the series (the D-3, the
-   D-Ark and the D-Power);
+   D-Ark, the D-Power and the D-Tector);
    never by a card game or video game, and never by a DigimonWiki chart cell alone (README
    "Relation sources").
    For each node's `img`, use the official Reference Book slug (the `directory_name` in
