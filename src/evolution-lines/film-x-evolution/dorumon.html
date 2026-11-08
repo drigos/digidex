@@ -25,10 +25,10 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:1860px; height:1934px; }
+  .infographic { width:1860px; height:1694px; }
   .columns { top:200px; }
-  .jogress-panel { top:1190px; width:430px; }
-  .lore-panel { top:1545px; width:1776px; }
+  .jogress-panel { top:950px; width:430px; }
+  .lore-panel { top:1305px; width:1776px; }
 </style>
 </head>
 <body>
@@ -47,7 +47,7 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 1860 1934" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 1860 1694" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
@@ -124,27 +124,27 @@ DigiTree.mount({
     [1090,'Ultimate'],[1352,'Mega'],[1614,'Ultra']
   ],
   nodes: [
-    // Digimon Chronicle line: Kota raises Dorumon again after DexDorugoramon
+    // Alphamon row: the Digimon Chronicle line (Kota raises Dorumon again after DexDorugoramon)
+    // and the Royal Knight it ends in, which the film reaches from DoruGreymon
     {id:'reptiledramon', x:828, y:250, cls:'normal', name:'Reptiledramon', lvl:'Champion', note:'Remodeled with heavy Chrondigizoid.', wiki:'Reptiledramon', img:'raptordramon'},
     {id:'grademon', x:1090, y:250, cls:'normal', name:'Grademon', lvl:'Ultimate', note:'Called the "Golden Meteor."', wiki:'Grademon', img:'grademon'},
+    {id:'alphamon', x:1352, y:250, cls:'normal', name:'Alphamon', lvl:'Mega', note:'Royal Knight of the Empty Seat.', wiki:'Alphamon', img:'alphamon', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#alphamon', title:'Royal Knights roster'}},
+    {id:'alphamonouryuken', x:1614, y:250, cls:'dna', name:'Alphamon Ouryuken', lvl:'Ultra', note:'Wields Ouryumon as the Ouryuken.', wiki:'Alphamon_Ouryuken', img:'alphamon:ouryuken', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#alphamon', title:'Royal Knights roster'}},
 
-    // main spine (the film)
+    // Doru row: the film's spine up to DoruGreymon, then Dorugoramon (Digimon Chronicle)
     {id:'dodomon', x:42, y:490, cls:'normal', name:'Dodomon', lvl:'Fresh', note:'Covered in tough Mithril Hair.', wiki:'Dodomon', img:'dodomon'},
     {id:'dorimon', x:304, y:490, cls:'normal', name:'Dorimon', lvl:'In-Training', note:'Hates to be tamed; charges head-on.', wiki:'Dorimon', img:'dorimon'},
     {id:'dorumon', x:566, y:490, cls:'normal', name:'Dorumon', lvl:'Rookie', note:'Presumed experimental Prototype Digimon.', wiki:'Dorumon', img:'dorumon'},
     {id:'dorugamon', x:828, y:490, cls:'normal', name:'Dorugamon', lvl:'Champion', note:'Temperament of both beast and dragon.', wiki:'Dorugamon', img:'dorugamon'},
     {id:'doruguremon', x:1090, y:490, cls:'normal', name:'DoruGreymon', lvl:'Ultimate', note:'Known as "The Final Enemy."', wiki:'DoruGreymon', img:'doruguremon'},
-    {id:'alphamon', x:1352, y:490, cls:'normal', name:'Alphamon', lvl:'Mega', note:'Royal Knight of the Empty Seat.', wiki:'Alphamon', img:'alphamon', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#alphamon', title:'Royal Knights roster'}},
-    {id:'alphamonouryuken', x:1614, y:490, cls:'dna', name:'Alphamon Ouryuken', lvl:'Ultra', note:'Wields Ouryumon as the Ouryuken.', wiki:'Alphamon_Ouryuken', img:'alphamon:ouryuken', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#alphamon', title:'Royal Knights roster'}},
+    {id:'dorugoramon', x:1352, y:490, cls:'normal', name:'Dorugoramon', lvl:'Mega', note:'Kota\'s Mega in Digimon Chronicle.', wiki:'Dorugoramon', img:'dorugoramon'},
 
-    // Death-X line (an editorial exception, see the footer), right under the Doru forms it resembles
+    // Death-X row (the chain from Dorumon is an editorial exception, see the footer), each form
+    // right under the Doru form it resembles or comes from
     {id:'dexdorugamon', x:828, y:730, cls:'dark', name:'DexDorugamon', lvl:'Champion', note:'Resembles the Doru series\' Champion.', wiki:'DexDorugamon', img:'death-x-dorugamon'},
     {id:'dexdoruguremon', x:1090, y:730, cls:'dark', name:'DexDoruGreymon', lvl:'Ultimate', note:'Resembles the Doru series\' final form.', wiki:'DexDoruGreymon', img:'death-x-doruguremon'},
-
-    // Digimon Chronicle: Dorugoramon and its Death-X branch
-    {id:'dorugoramon', x:1352, y:730, cls:'normal', name:'Dorugoramon', lvl:'Mega', note:'Born from a DigiCore\'s daydream.', wiki:'Dorugoramon', img:'dorugoramon'},
-    {id:'dexdorugoramon', x:1352, y:970, cls:'dark', name:'DexDorugoramon', lvl:'Mega', note:'Known as the DigiCore Predator.', wiki:'DexDorugoramon', img:'death-x-dorugoramon'},
-    {id:'dexmon', x:1614, y:970, cls:'dark', name:'Dexmon', lvl:'Ultra', note:'A program with no DigiCore.', wiki:'Dexmon', img:'death-x-mon'}
+    {id:'dexdorugoramon', x:1352, y:730, cls:'dark', name:'DexDorugoramon', lvl:'Mega', note:'Known as the DigiCore Predator.', wiki:'DexDorugoramon', img:'death-x-dorugoramon'},
+    {id:'dexmon', x:1614, y:730, cls:'dark', name:'Dexmon', lvl:'Ultra', note:'A program with no DigiCore.', wiki:'Dexmon', img:'death-x-mon'}
   ],
   edges: function (edge) {
     // main line (Dodomon and Dorimon are an editorial exception, see the footer)
@@ -152,27 +152,29 @@ DigiTree.mount({
     edge('dorimon','dorumon','normal');
     edge('dorumon','dorugamon','normal');
     edge('dorugamon','doruguremon','normal');
-    edge('doruguremon','alphamon','normal');
+    // the film's Alphamon: up the lane before the Mega column from an upper port, into a lower
+    // port of Alphamon's left side, under the Digimon Chronicle line's entry
+    edge('doruguremon','alphamon','normal','right','left',{fromY:540, toY:400});
 
     // DNA / Jogress with Ouryumon (see panel)
     edge('alphamon','alphamonouryuken','dna');
 
-    // Digimon Chronicle line: up the lane before the Champion column, then into Alphamon's top
-    // over the empty Mega slot, left of the badge, so it shares no lane with the Dorugoramon edge
+    // Digimon Chronicle line: up the lane before the Champion column
     edge('dorumon','reptiledramon','normal','right','left',{label:'Digimon Chronicle', lx:799, ly:469});
     edge('reptiledramon','grademon','normal');
-    edge('grademon','alphamon','normal','right','top',{toX:1420});
+    edge('grademon','alphamon','normal');
 
-    // Digimon Chronicle: Dorugoramon from a lower port, then the Death-X branch
-    edge('doruguremon','dorugoramon','normal','right','left',{fromY:640, label:'Digimon Chronicle', lx:1323, ly:709});
-    edge('dorugoramon','dexdorugoramon','dark','bottom','top',{shape:'vertical', label:'Death-X Evolution', lx:1454, ly:949});
+    // Digimon Chronicle: Dorugoramon (the lane is too narrow for a label; its note names the
+    // continuity), then the Death-X branch
+    edge('doruguremon','dorugoramon','normal');
+    edge('dorugoramon','dexdorugoramon','dark','bottom','top',{shape:'vertical', label:'Death-X Evolution', lx:1454, ly:709});
     edge('dexdorugoramon','dexmon','dark');
 
     // Death-X line (editorial exception, see the footer): down from Dorumon through the empty
-    // Rookie slot, and from DexDoruGreymon down into DexDorugoramon's left side
+    // Rookie slot
     edge('dorumon','dexdorugamon','dark','bottom','left');
     edge('dexdorugamon','dexdoruguremon','dark');
-    edge('dexdoruguremon','dexdorugoramon','dark','bottom','left');
+    edge('dexdoruguremon','dexdorugoramon','dark');
   }
 });
 </script>
