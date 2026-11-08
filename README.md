@@ -76,7 +76,7 @@ then lists the generations, the atlas pages or the group rosters:
     - [three-great-angels.html](src/groups/three-great-angels.html) - Seraphimon, Ophanimon and Cherubimon (Good) as the Kernel's guardians, with related forms as chips.
     - [angelic.html](src/groups/angelic.html) - Angelic Digimon roster (Celestial Digimon, Angelic Army, fallen counterparts), each card carrying its official angelic-rank Type.
     - [olympos-xii.html](src/groups/olympos-xii.html) - the twelve gods of Iliad ordered by guardian pair, each card carrying its region and Roman god, plus GraceNovamon as a related fusion.
-    - [titans.html](src/groups/titans.html) - Iliad's ancient faction: Titamon as its principal figure, connected figures as chips, no fixed roster.
+    - [titans.html](src/groups/titans.html) - Iliad's ancient faction: Titamon as its principal figure, Plutomon as a connected chip, no fixed roster.
     - [tentei-hachibushu.html](src/groups/tentei-hachibushu.html) - Shambala's eight guardians in their hierarchy: Shakamon, the Saneiketsu, the Sanmyojin and Enmamon.
     - [shikyoju.html](src/groups/shikyoju.html) - the Four Perilous Beasts sealed in Jakeizan, each card carrying its Peril.
     - [demon-lords.html](src/groups/demon-lords.html) - the Seven Great Demon Lords, each card carrying its deadly sin as the rank pill, plus Ogudomon and Ogudomon X as the Embodiment of the Seven Sins.
