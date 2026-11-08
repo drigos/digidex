@@ -49,7 +49,7 @@ then lists the generations, the atlas pages or the group rosters:
   - [mercurymon.html](src/evolution-lines/gen-4-frontier/mercurymon.html) - Warrior of Steel line, one of Cherubimon's warriors (Human/Beast Spirit, the Spirits unified into MagnaGarurumon, Susanoomon).
 - `src/evolution-lines/film-x-evolution/` - Digital Monster X-Evolution (TV film, no human partners):
   - [index.html](src/evolution-lines/film-x-evolution/index.html) - X-Antibody Digimon selection screen (the WarGreymon X and MetalGarurumon X cards link into the gen-1 Agumon and Gabumon trees).
-  - [dorumon.html](src/evolution-lines/film-x-evolution/dorumon.html) - Dorumon line (the film's line to Alphamon Ouryuken with its Ouryumon Jogress, the Digimon Chronicle line through Reptiledramon and Grademon, the Death-X line from DexDorugamon and Dorugoramon to Dexmon).
+  - [dorumon.html](src/evolution-lines/film-x-evolution/dorumon.html) - Dorumon line as told in Digimon Chronicle (Dorugoramon, the line through Reptiledramon and Grademon to Alphamon Ouryuken with its Ouryumon Jogress, the Death-X line to Dexmon), plus the film's own step from DoruGreymon to Alphamon, the one edge labeled with a continuity.
 - `src/evolution-lines/gen-5-data-squad/` - Digimon Data Squad / Savers:
   - [index.html](src/evolution-lines/gen-5-data-squad/index.html) - DATS selection screen (by Burst Mode; the Agumon card links into the gen-1 Agumon tree).
 - Generations whose selection screen exists but whose trees are all "Coming soon" (partners and peak forms taken from the DigimonWiki character infoboxes):
