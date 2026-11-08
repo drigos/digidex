@@ -836,8 +836,8 @@ needs a source of its own (Cyberdramon also regresses to Monodramon in episode 4
 
 A partner with no form for a Digi-Egg says so in its footer (`Patamon has no recorded form
 for the Digi-Egg of Destiny.`). The six Armor panels, the eight Adventure trees, the four
-Adventure 02 trees and the eight Tamers trees were checked against this rule in November 2026. The edges of the other trees have not been checked
-yet, and some of them still rest on a game.
+Adventure 02 trees, the eight Tamers trees and the ten Frontier trees were checked against this
+rule in November 2026. No other generation has a tree yet.
 
 ## Artwork sources
 
