@@ -81,7 +81,7 @@ then lists the generations, the atlas pages or the group rosters:
     - [shikyoju.html](src/groups/shikyoju.html) - the Four Perilous Beasts sealed in Jakeizan, each card carrying its Peril.
     - [demon-lords.html](src/groups/demon-lords.html) - the Seven Great Demon Lords, each card carrying its deadly sin as the rank pill, plus Ogudomon and Ogudomon X as the Embodiment of the Seven Sins.
   - Rosters listed under Special groups (breadcrumb `Home / Special groups / <page>`):
-    - [four-great-dragons.html](src/groups/four-great-dragons.html) - the Four Great Dragons, named after the Dragon Kings of the four seas.
+    - [four-great-dragons.html](src/groups/four-great-dragons.html) - the Four Great Dragons, three Holy Dragons and the Evil Dragon Megidramon (Digimon Profile #010).
     - [vortex-warriors.html](src/groups/vortex-warriors.html) - Witchelny's Vortex Warriors, led by the Whirlwind General MedievalGallantmon.
     - [bancho.html](src/groups/bancho.html) - the five bearers of the Bancho title.
     - [d-brigade.html](src/groups/d-brigade.html) - the D-Brigade: operational personnel, the missing Darkdramon, cadets, and Digimon tied to its history (Chaosmon, Ludomon).
