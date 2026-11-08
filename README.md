@@ -150,7 +150,8 @@ cannot drift apart:
   no evolution arrows: cards are grouped into power tiers by `.tier` section headings
   (e.g. Celestial Digimon on top, then the Angelic Army, then fallen counterparts), and
   each card shows the Digimon's official level (`Mega`, never the tree pages' `Ultra`: every
-  member of a group is special, so the roster does not rank one above another), an official-Type rank pill (`.rank`, accent-tinted
+  member of a group is special, so the roster does not rank one above another; a member whose
+  level only a card gives, like PetitMamon, shows none), an official-Type rank pill (`.rank`, accent-tinted
   by angelic sphere) and a short role line sourced from the official profile. Cards link
   to DigimonWiki/Fandom. Verify every rank and role in the official encyclopedia
   (`digimon.net/reference_en`) before adding a member, in both directions when the claim
@@ -843,8 +844,8 @@ The sources are:
 Card games and video games are not sources, not even as a fallback: they multiply relations
 to serve their mechanics. The one use of a game is the `Ultra` label on tree cards (section 1),
 since no official stage exists above Mega. Neither are the D-Cyber manhua, the British comic `Ryo's Story!`
-(it retells the WonderSwan games) or manga adaptations of video games (`Digimon Story: Cyber
-Sleuth`). DigimonWiki's "Digi-Egg Digivolution Chart" mixes every medium in
+(it retells the WonderSwan games), manga adaptations of video games (`Digimon Story: Cyber
+Sleuth`) or the stage plays (`Super Evolution Stage Digimon Adventure tri.`). DigimonWiki's "Digi-Egg Digivolution Chart" mixes every medium in
 one table, so a cell there proves nothing by itself; trace it to a source above. Wikimon
 cites a source per relation, but those citations are incomplete on both sides (the Rookie's
 "Evolves To" and the Armor's "Evolves From"). Its `D-3 Version 1` to `3` pages list each
