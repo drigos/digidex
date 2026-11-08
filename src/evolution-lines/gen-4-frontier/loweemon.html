@@ -25,7 +25,7 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:1598px; height:1503px; }
+  .infographic { width:1598px; height:1519px; }
   .columns { top:200px; }
   /* both reference panels are left-aligned and stacked (narrow DNA on top, wide Unified below) */
   .jogress-panel { top:710px; width:430px; }
@@ -48,7 +48,7 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 1598 1503" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 1598 1519" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
@@ -106,7 +106,7 @@
       </div>
     </section>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show the Spirit tier; edge colors show the Spirit trigger. Frontier has no partner Digimon: Koichi Spirit-Evolves into these forms and has no Child form; AncientSphinxmon is the ancestral Warrior of Darkness (lore links, not steps). Cherubimon corrupted the Spirits of Darkness into the H and B Spirits, locking Koichi as Duskmon and Velgemon (red); once freed, Koichi purifies them into the L and K Spirits of Loweemon and JagerLoweemon. Rhihimon, the Fusion of the two Darkness Spirits, comes from the Hybrid-Digivolving figures and the D-Tector 3.0 toy, outside the Frontier anime. Koichi gives his Spirits to Koji, who in episode 35 unifies them with four other Warriors' Spirits into MagnaGarurumon (see panel), which DNA-Digivolves with Takuya's EmperorGreymon into Susanoomon (see panel). Velgemon, Susanoomon and AncientMermaidmon are DigimonWiki's names for the official Velgrmon, Susanomon and AncientMermaimon.</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show the Spirit tier; edge colors show the Spirit trigger. Frontier has no partner Digimon: Koichi Spirit-Evolves into these forms and has no Child form; AncientSphinxmon is the Warrior of Darkness whose Spirits Koichi wields (lore links, not steps). Cherubimon corrupted the Spirits of Darkness into the H and B Spirits, locking Koichi as Duskmon and Velgemon (red); once freed, Koichi purifies them into the L and K Spirits of Loweemon and JagerLoweemon. Rhihimon, the Fusion of the two Darkness Spirits, comes from the D-Tector V-pet and the Hybrid-Digivolving figures, outside the Frontier anime. Koichi gives his Spirits to Koji, who in episode 35 unifies them with four other Warriors' Spirits into MagnaGarurumon (see panel). In episodes 48 to 50 Takuya and Koji, and in the last one all five children, merge with the ten Warriors' Spirits into Susanoomon; the tree draws it from MagnaGarurumon and Takuya's EmperorGreymon (see panel), which hold those Spirits, as the Hybrid-Digivolving figures do. Velgemon, Susanoomon and AncientMermaidmon are DigimonWiki's names for the official Velgrmon, Susanomon and AncientMermaimon.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -129,7 +129,7 @@ DigiTree.mount({
   ],
   nodes: [
     // ancestral origin (far left): ancient Warrior of Darkness, source of both Spirits
-    {id:'ancientsphinxmon', x:42, y:370, cls:'lore', badge:{cls:'lw', text:'Legendary Warrior', href:'../../groups/ten-legendary-warriors.html#ancientsphinxmon', title:'Ten Legendary Warriors roster'}, name:'AncientSphinxmon', lvl:'Ancient', note:'Ancient Warrior of Darkness; ancestor of the entire Darkness line.', wiki:'AncientSphinxmon', img:'ancientsphinkmon'},
+    {id:'ancientsphinxmon', x:42, y:370, cls:'lore', badge:{cls:'lw', text:'Legendary Warrior', href:'../../groups/ten-legendary-warriors.html#ancientsphinxmon', title:'Ten Legendary Warriors roster'}, name:'AncientSphinxmon', lvl:'Ancient', note:'Warrior of Darkness; left the Spirits of Darkness.', wiki:'AncientSphinxmon', img:'ancientsphinkmon'},
 
     // corrupted column: the H and B Spirits under Cherubimon's spell (Koichi has no Child form)
     {id:'duskmon', x:304, y:250, cls:'dark', name:'Duskmon', lvl:'Human Spirit', note:'Human Spirit of Darkness corrupted by Cherubimon.', wiki:'Duskmon', img:'duskmon'},
@@ -139,7 +139,7 @@ DigiTree.mount({
     {id:'loweemon', x:566, y:250, cls:'normal', name:'Loweemon', lvl:'Human Spirit', note:'Koichi&rsquo;s purified Human Spirit (L Spirit).', wiki:'Loweemon', img:'louwemon'},
     {id:'jagerloweemon', x:566, y:490, cls:'mode', name:'JagerLoweemon', lvl:'Beast Spirit', note:'Purified Beast Spirit (K Spirit), via Slide Evolution.', wiki:'JagerLoweemon', img:'kaiserleomon'},
 
-    // fusion (Hybrid-Digivolving figures and D-Tector 3.0, not the Frontier anime)
+    // fusion (D-Tector V-pet and Hybrid-Digivolving figures, not the Frontier anime)
     {id:'rhihimon', x:828, y:370, cls:'dna', name:'Rhihimon', lvl:'Fusion', note:'Double Spirit form of Darkness, outside the Frontier anime.', wiki:'Rhihimon', img:'raihimon'},
 
     // unified: Koji's form, built with the Spirits of Darkness
