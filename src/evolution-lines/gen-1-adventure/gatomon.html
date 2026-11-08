@@ -233,19 +233,19 @@ DigiTree.mount({
     {id:'ophanimonx', x:1352, y:970, cls:'x', name:'Ophanimon X', lvl:'Mega / X', note:'X-Antibody form.', wiki:'Ophanimon_X', img:'ofanimon_x', badge:{cls:'cd', text:'Celestial Digimon', href:'../../groups/angelic.html#ophanimon', title:'Angelic Digimon roster'}},
     {id:'ophanimonfalldownx', x:1614, y:970, cls:'x', name:'Ophanimon Falldown Mode X', lvl:'Mega / X', note:'X-Antibody form.', wiki:'Ophanimon_Falldown_Mode_X', img:'ofanimonfdm_x', badge:{cls:'fa', text:'Fallen Angel', href:'../../groups/angelic.html#ophanimon-falldown-mode', title:'Angelic Digimon roster'}},
 
-    // the Virus Gatomon and Angewomon's Olympos XII Mega
-    {id:'blackgatomon', x:828, y:1210, cls:'dark', name:'BlackGatomon', lvl:'Champion', note:'A Virus Gatomon with pitch-black fur.', wiki:'BlackGatomon', img:'blacktailmon'},
+    // Adventure: corruption, straight below Gatomon, beside Angewomon's Olympos XII Mega
+    {id:'skullknightmon', x:828, y:1210, cls:'dark', name:'SkullKnightmon', lvl:'Champion', note:'Corrupted form of Gatomon (Adventure: 2020).', wiki:'SkullKnightmon', img:'skullknightmon'},
+    {id:'darkknightmon', x:1090, y:1210, cls:'dark', name:'DarkKnightmon', lvl:'Ultimate', note:'Dark knight; peak of the corrupted branch.', wiki:'DarkKnightmon', img:'darkknightmon'},
     {id:'junomon', x:1352, y:1210, cls:'normal', name:'Junomon', lvl:'Mega', note:'One of the Olympos XII and Jupitermon\'s partner.', wiki:'Junomon', img:'junomon', badge:{cls:'ox', text:'Olympos XII', href:'../../groups/olympos-xii.html#junomon', title:'Olympos XII roster'}},
     {id:'junomonhysteric', x:1614, y:1210, cls:'mode', name:'Junomon Hysteric Mode', lvl:'Ultra', note:'An evil form awakened from Junomon\'s heart.', wiki:'Junomon_Hysteric_Mode', img:'junomon_hysteric'},
 
-    // the delivery form and the holy-dark fusion
-    {id:'blackgatomonuver', x:828, y:1450, cls:'mode', name:'BlackGatomon Uver.', lvl:'Champion', note:'BlackGatomon after absorbing home delivery data (Ghost Game).', wiki:'BlackGatomon_Uver.', img:'blacktailmon_uver'},
+    // the Virus Gatomon, its Dark Angel and the holy-dark fusion in one row
+    {id:'blackgatomon', x:828, y:1450, cls:'dark', name:'BlackGatomon', lvl:'Champion', note:'A Virus Gatomon with pitch-black fur.', wiki:'BlackGatomon', img:'blacktailmon'},
     {id:'ladydevimon', x:1090, y:1450, cls:'dark', name:'LadyDevimon', lvl:'Ultimate', note:'A feminine Dark Angel with a noble presence.', wiki:'LadyDevimon', img:'ladydevimon'},
     {id:'mastemon', x:1352, y:1450, cls:'dna', name:'Mastemon', lvl:'Mega', note:'Angewomon + LadyDevimon.', wiki:'Mastemon', img:'mastemon'},
 
-    // Adventure: corruption
-    {id:'skullknightmon', x:828, y:1690, cls:'dark', name:'SkullKnightmon', lvl:'Champion', note:'Corrupted form of Gatomon (Adventure: 2020).', wiki:'SkullKnightmon', img:'skullknightmon'},
-    {id:'darkknightmon', x:1090, y:1690, cls:'dark', name:'DarkKnightmon', lvl:'Ultimate', note:'Dark knight; peak of the corrupted branch.', wiki:'DarkKnightmon', img:'darkknightmon'},
+    // the delivery form, under BlackGatomon
+    {id:'blackgatomonuver', x:828, y:1690, cls:'mode', name:'BlackGatomon Uver.', lvl:'Champion', note:'BlackGatomon after absorbing home delivery data (Ghost Game).', wiki:'BlackGatomon_Uver.', img:'blacktailmon_uver'},
 
     // Jogress row
     {id:'silphymon', x:1090, y:1930, cls:'dna', name:'Silphymon', lvl:'Ultimate', note:'Aquilamon + Gatomon.', wiki:'Silphymon', img:'silphymon'},
@@ -277,18 +277,19 @@ DigiTree.mount({
     edge('ophanimonfalldown','ophanimonfalldownx','x','bottom','top',{shape:'vertical'});
     edge('junomon','junomonhysteric','mode');
 
-    // the Virus Gatomon, its delivery form and its Dark Angel, LadyDevimon, into the fusion
-    edge('gatomon','blackgatomon','dark','bottom','top',{shape:'vertical', fromX:960, toX:960});
-    edge('blackgatomon','blackgatomonuver','mode','bottom','top',{shape:'vertical'});
-    edge('blackgatomon','ladydevimon','dark','right','left',{points:[[1061,1309],[1061,1549]], toY:1549});
-    edge('ladydevimon','mastemon','dna');
-
-    // Adventure: corruption
-    edge('gatomon','skullknightmon','dark','bottom','left',{fromX:920, points:[[920,910],[799,910],[799,1790]], label:'Corrupted (Adventure: 2020)', lx:799, ly:1670});
+    // Adventure: corruption, straight down the empty Champion column
+    edge('gatomon','skullknightmon','dark','bottom','top',{shape:'vertical', fromX:960, toX:960, label:'Corrupted (Adventure: 2020)', lx:960, ly:1069});
     edge('skullknightmon','darkknightmon','dark');
 
-    // DNA / Jogress with Aquilamon (see panel): down the empty Rookie column, just left of
-    // the SkullKnightmon label
+    // the Virus Gatomon, around the corrupted row, then its delivery form and its Dark
+    // Angel, LadyDevimon, into the fusion
+    edge('gatomon','blackgatomon','dark','bottom','left',{fromX:920, points:[[920,910],[799,910],[799,1549]], toY:1549});
+    edge('blackgatomon','blackgatomonuver','mode','bottom','top',{shape:'vertical'});
+    edge('blackgatomon','ladydevimon','dark');
+    edge('ladydevimon','mastemon','dna');
+
+    // DNA / Jogress with Aquilamon (see panel): down the empty Rookie column, outside the
+    // BlackGatomon lane
     edge('gatomon','silphymon','dna','bottom','left',{fromX:880, points:[[880,750],[700,750],[700,2030]]});
     edge('silphymon','valkyrimon','normal');
 
