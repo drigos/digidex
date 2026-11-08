@@ -635,7 +635,8 @@ the child (episode 35), and the footer says both. The other eight pages follow t
   Loweemon (H -> L Spirit) and JagerLoweemon (B -> K Spirit), whose notes say purified.
 - **Cherubimon's warriors** (Grumblemon, Arbormon, Ranamon, Mercurymon) draw no extra
   nodes; the footer states that Cherubimon gave the H Spirit life and that the Spirits end
-  in the Unified form.
+  in the Unified form. Ophanimon tells the origin in episode 34: Cherubimon "created the evil
+  warriors from four of those Spirits", the five he guarded.
 - **Footer**: game forms with other species, card-game evolutions into an Ancient and
   `{{DSR}}` entries stay out, as on the Flame and Light pages. Official Reference Book
   names that differ are mapped (`Susanomon`, `AncientTroymon`, `AncientMermaimon`,
