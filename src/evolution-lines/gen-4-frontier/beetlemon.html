@@ -25,7 +25,7 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:1336px; height:1503px; }
+  .infographic { width:1336px; height:1519px; }
   .columns { top:200px; }
   /* the narrower canvas brings the legend closer, so the subtitle wraps before it */
   .subtitle { max-width:680px; }
@@ -50,7 +50,7 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 1336 1503" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 1336 1519" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
@@ -108,7 +108,7 @@
       </div>
     </section>
 
-    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show the Spirit tier; edge colors show the Spirit trigger. Frontier has no partner Digimon: J.P. Spirit-Evolves into these forms and has no Child form; AncientBeetlemon is the ancestral Warrior of Thunder (lore links, not steps). RhinoKabuterimon, the Fusion of the two Thunder Spirits, comes from the Reference Book and the D-Tector 3.0 toy, outside the Frontier anime. In episode 35 Koji unifies the Spirits of Thunder with four other Warriors' Spirits into MagnaGarurumon (see panel), which DNA-Digivolves with Takuya's EmperorGreymon into Susanoomon (see panel). Susanoomon and AncientMermaidmon are DigimonWiki's names for the official Susanomon and AncientMermaimon.</div>
+    <div class="footer">Names link to DigimonWiki/Fandom (Fandom community, CC BY-SA unless noted otherwise); artwork &copy; Bandai, via the official Reference Book. Card labels show the Spirit tier; edge colors show the Spirit trigger. Frontier has no partner Digimon: J.P. Spirit-Evolves into these forms and has no Child form; AncientBeetlemon is the Warrior of Thunder whose Spirits J.P. wields (lore links, not steps). RhinoKabuterimon, the Fusion of the two Thunder Spirits, comes from the D-Tector V-pet, outside the Frontier anime. In episode 35 Koji unifies the Spirits of Thunder with four other Warriors' Spirits into MagnaGarurumon (see panel). In episodes 48 to 50 Takuya and Koji, and in the last one all five children, merge with the ten Warriors' Spirits into Susanoomon; the tree draws it from MagnaGarurumon and Takuya's EmperorGreymon (see panel), which hold those Spirits, as the Hybrid-Digivolving figures do. Susanoomon and AncientMermaidmon are DigimonWiki's names for the official Susanomon and AncientMermaimon.</div>
   </div>
   <div class="support">
     <span class="support-label">Support this project</span>
@@ -130,13 +130,13 @@ DigiTree.mount({
   ],
   nodes: [
     // ancestral origin (far left): ancient Warrior of Thunder, source of both Spirits
-    {id:'ancientbeetlemon', x:42, y:370, cls:'lore', badge:{cls:'lw', text:'Legendary Warrior', href:'../../groups/ten-legendary-warriors.html#ancientbeetlemon', title:'Ten Legendary Warriors roster'}, name:'AncientBeetlemon', lvl:'Ancient', note:'Ancient Warrior of Thunder; ancestor of the entire Thunder line.', wiki:'AncientBeetlemon', img:'ancientbeatmon'},
+    {id:'ancientbeetlemon', x:42, y:370, cls:'lore', badge:{cls:'lw', text:'Legendary Warrior', href:'../../groups/ten-legendary-warriors.html#ancientbeetlemon', title:'Ten Legendary Warriors roster'}, name:'AncientBeetlemon', lvl:'Ancient', note:'Warrior of Thunder; left the Spirits of Thunder.', wiki:'AncientBeetlemon', img:'ancientbeatmon'},
 
     // spirit column (Human + Beast, slide-linked); J.P. has no Child form
     {id:'beetlemon', x:304, y:250, cls:'normal', name:'Beetlemon', lvl:'Human Spirit', note:'J.P.&rsquo;s Human Spirit of Thunder.', wiki:'Beetlemon', img:'blitzmon'},
     {id:'metalkabuterimon', x:304, y:490, cls:'mode', name:'MetalKabuterimon', lvl:'Beast Spirit', note:'Beast Spirit of Thunder, via Slide Evolution.', wiki:'MetalKabuterimon', img:'bolgmon'},
 
-    // fusion (Reference Book and D-Tector 3.0, not the Frontier anime)
+    // fusion (D-Tector V-pet, not the Frontier anime)
     {id:'rhinokabuterimon', x:566, y:370, cls:'dna', name:'RhinoKabuterimon', lvl:'Fusion', note:'Double Spirit form of Thunder, outside the Frontier anime.', wiki:'RhinoKabuterimon', img:'rhinokabuterimon'},
 
     // unified: Koji's form, built with the Spirits of Thunder
