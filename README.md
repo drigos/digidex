@@ -809,7 +809,9 @@ The sources are:
    (Digimon Chronicle X, Digimon Profile, Digimon Journal, and the Digimon Chronicle story pages
    of the Digimon Pendulum X site, read through the Wayback Machine at
    `digimon.net/digimon_archive2010/chronicle/` and at its first address,
-   `digimon.channel.or.jp/chronicle/`) and Bandai's own product texts (Premium Bandai).
+   `digimon.channel.or.jp/chronicle/`), the Digimon Chronicle booklets packed with the Pendulum X
+   V-pets (scans of the 2.0 booklet at `digitalworldarchive.wordpress.com`) and Bandai's own
+   product texts (Premium Bandai).
    Imperialdramon Paladin Mode as founder of the Royal Knights rests on the Art Book, and
    Jesmon filling the thirteenth seat on a Premium Bandai text. The figures released with
    Digimon Frontier count too, like the V-pets of each series: the Spirit-Digivolving Figures
