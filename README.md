@@ -53,7 +53,7 @@ then lists the generations, the atlas pages or the group rosters:
   - [ryudamon.html](src/evolution-lines/x-antibody/ryudamon.html) - Ryudamon line as told in Digimon Chronicle (Yuji's partner through Ginryumon and Hisyaryumon to Ouryumon, which Alphamon turns into its sword to become Alphamon Ouryuken), plus the Ghost Game contagion into Gyuukimon.
 - `src/evolution-lines/gen-5-data-squad/` - Digimon Data Squad / Savers:
   - [index.html](src/evolution-lines/gen-5-data-squad/index.html) - DATS selection screen (by Burst Mode; the Agumon card links into the gen-1 Agumon tree).
-- Generations whose selection screen exists but whose trees are all "Coming soon" (partners and peak forms taken from the DigimonWiki character infoboxes):
+- Generations whose selection screen exists but whose trees are all "Coming soon" (partners taken from the DigimonWiki character infoboxes, peak forms by the rule under "Files"):
   - [gen-6-fusion/index.html](src/evolution-lines/gen-6-fusion/index.html) - Digimon Fusion: the Fusion Fighters' partners (Shoutmon, Greymon, Sparrowmon, Cutemon).
   - [gen-7-hunters/index.html](src/evolution-lines/gen-7-hunters/index.html) - The Young Hunters Who Leapt Through Time: Xros Heart (Gumdramon, Shoutmon (King Version), Damemon) and the other Hunters (Psychemon, Opossummon).
   - [gen-8-app-monsters/index.html](src/evolution-lines/gen-8-app-monsters/index.html) - Digimon Universe App Monsters: the App Drivers' Appmon by God grade; Appmon have no official Reference Book entry, so this page's artwork comes from Wikimon.
@@ -124,12 +124,18 @@ cannot drift apart:
   `src/` root), then passes its data. Per-page dimensions live in a small inline `<style>`
   block; the graph is `nodes`/`edges` data; appendix panels are plain HTML sections.
 - the `evolution-lines/gen-*/index.html` selection screens - a **different kind of page**:
-  self-contained (own inline CSS, no `digivolution.js`), they render a responsive grid of
+  self-contained (own inline CSS; `digivolution.js` only answers the trees' request for the
+  partner list), they render a responsive grid of
   partner cards linking to that generation's tree pages. They only `<link>` `digivolution.css`
   to inherit the shared color tokens, the font and the `.crumbs` breadcrumb style.
   `evolution-lines/index.html` (Generations) and `groups/index.html` (Special groups) are
   the same pattern one level up. Every selection screen shows an entry without a page yet
   as a "Coming soon" card (`.card.soon` + `.badge-soon`, a `div` instead of a link).
+  A partner card's peak form (`.peak`) is the highest form of the partner's line in an accepted
+  source (see "Relation sources"), even when the partner itself does not reach it in its series:
+  Lopmon's Cherubimon (Good) comes from Adventure: 2020 and the D-Power V-pet, Guardromon's
+  HiAndromon and Leomon's SaberLeomon from the D-Power. A form that only a game or a card gives
+  never counts.
 - the root `index.html` - the same selection-screen pattern at the top: a self-contained
   page with one card per section (Generations, Digital World Cosmology, Special groups),
   each showing three sample thumbnails and linking to `evolution-lines/index.html`,
