@@ -25,9 +25,9 @@
 <link rel="stylesheet" href="../../digivolution.css" />
 <style>
   /* page-specific layout */
-  .infographic { width:1860px; height:892px; }
+  .infographic { width:1860px; height:1132px; }
   .columns { top:200px; }
-  .jogress-panel { top:470px; width:470px; }
+  .jogress-panel { top:710px; width:470px; }
 </style>
 </head>
 <body>
@@ -36,7 +36,7 @@
   <div class="infographic" id="canvas">
     <div class="title">
       <h1>Ryudamon: evolution tree</h1>
-      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega -> Ultra hierarchy as told in Digimon Chronicle, from Yuji's Ryudamon through Ginryumon and Hisyaryumon to Ouryumon, which Alphamon turns into its sword to become Alphamon Ouryuken.</div>
+      <div class="subtitle">Fresh -> In-Training -> Rookie -> Champion -> Ultimate -> Mega -> Ultra hierarchy as told in Digimon Chronicle, from Yuji's Ryudamon through Ginryumon and Hisyaryumon to Ouryumon, which Alphamon turns into its sword to become Alphamon Ouryuken, plus the Ghost Game contagion into Gyuukimon.</div>
     </div>
 
     <div class="legend">
@@ -46,7 +46,7 @@
 
     <div class="columns"></div>
 
-    <svg id="edges" viewBox="0 0 1860 892" preserveAspectRatio="none"></svg>
+    <svg id="edges" viewBox="0 0 1860 1132" preserveAspectRatio="none"></svg>
     <div id="labels"></div>
     <div id="nodes"></div>
 
@@ -78,7 +78,8 @@
 DigiTree.mount({
   legend: [
     ['normal','Normal evolution'],
-    ['dna','DNA / Jogress']
+    ['dna','DNA / Jogress'],
+    ['dark','Dark']
   ],
   columns: [
     [42,'Fresh'],[304,'In-Training'],[566,'Rookie'],[828,'Champion'],
@@ -92,7 +93,10 @@ DigiTree.mount({
     {id:'ginryumon', x:828, y:250, cls:'normal', name:'Ginryumon', lvl:'Champion', note:'Parries attacks with its smooth armor.', wiki:'Ginryumon', img:'ginryumon'},
     {id:'hisyaryumon', x:1090, y:250, cls:'normal', name:'Hisyaryumon', lvl:'Ultimate', note:'Its orbs hold its lost companions\' souls.', wiki:'Hisyaryumon', img:'hisyaryumon'},
     {id:'ouryumon', x:1352, y:250, cls:'normal', name:'Ouryumon', lvl:'Mega', note:'Dragon warrior with a sword in each hand.', wiki:'Ouryumon', img:'ouryumon'},
-    {id:'alphamonouryuken', x:1614, y:250, cls:'dna', name:'Alphamon Ouryuken', lvl:'Ultra', note:'Wields Ouryumon as the Ouryuken.', wiki:'Alphamon_Ouryuken', img:'alphamon:ouryuken', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#alphamon', title:'Royal Knights roster'}}
+    {id:'alphamonouryuken', x:1614, y:250, cls:'dna', name:'Alphamon Ouryuken', lvl:'Ultra', note:'Wields Ouryumon as the Ouryuken.', wiki:'Alphamon_Ouryuken', img:'alphamon:ouryuken', badge:{cls:'rk', text:'Royal Knight', href:'../../groups/royal-knights.html#alphamon', title:'Royal Knights roster'}},
+
+    // Ghost Game: a Ryudamon turned into Gyuukimon by its bite, under the Ultimate of the line
+    {id:'gyuukimon', x:1090, y:490, cls:'dark', name:'Gyuukimon', lvl:'Ultimate', note:'Pursues whoever sees it for days on end.', wiki:'Gyuukimon', img:'gyukimon'}
   ],
   edges: function (edge) {
     // Fufumon -> Kyokyomon and Ginryumon -> Hisyaryumon -> Ouryumon are editorial exceptions (see
@@ -106,6 +110,10 @@ DigiTree.mount({
 
     // DNA / Jogress with Alphamon (see panel)
     edge('ouryumon','alphamonouryuken','dna');
+
+    // Ghost Game corruption: down from Ryudamon, labeled in the row gap, then through the empty
+    // Champion slot into Gyuukimon
+    edge('ryudamon','gyuukimon','dark','bottom','left',{label:'Ghost Game', lx:668, ly:469});
   }
 });
 </script>
