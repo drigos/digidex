@@ -874,8 +874,9 @@ needs a source of its own (Cyberdramon also regresses to Monodramon in episode 4
 A partner with no form for a Digi-Egg says so in its footer (`Patamon has no recorded form
 for the Digi-Egg of Destiny.`). The six Armor panels, the eight Adventure trees, the four
 Adventure 02 trees, the eight Tamers trees, the ten Frontier trees, the two X-Antibody trees
-(dorumon and ryudamon) and the partner and peak-form cards of every generation index were
-checked against this rule in November 2026. No other generation has a tree yet.
+(dorumon and ryudamon), the partner and peak-form cards of every generation index and the
+cards, roles and lore notes of the sixteen rosters were checked against this rule in November
+2026. No other generation has a tree yet.
 
 ## Artwork sources
 
