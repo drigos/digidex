@@ -82,7 +82,7 @@ then lists the generations, the atlas pages or the group rosters:
     - [demon-lords.html](src/groups/demon-lords.html) - the Seven Great Demon Lords, each card carrying its deadly sin as the rank pill, plus Ogudomon and Ogudomon X as the Embodiment of the Seven Sins.
   - Rosters listed under Special groups (breadcrumb `Home / Special groups / <page>`):
     - [four-great-dragons.html](src/groups/four-great-dragons.html) - the Four Great Dragons, three Holy Dragons and the Evil Dragon Megidramon (Digimon Profile #010).
-    - [vortex-warriors.html](src/groups/vortex-warriors.html) - Witchelny's Vortex Warriors, led by the Whirlwind General MedievalGallantmon.
+    - [vortex-warriors.html](src/groups/vortex-warriors.html) - the Vortex Warriors, who fight with weapons of wind magic under the Whirlwind General MedievalGallantmon, the hero of Witchelny.
     - [bancho.html](src/groups/bancho.html) - the five bearers of the Bancho title.
     - [d-brigade.html](src/groups/d-brigade.html) - the D-Brigade: operational personnel, the missing Darkdramon, cadets, and Digimon tied to its history (Chaosmon, Ludomon).
     - [mark-of-evil.html](src/groups/mark-of-evil.html) - a themed category, not an organization: each card records where its bearer wears the Mark of Evil.
@@ -845,7 +845,8 @@ Card games and video games are not sources, not even as a fallback: they multipl
 to serve their mechanics. The one use of a game is the `Ultra` label on tree cards (section 1),
 since no official stage exists above Mega. Neither are the D-Cyber manhua, the British comic `Ryo's Story!`
 (it retells the WonderSwan games), manga adaptations of video games (`Digimon Story: Cyber
-Sleuth`) or the stage plays (`Super Evolution Stage Digimon Adventure tri.`). DigimonWiki's "Digi-Egg Digivolution Chart" mixes every medium in
+Sleuth`), the stage plays (`Super Evolution Stage Digimon Adventure tri.`) or the web story
+and manga that accompany the card game (`Digimon Liberator`). DigimonWiki's "Digi-Egg Digivolution Chart" mixes every medium in
 one table, so a cell there proves nothing by itself; trace it to a source above. Wikimon
 cites a source per relation, but those citations are incomplete on both sides (the Rookie's
 "Evolves To" and the Armor's "Evolves From"). Its `D-3 Version 1` to `3` pages list each
