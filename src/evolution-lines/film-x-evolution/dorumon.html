@@ -27,7 +27,7 @@
   /* page-specific layout */
   .infographic { width:1860px; height:1694px; }
   .columns { top:200px; }
-  .jogress-panel { top:950px; width:430px; }
+  .jogress-panel { top:950px; width:470px; }
   .lore-panel { top:1305px; width:1776px; }
 </style>
 </head>
@@ -54,7 +54,7 @@
     <section class="jogress-panel" id="jogress-panel">
       <div class="jogress-panel-title">
         <h2>Alphamon Ouryuken: Jogress partner</h2>
-        <span>Alphamon turns Ouryumon into its sword (Digimon Chronicle)</span>
+        <span>Alphamon turns Yuji's Ouryumon into its sword (Digimon Chronicle)</span>
       </div>
       <div class="jogress-body">
         <a class="jogress-card" href="https://digimon.fandom.com/wiki/Ouryumon" target="_blank">
@@ -77,6 +77,10 @@
           <div class="lore-card-text">The Reference Book presumes Dorumon to be an experimental Prototype Digimon with a legendary dragon's life force deep in its DigiCore. In the film, Magnamon reveals it is Yggdrasill's experiment.</div>
         </div>
         <div class="lore-card">
+          <div class="lore-card-title">Two Tamers</div>
+          <div class="lore-card-text">In Digimon Chronicle, Kota and Yuji reach the New Digital World and partner with Dorumon and Ryudamon; their Digimon Pendulum X reads the X-Antibody through the XAI System and fires X-Cast attacks.</div>
+        </div>
+        <div class="lore-card">
           <div class="lore-card-title">The Empty Seat</div>
           <div class="lore-card-text">Alphamon holds the Royal Knights' Empty Seat and never shows itself. In the film, DoruGreymon digivolves into it while dueling Omnimon, and the knight the others knew only from myth appears.</div>
         </div>
@@ -94,7 +98,7 @@
         </div>
         <div class="lore-card">
           <div class="lore-card-title">Raised Again</div>
-          <div class="lore-card-text">Separated from DexDorugoramon, Dorumon starts over as a Rookie in Digimon Chronicle, and Kota raises it again, this time through Reptiledramon and Grademon to Alphamon.</div>
+          <div class="lore-card-text">Separated from DexDorugoramon, Dorumon starts over as a Rookie in Digimon Chronicle, and its Tamer, Kota, raises it again, this time through Reptiledramon and Grademon to Alphamon.</div>
         </div>
         <div class="lore-card">
           <div class="lore-card-title">Back to Dorumon</div>
@@ -160,8 +164,8 @@ DigiTree.mount({
     edge('alphamon','alphamonouryuken','dna');
 
     // Digimon Chronicle, the default story: Kota raises Dorumon again, up the lane before the
-    // Champion column
-    edge('dorumon','reptiledramon','normal');
+    // Champion column, labeled where it crosses the row gap
+    edge('dorumon','reptiledramon','normal','right','left',{label:'Raised again by Kota', lx:799, ly:469});
     edge('reptiledramon','grademon','normal');
     edge('grademon','alphamon','normal');
 
