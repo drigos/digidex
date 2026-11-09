@@ -706,7 +706,7 @@ so nothing depends on color:
 | Class | Label | Use for |
 |---|---|---|
 | `.tag-established` | Established Lore | Stated in official material. |
-| `.tag-continuity` | Continuity-Specific | True in one anime, manga or game only. |
+| `.tag-continuity` | Continuity-Specific | True in one anime or manga series, film or official story only (games are not sources). |
 | `.tag-legendary` | Legendary | Told as ancient history or legend. |
 | `.tag-parallel` | Thematic Parallel | Shared inspiration with no stated tie. |
 | `.tag-unconfirmed` | Unconfirmed | Plausible, not stated (e.g. Yomi's link to Cocytus). |
