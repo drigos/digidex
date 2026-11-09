@@ -74,7 +74,7 @@ then lists the generations, the atlas pages or the group rosters:
     - [deva.html](src/groups/deva.html) - the twelve Deva serving the Four Sovereigns, three per master, each card carrying its zodiac animal as the rank pill.
     - [ten-legendary-warriors.html](src/groups/ten-legendary-warriors.html) - the ten ancient warriors of the Ancient Digital World, each card carrying its element.
     - [three-great-angels.html](src/groups/three-great-angels.html) - the Celestial Digimon (DigimonWiki's name; "Three Great Angels" is the card game's English): Seraphimon, Ophanimon and Cherubimon (Good) as the Kernel's guardians, with related forms as chips.
-    - [angelic.html](src/groups/angelic.html) - Angelic Digimon roster (Celestial Digimon, Angelic Army, fallen counterparts), each card carrying its official angelic-rank Type.
+    - [angelic.html](src/groups/angelic.html) - Angelic Digimon roster (Celestial Digimon, Angelic Army, fallen counterparts), each card carrying its angelic-rank Type as the English Reference Book gives it (Super Angel, Great Angel and High Angel where the Japanese Types read Throne, Power and Archangel).
     - [olympos-xii.html](src/groups/olympos-xii.html) - the twelve gods of Iliad ordered by guardian pair, each card carrying its region and Roman god, plus GraceNovamon as a related fusion.
     - [titans.html](src/groups/titans.html) - Iliad's ancient faction: Titamon as its principal figure, Plutomon as a connected chip, no fixed roster.
     - [tentei-hachibushu.html](src/groups/tentei-hachibushu.html) - Shambala's eight guardians in their hierarchy: Shakamon, the Saneiketsu, the Sanmyojin and Enmamon.
