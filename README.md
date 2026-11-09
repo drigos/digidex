@@ -66,14 +66,14 @@ then lists the generations, the atlas pages or the group rosters:
   - [shambala.html](src/cosmology/shambala.html) - Digital World: Shambala: Kunlun, Susanoomon's founding legend, the Tentei Hachibushu hierarchy, the Shikyoju, the Saiyu Warriors / Toho Braves line-ups, and Yomi.
   - [kernel.html](src/cosmology/kernel.html) - the Kernel: the chain Kernel -> Celestial Digimon -> Angelic Army, related fallen forms and Rasielmon.
   - [dark-areas.html](src/cosmology/dark-areas.html) - Dark Areas & Cocytus: the three underworld authorities compared, the Seven Great Demon Lords, the Embodiment of the Seven Sins, GranDracmon and Gulfmon.
-- `src/groups/` - roster pages for Digimon groups (no evolution arrows). The folder holds every roster; the section pages decide where each one is listed. URLs never move.
+- `src/groups/` - roster pages for Digimon groups (no evolution arrows). The folder holds every roster; the section pages decide where each one is listed. URLs never move, unless the group itself is renamed: `celestial-digimon.html` was `three-great-angels.html` until November 2026, and its old address now ends on the 404 page.
   - [index.html](src/groups/index.html) - Special groups selection screen: one card per special group, then "Organizations of the Digital Worlds", a directory of the cosmology-filed rosters grouped by world.
   - Rosters filed under Digital World Cosmology (breadcrumb `Home / Cosmology / <world> / <page>`):
     - [royal-knights.html](src/groups/royal-knights.html) - the thirteen Royal Knights plus Imperialdramon Paladin Mode as the order's origin.
     - [four-sovereigns.html](src/groups/four-sovereigns.html) - the Four Holy Beasts guarding the compass points, with Huanglongmon as the emperor of the Center.
     - [deva.html](src/groups/deva.html) - the twelve Deva serving the Four Sovereigns, three per master, each card carrying its zodiac animal as the rank pill.
     - [ten-legendary-warriors.html](src/groups/ten-legendary-warriors.html) - the ten ancient warriors of the Ancient Digital World, each card carrying its element.
-    - [three-great-angels.html](src/groups/three-great-angels.html) - the Celestial Digimon (DigimonWiki's name; "Three Great Angels" is the card game's English): Seraphimon, Ophanimon and Cherubimon (Good) as the Kernel's guardians, with related forms as chips.
+    - [celestial-digimon.html](src/groups/celestial-digimon.html) - the Celestial Digimon (DigimonWiki's name; "Three Great Angels" is the card game's English): Seraphimon, Ophanimon and Cherubimon (Good) as the Kernel's guardians, with related forms as chips.
     - [angelic.html](src/groups/angelic.html) - Angelic Digimon roster (Celestial Digimon, Angelic Army, fallen counterparts), each card carrying its angelic-rank Type as the English Reference Book gives it (Super Angel, Great Angel and High Angel where the Japanese Types read Throne, Power and Archangel).
     - [olympos-xii.html](src/groups/olympos-xii.html) - the twelve gods of Iliad ordered by guardian pair, each card carrying its region and Roman god, plus GraceNovamon as a related fusion.
     - [titans.html](src/groups/titans.html) - Iliad's ancient faction: Titamon as its principal figure, Plutomon as a connected chip, no fixed roster.
