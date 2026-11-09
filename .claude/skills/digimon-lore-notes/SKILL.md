@@ -90,9 +90,10 @@ will change, so the canvas height must be recomputed (see layout).
   wiki every card links to (`Kentaurosmon`, not `Sleipmon`; `Kari`, not `Hikari`;
   `Data Squad`, not `Savers`). When the official Bandai name differs, the page footer may
   state the mapping, as the royal-knights and demon-lords footers do.
-  Exceptions: `Yggdrasill` keeps its official name (DigimonWiki calls it `King Drasil`),
-  and every Omnimon form goes by the official `Omnimon` (DigimonWiki keeps `Omegamon
-  Alter-S`, `Omegamon Alter-B` and `Omegamon Zwart Defeat`).
+  The host computer is `King Drasil`, as in DigimonWiki and the English Reference Book
+  (`Yggdrasill` is its Japanese name). Exception: every Omnimon form goes by the official
+  `Omnimon` (DigimonWiki keeps `Omegamon Alter-S`, `Omegamon Alter-B` and `Omegamon Zwart
+  Defeat`).
 - **Consistency**: if an entry corrects or refines something a card note or edge label
   says, fix that node/edge in the same change so the page never contradicts itself.
 

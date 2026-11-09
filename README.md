@@ -61,7 +61,7 @@ then lists the generations, the atlas pages or the group rosters:
   - [gen-11-beatbreak/index.html](src/evolution-lines/gen-11-beatbreak/index.html) - Digimon Beatbreak: Glowing Dawn's partners (Gekkomon, Pristimon, Chiropmon, Murasamemon).
 - `src/cosmology/` - the Digital World Cosmology atlas (see "Digital World Cosmology" below):
   - [index.html](src/cosmology/index.html) - the atlas overview: Homeostasis, the Kernel, the Net Ocean holding the three worlds and their underworlds, Cocytus, a comparison table and the reading rules.
-  - [classic.html](src/cosmology/classic.html) - Digital World (Classic): Yggdrasill, Royal Knights, Four Sovereigns with their Deva, Ten Legendary Warriors, and Anubismon's Dark Area.
+  - [classic.html](src/cosmology/classic.html) - Digital World (Classic): King Drasil, Royal Knights, Four Sovereigns with their Deva, Ten Legendary Warriors, and Anubismon's Dark Area.
   - [iliad.html](src/cosmology/iliad.html) - Digital World: Iliad: Homeros, the six guardian regions of the Olympos XII, the Titans, Plutomon's Dark Area, and the Celestial Walker / Astral Sentinel line-ups.
   - [shambala.html](src/cosmology/shambala.html) - Digital World: Shambala: Kunlun, Susanoomon's founding legend, the Tentei Hachibushu hierarchy, the Shikyoju, the Saiyu Warriors / Toho Braves line-ups, and Yomi.
   - [kernel.html](src/cosmology/kernel.html) - the Kernel: the chain Kernel -> Three Great Angels -> Angelic Army, related fallen forms and Rasielmon.
@@ -175,8 +175,9 @@ verification and a plan-and-approve step.
 All on-image text is in English so the graphics are universal, and Digimon, characters
 and series go by their DigimonWiki/Fandom names, the wiki every card links to
 (`Kentaurosmon`, not `Sleipmon`); when the official Bandai name differs, the page footer
-may state the mapping. Exceptions: `Yggdrasill` keeps its official name (DigimonWiki
-calls it `King Drasil`), and every Omnimon form goes by the official `Omnimon`, as in the
+may state the mapping. The host computer is `King Drasil`, the name DigimonWiki and the
+English Reference Book share (`Yggdrasill` in Japanese material, as the cosmology and
+royal-knights footers say). Exception: every Omnimon form goes by the official `Omnimon`, as in the
 Reference Book, although DigimonWiki keeps `Omegamon Alter-S`, `Omegamon Alter-B` and
 `Omegamon Zwart Defeat` (the cards still link to those articles, and the footer states the
 mapping). This README is the
@@ -716,7 +717,7 @@ Use them where ambiguity matters, not on every sentence. The atlas overview has 
 ### Content rules specific to the section
 
 - Do not invent a chain of command: host computers are presented as equivalent
-  administrators, the Kernel is not placed under Yggdrasill, and nobody is named ruler of
+  administrators, the Kernel is not placed under King Drasil, and nobody is named ruler of
   Cocytus.
 - Fixed counts are only shown where the source fixes them (13 Royal Knights, 12 Olympos XII,
   8 Tentei Hachibushu, ...). The Titans and the Angelic Army have no universal roster; the
