@@ -64,7 +64,7 @@ then lists the generations, the atlas pages or the group rosters:
   - [classic.html](src/cosmology/classic.html) - Digital World (Classic): King Drasil, Royal Knights, Four Sovereigns with their Deva, Ten Legendary Warriors, and Anubismon's Dark Area.
   - [iliad.html](src/cosmology/iliad.html) - Digital World: Iliad: Homeros, the six guardian regions of the Olympos XII, the Titans, Plutomon's Dark Area, and the Celestial Walker / Astral Sentinel line-ups.
   - [shambala.html](src/cosmology/shambala.html) - Digital World: Shambala: Kunlun, Susanoomon's founding legend, the Tentei Hachibushu hierarchy, the Shikyoju, the Saiyu Warriors / Toho Braves line-ups, and Yomi.
-  - [kernel.html](src/cosmology/kernel.html) - the Kernel: the chain Kernel -> Three Great Angels -> Angelic Army, related fallen forms and Rasielmon.
+  - [kernel.html](src/cosmology/kernel.html) - the Kernel: the chain Kernel -> Celestial Digimon -> Angelic Army, related fallen forms and Rasielmon.
   - [dark-areas.html](src/cosmology/dark-areas.html) - Dark Areas & Cocytus: the three underworld authorities compared, the Seven Great Demon Lords, the Embodiment of the Seven Sins, GranDracmon and Gulfmon.
 - `src/groups/` - roster pages for Digimon groups (no evolution arrows). The folder holds every roster; the section pages decide where each one is listed. URLs never move.
   - [index.html](src/groups/index.html) - Special groups selection screen: one card per special group, then "Organizations of the Digital Worlds", a directory of the cosmology-filed rosters grouped by world.
@@ -73,7 +73,7 @@ then lists the generations, the atlas pages or the group rosters:
     - [four-sovereigns.html](src/groups/four-sovereigns.html) - the Four Holy Beasts guarding the compass points, with Huanglongmon as the emperor of the Center.
     - [deva.html](src/groups/deva.html) - the twelve Deva serving the Four Sovereigns, three per master, each card carrying its zodiac animal as the rank pill.
     - [ten-legendary-warriors.html](src/groups/ten-legendary-warriors.html) - the ten ancient warriors of the Ancient Digital World, each card carrying its element.
-    - [three-great-angels.html](src/groups/three-great-angels.html) - Seraphimon, Ophanimon and Cherubimon (Good) as the Kernel's guardians, with related forms as chips.
+    - [three-great-angels.html](src/groups/three-great-angels.html) - the Celestial Digimon (DigimonWiki's name; "Three Great Angels" is the card game's English): Seraphimon, Ophanimon and Cherubimon (Good) as the Kernel's guardians, with related forms as chips.
     - [angelic.html](src/groups/angelic.html) - Angelic Digimon roster (Celestial Digimon, Angelic Army, fallen counterparts), each card carrying its official angelic-rank Type.
     - [olympos-xii.html](src/groups/olympos-xii.html) - the twelve gods of Iliad ordered by guardian pair, each card carrying its region and Roman god, plus GraceNovamon as a related fusion.
     - [titans.html](src/groups/titans.html) - Iliad's ancient faction: Titamon as its principal figure, Plutomon as a connected chip, no fixed roster.
@@ -618,7 +618,7 @@ layers its own vocabulary on the shared engine instead of the Fresh->Mega ranks.
 - **Columns** are relabeled to the Spirit tiers (`Ancestor`, `Child`, `Human / Beast Spirit`,
   `Fusion`, `Unified Spirit`, `Susanoomon`) rather than evolution levels.
 - **Ancients**: the Ten Legendary Warriors released their Spirits and entrusted them to the
-  Three Great Angels (episode 38), so each Ancient's note says it left the Spirits of its
+  Celestial Digimon (episode 38), so each Ancient's note says it left the Spirits of its
   element (`Warrior of Flame; left the Spirits of Flame.`). The Reference Book passes an
   Ancient's abilities on to Digimon types (Dragon, Beast, Insectoid), not to the line.
 
